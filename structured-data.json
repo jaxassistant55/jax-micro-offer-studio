@@ -2029,6 +2029,165 @@
       "name": "Workflow Tracker Dashboard Starter",
       "url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter",
       "description": "Standalone GitHub lead repository for One paid workflow tracker sprint clears $100 before fees/refunds."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Close A Service Order",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html",
+      "description": "Close-ready scripts, invoice lines, and proof gates for $100+ service orders.",
+      "hasPart": [
+        {
+          "@type": "Service",
+          "name": "Static Demo Site Customization",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-static-demo-site-customization.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 200
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Local SEO / GBP Audit",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-local-seo-gbp-audit.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 175
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "AI Workflow Tracker Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-ai-workflow-tracker-sprint.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Niche Quote Estimator",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-niche-quote-estimator.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Technical Docs Cleanup",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-technical-docs-cleanup.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Website Audit Microservice",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-website-audit-microservice.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Client Intake and SOP Package",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-client-intake-and-sop-package.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Data Cleanup Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-data-cleanup-sprint.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "PDF/Table Extraction",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-pdf-table-extraction.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Resume / LinkedIn / Interview Pack",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-resume-linkedin-interview-pack.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Automation Blueprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-automation-blueprint.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Content Repurposing Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-content-repurposing-sprint.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Resale Listing and Price Research Pack",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-resale-listing-and-price-research-pack.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Subscription Audit and Savings Prep Pack",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-subscription-audit-and-savings-prep-pack.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Translation and Localization Draft Pack",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-translation-and-localization-draft-pack.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100
+          }
+        }
+      ]
     }
   ]
 }

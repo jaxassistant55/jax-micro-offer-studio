@@ -455,5 +455,11 @@
   <description>One paid workflow tracker sprint clears $100 before fees/refunds. Money still counts $0 until external payment proof exists.</description>
 </item>
 
-  </channel>
+  <item>
+  <title>Close A Service Order</title>
+  <link>https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html</link>
+  <guid>https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html</guid>
+  <description>Close-ready buyer reply scripts, invoice lines, proof gates, and stop conditions for $100+ service orders.</description>
+</item>
+</channel>
 </rss>
