@@ -395,14 +395,21 @@ end
 
 def proof_monitor_rows(rows)
   rows.map do |row|
+    signal_url = row["url"].to_s.empty? ? row["issue_url"] : row["url"]
+    signal_id = row["signal_id"].to_s.empty? ? "##{row["issue_number"]}" : row["signal_id"]
+    comments = row["issue_comments"].to_s.empty? ? row["comments"] : row["issue_comments"]
+    downloads = row["release_downloads"].to_s.empty? ? "0" : row["release_downloads"]
     <<~HTML
       <tr>
-        <td data-label="Issue"><a href="#{h(row["issue_url"])}">##{h(row["issue_number"])}</a></td>
+        <td data-label="Signal"><a href="#{h(signal_url)}">#{h(signal_id)}</a><br><span class="muted">#{h(row["repo"])}</span></td>
         <td data-label="Kind">#{h(row["kind"])}</td>
         <td data-label="Title">#{h(row["title"])}</td>
+        <td data-label="Price">#{h(row["price"])}</td>
         <td data-label="State">#{h(row["state"])}</td>
-        <td data-label="Comments">#{h(row["comments"])}</td>
+        <td data-label="Issue comments">#{h(comments)}</td>
+        <td data-label="Release downloads">#{h(downloads)}</td>
         <td data-label="Proof status">#{h(row["proof_status"])}</td>
+        <td data-label="Next paid step"><a href="#{h(row["next_paid_step"])}">Open</a></td>
         <td data-label="Money">#{h(row["money_confirmed_usd"])}</td>
       </tr>
     HTML
@@ -3334,9 +3341,9 @@ end
 if PROOF_MONITOR.any?
   FileUtils.cp(PROOF_MONITOR_PATH, File.join(DOCS, "proof_monitor.csv"))
   File.write(File.join(DOCS, "proof-monitor.html"), page_shell("Proof Monitor - Micro Offer Studio", <<~HTML))
-    <header><p class="buttons"><a href="index.html">Home</a><a href="order-boards.html">Order boards</a><a href="proof.html">Proof rules</a><a href="proof_monitor.csv">CSV</a></p><h1>Proof Monitor</h1><p class="muted">Current issue-board state and conservative money status. This monitor does not infer income from public pages, issues, or comments.</p></header>
+    <header><p class="buttons"><a href="index.html">Home</a><a href="order-boards.html">Order boards</a><a href="download-followup.html">Download follow-up</a><a href="proof.html">Proof rules</a><a href="proof_monitor.csv">CSV</a></p><h1>Proof Monitor</h1><p class="muted">Current issue-board, standalone repo board, and release-download signal state. This monitor does not infer income from public pages, issues, downloads, or comments.</p></header>
     <section class="notice"><h2>Confirmed money: $0</h2><p>Every monitored row stays at $0 until external paid order, cleared invoice, funded milestone, payable balance, posted refund/credit, or equivalent proof exists.</p></section>
-    <section><table><thead><tr><th>Issue</th><th>Kind</th><th>Title</th><th>State</th><th>Comments</th><th>Proof status</th><th>Money</th></tr></thead><tbody>#{proof_monitor_rows(PROOF_MONITOR)}</tbody></table></section>
+    <section><table><thead><tr><th>Signal</th><th>Kind</th><th>Title</th><th>Price</th><th>State</th><th>Issue comments</th><th>Release downloads</th><th>Proof status</th><th>Next paid step</th><th>Money</th></tr></thead><tbody>#{proof_monitor_rows(PROOF_MONITOR)}</tbody></table></section>
   HTML
 else
   File.write(File.join(DOCS, "proof-monitor.html"), page_shell("Proof Monitor - Micro Offer Studio", <<~HTML))
