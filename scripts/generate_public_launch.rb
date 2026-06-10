@@ -411,13 +411,15 @@ end
 
 def github_lead_rows(rows)
   rows.map do |row|
+    repo_order = row["repo_order_issue_url"].to_s
+    repo_order_link = repo_order.empty? ? "" : %(<br><a href="#{h(repo_order)}">Repo order board ##{h(row["repo_order_issue_number"])}</a>)
     <<~HTML
       <tr>
         <td data-label="Lead repo"><a href="#{h(row["repo_url"])}">#{h(row["title"])}</a><br><span class="muted">#{h(row["type"])}</span></td>
         <td data-label="Price">#{h(row["price"])}</td>
         <td data-label="Path to $100">#{h(row["first_100_path"])}</td>
         <td data-label="Preview"><a href="#{h(row["pages_url"])}">Pages preview</a><br><span class="muted">#{h(row["pages_status"])}</span></td>
-        <td data-label="Conversion"><a href="#{h(row["issue_template_url"])}">Paid inquiry template</a><br><a href="#{h(row["order_issue_url"])}">Main order board</a></td>
+        <td data-label="Conversion"><a href="#{h(row["issue_template_url"])}">Paid inquiry template</a>#{repo_order_link}<br><a href="#{h(row["order_issue_url"])}">Main order board</a></td>
         <td data-label="Release"><a href="#{h(row["release_url"])}">preview-v1</a><br><a href="#{h(row["asset_url"])}">ZIP asset</a></td>
         <td data-label="Proof rule">#{h(row["proof_rule"])}</td>
       </tr>
