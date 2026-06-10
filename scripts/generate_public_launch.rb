@@ -6,6 +6,7 @@ require "cgi"
 require "fileutils"
 require "json"
 require "time"
+require "uri"
 
 ENV["TZ"] = "Asia/Tokyo"
 
@@ -14,6 +15,7 @@ LAUNCH_ROOT = File.expand_path("..", __dir__)
 DOCS = File.join(LAUNCH_ROOT, "docs")
 GENERATED_AT = Time.now.strftime("%Y-%m-%d %H:%M:%S JST")
 REPO_URL = ENV.fetch("PUBLIC_LAUNCH_REPO_URL", "https://github.com/jaxassistant55/jax-micro-offer-studio")
+SITE_URL = ENV.fetch("PUBLIC_LAUNCH_SITE_URL", "https://jaxassistant55.github.io/jax-micro-offer-studio/")
 ISSUE_URL = "#{REPO_URL}/issues/new?template=paid-inquiry.yml"
 
 def h(value)
@@ -152,12 +154,17 @@ def card_html(offer)
 end
 
 def page_shell(title, body)
+  description = "Public previews and paid-inquiry pages for generated digital products and productized micro-services."
   <<~HTML
     <!doctype html>
     <html lang="en">
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="#{h(description)}">
+      <meta property="og:title" content="#{h(title)}">
+      <meta property="og:description" content="#{h(description)}">
+      <meta property="og:type" content="website">
       <title>#{h(title)}</title>
       <style>
         :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00}
@@ -275,11 +282,21 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   Public launch package generated during the autonomous earning run.
 
   - Generated: #{GENERATED_AT}
+  - Live site: #{SITE_URL}
   - Public site root: `docs/index.html`
   - Manifest: `public_launch_manifest.csv`
   - Inquiry path: #{ISSUE_URL}
+  - Offers: #{PRODUCTS.length} digital products and #{SERVICES.length} productized services
 
   Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
+
+  ## Fastest $100 paths
+
+  #{(SERVICES.first(6) + PRODUCTS.values_at(5, 10, 4, 6)).compact.map { |offer| "- #{offer[:title]} (#{offer[:price]}): #{offer[:first_100]}" }.join("\n")}
+
+  ## Inquiry safety
+
+  Use the paid inquiry issue template for legitimate paid requests only. Do not post passwords, payment cards, tax identifiers, medical/legal/financial private details, or files you are not authorized to share.
 MD
 
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "paid-inquiry.yml"), <<~YAML)
@@ -337,5 +354,19 @@ TXT
 File.write(File.join(DOCS, "offers.json"), JSON.pretty_generate(OFFERS.map do |offer|
   offer.slice(:type, :title, :slug, :source_dir, :price, :description, :first_100, :preview_public)
 end))
+
+urls = ["", "products.html", "services.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
+  <?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  #{urls.map { |path| "  <url><loc>#{h(URI.join(SITE_URL, path).to_s)}</loc></url>" }.join("\n")}
+  </urlset>
+XML
+
+File.write(File.join(DOCS, "robots.txt"), <<~TXT)
+  User-agent: *
+  Allow: /
+  Sitemap: #{SITE_URL}sitemap.xml
+TXT
 
 puts "Generated #{OFFERS.length} public offers in #{DOCS}"
