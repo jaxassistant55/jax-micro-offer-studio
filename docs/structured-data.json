@@ -329,6 +329,25 @@
               "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-audit-brief-builder.html"
             }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "PDF/Table Intake Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-intake-builder.html",
+            "description": "Free browser-only lead tool for PDF/Table Extraction.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-intake-builder.html"
+            }
+          }
         }
       ]
     },
@@ -1065,6 +1084,21 @@
         "priceCurrency": "USD",
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-audit-brief-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PDF/Table Intake Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-intake-builder.html",
+      "description": "Free browser-only lead tool for PDF/Table Extraction.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-intake-builder.html"
       }
     }
   ]

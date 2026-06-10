@@ -606,6 +606,7 @@ website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-micro
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
 content_repurposing_offer = OFFERS.find { |offer| offer[:slug] == "content-repurposing-sprint" }
 technical_docs_offer = OFFERS.find { |offer| offer[:slug] == "technical-docs-cleanup" }
+pdf_extraction_offer = OFFERS.find { |offer| offer[:slug] == "pdf-table-extraction" }
 invoice_tracker_offer = OFFERS.find { |offer| offer[:slug] == "invoice-and-expense-tracker-template" }
 prompt_workflow_offer = OFFERS.find { |offer| offer[:slug] == "prompt-workflow-pack" }
 sales_enablement_offer = OFFERS.find { |offer| offer[:slug] == "sales-enablement-kit" }
@@ -712,6 +713,15 @@ tool_rows = [
     path: "technical-docs-audit-brief-builder.html",
     paid_path: prefilled_issue_url(technical_docs_offer),
     proof_rule: "Counts $0 until a buyer requests the Technical Docs Cleanup sprint and external payment proof exists."
+  },
+  {
+    slug: "pdf-table-intake-builder",
+    title: "PDF/Table Intake Builder",
+    service: pdf_extraction_offer[:title],
+    price: pdf_extraction_offer[:price],
+    path: "pdf-table-intake-builder.html",
+    paid_path: prefilled_issue_url(pdf_extraction_offer),
+    proof_rule: "Counts $0 until a buyer requests the PDF/Table Extraction package and external payment proof exists."
   }
 ]
 
@@ -1754,6 +1764,162 @@ keep one-page quickstart under 1,500 words</textarea>
   </script>
 HTML
 
+pdf_tool_row = tool_rows.find { |row| row[:slug] == "pdf-table-intake-builder" }
+File.write(File.join(DOCS, "pdf-table-intake-builder.html"), page_shell("PDF/Table Intake Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(pdf_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(pdf_extraction_offer))}">Start $125 extraction package</a></p><h1>PDF/Table Intake Builder</h1><p class="muted">Draft a scope-ready intake, field map, and QA checklist for an authorized PDF, screenshot, or messy table extraction job. Everything runs in the browser; there is no upload and no file processing on this page.</p></header>
+  <section class="notice"><h2>Authorization and data boundary</h2><p>Use only public material or files the buyer is authorized to share and process. Do not paste confidential documents, credentials, payment cards, tax identifiers, medical/legal/financial private details, private customer records, copyrighted material without permission, or content with unclear rights. This tool does not guarantee OCR accuracy; owner review is required before delivery is final.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Extraction facts</h2>
+      <label for="sourceType">Source type</label>
+      <select id="sourceType">
+        <option>Authorized PDF</option>
+        <option>Public PDF</option>
+        <option>Screenshot set</option>
+        <option>Messy pasted table</option>
+        <option>Image scan with tables</option>
+      </select>
+      <label for="sourceLabel">Public URL or authorized file description</label><input id="sourceLabel" value="buyer-authorized 8-page price-list PDF">
+      <label for="pageCount">Pages or screenshots</label><input id="pageCount" type="number" min="1" max="10" step="1" value="8">
+      <label for="tableCount">Expected tables</label><input id="tableCount" type="number" min="1" step="1" value="3">
+      <label for="outputFields">Target fields</label><textarea id="outputFields">item_id
+item_name
+category
+unit_price
+minimum_order
+notes</textarea>
+      <label for="cleaningRules">Cleaning and normalization rules</label><textarea id="cleaningRules">trim whitespace
+normalize currency to USD
+split combined item/name cells when clear
+keep original notes column for uncertain values</textarea>
+      <label for="qualityRisks">Known quality risks</label><textarea id="qualityRisks">small text in footer
+merged header cells
+two columns wrap across page break
+some prices may be handwritten</textarea>
+      <label for="privacyLevel">Data sensitivity</label>
+      <select id="privacyLevel">
+        <option>Public or low-risk business data</option>
+        <option>Buyer-authorized internal data without regulated private details</option>
+        <option>Rejected: contains secrets, regulated private data, or unclear rights</option>
+      </select>
+      <label for="sampleRows">Optional small sample rows or notes</label><textarea id="sampleRows">A-100 | Widget small | Hardware | $12.50 | 10 units
+B-200 | Widget large | Hardware | $19.75 | 5 units</textarea>
+      <label for="deliverables">Expected deliverables</label><textarea id="deliverables">clean CSV
+field map
+QA report
+summary dashboard</textarea>
+      <p class="buttons"><a href="#" id="pdfBuildBtn">Build extraction brief</a><a href="#" id="pdfDownloadBtn">Download brief</a><a href="#{h(prefilled_issue_url(pdf_extraction_offer))}" id="pdfOrderBtn">Start paid extraction package</a></p>
+      <div class="copybox" id="pdfOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid service</span><strong>PDF/Table Extraction - $125</strong></div>
+      <div class="fact"><span>First $100</span><strong>One paid extraction package clears $100.</strong></div>
+      <div class="fact"><span>Scope cap</span><strong>Up to 10 pages or screenshots in the fixed scope.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function pdfLines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function buildPdfBrief(){
+      const sourceType = document.getElementById('sourceType').value;
+      const sourceLabel = document.getElementById('sourceLabel').value.trim();
+      const pageCount = Math.max(1, Number(document.getElementById('pageCount').value || 1));
+      const tableCount = Math.max(1, Number(document.getElementById('tableCount').value || 1));
+      const fields = pdfLines('outputFields');
+      const rules = pdfLines('cleaningRules');
+      const risks = pdfLines('qualityRisks');
+      const privacyLevel = document.getElementById('privacyLevel').value;
+      const sampleRows = document.getElementById('sampleRows').value.trim();
+      const deliverables = pdfLines('deliverables');
+      const rejected = privacyLevel.startsWith('Rejected');
+      const brief = [
+        'PDF/Table Extraction Brief',
+        '',
+        'Source type: ' + sourceType,
+        'Source description: ' + (sourceLabel || '[buyer to provide authorized source description]'),
+        'Pages or screenshots: ' + pageCount,
+        'Expected tables: ' + tableCount,
+        'Sensitivity: ' + privacyLevel,
+        'Scope status: ' + (pageCount <= 10 && !rejected ? 'Fixed-scope candidate' : 'Needs rescope or rejection before paid work'),
+        '',
+        'Authorization statement:',
+        rejected ? 'Do not proceed: source appears to include secrets, regulated private data, unclear rights, or another rejected category.' : 'Buyer must confirm they own or are authorized to share and process this source before work starts.',
+        '',
+        'Field map:',
+        ...(fields.length ? fields.map((field, i) => (i + 1) + '. ' + field + ' - extract if visible; mark unclear values for review') : ['1. [buyer to provide target fields]']),
+        '',
+        'Cleaning rules:',
+        ...(rules.length ? rules.map((rule, i) => (i + 1) + '. ' + rule) : ['1. Trim whitespace', '2. Preserve original values when ambiguous']),
+        '',
+        'Quality risks:',
+        ...(risks.length ? risks.map((risk, i) => (i + 1) + '. ' + risk) : ['1. No risks listed; still perform manual spot check']),
+        '',
+        'Sample rows or notes:',
+        sampleRows || '[optional buyer-provided low-risk sample rows]',
+        '',
+        'Deliverables:',
+        ...(deliverables.length ? deliverables.map((item, i) => (i + 1) + '. ' + item) : ['1. clean CSV', '2. field map', '3. QA report']),
+        '',
+        'QA checklist:',
+        '1. Confirm source authorization and handling rules before work starts.',
+        '2. Count pages, screenshots, tables, and requested fields against scope.',
+        '3. Preserve source row order unless buyer requests sorting.',
+        '4. Validate required columns, blank counts, duplicate rows, and obvious numeric formats.',
+        '5. Mark illegible or ambiguous cells instead of guessing.',
+        '6. Compare a sample of extracted rows back to source pages.',
+        '7. Deliver CSV, field map, QA notes, and summary dashboard for owner acceptance.',
+        '',
+        'Paid next step:',
+        'PDF/Table Extraction ($125): extract up to 10 authorized pages or screenshots into clean CSV plus field validation, QA report, and summary dashboard.',
+        '',
+        'Proof rule: count $0 until buyer requests the PDF/Table Extraction package and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('pdfOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: PDF/Table Extraction',
+        'Listed price: $125',
+        'Tool source: #{SITE_URL}pdf-table-intake-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Extract authorized PDF, screenshot, or messy table source into clean CSV, field map, QA report, and summary dashboard.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Clean CSV, field map, QA report, and summary dashboard accepted by buyer.',
+        '',
+        'Safety confirmation:',
+        'Buyer confirms source is public or buyer-authorized and does not include secrets, payment cards, tax identifiers, regulated private details, or unclear-rights copyrighted material.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: PDF/Table Extraction', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('pdfOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return brief;
+    }
+    ['sourceType','sourceLabel','pageCount','tableCount','outputFields','cleaningRules','qualityRisks','privacyLevel','sampleRows','deliverables'].forEach(id => document.getElementById(id).addEventListener('input', buildPdfBrief));
+    document.getElementById('sourceType').addEventListener('change', buildPdfBrief);
+    document.getElementById('privacyLevel').addEventListener('change', buildPdfBrief);
+    document.getElementById('pdfBuildBtn').addEventListener('click', event => { event.preventDefault(); buildPdfBrief(); });
+    document.getElementById('pdfDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const brief = buildPdfBrief();
+      const blob = new Blob([brief], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'pdf-table-extraction-brief.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildPdfBrief();
+  </script>
+HTML
+
 audit_tool_row = tool_rows.find { |row| row[:slug] == "website-audit-lite" }
 File.write(File.join(DOCS, "website-audit-lite.html"), page_shell("Website Audit Lite - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(audit_tool_row))))
   <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(website_audit_offer))}">Start $150 audit</a></p><h1>Website Audit Lite</h1><p class="muted">Create a quick buyer-facing audit brief from public page observations. This tool does not fetch the site; enter only public observations you are allowed to share.</p></header>
@@ -2521,7 +2687,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
