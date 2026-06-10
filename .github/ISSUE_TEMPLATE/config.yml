@@ -9,6 +9,9 @@ contact_links:
   - name: Ready-to-buy routes
     url: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
     about: Open the highest-intent one-sale service routes.
+  - name: Buyer intent router
+    url: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html
+    about: Match a buyer problem to the closest ready-to-buy route.
   - name: Fulfillment ledger
     url: https://jaxassistant55.github.io/jax-micro-offer-studio/fulfillment.html
     about: Check ready artifacts and local bundle checksums.

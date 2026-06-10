@@ -10,6 +10,7 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 
 ## Ready-to-buy routes
 - Ready-to-buy index: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
+- Buyer intent router: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html
 - Static Demo Site Customization: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-static-demo-site-customization.html -> https://jaxassistant55.github.io/static-service-site-starter/inquiry.html
 - Local SEO / GBP Audit: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-local-seo-gbp-audit.html -> https://jaxassistant55.github.io/local-seo-gbp-audit-starter/inquiry.html
 - Niche Quote Estimator: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-niche-quote-estimator.html -> https://jaxassistant55.github.io/niche-quote-estimator-starter/inquiry.html
