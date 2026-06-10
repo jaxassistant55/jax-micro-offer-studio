@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscription Audit Dashboard</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5f6878;
+      --line: #d8deea;
+      --panel: #f7f9fc;
+      --accent: #0b6bcb;
+      --save: #17643a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    main { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 44px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 22px; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: 0; }
+    h2 { margin: 24px 0 10px; font-size: 1.05rem; letter-spacing: 0; }
+    p { margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 18px 0; }
+    .metric { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 12px; min-height: 90px; }
+    .metric span { display: block; color: var(--muted); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .metric strong { display: block; margin-top: 7px; font-size: 1.35rem; }
+    table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); }
+    th, td { padding: 9px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 0.9rem; }
+    th { color: var(--muted); background: var(--panel); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .save { color: var(--save); font-weight: 700; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      table, thead, tbody, tr, th, td { display: block; }
+      thead { display: none; }
+      tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+      td { border-bottom: 0; padding: 6px 9px; }
+      td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Subscription Audit Dashboard</h1>
+      <p class="muted">Example view for finding $100+ in annualized savings from recurring charges. Replace sample rows with real statement exports before acting.</p>
+    </header>
+    <section class="grid" aria-label="Savings metrics">
+      <div class="metric"><span>Annualized Spend</span><strong id="spend">$0</strong></div>
+      <div class="metric"><span>Potential Annual Savings</span><strong id="savings">$0</strong></div>
+      <div class="metric"><span>Confirmed Savings</span><strong>$0</strong></div>
+    </section>
+    <section>
+      <h2>Example Audit</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Action</th><th>Monthly Cost</th><th>Annual Savings</th><th>Next Action</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    const subscriptions = [
+      { vendor: "Example SaaS tool", action: "cancel", monthly: 29, annualSavings: 348, next: "Verify no team dependency" },
+      { vendor: "Example streaming bundle", action: "downgrade", monthly: 19, annualSavings: 108, next: "Check household usage" },
+      { vendor: "Example storage plan", action: "negotiate", monthly: 12, annualSavings: 60, next: "Confirm backup coverage" }
+    ];
+    document.querySelector("#spend").textContent = "$" + subscriptions.reduce((sum, item) => sum + item.monthly * 12, 0);
+    document.querySelector("#savings").textContent = "$" + subscriptions.reduce((sum, item) => sum + item.annualSavings, 0);
+    document.querySelector("#rows").innerHTML = subscriptions.map((item) => `
+      <tr>
+        <td data-label="Vendor">${item.vendor}</td>
+        <td data-label="Action">${item.action}</td>
+        <td data-label="Monthly Cost">$${item.monthly}</td>
+        <td data-label="Annual Savings"><span class="save">$${item.annualSavings}</span></td>
+        <td data-label="Next Action">${item.next}</td>
+      </tr>
+    `).join("");
+  </script>
+</body>
+</html>

@@ -17,6 +17,7 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 - Resale Listing Draft Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-draft-builder.html -> Resale Listing and Price Research Pack $100
 - Proposal/Profile Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/proposal-profile-builder.html -> Sales Enablement Kit $29
 - Localization QA Brief Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/localization-qa-brief-builder.html -> Translation and Localization Draft Pack $100
+- Subscription Savings Calculator: https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-savings-calculator.html -> Subscription Audit and Savings Prep Pack $100
 
 ## Machine-readable files
 - Search index: https://jaxassistant55.github.io/jax-micro-offer-studio/search-index.json
