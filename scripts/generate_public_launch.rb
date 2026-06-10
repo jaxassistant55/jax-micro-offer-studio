@@ -78,6 +78,18 @@ def price_amount(offer)
   offer[:price].to_s.gsub(/[^\d.]/, "").to_f
 end
 
+def absolute_url(path = "")
+  URI.join(SITE_URL, path).to_s
+end
+
+def jsonld_script(data)
+  <<~HTML
+    <script type="application/ld+json">
+    #{JSON.pretty_generate(data)}
+    </script>
+  HTML
+end
+
 def prefilled_issue_url(offer, title_prefix: "Ready to pay")
   body = <<~BODY
     ## Ready-to-pay intake
@@ -111,6 +123,46 @@ def template_issue_url(offer)
   template = offer[:type] == "product" ? "product-transfer.yml" : "service-scope.yml"
   title = offer[:type] == "product" ? "Product transfer: #{offer[:title]}" : "Service scope: #{offer[:title]}"
   "#{NEW_ISSUE_URL}?#{URI.encode_www_form(template: template, title: title)}"
+end
+
+def offer_schema(offer)
+  {
+    "@context" => "https://schema.org",
+    "@type" => offer[:type] == "product" ? "Product" : "Service",
+    "name" => offer[:title],
+    "description" => offer[:description],
+    "url" => absolute_url("#{offer[:slug]}.html"),
+    "provider" => {
+      "@type" => "Organization",
+      "name" => "Micro Offer Studio",
+      "url" => SITE_URL
+    },
+    "offers" => {
+      "@type" => "Offer",
+      "priceCurrency" => "USD",
+      "price" => price_amount(offer),
+      "availability" => "https://schema.org/InStock",
+      "url" => prefilled_issue_url(offer)
+    }
+  }
+end
+
+def tool_schema(row)
+  {
+    "@context" => "https://schema.org",
+    "@type" => "SoftwareApplication",
+    "name" => row[:title],
+    "applicationCategory" => "BusinessApplication",
+    "operatingSystem" => "Any modern browser",
+    "url" => absolute_url(row[:path]),
+    "description" => "Free browser-only lead tool for #{row[:service]}.",
+    "offers" => {
+      "@type" => "Offer",
+      "priceCurrency" => "USD",
+      "price" => 0,
+      "url" => absolute_url(row[:path])
+    }
+  }
 end
 
 PRODUCTS = [
@@ -413,7 +465,7 @@ def write_sample_pack(offers)
   }
 end
 
-def page_shell(title, body)
+def page_shell(title, body, head_extra = "")
   description = "Public previews and paid-inquiry pages for generated digital products and productized micro-services."
   <<~HTML
     <!doctype html>
@@ -425,6 +477,8 @@ def page_shell(title, body)
       <meta property="og:title" content="#{h(title)}">
       <meta property="og:description" content="#{h(description)}">
       <meta property="og:type" content="website">
+      <link rel="alternate" type="application/rss+xml" title="Micro Offer Studio updates" href="feed.xml">
+      <link rel="search" type="application/json" title="Micro Offer Studio search index" href="search-index.json">
       <title>#{h(title)}</title>
       <style>
         :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00}
@@ -432,6 +486,7 @@ def page_shell(title, body)
         table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}label{display:block;font-weight:700;margin:10px 0 4px}input,select,textarea{width:100%;min-height:40px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;background:#fff}textarea{min-height:100px}.total{font-size:1.4rem;font-weight:800}
         @media(max-width:900px){.grid,.card,.split{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase}}
       </style>
+      #{head_extra}
     </head>
     <body>
       <main>#{body}</main>
@@ -477,7 +532,31 @@ index_body = <<~HTML
     <p class="buttons"><a href="start-order.html">Build ready-to-pay issue</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
-File.write(File.join(DOCS, "index.html"), page_shell("Micro Offer Studio", index_body))
+site_schema = {
+  "@context" => "https://schema.org",
+  "@type" => "WebSite",
+  "name" => "Micro Offer Studio",
+  "url" => SITE_URL,
+  "description" => "Public previews, free tools, and paid-inquiry pages for generated digital products and productized micro-services.",
+  "potentialAction" => {
+    "@type" => "SearchAction",
+    "target" => "#{SITE_URL}search-index.json?q={search_term_string}",
+    "query-input" => "required name=search_term_string"
+  },
+  "hasPart" => (SERVICES.first(6) + PRODUCTS.values_at(5, 10, 4, 6)).compact.map do |offer|
+    {
+      "@type" => offer[:type] == "product" ? "Product" : "Service",
+      "name" => offer[:title],
+      "url" => absolute_url("#{offer[:slug]}.html"),
+      "offers" => {
+        "@type" => "Offer",
+        "priceCurrency" => "USD",
+        "price" => price_amount(offer)
+      }
+    }
+  end
+}
+File.write(File.join(DOCS, "index.html"), page_shell("Micro Offer Studio", index_body, jsonld_script(site_schema)))
 
 File.write(File.join(DOCS, "products.html"), page_shell("Products - Micro Offer Studio", <<~HTML))
   <header><p class="buttons"><a href="index.html">Home</a><a href="services.html">Services</a><a href="fulfillment.html">Fulfillment</a><a href="source-notes.html">Source notes</a></p><h1>Digital Products</h1><p class="muted">Preview-only public listings. Full ZIP bundles remain local until a seller checkout or paid transfer is configured.</p></header>
@@ -560,13 +639,27 @@ tool_cards = tool_rows.map do |row|
   HTML
 end.join
 
-File.write(File.join(DOCS, "tools.html"), page_shell("Free Tools - Micro Offer Studio", <<~HTML))
+tools_schema = {
+  "@context" => "https://schema.org",
+  "@type" => "ItemList",
+  "name" => "Micro Offer Studio free tools",
+  "url" => absolute_url("tools.html"),
+  "itemListElement" => tool_rows.map.with_index(1) do |row, idx|
+    {
+      "@type" => "ListItem",
+      "position" => idx,
+      "item" => tool_schema(row)
+    }
+  end
+}
+File.write(File.join(DOCS, "tools.html"), page_shell("Free Tools - Micro Offer Studio", <<~HTML, jsonld_script(tools_schema)))
   <header><p class="buttons"><a href="index.html">Home</a><a href="start-order.html">Start order</a><a href="tool_manifest.csv">Tool CSV</a><a href="proof.html">Proof rules</a></p><h1>Free Tools</h1><p class="muted">Small browser-only utilities that give buyers a useful preview and a direct path to a paid fixed-scope order. They do not upload files or process payment.</p></header>
   <section class="notice"><h2>Money boundary</h2><p>These tools are public lead magnets. They count as $0 until a real buyer opens a paid inquiry and external payment or payout proof exists.</p></section>
   <section class="grid">#{tool_cards}</section>
 HTML
 
-File.write(File.join(DOCS, "csv-cleaner-lite.html"), page_shell("CSV Cleaner Lite - Micro Offer Studio", <<~HTML))
+csv_tool_row = tool_rows.find { |row| row[:slug] == "csv-cleaner-lite" }
+File.write(File.join(DOCS, "csv-cleaner-lite.html"), page_shell("CSV Cleaner Lite - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(csv_tool_row))))
   <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(data_cleanup_offer))}">Start $125 cleanup sprint</a></p><h1>CSV Cleaner Lite</h1><p class="muted">Paste a small CSV sample to profile rows, columns, duplicate rows, blank cells, and a trimmed preview. Everything runs in the browser; nothing is uploaded.</p></header>
   <section class="notice"><h2>Private data rule</h2><p>Use public, synthetic, or low-risk snippets only. Do not paste secrets, payment data, medical/legal/financial private details, or files you are not authorized to process.</p></section>
   <section class="split">
@@ -666,7 +759,8 @@ Alice, alice@example.com ,active</textarea>
   </script>
 HTML
 
-File.write(File.join(DOCS, "website-audit-lite.html"), page_shell("Website Audit Lite - Micro Offer Studio", <<~HTML))
+audit_tool_row = tool_rows.find { |row| row[:slug] == "website-audit-lite" }
+File.write(File.join(DOCS, "website-audit-lite.html"), page_shell("Website Audit Lite - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(audit_tool_row))))
   <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(website_audit_offer))}">Start $150 audit</a></p><h1>Website Audit Lite</h1><p class="muted">Create a quick buyer-facing audit brief from public page observations. This tool does not fetch the site; enter only public observations you are allowed to share.</p></header>
   <section class="split">
     <div class="panel">
@@ -735,7 +829,8 @@ File.write(File.join(DOCS, "website-audit-lite.html"), page_shell("Website Audit
   </script>
 HTML
 
-File.write(File.join(DOCS, "workflow-blueprint-lite.html"), page_shell("Workflow Blueprint Lite - Micro Offer Studio", <<~HTML))
+blueprint_tool_row = tool_rows.find { |row| row[:slug] == "workflow-blueprint-lite" }
+File.write(File.join(DOCS, "workflow-blueprint-lite.html"), page_shell("Workflow Blueprint Lite - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(blueprint_tool_row))))
   <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(automation_offer))}">Start $100 blueprint</a></p><h1>Workflow Blueprint Lite</h1><p class="muted">Draft a small automation blueprint from a repetitive workflow. This creates an order-ready brief for the $100 Automation Blueprint service.</p></header>
   <section class="split">
     <div class="panel">
@@ -1052,7 +1147,7 @@ OFFERS.each do |offer|
       </aside>
     </section>
   HTML
-  File.write(File.join(DOCS, "#{offer[:slug]}.html"), page_shell("#{offer[:title]} - Micro Offer Studio", body))
+  File.write(File.join(DOCS, "#{offer[:slug]}.html"), page_shell("#{offer[:title]} - Micro Offer Studio", body, jsonld_script(offer_schema(offer))))
 end
 
 source_body = <<~HTML
@@ -1113,6 +1208,10 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Free tools: #{SITE_URL}tools.html
   - Tool manifest: #{SITE_URL}tool_manifest.csv
   - IndexNow status: #{SITE_URL}indexnow.html
+  - LLM summary: #{SITE_URL}llms.txt
+  - RSS feed: #{SITE_URL}feed.xml
+  - Search index: #{SITE_URL}search-index.json
+  - Structured data graph: #{SITE_URL}structured-data.json
   - First paid request board: #{ISSUE_BOARD_URL}
   - Pricing page: #{SITE_URL}pricing.html
   - Case studies: #{SITE_URL}case-studies.html
@@ -1312,6 +1411,112 @@ File.write(File.join(DOCS, "offers.json"), JSON.pretty_generate(OFFERS.map do |o
   offer.slice(:type, :title, :slug, :source_dir, :price, :description, :first_100, :preview_public, :zip_name, :zip_bytes, :zip_sha256)
 end))
 
+search_documents = OFFERS.map do |offer|
+  {
+    type: offer[:type],
+    title: offer[:title],
+    slug: offer[:slug],
+    url: absolute_url("#{offer[:slug]}.html"),
+    price: offer[:price],
+    amount_usd: price_amount(offer),
+    description: offer[:description],
+    first_100: offer[:first_100],
+    start_order_url: prefilled_issue_url(offer),
+    proof_rule: "Counts $0 until external buyer/payment proof exists."
+  }
+end + tool_rows.map do |row|
+  {
+    type: "free_tool",
+    title: row[:title],
+    slug: row[:slug],
+    url: absolute_url(row[:path]),
+    price: "$0",
+    amount_usd: 0,
+    description: "Browser-only lead tool for #{row[:service]}.",
+    first_100: row[:proof_rule],
+    start_order_url: row[:paid_path],
+    proof_rule: row[:proof_rule]
+  }
+end
+
+File.write(File.join(DOCS, "search-index.json"), JSON.pretty_generate(
+  generated_at_jst: GENERATED_AT,
+  site: SITE_URL,
+  money_status: "Confirmed earned money remains $0 until external proof exists.",
+  documents: search_documents
+))
+
+structured_graph = {
+  "@context" => "https://schema.org",
+  "@graph" => [
+    site_schema,
+    tools_schema,
+    *OFFERS.map { |offer| offer_schema(offer) },
+    *tool_rows.map { |row| tool_schema(row) }
+  ]
+}
+File.write(File.join(DOCS, "structured-data.json"), JSON.pretty_generate(structured_graph))
+
+llms_lines = [
+  "# Micro Offer Studio",
+  "",
+  "Public offer catalog for generated digital products, productized micro-services, and free browser-only lead tools.",
+  "Confirmed earned money remains $0 until external buyer/payment/payout proof exists.",
+  "",
+  "## Fastest paid paths",
+  "- Automation Blueprint: $100 service, one accepted paid order reaches $100. #{absolute_url("automation-blueprint.html")}",
+  "- Data Cleanup Sprint: $125 service, one accepted paid order clears $100. #{absolute_url("data-cleanup-sprint.html")}",
+  "- Website Audit Microservice: $150 service, one accepted paid order clears $100. #{absolute_url("website-audit-microservice.html")}",
+  "",
+  "## Free tools that route to paid services",
+  *tool_rows.map { |row| "- #{row[:title]}: #{absolute_url(row[:path])} -> #{row[:service]} #{row[:price]}" },
+  "",
+  "## Machine-readable files",
+  "- Search index: #{absolute_url("search-index.json")}",
+  "- Structured data graph: #{absolute_url("structured-data.json")}",
+  "- RSS feed: #{absolute_url("feed.xml")}",
+  "- Sitemap: #{absolute_url("sitemap.xml")}",
+  "- Start order builder: #{absolute_url("start-order.html")}",
+  "",
+  "## Safety and proof boundary",
+  "Do not treat public pages, issue drafts, estimates, samples, traffic, or tool usage as earned money. Count only external payment, payout, refund, credit, funded order, or payable-balance proof."
+]
+File.write(File.join(DOCS, "llms.txt"), llms_lines.join("\n"))
+
+feed_items = (SERVICES.first(6) + tool_rows).map do |item|
+  if item.is_a?(Hash) && item.key?(:path)
+    title = item[:title]
+    link = absolute_url(item[:path])
+    description = "Free tool leading to #{item[:service]} at #{item[:price]}. #{item[:proof_rule]}"
+  else
+    title = item[:title]
+    link = absolute_url("#{item[:slug]}.html")
+    description = "#{item[:description]} #{item[:first_100]}"
+  end
+  <<~XML
+    <item>
+      <title>#{h(title)}</title>
+      <link>#{h(link)}</link>
+      <guid>#{h(link)}</guid>
+      <pubDate>#{Time.now.rfc2822}</pubDate>
+      <description>#{h(description)}</description>
+    </item>
+  XML
+end.join
+
+File.write(File.join(DOCS, "feed.xml"), <<~XML)
+  <?xml version="1.0" encoding="UTF-8"?>
+  <rss version="2.0">
+    <channel>
+      <title>Micro Offer Studio Updates</title>
+      <link>#{h(SITE_URL)}</link>
+      <description>Generated offers, tools, and paid-inquiry paths. Confirmed earned money remains $0 until external proof exists.</description>
+      <lastBuildDate>#{Time.now.rfc2822}</lastBuildDate>
+      #{feed_items}
+    </channel>
+  </rss>
+XML
+
 File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   generated_at_jst: GENERATED_AT,
   sample_pack: "micro-offer-studio-sample-pack.zip",
@@ -1321,7 +1526,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
