@@ -606,6 +606,7 @@ website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-micro
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
 local_seo_offer = OFFERS.find { |offer| offer[:slug] == "local-seo-gbp-audit" }
 client_intake_offer = OFFERS.find { |offer| offer[:slug] == "client-intake-and-sop-package" }
+career_offer = OFFERS.find { |offer| offer[:slug] == "resume-linkedin-interview-pack" }
 content_repurposing_offer = OFFERS.find { |offer| offer[:slug] == "content-repurposing-sprint" }
 technical_docs_offer = OFFERS.find { |offer| offer[:slug] == "technical-docs-cleanup" }
 pdf_extraction_offer = OFFERS.find { |offer| offer[:slug] == "pdf-table-extraction" }
@@ -661,6 +662,15 @@ tool_rows = [
     path: "client-intake-sop-builder.html",
     paid_path: prefilled_issue_url(client_intake_offer),
     proof_rule: "Counts $0 until a buyer requests the Client Intake and SOP Package and external payment proof exists."
+  },
+  {
+    slug: "career-packet-brief-builder",
+    title: "Career Packet Brief Builder",
+    service: career_offer[:title],
+    price: career_offer[:price],
+    path: "career-packet-brief-builder.html",
+    paid_path: prefilled_issue_url(career_offer),
+    proof_rule: "Counts $0 until a buyer requests the Resume / LinkedIn / Interview Pack and external payment proof exists."
   },
   {
     slug: "invoice-expense-snapshot",
@@ -1147,6 +1157,140 @@ do not store private files in public links</textarea>
       URL.revokeObjectURL(url);
     });
     buildSopBrief();
+  </script>
+HTML
+
+career_tool_row = tool_rows.find { |row| row[:slug] == "career-packet-brief-builder" }
+File.write(File.join(DOCS, "career-packet-brief-builder.html"), page_shell("Career Packet Brief Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(career_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(career_offer))}">Start $125 career packet</a></p><h1>Career Packet Brief Builder</h1><p class="muted">Turn truthful work-history facts into a scope-ready resume, LinkedIn, cover-letter, and interview-prep brief. Everything runs in the browser; this page does not submit applications, contact employers, log into accounts, or store personal data.</p></header>
+  <section class="notice"><h2>Truth and privacy boundary</h2><p>Use only facts the client can truthfully verify. Do not fabricate credentials, employers, dates, degrees, certifications, metrics, references, endorsements, work authorization, security clearance, portfolio ownership, or job outcomes. Do not paste sensitive identifiers, full addresses, private references, salary history, protected-class details, medical/legal/financial private information, or job-account credentials. The client must approve every claim and submit any application themselves.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Career facts</h2>
+      <label for="targetRole">Target role</label><input id="targetRole" value="operations coordinator">
+      <label for="targetIndustry">Target industry</label><input id="targetIndustry" value="health and wellness services">
+      <label for="experienceFacts">Verified work history and projects</label><textarea id="experienceFacts">coordinated weekly client scheduling for a 12-person team
+maintained spreadsheet tracker for 200+ appointments per month
+prepared onboarding checklist for new contractors
+supported customer email triage during seasonal campaign</textarea>
+      <label for="metrics">Verified metrics or evidence</label><textarea id="metrics">reduced missed appointment follow-ups by 18%
+handled 40-60 customer emails per week
+kept contractor onboarding checklist current for 8 new hires</textarea>
+      <label for="jobPostingKeywords">Target posting keywords</label><textarea id="jobPostingKeywords">scheduling
+CRM
+client communication
+process documentation
+cross-functional coordination</textarea>
+      <label for="constraints">Constraints and claims to avoid</label><textarea id="constraints">do not claim management title
+do not claim Salesforce certification
+avoid salary details
+client does not want relocation roles</textarea>
+      <label for="storyPrompts">Interview stories or situations</label><textarea id="storyPrompts">solved a scheduling conflict between two departments
+improved a handoff checklist after repeated missing fields
+handled an upset client and escalated correctly</textarea>
+      <p class="buttons"><a href="#" id="careerBuildBtn">Build career packet brief</a><a href="#" id="careerDownloadBtn">Download brief</a><a href="#{h(prefilled_issue_url(career_offer))}" id="careerOrderBtn">Start paid career packet</a></p>
+      <div class="copybox" id="careerOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid service</span><strong>Resume / LinkedIn / Interview Pack - $125</strong></div>
+      <div class="fact"><span>First $100</span><strong>One paid career packet clears $100.</strong></div>
+      <div class="fact"><span>Client approval</span><strong>Every claim must be truthful and client-approved before use.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function careerLines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function buildCareerBrief(){
+      const targetRole = document.getElementById('targetRole').value.trim();
+      const targetIndustry = document.getElementById('targetIndustry').value.trim();
+      const facts = careerLines('experienceFacts');
+      const metrics = careerLines('metrics');
+      const keywords = careerLines('jobPostingKeywords');
+      const constraints = careerLines('constraints');
+      const stories = careerLines('storyPrompts');
+      const primaryKeyword = keywords[0] || 'target role';
+      const brief = [
+        'Career Packet Brief',
+        '',
+        'Target role: ' + (targetRole || '[client to provide]'),
+        'Target industry: ' + (targetIndustry || '[client to provide]'),
+        '',
+        'Truth audit:',
+        '1. Client must approve every employer, title, date, degree, certification, metric, tool, portfolio item, and claim before use.',
+        '2. Missing metrics must stay qualitative; do not invent numbers.',
+        '3. Applications, LinkedIn updates, profile messages, and employer contacts are client-only actions.',
+        '',
+        'Resume bullet map:',
+        ...(facts.length ? facts.map((fact, i) => {
+          const metric = metrics[i % Math.max(metrics.length, 1)] || 'verified outcome or scope';
+          return (i + 1) + '. ' + fact + ' -> Draft bullet: Improved ' + primaryKeyword + ' by ' + metric + ' while supporting ' + (targetRole || 'target-role') + ' responsibilities. Client must verify wording.';
+        }) : ['1. [add truthful work-history fact] -> Draft only after client verifies evidence']),
+        '',
+        'LinkedIn headline/about draft:',
+        'Headline: ' + (targetRole || '[target role]') + ' | ' + (primaryKeyword || 'process support') + ' | ' + (targetIndustry || '[target industry]'),
+        'About: I help teams stay organized through clear communication, reliable follow-through, and documented processes. Current target: ' + (targetRole || '[target role]') + ' roles in ' + (targetIndustry || '[target industry]') + '. Claims and metrics must be verified by the client before publishing.',
+        '',
+        'Cover letter outline:',
+        '1. Name the target role and why the verified experience fits.',
+        '2. Use one evidence-backed accomplishment from the resume bullet map.',
+        '3. Connect one target posting keyword to a real project or responsibility.',
+        '4. Close with a concise interview request. Client submits only after review.',
+        '',
+        'Keyword alignment map:',
+        ...(keywords.length ? keywords.map((keyword, i) => (i + 1) + '. ' + keyword + ' - map to a truthful resume bullet, LinkedIn phrase, or interview story') : ['1. [add target posting keyword]']),
+        '',
+        'Interview prep prompts:',
+        ...(stories.length ? stories.map((story, i) => (i + 1) + '. Situation: ' + story + ' | Task/Action/Result: client fills with truthful details and verified outcome') : ['1. [add truthful interview story]']),
+        '',
+        'Claims to avoid:',
+        ...(constraints.length ? constraints.map((item, i) => (i + 1) + '. ' + item) : ['1. Do not invent credentials, metrics, employment, or outcomes.']),
+        '',
+        'Paid next step:',
+        'Resume / LinkedIn / Interview Pack ($125): resume structure and bullet rewrite, LinkedIn headline/about draft, one role-targeted cover letter, interview story prep worksheet, and keyword alignment map.',
+        '',
+        'Proof rule: count $0 until buyer requests the Resume / LinkedIn / Interview Pack and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('careerOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Resume / LinkedIn / Interview Pack',
+        'Listed price: $125',
+        'Tool source: #{SITE_URL}career-packet-brief-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Build a truthful resume, LinkedIn, cover-letter, keyword, and interview-prep packet from client-approved work-history facts.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Resume structure/bullets, LinkedIn headline/about draft, cover letter, keyword map, and interview worksheet accepted by buyer.',
+        '',
+        'Safety confirmation:',
+        'Buyer confirms all work-history facts, dates, credentials, metrics, projects, and target role details are truthful and approved. No fake credentials, ghost applications, account login, sensitive identifiers, or employer contact will be requested here.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Resume / LinkedIn / Interview Pack', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('careerOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return brief;
+    }
+    ['targetRole','targetIndustry','experienceFacts','metrics','jobPostingKeywords','constraints','storyPrompts'].forEach(id => document.getElementById(id).addEventListener('input', buildCareerBrief));
+    document.getElementById('careerBuildBtn').addEventListener('click', event => { event.preventDefault(); buildCareerBrief(); });
+    document.getElementById('careerDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const brief = buildCareerBrief();
+      const blob = new Blob([brief], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'career-packet-brief.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildCareerBrief();
   </script>
 HTML
 
@@ -2975,7 +3119,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
