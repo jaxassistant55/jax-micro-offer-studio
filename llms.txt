@@ -40,6 +40,11 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 - Mini Course Workbook Preview Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook-preview-builder.html -> Mini Course Workbook $29
 - JSON Schema Fixture Pack Preview Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack-preview-builder.html -> JSON Schema Fixture Pack $15
 
+## Standalone GitHub lead repositories
+- Workflow Tracker Dashboard Starter: https://github.com/jaxassistant55/workflow-tracker-dashboard-starter with preview https://jaxassistant55.github.io/workflow-tracker-dashboard-starter/demo/ and inquiry template https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=paid-inquiry.md
+- Static Service Site Starter: https://github.com/jaxassistant55/static-service-site-starter with preview https://jaxassistant55.github.io/static-service-site-starter/demo/ and inquiry template https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=paid-inquiry.md
+- Browser Extension Template Preview: https://github.com/jaxassistant55/browser-extension-template-preview with preview https://jaxassistant55.github.io/browser-extension-template-preview/sample/popup.html and inquiry template https://github.com/jaxassistant55/browser-extension-template-preview/issues/new?template=paid-inquiry.md
+
 ## Machine-readable files
 - Search index: https://jaxassistant55.github.io/jax-micro-offer-studio/search-index.json
 - Structured data graph: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-data.json
