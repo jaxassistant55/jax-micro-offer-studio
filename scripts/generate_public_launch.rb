@@ -605,6 +605,7 @@ data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint"
 website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
 local_seo_offer = OFFERS.find { |offer| offer[:slug] == "local-seo-gbp-audit" }
+client_intake_offer = OFFERS.find { |offer| offer[:slug] == "client-intake-and-sop-package" }
 content_repurposing_offer = OFFERS.find { |offer| offer[:slug] == "content-repurposing-sprint" }
 technical_docs_offer = OFFERS.find { |offer| offer[:slug] == "technical-docs-cleanup" }
 pdf_extraction_offer = OFFERS.find { |offer| offer[:slug] == "pdf-table-extraction" }
@@ -651,6 +652,15 @@ tool_rows = [
     path: "local-seo-gbp-brief-builder.html",
     paid_path: prefilled_issue_url(local_seo_offer),
     proof_rule: "Counts $0 until a buyer requests the Local SEO / GBP Audit and external payment proof exists."
+  },
+  {
+    slug: "client-intake-sop-builder",
+    title: "Client Intake/SOP Builder",
+    service: client_intake_offer[:title],
+    price: client_intake_offer[:price],
+    path: "client-intake-sop-builder.html",
+    paid_path: prefilled_issue_url(client_intake_offer),
+    proof_rule: "Counts $0 until a buyer requests the Client Intake and SOP Package and external payment proof exists."
   },
   {
     slug: "invoice-expense-snapshot",
@@ -998,6 +1008,145 @@ unclear quote request CTA</textarea>
       URL.revokeObjectURL(url);
     });
     buildLocalSeoBrief();
+  </script>
+HTML
+
+client_intake_tool_row = tool_rows.find { |row| row[:slug] == "client-intake-sop-builder" }
+File.write(File.join(DOCS, "client-intake-sop-builder.html"), page_shell("Client Intake/SOP Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(client_intake_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(client_intake_offer))}">Start $125 intake/SOP package</a></p><h1>Client Intake/SOP Builder</h1><p class="muted">Turn one repeatable service workflow into a scope-ready intake question bank, SOP outline, delivery checklist, and confirmation email draft. Everything runs in the browser; this page does not create forms, store data, connect accounts, or publish anything.</p></header>
+  <section class="notice"><h2>Data and compliance boundary</h2><p>Use only public, synthetic, or buyer-approved workflow facts. Do not paste client private data, credentials, payment cards, tax IDs, medical/legal/financial regulated details, confidential contracts, or employee records. The buyer must approve required questions, data retention, consent language, compliance needs, form hosting, and where completed intake records will be stored.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Workflow facts</h2>
+      <label for="businessType">Business type</label><input id="businessType" value="small design studio">
+      <label for="workflowName">Workflow name</label><input id="workflowName" value="new client website refresh request">
+      <label for="trigger">Trigger</label><textarea id="trigger">new prospect asks for a website refresh quote</textarea>
+      <label for="requiredInputs">Required intake inputs</label><textarea id="requiredInputs">business name
+current website URL
+main goal
+deadline
+budget range
+decision maker
+brand assets available
+approval constraints</textarea>
+      <label for="steps">Delivery steps</label><textarea id="steps">review intake
+confirm scope and missing facts
+build first-page recommendations
+send quote or proposal
+capture approval
+archive final brief</textarea>
+      <label for="qualityChecks">Quality checks</label><textarea id="qualityChecks">scope matches request
+names, URLs, deadlines, and prices are verified
+private information removed from shared docs
+owner approval recorded
+handoff folder named consistently</textarea>
+      <label for="riskRules">Risk, permission, and stop rules</label><textarea id="riskRules">pause if buyer asks for regulated advice
+pause if credentials are requested
+pause if scope changes after quote
+pause if required approval is missing
+do not store private files in public links</textarea>
+      <label for="confirmationTone">Confirmation email tone</label><input id="confirmationTone" value="clear, concise, professional">
+      <p class="buttons"><a href="#" id="sopBuildBtn">Build intake/SOP brief</a><a href="#" id="sopDownloadBtn">Download brief</a><a href="#{h(prefilled_issue_url(client_intake_offer))}" id="sopOrderBtn">Start paid intake/SOP package</a></p>
+      <div class="copybox" id="sopOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid service</span><strong>Client Intake and SOP Package - $125</strong></div>
+      <div class="fact"><span>First $100</span><strong>One paid package clears $100.</strong></div>
+      <div class="fact"><span>Owner approval</span><strong>Buyer must approve fields, retention, compliance, and form hosting.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function sopLines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function buildSopBrief(){
+      const businessType = document.getElementById('businessType').value.trim();
+      const workflowName = document.getElementById('workflowName').value.trim();
+      const trigger = document.getElementById('trigger').value.trim();
+      const inputs = sopLines('requiredInputs');
+      const steps = sopLines('steps');
+      const checks = sopLines('qualityChecks');
+      const risks = sopLines('riskRules');
+      const tone = document.getElementById('confirmationTone').value.trim();
+      const brief = [
+        'Client Intake and SOP Brief',
+        '',
+        'Business type: ' + (businessType || '[buyer to provide]'),
+        'Workflow name: ' + (workflowName || '[buyer to provide]'),
+        'Trigger: ' + (trigger || '[buyer to provide]'),
+        '',
+        'Intake question bank:',
+        ...(inputs.length ? inputs.map((item, i) => (i + 1) + '. ' + item + ' - required unless buyer marks optional') : ['1. [add required intake input]']),
+        '',
+        'SOP outline:',
+        'Workflow name: ' + (workflowName || '[workflow]'),
+        'Trigger: ' + (trigger || '[trigger]'),
+        'Inputs: see question bank above.',
+        'Steps:',
+        ...(steps.length ? steps.map((item, i) => (i + 1) + '. ' + item) : ['1. Confirm intake is complete', '2. Run quality checklist', '3. Send for client approval']),
+        '',
+        'Delivery checklist:',
+        ...(checks.length ? checks.map((item, i) => (i + 1) + '. ' + item) : ['1. Scope matches request', '2. Owner approval recorded']),
+        '',
+        'Risk and stop rules:',
+        ...(risks.length ? risks.map((item, i) => (i + 1) + '. ' + item) : ['1. Pause if authorization or compliance requirements are unclear']),
+        '',
+        'Client-facing confirmation email draft:',
+        'Subject: Intake received for ' + (workflowName || '[workflow]'),
+        'Thanks for sending the intake details. I will review the scope, confirm any missing information, and reply with next steps before work starts. Please do not send passwords, payment details, regulated private information, or files you are not authorized to share. Tone target: ' + (tone || 'clear and professional') + '.',
+        '',
+        'Buyer approval checklist:',
+        '1. Required and optional fields approved by buyer.',
+        '2. Data retention, consent, storage location, and access rules approved by buyer.',
+        '3. Legal, compliance, privacy, and regulated-data requirements identified before form use.',
+        '4. Form hosting and notification owner selected by buyer.',
+        '5. Scope, delivery deadline, support expectations, and acceptance proof approved before paid work starts.',
+        '',
+        'Paid next step:',
+        'Client Intake and SOP Package ($125): intake question bank, SOP template for one workflow, delivery checklist, status dashboard, and client-facing confirmation email draft.',
+        '',
+        'Proof rule: count $0 until buyer requests the Client Intake and SOP Package and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('sopOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Client Intake and SOP Package',
+        'Listed price: $125',
+        'Tool source: #{SITE_URL}client-intake-sop-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Build a client intake question bank, SOP outline, delivery checklist, status dashboard, and confirmation email draft for one buyer-approved workflow.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Intake questions, SOP, checklist, dashboard, and confirmation email draft accepted by buyer.',
+        '',
+        'Safety confirmation:',
+        'Buyer confirms required fields, retention, privacy/compliance needs, form hosting, and workflow facts are authorized and approved. No credentials, payment cards, tax IDs, regulated private details, or confidential client records will be posted publicly.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Client Intake and SOP Package', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('sopOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return brief;
+    }
+    ['businessType','workflowName','trigger','requiredInputs','steps','qualityChecks','riskRules','confirmationTone'].forEach(id => document.getElementById(id).addEventListener('input', buildSopBrief));
+    document.getElementById('sopBuildBtn').addEventListener('click', event => { event.preventDefault(); buildSopBrief(); });
+    document.getElementById('sopDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const brief = buildSopBrief();
+      const blob = new Blob([brief], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'client-intake-sop-brief.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildSopBrief();
   </script>
 HTML
 
@@ -2826,7 +2975,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
