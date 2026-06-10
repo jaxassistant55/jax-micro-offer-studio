@@ -170,9 +170,15 @@ OFFERS.each do |offer|
   offer[:zip_sha256] = Digest::SHA256.file(zip_path).hexdigest
 end
 
+ORDER_BOARDS_PATH = File.join(LAUNCH_ROOT, "order_boards.csv")
+ORDER_BOARDS = File.exist?(ORDER_BOARDS_PATH) ? CSV.read(ORDER_BOARDS_PATH, headers: true).map(&:to_h) : []
+PROOF_MONITOR_PATH = File.join(LAUNCH_ROOT, "proof_monitor.csv")
+PROOF_MONITOR = File.exist?(PROOF_MONITOR_PATH) ? CSV.read(PROOF_MONITOR_PATH, headers: true).map(&:to_h) : []
+
 FileUtils.rm_rf(DOCS)
 FileUtils.mkdir_p(File.join(DOCS, "assets", "covers"))
 FileUtils.mkdir_p(File.join(DOCS, "previews"))
+FileUtils.mkdir_p(File.join(DOCS, "samples"))
 FileUtils.mkdir_p(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE"))
 
 def card_html(offer)
@@ -259,6 +265,109 @@ def share_rows(offers)
   end.join
 end
 
+def order_board_rows(rows)
+  rows.map do |row|
+    <<~HTML
+      <tr>
+        <td data-label="Issue"><a href="#{h(row["issue_url"])}">##{h(row["issue_number"])}</a></td>
+        <td data-label="Offer"><a href="#{h(row["detail_url"])}">#{h(row["title"])}</a></td>
+        <td data-label="Type">#{h(row["type"])}</td>
+        <td data-label="Price">#{h(row["price"])}</td>
+        <td data-label="Path to $100">#{h(row["first_100_path"])}</td>
+        <td data-label="State">#{h(row["state"])}</td>
+        <td data-label="Comments">#{h(row["comments"])}</td>
+      </tr>
+    HTML
+  end.join
+end
+
+def proof_monitor_rows(rows)
+  rows.map do |row|
+    <<~HTML
+      <tr>
+        <td data-label="Issue"><a href="#{h(row["issue_url"])}">##{h(row["issue_number"])}</a></td>
+        <td data-label="Kind">#{h(row["kind"])}</td>
+        <td data-label="Title">#{h(row["title"])}</td>
+        <td data-label="State">#{h(row["state"])}</td>
+        <td data-label="Comments">#{h(row["comments"])}</td>
+        <td data-label="Proof status">#{h(row["proof_status"])}</td>
+        <td data-label="Money">#{h(row["money_confirmed_usd"])}</td>
+      </tr>
+    HTML
+  end.join
+end
+
+def write_sample_pack(offers)
+  samples_dir = File.join(DOCS, "samples")
+  FileUtils.mkdir_p(samples_dir)
+  sample_files = []
+
+  sample_files << ["README.md", <<~MD]
+    # Micro Offer Studio Sample Pack
+
+    This free sample pack demonstrates the type of public, low-risk material available from Micro Offer Studio. It is not the full paid product bundle and is not proof of earnings.
+
+    Full fulfillment ledger: #{SITE_URL}fulfillment.html
+    First paid request board: #{ISSUE_BOARD_URL}
+  MD
+
+  sample_files << ["pricing_sample.csv", CSV.generate do |csv|
+    csv << %w[type title price first_100_path detail_url]
+    offers.first(10).each do |offer|
+      csv << [offer[:type], offer[:title], offer[:price], offer[:first_100], "#{SITE_URL}#{offer[:slug]}.html"]
+    end
+  end]
+
+  sample_files << ["proof_rules_sample.md", <<~MD]
+    # Proof Rules Sample
+
+    Count money only when external proof exists:
+
+    - paid order
+    - cleared invoice
+    - funded milestone
+    - payable balance
+    - posted refund or credit
+    - next-bill reduction
+
+    Do not count public pages, issues, estimates, draft listings, unaccepted work, or pending requests.
+  MD
+
+  sample_files << ["buyer_brief_template.md", <<~MD]
+    # Buyer Brief Template
+
+    Offer:
+    Budget/payment route:
+    Deadline:
+    Public URL or authorized input:
+    Acceptance proof:
+    Delivery preference:
+
+    Do not include passwords, payment cards, tax identifiers, regulated private information, or files you are not authorized to share.
+  MD
+
+  sample_files.each do |name, content|
+    File.write(File.join(samples_dir, name), content)
+  end
+
+  zip_path = File.join(DOCS, "micro-offer-studio-sample-pack.zip")
+  FileUtils.rm_f(zip_path)
+  sample_root = File.join(samples_dir, "micro-offer-studio-sample-pack")
+  FileUtils.rm_rf(sample_root)
+  FileUtils.mkdir_p(sample_root)
+  sample_files.each do |name, _|
+    FileUtils.cp(File.join(samples_dir, name), File.join(sample_root, name))
+  end
+  system("zip", "-qr", zip_path, "micro-offer-studio-sample-pack", chdir: samples_dir) || raise("failed to create sample pack")
+
+  {
+    path: zip_path,
+    bytes: File.size(zip_path),
+    sha256: Digest::SHA256.file(zip_path).hexdigest,
+    files: sample_files.map(&:first)
+  }
+end
+
 def page_shell(title, body)
   description = "Public previews and paid-inquiry pages for generated digital products and productized micro-services."
   <<~HTML
@@ -299,9 +408,11 @@ OFFERS.each do |offer|
   end
 end
 
+sample_pack = write_sample_pack(OFFERS)
+
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="case-studies.html">Case studies</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -318,7 +429,7 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 File.write(File.join(DOCS, "index.html"), page_shell("Micro Offer Studio", index_body))
@@ -342,6 +453,42 @@ File.write(File.join(DOCS, "case-studies.html"), page_shell("Case Studies - Micr
   <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a></p><h1>Case Studies And Previews</h1><p class="muted">Selected public previews and sample outputs from the prepared work. These demonstrate scope and quality without exposing private buyer files or full paid ZIP bundles.</p></header>
   <section class="grid">#{case_study_cards(OFFERS)}</section>
 HTML
+
+File.write(File.join(DOCS, "samples.html"), page_shell("Samples - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="case-studies.html">Case studies</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a></p><h1>Samples</h1><p class="muted">Free sample files that demonstrate format and proof discipline without giving away full paid bundles.</p></header>
+  <section class="notice"><h2>Sample boundary</h2><p>The sample ZIP is public and free. It is not a paid product bundle and is not proof of earnings. Full bundles remain local until accepted scope and payment/proof exist.</p></section>
+  <section class="panel"><h2>Download</h2><p><strong>Sample ZIP:</strong> <a href="micro-offer-studio-sample-pack.zip">micro-offer-studio-sample-pack.zip</a></p><p><strong>Size:</strong> #{sample_pack[:bytes]} bytes</p><p><strong>SHA-256:</strong> <code>#{h(sample_pack[:sha256])}</code></p><p><strong>Files:</strong> #{h(sample_pack[:files].join(", "))}</p></section>
+  <section class="grid">
+    <article class="panel"><h2>What it proves</h2><p>The sample shows offer table format, buyer brief fields, and proof rules. It helps a buyer decide whether to open a paid inquiry.</p></article>
+    <article class="panel"><h2>What it does not include</h2><p>No full paid product ZIP, no private buyer data, no credentials, no payment setup, and no claim that money has been earned.</p></article>
+  </section>
+HTML
+
+if ORDER_BOARDS.any?
+  FileUtils.cp(ORDER_BOARDS_PATH, File.join(DOCS, "order_boards.csv"))
+  File.write(File.join(DOCS, "order-boards.html"), page_shell("Order Boards - Micro Offer Studio", <<~HTML))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a><a href="order_boards.csv">CSV</a></p><h1>Focused Order Boards</h1><p class="muted">Specific public issue threads for the fastest $100 routes. These are owned-repo order boards, not third-party outreach. Money still requires external buyer/payment proof.</p></header>
+    <section class="notice"><h2>Current money status</h2><p>All listed boards are public inquiry surfaces. They count as $0 until a buyer comments, scope is accepted, and payment/payout proof exists.</p></section>
+    <section><table><thead><tr><th>Issue</th><th>Offer</th><th>Type</th><th>Price</th><th>Path to $100</th><th>State</th><th>Comments</th></tr></thead><tbody>#{order_board_rows(ORDER_BOARDS)}</tbody></table></section>
+  HTML
+else
+  File.write(File.join(DOCS, "order-boards.html"), page_shell("Order Boards - Micro Offer Studio", <<~HTML))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a></p><h1>Focused Order Boards</h1><p class="muted">No focused order-board issues have been generated yet.</p></header>
+  HTML
+end
+
+if PROOF_MONITOR.any?
+  FileUtils.cp(PROOF_MONITOR_PATH, File.join(DOCS, "proof_monitor.csv"))
+  File.write(File.join(DOCS, "proof-monitor.html"), page_shell("Proof Monitor - Micro Offer Studio", <<~HTML))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="order-boards.html">Order boards</a><a href="proof.html">Proof rules</a><a href="proof_monitor.csv">CSV</a></p><h1>Proof Monitor</h1><p class="muted">Current issue-board state and conservative money status. This monitor does not infer income from public pages, issues, or comments.</p></header>
+    <section class="notice"><h2>Confirmed money: $0</h2><p>Every monitored row stays at $0 until external paid order, cleared invoice, funded milestone, payable balance, posted refund/credit, or equivalent proof exists.</p></section>
+    <section><table><thead><tr><th>Issue</th><th>Kind</th><th>Title</th><th>State</th><th>Comments</th><th>Proof status</th><th>Money</th></tr></thead><tbody>#{proof_monitor_rows(PROOF_MONITOR)}</tbody></table></section>
+  HTML
+else
+  File.write(File.join(DOCS, "proof-monitor.html"), page_shell("Proof Monitor - Micro Offer Studio", <<~HTML))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="proof.html">Proof rules</a></p><h1>Proof Monitor</h1><p class="muted">No proof monitor rows have been generated yet.</p></header>
+  HTML
+end
 
 File.write(File.join(DOCS, "fulfillment.html"), page_shell("Fulfillment - Micro Offer Studio", <<~HTML))
   <header><p class="buttons"><a href="index.html">Home</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="proof.html">Proof rules</a></p><h1>Fulfillment Ledger</h1><p class="muted">This page shows what is ready to deliver after an external paid request. Paid bundles are not uploaded publicly; checksums identify the local deliverable that can be transferred after payment or buyer authorization.</p></header>
@@ -496,6 +643,9 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - First paid request board: #{ISSUE_BOARD_URL}
   - Pricing page: #{SITE_URL}pricing.html
   - Case studies: #{SITE_URL}case-studies.html
+  - Sample pack: #{SITE_URL}micro-offer-studio-sample-pack.zip
+  - Focused order boards: #{SITE_URL}order-boards.html
+  - Proof monitor: #{SITE_URL}proof-monitor.html
   - Buyer FAQ: #{SITE_URL}buyer-faq.html
   - Share kit: #{SITE_URL}share-kit.html
   - Offers: #{PRODUCTS.length} digital products and #{SERVICES.length} productized services
@@ -656,7 +806,16 @@ File.write(File.join(DOCS, "offers.json"), JSON.pretty_generate(OFFERS.map do |o
   offer.slice(:type, :title, :slug, :source_dir, :price, :description, :first_100, :preview_public, :zip_name, :zip_bytes, :zip_sha256)
 end))
 
-urls = ["", "products.html", "services.html", "pricing.html", "case-studies.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
+  generated_at_jst: GENERATED_AT,
+  sample_pack: "micro-offer-studio-sample-pack.zip",
+  bytes: sample_pack[:bytes],
+  sha256: sample_pack[:sha256],
+  files: sample_pack[:files],
+  boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
+}))
+
+urls = ["", "products.html", "services.html", "pricing.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
