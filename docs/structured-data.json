@@ -184,6 +184,63 @@
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
+            "name": "AI Workflow Tracker Brief Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-brief-builder.html",
+            "description": "Free browser-only lead tool for AI Workflow Tracker Sprint.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-brief-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Static Demo Site Brief Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-brief-builder.html",
+            "description": "Free browser-only lead tool for Static Demo Site Customization.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-brief-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Quote Estimator Scope Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/quote-estimator-scope-builder.html",
+            "description": "Free browser-only lead tool for Niche Quote Estimator.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/quote-estimator-scope-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
             "name": "Local SEO/GBP Brief Builder",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Any modern browser",
@@ -199,7 +256,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 8,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -218,7 +275,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 9,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -237,7 +294,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 10,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -256,7 +313,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 11,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -275,7 +332,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 9,
+          "position": 12,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -294,7 +351,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 10,
+          "position": 13,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -313,7 +370,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 11,
+          "position": 14,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -332,7 +389,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 12,
+          "position": 15,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -351,7 +408,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 13,
+          "position": 16,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -370,7 +427,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 14,
+          "position": 17,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -389,7 +446,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 15,
+          "position": 18,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -1021,6 +1078,51 @@
         "priceCurrency": "USD",
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/workflow-blueprint-lite.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI Workflow Tracker Brief Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-brief-builder.html",
+      "description": "Free browser-only lead tool for AI Workflow Tracker Sprint.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-brief-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Static Demo Site Brief Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-brief-builder.html",
+      "description": "Free browser-only lead tool for Static Demo Site Customization.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-brief-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Quote Estimator Scope Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/quote-estimator-scope-builder.html",
+      "description": "Free browser-only lead tool for Niche Quote Estimator.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/quote-estimator-scope-builder.html"
       }
     },
     {

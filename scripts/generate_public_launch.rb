@@ -604,6 +604,9 @@ HTML
 data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint" }
 website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
+ai_workflow_offer = OFFERS.find { |offer| offer[:slug] == "ai-workflow-tracker-sprint" }
+static_demo_offer = OFFERS.find { |offer| offer[:slug] == "static-demo-site-customization" }
+niche_estimator_offer = OFFERS.find { |offer| offer[:slug] == "niche-quote-estimator" }
 local_seo_offer = OFFERS.find { |offer| offer[:slug] == "local-seo-gbp-audit" }
 client_intake_offer = OFFERS.find { |offer| offer[:slug] == "client-intake-and-sop-package" }
 career_offer = OFFERS.find { |offer| offer[:slug] == "resume-linkedin-interview-pack" }
@@ -644,6 +647,33 @@ tool_rows = [
     path: "workflow-blueprint-lite.html",
     paid_path: prefilled_issue_url(automation_offer),
     proof_rule: "Counts $0 until a buyer requests the full Automation Blueprint and external payment proof exists."
+  },
+  {
+    slug: "ai-workflow-tracker-brief-builder",
+    title: "AI Workflow Tracker Brief Builder",
+    service: ai_workflow_offer[:title],
+    price: ai_workflow_offer[:price],
+    path: "ai-workflow-tracker-brief-builder.html",
+    paid_path: prefilled_issue_url(ai_workflow_offer),
+    proof_rule: "Counts $0 until a buyer requests the AI Workflow Tracker Sprint and external payment proof exists."
+  },
+  {
+    slug: "static-demo-site-brief-builder",
+    title: "Static Demo Site Brief Builder",
+    service: static_demo_offer[:title],
+    price: static_demo_offer[:price],
+    path: "static-demo-site-brief-builder.html",
+    paid_path: prefilled_issue_url(static_demo_offer),
+    proof_rule: "Counts $0 until a buyer requests the Static Demo Site Customization and external payment proof exists."
+  },
+  {
+    slug: "quote-estimator-scope-builder",
+    title: "Quote Estimator Scope Builder",
+    service: niche_estimator_offer[:title],
+    price: niche_estimator_offer[:price],
+    path: "quote-estimator-scope-builder.html",
+    paid_path: prefilled_issue_url(niche_estimator_offer),
+    proof_rule: "Counts $0 until a buyer requests the Niche Quote Estimator and external payment proof exists."
   },
   {
     slug: "local-seo-gbp-brief-builder",
@@ -790,6 +820,169 @@ File.write(File.join(DOCS, "tools.html"), page_shell("Free Tools - Micro Offer S
   <section class="notice"><h2>Money boundary</h2><p>These tools are public lead magnets. They count as $0 until a real buyer opens a paid inquiry and external payment or payout proof exists.</p></section>
   <section class="grid">#{tool_cards}</section>
 HTML
+
+scope_tool_specs = [
+  {
+    slug: "ai-workflow-tracker-brief-builder",
+    title: "AI Workflow Tracker Brief Builder",
+    offer: ai_workflow_offer,
+    intro: "Turn workflow notes into a scope-ready CSV tracker and dashboard brief for the $150 AI Workflow Tracker Sprint.",
+    boundary: "Use only public, synthetic, or buyer-approved workflow notes. Do not paste private customer records, credentials, payment data, regulated records, or files you are not authorized to process.",
+    fields: [
+      { id: "workflowName", label: "Workflow name", value: "customer interview pipeline" },
+      { id: "fields", label: "Required fields", value: "lead name\nstatus\nowner\nnext action\npotential value\nlast contact date" },
+      { id: "statuses", label: "Statuses", value: "new\nactive\nblocked\ndone" },
+      { id: "sampleRows", label: "Starter rows or examples", value: "3 active interview leads\n2 blocked leads waiting on scheduling\n1 completed call needing notes" },
+      { id: "metrics", label: "Dashboard metrics", value: "total items\nactive items\nblocked items\npotential value" },
+      { id: "constraints", label: "Constraints and private data to avoid", value: "no CRM login\nno scraping\nno customer email addresses in public samples\nlocal files only" }
+    ],
+    sections: ["Tracker scope brief", "CSV schema draft", "Dashboard metrics", "Status filter plan", "Starter-row import notes", "Buyer questions", "Delivery checklist"],
+    proof_rule: "Count $0 until a buyer requests the AI Workflow Tracker Sprint and external payment proof exists."
+  },
+  {
+    slug: "static-demo-site-brief-builder",
+    title: "Static Demo Site Brief Builder",
+    offer: static_demo_offer,
+    intro: "Turn local-service business facts into a scope-ready one-page site brief for the $200 Static Demo Site Customization.",
+    boundary: "Use only buyer-approved business names, services, proof, images, and contact destinations. Do not imply endorsement, invent testimonials, publish a real business page, or use copyrighted assets without permission.",
+    fields: [
+      { id: "businessType", label: "Business type or niche", value: "home cleaning and organizing" },
+      { id: "sections", label: "Page sections", value: "hero\nservices\nprocess\nproof or FAQ\ncontact" },
+      { id: "services", label: "Service blocks", value: "standard visit\ndeep reset\nrecurring plan" },
+      { id: "cta", label: "CTA and contact route", value: "Request a quote\napproved contact email or form URL needed" },
+      { id: "proofAssets", label: "Proof, brand, and asset notes", value: "buyer-owned logo optional\nbuyer-approved photos required before publishing\nno fake reviews" },
+      { id: "constraints", label: "Constraints", value: "handoff only unless buyer approves host\nno payment processing\nno legal/medical/financial claims" }
+    ],
+    sections: ["Demo site customization brief", "Approved fact checklist", "Page section plan", "Service block map", "CTA and contact requirements", "Asset checklist", "Buyer approval gates"],
+    proof_rule: "Count $0 until a buyer requests Static Demo Site Customization and external payment proof exists."
+  },
+  {
+    slug: "quote-estimator-scope-builder",
+    title: "Quote Estimator Scope Builder",
+    offer: niche_estimator_offer,
+    intro: "Turn service pricing assumptions into a scope-ready calculator brief for the $150 Niche Quote Estimator.",
+    boundary: "Use only buyer-approved pricing assumptions. This is for non-binding estimates only, not legal, medical, tax, financial, insurance, or regulated advice.",
+    fields: [
+      { id: "serviceType", label: "Service type", value: "home cleaning quote estimator" },
+      { id: "inputs", label: "Estimator inputs", value: "rooms\nservice level\npets\ntravel zone" },
+      { id: "pricing", label: "Pricing assumptions", value: "$35 per room\n1.35x deep reset multiplier\n$15 pet add-on\n$20 outer zone add-on" },
+      { id: "rangeRule", label: "Estimate range rule", value: "show low/high range with 20% buffer\nround to nearest $5" },
+      { id: "disclaimer", label: "Disclaimer and approval notes", value: "non-binding estimate\nfinal quote depends on buyer review\nbuyer approves all numbers before publishing" },
+      { id: "constraints", label: "Constraints", value: "no payment processing\nno CRM integration\nno regulated estimates\nhandoff-only unless publishing is approved" }
+    ],
+    sections: ["Quote estimator scope brief", "Input map", "Pricing assumption table", "Estimate logic", "Disclaimer and approvals", "Delivery checklist", "Buyer questions"],
+    proof_rule: "Count $0 until a buyer requests the Niche Quote Estimator and external payment proof exists."
+  }
+]
+
+def write_scope_brief_tool(spec, tool_rows)
+  tool_row = tool_rows.find { |row| row[:slug] == spec[:slug] }
+  config = {
+    title: spec[:title],
+    service: spec[:offer][:title],
+    price: spec[:offer][:price],
+    sections: spec[:sections],
+    fields: spec[:fields],
+    proofRule: spec[:proof_rule],
+    paidPath: prefilled_issue_url(spec[:offer]),
+    toolUrl: absolute_url("#{spec[:slug]}.html")
+  }
+  fields_html = spec[:fields].map do |field|
+    %(<label for="#{h(field[:id])}">#{h(field[:label])}</label><textarea id="#{h(field[:id])}">#{h(field[:value])}</textarea>)
+  end.join("\n")
+
+  File.write(File.join(DOCS, "#{spec[:slug]}.html"), page_shell("#{spec[:title]} - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(tool_row))))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(spec[:offer]))}">Start #{h(spec[:offer][:price])} paid scope</a></p><h1>#{h(spec[:title])}</h1><p class="muted">#{h(spec[:intro])} Everything runs in the browser; nothing is uploaded or stored by this page.</p></header>
+    <section class="notice"><h2>Boundary</h2><p>#{h(spec[:boundary])}</p></section>
+    <section class="split">
+      <div class="panel">
+        <h2>Scope inputs</h2>
+        #{fields_html}
+        <p class="buttons"><a href="#" class="buildScopeBtn">Build scope brief</a><a href="#" class="downloadScopeBtn">Download brief</a><a href="#{h(prefilled_issue_url(spec[:offer]))}" class="paidScopeBtn">Start paid order</a></p>
+        <div class="copybox scopeOutput"></div>
+      </div>
+      <aside>
+        <div class="fact"><span>Paid service</span><strong>#{h(spec[:offer][:title])} - #{h(spec[:offer][:price])}</strong></div>
+        <div class="fact"><span>First $100</span><strong>One paid order clears $100.</strong></div>
+        <div class="fact"><span>Proof rule</span><strong>#{h(spec[:proof_rule])}</strong></div>
+        <div class="fact"><span>Privacy</span><strong>Browser-only; do not paste secrets or private records.</strong></div>
+      </aside>
+    </section>
+    <script>
+      const scopeConfig = #{JSON.generate(config)};
+      function lines(id){
+        return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+      }
+      function buildScopeBrief(){
+        const values = scopeConfig.fields.map(field => ({ label: field.label, value: document.getElementById(field.id).value.trim(), lines: lines(field.id) }));
+        const fieldBlocks = values.map(item => [item.label + ':', ...(item.lines.length ? item.lines.map((line, idx) => (idx + 1) + '. ' + line) : ['[buyer to provide]'])].join('\\n')).join('\\n\\n');
+        const brief = [
+          scopeConfig.sections[0],
+          '',
+          'Paid service: ' + scopeConfig.service + ' - ' + scopeConfig.price,
+          'Tool source: ' + scopeConfig.toolUrl,
+          '',
+          'Buyer-provided scope inputs:',
+          fieldBlocks,
+          '',
+          scopeConfig.sections[1] + ':',
+          '- Convert the approved inputs into the paid deliverable only after scope and payment are confirmed.',
+          '- Keep private buyer files out of public issues and public previews.',
+          '',
+          scopeConfig.sections[2] + ':',
+          '- Use the fields above as the initial acceptance checklist.',
+          '- Ask the buyer to mark anything that is missing, sensitive, or not approved for use.',
+          '',
+          scopeConfig.sections[3] + ':',
+          '- Paid work starts only after buyer acceptance, delivery expectations, and payment route are clear.',
+          '- Drafts, generated briefs, public issues, and page views count as $0.',
+          '',
+          'Paid next step:',
+          scopeConfig.service + ' (' + scopeConfig.price + ')',
+          '',
+          'Proof rule: ' + scopeConfig.proofRule
+        ].join('\\n');
+        document.querySelector('.scopeOutput').textContent = brief;
+        const issueBody = [
+          '## Ready-to-pay intake',
+          '',
+          'Offer: ' + scopeConfig.service,
+          'Listed price: ' + scopeConfig.price,
+          'Tool source: ' + scopeConfig.toolUrl,
+          '',
+          'Requested quantity or scope:',
+          brief,
+          '',
+          'Payment/proof route:',
+          '[buyer to fill]',
+          '',
+          'Acceptance proof:',
+          '[buyer to fill]',
+          '',
+          'Safety confirmation:',
+          'Buyer confirms the inputs are approved for this fixed-scope service and no secrets, payment data, credentials, or unauthorized private files are being posted publicly.'
+        ].join('\\n');
+        const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: ' + scopeConfig.service, labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+        document.querySelector('.paidScopeBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+        return brief;
+      }
+      document.querySelectorAll('textarea').forEach(el => el.addEventListener('input', buildScopeBrief));
+      document.querySelector('.buildScopeBtn').addEventListener('click', event => { event.preventDefault(); buildScopeBrief(); });
+      document.querySelector('.downloadScopeBtn').addEventListener('click', event => {
+        event.preventDefault();
+        const brief = buildScopeBrief();
+        const blob = new Blob([brief], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = scopeConfig.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.txt'; a.click();
+        URL.revokeObjectURL(url);
+      });
+      buildScopeBrief();
+    </script>
+  HTML
+end
+
+scope_tool_specs.each { |spec| write_scope_brief_tool(spec, tool_rows) }
 
 csv_tool_row = tool_rows.find { |row| row[:slug] == "csv-cleaner-lite" }
 File.write(File.join(DOCS, "csv-cleaner-lite.html"), page_shell("CSV Cleaner Lite - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(csv_tool_row))))
@@ -3119,7 +3312,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
