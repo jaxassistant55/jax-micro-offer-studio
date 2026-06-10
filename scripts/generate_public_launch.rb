@@ -604,6 +604,7 @@ HTML
 data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint" }
 website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
+local_seo_offer = OFFERS.find { |offer| offer[:slug] == "local-seo-gbp-audit" }
 content_repurposing_offer = OFFERS.find { |offer| offer[:slug] == "content-repurposing-sprint" }
 technical_docs_offer = OFFERS.find { |offer| offer[:slug] == "technical-docs-cleanup" }
 pdf_extraction_offer = OFFERS.find { |offer| offer[:slug] == "pdf-table-extraction" }
@@ -641,6 +642,15 @@ tool_rows = [
     path: "workflow-blueprint-lite.html",
     paid_path: prefilled_issue_url(automation_offer),
     proof_rule: "Counts $0 until a buyer requests the full Automation Blueprint and external payment proof exists."
+  },
+  {
+    slug: "local-seo-gbp-brief-builder",
+    title: "Local SEO/GBP Brief Builder",
+    service: local_seo_offer[:title],
+    price: local_seo_offer[:price],
+    path: "local-seo-gbp-brief-builder.html",
+    paid_path: prefilled_issue_url(local_seo_offer),
+    proof_rule: "Counts $0 until a buyer requests the Local SEO / GBP Audit and external payment proof exists."
   },
   {
     slug: "invoice-expense-snapshot",
@@ -859,6 +869,135 @@ Alice, alice@example.com ,active</textarea>
       URL.revokeObjectURL(url);
     });
     analyze();
+  </script>
+HTML
+
+local_seo_tool_row = tool_rows.find { |row| row[:slug] == "local-seo-gbp-brief-builder" }
+File.write(File.join(DOCS, "local-seo-gbp-brief-builder.html"), page_shell("Local SEO/GBP Brief Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(local_seo_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(local_seo_offer))}">Start $175 local SEO audit</a></p><h1>Local SEO/GBP Brief Builder</h1><p class="muted">Create a scope-ready public local SEO and Google Business Profile audit brief from buyer-approved business facts. Everything runs in the browser; this page does not log into, claim, edit, scrape private dashboards, or submit changes to any profile.</p></header>
+  <section class="notice"><h2>Profile and review boundary</h2><p>Use only public facts or details the business owner is authorized to share. Do not create fake reviews, review incentives, review gating, keyword stuffing, duplicate profiles, paid-ad claims, ranking guarantees, or edits to a Google Business Profile without the verified owner. Do not paste private customer data, login credentials, payment data, tax IDs, or precise non-public owner information.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Business facts</h2>
+      <label for="businessName">Business name</label><input id="businessName" value="Example Plumbing Co.">
+      <label for="category">Primary category or service</label><input id="category" value="residential plumber">
+      <label for="serviceArea">Address or service area</label><input id="serviceArea" value="Austin, TX service area">
+      <label for="websiteUrl">Public website or profile URL</label><input id="websiteUrl" value="https://example.com">
+      <label for="phoneHours">Phone, hours, and contact notes</label><textarea id="phoneHours">(555) 010-1234
+Mon-Fri 8am-6pm
+Emergency calls by appointment</textarea>
+      <label for="services">Services to verify</label><textarea id="services">water heater repair
+drain cleaning
+leak detection
+fixture installation</textarea>
+      <label for="citationRisks">Known citation or listing risks</label><textarea id="citationRisks">old phone number appears on one directory
+service area is inconsistent
+hours missing on public profile
+website footer uses old brand name</textarea>
+      <label for="reviewScenario">Review-response scenario</label><textarea id="reviewScenario">recent review mentions slow callback but positive repair quality</textarea>
+      <label for="landingPageGaps">Public landing-page gaps</label><textarea id="landingPageGaps">no city/service-area section
+no emergency service explanation
+weak proof section
+unclear quote request CTA</textarea>
+      <p class="buttons"><a href="#" id="localSeoBuildBtn">Build audit brief</a><a href="#" id="localSeoDownloadBtn">Download brief</a><a href="#{h(prefilled_issue_url(local_seo_offer))}" id="localSeoOrderBtn">Start paid local SEO audit</a></p>
+      <div class="copybox" id="localSeoOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid service</span><strong>Local SEO / GBP Audit - $175</strong></div>
+      <div class="fact"><span>First $100</span><strong>One paid audit clears $100.</strong></div>
+      <div class="fact"><span>Owner-only actions</span><strong>Profile claiming, edits, verification, and review replies require the business owner.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function localSeoLines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function buildLocalSeoBrief(){
+      const businessName = document.getElementById('businessName').value.trim();
+      const category = document.getElementById('category').value.trim();
+      const serviceArea = document.getElementById('serviceArea').value.trim();
+      const websiteUrl = document.getElementById('websiteUrl').value.trim();
+      const phoneHours = localSeoLines('phoneHours');
+      const services = localSeoLines('services');
+      const citationRisks = localSeoLines('citationRisks');
+      const reviewScenario = document.getElementById('reviewScenario').value.trim();
+      const landingPageGaps = localSeoLines('landingPageGaps');
+      const brief = [
+        'Local SEO / GBP Audit Brief',
+        '',
+        'Business: ' + (businessName || '[buyer to provide]'),
+        'Primary category/service: ' + (category || '[buyer to provide]'),
+        'Address or service area: ' + (serviceArea || '[buyer to provide]'),
+        'Public website/profile URL: ' + (websiteUrl || '[buyer to provide public URL]'),
+        '',
+        'Name, address, phone, hours check:',
+        ...(phoneHours.length ? phoneHours.map((item, i) => (i + 1) + '. ' + item + ' - verify against website, profile, and major citations') : ['1. [add public NAP/hours facts]']),
+        '',
+        'Services/categories to verify:',
+        ...(services.length ? services.map((item, i) => (i + 1) + '. ' + item + ' - map to profile category, service description, and landing page copy') : ['1. [add owner-approved services]']),
+        '',
+        'Citation cleanup queue:',
+        ...(citationRisks.length ? citationRisks.map((item, i) => (i + 1) + '. ' + item + ' - document source URL, current value, desired owner-approved value, and owner action needed') : ['1. No known citation risks entered; still check major public directories.']),
+        '',
+        'Review-response guidance:',
+        reviewScenario || '[add public, non-private review scenario]',
+        'Draft response rules: thank the reviewer, address the public issue briefly, avoid private details, avoid incentives, avoid arguing, and move sensitive follow-up to an owner-controlled support channel.',
+        '',
+        'Landing-page improvement queue:',
+        ...(landingPageGaps.length ? landingPageGaps.map((item, i) => (i + 1) + '. ' + item + ' - write owner-approved recommendation') : ['1. [add public page gaps]']),
+        '',
+        'Owner action checklist:',
+        '1. Verified owner confirms official business name, address/service area, phone, hours, categories, and services.',
+        '2. Owner approves any profile description, service snippets, photo suggestions, and review-response copy.',
+        '3. Owner claims, verifies, edits, or submits profile/listing corrections from their own account.',
+        '4. No fake reviews, incentives, review gating, duplicate profiles, keyword stuffing, scraping private dashboards, or ranking guarantees.',
+        '5. Save paid order, delivered audit, owner acceptance, and payout proof before counting money.',
+        '',
+        'Paid next step:',
+        'Local SEO / GBP Audit ($175): public profile/citation review, NAP and category consistency checklist, citation cleanup tracker, owner-approved update copy, service snippets, landing-page quick wins, and safe review-response templates.',
+        '',
+        'Proof rule: count $0 until buyer requests the Local SEO / GBP Audit and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('localSeoOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Local SEO / GBP Audit',
+        'Listed price: $175',
+        'Tool source: #{SITE_URL}local-seo-gbp-brief-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Public local SEO and Google Business Profile audit using buyer-approved business facts, citation checks, safe review-response guidance, and owner-action checklist.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Audit brief, citation tracker, update-copy suggestions, review-response templates, and owner-action list accepted by buyer.',
+        '',
+        'Safety confirmation:',
+        'Buyer confirms they are the business owner or authorized representative and will not request fake reviews, profile edits without owner approval, private dashboard scraping, keyword stuffing, or ranking guarantees.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Local SEO / GBP Audit', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('localSeoOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return brief;
+    }
+    ['businessName','category','serviceArea','websiteUrl','phoneHours','services','citationRisks','reviewScenario','landingPageGaps'].forEach(id => document.getElementById(id).addEventListener('input', buildLocalSeoBrief));
+    document.getElementById('localSeoBuildBtn').addEventListener('click', event => { event.preventDefault(); buildLocalSeoBrief(); });
+    document.getElementById('localSeoDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const brief = buildLocalSeoBrief();
+      const blob = new Blob([brief], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'local-seo-gbp-audit-brief.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildLocalSeoBrief();
   </script>
 HTML
 
@@ -2687,7 +2826,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
