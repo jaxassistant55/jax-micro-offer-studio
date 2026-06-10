@@ -222,6 +222,25 @@
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
+            "name": "Career Packet Brief Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/career-packet-brief-builder.html",
+            "description": "Free browser-only lead tool for Resume / LinkedIn / Interview Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/career-packet-brief-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
             "name": "Invoice/Expense Snapshot",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Any modern browser",
@@ -237,7 +256,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 8,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -256,7 +275,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 9,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -275,7 +294,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 9,
+          "position": 10,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -294,7 +313,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 10,
+          "position": 11,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -313,7 +332,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 11,
+          "position": 12,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -332,7 +351,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 12,
+          "position": 13,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -351,7 +370,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 13,
+          "position": 14,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -370,7 +389,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 14,
+          "position": 15,
           "item": {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
@@ -1032,6 +1051,21 @@
         "priceCurrency": "USD",
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/client-intake-sop-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Career Packet Brief Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/career-packet-brief-builder.html",
+      "description": "Free browser-only lead tool for Resume / LinkedIn / Interview Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/career-packet-brief-builder.html"
       }
     },
     {
