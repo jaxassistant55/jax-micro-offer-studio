@@ -353,5 +353,17 @@
     "zip_name": "resale-listing-research-kit.zip",
     "zip_bytes": 2752,
     "zip_sha256": "7fca73db5603a683bc93c9f35940970dc35ff921e4ae0bc835acc082cd467c71"
+  },
+  {
+    "type": "service",
+    "title": "Translation and Localization Draft Pack",
+    "slug": "translation-and-localization-draft-pack",
+    "source_dir": "non_bounty/translation_localization",
+    "price": "$100",
+    "description": "Review-ready localization intake, glossary notes, draft structure, locale choices, and QA checklist for up to 1,000 source words.",
+    "first_100": "One paid localization draft pack reaches $100.",
+    "zip_name": "translation-localization-kit.zip",
+    "zip_bytes": 2605,
+    "zip_sha256": "b202def5e6d30fc3994a6f1f8570db5dbd0b8d411182549b3211a54ad21a2542"
   }
 ]
