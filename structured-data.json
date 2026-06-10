@@ -215,6 +215,25 @@
               "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/prompt-workflow-brief-builder.html"
             }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Resale Listing Draft Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-draft-builder.html",
+            "description": "Free browser-only lead tool for Resale Listing and Price Research Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-draft-builder.html"
+            }
+          }
         }
       ]
     },
@@ -714,6 +733,25 @@
     },
     {
       "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Resale Listing and Price Research Pack",
+      "description": "Item-intake, photo checklist, comparable-price research template, listing drafts, pricing risk notes, and owner posting checklist for up to 10 owned items.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-and-price-research-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Resale+Listing+and+Price+Research+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Resale+Listing+and+Price+Research+Pack%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fresale-listing-and-price-research-pack.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "CSV Cleaner Lite",
       "applicationCategory": "BusinessApplication",
@@ -785,6 +823,21 @@
         "priceCurrency": "USD",
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/prompt-workflow-brief-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Resale Listing Draft Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-draft-builder.html",
+      "description": "Free browser-only lead tool for Resale Listing and Price Research Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-draft-builder.html"
       }
     }
   ]
