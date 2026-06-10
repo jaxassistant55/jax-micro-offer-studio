@@ -3560,7 +3560,9 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
 
 urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "github-leads.html", "github_lead_repos.csv", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 urls = (urls + product_preview_tool_rows.map { |row| row[:path] }).uniq
-indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
+site_indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
+github_pages_urls = GITHUB_LEADS.map { |row| row["pages_url"].to_s.strip }.reject(&:empty?).uniq
+indexnow_urls = (site_indexnow_urls + github_pages_urls).uniq
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
   indexnow_urls.each { |url| csv << [url] }
@@ -3577,14 +3579,14 @@ File.write(File.join(DOCS, "indexnow.html"), page_shell("IndexNow - Micro Offer 
   <section class="notice"><h2>Money boundary</h2><p>IndexNow submissions notify participating search engines about updated URLs. They do not guarantee indexing, traffic, buyer inquiries, payments, or payouts. Confirmed money remains $0 until external payment proof exists.</p></section>
   <section class="grid">
     <article class="panel"><h2>Verification key</h2><p><strong>Key file:</strong> <a href="#{h(INDEXNOW_KEY_LOCATION)}">#{h(INDEXNOW_KEY_FILE)}</a></p><p><strong>Key location:</strong> <code>#{h(INDEXNOW_KEY_LOCATION)}</code></p></article>
-    <article class="panel"><h2>Submitted URL set</h2><p><strong>URL count:</strong> #{indexnow_urls.length}</p><p><strong>Host:</strong> #{h(URI(SITE_URL).host)}</p><p><strong>Scope:</strong> URLs under <code>#{h(SITE_URL)}</code></p></article>
+    <article class="panel"><h2>Submitted URL set</h2><p><strong>URL count:</strong> #{indexnow_urls.length}</p><p><strong>Host:</strong> #{h(URI(SITE_URL).host)}</p><p><strong>Scope:</strong> Micro Offer Studio URLs plus same-host standalone GitHub Pages previews.</p></article>
   </section>
   <section><h2>High-priority URLs</h2><table><thead><tr><th>URL</th></tr></thead><tbody>#{indexnow_urls.first(20).map { |url| %(<tr><td data-label="URL"><a href="#{h(url)}">#{h(url)}</a></td></tr>) }.join}</tbody></table></section>
 HTML
 File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  #{urls.map { |path| "  <url><loc>#{h(URI.join(SITE_URL, path).to_s)}</loc></url>" }.join("\n")}
+  #{indexnow_urls.map { |url| "  <url><loc>#{h(url)}</loc></url>" }.join("\n")}
   </urlset>
 XML
 
