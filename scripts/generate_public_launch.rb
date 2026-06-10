@@ -454,7 +454,7 @@ sample_pack = write_sample_pack(OFFERS)
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -504,6 +504,305 @@ File.write(File.join(DOCS, "samples.html"), page_shell("Samples - Micro Offer St
     <article class="panel"><h2>What it proves</h2><p>The sample shows offer table format, buyer brief fields, and proof rules. It helps a buyer decide whether to open a paid inquiry.</p></article>
     <article class="panel"><h2>What it does not include</h2><p>No full paid product ZIP, no private buyer data, no credentials, no payment setup, and no claim that money has been earned.</p></article>
   </section>
+HTML
+
+data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint" }
+website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
+automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
+
+tool_rows = [
+  {
+    slug: "csv-cleaner-lite",
+    title: "CSV Cleaner Lite",
+    service: data_cleanup_offer[:title],
+    price: data_cleanup_offer[:price],
+    path: "csv-cleaner-lite.html",
+    paid_path: prefilled_issue_url(data_cleanup_offer),
+    proof_rule: "Counts $0 until a buyer requests the full Data Cleanup Sprint and external payment proof exists."
+  },
+  {
+    slug: "website-audit-lite",
+    title: "Website Audit Lite",
+    service: website_audit_offer[:title],
+    price: website_audit_offer[:price],
+    path: "website-audit-lite.html",
+    paid_path: prefilled_issue_url(website_audit_offer),
+    proof_rule: "Counts $0 until a buyer requests the full Website Audit Microservice and external payment proof exists."
+  },
+  {
+    slug: "workflow-blueprint-lite",
+    title: "Workflow Blueprint Lite",
+    service: automation_offer[:title],
+    price: automation_offer[:price],
+    path: "workflow-blueprint-lite.html",
+    paid_path: prefilled_issue_url(automation_offer),
+    proof_rule: "Counts $0 until a buyer requests the full Automation Blueprint and external payment proof exists."
+  }
+]
+
+CSV.open(File.join(DOCS, "tool_manifest.csv"), "w", write_headers: true, headers: %w[slug title service price path paid_path proof_rule]) do |csv|
+  tool_rows.each do |row|
+    csv << row.values_at(:slug, :title, :service, :price, :path, :paid_path, :proof_rule)
+  end
+end
+
+tool_cards = tool_rows.map do |row|
+  <<~HTML
+    <article class="panel">
+      <h2>#{h(row[:title])}</h2>
+      <p>Free browser-only utility that creates a useful preview without uploading private data. The paid path is #{h(row[:service])} at #{h(row[:price])}.</p>
+      <p><strong>Proof rule:</strong> #{h(row[:proof_rule])}</p>
+      <p class="buttons"><a href="#{h(row[:path])}">Open tool</a><a href="#{h(row[:paid_path])}">Start paid order</a></p>
+    </article>
+  HTML
+end.join
+
+File.write(File.join(DOCS, "tools.html"), page_shell("Free Tools - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="start-order.html">Start order</a><a href="tool_manifest.csv">Tool CSV</a><a href="proof.html">Proof rules</a></p><h1>Free Tools</h1><p class="muted">Small browser-only utilities that give buyers a useful preview and a direct path to a paid fixed-scope order. They do not upload files or process payment.</p></header>
+  <section class="notice"><h2>Money boundary</h2><p>These tools are public lead magnets. They count as $0 until a real buyer opens a paid inquiry and external payment or payout proof exists.</p></section>
+  <section class="grid">#{tool_cards}</section>
+HTML
+
+File.write(File.join(DOCS, "csv-cleaner-lite.html"), page_shell("CSV Cleaner Lite - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(data_cleanup_offer))}">Start $125 cleanup sprint</a></p><h1>CSV Cleaner Lite</h1><p class="muted">Paste a small CSV sample to profile rows, columns, duplicate rows, blank cells, and a trimmed preview. Everything runs in the browser; nothing is uploaded.</p></header>
+  <section class="notice"><h2>Private data rule</h2><p>Use public, synthetic, or low-risk snippets only. Do not paste secrets, payment data, medical/legal/financial private details, or files you are not authorized to process.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Input</h2>
+      <label for="csvInput">CSV sample</label>
+      <textarea id="csvInput">name,email,status
+Alice, alice@example.com ,active
+Bob,,inactive
+Alice, alice@example.com ,active</textarea>
+      <p class="buttons"><a href="#" id="analyzeBtn">Analyze CSV</a><a href="#" id="downloadBtn">Download cleaned preview</a><a href="#{h(prefilled_issue_url(data_cleanup_offer))}" id="orderBtn">Start full cleanup sprint</a></p>
+      <div class="copybox" id="cleanPreview"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Rows</span><strong id="rowCount">0</strong></div>
+      <div class="fact"><span>Columns</span><strong id="colCount">0</strong></div>
+      <div class="fact"><span>Blank cells</span><strong id="blankCount">0</strong></div>
+      <div class="fact"><span>Duplicate rows</span><strong id="duplicateCount">0</strong></div>
+      <div class="fact"><span>Paid path</span><strong>Data Cleanup Sprint - $125</strong></div>
+    </aside>
+  </section>
+  <script>
+    function parseCsv(text){
+      const rows = [];
+      let row = [], cell = '', quoted = false;
+      for(let i = 0; i < text.length; i++){
+        const ch = text[i], next = text[i + 1];
+        if(ch === '"' && quoted && next === '"'){ cell += '"'; i++; }
+        else if(ch === '"'){ quoted = !quoted; }
+        else if(ch === ',' && !quoted){ row.push(cell); cell = ''; }
+        else if((ch === '\\n' || ch === '\\r') && !quoted){
+          if(ch === '\\r' && next === '\\n') i++;
+          row.push(cell); rows.push(row); row = []; cell = '';
+        } else { cell += ch; }
+      }
+      row.push(cell); rows.push(row);
+      return rows.filter(r => r.some(c => c.trim() !== ''));
+    }
+    function csvEscape(value){
+      const text = String(value ?? '').trim();
+      return /[",\\n\\r]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
+    }
+    function analyze(){
+      const rows = parseCsv(document.getElementById('csvInput').value);
+      const headers = rows[0] || [];
+      const body = rows.slice(1);
+      const normalized = rows.map(r => headers.map((_, i) => (r[i] || '').trim()));
+      const seen = new Set();
+      let duplicates = 0, blanks = 0;
+      normalized.slice(1).forEach(r => {
+        blanks += r.filter(c => c === '').length;
+        const key = JSON.stringify(r);
+        if(seen.has(key)) duplicates++;
+        seen.add(key);
+      });
+      const cleaned = normalized.map(r => r.map(csvEscape).join(',')).join('\\n');
+      document.getElementById('rowCount').textContent = String(body.length);
+      document.getElementById('colCount').textContent = String(headers.length);
+      document.getElementById('blankCount').textContent = String(blanks);
+      document.getElementById('duplicateCount').textContent = String(duplicates);
+      document.getElementById('cleanPreview').textContent = cleaned;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Data Cleanup Sprint',
+        'Listed price: $125',
+        'Tool source: #{SITE_URL}csv-cleaner-lite.html',
+        'Rows in sample: ' + body.length,
+        'Columns in sample: ' + headers.length,
+        'Blank cells detected: ' + blanks,
+        'Duplicate rows detected: ' + duplicates,
+        '',
+        'Requested quantity or scope:',
+        'Full CSV cleanup sprint based on authorized input.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Cleaned CSV, profile summary, and QA notes accepted by buyer.'
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Data Cleanup Sprint', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('orderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return cleaned;
+    }
+    document.getElementById('analyzeBtn').addEventListener('click', event => { event.preventDefault(); analyze(); });
+    document.getElementById('downloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const cleaned = analyze();
+      const blob = new Blob([cleaned], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'cleaned-preview.csv'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    analyze();
+  </script>
+HTML
+
+File.write(File.join(DOCS, "website-audit-lite.html"), page_shell("Website Audit Lite - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(website_audit_offer))}">Start $150 audit</a></p><h1>Website Audit Lite</h1><p class="muted">Create a quick buyer-facing audit brief from public page observations. This tool does not fetch the site; enter only public observations you are allowed to share.</p></header>
+  <section class="split">
+    <div class="panel">
+      <h2>Inputs</h2>
+      <label for="siteUrl">Public URL</label><input id="siteUrl" value="https://example.com">
+      <label for="headline">Main headline</label><input id="headline" value="Simple service headline">
+      <label for="cta">Primary CTA</label><input id="cta" value="Book a call">
+      <label for="concerns">Visible concerns</label><textarea id="concerns">Unclear proof, weak mobile CTA, no pricing signal, missing trust section</textarea>
+      <p class="buttons"><a href="#" id="auditBtn">Build audit brief</a><a href="#{h(prefilled_issue_url(website_audit_offer))}" id="auditOrderBtn">Start full audit</a></p>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid path</span><strong>Website Audit Microservice - $150</strong></div>
+      <div class="fact"><span>First $100</span><strong>One accepted audit clears $100.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <section class="panel"><h2>Generated brief</h2><div class="copybox" id="auditOutput"></div></section>
+  <script>
+    function buildAudit(){
+      const url = document.getElementById('siteUrl').value.trim();
+      const headline = document.getElementById('headline').value.trim();
+      const cta = document.getElementById('cta').value.trim();
+      const concerns = document.getElementById('concerns').value.trim().split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+      const brief = [
+        'Website Audit Lite brief',
+        '',
+        'URL: ' + url,
+        'Headline: ' + headline,
+        'Primary CTA: ' + cta,
+        '',
+        'Quick observations:',
+        ...concerns.map((item, i) => (i + 1) + '. ' + item),
+        '',
+        'Suggested paid sprint:',
+        'Website Audit Microservice ($150): public-site quick-win audit, mobile/CTA checks, copy clarity, trust section, and prioritized fixes.',
+        '',
+        'Proof rule: count $0 until buyer accepts scope and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('auditOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Website Audit Microservice',
+        'Listed price: $150',
+        'Tool source: #{SITE_URL}website-audit-lite.html',
+        'Public URL: ' + url,
+        '',
+        'Requested quantity or scope:',
+        'Full public-site audit based on this brief.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Audit report accepted by buyer.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Website Audit Microservice', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('auditOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+    }
+    ['siteUrl','headline','cta','concerns'].forEach(id => document.getElementById(id).addEventListener('input', buildAudit));
+    document.getElementById('auditBtn').addEventListener('click', event => { event.preventDefault(); buildAudit(); });
+    buildAudit();
+  </script>
+HTML
+
+File.write(File.join(DOCS, "workflow-blueprint-lite.html"), page_shell("Workflow Blueprint Lite - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(automation_offer))}">Start $100 blueprint</a></p><h1>Workflow Blueprint Lite</h1><p class="muted">Draft a small automation blueprint from a repetitive workflow. This creates an order-ready brief for the $100 Automation Blueprint service.</p></header>
+  <section class="split">
+    <div class="panel">
+      <h2>Workflow</h2>
+      <label for="trigger">Trigger</label><input id="trigger" value="New form submission">
+      <label for="source">Source system</label><input id="source" value="Website form">
+      <label for="destination">Destination system</label><input id="destination" value="Spreadsheet and email notification">
+      <label for="failures">Likely failure cases</label><textarea id="failures">Missing email, duplicate submission, malformed budget field</textarea>
+      <p class="buttons"><a href="#" id="blueprintBtn">Build blueprint</a><a href="#{h(prefilled_issue_url(automation_offer))}" id="blueprintOrderBtn">Start $100 order</a></p>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid path</span><strong>Automation Blueprint - $100</strong></div>
+      <div class="fact"><span>First $100</span><strong>One blueprint reaches $100.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <section class="panel"><h2>Generated blueprint</h2><div class="copybox" id="blueprintOutput"></div></section>
+  <script>
+    function buildBlueprint(){
+      const trigger = document.getElementById('trigger').value.trim();
+      const source = document.getElementById('source').value.trim();
+      const destination = document.getElementById('destination').value.trim();
+      const failures = document.getElementById('failures').value.trim().split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+      const blueprint = [
+        'Workflow Blueprint Lite',
+        '',
+        'Trigger: ' + trigger,
+        'Source: ' + source,
+        'Destination: ' + destination,
+        '',
+        'Steps:',
+        '1. Capture trigger event and required fields.',
+        '2. Validate required fields before writing data.',
+        '3. Normalize field names and values.',
+        '4. Send to destination and log status.',
+        '5. Alert owner when validation or delivery fails.',
+        '',
+        'Failure cases:',
+        ...failures.map((item, i) => (i + 1) + '. ' + item),
+        '',
+        'Paid next step: Automation Blueprint ($100) with trigger map, field map, failure handling, and test plan.',
+        'Proof rule: count $0 until buyer accepts scope and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('blueprintOutput').textContent = blueprint;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Automation Blueprint',
+        'Listed price: $100',
+        'Tool source: #{SITE_URL}workflow-blueprint-lite.html',
+        '',
+        'Requested quantity or scope:',
+        'Full automation blueprint from this brief.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Blueprint accepted by buyer.',
+        '',
+        'Brief:',
+        blueprint
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Automation Blueprint', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('blueprintOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+    }
+    ['trigger','source','destination','failures'].forEach(id => document.getElementById(id).addEventListener('input', buildBlueprint));
+    document.getElementById('blueprintBtn').addEventListener('click', event => { event.preventDefault(); buildBlueprint(); });
+    buildBlueprint();
+  </script>
 HTML
 
 order_intake_rows = OFFERS.map do |offer|
@@ -808,6 +1107,8 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
   - Inquiry path: #{ISSUE_URL}
   - Ready-to-pay builder: #{SITE_URL}start-order.html
+  - Free tools: #{SITE_URL}tools.html
+  - Tool manifest: #{SITE_URL}tool_manifest.csv
   - First paid request board: #{ISSUE_BOARD_URL}
   - Pricing page: #{SITE_URL}pricing.html
   - Case studies: #{SITE_URL}case-studies.html
@@ -1016,7 +1317,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
