@@ -166,6 +166,19 @@
     "zip_sha256": "49e4bbdb0e4ce190e81e9db5ff75a9223b1376dd2707db6568418de4587aa087"
   },
   {
+    "type": "product",
+    "title": "Prompt Workflow Pack",
+    "slug": "prompt-workflow-pack",
+    "source_dir": "non_bounty/prompt_workflow_pack",
+    "price": "$19",
+    "description": "A local-service prompt library and workflow pack for intake replies, quote follow-ups, review responses, and internal summaries.",
+    "first_100": "6 sales at $19 clears $100 gross, or one $100 customized setup reaches $100.",
+    "preview_public": "previews/prompt-workflow-pack.html",
+    "zip_name": "prompt-workflow-pack-kit.zip",
+    "zip_bytes": 3612,
+    "zip_sha256": "59ca9ef2a449c8726fbde504de95f67765c613b25e209844739090f30662ceeb"
+  },
+  {
     "type": "service",
     "title": "Website Audit Microservice",
     "slug": "website-audit-microservice",
