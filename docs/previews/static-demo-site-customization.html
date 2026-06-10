@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BrightNest Home Services Demo</title>
+  <style>
+    :root {
+      --ink:#182132;
+      --muted:#5f6878;
+      --line:#d8deea;
+      --panel:#f7f9fc;
+      --accent:#0a6b57;
+      --accent2:#315f9c;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.45; }
+    header { border-bottom:1px solid var(--line); background:#fbfcfe; }
+    .wrap { width:min(1100px, calc(100% - 32px)); margin:0 auto; }
+    nav { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:18px 0; }
+    .brand { font-weight:800; letter-spacing:0; }
+    .navlinks { display:flex; gap:14px; flex-wrap:wrap; }
+    .navlinks a { color:var(--muted); text-decoration:none; font-size:.92rem; }
+    .hero { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr); gap:26px; align-items:center; padding:44px 0; }
+    h1 { margin:0 0 12px; font-size:clamp(2.2rem,5vw,4rem); line-height:1.05; letter-spacing:0; }
+    h2 { margin:0 0 10px; font-size:1.25rem; letter-spacing:0; }
+    p { margin:0 0 12px; }
+    .muted { color:var(--muted); }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+    .button { display:inline-block; border-radius:6px; padding:10px 12px; text-decoration:none; font-weight:700; border:1px solid var(--accent); }
+    .primary { color:#fff; background:var(--accent); }
+    .secondary { color:var(--accent); background:#fff; }
+    .photo {
+      min-height:320px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(10,107,87,.84), rgba(49,95,156,.62)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='700' viewBox='0 0 900 700'%3E%3Crect width='900' height='700' fill='%23eaf0f6'/%3E%3Cpath d='M0 510 C180 430 330 560 520 470 C650 410 760 390 900 430 L900 700 L0 700 Z' fill='%23c8d7e5'/%3E%3Crect x='110' y='190' width='265' height='270' rx='18' fill='%23ffffff'/%3E%3Crect x='430' y='150' width='340' height='330' rx='22' fill='%23ffffff'/%3E%3Ccircle cx='235' cy='320' r='65' fill='%239bc3b7'/%3E%3Cpath d='M490 225 h220 v28 H490z M490 285 h180 v22 H490z M490 330 h210 v22 H490z' fill='%238ea9ca'/%3E%3C/svg%3E");
+      background-size:cover;
+      background-position:center;
+    }
+    main section { padding:28px 0; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .card { border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:14px; }
+    .process { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+    .step { border-left:4px solid var(--accent2); padding:8px 0 8px 12px; background:#fff; }
+    footer { border-top:1px solid var(--line); padding:24px 0; color:var(--muted); }
+    @media (max-width:760px) {
+      nav, .hero { display:block; }
+      .navlinks { margin-top:10px; }
+      .photo { min-height:240px; margin-top:24px; }
+      .grid, .process { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand">BrightNest Home Services</div>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div>
+          <h1>Reliable home help without the back-and-forth.</h1>
+          <p class="muted">A polished one-page demo for local cleaning, organizing, or home-service businesses. Swap the niche, proof, services, and contact details for a buyer.</p>
+          <div class="actions">
+            <a class="button primary" href="#contact">Request a quote</a>
+            <a class="button secondary" href="#services">View services</a>
+          </div>
+        </div>
+        <div class="photo" aria-label="Home service website preview artwork"></div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <article class="card"><h2>Standard Visit</h2><p>Room-by-room cleaning or organizing with a simple checklist.</p></article>
+        <article class="card"><h2>Deep Reset</h2><p>Focused help for kitchens, closets, garages, and move-in/out prep.</p></article>
+        <article class="card"><h2>Recurring Plan</h2><p>Weekly or monthly visits with the same checklist and notes.</p></article>
+      </div>
+    </section>
+    <section id="process">
+      <h2>How It Works</h2>
+      <div class="process">
+        <div class="step"><strong>1. Share the space</strong><p class="muted">Send photos or a short description.</p></div>
+        <div class="step"><strong>2. Get a quote</strong><p class="muted">Choose the package and timing.</p></div>
+        <div class="step"><strong>3. Confirm details</strong><p class="muted">Approve checklist and access notes.</p></div>
+        <div class="step"><strong>4. Review</strong><p class="muted">Receive completion notes and next steps.</p></div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Request a Quote</h2>
+      <p class="muted">This demo uses placeholder contact copy. A real buyer must approve the business name, proof, images, claims, and contact destination.</p>
+      <p><strong>Email:</strong> hello@example.com</p>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">Demo template. Replace all placeholder business details before use.</div>
+  </footer>
+</body>
+</html>

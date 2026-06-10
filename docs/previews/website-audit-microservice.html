@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Quick-Win Audit Sample</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5f6878;
+      --line: #d8deea;
+      --panel: #f7f9fc;
+      --high: #a33a2a;
+      --med: #8a5a00;
+      --ok: #17643a;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: #fff; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.45; }
+    main { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 44px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 22px; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: 0; }
+    h2 { margin: 24px 0 10px; font-size: 1.05rem; letter-spacing: 0; }
+    p { margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 18px 0; }
+    .metric { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 12px; min-height: 90px; }
+    .metric span { display: block; color: var(--muted); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .metric strong { display: block; margin-top: 7px; font-size: 1.35rem; }
+    table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); }
+    th, td { padding: 9px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 0.9rem; overflow-wrap: anywhere; }
+    th { color: var(--muted); background: var(--panel); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .high { color: var(--high); font-weight: 700; }
+    .med { color: var(--med); font-weight: 700; }
+    .ok { color: var(--ok); font-weight: 700; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      table, thead, tbody, tr, th, td { display: block; }
+      thead { display: none; }
+      tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+      td { border-bottom: 0; padding: 6px 9px; }
+      td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Website Quick-Win Audit Sample</h1>
+      <p class="muted">Sample report format for the $150 website audit service. Replace sample text with findings from an authorized public website review.</p>
+    </header>
+    <section class="grid" aria-label="Audit metrics">
+      <div class="metric"><span>Pages Reviewed</span><strong>5</strong></div>
+      <div class="metric"><span>High Priority</span><strong>4</strong></div>
+      <div class="metric"><span>Quick Wins</span><strong>11</strong></div>
+    </section>
+    <section>
+      <h2>Priority Findings</h2>
+      <table>
+        <thead><tr><th>Priority</th><th>Area</th><th>Finding</th><th>Recommended Fix</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Priority" class="high">High</td><td data-label="Area">Hero</td><td data-label="Finding">The first viewport does not make the offer or next action specific.</td><td data-label="Recommended Fix">Rewrite the hero with audience, outcome, and one primary CTA.</td></tr>
+          <tr><td data-label="Priority" class="high">High</td><td data-label="Area">Mobile</td><td data-label="Finding">CTA wraps awkwardly at mobile width and becomes harder to tap.</td><td data-label="Recommended Fix">Use shorter CTA text and a stable button width.</td></tr>
+          <tr><td data-label="Priority" class="med">Medium</td><td data-label="Area">Trust</td><td data-label="Finding">Reviews and proof appear below several sections.</td><td data-label="Recommended Fix">Move one proof point above the first CTA.</td></tr>
+          <tr><td data-label="Priority" class="ok">Low</td><td data-label="Area">Copy</td><td data-label="Finding">Service descriptions repeat generic claims.</td><td data-label="Recommended Fix">Add process, turnaround, and what happens after contact.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

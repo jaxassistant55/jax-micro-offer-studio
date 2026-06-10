@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No-Code Automation Blueprint</title>
+  <style>
+    :root { --ink:#172033; --muted:#5f6878; --line:#d8deea; --panel:#f7f9fc; --accent:#315f9c; --warn:#8a5a00; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.45; }
+    main { width:min(1080px, calc(100% - 32px)); margin:0 auto; padding:28px 0 44px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:22px; }
+    h1 { margin:0 0 8px; font-size:clamp(1.8rem,3vw,2.5rem); letter-spacing:0; }
+    h2 { margin:24px 0 10px; font-size:1.05rem; letter-spacing:0; }
+    p { margin:0 0 10px; }
+    .muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:18px 0; }
+    .metric { border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:12px; min-height:90px; }
+    .metric span { display:block; color:var(--muted); font-size:.76rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+    .metric strong { display:block; margin-top:7px; font-size:1.35rem; }
+    table { width:100%; border-collapse:collapse; border:1px solid var(--line); }
+    th, td { padding:9px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:.9rem; overflow-wrap:anywhere; }
+    th { color:var(--muted); background:var(--panel); font-size:.74rem; text-transform:uppercase; letter-spacing:.04em; }
+    .warn { color:var(--warn); font-weight:700; }
+    @media (max-width:760px) {
+      .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      table, thead, tbody, tr, th, td { display:block; }
+      thead { display:none; }
+      tr { border-bottom:1px solid var(--line); padding:8px 0; }
+      td { border-bottom:0; padding:6px 9px; }
+      td::before { content:attr(data-label); display:block; color:var(--muted); font-size:.72rem; font-weight:700; text-transform:uppercase; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>No-Code Automation Blueprint</h1>
+      <p class="muted">Sample dashboard for a $100 automation planning package. Live account access is separate and requires explicit authorization.</p>
+    </header>
+    <section class="grid" aria-label="Blueprint metrics">
+      <div class="metric"><span>Workflow Steps</span><strong>7</strong></div>
+      <div class="metric"><span>Mapped Fields</span><strong>8</strong></div>
+      <div class="metric"><span>Tests</span><strong>5</strong></div>
+      <div class="metric"><span>Confirmed Revenue</span><strong>$0</strong></div>
+    </section>
+    <section>
+      <h2>Failure Controls</h2>
+      <table>
+        <thead><tr><th>Risk</th><th>Control</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Risk">Missing email</td><td data-label="Control" class="warn">Do not send external email; mark needs_review.</td></tr>
+          <tr><td data-label="Risk">Consent missing</td><td data-label="Control" class="warn">Block response automation.</td></tr>
+          <tr><td data-label="Risk">Destination unavailable</td><td data-label="Control" class="warn">Preserve source and create retry note.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

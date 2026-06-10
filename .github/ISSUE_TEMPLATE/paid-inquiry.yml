@@ -1,0 +1,45 @@
+name: Paid inquiry
+description: Request a product bundle, custom service, or scoped paid handoff.
+title: "Inquiry: "
+labels: ["paid-inquiry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for legitimate paid inquiries only. Do not paste passwords, payment cards, tax identifiers, medical/legal/financial private details, or files you are not authorized to share.
+  - type: input
+    id: offer
+    attributes:
+      label: Offer or product
+      description: Which Micro Offer Studio item are you asking about?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What do you want delivered or transferred?
+    validations:
+      required: true
+  - type: input
+    id: budget
+    attributes:
+      label: Budget
+      description: Expected budget or price range.
+      placeholder: "$100+"
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      description: When do you need it?
+    validations:
+      required: false
+  - type: textarea
+    id: proof
+    attributes:
+      label: Acceptance and payment proof
+      description: What external proof will show the work is accepted and payable?
+    validations:
+      required: true

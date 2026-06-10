@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Local SEO Audit</title>
+  <style>
+    :root { --ink:#182132; --muted:#5e6878; --line:#d9dfeb; --panel:#f7f9fc; --accent:#0b6b57; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); line-height:1.45; }
+    main { width:min(980px, calc(100% - 32px)); margin:0 auto; padding:28px 0 44px; }
+    header { border-bottom:1px solid var(--line); margin-bottom:20px; padding-bottom:16px; }
+    h1 { margin:0 0 8px; font-size:clamp(1.7rem, 3vw, 2.3rem); letter-spacing:0; }
+    h2 { margin:22px 0 10px; font-size:1.05rem; }
+    .muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+    .metric, section { border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:12px; }
+    table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); }
+    th,td { padding:9px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:.92rem; overflow-wrap:anywhere; }
+    th { color:var(--muted); background:var(--panel); font-size:.76rem; text-transform:uppercase; letter-spacing:.04em; }
+    @media (max-width:760px){ .grid{grid-template-columns:1fr;} table,thead,tbody,tr,th,td{display:block;} thead{display:none;} td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;} }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Sample Local SEO Audit</h1>
+      <p class="muted">Demo report for an anonymized local service business. Use only public data and owner-approved edits.</p>
+    </header>
+    <div class="grid">
+      <div class="metric"><strong>7</strong><br><span class="muted">quick wins</span></div>
+      <div class="metric"><strong>3</strong><br><span class="muted">owner-only edits</span></div>
+      <div class="metric"><strong>$175</strong><br><span class="muted">fixed package</span></div>
+    </div>
+    <section>
+      <h2>Priority Findings</h2>
+      <table>
+        <thead><tr><th>Area</th><th>Finding</th><th>Recommended Action</th><th>Owner Gate</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Area">Profile basics</td><td data-label="Finding">Service categories are broad and do not describe the core revenue services.</td><td data-label="Recommended Action">Prepare a category/service suggestion list for owner approval.</td><td data-label="Owner Gate">Verified manager publishes changes.</td></tr>
+          <tr><td data-label="Area">Citations</td><td data-label="Finding">Two public directories show old hours.</td><td data-label="Recommended Action">Update owner-controlled listings and request corrections where supported.</td><td data-label="Owner Gate">Owner confirms current hours.</td></tr>
+          <tr><td data-label="Area">Reviews</td><td data-label="Finding">Recent reviews have no responses.</td><td data-label="Recommended Action">Use short, factual, non-private response templates.</td><td data-label="Owner Gate">Owner approves replies.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

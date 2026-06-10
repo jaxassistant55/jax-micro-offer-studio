@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="hsl(112, 44%, 96%)"/>
+  <rect x="70" y="70" width="1060" height="535" rx="18" fill="#ffffff" stroke="hsl(112, 35%, 68%)" stroke-width="4"/>
+  <circle cx="990" cy="170" r="70" fill="hsl(112, 65%, 58%)" opacity="0.9"/>
+  <circle cx="920" cy="235" r="36" fill="hsl(157, 55%, 62%)" opacity="0.9"/>
+  <text x="115" y="190" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#17202a">Synthetic Mock Dataset Pack</text>
+  <text x="115" y="275" font-family="Arial, sans-serif" font-size="30" fill="#445266">6 sales to reach $100+</text>
+  <line x1="115" y1="350" x2="720" y2="350" stroke="hsl(112, 45%, 58%)" stroke-width="8" stroke-linecap="round"/>
+  <text x="115" y="430" font-family="Arial, sans-serif" font-size="28" fill="#17202a">Autonomous digital product asset</text>
+  <text x="115" y="480" font-family="Arial, sans-serif" font-size="22" fill="#5c6670">Original files generated locally. No buyer data used.</text>
+</svg>

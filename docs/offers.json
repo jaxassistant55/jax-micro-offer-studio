@@ -1,0 +1,237 @@
+[
+  {
+    "type": "product",
+    "title": "HTML5 Micro Game Kit",
+    "slug": "html5-micro-game-kit",
+    "source_dir": "non_bounty/autonomous_products/html5_micro_game",
+    "price": "$19",
+    "description": "A complete browser-playable micro game kit with source, cover art, README, and listing copy.",
+    "first_100": "6 sales at $19 clears $100 gross.",
+    "preview_public": "previews/html5-micro-game-kit.html"
+  },
+  {
+    "type": "product",
+    "title": "Procedural SFX Pack",
+    "slug": "procedural-sfx-pack",
+    "source_dir": "non_bounty/autonomous_products/procedural_sfx_pack",
+    "price": "$12",
+    "description": "Original WAV sound effects with preview page, README, license note, and listing copy.",
+    "first_100": "9 sales at $12 clears $100 gross.",
+    "preview_public": "previews/procedural-sfx-pack.html"
+  },
+  {
+    "type": "product",
+    "title": "SVG Icon Pack",
+    "slug": "svg-icon-pack",
+    "source_dir": "non_bounty/autonomous_products/svg_icon_pack",
+    "price": "$15",
+    "description": "A 24-file SVG icon pack with preview gallery, README, and listing copy.",
+    "first_100": "7 sales at $15 clears $100 gross.",
+    "preview_public": "previews/svg-icon-pack.html"
+  },
+  {
+    "type": "product",
+    "title": "Printable Puzzle and Planner Pack",
+    "slug": "printable-puzzle-and-planner-pack",
+    "source_dir": "non_bounty/autonomous_products/printable_puzzle_planner_pack",
+    "price": "$14",
+    "description": "Printable planner pages, math worksheets, answer keys, cover art, and listing copy.",
+    "first_100": "8 sales at $14 clears $100 gross.",
+    "preview_public": "previews/printable-puzzle-and-planner-pack.html"
+  },
+  {
+    "type": "product",
+    "title": "Synthetic Mock Dataset Pack",
+    "slug": "synthetic-mock-dataset-pack",
+    "source_dir": "non_bounty/autonomous_products/synthetic_mock_dataset_pack",
+    "price": "$19",
+    "description": "Synthetic CSV/JSON datasets with a preview dashboard and data dictionary.",
+    "first_100": "6 sales at $19 clears $100 gross.",
+    "preview_public": "previews/synthetic-mock-dataset-pack.html"
+  },
+  {
+    "type": "product",
+    "title": "Browser Extension Template",
+    "slug": "browser-extension-template",
+    "source_dir": "non_bounty/autonomous_products/browser_extension_template",
+    "price": "$29",
+    "description": "Manifest V3 browser extension starter with popup UI, local storage, README, and listing copy.",
+    "first_100": "4 sales at $29 clears $100 gross.",
+    "preview_public": "previews/browser-extension-template.html"
+  },
+  {
+    "type": "product",
+    "title": "CSV CLI Toolkit",
+    "slug": "csv-cli-toolkit",
+    "source_dir": "non_bounty/autonomous_products/csv_cli_toolkit",
+    "price": "$19",
+    "description": "Ruby CSV profiling and cleanup CLI with sample input, README, and listing copy.",
+    "first_100": "6 sales at $19 clears $100 gross."
+  },
+  {
+    "type": "product",
+    "title": "CSS Component Pack",
+    "slug": "css-component-pack",
+    "source_dir": "non_bounty/autonomous_products/css_component_pack",
+    "price": "$19",
+    "description": "Reusable HTML/CSS components for cards, pricing tables, dashboards, and forms.",
+    "first_100": "6 sales at $19 clears $100 gross.",
+    "preview_public": "previews/css-component-pack.html"
+  },
+  {
+    "type": "product",
+    "title": "SVG Wallpaper Pattern Pack",
+    "slug": "svg-wallpaper-pattern-pack",
+    "source_dir": "non_bounty/autonomous_products/svg_wallpaper_pattern_pack",
+    "price": "$9",
+    "description": "Ten original SVG wallpapers and patterns with a gallery page and listing copy.",
+    "first_100": "12 sales at $9 clears $100 gross.",
+    "preview_public": "previews/svg-wallpaper-pattern-pack.html"
+  },
+  {
+    "type": "product",
+    "title": "Anki-Ready Flashcard Deck",
+    "slug": "anki-ready-flashcard-deck",
+    "source_dir": "non_bounty/autonomous_products/anki_flashcard_deck",
+    "price": "$12",
+    "description": "Anki-ready CSV flashcard deck for spreadsheet and data-cleaning concepts.",
+    "first_100": "9 sales at $12 clears $100 gross."
+  },
+  {
+    "type": "product",
+    "title": "Mini Course Workbook",
+    "slug": "mini-course-workbook",
+    "source_dir": "non_bounty/autonomous_products/mini_course_workbook",
+    "price": "$29",
+    "description": "Self-study workbook on building a simple digital product offer, with checklist and sales page.",
+    "first_100": "4 sales at $29 clears $100 gross.",
+    "preview_public": "previews/mini-course-workbook.html"
+  },
+  {
+    "type": "product",
+    "title": "JSON Schema Fixture Pack",
+    "slug": "json-schema-fixture-pack",
+    "source_dir": "non_bounty/autonomous_products/json_schema_fixture_pack",
+    "price": "$15",
+    "description": "JSON schemas and valid/invalid fixtures for common SaaS objects.",
+    "first_100": "7 sales at $15 clears $100 gross."
+  },
+  {
+    "type": "service",
+    "title": "Website Audit Microservice",
+    "slug": "website-audit-microservice",
+    "source_dir": "non_bounty/website_audit_service",
+    "price": "$150",
+    "description": "Public website, landing-page, accessibility, mobile, copy, and QA quick-win audits.",
+    "first_100": "One accepted audit clears $100.",
+    "preview_public": "previews/website-audit-microservice.html"
+  },
+  {
+    "type": "service",
+    "title": "Data Cleanup Sprint",
+    "slug": "data-cleanup-sprint",
+    "source_dir": "non_bounty/data_cleanup_service",
+    "price": "$125",
+    "description": "CSV/spreadsheet cleanup with normalized output, validation counts, and a short QA report.",
+    "first_100": "One completed sprint clears $100.",
+    "preview_public": "previews/data-cleanup-sprint.html"
+  },
+  {
+    "type": "service",
+    "title": "AI Workflow Tracker Sprint",
+    "slug": "ai-workflow-tracker-sprint",
+    "source_dir": "non_bounty/freelance_microservice",
+    "price": "$150",
+    "description": "A CSV-backed tracker and static HTML dashboard for interviews, leads, grants, or sales pipelines.",
+    "first_100": "One fixed-price order clears $100.",
+    "preview_public": "previews/ai-workflow-tracker-sprint.html"
+  },
+  {
+    "type": "service",
+    "title": "Static Demo Site Customization",
+    "slug": "static-demo-site-customization",
+    "source_dir": "non_bounty/static_demo_site",
+    "price": "$200",
+    "description": "A polished one-page starter site customized for a local service business.",
+    "first_100": "One starter site clears $100.",
+    "preview_public": "previews/static-demo-site-customization.html"
+  },
+  {
+    "type": "service",
+    "title": "Niche Quote Estimator",
+    "slug": "niche-quote-estimator",
+    "source_dir": "non_bounty/niche_calculator",
+    "price": "$150",
+    "description": "A browser-only quote estimator customized for a simple service pricing model.",
+    "first_100": "One custom estimator clears $100.",
+    "preview_public": "previews/niche-quote-estimator.html"
+  },
+  {
+    "type": "service",
+    "title": "Automation Blueprint",
+    "slug": "automation-blueprint",
+    "source_dir": "non_bounty/automation_blueprint",
+    "price": "$100",
+    "description": "Trigger, data field, step, failure-case, and test-plan blueprint for a repetitive workflow.",
+    "first_100": "One blueprint reaches $100.",
+    "preview_public": "previews/automation-blueprint.html"
+  },
+  {
+    "type": "service",
+    "title": "Local SEO / GBP Audit",
+    "slug": "local-seo-gbp-audit",
+    "source_dir": "non_bounty/local_seo_gbp",
+    "price": "$175",
+    "description": "Public local profile and citation audit with review-response and profile-copy suggestions.",
+    "first_100": "One audit clears $100.",
+    "preview_public": "previews/local-seo-gbp-audit.html"
+  },
+  {
+    "type": "service",
+    "title": "Technical Docs Cleanup",
+    "slug": "technical-docs-cleanup",
+    "source_dir": "non_bounty/technical_docs_cleanup",
+    "price": "$150",
+    "description": "README, quickstart, API page, or SOP cleanup with audit rubric and before/after handoff.",
+    "first_100": "One docs sprint clears $100."
+  },
+  {
+    "type": "service",
+    "title": "Client Intake and SOP Package",
+    "slug": "client-intake-and-sop-package",
+    "source_dir": "non_bounty/client_intake_sop",
+    "price": "$125",
+    "description": "Reusable intake question bank, SOP template, delivery checklist, and status dashboard.",
+    "first_100": "One package clears $100.",
+    "preview_public": "previews/client-intake-and-sop-package.html"
+  },
+  {
+    "type": "service",
+    "title": "PDF/Table Extraction",
+    "slug": "pdf-table-extraction",
+    "source_dir": "non_bounty/pdf_data_extraction",
+    "price": "$125",
+    "description": "Authorized PDF, screenshot, or messy table extraction into CSV plus a summary dashboard.",
+    "first_100": "One extraction package clears $100.",
+    "preview_public": "previews/pdf-table-extraction.html"
+  },
+  {
+    "type": "service",
+    "title": "Content Repurposing Sprint",
+    "slug": "content-repurposing-sprint",
+    "source_dir": "non_bounty/content_repurposing_service",
+    "price": "$100",
+    "description": "Newsletter, social posts, captions, hooks, and publishing checklist from one source asset.",
+    "first_100": "One repurposing sprint reaches $100.",
+    "preview_public": "previews/content-repurposing-sprint.html"
+  },
+  {
+    "type": "service",
+    "title": "Resume / LinkedIn / Interview Pack",
+    "slug": "resume-linkedin-interview-pack",
+    "source_dir": "non_bounty/career_services",
+    "price": "$125",
+    "description": "Truthful resume, LinkedIn, cover letter, and interview prep packet.",
+    "first_100": "One career packet clears $100."
+  }
+]
