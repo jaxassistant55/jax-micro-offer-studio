@@ -1,0 +1,13 @@
+{
+  "generated_at_jst": "2026-06-11 01:41:36 JST",
+  "sample_pack": "micro-offer-studio-sample-pack.zip",
+  "bytes": 2181,
+  "sha256": "1c975c3b84dec80e234104e24766c64d4638c041f66215ace7444e796e889129",
+  "files": [
+    "README.md",
+    "pricing_sample.csv",
+    "proof_rules_sample.md",
+    "buyer_brief_template.md"
+  ],
+  "boundary": "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
+}
