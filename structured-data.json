@@ -310,6 +310,25 @@
               "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-brief-builder.html"
             }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Technical Docs Audit Brief Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-audit-brief-builder.html",
+            "description": "Free browser-only lead tool for Technical Docs Cleanup.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-audit-brief-builder.html"
+            }
+          }
         }
       ]
     },
@@ -1031,6 +1050,21 @@
         "priceCurrency": "USD",
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-brief-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Technical Docs Audit Brief Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-audit-brief-builder.html",
+      "description": "Free browser-only lead tool for Technical Docs Cleanup.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-audit-brief-builder.html"
       }
     }
   ]
