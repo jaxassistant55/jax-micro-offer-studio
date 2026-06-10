@@ -12,6 +12,9 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 - CSV Cleaner Lite: https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cleaner-lite.html -> Data Cleanup Sprint $125
 - Website Audit Lite: https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-lite.html -> Website Audit Microservice $150
 - Workflow Blueprint Lite: https://jaxassistant55.github.io/jax-micro-offer-studio/workflow-blueprint-lite.html -> Automation Blueprint $100
+- AI Workflow Tracker Brief Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-brief-builder.html -> AI Workflow Tracker Sprint $150
+- Static Demo Site Brief Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-brief-builder.html -> Static Demo Site Customization $200
+- Quote Estimator Scope Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/quote-estimator-scope-builder.html -> Niche Quote Estimator $150
 - Local SEO/GBP Brief Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-brief-builder.html -> Local SEO / GBP Audit $175
 - Client Intake/SOP Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/client-intake-sop-builder.html -> Client Intake and SOP Package $125
 - Career Packet Brief Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/career-packet-brief-builder.html -> Resume / LinkedIn / Interview Pack $125
