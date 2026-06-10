@@ -18,6 +18,7 @@ GENERATED_AT = Time.now.strftime("%Y-%m-%d %H:%M:%S JST")
 REPO_URL = ENV.fetch("PUBLIC_LAUNCH_REPO_URL", "https://github.com/jaxassistant55/jax-micro-offer-studio")
 SITE_URL = ENV.fetch("PUBLIC_LAUNCH_SITE_URL", "https://jaxassistant55.github.io/jax-micro-offer-studio/")
 ISSUE_URL = "#{REPO_URL}/issues/new?template=paid-inquiry.yml"
+ISSUE_BOARD_URL = "#{REPO_URL}/issues/1"
 
 def h(value)
   CGI.escapeHTML(value.to_s)
@@ -258,7 +259,7 @@ end
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="#request">Request work</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -275,7 +276,7 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 File.write(File.join(DOCS, "index.html"), page_shell("Micro Offer Studio", index_body))
@@ -421,6 +422,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Manifest: `public_launch_manifest.csv`
   - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
   - Inquiry path: #{ISSUE_URL}
+  - First paid request board: #{ISSUE_BOARD_URL}
   - Offers: #{PRODUCTS.length} digital products and #{SERVICES.length} productized services
 
   Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
