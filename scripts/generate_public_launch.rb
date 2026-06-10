@@ -548,6 +548,18 @@ def page_shell(title, body, head_extra = "")
   HTML
 end
 
+def share_meta(title:, description:, url:)
+  <<~HTML
+    <link rel="canonical" href="#{h(url)}">
+    <meta property="og:url" content="#{h(url)}">
+    <meta property="og:site_name" content="Micro Offer Studio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="#{h(title)}">
+    <meta name="twitter:description" content="#{h(description)}">
+    <meta name="robots" content="index,follow">
+  HTML
+end
+
 READY_TO_BUY_SLUGS = %w[
   static-demo-site-customization
   local-seo-gbp-audit
@@ -626,6 +638,21 @@ def ready_to_buy_card(offer)
   HTML
 end
 
+def ready_to_buy_share_rows(offers)
+  offers.map do |offer|
+    url = absolute_url(ready_to_buy_path(offer))
+    snippet = "Ready-to-scope #{offer[:title]} at #{offer[:price]}: #{offer[:description]} Start from the buyer route: #{url}"
+    <<~HTML
+      <tr>
+        <td data-label="Route"><a href="#{h(ready_to_buy_path(offer))}">#{h(offer[:title])}</a></td>
+        <td data-label="Price">#{h(offer[:price])}</td>
+        <td data-label="Ready URL"><a href="#{h(url)}">#{h(url)}</a></td>
+        <td data-label="Snippet"><div class="copybox">#{h(snippet)}</div></td>
+      </tr>
+    HTML
+  end.join
+end
+
 def ready_to_buy_detail(offer)
   lead = github_lead_for_offer(offer)
   proof = lead["proof_rule"].to_s.empty? ? "External paid order, accepted scope, delivery proof, and posted/released/payable payment proof." : lead["proof_rule"]
@@ -679,7 +706,10 @@ def ready_to_buy_detail(offer)
       "name" => "Start prefilled paid inquiry"
     }
   }
-  page_shell("Ready To Buy #{offer[:title]} - Micro Offer Studio", body, jsonld_script(schema))
+  title = "Ready To Buy #{offer[:title]} - Micro Offer Studio"
+  description = "#{offer[:price]} buyer route for #{offer[:title]} with prefilled inquiry, preview, proof rule, and payment boundary."
+  head = share_meta(title: title, description: description, url: absolute_url(ready_to_buy_path(offer))) + jsonld_script(schema)
+  page_shell(title, body, head)
 end
 
 OFFERS.each do |offer|
@@ -706,7 +736,9 @@ ready_to_buy_schema = {
   "hasPart" => ready_to_buy_offers.map { |offer| { "@type" => "WebPage", "name" => offer[:title], "url" => absolute_url(ready_to_buy_path(offer)) } }
 }
 
-File.write(File.join(DOCS, "ready-to-buy.html"), page_shell("Ready To Buy Routes - Micro Offer Studio", <<~HTML, jsonld_script(ready_to_buy_schema)))
+ready_to_buy_index_title = "Ready To Buy Routes - Micro Offer Studio"
+ready_to_buy_index_description = "High-intent buyer routes for one-sale service offers that can reach at least $100 before fees and refunds."
+File.write(File.join(DOCS, "ready-to-buy.html"), page_shell(ready_to_buy_index_title, <<~HTML, share_meta(title: ready_to_buy_index_title, description: ready_to_buy_index_description, url: absolute_url("ready-to-buy.html")) + jsonld_script(ready_to_buy_schema)))
   <header>
     <p class="buttons"><a href="index.html">Home</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a></p>
     <h1>Ready To Buy Routes</h1>
@@ -3281,6 +3313,7 @@ File.write(File.join(DOCS, "buyer-faq.html"), page_shell("Buyer FAQ - Micro Offe
 File.write(File.join(DOCS, "share-kit.html"), page_shell("Share Kit - Micro Offer Studio", <<~HTML))
   <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="case-studies.html">Case studies</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a></p><h1>Share Kit</h1><p class="muted">Owned-channel snippets for profiles, relevant conversations, or buyer follow-up. Do not spam unrelated threads or communities.</p></header>
   <section class="notice"><h2>Safe-use rule</h2><p>Use these only where posting is allowed and relevant. Do not imply payment has already happened. Do not claim credentials, endorsements, results, or guarantees that are not true.</p></section>
+  <section><h2>Ready-to-buy route snippets</h2><table><thead><tr><th>Route</th><th>Price</th><th>Ready URL</th><th>Snippet</th></tr></thead><tbody>#{ready_to_buy_share_rows(ready_to_buy_offers)}</tbody></table></section>
   <section><h2>Offer snippets</h2><table><thead><tr><th>Offer</th><th>Price</th><th>Snippet</th></tr></thead><tbody>#{share_rows(OFFERS)}</tbody></table></section>
 HTML
 
