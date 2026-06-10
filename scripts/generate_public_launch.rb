@@ -17,6 +17,9 @@ DOCS = File.join(LAUNCH_ROOT, "docs")
 GENERATED_AT = Time.now.strftime("%Y-%m-%d %H:%M:%S JST")
 REPO_URL = ENV.fetch("PUBLIC_LAUNCH_REPO_URL", "https://github.com/jaxassistant55/jax-micro-offer-studio")
 SITE_URL = ENV.fetch("PUBLIC_LAUNCH_SITE_URL", "https://jaxassistant55.github.io/jax-micro-offer-studio/")
+INDEXNOW_KEY = ENV.fetch("PUBLIC_LAUNCH_INDEXNOW_KEY", "32ac58c2-053a-4ba2-ba9a-a6a92cdecf12")
+INDEXNOW_KEY_FILE = "#{INDEXNOW_KEY}.txt"
+INDEXNOW_KEY_LOCATION = URI.join(SITE_URL, INDEXNOW_KEY_FILE).to_s
 ISSUE_URL = "#{REPO_URL}/issues/new?template=paid-inquiry.yml"
 ISSUE_BOARD_URL = "#{REPO_URL}/issues/1"
 NEW_ISSUE_URL = "#{REPO_URL}/issues/new"
@@ -1109,6 +1112,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Ready-to-pay builder: #{SITE_URL}start-order.html
   - Free tools: #{SITE_URL}tools.html
   - Tool manifest: #{SITE_URL}tool_manifest.csv
+  - IndexNow status: #{SITE_URL}indexnow.html
   - First paid request board: #{ISSUE_BOARD_URL}
   - Pricing page: #{SITE_URL}pricing.html
   - Case studies: #{SITE_URL}case-studies.html
@@ -1317,7 +1321,28 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
+File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
+CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
+  indexnow_urls.each { |url| csv << [url] }
+end
+indexnow_payload = {
+  host: URI(SITE_URL).host,
+  key: INDEXNOW_KEY,
+  keyLocation: INDEXNOW_KEY_LOCATION,
+  urlList: indexnow_urls
+}
+File.write(File.join(DOCS, "indexnow_payload.json"), JSON.pretty_generate(indexnow_payload))
+File.write(File.join(DOCS, "indexnow.html"), page_shell("IndexNow - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="sitemap.xml">Sitemap</a><a href="indexnow_urls.csv">URL CSV</a><a href="indexnow_payload.json">Payload JSON</a><a href="#{h(INDEXNOW_KEY_LOCATION)}">Key file</a></p><h1>IndexNow Discovery</h1><p class="muted">Search-index notification setup for the recently updated public offer site. This improves discovery only; it is not a payment event.</p></header>
+  <section class="notice"><h2>Money boundary</h2><p>IndexNow submissions notify participating search engines about updated URLs. They do not guarantee indexing, traffic, buyer inquiries, payments, or payouts. Confirmed money remains $0 until external payment proof exists.</p></section>
+  <section class="grid">
+    <article class="panel"><h2>Verification key</h2><p><strong>Key file:</strong> <a href="#{h(INDEXNOW_KEY_LOCATION)}">#{h(INDEXNOW_KEY_FILE)}</a></p><p><strong>Key location:</strong> <code>#{h(INDEXNOW_KEY_LOCATION)}</code></p></article>
+    <article class="panel"><h2>Submitted URL set</h2><p><strong>URL count:</strong> #{indexnow_urls.length}</p><p><strong>Host:</strong> #{h(URI(SITE_URL).host)}</p><p><strong>Scope:</strong> URLs under <code>#{h(SITE_URL)}</code></p></article>
+  </section>
+  <section><h2>High-priority URLs</h2><table><thead><tr><th>URL</th></tr></thead><tbody>#{indexnow_urls.first(20).map { |url| %(<tr><td data-label="URL"><a href="#{h(url)}">#{h(url)}</a></td></tr>) }.join}</tbody></table></section>
+HTML
 File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
