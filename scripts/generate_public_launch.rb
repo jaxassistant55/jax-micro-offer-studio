@@ -178,9 +178,10 @@ PRODUCTS = [
   ["Anki-Ready Flashcard Deck", "anki_flashcard_deck", "$12", "Anki-ready CSV flashcard deck for spreadsheet and data-cleaning concepts.", "9 sales at $12 clears $100 gross.", nil],
   ["Mini Course Workbook", "mini_course_workbook", "$29", "Self-study workbook on building a simple digital product offer, with checklist and sales page.", "4 sales at $29 clears $100 gross.", "mini_course.html"],
   ["JSON Schema Fixture Pack", "json_schema_fixture_pack", "$15", "JSON schemas and valid/invalid fixtures for common SaaS objects.", "7 sales at $15 clears $100 gross.", nil],
-  ["Invoice and Expense Tracker Template", "invoice_expense_tracker", "$19", "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.", "6 sales at $19 clears $100 gross.", "dashboard.html"]
+  ["Invoice and Expense Tracker Template", "invoice_expense_tracker", "$19", "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.", "6 sales at $19 clears $100 gross.", "dashboard.html"],
+  ["Prompt Workflow Pack", "prompt_workflow_pack", "$19", "A local-service prompt library and workflow pack for intake replies, quote follow-ups, review responses, and internal summaries.", "6 sales at $19 clears $100 gross, or one $100 customized setup reaches $100.", "sales_page.html"]
 ].map do |title, dir, price, description, first_100, preview|
-  source_prefix = title == "Invoice and Expense Tracker Template" ? "non_bounty" : "non_bounty/autonomous_products"
+  source_prefix = %w[invoice_expense_tracker prompt_workflow_pack].include?(dir) ? "non_bounty" : "non_bounty/autonomous_products"
   product_root = File.join(RUN_ROOT, source_prefix, dir)
   {
     type: "product",
@@ -243,6 +244,7 @@ ZIP_BY_SLUG = {
   "mini-course-workbook" => "mini-course-workbook.zip",
   "json-schema-fixture-pack" => "json-schema-fixture-pack.zip",
   "invoice-and-expense-tracker-template" => "invoice-expense-tracker-kit.zip",
+  "prompt-workflow-pack" => "prompt-workflow-pack-kit.zip",
   "website-audit-microservice" => "website-audit-service-kit.zip",
   "data-cleanup-sprint" => "data-cleanup-service-kit.zip",
   "static-demo-site-customization" => "static-demo-site-kit.zip",
@@ -595,6 +597,7 @@ data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint"
 website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
 invoice_tracker_offer = OFFERS.find { |offer| offer[:slug] == "invoice-and-expense-tracker-template" }
+prompt_workflow_offer = OFFERS.find { |offer| offer[:slug] == "prompt-workflow-pack" }
 
 tool_rows = [
   {
@@ -632,6 +635,15 @@ tool_rows = [
     path: "invoice-expense-snapshot.html",
     paid_path: prefilled_issue_url(invoice_tracker_offer),
     proof_rule: "Counts $0 until a buyer requests the full tracker template or a paid transfer and external payment proof exists."
+  },
+  {
+    slug: "prompt-workflow-brief-builder",
+    title: "Prompt Workflow Brief Builder",
+    service: prompt_workflow_offer[:title],
+    price: prompt_workflow_offer[:price],
+    path: "prompt-workflow-brief-builder.html",
+    paid_path: prefilled_issue_url(prompt_workflow_offer),
+    proof_rule: "Counts $0 until a buyer requests the Prompt Workflow Pack or a $100 custom setup and external payment proof exists."
   }
 ]
 
@@ -881,6 +893,109 @@ File.write(File.join(DOCS, "invoice-expense-snapshot.html"), page_shell("Invoice
       URL.revokeObjectURL(url);
     });
     buildInvoiceSnapshot();
+  </script>
+HTML
+
+prompt_tool_row = tool_rows.find { |row| row[:slug] == "prompt-workflow-brief-builder" }
+File.write(File.join(DOCS, "prompt-workflow-brief-builder.html"), page_shell("Prompt Workflow Brief Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(prompt_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(prompt_workflow_offer))}">Start $19 prompt pack transfer</a></p><h1>Prompt Workflow Brief Builder</h1><p class="muted">Draft a safe, buyer-ready prompt workflow brief for a local service business. Everything runs in the browser; nothing is uploaded.</p></header>
+  <section class="notice"><h2>Safety boundary</h2><p>Use only public, synthetic, or buyer-approved facts. Do not paste private customer data, emergency instructions, legal/medical/financial advice requests, fake reviews, or prices/policies the business owner has not approved.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Inputs</h2>
+      <label for="businessType">Business type</label><input id="businessType" value="local home-service business">
+      <label for="workflowType">Workflow</label>
+      <select id="workflowType">
+        <option value="new lead reply">New lead reply</option>
+        <option value="quote follow-up">Quote follow-up</option>
+        <option value="public review response">Public review response</option>
+        <option value="internal customer-thread summary">Internal customer-thread summary</option>
+      </select>
+      <label for="knownFacts">Approved facts to use</label><textarea id="knownFacts">Service requested: gutter cleaning
+Location: west side of town
+Timing: next week preferred
+Known constraint: customer asked for a written estimate</textarea>
+      <label for="tone">Approved tone</label><input id="tone" value="clear, polite, concise">
+      <p class="buttons"><a href="#" id="promptBuildBtn">Build prompt brief</a><a href="#" id="promptDownloadBtn">Download brief</a><a href="#{h(prefilled_issue_url(prompt_workflow_offer))}" id="promptOrderBtn">Start paid prompt pack request</a></p>
+      <div class="copybox" id="promptOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid product</span><strong>Prompt Workflow Pack - $19</strong></div>
+      <div class="fact"><span>Custom setup path</span><strong>$100 setup reaches $100 with one paid order</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function buildPromptWorkflow(){
+      const businessType = document.getElementById('businessType').value.trim();
+      const workflowType = document.getElementById('workflowType').value;
+      const knownFacts = document.getElementById('knownFacts').value.trim();
+      const tone = document.getElementById('tone').value.trim();
+      const brief = [
+        'Prompt Workflow Brief',
+        '',
+        'Business type: ' + businessType,
+        'Workflow: ' + workflowType,
+        'Approved tone: ' + tone,
+        '',
+        'Approved facts:',
+        knownFacts || '[buyer to provide approved facts]',
+        '',
+        'Reusable prompt:',
+        'You are drafting a ' + workflowType + ' for a ' + businessType + '. Use only the approved facts below. Do not invent prices, policies, availability, claims, private details, or promises. If a required fact is missing, ask a concise clarifying question. Match this tone: ' + tone + '.',
+        '',
+        'Approved facts to use:',
+        knownFacts || '[buyer to provide approved facts]',
+        '',
+        'Output requirements:',
+        '1. Keep the draft concise.',
+        '2. Ask for missing scope details when needed.',
+        '3. Include one clear next step.',
+        '4. Preserve customer privacy.',
+        '5. Require business-owner review before sending.',
+        '',
+        'Suggested paid next step:',
+        'Prompt Workflow Pack ($19) for prompt library, usage guide, evaluation checklist, sales page, and support FAQ; or $100 customized setup for one buyer workflow.',
+        '',
+        'Proof rule: count $0 until buyer accepts the product transfer or custom setup scope and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('promptOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Prompt Workflow Pack',
+        'Listed price: $19 product / $100 custom setup',
+        'Tool source: #{SITE_URL}prompt-workflow-brief-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Prompt pack transfer or custom setup based on buyer-approved workflow facts.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Product transferred or custom workflow accepted by buyer.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Prompt Workflow Pack', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('promptOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return brief;
+    }
+    ['businessType','workflowType','knownFacts','tone'].forEach(id => document.getElementById(id).addEventListener('input', buildPromptWorkflow));
+    document.getElementById('workflowType').addEventListener('change', buildPromptWorkflow);
+    document.getElementById('promptBuildBtn').addEventListener('click', event => { event.preventDefault(); buildPromptWorkflow(); });
+    document.getElementById('promptDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const brief = buildPromptWorkflow();
+      const blob = new Blob([brief], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'prompt-workflow-brief.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildPromptWorkflow();
   </script>
 HTML
 
@@ -1651,7 +1766,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|

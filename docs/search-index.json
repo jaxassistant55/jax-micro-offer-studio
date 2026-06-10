@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 02:42:31 JST",
+  "generated_at_jst": "2026-06-11 02:47:53 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -157,6 +157,18 @@
       "description": "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.",
       "first_100": "6 sales at $19 clears $100 gross.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Invoice+and+Expense+Tracker+Template&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Invoice+and+Expense+Tracker+Template%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Finvoice-and-expense-tracker-template.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until external buyer/payment proof exists."
+    },
+    {
+      "type": "product",
+      "title": "Prompt Workflow Pack",
+      "slug": "prompt-workflow-pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/prompt-workflow-pack.html",
+      "price": "$19",
+      "amount_usd": 19.0,
+      "description": "A local-service prompt library and workflow pack for intake replies, quote follow-ups, review responses, and internal summaries.",
+      "first_100": "6 sales at $19 clears $100 gross, or one $100 customized setup reaches $100.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Prompt+Workflow+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Prompt+Workflow+Pack%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fprompt-workflow-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until external buyer/payment proof exists."
     },
     {
@@ -350,6 +362,18 @@
       "first_100": "Counts $0 until a buyer requests the full tracker template or a paid transfer and external payment proof exists.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Invoice+and+Expense+Tracker+Template&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Invoice+and+Expense+Tracker+Template%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Finvoice-and-expense-tracker-template.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until a buyer requests the full tracker template or a paid transfer and external payment proof exists."
+    },
+    {
+      "type": "free_tool",
+      "title": "Prompt Workflow Brief Builder",
+      "slug": "prompt-workflow-brief-builder",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/prompt-workflow-brief-builder.html",
+      "price": "$0",
+      "amount_usd": 0,
+      "description": "Browser-only lead tool for Prompt Workflow Pack.",
+      "first_100": "Counts $0 until a buyer requests the Prompt Workflow Pack or a $100 custom setup and external payment proof exists.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Prompt+Workflow+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Prompt+Workflow+Pack%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fprompt-workflow-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until a buyer requests the Prompt Workflow Pack or a $100 custom setup and external payment proof exists."
     }
   ]
 }

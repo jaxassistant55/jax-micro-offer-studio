@@ -25,6 +25,7 @@ body:
         - Mini Course Workbook ($29)
         - JSON Schema Fixture Pack ($15)
         - Invoice and Expense Tracker Template ($19)
+        - Prompt Workflow Pack ($19)
     validations:
       required: true
   - type: input
