@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Service Quote Estimator</title>
+  <style>
+    :root { --ink:#172033; --muted:#5f6878; --line:#d8deea; --panel:#f7f9fc; --accent:#0a6b57; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.45; }
+    main { width:min(980px, calc(100% - 32px)); margin:0 auto; padding:28px 0 44px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:22px; }
+    h1 { margin:0 0 8px; font-size:clamp(1.8rem,3vw,2.5rem); letter-spacing:0; }
+    h2 { margin:24px 0 10px; font-size:1.05rem; letter-spacing:0; }
+    p { margin:0 0 10px; }
+    .muted { color:var(--muted); }
+    .panel { border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:16px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    label { display:block; font-weight:700; margin-bottom:6px; }
+    input, select { width:100%; border:1px solid var(--line); border-radius:6px; padding:10px; font:inherit; background:#fff; }
+    .result { margin-top:14px; border:1px solid var(--accent); border-radius:8px; background:#fff; padding:14px; }
+    .result strong { display:block; font-size:2rem; color:var(--accent); }
+    table { width:100%; border-collapse:collapse; margin-top:12px; border:1px solid var(--line); background:#fff; }
+    th, td { padding:9px; border-bottom:1px solid var(--line); text-align:left; font-size:.9rem; }
+    th { color:var(--muted); background:#fff; text-transform:uppercase; font-size:.74rem; letter-spacing:.04em; }
+    @media (max-width:720px) { .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Home Service Quote Estimator</h1>
+      <p class="muted">Demo estimator for a $150 niche calculator package. Numbers are placeholders and must be replaced with buyer-approved pricing.</p>
+    </header>
+    <section class="panel">
+      <div class="grid">
+        <div><label for="rooms">Rooms</label><input id="rooms" type="number" min="1" max="12" value="3"></div>
+        <div><label for="level">Service Level</label><select id="level"><option value="standard">Standard</option><option value="deep">Deep reset</option><option value="move">Move-in/out</option></select></div>
+        <div><label for="pets">Pets</label><select id="pets"><option value="0">No pets</option><option value="15">Pet add-on</option></select></div>
+        <div><label for="distance">Travel Zone</label><select id="distance"><option value="0">Local</option><option value="20">Outer zone</option></select></div>
+      </div>
+      <div class="result" aria-live="polite">
+        <span>Estimated range</span>
+        <strong id="total">$0-$0</strong>
+        <p class="muted">This is a non-binding estimate. Final quote depends on buyer-approved details.</p>
+      </div>
+      <h2>Assumptions</h2>
+      <table>
+        <thead><tr><th>Input</th><th>Pricing Logic</th></tr></thead>
+        <tbody>
+          <tr><td>Rooms</td><td>$35 per room base</td></tr>
+          <tr><td>Standard</td><td>1.0x multiplier</td></tr>
+          <tr><td>Deep reset</td><td>1.35x multiplier</td></tr>
+          <tr><td>Move-in/out</td><td>1.55x multiplier</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    const rooms = document.querySelector("#rooms");
+    const level = document.querySelector("#level");
+    const pets = document.querySelector("#pets");
+    const distance = document.querySelector("#distance");
+    const total = document.querySelector("#total");
+    const multipliers = { standard: 1, deep: 1.35, move: 1.55 };
+    function update() {
+      const base = Number(rooms.value || 0) * 35 * multipliers[level.value] + Number(pets.value) + Number(distance.value);
+      const low = Math.round(base / 5) * 5;
+      const high = Math.round((base * 1.2) / 5) * 5;
+      total.textContent = `$${low}-$${high}`;
+    }
+    [rooms, level, pets, distance].forEach((el) => el.addEventListener("input", update));
+    update();
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Workflow Tracker Sprint Demo</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5f6878;
+      --line: #d9dee8;
+      --panel: #f6f8fb;
+      --accent: #0b6bcb;
+      --ok: #167849;
+      --warn: #9a6400;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #ffffff;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: 0;
+    }
+    h2 {
+      font-size: 1.05rem;
+      margin: 26px 0 10px;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 6px;
+      padding: 8px 10px;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+    }
+    button[aria-pressed="true"] {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 18px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 12px;
+      min-height: 92px;
+    }
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .metric strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 1.35rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+    th {
+      background: var(--panel);
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-weight: 700;
+      font-size: 0.76rem;
+      white-space: nowrap;
+      background: #fff;
+    }
+    .ok { color: var(--ok); }
+    .warn { color: var(--warn); }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      table, thead, tbody, tr, th, td { display: block; }
+      thead { display: none; }
+      tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+      td { border-bottom: 0; padding: 6px 10px; }
+      td::before {
+        content: attr(data-label);
+        display: block;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>AI Workflow Tracker Sprint</h1>
+      <p class="muted">Demo dashboard for the $150 freelance service: a buyer sends fields and starter rows, then receives a CSV-backed local dashboard like this.</p>
+    </header>
+
+    <section class="grid" aria-label="Dashboard metrics">
+      <div class="metric"><span>Total Items</span><strong id="total">0</strong></div>
+      <div class="metric"><span>Active</span><strong id="active">0</strong></div>
+      <div class="metric"><span>Blocked</span><strong id="blocked">0</strong></div>
+      <div class="metric"><span>Potential Value</span><strong id="value">$0</strong></div>
+    </section>
+
+    <section>
+      <h2>Example Rows</h2>
+      <div class="toolbar" aria-label="Status filters">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="active">Active</button>
+        <button type="button" data-filter="blocked">Blocked</button>
+        <button type="button" data-filter="done">Done</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Workflow Item</th>
+            <th>Status</th>
+            <th>Owner</th>
+            <th>Potential</th>
+            <th>Next Action</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    const data = [
+      { item: "Paid research profile setup", status: "active", owner: "Research lead", potential: 150, next: "Fill truthful profile fields" },
+      { item: "Frontend article pitch", status: "active", owner: "Author", potential: 350, next: "Attach real writing sample" },
+      { item: "Grant application", status: "blocked", owner: "Applicant", potential: 100, next: "Add legal name and CV" },
+      { item: "Digital product listing", status: "blocked", owner: "Store owner", potential: 100, next: "Upload zip to payment platform" },
+      { item: "Client tracker handoff", status: "done", owner: "Consultant", potential: 150, next: "Request buyer review" }
+    ];
+    const rows = document.querySelector("#rows");
+    const buttons = [...document.querySelectorAll("button[data-filter]")];
+
+    function render(filter = "all") {
+      buttons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.filter === filter));
+      });
+      const visible = filter === "all" ? data : data.filter((row) => row.status === filter);
+      rows.innerHTML = visible.map((row) => `
+        <tr>
+          <td data-label="Workflow Item">${row.item}</td>
+          <td data-label="Status"><span class="tag ${row.status === "blocked" ? "warn" : "ok"}">${row.status}</span></td>
+          <td data-label="Owner">${row.owner}</td>
+          <td data-label="Potential">$${row.potential}</td>
+          <td data-label="Next Action">${row.next}</td>
+        </tr>
+      `).join("");
+      document.querySelector("#total").textContent = data.length;
+      document.querySelector("#active").textContent = data.filter((row) => row.status === "active").length;
+      document.querySelector("#blocked").textContent = data.filter((row) => row.status === "blocked").length;
+      document.querySelector("#value").textContent = "$" + data.reduce((sum, row) => sum + row.potential, 0);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => render(button.dataset.filter));
+    });
+    render();
+  </script>
+</body>
+</html>

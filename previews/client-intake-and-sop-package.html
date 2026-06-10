@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOP Delivery Dashboard</title>
+  <style>
+    body{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:0;color:#1b1f24;line-height:1.45}
+    main{width:min(920px,calc(100% - 32px));margin:0 auto;padding:28px 0}
+    h1{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:0;margin:0 0 8px}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+    .card,table{border:1px solid #d7dde5;border-radius:8px;background:#f6f8fa}
+    .card{padding:12px}.card strong{font-size:1.3rem}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:0}th,td{padding:9px;border-bottom:1px solid #d7dde5;text-align:left;vertical-align:top}
+    th{background:#f6f8fa;color:#5c6670;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+</head>
+<body><main>
+  <h1>SOP Delivery Dashboard</h1>
+  <p>Example status board for a single client intake and SOP package.</p>
+  <div class="grid"><div class="card"><strong>6</strong><br>steps</div><div class="card"><strong>2</strong><br>client gates</div><div class="card"><strong>$125</strong><br>package</div><div class="card"><strong>0</strong><br>live clients</div></div>
+  <table><thead><tr><th>Step</th><th>Owner</th><th>Status</th></tr></thead><tbody>
+    <tr><td>Intake complete</td><td>Provider</td><td>Template ready</td></tr>
+    <tr><td>Asset rights confirmed</td><td>Client</td><td>Owner-only</td></tr>
+    <tr><td>Final approval</td><td>Client</td><td>Owner-only</td></tr>
+  </tbody></table>
+</main></body></html>
