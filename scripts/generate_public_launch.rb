@@ -179,9 +179,10 @@ PRODUCTS = [
   ["Mini Course Workbook", "mini_course_workbook", "$29", "Self-study workbook on building a simple digital product offer, with checklist and sales page.", "4 sales at $29 clears $100 gross.", "mini_course.html"],
   ["JSON Schema Fixture Pack", "json_schema_fixture_pack", "$15", "JSON schemas and valid/invalid fixtures for common SaaS objects.", "7 sales at $15 clears $100 gross.", nil],
   ["Invoice and Expense Tracker Template", "invoice_expense_tracker", "$19", "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.", "6 sales at $19 clears $100 gross.", "dashboard.html"],
-  ["Prompt Workflow Pack", "prompt_workflow_pack", "$19", "A local-service prompt library and workflow pack for intake replies, quote follow-ups, review responses, and internal summaries.", "6 sales at $19 clears $100 gross, or one $100 customized setup reaches $100.", "sales_page.html"]
+  ["Prompt Workflow Pack", "prompt_workflow_pack", "$19", "A local-service prompt library and workflow pack for intake replies, quote follow-ups, review responses, and internal summaries.", "6 sales at $19 clears $100 gross, or one $100 customized setup reaches $100.", "sales_page.html"],
+  ["Sales Enablement Kit", "sales_enablement", "$29", "Proposal library, compliant outreach sequence, prospect tracker, profile checklist, case study template, and simple portfolio page for fixed-scope service sellers.", "4 sales at $29 clears $100 gross, or one $100 customized proposal/profile setup reaches $100.", "portfolio_page.html"]
 ].map do |title, dir, price, description, first_100, preview|
-  source_prefix = %w[invoice_expense_tracker prompt_workflow_pack].include?(dir) ? "non_bounty" : "non_bounty/autonomous_products"
+  source_prefix = %w[invoice_expense_tracker prompt_workflow_pack sales_enablement].include?(dir) ? "non_bounty" : "non_bounty/autonomous_products"
   product_root = File.join(RUN_ROOT, source_prefix, dir)
   {
     type: "product",
@@ -246,6 +247,7 @@ ZIP_BY_SLUG = {
   "json-schema-fixture-pack" => "json-schema-fixture-pack.zip",
   "invoice-and-expense-tracker-template" => "invoice-expense-tracker-kit.zip",
   "prompt-workflow-pack" => "prompt-workflow-pack-kit.zip",
+  "sales-enablement-kit" => "sales-enablement-kit.zip",
   "website-audit-microservice" => "website-audit-service-kit.zip",
   "data-cleanup-sprint" => "data-cleanup-service-kit.zip",
   "static-demo-site-customization" => "static-demo-site-kit.zip",
@@ -600,6 +602,7 @@ website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-micro
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
 invoice_tracker_offer = OFFERS.find { |offer| offer[:slug] == "invoice-and-expense-tracker-template" }
 prompt_workflow_offer = OFFERS.find { |offer| offer[:slug] == "prompt-workflow-pack" }
+sales_enablement_offer = OFFERS.find { |offer| offer[:slug] == "sales-enablement-kit" }
 resale_listing_offer = OFFERS.find { |offer| offer[:slug] == "resale-listing-and-price-research-pack" }
 
 tool_rows = [
@@ -656,6 +659,15 @@ tool_rows = [
     path: "resale-listing-draft-builder.html",
     paid_path: prefilled_issue_url(resale_listing_offer),
     proof_rule: "Counts $0 until a buyer requests the Resale Listing and Price Research Pack and external payment proof exists."
+  },
+  {
+    slug: "proposal-profile-builder",
+    title: "Proposal/Profile Builder",
+    service: sales_enablement_offer[:title],
+    price: sales_enablement_offer[:price],
+    path: "proposal-profile-builder.html",
+    paid_path: prefilled_issue_url(sales_enablement_offer),
+    proof_rule: "Counts $0 until a buyer requests the Sales Enablement Kit or a $100 customized proposal/profile setup and external payment proof exists."
   }
 ]
 
@@ -1122,6 +1134,114 @@ standard bulb socket</textarea>
       URL.revokeObjectURL(url);
     });
     buildResaleDraft();
+  </script>
+HTML
+
+proposal_tool_row = tool_rows.find { |row| row[:slug] == "proposal-profile-builder" }
+File.write(File.join(DOCS, "proposal-profile-builder.html"), page_shell("Proposal/Profile Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(proposal_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(sales_enablement_offer))}">Start $29 sales kit transfer</a></p><h1>Proposal/Profile Builder</h1><p class="muted">Draft truthful fixed-scope profile copy, a proposal paragraph, and a compliant one-to-one outreach note from buyer-entered facts. Everything runs in the browser; nothing is uploaded or sent.</p></header>
+  <section class="notice"><h2>Truth and anti-spam boundary</h2><p>Use only real services, verified samples, approved prices, and public prospect facts. Do not claim credentials, client results, endorsements, availability, or prior relationships that are not true. Do not send bulk spam or contact people where outreach is not allowed.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Seller facts</h2>
+      <label for="sellerName">Seller or business name</label><input id="sellerName" value="Micro service seller">
+      <label for="serviceName">Fixed-scope service</label><input id="serviceName" value="Website audit sprint">
+      <label for="pricePoint">Approved price</label><input id="pricePoint" value="$150">
+      <label for="proofAssets">Truthful proof assets</label><textarea id="proofAssets">public sample report
+QA checklist
+before/after demo file</textarea>
+      <label for="targetBuyer">Target buyer</label><input id="targetBuyer" value="local service business owner">
+      <label for="publicObservation">Specific public observation</label><textarea id="publicObservation">homepage has no clear pricing or service-area signal</textarea>
+      <label for="deliveryScope">Delivery scope</label><textarea id="deliveryScope">review up to 5 public pages and deliver a ranked quick-win report</textarea>
+      <p class="buttons"><a href="#" id="proposalBuildBtn">Build sales snippets</a><a href="#" id="proposalDownloadBtn">Download snippets</a><a href="#{h(prefilled_issue_url(sales_enablement_offer))}" id="proposalOrderBtn">Start paid sales kit request</a></p>
+      <div class="copybox" id="proposalOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid product</span><strong>Sales Enablement Kit - $29</strong></div>
+      <div class="fact"><span>Custom setup path</span><strong>$100 setup reaches $100 with one paid order.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function cleanLines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function buildProposalProfile(){
+      const sellerName = document.getElementById('sellerName').value.trim();
+      const serviceName = document.getElementById('serviceName').value.trim();
+      const pricePoint = document.getElementById('pricePoint').value.trim();
+      const proofAssets = cleanLines('proofAssets');
+      const targetBuyer = document.getElementById('targetBuyer').value.trim();
+      const publicObservation = document.getElementById('publicObservation').value.trim();
+      const deliveryScope = document.getElementById('deliveryScope').value.trim();
+      const proofText = proofAssets.length ? proofAssets.join('; ') : '[add truthful proof assets]';
+      const snippets = [
+        'Proposal/Profile Builder Output',
+        '',
+        'Profile headline:',
+        sellerName + ' - fixed-scope ' + serviceName + ' for ' + targetBuyer,
+        '',
+        'Profile summary:',
+        'I provide a fixed-scope ' + serviceName + ' for ' + targetBuyer + '. Scope: ' + deliveryScope + '. Price: ' + pricePoint + '. Proof assets available for review: ' + proofText + '. I do not claim outcomes, credentials, or endorsements that are not verified.',
+        '',
+        'Proposal paragraph:',
+        'Based on the public observation "' + (publicObservation || '[specific public observation]') + '", I can deliver a ' + serviceName + ' with this scope: ' + deliveryScope + '. Fixed price: ' + pricePoint + '. Acceptance proof can be the delivered report, checklist, or agreed handoff file reviewed by the buyer.',
+        '',
+        'Compliant one-to-one outreach note:',
+        'Hi [name], I noticed this public detail: ' + (publicObservation || '[specific public observation]') + '. I offer a fixed-scope ' + serviceName + ' for ' + pricePoint + ' that covers ' + deliveryScope + '. If useful, I can send the exact scope and proof assets before you decide. Thanks, ' + sellerName,
+        '',
+        'Prospect tracker fields:',
+        'company, website, fit_reason, public_contact_source, service_angle, personalization_note, status',
+        '',
+        'Owner review checklist:',
+        '1. Confirm the seller identity and service claims are true.',
+        '2. Confirm the price and scope are approved before posting or sending.',
+        '3. Personalize only from public facts.',
+        '4. Respect opt-outs and site/community rules.',
+        '5. Do not send bulk spam or imply prior relationship.',
+        '6. Save buyer acceptance and payment proof before counting money.',
+        '',
+        'Suggested paid next step:',
+        'Sales Enablement Kit ($29) for proposal library, outreach sequence, prospect tracker, profile checklist, case study template, and portfolio page; or $100 customized proposal/profile setup.',
+        '',
+        'Proof rule: count $0 until buyer accepts the product transfer or custom setup scope and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('proposalOutput').textContent = snippets;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Sales Enablement Kit',
+        'Listed price: $29 product / $100 custom setup',
+        'Tool source: #{SITE_URL}proposal-profile-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Sales kit transfer or custom proposal/profile setup based on buyer-approved facts.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Product transferred or custom snippets accepted by buyer.',
+        '',
+        'Snippets:',
+        snippets
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Sales Enablement Kit', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('proposalOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return snippets;
+    }
+    ['sellerName','serviceName','pricePoint','proofAssets','targetBuyer','publicObservation','deliveryScope'].forEach(id => document.getElementById(id).addEventListener('input', buildProposalProfile));
+    document.getElementById('proposalBuildBtn').addEventListener('click', event => { event.preventDefault(); buildProposalProfile(); });
+    document.getElementById('proposalDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const snippets = buildProposalProfile();
+      const blob = new Blob([snippets], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'proposal-profile-snippets.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildProposalProfile();
   </script>
 HTML
 
@@ -1892,7 +2012,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|

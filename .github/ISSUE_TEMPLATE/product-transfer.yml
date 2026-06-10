@@ -26,6 +26,7 @@ body:
         - JSON Schema Fixture Pack ($15)
         - Invoice and Expense Tracker Template ($19)
         - Prompt Workflow Pack ($19)
+        - Sales Enablement Kit ($29)
     validations:
       required: true
   - type: input
