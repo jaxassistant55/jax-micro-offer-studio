@@ -177,7 +177,8 @@ PRODUCTS = [
   ["SVG Wallpaper Pattern Pack", "svg_wallpaper_pattern_pack", "$9", "Ten original SVG wallpapers and patterns with a gallery page and listing copy.", "12 sales at $9 clears $100 gross.", "gallery.html"],
   ["Anki-Ready Flashcard Deck", "anki_flashcard_deck", "$12", "Anki-ready CSV flashcard deck for spreadsheet and data-cleaning concepts.", "9 sales at $12 clears $100 gross.", nil],
   ["Mini Course Workbook", "mini_course_workbook", "$29", "Self-study workbook on building a simple digital product offer, with checklist and sales page.", "4 sales at $29 clears $100 gross.", "mini_course.html"],
-  ["JSON Schema Fixture Pack", "json_schema_fixture_pack", "$15", "JSON schemas and valid/invalid fixtures for common SaaS objects.", "7 sales at $15 clears $100 gross.", nil]
+  ["JSON Schema Fixture Pack", "json_schema_fixture_pack", "$15", "JSON schemas and valid/invalid fixtures for common SaaS objects.", "7 sales at $15 clears $100 gross.", nil],
+  ["Invoice and Expense Tracker Template", "invoice_expense_tracker", "$19", "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.", "6 sales at $19 clears $100 gross.", "dashboard.html"]
 ].map do |title, dir, price, description, first_100, preview|
   product_root = File.join(RUN_ROOT, "non_bounty", "autonomous_products", dir)
   {
@@ -240,6 +241,7 @@ ZIP_BY_SLUG = {
   "anki-ready-flashcard-deck" => "anki-flashcard-deck.zip",
   "mini-course-workbook" => "mini-course-workbook.zip",
   "json-schema-fixture-pack" => "json-schema-fixture-pack.zip",
+  "invoice-and-expense-tracker-template" => "invoice-expense-tracker-kit.zip",
   "website-audit-microservice" => "website-audit-service-kit.zip",
   "data-cleanup-sprint" => "data-cleanup-service-kit.zip",
   "static-demo-site-customization" => "static-demo-site-kit.zip",
@@ -591,6 +593,7 @@ HTML
 data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint" }
 website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
+invoice_tracker_offer = OFFERS.find { |offer| offer[:slug] == "invoice-and-expense-tracker-template" }
 
 tool_rows = [
   {
@@ -619,6 +622,15 @@ tool_rows = [
     path: "workflow-blueprint-lite.html",
     paid_path: prefilled_issue_url(automation_offer),
     proof_rule: "Counts $0 until a buyer requests the full Automation Blueprint and external payment proof exists."
+  },
+  {
+    slug: "invoice-expense-snapshot",
+    title: "Invoice/Expense Snapshot",
+    service: invoice_tracker_offer[:title],
+    price: invoice_tracker_offer[:price],
+    path: "invoice-expense-snapshot.html",
+    paid_path: prefilled_issue_url(invoice_tracker_offer),
+    proof_rule: "Counts $0 until a buyer requests the full tracker template or a paid transfer and external payment proof exists."
   }
 ]
 
@@ -756,6 +768,118 @@ Alice, alice@example.com ,active</textarea>
       URL.revokeObjectURL(url);
     });
     analyze();
+  </script>
+HTML
+
+invoice_tool_row = tool_rows.find { |row| row[:slug] == "invoice-expense-snapshot" }
+File.write(File.join(DOCS, "invoice-expense-snapshot.html"), page_shell("Invoice/Expense Snapshot - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(invoice_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(invoice_tracker_offer))}">Start $19 tracker transfer</a></p><h1>Invoice/Expense Snapshot</h1><p class="muted">Paste a small invoice/expense CSV to summarize income, expenses, unpaid invoices, and net. Everything runs in the browser; nothing is uploaded.</p></header>
+  <section class="notice"><h2>Advice boundary</h2><p>This is a record organizer and product preview, not tax, accounting, legal, or financial advice. Use public, synthetic, or low-risk snippets only; do not paste bank exports, tax identifiers, payment details, or private client data.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Input</h2>
+      <p class="muted">Expected columns: <code>date,type,client_or_vendor,description,category,invoice_id,amount_usd,tax_relevant,status,payment_due,payment_received,notes</code>.</p>
+      <label for="invoiceCsvInput">Invoice/expense CSV sample</label>
+      <textarea id="invoiceCsvInput">date,type,client_or_vendor,description,category,invoice_id,amount_usd,tax_relevant,status,payment_due,payment_received,notes
+2026-06-01,income,Acme Studio,Website audit package,services,INV-001,150.00,yes,sent,2026-06-15,,Example income row
+2026-06-02,expense,Hosting Provider,Static site hosting,software,,12.00,yes,paid,,2026-06-02,Example expense row
+2026-06-04,income,Beta Research,CSV cleanup sprint,services,INV-002,125.00,yes,paid,2026-06-18,2026-06-08,Example paid income
+2026-06-05,expense,Marketplace,Platform fees,fees,,8.75,yes,paid,,2026-06-05,Example fee</textarea>
+      <p class="buttons"><a href="#" id="invoiceAnalyzeBtn">Build snapshot</a><a href="#" id="invoiceDownloadBtn">Download summary</a><a href="#{h(prefilled_issue_url(invoice_tracker_offer))}" id="invoiceOrderBtn">Start paid tracker request</a></p>
+      <div class="copybox" id="invoiceSummary"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Income</span><strong id="invoiceIncome">$0</strong></div>
+      <div class="fact"><span>Expenses</span><strong id="invoiceExpenses">$0</strong></div>
+      <div class="fact"><span>Net</span><strong id="invoiceNet">$0</strong></div>
+      <div class="fact"><span>Unpaid invoices</span><strong id="invoiceUnpaid">$0</strong></div>
+      <div class="fact"><span>Paid path</span><strong>Invoice and Expense Tracker Template - $19</strong></div>
+    </aside>
+  </section>
+  <script>
+    function parseInvoiceCsv(text){
+      const rows = [];
+      let row = [], cell = '', quoted = false;
+      for(let i = 0; i < text.length; i++){
+        const ch = text[i], next = text[i + 1];
+        if(ch === '"' && quoted && next === '"'){ cell += '"'; i++; }
+        else if(ch === '"'){ quoted = !quoted; }
+        else if(ch === ',' && !quoted){ row.push(cell); cell = ''; }
+        else if((ch === '\\n' || ch === '\\r') && !quoted){
+          if(ch === '\\r' && next === '\\n') i++;
+          row.push(cell); rows.push(row); row = []; cell = '';
+        } else { cell += ch; }
+      }
+      row.push(cell); rows.push(row);
+      return rows.filter(r => r.some(c => c.trim() !== ''));
+    }
+    function asMoney(value){ return '$' + Number(value || 0).toFixed(2); }
+    function buildInvoiceSnapshot(){
+      const rows = parseInvoiceCsv(document.getElementById('invoiceCsvInput').value);
+      const headers = (rows[0] || []).map(h => h.trim());
+      const records = rows.slice(1).map(r => Object.fromEntries(headers.map((h, i) => [h, (r[i] || '').trim()])));
+      const amount = r => Number(String(r.amount_usd || '0').replace(/[^0-9.-]/g, '')) || 0;
+      const income = records.filter(r => r.type === 'income').reduce((sum, r) => sum + amount(r), 0);
+      const expenses = records.filter(r => r.type === 'expense').reduce((sum, r) => sum + amount(r), 0);
+      const unpaid = records.filter(r => r.type === 'income' && r.status !== 'paid').reduce((sum, r) => sum + amount(r), 0);
+      const net = income - expenses;
+      const overdueRows = records.filter(r => r.type === 'income' && r.status !== 'paid' && r.payment_due);
+      const summary = [
+        'Invoice/Expense Snapshot',
+        '',
+        'Rows reviewed: ' + records.length,
+        'Income: ' + asMoney(income),
+        'Expenses: ' + asMoney(expenses),
+        'Net: ' + asMoney(net),
+        'Unpaid invoices: ' + asMoney(unpaid),
+        'Open invoice count: ' + records.filter(r => r.type === 'income' && r.status !== 'paid').length,
+        'Rows with due dates to review: ' + overdueRows.length,
+        '',
+        'Suggested paid next step:',
+        'Invoice and Expense Tracker Template ($19) for a local CSV tracker, dashboard, listing copy, and support FAQ.',
+        '',
+        'Proof rule: count $0 until buyer accepts the product transfer or setup scope and external payment proof exists.',
+        'Advice boundary: this is not tax, accounting, legal, or financial advice.'
+      ].join('\\n');
+      document.getElementById('invoiceIncome').textContent = asMoney(income);
+      document.getElementById('invoiceExpenses').textContent = asMoney(expenses);
+      document.getElementById('invoiceNet').textContent = asMoney(net);
+      document.getElementById('invoiceUnpaid').textContent = asMoney(unpaid);
+      document.getElementById('invoiceSummary').textContent = summary;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Invoice and Expense Tracker Template',
+        'Listed price: $19',
+        'Tool source: #{SITE_URL}invoice-expense-snapshot.html',
+        '',
+        'Requested quantity or scope:',
+        'Tracker template transfer or setup based on authorized invoice/expense records.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Template transferred or setup accepted by buyer.',
+        '',
+        'Snapshot:',
+        summary
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Invoice and Expense Tracker Template', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('invoiceOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return summary;
+    }
+    document.getElementById('invoiceAnalyzeBtn').addEventListener('click', event => { event.preventDefault(); buildInvoiceSnapshot(); });
+    document.getElementById('invoiceDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const summary = buildInvoiceSnapshot();
+      const blob = new Blob([summary], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'invoice-expense-snapshot.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildInvoiceSnapshot();
   </script>
 HTML
 
@@ -1526,7 +1650,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|

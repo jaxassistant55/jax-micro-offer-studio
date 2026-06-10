@@ -153,6 +153,18 @@
     "zip_sha256": "27323022e4f99f611ccdffc350830450a578cdca1c9b2c84b8fa2db698b506d8"
   },
   {
+    "type": "product",
+    "title": "Invoice and Expense Tracker Template",
+    "slug": "invoice-and-expense-tracker-template",
+    "source_dir": "non_bounty/autonomous_products/invoice_expense_tracker",
+    "price": "$19",
+    "description": "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.",
+    "first_100": "6 sales at $19 clears $100 gross.",
+    "zip_name": "invoice-expense-tracker-kit.zip",
+    "zip_bytes": 4084,
+    "zip_sha256": "49e4bbdb0e4ce190e81e9db5ff75a9223b1376dd2707db6568418de4587aa087"
+  },
+  {
     "type": "service",
     "title": "Website Audit Microservice",
     "slug": "website-audit-microservice",
