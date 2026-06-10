@@ -1,0 +1,685 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Micro Offer Studio",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
+      "description": "Public previews, free tools, and paid-inquiry pages for generated digital products and productized micro-services.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://jaxassistant55.github.io/jax-micro-offer-studio/search-index.json?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "hasPart": [
+        {
+          "@type": "Service",
+          "name": "Website Audit Microservice",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Data Cleanup Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/data-cleanup-sprint.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "AI Workflow Tracker Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-sprint.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Static Demo Site Customization",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-customization.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 200.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Niche Quote Estimator",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/niche-quote-estimator.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Automation Blueprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/automation-blueprint.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100.0
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Browser Extension Template",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 29.0
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Mini Course Workbook",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 29.0
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Synthetic Mock Dataset Pack",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 19.0
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "CSV CLI Toolkit",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit.html",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 19.0
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Micro Offer Studio free tools",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "CSV Cleaner Lite",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cleaner-lite.html",
+            "description": "Free browser-only lead tool for Data Cleanup Sprint.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cleaner-lite.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Website Audit Lite",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-lite.html",
+            "description": "Free browser-only lead tool for Website Audit Microservice.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-lite.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Workflow Blueprint Lite",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/workflow-blueprint-lite.html",
+            "description": "Free browser-only lead tool for Automation Blueprint.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/workflow-blueprint-lite.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HTML5 Micro Game Kit",
+      "description": "A complete browser-playable micro game kit with source, cover art, README, and listing copy.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/html5-micro-game-kit.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 19.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+HTML5+Micro+Game+Kit&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+HTML5+Micro+Game+Kit%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fhtml5-micro-game-kit.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Procedural SFX Pack",
+      "description": "Original WAV sound effects with preview page, README, license note, and listing copy.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/procedural-sfx-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 12.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Procedural+SFX+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Procedural+SFX+Pack%0AListed+price%3A+%2412%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fprocedural-sfx-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "SVG Icon Pack",
+      "description": "A 24-file SVG icon pack with preview gallery, README, and listing copy.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-icon-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 15.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+SVG+Icon+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+SVG+Icon+Pack%0AListed+price%3A+%2415%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsvg-icon-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Printable Puzzle and Planner Pack",
+      "description": "Printable planner pages, math worksheets, answer keys, cover art, and listing copy.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/printable-puzzle-and-planner-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 14.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Printable+Puzzle+and+Planner+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Printable+Puzzle+and+Planner+Pack%0AListed+price%3A+%2414%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fprintable-puzzle-and-planner-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Synthetic Mock Dataset Pack",
+      "description": "Synthetic CSV/JSON datasets with a preview dashboard and data dictionary.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 19.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Synthetic+Mock+Dataset+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Synthetic+Mock+Dataset+Pack%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsynthetic-mock-dataset-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Browser Extension Template",
+      "description": "Manifest V3 browser extension starter with popup UI, local storage, README, and listing copy.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 29.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Browser+Extension+Template&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Browser+Extension+Template%0AListed+price%3A+%2429%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fbrowser-extension-template.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "CSV CLI Toolkit",
+      "description": "Ruby CSV profiling and cleanup CLI with sample input, README, and listing copy.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 19.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+CSV+CLI+Toolkit&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+CSV+CLI+Toolkit%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fcsv-cli-toolkit.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "CSS Component Pack",
+      "description": "Reusable HTML/CSS components for cards, pricing tables, dashboards, and forms.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/css-component-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 19.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+CSS+Component+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+CSS+Component+Pack%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fcss-component-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "SVG Wallpaper Pattern Pack",
+      "description": "Ten original SVG wallpapers and patterns with a gallery page and listing copy.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-wallpaper-pattern-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 9.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+SVG+Wallpaper+Pattern+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+SVG+Wallpaper+Pattern+Pack%0AListed+price%3A+%249%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsvg-wallpaper-pattern-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Anki-Ready Flashcard Deck",
+      "description": "Anki-ready CSV flashcard deck for spreadsheet and data-cleaning concepts.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/anki-ready-flashcard-deck.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 12.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Anki-Ready+Flashcard+Deck&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Anki-Ready+Flashcard+Deck%0AListed+price%3A+%2412%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fanki-ready-flashcard-deck.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Mini Course Workbook",
+      "description": "Self-study workbook on building a simple digital product offer, with checklist and sales page.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 29.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Mini+Course+Workbook&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Mini+Course+Workbook%0AListed+price%3A+%2429%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fmini-course-workbook.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "JSON Schema Fixture Pack",
+      "description": "JSON schemas and valid/invalid fixtures for common SaaS objects.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 15.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+JSON+Schema+Fixture+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+JSON+Schema+Fixture+Pack%0AListed+price%3A+%2415%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fjson-schema-fixture-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Website Audit Microservice",
+      "description": "Public website, landing-page, accessibility, mobile, copy, and QA quick-win audits.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Website+Audit+Microservice&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Website+Audit+Microservice%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fwebsite-audit-microservice.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Data Cleanup Sprint",
+      "description": "CSV/spreadsheet cleanup with normalized output, validation counts, and a short QA report.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/data-cleanup-sprint.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Data+Cleanup+Sprint&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Data+Cleanup+Sprint%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fdata-cleanup-sprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Workflow Tracker Sprint",
+      "description": "A CSV-backed tracker and static HTML dashboard for interviews, leads, grants, or sales pipelines.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-sprint.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+AI+Workflow+Tracker+Sprint&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+AI+Workflow+Tracker+Sprint%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fai-workflow-tracker-sprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Static Demo Site Customization",
+      "description": "A polished one-page starter site customized for a local service business.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-customization.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 200.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Static+Demo+Site+Customization&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Static+Demo+Site+Customization%0AListed+price%3A+%24200%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fstatic-demo-site-customization.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Niche Quote Estimator",
+      "description": "A browser-only quote estimator customized for a simple service pricing model.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/niche-quote-estimator.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Niche+Quote+Estimator&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Niche+Quote+Estimator%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fniche-quote-estimator.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Automation Blueprint",
+      "description": "Trigger, data field, step, failure-case, and test-plan blueprint for a repetitive workflow.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/automation-blueprint.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Automation+Blueprint&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Automation+Blueprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fautomation-blueprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Local SEO / GBP Audit",
+      "description": "Public local profile and citation audit with review-response and profile-copy suggestions.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 175.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Local+SEO+%2F+GBP+Audit&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Local+SEO+%2F+GBP+Audit%0AListed+price%3A+%24175%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Flocal-seo-gbp-audit.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Technical Docs Cleanup",
+      "description": "README, quickstart, API page, or SOP cleanup with audit rubric and before/after handoff.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-cleanup.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Technical+Docs+Cleanup&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Technical+Docs+Cleanup%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Ftechnical-docs-cleanup.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Client Intake and SOP Package",
+      "description": "Reusable intake question bank, SOP template, delivery checklist, and status dashboard.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/client-intake-and-sop-package.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Client+Intake+and+SOP+Package&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Client+Intake+and+SOP+Package%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fclient-intake-and-sop-package.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "PDF/Table Extraction",
+      "description": "Authorized PDF, screenshot, or messy table extraction into CSV plus a summary dashboard.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+PDF%2FTable+Extraction&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+PDF%2FTable+Extraction%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fpdf-table-extraction.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Content Repurposing Sprint",
+      "description": "Newsletter, social posts, captions, hooks, and publishing checklist from one source asset.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-sprint.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Content+Repurposing+Sprint&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Content+Repurposing+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fcontent-repurposing-sprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Resume / LinkedIn / Interview Pack",
+      "description": "Truthful resume, LinkedIn, cover letter, and interview prep packet.",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resume-linkedin-interview-pack.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0,
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Resume+%2F+LinkedIn+%2F+Interview+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Resume+%2F+LinkedIn+%2F+Interview+Pack%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fresume-linkedin-interview-pack.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CSV Cleaner Lite",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cleaner-lite.html",
+      "description": "Free browser-only lead tool for Data Cleanup Sprint.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cleaner-lite.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Website Audit Lite",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-lite.html",
+      "description": "Free browser-only lead tool for Website Audit Microservice.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-lite.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Workflow Blueprint Lite",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/workflow-blueprint-lite.html",
+      "description": "Free browser-only lead tool for Automation Blueprint.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/workflow-blueprint-lite.html"
+      }
+    }
+  ]
+}

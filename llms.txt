@@ -1,0 +1,24 @@
+# Micro Offer Studio
+
+Public offer catalog for generated digital products, productized micro-services, and free browser-only lead tools.
+Confirmed earned money remains $0 until external buyer/payment/payout proof exists.
+
+## Fastest paid paths
+- Automation Blueprint: $100 service, one accepted paid order reaches $100. https://jaxassistant55.github.io/jax-micro-offer-studio/automation-blueprint.html
+- Data Cleanup Sprint: $125 service, one accepted paid order clears $100. https://jaxassistant55.github.io/jax-micro-offer-studio/data-cleanup-sprint.html
+- Website Audit Microservice: $150 service, one accepted paid order clears $100. https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html
+
+## Free tools that route to paid services
+- CSV Cleaner Lite: https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cleaner-lite.html -> Data Cleanup Sprint $125
+- Website Audit Lite: https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-lite.html -> Website Audit Microservice $150
+- Workflow Blueprint Lite: https://jaxassistant55.github.io/jax-micro-offer-studio/workflow-blueprint-lite.html -> Automation Blueprint $100
+
+## Machine-readable files
+- Search index: https://jaxassistant55.github.io/jax-micro-offer-studio/search-index.json
+- Structured data graph: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-data.json
+- RSS feed: https://jaxassistant55.github.io/jax-micro-offer-studio/feed.xml
+- Sitemap: https://jaxassistant55.github.io/jax-micro-offer-studio/sitemap.xml
+- Start order builder: https://jaxassistant55.github.io/jax-micro-offer-studio/start-order.html
+
+## Safety and proof boundary
+Do not treat public pages, issue drafts, estimates, samples, traffic, or tool usage as earned money. Count only external payment, payout, refund, credit, funded order, or payable-balance proof.
