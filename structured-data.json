@@ -291,6 +291,25 @@
               "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-savings-calculator.html"
             }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Content Repurposing Brief Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-brief-builder.html",
+            "description": "Free browser-only lead tool for Content Repurposing Sprint.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-brief-builder.html"
+            }
+          }
         }
       ]
     },
@@ -997,6 +1016,21 @@
         "priceCurrency": "USD",
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-savings-calculator.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Content Repurposing Brief Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-brief-builder.html",
+      "description": "Free browser-only lead tool for Content Repurposing Sprint.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-brief-builder.html"
       }
     }
   ]
