@@ -102,6 +102,11 @@ def download_count_for(row)
   (matching_asset || release.fetch("assets", []).first || {})["download_count"].to_i
 end
 
+def hot_close_room_url(row)
+  repo_name = row["repo"].to_s.split("/").last
+  "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-#{repo_name}.html"
+end
+
 sources = [{
   "kind" => "main_board",
   "title" => "Available now: first paid $100+ micro-offer request",
@@ -163,7 +168,7 @@ download_followup_rows.each do |row|
     "proof_status" => "download_interest_no_buyer_or_payment_proof",
     "money_confirmed_usd" => "0",
     "money_count_rule" => "Release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
-    "next_paid_step" => row["prefilled_inquiry_url"].to_s.empty? ? row["repo_order_issue_url"] : row["prefilled_inquiry_url"]
+    "next_paid_step" => hot_close_room_url(row)
   }
 end
 
