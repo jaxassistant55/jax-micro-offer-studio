@@ -8,6 +8,7 @@ Public launch package generated during the autonomous earning run.
 - Manifest: `public_launch_manifest.csv`
 - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
 - Inquiry path: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml
+- Ready-to-buy routes: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
 - Ready-to-pay builder: https://jaxassistant55.github.io/jax-micro-offer-studio/start-order.html
 - Free tools: https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html
 - GitHub lead repos: https://jaxassistant55.github.io/jax-micro-offer-studio/github-leads.html

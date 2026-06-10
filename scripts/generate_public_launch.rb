@@ -3384,6 +3384,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Manifest: `public_launch_manifest.csv`
   - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
   - Inquiry path: #{ISSUE_URL}
+  - Ready-to-buy routes: #{SITE_URL}ready-to-buy.html
   - Ready-to-pay builder: #{SITE_URL}start-order.html
   - Free tools: #{SITE_URL}tools.html
   - GitHub lead repos: #{SITE_URL}github-leads.html
@@ -3576,6 +3577,9 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<
     - name: Start order builder
       url: #{SITE_URL}start-order.html
       about: Build a structured ready-to-pay issue.
+    - name: Ready-to-buy routes
+      url: #{SITE_URL}ready-to-buy.html
+      about: Open the highest-intent one-sale service routes.
     - name: Fulfillment ledger
       url: #{SITE_URL}fulfillment.html
       about: Check ready artifacts and local bundle checksums.
