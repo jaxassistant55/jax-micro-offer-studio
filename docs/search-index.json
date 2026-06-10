@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 07:32:47 JST",
+  "generated_at_jst": "2026-06-11 07:54:59 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -1250,6 +1250,22 @@
       "first_100": "Use Content Repurposing Sprint route; count $0 until external payment proof exists.",
       "start_order_url": "https://jaxassistant55.github.io/content-repurposing-sprint-starter/inquiry.html",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "closing_room",
+      "title": "Close A Service Order",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html",
+      "summary": "Close-ready buyer reply scripts, invoice lines, proof gates, and stop conditions for $100+ service orders.",
+      "price": "$100+",
+      "money_status": "0 until external payment proof exists"
+    },
+    {
+      "type": "closing_room_csv",
+      "title": "Service Closing Room CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service_closing_room.csv",
+      "summary": "Machine-readable close scripts, invoice lines, safe input requirements, proof rules, and stop conditions for service orders.",
+      "price": "$100+",
+      "money_status": "0 until external payment proof exists"
     }
   ]
 }

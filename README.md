@@ -10,6 +10,7 @@ Public launch package generated during the autonomous earning run.
 - Inquiry path: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml
 - Buyer intent router: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html
 - Ready-to-buy routes: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
+- Close a service order: https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html
 - Ready-to-pay builder: https://jaxassistant55.github.io/jax-micro-offer-studio/start-order.html
 - Free tools: https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html
 - GitHub lead repos: https://jaxassistant55.github.io/jax-micro-offer-studio/github-leads.html

@@ -12,6 +12,9 @@ contact_links:
   - name: Buyer intent router
     url: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html
     about: Match a buyer problem to the closest ready-to-buy route.
+  - name: Close a service order
+    url: https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html
+    about: Use close-ready scripts, invoice lines, and proof gates for $100+ services.
   - name: Fulfillment ledger
     url: https://jaxassistant55.github.io/jax-micro-offer-studio/fulfillment.html
     about: Check ready artifacts and local bundle checksums.
