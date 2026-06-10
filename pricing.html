@@ -11,7 +11,7 @@
   <style>
     :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00}
     *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;background:#fff}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:0}h2{margin:24px 0 10px;font-size:1.25rem;letter-spacing:0}h3{margin:0 0 6px;font-size:1.05rem;letter-spacing:0}p{margin:0 0 10px}a{color:var(--accent)}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card,.notice,.panel{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;min-width:0;overflow-wrap:anywhere}.card{display:grid;grid-template-columns:180px 1fr;gap:14px}.card.product{border-left:6px solid var(--green)}.card.service{border-left:6px solid var(--accent)}img,.placeholder{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);border-radius:6px;background:var(--panel)}.placeholder{display:grid;place-items:center;color:var(--muted);font-weight:700;text-transform:uppercase}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;gap:8px;flex-wrap:wrap}.buttons a{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}.notice{border-left:6px solid var(--gold);background:#fffaf0}.split{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px}.fact{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:0 0 10px}.fact span{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.preview-frame{width:100%;min-height:520px;border:1px solid var(--line);border-radius:8px;background:#fff}ul{padding-left:20px}li{margin:6px 0}code{white-space:normal;overflow-wrap:anywhere}
-    table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}
+    table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}label{display:block;font-weight:700;margin:10px 0 4px}input,select,textarea{width:100%;min-height:40px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;background:#fff}textarea{min-height:100px}.total{font-size:1.4rem;font-weight:800}
     @media(max-width:900px){.grid,.card,.split{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase}}
   </style>
 </head>
@@ -23,7 +23,7 @@
   <td data-label="Price">$19</td>
   <td data-label="Path to $100">6 sales at $19 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+HTML5+Micro+Game+Kit">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+HTML5+Micro+Game+Kit&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+HTML5+Micro+Game+Kit%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fhtml5-micro-game-kit.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="procedural-sfx-pack.html">Procedural SFX Pack</a></td>
@@ -31,7 +31,7 @@
   <td data-label="Price">$12</td>
   <td data-label="Path to $100">9 sales at $12 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Procedural+SFX+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Procedural+SFX+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Procedural+SFX+Pack%0AListed+price%3A+%2412%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fprocedural-sfx-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="svg-icon-pack.html">SVG Icon Pack</a></td>
@@ -39,7 +39,7 @@
   <td data-label="Price">$15</td>
   <td data-label="Path to $100">7 sales at $15 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+SVG+Icon+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+SVG+Icon+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+SVG+Icon+Pack%0AListed+price%3A+%2415%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsvg-icon-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="printable-puzzle-and-planner-pack.html">Printable Puzzle and Planner Pack</a></td>
@@ -47,7 +47,7 @@
   <td data-label="Price">$14</td>
   <td data-label="Path to $100">8 sales at $14 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Printable+Puzzle+and+Planner+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Printable+Puzzle+and+Planner+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Printable+Puzzle+and+Planner+Pack%0AListed+price%3A+%2414%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fprintable-puzzle-and-planner-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="synthetic-mock-dataset-pack.html">Synthetic Mock Dataset Pack</a></td>
@@ -55,7 +55,7 @@
   <td data-label="Price">$19</td>
   <td data-label="Path to $100">6 sales at $19 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Synthetic+Mock+Dataset+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Synthetic+Mock+Dataset+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Synthetic+Mock+Dataset+Pack%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsynthetic-mock-dataset-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="browser-extension-template.html">Browser Extension Template</a></td>
@@ -63,7 +63,7 @@
   <td data-label="Price">$29</td>
   <td data-label="Path to $100">4 sales at $29 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Browser+Extension+Template">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Browser+Extension+Template&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Browser+Extension+Template%0AListed+price%3A+%2429%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fbrowser-extension-template.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="csv-cli-toolkit.html">CSV CLI Toolkit</a></td>
@@ -71,7 +71,7 @@
   <td data-label="Price">$19</td>
   <td data-label="Path to $100">6 sales at $19 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+CSV+CLI+Toolkit">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+CSV+CLI+Toolkit&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+CSV+CLI+Toolkit%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fcsv-cli-toolkit.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="css-component-pack.html">CSS Component Pack</a></td>
@@ -79,7 +79,7 @@
   <td data-label="Price">$19</td>
   <td data-label="Path to $100">6 sales at $19 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+CSS+Component+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+CSS+Component+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+CSS+Component+Pack%0AListed+price%3A+%2419%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fcss-component-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="svg-wallpaper-pattern-pack.html">SVG Wallpaper Pattern Pack</a></td>
@@ -87,7 +87,7 @@
   <td data-label="Price">$9</td>
   <td data-label="Path to $100">12 sales at $9 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+SVG+Wallpaper+Pattern+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+SVG+Wallpaper+Pattern+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+SVG+Wallpaper+Pattern+Pack%0AListed+price%3A+%249%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsvg-wallpaper-pattern-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="anki-ready-flashcard-deck.html">Anki-Ready Flashcard Deck</a></td>
@@ -95,7 +95,7 @@
   <td data-label="Price">$12</td>
   <td data-label="Path to $100">9 sales at $12 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Anki-Ready+Flashcard+Deck">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Anki-Ready+Flashcard+Deck&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Anki-Ready+Flashcard+Deck%0AListed+price%3A+%2412%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fanki-ready-flashcard-deck.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="mini-course-workbook.html">Mini Course Workbook</a></td>
@@ -103,7 +103,7 @@
   <td data-label="Price">$29</td>
   <td data-label="Path to $100">4 sales at $29 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Mini+Course+Workbook">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Mini+Course+Workbook&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Mini+Course+Workbook%0AListed+price%3A+%2429%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fmini-course-workbook.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="json-schema-fixture-pack.html">JSON Schema Fixture Pack</a></td>
@@ -111,7 +111,7 @@
   <td data-label="Price">$15</td>
   <td data-label="Path to $100">7 sales at $15 clears $100 gross.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+JSON+Schema+Fixture+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+JSON+Schema+Fixture+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+JSON+Schema+Fixture+Pack%0AListed+price%3A+%2415%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fjson-schema-fixture-pack.html%0AOffer+type%3A+product%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="website-audit-microservice.html">Website Audit Microservice</a></td>
@@ -119,7 +119,7 @@
   <td data-label="Price">$150</td>
   <td data-label="Path to $100">One accepted audit clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Website+Audit+Microservice">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Website+Audit+Microservice&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Website+Audit+Microservice%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fwebsite-audit-microservice.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="data-cleanup-sprint.html">Data Cleanup Sprint</a></td>
@@ -127,7 +127,7 @@
   <td data-label="Price">$125</td>
   <td data-label="Path to $100">One completed sprint clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Data+Cleanup+Sprint">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Data+Cleanup+Sprint&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Data+Cleanup+Sprint%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fdata-cleanup-sprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="ai-workflow-tracker-sprint.html">AI Workflow Tracker Sprint</a></td>
@@ -135,7 +135,7 @@
   <td data-label="Price">$150</td>
   <td data-label="Path to $100">One fixed-price order clears $100.</td>
   <td data-label="Ready state">Source folder listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+AI+Workflow+Tracker+Sprint">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+AI+Workflow+Tracker+Sprint&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+AI+Workflow+Tracker+Sprint%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fai-workflow-tracker-sprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="static-demo-site-customization.html">Static Demo Site Customization</a></td>
@@ -143,7 +143,7 @@
   <td data-label="Price">$200</td>
   <td data-label="Path to $100">One starter site clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Static+Demo+Site+Customization">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Static+Demo+Site+Customization&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Static+Demo+Site+Customization%0AListed+price%3A+%24200%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fstatic-demo-site-customization.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="niche-quote-estimator.html">Niche Quote Estimator</a></td>
@@ -151,7 +151,7 @@
   <td data-label="Price">$150</td>
   <td data-label="Path to $100">One custom estimator clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Niche+Quote+Estimator">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Niche+Quote+Estimator&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Niche+Quote+Estimator%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fniche-quote-estimator.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="automation-blueprint.html">Automation Blueprint</a></td>
@@ -159,7 +159,7 @@
   <td data-label="Price">$100</td>
   <td data-label="Path to $100">One blueprint reaches $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Automation+Blueprint">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Automation+Blueprint&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Automation+Blueprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fautomation-blueprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="local-seo-gbp-audit.html">Local SEO / GBP Audit</a></td>
@@ -167,7 +167,7 @@
   <td data-label="Price">$175</td>
   <td data-label="Path to $100">One audit clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Local+SEO+%2F+GBP+Audit">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Local+SEO+%2F+GBP+Audit&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Local+SEO+%2F+GBP+Audit%0AListed+price%3A+%24175%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Flocal-seo-gbp-audit.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="technical-docs-cleanup.html">Technical Docs Cleanup</a></td>
@@ -175,7 +175,7 @@
   <td data-label="Price">$150</td>
   <td data-label="Path to $100">One docs sprint clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Technical+Docs+Cleanup">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Technical+Docs+Cleanup&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Technical+Docs+Cleanup%0AListed+price%3A+%24150%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Ftechnical-docs-cleanup.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="client-intake-and-sop-package.html">Client Intake and SOP Package</a></td>
@@ -183,7 +183,7 @@
   <td data-label="Price">$125</td>
   <td data-label="Path to $100">One package clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Client+Intake+and+SOP+Package">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Client+Intake+and+SOP+Package&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Client+Intake+and+SOP+Package%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fclient-intake-and-sop-package.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="pdf-table-extraction.html">PDF/Table Extraction</a></td>
@@ -191,7 +191,7 @@
   <td data-label="Price">$125</td>
   <td data-label="Path to $100">One extraction package clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+PDF%2FTable+Extraction">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+PDF%2FTable+Extraction&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+PDF%2FTable+Extraction%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fpdf-table-extraction.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="content-repurposing-sprint.html">Content Repurposing Sprint</a></td>
@@ -199,7 +199,7 @@
   <td data-label="Price">$100</td>
   <td data-label="Path to $100">One repurposing sprint reaches $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Content+Repurposing+Sprint">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Content+Repurposing+Sprint&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Content+Repurposing+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fcontent-repurposing-sprint.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 <tr>
   <td data-label="Offer"><a href="resume-linkedin-interview-pack.html">Resume / LinkedIn / Interview Pack</a></td>
@@ -207,7 +207,7 @@
   <td data-label="Price">$125</td>
   <td data-label="Path to $100">One career packet clears $100.</td>
   <td data-label="Ready state">Bundle checksum listed</td>
-  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml&title=Inquiry%3A+Resume+%2F+LinkedIn+%2F+Interview+Pack">Open inquiry</a></td>
+  <td data-label="Inquiry"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Resume+%2F+LinkedIn+%2F+Interview+Pack&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Resume+%2F+LinkedIn+%2F+Interview+Pack%0AListed+price%3A+%24125%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fresume-linkedin-interview-pack.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Start order</a></td>
 </tr>
 </tbody></table></section>
 </main>
