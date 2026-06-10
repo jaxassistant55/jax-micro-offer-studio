@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 03:26:18 JST",
+  "generated_at_jst": "2026-06-11 03:31:23 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -352,6 +352,18 @@
       "proof_rule": "Counts $0 until external buyer/payment proof exists."
     },
     {
+      "type": "service",
+      "title": "Subscription Audit and Savings Prep Pack",
+      "slug": "subscription-audit-and-savings-prep-pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-audit-and-savings-prep-pack.html",
+      "price": "$100",
+      "amount_usd": 100.0,
+      "description": "Recurring-charge audit template, savings calculator, cancellation/downgrade scripts, risk controls, and proof checklist for finding avoidable subscription costs.",
+      "first_100": "One paid subscription-audit prep pack reaches $100; one verified $9/month downgrade can also prove $108/year in savings for the account owner.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Subscription+Audit+and+Savings+Prep+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Subscription+Audit+and+Savings+Prep+Pack%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsubscription-audit-and-savings-prep-pack.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until external buyer/payment proof exists."
+    },
+    {
       "type": "free_tool",
       "title": "CSV Cleaner Lite",
       "slug": "csv-cleaner-lite",
@@ -446,6 +458,18 @@
       "first_100": "Counts $0 until a buyer requests the Translation and Localization Draft Pack and external payment proof exists.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Translation+and+Localization+Draft+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Translation+and+Localization+Draft+Pack%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Ftranslation-and-localization-draft-pack.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until a buyer requests the Translation and Localization Draft Pack and external payment proof exists."
+    },
+    {
+      "type": "free_tool",
+      "title": "Subscription Savings Calculator",
+      "slug": "subscription-savings-calculator",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-savings-calculator.html",
+      "price": "$0",
+      "amount_usd": 0,
+      "description": "Browser-only lead tool for Subscription Audit and Savings Prep Pack.",
+      "first_100": "Counts $0 until a buyer requests the Subscription Audit and Savings Prep Pack or account-owner savings are externally verified.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Subscription+Audit+and+Savings+Prep+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Subscription+Audit+and+Savings+Prep+Pack%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsubscription-audit-and-savings-prep-pack.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until a buyer requests the Subscription Audit and Savings Prep Pack or account-owner savings are externally verified."
     }
   ]
 }

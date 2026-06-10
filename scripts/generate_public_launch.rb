@@ -213,7 +213,8 @@ SERVICES = [
   ["Content Repurposing Sprint", "content_repurposing_service", "$100", "Newsletter, social posts, captions, hooks, and publishing checklist from one source asset.", "One repurposing sprint reaches $100.", "content_dashboard.html"],
   ["Resume / LinkedIn / Interview Pack", "career_services", "$125", "Truthful resume, LinkedIn, cover letter, and interview prep packet.", "One career packet clears $100.", nil],
   ["Resale Listing and Price Research Pack", "resale_listing_research", "$100", "Item-intake, photo checklist, comparable-price research template, listing drafts, pricing risk notes, and owner posting checklist for up to 10 owned items.", "One paid resale listing pack reaches $100.", nil],
-  ["Translation and Localization Draft Pack", "translation_localization", "$100", "Review-ready localization intake, glossary notes, draft structure, locale choices, and QA checklist for up to 1,000 source words.", "One paid localization draft pack reaches $100.", nil]
+  ["Translation and Localization Draft Pack", "translation_localization", "$100", "Review-ready localization intake, glossary notes, draft structure, locale choices, and QA checklist for up to 1,000 source words.", "One paid localization draft pack reaches $100.", nil],
+  ["Subscription Audit and Savings Prep Pack", "subscription_audit", "$100", "Recurring-charge audit template, savings calculator, cancellation/downgrade scripts, risk controls, and proof checklist for finding avoidable subscription costs.", "One paid subscription-audit prep pack reaches $100; one verified $9/month downgrade can also prove $108/year in savings for the account owner.", "audit_dashboard.html"]
 ].map do |title, dir, price, description, first_100, preview|
   service_root = File.join(RUN_ROOT, "non_bounty", dir)
   {
@@ -261,7 +262,8 @@ ZIP_BY_SLUG = {
   "content-repurposing-sprint" => "content-repurposing-service-kit.zip",
   "resume-linkedin-interview-pack" => "career-services-kit.zip",
   "resale-listing-and-price-research-pack" => "resale-listing-research-kit.zip",
-  "translation-and-localization-draft-pack" => "translation-localization-kit.zip"
+  "translation-and-localization-draft-pack" => "translation-localization-kit.zip",
+  "subscription-audit-and-savings-prep-pack" => "subscription-audit-kit.zip"
 }.freeze
 
 OFFERS.each do |offer|
@@ -607,6 +609,7 @@ prompt_workflow_offer = OFFERS.find { |offer| offer[:slug] == "prompt-workflow-p
 sales_enablement_offer = OFFERS.find { |offer| offer[:slug] == "sales-enablement-kit" }
 resale_listing_offer = OFFERS.find { |offer| offer[:slug] == "resale-listing-and-price-research-pack" }
 translation_localization_offer = OFFERS.find { |offer| offer[:slug] == "translation-and-localization-draft-pack" }
+subscription_audit_offer = OFFERS.find { |offer| offer[:slug] == "subscription-audit-and-savings-prep-pack" }
 
 tool_rows = [
   {
@@ -680,6 +683,15 @@ tool_rows = [
     path: "localization-qa-brief-builder.html",
     paid_path: prefilled_issue_url(translation_localization_offer),
     proof_rule: "Counts $0 until a buyer requests the Translation and Localization Draft Pack and external payment proof exists."
+  },
+  {
+    slug: "subscription-savings-calculator",
+    title: "Subscription Savings Calculator",
+    service: subscription_audit_offer[:title],
+    price: subscription_audit_offer[:price],
+    path: "subscription-savings-calculator.html",
+    paid_path: prefilled_issue_url(subscription_audit_offer),
+    proof_rule: "Counts $0 until a buyer requests the Subscription Audit and Savings Prep Pack or account-owner savings are externally verified."
   }
 ]
 
@@ -1369,6 +1381,121 @@ slogans may need transcreation instead of literal translation</textarea>
       URL.revokeObjectURL(url);
     });
     buildLocalizationBrief();
+  </script>
+HTML
+
+subscription_tool_row = tool_rows.find { |row| row[:slug] == "subscription-savings-calculator" }
+File.write(File.join(DOCS, "subscription-savings-calculator.html"), page_shell("Subscription Savings Calculator - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(subscription_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(subscription_audit_offer))}">Start $100 audit prep pack</a></p><h1>Subscription Savings Calculator</h1><p class="muted">Estimate potential annualized savings from recurring charges and build a safe review checklist. Everything runs in the browser; nothing is uploaded.</p></header>
+  <section class="notice"><h2>Account and advice boundary</h2><p>This is an organizer and service preview, not financial, tax, legal, or account-security advice. Do not paste full bank exports, card numbers, passwords, OTPs, private statements, account IDs, or business-critical secrets. Do not cancel password managers, domains, email, backups, developer accounts, insurance, health services, or business-critical tools without an owner-approved replacement plan.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Recurring-charge rows</h2>
+      <p class="muted">CSV columns: <code>vendor,category,monthly_cost_usd,usage,action,estimated_monthly_savings_usd,risk_note</code>.</p>
+      <label for="subscriptionCsvInput">Subscription CSV sample</label>
+      <textarea id="subscriptionCsvInput">vendor,category,monthly_cost_usd,usage,action,estimated_monthly_savings_usd,risk_note
+Example SaaS tool,software,29,unused,cancel,29,verify no team dependency
+Example streaming bundle,media,19,low,downgrade,9,check household usage
+Example storage plan,cloud,12,active,negotiate,5,confirm backup coverage</textarea>
+      <p class="buttons"><a href="#" id="subscriptionAnalyzeBtn">Build savings plan</a><a href="#" id="subscriptionDownloadBtn">Download plan</a><a href="#{h(prefilled_issue_url(subscription_audit_offer))}" id="subscriptionOrderBtn">Start paid audit prep</a></p>
+      <div class="copybox" id="subscriptionOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Potential annual savings</span><strong id="potentialSavings">$0</strong></div>
+      <div class="fact"><span>Annual recurring spend</span><strong id="annualSpend">$0</strong></div>
+      <div class="fact"><span>Rows to review</span><strong id="reviewRows">0</strong></div>
+      <div class="fact"><span>Paid service</span><strong>Subscription Audit and Savings Prep Pack - $100</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until payment or verified posted savings proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function parseSubscriptionCsv(text){
+      const rows = [];
+      let row = [], cell = '', quoted = false;
+      for(let i = 0; i < text.length; i++){
+        const ch = text[i], next = text[i + 1];
+        if(ch === '"' && quoted && next === '"'){ cell += '"'; i++; }
+        else if(ch === '"'){ quoted = !quoted; }
+        else if(ch === ',' && !quoted){ row.push(cell); cell = ''; }
+        else if((ch === '\\n' || ch === '\\r') && !quoted){
+          if(ch === '\\r' && next === '\\n') i++;
+          row.push(cell); rows.push(row); row = []; cell = '';
+        } else { cell += ch; }
+      }
+      row.push(cell); rows.push(row);
+      return rows.filter(r => r.some(c => c.trim() !== ''));
+    }
+    function subscriptionMoney(n){ return '$' + Number(n || 0).toFixed(2).replace(/\\.00$/, ''); }
+    function buildSubscriptionPlan(){
+      const rows = parseSubscriptionCsv(document.getElementById('subscriptionCsvInput').value);
+      const headers = (rows[0] || []).map(h => h.trim());
+      const records = rows.slice(1).map(r => Object.fromEntries(headers.map((h, i) => [h, (r[i] || '').trim()])));
+      const numberFor = (row, key) => Number(String(row[key] || '0').replace(/[^0-9.-]/g, '')) || 0;
+      const annualSpend = records.reduce((sum, row) => sum + numberFor(row, 'monthly_cost_usd') * 12, 0);
+      const potential = records.reduce((sum, row) => sum + numberFor(row, 'estimated_monthly_savings_usd') * 12, 0);
+      const review = records.filter(row => numberFor(row, 'estimated_monthly_savings_usd') > 0);
+      const plan = [
+        'Subscription Savings Plan',
+        '',
+        'Rows reviewed: ' + records.length,
+        'Annual recurring spend: ' + subscriptionMoney(annualSpend),
+        'Potential annualized savings: ' + subscriptionMoney(potential),
+        'Confirmed savings: $0 until provider or billing proof exists.',
+        '',
+        'Review queue:',
+        ...(review.length ? review.map((row, i) => (i + 1) + '. ' + (row.vendor || '[vendor]') + ' - action: ' + (row.action || '[review]') + ' - estimated annual savings: ' + subscriptionMoney(numberFor(row, 'estimated_monthly_savings_usd') * 12) + ' - risk check: ' + (row.risk_note || '[add risk note]')) : ['1. No savings rows entered.']),
+        '',
+        'Owner-only action checklist:',
+        '1. Open the official account or provider dashboard yourself.',
+        '2. Confirm owner authority, renewal date, stored data, users, dependencies, and replacement plan.',
+        '3. Cancel, downgrade, or negotiate only when it will not break required access or records.',
+        '4. Save provider confirmation, next-bill reduction, posted credit, or statement proof.',
+        '5. Count only verified posted savings, not estimates.',
+        '',
+        'Suggested paid next step:',
+        'Subscription Audit and Savings Prep Pack ($100) for normalized audit CSV, risk controls, scripts, and proof checklist.',
+        '',
+        'Proof rule: count $0 until a buyer pays for the prep pack or account-owner savings are externally verified.'
+      ].join('\\n');
+      document.getElementById('potentialSavings').textContent = subscriptionMoney(potential);
+      document.getElementById('annualSpend').textContent = subscriptionMoney(annualSpend);
+      document.getElementById('reviewRows').textContent = String(review.length);
+      document.getElementById('subscriptionOutput').textContent = plan;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Subscription Audit and Savings Prep Pack',
+        'Listed price: $100',
+        'Tool source: #{SITE_URL}subscription-savings-calculator.html',
+        '',
+        'Requested quantity or scope:',
+        'Recurring-charge audit prep using buyer-approved low-risk rows, cancellation/downgrade scripts, risk controls, and proof checklist.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Audit prep CSV, scripts, risk notes, and proof checklist accepted by buyer.',
+        '',
+        'Savings plan:',
+        plan
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Subscription Audit and Savings Prep Pack', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('subscriptionOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return plan;
+    }
+    document.getElementById('subscriptionCsvInput').addEventListener('input', buildSubscriptionPlan);
+    document.getElementById('subscriptionAnalyzeBtn').addEventListener('click', event => { event.preventDefault(); buildSubscriptionPlan(); });
+    document.getElementById('subscriptionDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const plan = buildSubscriptionPlan();
+      const blob = new Blob([plan], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'subscription-savings-plan.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildSubscriptionPlan();
   </script>
 HTML
 
@@ -2139,7 +2266,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|

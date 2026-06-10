@@ -26,6 +26,7 @@ body:
         - Resume / LinkedIn / Interview Pack ($125)
         - Resale Listing and Price Research Pack ($100)
         - Translation and Localization Draft Pack ($100)
+        - Subscription Audit and Savings Prep Pack ($100)
     validations:
       required: true
   - type: textarea
