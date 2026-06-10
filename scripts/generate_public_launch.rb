@@ -548,6 +548,140 @@ def page_shell(title, body, head_extra = "")
   HTML
 end
 
+READY_TO_BUY_SLUGS = %w[
+  static-demo-site-customization
+  local-seo-gbp-audit
+  niche-quote-estimator
+  website-audit-microservice
+  ai-workflow-tracker-sprint
+  technical-docs-cleanup
+  resume-linkedin-interview-pack
+  pdf-table-extraction
+  client-intake-and-sop-package
+  data-cleanup-sprint
+  automation-blueprint
+  content-repurposing-sprint
+].freeze
+
+GITHUB_LEAD_TITLE_BY_OFFER_SLUG = {
+  "static-demo-site-customization" => "Static Service Site Starter",
+  "local-seo-gbp-audit" => "Local SEO GBP Audit Starter",
+  "niche-quote-estimator" => "Niche Quote Estimator Starter",
+  "website-audit-microservice" => "Website Audit Microservice Starter",
+  "ai-workflow-tracker-sprint" => "Workflow Tracker Dashboard Starter",
+  "technical-docs-cleanup" => "Technical Docs Cleanup Starter",
+  "resume-linkedin-interview-pack" => "Career Packet Starter",
+  "pdf-table-extraction" => "PDF Table Extraction Starter",
+  "client-intake-and-sop-package" => "Client Intake SOP Starter",
+  "data-cleanup-sprint" => "Data Cleanup Sprint Starter",
+  "automation-blueprint" => "Automation Blueprint Starter",
+  "content-repurposing-sprint" => "Content Repurposing Sprint Starter"
+}.freeze
+
+def github_lead_for_offer(offer)
+  lead_title = GITHUB_LEAD_TITLE_BY_OFFER_SLUG[offer[:slug]]
+  return {} unless lead_title
+
+  GITHUB_LEADS.find { |row| row["title"] == lead_title } || {}
+end
+
+def ready_to_buy_path(offer)
+  "ready-to-buy-#{offer[:slug]}.html"
+end
+
+def ready_to_buy_inquiry_url(offer, lead)
+  landing = lead["standalone_index_url"].to_s
+  return "#{landing}inquiry.html" unless landing.empty?
+
+  prefilled_issue_url(offer, title_prefix: "Ready to buy")
+end
+
+def ready_to_buy_links(offer)
+  lead = github_lead_for_offer(offer)
+  landing = lead["standalone_index_url"].to_s
+  links = [
+    ["Start prefilled inquiry", ready_to_buy_inquiry_url(offer, lead)],
+    ["Offer page", "#{offer[:slug]}.html"],
+    ["Standalone landing", landing],
+    ["Live preview", lead["pages_url"].to_s.empty? ? offer[:preview_public] : lead["pages_url"]],
+    ["Repo order board", lead["repo_order_issue_url"]],
+    ["GitHub repo", lead["repo_url"]]
+  ].reject { |_, url| url.to_s.empty? }
+
+  links.map { |label, url| %(<a href="#{h(url)}">#{h(label)}</a>) }.join
+end
+
+def ready_to_buy_card(offer)
+  lead = github_lead_for_offer(offer)
+  proof = lead["proof_rule"].to_s.empty? ? "External paid order, accepted scope, delivery proof, and posted/released/payable payment proof." : lead["proof_rule"]
+  <<~HTML
+    <article class="panel">
+      <span class="eyebrow">Ready-to-buy route / #{h(offer[:price])}</span>
+      <h2><a href="#{h(ready_to_buy_path(offer))}">#{h(offer[:title])}</a></h2>
+      <p>#{h(offer[:description])}</p>
+      <p><strong>Closest $100 path:</strong> #{h(offer[:first_100])}</p>
+      <p><strong>Proof rule:</strong> #{h(proof)}</p>
+      <p class="buttons">#{ready_to_buy_links(offer)}</p>
+    </article>
+  HTML
+end
+
+def ready_to_buy_detail(offer)
+  lead = github_lead_for_offer(offer)
+  proof = lead["proof_rule"].to_s.empty? ? "External paid order, accepted scope, delivery proof, and posted/released/payable payment proof." : lead["proof_rule"]
+  preview_url = lead["pages_url"].to_s.empty? ? offer[:preview_public] : lead["pages_url"]
+  body = <<~HTML
+    <header>
+      <p class="buttons"><a href="index.html">Home</a><a href="ready-to-buy.html">Ready-to-buy routes</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="proof.html">Proof rules</a></p>
+      <h1>Ready To Buy: #{h(offer[:title])}</h1>
+      <p class="muted">This page removes catalog browsing and routes a buyer straight to a scoped inquiry for a #{h(offer[:price])} #{h(offer[:type])}. It still does not process payment; payment must move through a seller-controlled external route after scope is accepted.</p>
+    </header>
+    <section class="split">
+      <article>
+        <section class="notice">
+          <h2>Use This When</h2>
+          <p>A buyer wants #{h(offer[:description].downcase)} and can provide public or authorized non-sensitive inputs for scoping.</p>
+        </section>
+        <section class="panel">
+          <h2>Buyer Steps</h2>
+          <ol>
+            <li>Open the prefilled inquiry and confirm the requested scope, deadline, delivery preference, and acceptance proof.</li>
+            <li>Use only public, synthetic, or authorized input. Do not post credentials, private payment data, tax identifiers, customer files, or regulated private details.</li>
+            <li>Wait for seller acceptance of the fixed scope and payment/proof route before expecting paid delivery.</li>
+            <li>Pay only through an external seller-controlled checkout, invoice, marketplace order, funded milestone, or payment account.</li>
+            <li>Count the work as money only after the payment is posted, released, payable, or cleared.</li>
+          </ol>
+        </section>
+        <section class="panel">
+          <h2>Delivery Boundary</h2>
+          <p>Prepared public pages and sample previews are not the full paid delivery. Paid custom work or paid bundle transfer starts only after scope and payment are accepted.</p>
+          <p><strong>Proof required:</strong> #{h(proof)}</p>
+        </section>
+      </article>
+      <aside>
+        <div class="fact"><span>Price</span><strong>#{h(offer[:price])}</strong></div>
+        <div class="fact"><span>First $100 path</span><strong>#{h(offer[:first_100])}</strong></div>
+        <div class="fact"><span>Prepared state</span><strong>#{h(offer[:zip_name] ? "Local bundle and checksum ready" : "Source folder and public preview ready")}</strong></div>
+        <div class="fact"><span>Preview</span><strong>#{preview_url.to_s.empty? ? "No preview URL recorded" : %(<a href="#{h(preview_url)}">Open preview</a>)}</strong></div>
+        <p class="buttons">#{ready_to_buy_links(offer)}</p>
+      </aside>
+    </section>
+  HTML
+  schema = {
+    "@context" => "https://schema.org",
+    "@type" => "WebPage",
+    "name" => "Ready To Buy: #{offer[:title]}",
+    "url" => absolute_url(ready_to_buy_path(offer)),
+    "about" => offer_schema(offer),
+    "potentialAction" => {
+      "@type" => "AskAction",
+      "target" => ready_to_buy_inquiry_url(offer, lead),
+      "name" => "Start prefilled paid inquiry"
+    }
+  }
+  page_shell("Ready To Buy #{offer[:title]} - Micro Offer Studio", body, jsonld_script(schema))
+end
+
 OFFERS.each do |offer|
   if offer[:cover] && File.exist?(offer[:cover])
     copy_if_exists(offer[:cover], File.join(DOCS, "assets", "covers", "#{offer[:slug]}.svg"))
@@ -562,10 +696,36 @@ OFFERS.each do |offer|
 end
 
 sample_pack = write_sample_pack(OFFERS)
+ready_to_buy_offers = READY_TO_BUY_SLUGS.map { |offer_slug| OFFERS.find { |offer| offer[:slug] == offer_slug } }.compact
+ready_to_buy_schema = {
+  "@context" => "https://schema.org",
+  "@type" => "CollectionPage",
+  "name" => "Ready To Buy Routes",
+  "url" => absolute_url("ready-to-buy.html"),
+  "description" => "High-intent buyer routes for one-sale service offers that can reach at least $100 before fees and refunds.",
+  "hasPart" => ready_to_buy_offers.map { |offer| { "@type" => "WebPage", "name" => offer[:title], "url" => absolute_url(ready_to_buy_path(offer)) } }
+}
+
+File.write(File.join(DOCS, "ready-to-buy.html"), page_shell("Ready To Buy Routes - Micro Offer Studio", <<~HTML, jsonld_script(ready_to_buy_schema)))
+  <header>
+    <p class="buttons"><a href="index.html">Home</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a></p>
+    <h1>Ready To Buy Routes</h1>
+    <p class="muted">High-intent pages for the closest one-sale paths to $100+. Each route sends a buyer to a prefilled inquiry, preview, order board, and proof rule. These pages still do not process payment.</p>
+  </header>
+  <section class="notice">
+    <h2>Payment Boundary</h2>
+    <p>Start here only when a real buyer is ready to scope a paid request. GitHub issues, page views, previews, stars, and downloads count as $0. Count money only after external payment is posted, released, payable, or cleared.</p>
+  </section>
+  <section class="grid">#{ready_to_buy_offers.map { |offer| ready_to_buy_card(offer) }.join}</section>
+HTML
+
+ready_to_buy_offers.each do |offer|
+  File.write(File.join(DOCS, ready_to_buy_path(offer)), ready_to_buy_detail(offer))
+end
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="ready-to-buy.html">Ready to buy</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -582,7 +742,7 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="order-now.html">Open direct order boards</a><a href="start-order.html">Build ready-to-pay issue</a><a href="github-leads.html">Open GitHub lead repos</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="ready-to-buy.html">Open ready-to-buy routes</a><a href="order-now.html">Open direct order boards</a><a href="start-order.html">Build ready-to-pay issue</a><a href="github-leads.html">Open GitHub lead repos</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 site_schema = {
@@ -617,7 +777,7 @@ File.write(File.join(DOCS, "products.html"), page_shell("Products - Micro Offer 
 HTML
 
 File.write(File.join(DOCS, "services.html"), page_shell("Services - Micro Offer Studio", <<~HTML))
-  <header><p class="buttons"><a href="index.html">Home</a><a href="products.html">Products</a><a href="fulfillment.html">Fulfillment</a><a href="source-notes.html">Source notes</a></p><h1>Productized Services</h1><p class="muted">Fixed-scope offers that can clear $100 with one accepted order. Buyer authorization and payment proof are still required.</p></header>
+  <header><p class="buttons"><a href="index.html">Home</a><a href="ready-to-buy.html">Ready to buy</a><a href="products.html">Products</a><a href="fulfillment.html">Fulfillment</a><a href="source-notes.html">Source notes</a></p><h1>Productized Services</h1><p class="muted">Fixed-scope offers that can clear $100 with one accepted order. Buyer authorization and payment proof are still required.</p></header>
   <section class="grid">#{SERVICES.map { |offer| card_html(offer) }.join}</section>
 HTML
 
@@ -3450,6 +3610,22 @@ github_lead_documents = GITHUB_LEADS.map do |row|
   }
 end
 
+ready_to_buy_documents = ready_to_buy_offers.map do |offer|
+  lead = github_lead_for_offer(offer)
+  {
+    type: "ready_to_buy_route",
+    title: "Ready To Buy: #{offer[:title]}",
+    slug: "ready-to-buy-#{offer[:slug]}",
+    url: absolute_url(ready_to_buy_path(offer)),
+    price: offer[:price],
+    amount_usd: price_amount(offer),
+    description: "High-intent buyer route for #{offer[:description]}",
+    first_100: offer[:first_100],
+    start_order_url: ready_to_buy_inquiry_url(offer, lead),
+    proof_rule: lead["proof_rule"].to_s.empty? ? "Counts $0 until external buyer/payment proof exists." : lead["proof_rule"]
+  }
+end
+
 search_documents = OFFERS.map do |offer|
   {
     type: offer[:type],
@@ -3476,7 +3652,7 @@ end + tool_rows.map do |row|
     start_order_url: row[:paid_path],
     proof_rule: row[:proof_rule]
   }
-end + github_lead_documents
+end + github_lead_documents + ready_to_buy_documents
 
 File.write(File.join(DOCS, "search-index.json"), JSON.pretty_generate(
   generated_at_jst: GENERATED_AT,
@@ -3489,8 +3665,17 @@ structured_graph = {
   "@context" => "https://schema.org",
   "@graph" => [
     site_schema,
+    ready_to_buy_schema,
     tools_schema,
     *OFFERS.map { |offer| offer_schema(offer) },
+    *ready_to_buy_documents.map do |row|
+      {
+        "@type" => "WebPage",
+        "name" => row[:title],
+        "url" => row[:url],
+        "description" => row[:description]
+      }
+    end,
     *tool_rows.map { |row| tool_schema(row) },
     *GITHUB_LEADS.map do |row|
       {
@@ -3515,6 +3700,10 @@ llms_lines = [
   "- Data Cleanup Sprint: $125 service, one accepted paid order clears $100. #{absolute_url("data-cleanup-sprint.html")}",
   "- Website Audit Microservice: $150 service, one accepted paid order clears $100. #{absolute_url("website-audit-microservice.html")}",
   "",
+  "## Ready-to-buy routes",
+  "- Ready-to-buy index: #{absolute_url("ready-to-buy.html")}",
+  *ready_to_buy_offers.map { |offer| "- #{offer[:title]}: #{absolute_url(ready_to_buy_path(offer))} -> #{ready_to_buy_inquiry_url(offer, github_lead_for_offer(offer))}" },
+  "",
   "## Free tools that route to paid services",
   *tool_rows.map { |row| "- #{row[:title]}: #{absolute_url(row[:path])} -> #{row[:service]} #{row[:price]}" },
   "",
@@ -3533,11 +3722,15 @@ llms_lines = [
 ]
 File.write(File.join(DOCS, "llms.txt"), llms_lines.join("\n"))
 
-feed_items = (SERVICES.first(6) + tool_rows).map do |item|
+feed_items = (SERVICES.first(6) + ready_to_buy_offers + tool_rows).map do |item|
   if item.is_a?(Hash) && item.key?(:path)
     title = item[:title]
     link = absolute_url(item[:path])
     description = "Free tool leading to #{item[:service]} at #{item[:price]}. #{item[:proof_rule]}"
+  elsif item.is_a?(Hash) && READY_TO_BUY_SLUGS.include?(item[:slug])
+    title = "Ready To Buy: #{item[:title]}"
+    link = absolute_url(ready_to_buy_path(item))
+    description = "High-intent paid inquiry route for #{item[:price]} #{item[:title]}. #{item[:first_100]}"
   else
     title = item[:title]
     link = absolute_url("#{item[:slug]}.html")
@@ -3588,7 +3781,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "order-now.html", "github-leads.html", "github_lead_repos.csv", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "ready-to-buy.html", "products.html", "services.html", "pricing.html", "tools.html", "order-now.html", "github-leads.html", "github_lead_repos.csv", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" } + ready_to_buy_offers.map { |offer| ready_to_buy_path(offer) }
 urls = (urls + product_preview_tool_rows.map { |row| row[:path] }).uniq
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
