@@ -156,10 +156,11 @@
     "type": "product",
     "title": "Invoice and Expense Tracker Template",
     "slug": "invoice-and-expense-tracker-template",
-    "source_dir": "non_bounty/autonomous_products/invoice_expense_tracker",
+    "source_dir": "non_bounty/invoice_expense_tracker",
     "price": "$19",
     "description": "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.",
     "first_100": "6 sales at $19 clears $100 gross.",
+    "preview_public": "previews/invoice-and-expense-tracker-template.html",
     "zip_name": "invoice-expense-tracker-kit.zip",
     "zip_bytes": 4084,
     "zip_sha256": "49e4bbdb0e4ce190e81e9db5ff75a9223b1376dd2707db6568418de4587aa087"

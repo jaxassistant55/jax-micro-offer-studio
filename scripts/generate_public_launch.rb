@@ -180,12 +180,13 @@ PRODUCTS = [
   ["JSON Schema Fixture Pack", "json_schema_fixture_pack", "$15", "JSON schemas and valid/invalid fixtures for common SaaS objects.", "7 sales at $15 clears $100 gross.", nil],
   ["Invoice and Expense Tracker Template", "invoice_expense_tracker", "$19", "A lightweight CSV and local dashboard template for freelancers tracking invoices, expenses, status, and outstanding payments.", "6 sales at $19 clears $100 gross.", "dashboard.html"]
 ].map do |title, dir, price, description, first_100, preview|
-  product_root = File.join(RUN_ROOT, "non_bounty", "autonomous_products", dir)
+  source_prefix = title == "Invoice and Expense Tracker Template" ? "non_bounty" : "non_bounty/autonomous_products"
+  product_root = File.join(RUN_ROOT, source_prefix, dir)
   {
     type: "product",
     title: title,
     slug: slug(title),
-    source_dir: "non_bounty/autonomous_products/#{dir}",
+    source_dir: "#{source_prefix}/#{dir}",
     price: price,
     description: description,
     first_100: first_100,
