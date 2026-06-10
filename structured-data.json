@@ -1715,9 +1715,45 @@
     },
     {
       "@type": "WebPage",
-      "name": "Workflow Tracker Dashboard Starter",
-      "url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter",
-      "description": "Standalone GitHub lead repository for One paid workflow tracker sprint clears $100 before fees/refunds."
+      "name": "Automation Blueprint Starter",
+      "url": "https://github.com/jaxassistant55/automation-blueprint-starter",
+      "description": "Standalone GitHub lead repository for One paid Automation Blueprint order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Browser Extension Template Preview",
+      "url": "https://github.com/jaxassistant55/browser-extension-template-preview",
+      "description": "Standalone GitHub lead repository for Four paid browser-extension template transfers gross at least $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Client Intake SOP Starter",
+      "url": "https://github.com/jaxassistant55/client-intake-sop-starter",
+      "description": "Standalone GitHub lead repository for One paid Client Intake and SOP Package order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Content Repurposing Sprint Starter",
+      "url": "https://github.com/jaxassistant55/content-repurposing-sprint-starter",
+      "description": "Standalone GitHub lead repository for One paid Content Repurposing Sprint order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Data Cleanup Sprint Starter",
+      "url": "https://github.com/jaxassistant55/data-cleanup-sprint-starter",
+      "description": "Standalone GitHub lead repository for One paid Data Cleanup Sprint order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Local SEO GBP Audit Starter",
+      "url": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter",
+      "description": "Standalone GitHub lead repository for One paid Local SEO / GBP Audit order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "PDF Table Extraction Starter",
+      "url": "https://github.com/jaxassistant55/pdf-table-extraction-starter",
+      "description": "Standalone GitHub lead repository for One paid PDF/Table Extraction order clears $100 before fees/refunds."
     },
     {
       "@type": "WebPage",
@@ -1727,9 +1763,21 @@
     },
     {
       "@type": "WebPage",
-      "name": "Browser Extension Template Preview",
-      "url": "https://github.com/jaxassistant55/browser-extension-template-preview",
-      "description": "Standalone GitHub lead repository for Four paid browser-extension template transfers gross at least $100 before fees/refunds."
+      "name": "Technical Docs Cleanup Starter",
+      "url": "https://github.com/jaxassistant55/technical-docs-cleanup-starter",
+      "description": "Standalone GitHub lead repository for One paid Technical Docs Cleanup order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Website Audit Microservice Starter",
+      "url": "https://github.com/jaxassistant55/website-audit-microservice-starter",
+      "description": "Standalone GitHub lead repository for One paid Website Audit Microservice order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Workflow Tracker Dashboard Starter",
+      "url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter",
+      "description": "Standalone GitHub lead repository for One paid workflow tracker sprint clears $100 before fees/refunds."
     }
   ]
 }
