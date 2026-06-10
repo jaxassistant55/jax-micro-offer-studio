@@ -187,6 +187,86 @@
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
+      "name": "Buyer intent router",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "I need a simple service website or landing page",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-static-demo-site-customization.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "My local business profile or citations need a quick audit",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-local-seo-gbp-audit.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "I need a browser quote estimator for a simple service",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-niche-quote-estimator.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "My website is not converting or has obvious UX/content issues",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-website-audit-microservice.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "I need a lightweight tracker/dashboard for leads, interviews, grants, or work",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-ai-workflow-tracker-sprint.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "My README, quickstart, SOP, or docs need cleanup",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-technical-docs-cleanup.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "I need truthful career materials polished",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-resume-linkedin-interview-pack.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "I need tables extracted from PDFs/screenshots into CSV",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-pdf-table-extraction.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "I need intake questions, SOP, and delivery checklist",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-client-intake-and-sop-package.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "I need a CSV/spreadsheet cleaned and validated",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-data-cleanup-sprint.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "I need an automation plan before building in Zapier/Make/scripts",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-automation-blueprint.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "I need one source asset turned into newsletter/social/captions",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-content-repurposing-sprint.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
       "name": "Micro Offer Studio free tools",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html",
       "itemListElement": [
