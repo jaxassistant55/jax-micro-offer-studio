@@ -1712,6 +1712,24 @@
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack-preview-builder.html"
       }
+    },
+    {
+      "@type": "WebPage",
+      "name": "Workflow Tracker Dashboard Starter",
+      "url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter",
+      "description": "Standalone GitHub lead repository for One paid workflow tracker sprint clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Static Service Site Starter",
+      "url": "https://github.com/jaxassistant55/static-service-site-starter",
+      "description": "Standalone GitHub lead repository for One paid static service site customization clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Browser Extension Template Preview",
+      "url": "https://github.com/jaxassistant55/browser-extension-template-preview",
+      "description": "Standalone GitHub lead repository for Four paid browser-extension template transfers gross at least $100 before fees/refunds."
     }
   ]
 }

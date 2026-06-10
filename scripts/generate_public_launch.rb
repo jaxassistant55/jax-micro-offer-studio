@@ -282,6 +282,8 @@ ORDER_BOARDS_PATH = File.join(LAUNCH_ROOT, "order_boards.csv")
 ORDER_BOARDS = File.exist?(ORDER_BOARDS_PATH) ? CSV.read(ORDER_BOARDS_PATH, headers: true).map(&:to_h) : []
 PROOF_MONITOR_PATH = File.join(LAUNCH_ROOT, "proof_monitor.csv")
 PROOF_MONITOR = File.exist?(PROOF_MONITOR_PATH) ? CSV.read(PROOF_MONITOR_PATH, headers: true).map(&:to_h) : []
+GITHUB_LEADS_PATH = File.join(RUN_ROOT, "github_lead_repos", "github_lead_repos.csv")
+GITHUB_LEADS = File.exist?(GITHUB_LEADS_PATH) ? CSV.read(GITHUB_LEADS_PATH, headers: true).map(&:to_h) : []
 
 FileUtils.rm_rf(DOCS)
 FileUtils.mkdir_p(File.join(DOCS, "assets", "covers"))
@@ -407,6 +409,22 @@ def proof_monitor_rows(rows)
   end.join
 end
 
+def github_lead_rows(rows)
+  rows.map do |row|
+    <<~HTML
+      <tr>
+        <td data-label="Lead repo"><a href="#{h(row["repo_url"])}">#{h(row["title"])}</a><br><span class="muted">#{h(row["type"])}</span></td>
+        <td data-label="Price">#{h(row["price"])}</td>
+        <td data-label="Path to $100">#{h(row["first_100_path"])}</td>
+        <td data-label="Preview"><a href="#{h(row["pages_url"])}">Pages preview</a><br><span class="muted">#{h(row["pages_status"])}</span></td>
+        <td data-label="Conversion"><a href="#{h(row["issue_template_url"])}">Paid inquiry template</a><br><a href="#{h(row["order_issue_url"])}">Main order board</a></td>
+        <td data-label="Release"><a href="#{h(row["release_url"])}">preview-v1</a><br><a href="#{h(row["asset_url"])}">ZIP asset</a></td>
+        <td data-label="Proof rule">#{h(row["proof_rule"])}</td>
+      </tr>
+    HTML
+  end.join
+end
+
 def write_sample_pack(offers)
   samples_dir = File.join(DOCS, "samples")
   FileUtils.mkdir_p(samples_dir)
@@ -525,7 +543,7 @@ sample_pack = write_sample_pack(OFFERS)
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="github-leads.html">GitHub leads</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -542,7 +560,7 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="start-order.html">Build ready-to-pay issue</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="start-order.html">Build ready-to-pay issue</a><a href="github-leads.html">Open GitHub lead repos</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 site_schema = {
@@ -600,6 +618,40 @@ File.write(File.join(DOCS, "samples.html"), page_shell("Samples - Micro Offer St
     <article class="panel"><h2>What it does not include</h2><p>No full paid product ZIP, no private buyer data, no credentials, no payment setup, and no claim that money has been earned.</p></article>
   </section>
 HTML
+
+if GITHUB_LEADS.any?
+  CSV.open(File.join(DOCS, "github_lead_repos.csv"), "w", write_headers: true, headers: GITHUB_LEADS.first.keys) do |csv|
+    GITHUB_LEADS.each { |row| csv << row.values_at(*GITHUB_LEADS.first.keys) }
+  end
+  leads_schema = {
+    "@context" => "https://schema.org",
+    "@type" => "CollectionPage",
+    "name" => "GitHub lead repositories",
+    "url" => absolute_url("github-leads.html"),
+    "description" => "Standalone public GitHub lead repositories and live previews for the strongest Micro Offer Studio conversion paths.",
+    "hasPart" => GITHUB_LEADS.map do |row|
+      {
+        "@type" => "WebPage",
+        "name" => row["title"],
+        "url" => row["repo_url"],
+        "about" => row["first_100_path"]
+      }
+    end
+  }
+  File.write(File.join(DOCS, "github-leads.html"), page_shell("GitHub Leads - Micro Offer Studio", <<~HTML, jsonld_script(leads_schema)))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-boards.html">Order boards</a><a href="proof.html">Proof rules</a><a href="github_lead_repos.csv">CSV</a></p><h1>GitHub Lead Repositories</h1><p class="muted">Standalone public repositories, Pages previews, release ZIPs, and paid-inquiry issue templates for the strongest current paths to $100. These are discovery and conversion surfaces, not payment proof.</p></header>
+    <section class="notice"><h2>Money boundary</h2><p>GitHub stars, forks, release downloads, Pages views, and issue drafts count as $0. Count money only after a real buyer accepts scope or transfer terms and external payment is posted, released, payable, or cleared.</p></section>
+    <section><h2>Lead repo table</h2><table><thead><tr><th>Lead repo</th><th>Price</th><th>Path to $100</th><th>Preview</th><th>Conversion</th><th>Release</th><th>Proof rule</th></tr></thead><tbody>#{github_lead_rows(GITHUB_LEADS)}</tbody></table></section>
+    <section class="grid">
+      <article class="panel"><h2>Fastest service lead</h2><p>The $200 Static Service Site Starter and $150 Workflow Tracker Dashboard Starter can each clear $100 with one externally paid order.</p></article>
+      <article class="panel"><h2>Fastest product lead</h2><p>The $29 Browser Extension Template Preview needs four paid transfers to gross at least $100 before fees or refunds.</p></article>
+    </section>
+  HTML
+else
+  File.write(File.join(DOCS, "github-leads.html"), page_shell("GitHub Leads - Micro Offer Studio", <<~HTML))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a></p><h1>GitHub Lead Repositories</h1><p class="muted">No standalone GitHub lead repositories have been published yet.</p></header>
+  HTML
+end
 
 data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint" }
 website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
@@ -3144,6 +3196,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Inquiry path: #{ISSUE_URL}
   - Ready-to-pay builder: #{SITE_URL}start-order.html
   - Free tools: #{SITE_URL}tools.html
+  - GitHub lead repos: #{SITE_URL}github-leads.html
   - Tool manifest: #{SITE_URL}tool_manifest.csv
   - IndexNow status: #{SITE_URL}indexnow.html
   - LLM summary: #{SITE_URL}llms.txt
@@ -3349,6 +3402,24 @@ File.write(File.join(DOCS, "offers.json"), JSON.pretty_generate(OFFERS.map do |o
   offer.slice(:type, :title, :slug, :source_dir, :price, :description, :first_100, :preview_public, :zip_name, :zip_bytes, :zip_sha256)
 end))
 
+github_lead_documents = GITHUB_LEADS.map do |row|
+  {
+    type: "github_lead_repo",
+    title: row["title"],
+    slug: slug(row["title"]),
+    url: absolute_url("github-leads.html"),
+    price: row["price"],
+    amount_usd: row["price"].to_s.gsub(/[^\d.]/, "").to_f,
+    description: "Standalone GitHub lead repository with Pages preview, release ZIP, and paid-inquiry template.",
+    first_100: row["first_100_path"],
+    start_order_url: row["issue_template_url"],
+    proof_rule: row["proof_rule"],
+    repo_url: row["repo_url"],
+    pages_url: row["pages_url"],
+    release_url: row["release_url"]
+  }
+end
+
 search_documents = OFFERS.map do |offer|
   {
     type: offer[:type],
@@ -3375,7 +3446,7 @@ end + tool_rows.map do |row|
     start_order_url: row[:paid_path],
     proof_rule: row[:proof_rule]
   }
-end
+end + github_lead_documents
 
 File.write(File.join(DOCS, "search-index.json"), JSON.pretty_generate(
   generated_at_jst: GENERATED_AT,
@@ -3390,7 +3461,15 @@ structured_graph = {
     site_schema,
     tools_schema,
     *OFFERS.map { |offer| offer_schema(offer) },
-    *tool_rows.map { |row| tool_schema(row) }
+    *tool_rows.map { |row| tool_schema(row) },
+    *GITHUB_LEADS.map do |row|
+      {
+        "@type" => "WebPage",
+        "name" => row["title"],
+        "url" => row["repo_url"],
+        "description" => "Standalone GitHub lead repository for #{row["first_100_path"]}"
+      }
+    end
   ]
 }
 File.write(File.join(DOCS, "structured-data.json"), JSON.pretty_generate(structured_graph))
@@ -3408,6 +3487,9 @@ llms_lines = [
   "",
   "## Free tools that route to paid services",
   *tool_rows.map { |row| "- #{row[:title]}: #{absolute_url(row[:path])} -> #{row[:service]} #{row[:price]}" },
+  "",
+  "## Standalone GitHub lead repositories",
+  *GITHUB_LEADS.map { |row| "- #{row["title"]}: #{row["repo_url"]} with preview #{row["pages_url"]} and inquiry template #{row["issue_template_url"]}" },
   "",
   "## Machine-readable files",
   "- Search index: #{absolute_url("search-index.json")}",
@@ -3441,6 +3523,17 @@ feed_items = (SERVICES.first(6) + tool_rows).map do |item|
     </item>
   XML
 end.join
+lead_feed_items = GITHUB_LEADS.map do |row|
+  <<~XML
+    <item>
+      <title>GitHub lead repo: #{h(row["title"])}</title>
+      <link>#{h(absolute_url("github-leads.html"))}</link>
+      <guid>#{h(row["repo_url"])}</guid>
+      <pubDate>#{Time.now.rfc2822}</pubDate>
+      <description>#{h(row["first_100_path"])} Money still counts $0 until external payment proof exists.</description>
+    </item>
+  XML
+end.join
 
 File.write(File.join(DOCS, "feed.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
@@ -3451,6 +3544,7 @@ File.write(File.join(DOCS, "feed.xml"), <<~XML)
       <description>Generated offers, tools, and paid-inquiry paths. Confirmed earned money remains $0 until external proof exists.</description>
       <lastBuildDate>#{Time.now.rfc2822}</lastBuildDate>
       #{feed_items}
+      #{lead_feed_items}
     </channel>
   </rss>
 XML
@@ -3464,7 +3558,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "github-leads.html", "github_lead_repos.csv", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 urls = (urls + product_preview_tool_rows.map { |row| row[:path] }).uniq
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)

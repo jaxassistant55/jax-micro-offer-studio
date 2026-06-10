@@ -2,7 +2,7 @@
 
 Public launch package generated during the autonomous earning run.
 
-- Generated: 2026-06-11 04:48:17 JST
+- Generated: 2026-06-11 05:18:37 JST
 - Live site: https://jaxassistant55.github.io/jax-micro-offer-studio/
 - Public site root: `docs/index.html`
 - Manifest: `public_launch_manifest.csv`
@@ -10,6 +10,7 @@ Public launch package generated during the autonomous earning run.
 - Inquiry path: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml
 - Ready-to-pay builder: https://jaxassistant55.github.io/jax-micro-offer-studio/start-order.html
 - Free tools: https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html
+- GitHub lead repos: https://jaxassistant55.github.io/jax-micro-offer-studio/github-leads.html
 - Tool manifest: https://jaxassistant55.github.io/jax-micro-offer-studio/tool_manifest.csv
 - IndexNow status: https://jaxassistant55.github.io/jax-micro-offer-studio/indexnow.html
 - LLM summary: https://jaxassistant55.github.io/jax-micro-offer-studio/llms.txt
