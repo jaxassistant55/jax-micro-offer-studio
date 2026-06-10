@@ -3,6 +3,7 @@
 
 require "csv"
 require "cgi"
+require "digest"
 require "fileutils"
 require "json"
 require "time"
@@ -130,6 +131,44 @@ end
 
 OFFERS = PRODUCTS + SERVICES
 
+ZIP_BY_SLUG = {
+  "html5-micro-game-kit" => "html5-micro-game-kit.zip",
+  "procedural-sfx-pack" => "procedural-sfx-pack.zip",
+  "svg-icon-pack" => "svg-icon-pack.zip",
+  "printable-puzzle-and-planner-pack" => "printable-puzzle-planner-pack.zip",
+  "synthetic-mock-dataset-pack" => "synthetic-mock-dataset-pack.zip",
+  "browser-extension-template" => "browser-extension-template.zip",
+  "csv-cli-toolkit" => "csv-cli-toolkit.zip",
+  "css-component-pack" => "css-component-pack.zip",
+  "svg-wallpaper-pattern-pack" => "svg-wallpaper-pattern-pack.zip",
+  "anki-ready-flashcard-deck" => "anki-flashcard-deck.zip",
+  "mini-course-workbook" => "mini-course-workbook.zip",
+  "json-schema-fixture-pack" => "json-schema-fixture-pack.zip",
+  "website-audit-microservice" => "website-audit-service-kit.zip",
+  "data-cleanup-sprint" => "data-cleanup-service-kit.zip",
+  "static-demo-site-customization" => "static-demo-site-kit.zip",
+  "niche-quote-estimator" => "niche-calculator-kit.zip",
+  "automation-blueprint" => "automation-blueprint-kit.zip",
+  "local-seo-gbp-audit" => "local-seo-gbp-kit.zip",
+  "technical-docs-cleanup" => "technical-docs-cleanup-kit.zip",
+  "client-intake-and-sop-package" => "client-intake-sop-kit.zip",
+  "pdf-table-extraction" => "pdf-data-extraction-kit.zip",
+  "content-repurposing-sprint" => "content-repurposing-service-kit.zip",
+  "resume-linkedin-interview-pack" => "career-services-kit.zip"
+}.freeze
+
+OFFERS.each do |offer|
+  zip_name = ZIP_BY_SLUG[offer[:slug]]
+  next unless zip_name
+
+  zip_path = File.join(RUN_ROOT, "non_bounty", zip_name)
+  next unless File.exist?(zip_path)
+
+  offer[:zip_name] = zip_name
+  offer[:zip_bytes] = File.size(zip_path)
+  offer[:zip_sha256] = Digest::SHA256.file(zip_path).hexdigest
+end
+
 FileUtils.rm_rf(DOCS)
 FileUtils.mkdir_p(File.join(DOCS, "assets", "covers"))
 FileUtils.mkdir_p(File.join(DOCS, "previews"))
@@ -153,6 +192,30 @@ def card_html(offer)
   HTML
 end
 
+def fulfillment_rows(offers)
+  offers.map do |offer|
+    if offer[:zip_name]
+      status = "Local paid bundle ready"
+      artifact = "#{offer[:zip_name]} (#{offer[:zip_bytes]} bytes)"
+      checksum = offer[:zip_sha256]
+    else
+      status = "Source folder ready"
+      artifact = offer[:source_dir]
+      checksum = "N/A"
+    end
+    <<~HTML
+      <tr>
+        <td data-label="Offer"><a href="#{h(offer[:slug])}.html">#{h(offer[:title])}</a></td>
+        <td data-label="Type">#{h(offer[:type])}</td>
+        <td data-label="Price">#{h(offer[:price])}</td>
+        <td data-label="Fulfillment status">#{h(status)}</td>
+        <td data-label="Artifact">#{h(artifact)}</td>
+        <td data-label="SHA-256">#{h(checksum)}</td>
+      </tr>
+    HTML
+  end.join
+end
+
 def page_shell(title, body)
   description = "Public previews and paid-inquiry pages for generated digital products and productized micro-services."
   <<~HTML
@@ -169,7 +232,8 @@ def page_shell(title, body)
       <style>
         :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00}
         *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;background:#fff}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:0}h2{margin:24px 0 10px;font-size:1.25rem;letter-spacing:0}h3{margin:0 0 6px;font-size:1.05rem;letter-spacing:0}p{margin:0 0 10px}a{color:var(--accent)}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card,.notice,.panel{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;min-width:0;overflow-wrap:anywhere}.card{display:grid;grid-template-columns:180px 1fr;gap:14px}.card.product{border-left:6px solid var(--green)}.card.service{border-left:6px solid var(--accent)}img,.placeholder{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);border-radius:6px;background:var(--panel)}.placeholder{display:grid;place-items:center;color:var(--muted);font-weight:700;text-transform:uppercase}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;gap:8px;flex-wrap:wrap}.buttons a{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}.notice{border-left:6px solid var(--gold);background:#fffaf0}.split{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px}.fact{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:0 0 10px}.fact span{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.preview-frame{width:100%;min-height:520px;border:1px solid var(--line);border-radius:8px;background:#fff}ul{padding-left:20px}li{margin:6px 0}code{white-space:normal;overflow-wrap:anywhere}
-        @media(max-width:900px){.grid,.card,.split{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}}
+        table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}
+        @media(max-width:900px){.grid,.card,.split{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase}}
       </style>
     </head>
     <body>
@@ -194,7 +258,7 @@ end
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="#request">Request work</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="#request">Request work</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -211,19 +275,52 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 File.write(File.join(DOCS, "index.html"), page_shell("Micro Offer Studio", index_body))
 
 File.write(File.join(DOCS, "products.html"), page_shell("Products - Micro Offer Studio", <<~HTML))
-  <header><p class="buttons"><a href="index.html">Home</a><a href="services.html">Services</a><a href="source-notes.html">Source notes</a></p><h1>Digital Products</h1><p class="muted">Preview-only public listings. Full ZIP bundles remain local until a seller checkout or paid transfer is configured.</p></header>
+  <header><p class="buttons"><a href="index.html">Home</a><a href="services.html">Services</a><a href="fulfillment.html">Fulfillment</a><a href="source-notes.html">Source notes</a></p><h1>Digital Products</h1><p class="muted">Preview-only public listings. Full ZIP bundles remain local until a seller checkout or paid transfer is configured.</p></header>
   <section class="grid">#{PRODUCTS.map { |offer| card_html(offer) }.join}</section>
 HTML
 
 File.write(File.join(DOCS, "services.html"), page_shell("Services - Micro Offer Studio", <<~HTML))
-  <header><p class="buttons"><a href="index.html">Home</a><a href="products.html">Products</a><a href="source-notes.html">Source notes</a></p><h1>Productized Services</h1><p class="muted">Fixed-scope offers that can clear $100 with one accepted order. Buyer authorization and payment proof are still required.</p></header>
+  <header><p class="buttons"><a href="index.html">Home</a><a href="products.html">Products</a><a href="fulfillment.html">Fulfillment</a><a href="source-notes.html">Source notes</a></p><h1>Productized Services</h1><p class="muted">Fixed-scope offers that can clear $100 with one accepted order. Buyer authorization and payment proof are still required.</p></header>
   <section class="grid">#{SERVICES.map { |offer| card_html(offer) }.join}</section>
+HTML
+
+File.write(File.join(DOCS, "fulfillment.html"), page_shell("Fulfillment - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="proof.html">Proof rules</a></p><h1>Fulfillment Ledger</h1><p class="muted">This page shows what is ready to deliver after an external paid request. Paid bundles are not uploaded publicly; checksums identify the local deliverable that can be transferred after payment or buyer authorization.</p></header>
+  <section class="notice"><h2>Delivery boundary</h2><p>The public site is not a checkout and does not itself prove earnings. Delivery happens only after a legitimate buyer request, accepted scope, and payment/proof route. Full ZIP bundles stay local until that point.</p></section>
+  <section><h2>Ready artifacts</h2><table><thead><tr><th>Offer</th><th>Type</th><th>Price</th><th>Fulfillment status</th><th>Artifact</th><th>SHA-256</th></tr></thead><tbody>#{fulfillment_rows(OFFERS)}</tbody></table></section>
+HTML
+
+proof_body = <<~HTML
+  <header><p class="buttons"><a href="index.html">Home</a><a href="fulfillment.html">Fulfillment</a><a href="proposals.html">Proposal copy</a></p><h1>Proof Rules</h1><p class="muted">What must exist before any dollar is counted toward the $100 objective.</p></header>
+  <section class="notice"><h2>Current confirmed money: $0</h2><p>Prepared assets, public pages, issues, sent proposals, draft listings, and pending requests do not count. Count money only from external proof.</p></section>
+  <section class="grid">
+    <article class="panel"><h2>Digital product proof</h2><ul><li>Paid order, platform receipt, payment-provider record, or payable balance.</li><li>Amount net of refunds and platform holds when known.</li><li>Product delivered or available according to buyer terms.</li></ul></article>
+    <article class="panel"><h2>Service proof</h2><ul><li>Accepted scope and buyer authorization.</li><li>Funded order, paid invoice, escrow/milestone, or cleared payment.</li><li>Delivered work accepted by buyer or platform.</li></ul></article>
+    <article class="panel"><h2>Refund/savings proof</h2><ul><li>Provider confirmation, posted credit, next-bill reduction, or cancelled renewal.</li><li>Only count verified annualized savings when the provider confirms the charge is stopped.</li></ul></article>
+    <article class="panel"><h2>Do not count</h2><ul><li>GitHub Pages traffic, draft listings, estimates, outreach sent, unaccepted work, unpaid issues, unapproved refunds, or expected future sales.</li></ul></article>
+  </section>
+HTML
+File.write(File.join(DOCS, "proof.html"), page_shell("Proof Rules - Micro Offer Studio", proof_body))
+
+proposal_cards = (SERVICES.first(8) + PRODUCTS.values_at(5, 10, 4, 6)).compact.map do |offer|
+  <<~HTML
+    <article class="panel">
+      <h2>#{h(offer[:title])}</h2>
+      <p><strong>Price:</strong> #{h(offer[:price])} · <strong>First $100:</strong> #{h(offer[:first_100])}</p>
+      <div class="copybox">Hi - I have a ready-to-scope #{offer[:type]} called "#{offer[:title]}". It is designed for #{offer[:description].sub(/\.$/, "")}. The fixed price is #{offer[:price]}. If this is useful, open a paid inquiry with the exact scope, deadline, acceptance proof, and payment route here: #{ISSUE_URL}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}</div>
+      <p class="buttons"><a href="#{h(offer[:slug])}.html">Offer page</a><a href="#{h(ISSUE_URL)}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}">Open inquiry</a></p>
+    </article>
+  HTML
+end.join
+File.write(File.join(DOCS, "proposals.html"), page_shell("Proposal Copy - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a></p><h1>Proposal Copy</h1><p class="muted">Copy-ready, truthful snippets for channels the account owner controls. Do not spam; use only in relevant conversations or profiles where posting is allowed.</p></header>
+  <section class="grid">#{proposal_cards}</section>
 HTML
 
 OFFERS.each do |offer|
@@ -241,6 +338,13 @@ OFFERS.each do |offer|
           <p><strong>Suggested price:</strong> #{h(offer[:price])}</p>
           <p><strong>First $100 path:</strong> #{h(offer[:first_100])}</p>
           <p><strong>Public boundary:</strong> This page is a preview/inquiry page. It does not collect payment, create a contract, or prove earnings by itself.</p>
+        </section>
+        <section class="panel">
+          <h2>Fulfillment</h2>
+          <p><strong>Status:</strong> #{offer[:zip_name] ? "Local paid bundle ready" : "Source folder ready"}</p>
+          <p><strong>Artifact:</strong> #{h(offer[:zip_name] || offer[:source_dir])}</p>
+          <p><strong>SHA-256:</strong> #{h(offer[:zip_sha256] || "N/A")}</p>
+          <p>Full deliverables are transferred only after accepted scope and external payment/proof. Public previews are intentionally not the full paid bundle.</p>
         </section>
         <section class="panel">
           <h2>Buyer Fit</h2>
@@ -270,9 +374,39 @@ source_body = <<~HTML
 HTML
 File.write(File.join(DOCS, "source-notes.html"), page_shell("Source Notes - Micro Offer Studio", source_body))
 
-CSV.open(File.join(LAUNCH_ROOT, "public_launch_manifest.csv"), "w", write_headers: true, headers: %w[generated_at_jst type title slug price source_dir public_detail preview_public first_100]) do |csv|
+CSV.open(File.join(LAUNCH_ROOT, "public_launch_manifest.csv"), "w", write_headers: true, headers: %w[generated_at_jst type title slug price source_dir public_detail preview_public first_100 fulfillment_status zip_name zip_bytes zip_sha256]) do |csv|
   OFFERS.each do |offer|
-    csv << [GENERATED_AT, offer[:type], offer[:title], offer[:slug], offer[:price], offer[:source_dir], "docs/#{offer[:slug]}.html", offer[:preview_public].to_s, offer[:first_100]]
+    csv << [
+      GENERATED_AT,
+      offer[:type],
+      offer[:title],
+      offer[:slug],
+      offer[:price],
+      offer[:source_dir],
+      "docs/#{offer[:slug]}.html",
+      offer[:preview_public].to_s,
+      offer[:first_100],
+      offer[:zip_name] ? "local_paid_bundle_ready" : "source_folder_ready",
+      offer[:zip_name].to_s,
+      offer[:zip_bytes].to_s,
+      offer[:zip_sha256].to_s
+    ]
+  end
+end
+
+CSV.open(File.join(DOCS, "fulfillment_manifest.csv"), "w", write_headers: true, headers: %w[type title slug price fulfillment_status artifact zip_bytes zip_sha256 source_dir]) do |csv|
+  OFFERS.each do |offer|
+    csv << [
+      offer[:type],
+      offer[:title],
+      offer[:slug],
+      offer[:price],
+      offer[:zip_name] ? "local_paid_bundle_ready" : "source_folder_ready",
+      offer[:zip_name] || offer[:source_dir],
+      offer[:zip_bytes].to_s,
+      offer[:zip_sha256].to_s,
+      offer[:source_dir]
+    ]
   end
 end
 
@@ -285,6 +419,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Live site: #{SITE_URL}
   - Public site root: `docs/index.html`
   - Manifest: `public_launch_manifest.csv`
+  - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
   - Inquiry path: #{ISSUE_URL}
   - Offers: #{PRODUCTS.length} digital products and #{SERVICES.length} productized services
 
@@ -352,10 +487,10 @@ File.write(File.join(LAUNCH_ROOT, ".gitignore"), <<~TXT)
 TXT
 
 File.write(File.join(DOCS, "offers.json"), JSON.pretty_generate(OFFERS.map do |offer|
-  offer.slice(:type, :title, :slug, :source_dir, :price, :description, :first_100, :preview_public)
+  offer.slice(:type, :title, :slug, :source_dir, :price, :description, :first_100, :preview_public, :zip_name, :zip_bytes, :zip_sha256)
 end))
 
-urls = ["", "products.html", "services.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "fulfillment.html", "proof.html", "proposals.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
