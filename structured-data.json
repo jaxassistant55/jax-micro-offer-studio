@@ -462,6 +462,234 @@
               "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-intake-builder.html"
             }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "HTML5 Micro Game Kit Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/html5-micro-game-kit-preview-builder.html",
+            "description": "Free browser-only lead tool for HTML5 Micro Game Kit.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/html5-micro-game-kit-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Procedural SFX Pack Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/procedural-sfx-pack-preview-builder.html",
+            "description": "Free browser-only lead tool for Procedural SFX Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/procedural-sfx-pack-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "SVG Icon Pack Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-icon-pack-preview-builder.html",
+            "description": "Free browser-only lead tool for SVG Icon Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-icon-pack-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Printable Puzzle and Planner Pack Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/printable-puzzle-and-planner-pack-preview-builder.html",
+            "description": "Free browser-only lead tool for Printable Puzzle and Planner Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/printable-puzzle-and-planner-pack-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Synthetic Mock Dataset Pack Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack-preview-builder.html",
+            "description": "Free browser-only lead tool for Synthetic Mock Dataset Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Browser Extension Template Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template-preview-builder.html",
+            "description": "Free browser-only lead tool for Browser Extension Template.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "CSV CLI Toolkit Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit-preview-builder.html",
+            "description": "Free browser-only lead tool for CSV CLI Toolkit.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "CSS Component Pack Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/css-component-pack-preview-builder.html",
+            "description": "Free browser-only lead tool for CSS Component Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/css-component-pack-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "SVG Wallpaper Pattern Pack Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-wallpaper-pattern-pack-preview-builder.html",
+            "description": "Free browser-only lead tool for SVG Wallpaper Pattern Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-wallpaper-pattern-pack-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Anki-Ready Flashcard Deck Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/anki-ready-flashcard-deck-preview-builder.html",
+            "description": "Free browser-only lead tool for Anki-Ready Flashcard Deck.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/anki-ready-flashcard-deck-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Mini Course Workbook Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook-preview-builder.html",
+            "description": "Free browser-only lead tool for Mini Course Workbook.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook-preview-builder.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "item": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "JSON Schema Fixture Pack Preview Builder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any modern browser",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack-preview-builder.html",
+            "description": "Free browser-only lead tool for JSON Schema Fixture Pack.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 0,
+              "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack-preview-builder.html"
+            }
+          }
         }
       ]
     },
@@ -1303,6 +1531,186 @@
         "priceCurrency": "USD",
         "price": 0,
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-intake-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "HTML5 Micro Game Kit Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/html5-micro-game-kit-preview-builder.html",
+      "description": "Free browser-only lead tool for HTML5 Micro Game Kit.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/html5-micro-game-kit-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Procedural SFX Pack Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/procedural-sfx-pack-preview-builder.html",
+      "description": "Free browser-only lead tool for Procedural SFX Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/procedural-sfx-pack-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SVG Icon Pack Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-icon-pack-preview-builder.html",
+      "description": "Free browser-only lead tool for SVG Icon Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-icon-pack-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Printable Puzzle and Planner Pack Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/printable-puzzle-and-planner-pack-preview-builder.html",
+      "description": "Free browser-only lead tool for Printable Puzzle and Planner Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/printable-puzzle-and-planner-pack-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Synthetic Mock Dataset Pack Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack-preview-builder.html",
+      "description": "Free browser-only lead tool for Synthetic Mock Dataset Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Browser Extension Template Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template-preview-builder.html",
+      "description": "Free browser-only lead tool for Browser Extension Template.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CSV CLI Toolkit Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit-preview-builder.html",
+      "description": "Free browser-only lead tool for CSV CLI Toolkit.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CSS Component Pack Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/css-component-pack-preview-builder.html",
+      "description": "Free browser-only lead tool for CSS Component Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/css-component-pack-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SVG Wallpaper Pattern Pack Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-wallpaper-pattern-pack-preview-builder.html",
+      "description": "Free browser-only lead tool for SVG Wallpaper Pattern Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-wallpaper-pattern-pack-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Anki-Ready Flashcard Deck Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/anki-ready-flashcard-deck-preview-builder.html",
+      "description": "Free browser-only lead tool for Anki-Ready Flashcard Deck.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/anki-ready-flashcard-deck-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Mini Course Workbook Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook-preview-builder.html",
+      "description": "Free browser-only lead tool for Mini Course Workbook.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook-preview-builder.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "JSON Schema Fixture Pack Preview Builder",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack-preview-builder.html",
+      "description": "Free browser-only lead tool for JSON Schema Fixture Pack.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 0,
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack-preview-builder.html"
       }
     }
   ]
