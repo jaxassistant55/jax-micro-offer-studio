@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 06:54:15 JST",
+  "generated_at_jst": "2026-06-11 07:08:48 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -962,6 +962,150 @@
       "repo_url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter",
       "pages_url": "https://jaxassistant55.github.io/workflow-tracker-dashboard-starter/demo/",
       "release_url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/releases/tag/preview-v1"
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Static Demo Site Customization",
+      "slug": "ready-to-buy-static-demo-site-customization",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-static-demo-site-customization.html",
+      "price": "$200",
+      "amount_usd": 200.0,
+      "description": "High-intent buyer route for A polished one-page starter site customized for a local service business.",
+      "first_100": "One starter site clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/static-service-site-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Local SEO / GBP Audit",
+      "slug": "ready-to-buy-local-seo-gbp-audit",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-local-seo-gbp-audit.html",
+      "price": "$175",
+      "amount_usd": 175.0,
+      "description": "High-intent buyer route for Public local profile and citation audit with review-response and profile-copy suggestions.",
+      "first_100": "One audit clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/local-seo-gbp-audit-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Niche Quote Estimator",
+      "slug": "ready-to-buy-niche-quote-estimator",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-niche-quote-estimator.html",
+      "price": "$150",
+      "amount_usd": 150.0,
+      "description": "High-intent buyer route for A browser-only quote estimator customized for a simple service pricing model.",
+      "first_100": "One custom estimator clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/niche-quote-estimator-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Website Audit Microservice",
+      "slug": "ready-to-buy-website-audit-microservice",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-website-audit-microservice.html",
+      "price": "$150",
+      "amount_usd": 150.0,
+      "description": "High-intent buyer route for Public website, landing-page, accessibility, mobile, copy, and QA quick-win audits.",
+      "first_100": "One accepted audit clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/website-audit-microservice-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: AI Workflow Tracker Sprint",
+      "slug": "ready-to-buy-ai-workflow-tracker-sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-ai-workflow-tracker-sprint.html",
+      "price": "$150",
+      "amount_usd": 150.0,
+      "description": "High-intent buyer route for A CSV-backed tracker and static HTML dashboard for interviews, leads, grants, or sales pipelines.",
+      "first_100": "One fixed-price order clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/workflow-tracker-dashboard-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Technical Docs Cleanup",
+      "slug": "ready-to-buy-technical-docs-cleanup",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-technical-docs-cleanup.html",
+      "price": "$150",
+      "amount_usd": 150.0,
+      "description": "High-intent buyer route for README, quickstart, API page, or SOP cleanup with audit rubric and before/after handoff.",
+      "first_100": "One docs sprint clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/technical-docs-cleanup-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Resume / LinkedIn / Interview Pack",
+      "slug": "ready-to-buy-resume-linkedin-interview-pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-resume-linkedin-interview-pack.html",
+      "price": "$125",
+      "amount_usd": 125.0,
+      "description": "High-intent buyer route for Truthful resume, LinkedIn, cover letter, and interview prep packet.",
+      "first_100": "One career packet clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/career-packet-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: PDF/Table Extraction",
+      "slug": "ready-to-buy-pdf-table-extraction",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-pdf-table-extraction.html",
+      "price": "$125",
+      "amount_usd": 125.0,
+      "description": "High-intent buyer route for Authorized PDF, screenshot, or messy table extraction into CSV plus a summary dashboard.",
+      "first_100": "One extraction package clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/pdf-table-extraction-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Client Intake and SOP Package",
+      "slug": "ready-to-buy-client-intake-and-sop-package",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-client-intake-and-sop-package.html",
+      "price": "$125",
+      "amount_usd": 125.0,
+      "description": "High-intent buyer route for Reusable intake question bank, SOP template, delivery checklist, and status dashboard.",
+      "first_100": "One package clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/client-intake-sop-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Data Cleanup Sprint",
+      "slug": "ready-to-buy-data-cleanup-sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-data-cleanup-sprint.html",
+      "price": "$125",
+      "amount_usd": 125.0,
+      "description": "High-intent buyer route for CSV/spreadsheet cleanup with normalized output, validation counts, and a short QA report.",
+      "first_100": "One completed sprint clears $100.",
+      "start_order_url": "https://jaxassistant55.github.io/data-cleanup-sprint-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Automation Blueprint",
+      "slug": "ready-to-buy-automation-blueprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-automation-blueprint.html",
+      "price": "$100",
+      "amount_usd": 100.0,
+      "description": "High-intent buyer route for Trigger, data field, step, failure-case, and test-plan blueprint for a repetitive workflow.",
+      "first_100": "One blueprint reaches $100.",
+      "start_order_url": "https://jaxassistant55.github.io/automation-blueprint-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
+    },
+    {
+      "type": "ready_to_buy_route",
+      "title": "Ready To Buy: Content Repurposing Sprint",
+      "slug": "ready-to-buy-content-repurposing-sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-content-repurposing-sprint.html",
+      "price": "$100",
+      "amount_usd": 100.0,
+      "description": "High-intent buyer route for Newsletter, social posts, captions, hooks, and publishing checklist from one source asset.",
+      "first_100": "One repurposing sprint reaches $100.",
+      "start_order_url": "https://jaxassistant55.github.io/content-repurposing-sprint-starter/inquiry.html",
+      "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared."
     }
   ]
 }

@@ -117,6 +117,75 @@
     },
     {
       "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Ready To Buy Routes",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html",
+      "description": "High-intent buyer routes for one-sale service offers that can reach at least $100 before fees and refunds.",
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Static Demo Site Customization",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-static-demo-site-customization.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Local SEO / GBP Audit",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-local-seo-gbp-audit.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Niche Quote Estimator",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-niche-quote-estimator.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Website Audit Microservice",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-website-audit-microservice.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "AI Workflow Tracker Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-ai-workflow-tracker-sprint.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Technical Docs Cleanup",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-technical-docs-cleanup.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Resume / LinkedIn / Interview Pack",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-resume-linkedin-interview-pack.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "PDF/Table Extraction",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-pdf-table-extraction.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Client Intake and SOP Package",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-client-intake-and-sop-package.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Data Cleanup Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-data-cleanup-sprint.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Automation Blueprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-automation-blueprint.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Content Repurposing Sprint",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-content-repurposing-sprint.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Micro Offer Studio free tools",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html",
@@ -1262,6 +1331,78 @@
         "availability": "https://schema.org/InStock",
         "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Subscription+Audit+and+Savings+Prep+Pack&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Subscription+Audit+and+Savings+Prep+Pack%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fsubscription-audit-and-savings-prep-pack.html%0AOffer+type%3A+service%0A%0ARequested+quantity+or+scope%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+medical%2Flegal%2Ffinancial+private+details%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A"
       }
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Static Demo Site Customization",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-static-demo-site-customization.html",
+      "description": "High-intent buyer route for A polished one-page starter site customized for a local service business."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Local SEO / GBP Audit",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-local-seo-gbp-audit.html",
+      "description": "High-intent buyer route for Public local profile and citation audit with review-response and profile-copy suggestions."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Niche Quote Estimator",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-niche-quote-estimator.html",
+      "description": "High-intent buyer route for A browser-only quote estimator customized for a simple service pricing model."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Website Audit Microservice",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-website-audit-microservice.html",
+      "description": "High-intent buyer route for Public website, landing-page, accessibility, mobile, copy, and QA quick-win audits."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: AI Workflow Tracker Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-ai-workflow-tracker-sprint.html",
+      "description": "High-intent buyer route for A CSV-backed tracker and static HTML dashboard for interviews, leads, grants, or sales pipelines."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Technical Docs Cleanup",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-technical-docs-cleanup.html",
+      "description": "High-intent buyer route for README, quickstart, API page, or SOP cleanup with audit rubric and before/after handoff."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Resume / LinkedIn / Interview Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-resume-linkedin-interview-pack.html",
+      "description": "High-intent buyer route for Truthful resume, LinkedIn, cover letter, and interview prep packet."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: PDF/Table Extraction",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-pdf-table-extraction.html",
+      "description": "High-intent buyer route for Authorized PDF, screenshot, or messy table extraction into CSV plus a summary dashboard."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Client Intake and SOP Package",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-client-intake-and-sop-package.html",
+      "description": "High-intent buyer route for Reusable intake question bank, SOP template, delivery checklist, and status dashboard."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Data Cleanup Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-data-cleanup-sprint.html",
+      "description": "High-intent buyer route for CSV/spreadsheet cleanup with normalized output, validation counts, and a short QA report."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Automation Blueprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-automation-blueprint.html",
+      "description": "High-intent buyer route for Trigger, data field, step, failure-case, and test-plan blueprint for a repetitive workflow."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ready To Buy: Content Repurposing Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-content-repurposing-sprint.html",
+      "description": "High-intent buyer route for Newsletter, social posts, captions, hooks, and publishing checklist from one source asset."
     },
     {
       "@context": "https://schema.org",
