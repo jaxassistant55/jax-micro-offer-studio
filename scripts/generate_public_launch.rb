@@ -415,13 +415,14 @@ def github_lead_rows(rows)
     repo_order_link = repo_order.empty? ? "" : %(<br><a href="#{h(repo_order)}">Repo order board ##{h(row["repo_order_issue_number"])}</a>)
     landing = row["standalone_index_url"].to_s
     landing_link = landing.empty? ? "" : %(<a href="#{h(landing)}">Landing page</a><br>)
+    inquiry_link = landing.empty? ? "" : %(<a href="#{h(landing)}inquiry.html">Prefilled inquiry</a><br>)
     <<~HTML
       <tr>
         <td data-label="Lead repo"><a href="#{h(row["repo_url"])}">#{h(row["title"])}</a><br><span class="muted">#{h(row["type"])}</span></td>
         <td data-label="Price">#{h(row["price"])}</td>
         <td data-label="Path to $100">#{h(row["first_100_path"])}</td>
         <td data-label="Preview">#{landing_link}<a href="#{h(row["pages_url"])}">Pages preview</a><br><span class="muted">#{h(row["pages_status"])}</span></td>
-        <td data-label="Conversion"><a href="#{h(row["issue_template_url"])}">Paid inquiry template</a>#{repo_order_link}<br><a href="#{h(row["order_issue_url"])}">Main order board</a></td>
+        <td data-label="Conversion">#{inquiry_link}<a href="#{h(row["issue_template_url"])}">Paid inquiry template</a>#{repo_order_link}<br><a href="#{h(row["order_issue_url"])}">Main order board</a></td>
         <td data-label="Release"><a href="#{h(row["release_url"])}">preview-v1</a><br><a href="#{h(row["asset_url"])}">ZIP asset</a></td>
         <td data-label="Proof rule">#{h(row["proof_rule"])}</td>
       </tr>
@@ -433,11 +434,12 @@ def direct_order_rows(rows)
   rows.select { |row| !row["repo_order_issue_url"].to_s.empty? }.sort_by { |row| -row["price"].to_s.gsub(/[^\d.]/, "").to_f }.map do |row|
     landing = row["standalone_index_url"].to_s
     landing_link = landing.empty? ? "" : %(<a href="#{h(landing)}">Landing</a><br>)
+    inquiry_link = landing.empty? ? "" : %(<br><a href="#{h(landing)}inquiry.html">Prefilled inquiry</a>)
     <<~HTML
       <tr>
         <td data-label="Offer"><a href="#{h(row["repo_order_issue_url"])}">#{h(row["title"])}</a><br><span class="muted">#{h(row["type"])}</span></td>
         <td data-label="Price">#{h(row["price"])}</td>
-        <td data-label="Buyer action">Comment on repo order board ##{h(row["repo_order_issue_number"])} with scope, deadline, and safe non-sensitive inputs.</td>
+        <td data-label="Buyer action">Open the prefilled inquiry or comment on repo order board ##{h(row["repo_order_issue_number"])} with scope, deadline, and safe non-sensitive inputs.#{inquiry_link}</td>
         <td data-label="Preview">#{landing_link}<a href="#{h(row["pages_url"])}">Preview</a><br><a href="#{h(row["repo_url"])}">Repo</a></td>
         <td data-label="Proof">#{h(row["proof_rule"])}</td>
       </tr>
