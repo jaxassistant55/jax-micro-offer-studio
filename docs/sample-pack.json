@@ -1,8 +1,8 @@
 {
-  "generated_at_jst": "2026-06-11 02:50:26 JST",
+  "generated_at_jst": "2026-06-11 02:57:18 JST",
   "sample_pack": "micro-offer-studio-sample-pack.zip",
   "bytes": 2181,
-  "sha256": "005f80f3c803b99ca20a6699b3a5d9cc6fe452823a890c79b21794d5338c5727",
+  "sha256": "e990b9673f85ae13bcf0a8d877b2ce66b625269d509f838ed5d431ec97584b61",
   "files": [
     "README.md",
     "pricing_sample.csv",

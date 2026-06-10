@@ -2,7 +2,7 @@
 
 Public launch package generated during the autonomous earning run.
 
-- Generated: 2026-06-11 02:50:26 JST
+- Generated: 2026-06-11 02:57:18 JST
 - Live site: https://jaxassistant55.github.io/jax-micro-offer-studio/
 - Public site root: `docs/index.html`
 - Manifest: `public_launch_manifest.csv`
@@ -25,7 +25,7 @@ Public launch package generated during the autonomous earning run.
 - Buyer FAQ: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-faq.html
 - Share kit: https://jaxassistant55.github.io/jax-micro-offer-studio/share-kit.html
 - Order intake CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/order_intake.csv
-- Offers: 14 digital products and 12 productized services
+- Offers: 14 digital products and 13 productized services
 
 Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
 

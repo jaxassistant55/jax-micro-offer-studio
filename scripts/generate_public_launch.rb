@@ -210,7 +210,8 @@ SERVICES = [
   ["Client Intake and SOP Package", "client_intake_sop", "$125", "Reusable intake question bank, SOP template, delivery checklist, and status dashboard.", "One package clears $100.", "sop_dashboard.html"],
   ["PDF/Table Extraction", "pdf_data_extraction", "$125", "Authorized PDF, screenshot, or messy table extraction into CSV plus a summary dashboard.", "One extraction package clears $100.", "data_dashboard.html"],
   ["Content Repurposing Sprint", "content_repurposing_service", "$100", "Newsletter, social posts, captions, hooks, and publishing checklist from one source asset.", "One repurposing sprint reaches $100.", "content_dashboard.html"],
-  ["Resume / LinkedIn / Interview Pack", "career_services", "$125", "Truthful resume, LinkedIn, cover letter, and interview prep packet.", "One career packet clears $100.", nil]
+  ["Resume / LinkedIn / Interview Pack", "career_services", "$125", "Truthful resume, LinkedIn, cover letter, and interview prep packet.", "One career packet clears $100.", nil],
+  ["Resale Listing and Price Research Pack", "resale_listing_research", "$100", "Item-intake, photo checklist, comparable-price research template, listing drafts, pricing risk notes, and owner posting checklist for up to 10 owned items.", "One paid resale listing pack reaches $100.", nil]
 ].map do |title, dir, price, description, first_100, preview|
   service_root = File.join(RUN_ROOT, "non_bounty", dir)
   {
@@ -255,7 +256,8 @@ ZIP_BY_SLUG = {
   "client-intake-and-sop-package" => "client-intake-sop-kit.zip",
   "pdf-table-extraction" => "pdf-data-extraction-kit.zip",
   "content-repurposing-sprint" => "content-repurposing-service-kit.zip",
-  "resume-linkedin-interview-pack" => "career-services-kit.zip"
+  "resume-linkedin-interview-pack" => "career-services-kit.zip",
+  "resale-listing-and-price-research-pack" => "resale-listing-research-kit.zip"
 }.freeze
 
 OFFERS.each do |offer|
@@ -598,6 +600,7 @@ website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-micro
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
 invoice_tracker_offer = OFFERS.find { |offer| offer[:slug] == "invoice-and-expense-tracker-template" }
 prompt_workflow_offer = OFFERS.find { |offer| offer[:slug] == "prompt-workflow-pack" }
+resale_listing_offer = OFFERS.find { |offer| offer[:slug] == "resale-listing-and-price-research-pack" }
 
 tool_rows = [
   {
@@ -644,6 +647,15 @@ tool_rows = [
     path: "prompt-workflow-brief-builder.html",
     paid_path: prefilled_issue_url(prompt_workflow_offer),
     proof_rule: "Counts $0 until a buyer requests the Prompt Workflow Pack or a $100 custom setup and external payment proof exists."
+  },
+  {
+    slug: "resale-listing-draft-builder",
+    title: "Resale Listing Draft Builder",
+    service: resale_listing_offer[:title],
+    price: resale_listing_offer[:price],
+    path: "resale-listing-draft-builder.html",
+    paid_path: prefilled_issue_url(resale_listing_offer),
+    proof_rule: "Counts $0 until a buyer requests the Resale Listing and Price Research Pack and external payment proof exists."
   }
 ]
 
@@ -996,6 +1008,120 @@ Known constraint: customer asked for a written estimate</textarea>
       URL.revokeObjectURL(url);
     });
     buildPromptWorkflow();
+  </script>
+HTML
+
+resale_tool_row = tool_rows.find { |row| row[:slug] == "resale-listing-draft-builder" }
+File.write(File.join(DOCS, "resale-listing-draft-builder.html"), page_shell("Resale Listing Draft Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(resale_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(resale_listing_offer))}">Start $100 resale listing pack</a></p><h1>Resale Listing Draft Builder</h1><p class="muted">Draft safe listing copy, condition notes, and owner review checks for an item the seller already owns. Everything runs in the browser; nothing is uploaded.</p></header>
+  <section class="notice"><h2>Ownership and safety boundary</h2><p>Use only items the seller owns and can legally sell. This tool does not authenticate luxury goods, buy inventory, post to marketplace accounts, negotiate with buyers, handle shipping, or guarantee sale price. Do not include serial numbers, private addresses, payment data, or buyer messages.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Item facts</h2>
+      <label for="itemType">Item type</label><input id="itemType" value="desk lamp">
+      <label for="brandModel">Brand/model</label><input id="brandModel" value="unknown brand">
+      <label for="condition">Condition</label><select id="condition"><option>Used - good</option><option>New/open box</option><option>Used - fair</option><option>For parts or repair</option></select>
+      <label for="features">Verified features</label><textarea id="features">18 inches tall
+working switch
+warm metal finish
+standard bulb socket</textarea>
+      <label for="defects">Known defects</label><textarea id="defects">small scratch on base</textarea>
+      <label for="included">Included accessories</label><input id="included" value="lamp only">
+      <label for="comps">Comparable prices or notes</label><textarea id="comps">similar used desk lamps: $35, $45, $50</textarea>
+      <p class="buttons"><a href="#" id="resaleBuildBtn">Build listing draft</a><a href="#" id="resaleDownloadBtn">Download draft</a><a href="#{h(prefilled_issue_url(resale_listing_offer))}" id="resaleOrderBtn">Start paid resale pack</a></p>
+      <div class="copybox" id="resaleOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid service</span><strong>Resale Listing and Price Research Pack - $100</strong></div>
+      <div class="fact"><span>First $100</span><strong>One paid pack reaches $100.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function lines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function extractPrices(text){
+      return (text.match(/\\$?\\d+(?:\\.\\d{1,2})?/g) || []).map(v => Number(v.replace(/[^0-9.]/g, ''))).filter(v => Number.isFinite(v) && v > 0);
+    }
+    function money(n){ return '$' + Number(n || 0).toFixed(2).replace(/\\.00$/, ''); }
+    function buildResaleDraft(){
+      const itemType = document.getElementById('itemType').value.trim();
+      const brandModel = document.getElementById('brandModel').value.trim();
+      const condition = document.getElementById('condition').value;
+      const features = lines('features');
+      const defects = lines('defects');
+      const included = document.getElementById('included').value.trim();
+      const comps = document.getElementById('comps').value.trim();
+      const prices = extractPrices(comps);
+      const low = prices.length ? Math.max(1, Math.floor(Math.min(...prices) * 0.85)) : '';
+      const high = prices.length ? Math.ceil(Math.max(...prices) * 1.05) : '';
+      const title = [brandModel, itemType, condition.replace('Used - ', '').replace('New/', 'New ').replace(' or repair', '')].filter(Boolean).join(' - ');
+      const draft = [
+        'Resale Listing Draft',
+        '',
+        'Title:',
+        title,
+        '',
+        'Description:',
+        'Selling a ' + condition.toLowerCase() + ' ' + itemType + (brandModel ? ' (' + brandModel + ')' : '') + '. Features verified by the owner: ' + (features.join('; ') || '[add verified features]') + '. Included: ' + (included || '[add included items]') + '.',
+        '',
+        'Condition notes:',
+        defects.length ? defects.map((d, i) => (i + 1) + '. ' + d).join('\\n') : 'No defects listed by owner; verify before posting.',
+        '',
+        'Comparable-price notes:',
+        comps || '[add sold/listed comparable examples]',
+        '',
+        'Suggested draft price range:',
+        prices.length ? money(low) + ' - ' + money(high) + ' before marketplace fees, shipping, refunds, and negotiation.' : 'Not enough comparable prices entered.',
+        '',
+        'Owner review checklist:',
+        '1. Confirm ownership and legal right to sell.',
+        '2. Confirm authenticity for brand-sensitive goods.',
+        '3. Confirm condition, defects, measurements, accessories, and photos.',
+        '4. Review marketplace fees, shipping cost, returns, and local pickup risk.',
+        '5. Post only from the owner marketplace account.',
+        '6. Save buyer messages, tracking, payment status, and net proceeds separately.',
+        '',
+        'Proof rule: count $0 until a buyer requests the paid resale listing pack and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('resaleOutput').textContent = draft;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Resale Listing and Price Research Pack',
+        'Listed price: $100',
+        'Tool source: #{SITE_URL}resale-listing-draft-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Listing drafts and price research for owned items using buyer-approved facts/photos.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Listing drafts, price notes, and posting checklist accepted by buyer.',
+        '',
+        'Draft:',
+        draft
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Resale Listing and Price Research Pack', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('resaleOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return draft;
+    }
+    ['itemType','brandModel','condition','features','defects','included','comps'].forEach(id => document.getElementById(id).addEventListener('input', buildResaleDraft));
+    document.getElementById('condition').addEventListener('change', buildResaleDraft);
+    document.getElementById('resaleBuildBtn').addEventListener('click', event => { event.preventDefault(); buildResaleDraft(); });
+    document.getElementById('resaleDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const draft = buildResaleDraft();
+      const blob = new Blob([draft], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'resale-listing-draft.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildResaleDraft();
   </script>
 HTML
 
@@ -1766,7 +1892,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|

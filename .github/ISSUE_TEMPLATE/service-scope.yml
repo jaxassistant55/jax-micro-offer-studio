@@ -24,6 +24,7 @@ body:
         - PDF/Table Extraction ($125)
         - Content Repurposing Sprint ($100)
         - Resume / LinkedIn / Interview Pack ($125)
+        - Resale Listing and Price Research Pack ($100)
     validations:
       required: true
   - type: textarea

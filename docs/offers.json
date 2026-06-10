@@ -328,5 +328,17 @@
     "zip_name": "career-services-kit.zip",
     "zip_bytes": 3413,
     "zip_sha256": "2ecf900b67671f4bcd4f824229f9480c8584bfc7d2d96ed2d649fbd58a4da7df"
+  },
+  {
+    "type": "service",
+    "title": "Resale Listing and Price Research Pack",
+    "slug": "resale-listing-and-price-research-pack",
+    "source_dir": "non_bounty/resale_listing_research",
+    "price": "$100",
+    "description": "Item-intake, photo checklist, comparable-price research template, listing drafts, pricing risk notes, and owner posting checklist for up to 10 owned items.",
+    "first_100": "One paid resale listing pack reaches $100.",
+    "zip_name": "resale-listing-research-kit.zip",
+    "zip_bytes": 2752,
+    "zip_sha256": "7fca73db5603a683bc93c9f35940970dc35ff921e4ae0bc835acc082cd467c71"
   }
 ]
