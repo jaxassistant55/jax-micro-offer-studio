@@ -2160,7 +2160,7 @@
         {
           "@type": "Service",
           "name": "Resale Listing and Price Research Pack",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-resale-listing-and-price-research-pack.html",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-and-price-research-pack.html",
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
@@ -2170,7 +2170,7 @@
         {
           "@type": "Service",
           "name": "Subscription Audit and Savings Prep Pack",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-subscription-audit-and-savings-prep-pack.html",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-audit-and-savings-prep-pack.html",
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
@@ -2180,7 +2180,7 @@
         {
           "@type": "Service",
           "name": "Translation and Localization Draft Pack",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-translation-and-localization-draft-pack.html",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/translation-and-localization-draft-pack.html",
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
