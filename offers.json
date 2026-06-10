@@ -7,7 +7,10 @@
     "price": "$19",
     "description": "A complete browser-playable micro game kit with source, cover art, README, and listing copy.",
     "first_100": "6 sales at $19 clears $100 gross.",
-    "preview_public": "previews/html5-micro-game-kit.html"
+    "preview_public": "previews/html5-micro-game-kit.html",
+    "zip_name": "html5-micro-game-kit.zip",
+    "zip_bytes": 4219,
+    "zip_sha256": "1e083fe8edec9c322e59c6e923e3c707ee644271dec9da68b24876e2d2c188d0"
   },
   {
     "type": "product",
@@ -17,7 +20,10 @@
     "price": "$12",
     "description": "Original WAV sound effects with preview page, README, license note, and listing copy.",
     "first_100": "9 sales at $12 clears $100 gross.",
-    "preview_public": "previews/procedural-sfx-pack.html"
+    "preview_public": "previews/procedural-sfx-pack.html",
+    "zip_name": "procedural-sfx-pack.zip",
+    "zip_bytes": 118779,
+    "zip_sha256": "25cd20aa0e91bda22428ff5b228ea092822c95dbb3ad763cbe9fa2b10b6ec721"
   },
   {
     "type": "product",
@@ -27,7 +33,10 @@
     "price": "$15",
     "description": "A 24-file SVG icon pack with preview gallery, README, and listing copy.",
     "first_100": "7 sales at $15 clears $100 gross.",
-    "preview_public": "previews/svg-icon-pack.html"
+    "preview_public": "previews/svg-icon-pack.html",
+    "zip_name": "svg-icon-pack.zip",
+    "zip_bytes": 16586,
+    "zip_sha256": "71f39ee997257d2ac1457ede2154ed01dc8426079d5220b727ebf0c8256bf8da"
   },
   {
     "type": "product",
@@ -37,7 +46,10 @@
     "price": "$14",
     "description": "Printable planner pages, math worksheets, answer keys, cover art, and listing copy.",
     "first_100": "8 sales at $14 clears $100 gross.",
-    "preview_public": "previews/printable-puzzle-and-planner-pack.html"
+    "preview_public": "previews/printable-puzzle-and-planner-pack.html",
+    "zip_name": "printable-puzzle-planner-pack.zip",
+    "zip_bytes": 4130,
+    "zip_sha256": "b3efda9f239e8a9a54a19f7106fd102a12a760a062ca795120674822214c6100"
   },
   {
     "type": "product",
@@ -47,7 +59,10 @@
     "price": "$19",
     "description": "Synthetic CSV/JSON datasets with a preview dashboard and data dictionary.",
     "first_100": "6 sales at $19 clears $100 gross.",
-    "preview_public": "previews/synthetic-mock-dataset-pack.html"
+    "preview_public": "previews/synthetic-mock-dataset-pack.html",
+    "zip_name": "synthetic-mock-dataset-pack.zip",
+    "zip_bytes": 5971,
+    "zip_sha256": "a978013901209e08a87bfce4f10e7bf1a928b7f14e0c26f141ef71bf9e35db1a"
   },
   {
     "type": "product",
@@ -57,7 +72,10 @@
     "price": "$29",
     "description": "Manifest V3 browser extension starter with popup UI, local storage, README, and listing copy.",
     "first_100": "4 sales at $29 clears $100 gross.",
-    "preview_public": "previews/browser-extension-template.html"
+    "preview_public": "previews/browser-extension-template.html",
+    "zip_name": "browser-extension-template.zip",
+    "zip_bytes": 3932,
+    "zip_sha256": "a566c5b796a89291aadb0f10207c40b812305224d37f50d240a147ffc93a391e"
   },
   {
     "type": "product",
@@ -66,7 +84,10 @@
     "source_dir": "non_bounty/autonomous_products/csv_cli_toolkit",
     "price": "$19",
     "description": "Ruby CSV profiling and cleanup CLI with sample input, README, and listing copy.",
-    "first_100": "6 sales at $19 clears $100 gross."
+    "first_100": "6 sales at $19 clears $100 gross.",
+    "zip_name": "csv-cli-toolkit.zip",
+    "zip_bytes": 2835,
+    "zip_sha256": "27af54e036dc6db90cef4a19fb0b8cc982200f9d28c6c59474540a01bfe408d7"
   },
   {
     "type": "product",
@@ -76,7 +97,10 @@
     "price": "$19",
     "description": "Reusable HTML/CSS components for cards, pricing tables, dashboards, and forms.",
     "first_100": "6 sales at $19 clears $100 gross.",
-    "preview_public": "previews/css-component-pack.html"
+    "preview_public": "previews/css-component-pack.html",
+    "zip_name": "css-component-pack.zip",
+    "zip_bytes": 3228,
+    "zip_sha256": "d6e57d2470a3bc64a4e9a9206daad0fb0a2ec99d8d0b8db424fd90a4f19f579d"
   },
   {
     "type": "product",
@@ -86,7 +110,10 @@
     "price": "$9",
     "description": "Ten original SVG wallpapers and patterns with a gallery page and listing copy.",
     "first_100": "12 sales at $9 clears $100 gross.",
-    "preview_public": "previews/svg-wallpaper-pattern-pack.html"
+    "preview_public": "previews/svg-wallpaper-pattern-pack.html",
+    "zip_name": "svg-wallpaper-pattern-pack.zip",
+    "zip_bytes": 15622,
+    "zip_sha256": "c664c678fb0f10fb76a0bde61b4fb8219793eac1f83fc08cfd7581da66019886"
   },
   {
     "type": "product",
@@ -95,7 +122,10 @@
     "source_dir": "non_bounty/autonomous_products/anki_flashcard_deck",
     "price": "$12",
     "description": "Anki-ready CSV flashcard deck for spreadsheet and data-cleaning concepts.",
-    "first_100": "9 sales at $12 clears $100 gross."
+    "first_100": "9 sales at $12 clears $100 gross.",
+    "zip_name": "anki-flashcard-deck.zip",
+    "zip_bytes": 2709,
+    "zip_sha256": "09af3f5def1838349266e00e9fde1357f9b6669f78e4eef007f6554327baff53"
   },
   {
     "type": "product",
@@ -105,7 +135,10 @@
     "price": "$29",
     "description": "Self-study workbook on building a simple digital product offer, with checklist and sales page.",
     "first_100": "4 sales at $29 clears $100 gross.",
-    "preview_public": "previews/mini-course-workbook.html"
+    "preview_public": "previews/mini-course-workbook.html",
+    "zip_name": "mini-course-workbook.zip",
+    "zip_bytes": 3662,
+    "zip_sha256": "0d3404f904c58dd237732f440073be326afb3779482f3b5ae2cc017bec4fda1a"
   },
   {
     "type": "product",
@@ -114,7 +147,10 @@
     "source_dir": "non_bounty/autonomous_products/json_schema_fixture_pack",
     "price": "$15",
     "description": "JSON schemas and valid/invalid fixtures for common SaaS objects.",
-    "first_100": "7 sales at $15 clears $100 gross."
+    "first_100": "7 sales at $15 clears $100 gross.",
+    "zip_name": "json-schema-fixture-pack.zip",
+    "zip_bytes": 3482,
+    "zip_sha256": "27323022e4f99f611ccdffc350830450a578cdca1c9b2c84b8fa2db698b506d8"
   },
   {
     "type": "service",
@@ -124,7 +160,10 @@
     "price": "$150",
     "description": "Public website, landing-page, accessibility, mobile, copy, and QA quick-win audits.",
     "first_100": "One accepted audit clears $100.",
-    "preview_public": "previews/website-audit-microservice.html"
+    "preview_public": "previews/website-audit-microservice.html",
+    "zip_name": "website-audit-service-kit.zip",
+    "zip_bytes": 4947,
+    "zip_sha256": "a4b2e87b4f8b554ffbb4d5b6201218d57fcdc13565efc259ddf5e8306d1dfce5"
   },
   {
     "type": "service",
@@ -134,7 +173,10 @@
     "price": "$125",
     "description": "CSV/spreadsheet cleanup with normalized output, validation counts, and a short QA report.",
     "first_100": "One completed sprint clears $100.",
-    "preview_public": "previews/data-cleanup-sprint.html"
+    "preview_public": "previews/data-cleanup-sprint.html",
+    "zip_name": "data-cleanup-service-kit.zip",
+    "zip_bytes": 4901,
+    "zip_sha256": "20ee5f7cf1fac018a906d744c515712ca68399d7f9a27fe340085f7cb0dccb91"
   },
   {
     "type": "service",
@@ -154,7 +196,10 @@
     "price": "$200",
     "description": "A polished one-page starter site customized for a local service business.",
     "first_100": "One starter site clears $100.",
-    "preview_public": "previews/static-demo-site-customization.html"
+    "preview_public": "previews/static-demo-site-customization.html",
+    "zip_name": "static-demo-site-kit.zip",
+    "zip_bytes": 4602,
+    "zip_sha256": "fa14e0ac2d423ecbc0e609697b53c71d25fedac41506e953ee8d094c40fb0aff"
   },
   {
     "type": "service",
@@ -164,7 +209,10 @@
     "price": "$150",
     "description": "A browser-only quote estimator customized for a simple service pricing model.",
     "first_100": "One custom estimator clears $100.",
-    "preview_public": "previews/niche-quote-estimator.html"
+    "preview_public": "previews/niche-quote-estimator.html",
+    "zip_name": "niche-calculator-kit.zip",
+    "zip_bytes": 3729,
+    "zip_sha256": "a58329e64e3de10b0f257dfc65babd2ffe0b1919177de6e7598431a0a69f432e"
   },
   {
     "type": "service",
@@ -174,7 +222,10 @@
     "price": "$100",
     "description": "Trigger, data field, step, failure-case, and test-plan blueprint for a repetitive workflow.",
     "first_100": "One blueprint reaches $100.",
-    "preview_public": "previews/automation-blueprint.html"
+    "preview_public": "previews/automation-blueprint.html",
+    "zip_name": "automation-blueprint-kit.zip",
+    "zip_bytes": 4670,
+    "zip_sha256": "cf5c8849942e3c10b753f7136e9bd5311d884e7d0537c7a09f4cff381fe04004"
   },
   {
     "type": "service",
@@ -184,7 +235,10 @@
     "price": "$175",
     "description": "Public local profile and citation audit with review-response and profile-copy suggestions.",
     "first_100": "One audit clears $100.",
-    "preview_public": "previews/local-seo-gbp-audit.html"
+    "preview_public": "previews/local-seo-gbp-audit.html",
+    "zip_name": "local-seo-gbp-kit.zip",
+    "zip_bytes": 5497,
+    "zip_sha256": "8113fd3fd5725c0892a2942f67d5e5626ad716de29832e1f3cee3c83d962e484"
   },
   {
     "type": "service",
@@ -193,7 +247,10 @@
     "source_dir": "non_bounty/technical_docs_cleanup",
     "price": "$150",
     "description": "README, quickstart, API page, or SOP cleanup with audit rubric and before/after handoff.",
-    "first_100": "One docs sprint clears $100."
+    "first_100": "One docs sprint clears $100.",
+    "zip_name": "technical-docs-cleanup-kit.zip",
+    "zip_bytes": 3392,
+    "zip_sha256": "dd1148df02dd3c4c69a4cfec931fc7a883ca3102b34152d4ed325ce75ce7f3be"
   },
   {
     "type": "service",
@@ -203,7 +260,10 @@
     "price": "$125",
     "description": "Reusable intake question bank, SOP template, delivery checklist, and status dashboard.",
     "first_100": "One package clears $100.",
-    "preview_public": "previews/client-intake-and-sop-package.html"
+    "preview_public": "previews/client-intake-and-sop-package.html",
+    "zip_name": "client-intake-sop-kit.zip",
+    "zip_bytes": 3569,
+    "zip_sha256": "1f132d95799ded76b5b85bbb7efe08f1f85b19707cae0e9afd0d3a43795ddaae"
   },
   {
     "type": "service",
@@ -213,7 +273,10 @@
     "price": "$125",
     "description": "Authorized PDF, screenshot, or messy table extraction into CSV plus a summary dashboard.",
     "first_100": "One extraction package clears $100.",
-    "preview_public": "previews/pdf-table-extraction.html"
+    "preview_public": "previews/pdf-table-extraction.html",
+    "zip_name": "pdf-data-extraction-kit.zip",
+    "zip_bytes": 3144,
+    "zip_sha256": "8ff2b6fb055b59a8449c59d9ff1cdeb0b6bc12b4f0d3d35e2155da0b1cdbec5a"
   },
   {
     "type": "service",
@@ -223,7 +286,10 @@
     "price": "$100",
     "description": "Newsletter, social posts, captions, hooks, and publishing checklist from one source asset.",
     "first_100": "One repurposing sprint reaches $100.",
-    "preview_public": "previews/content-repurposing-sprint.html"
+    "preview_public": "previews/content-repurposing-sprint.html",
+    "zip_name": "content-repurposing-service-kit.zip",
+    "zip_bytes": 4767,
+    "zip_sha256": "19c33db1af337b975e2655212b258d2d4611197a86511c868a477b52d95adc38"
   },
   {
     "type": "service",
@@ -232,6 +298,9 @@
     "source_dir": "non_bounty/career_services",
     "price": "$125",
     "description": "Truthful resume, LinkedIn, cover letter, and interview prep packet.",
-    "first_100": "One career packet clears $100."
+    "first_100": "One career packet clears $100.",
+    "zip_name": "career-services-kit.zip",
+    "zip_bytes": 3413,
+    "zip_sha256": "2ecf900b67671f4bcd4f824229f9480c8584bfc7d2d96ed2d649fbd58a4da7df"
   }
 ]
