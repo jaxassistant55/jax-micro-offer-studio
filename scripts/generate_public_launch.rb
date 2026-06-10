@@ -212,7 +212,8 @@ SERVICES = [
   ["PDF/Table Extraction", "pdf_data_extraction", "$125", "Authorized PDF, screenshot, or messy table extraction into CSV plus a summary dashboard.", "One extraction package clears $100.", "data_dashboard.html"],
   ["Content Repurposing Sprint", "content_repurposing_service", "$100", "Newsletter, social posts, captions, hooks, and publishing checklist from one source asset.", "One repurposing sprint reaches $100.", "content_dashboard.html"],
   ["Resume / LinkedIn / Interview Pack", "career_services", "$125", "Truthful resume, LinkedIn, cover letter, and interview prep packet.", "One career packet clears $100.", nil],
-  ["Resale Listing and Price Research Pack", "resale_listing_research", "$100", "Item-intake, photo checklist, comparable-price research template, listing drafts, pricing risk notes, and owner posting checklist for up to 10 owned items.", "One paid resale listing pack reaches $100.", nil]
+  ["Resale Listing and Price Research Pack", "resale_listing_research", "$100", "Item-intake, photo checklist, comparable-price research template, listing drafts, pricing risk notes, and owner posting checklist for up to 10 owned items.", "One paid resale listing pack reaches $100.", nil],
+  ["Translation and Localization Draft Pack", "translation_localization", "$100", "Review-ready localization intake, glossary notes, draft structure, locale choices, and QA checklist for up to 1,000 source words.", "One paid localization draft pack reaches $100.", nil]
 ].map do |title, dir, price, description, first_100, preview|
   service_root = File.join(RUN_ROOT, "non_bounty", dir)
   {
@@ -259,7 +260,8 @@ ZIP_BY_SLUG = {
   "pdf-table-extraction" => "pdf-data-extraction-kit.zip",
   "content-repurposing-sprint" => "content-repurposing-service-kit.zip",
   "resume-linkedin-interview-pack" => "career-services-kit.zip",
-  "resale-listing-and-price-research-pack" => "resale-listing-research-kit.zip"
+  "resale-listing-and-price-research-pack" => "resale-listing-research-kit.zip",
+  "translation-and-localization-draft-pack" => "translation-localization-kit.zip"
 }.freeze
 
 OFFERS.each do |offer|
@@ -604,6 +606,7 @@ invoice_tracker_offer = OFFERS.find { |offer| offer[:slug] == "invoice-and-expen
 prompt_workflow_offer = OFFERS.find { |offer| offer[:slug] == "prompt-workflow-pack" }
 sales_enablement_offer = OFFERS.find { |offer| offer[:slug] == "sales-enablement-kit" }
 resale_listing_offer = OFFERS.find { |offer| offer[:slug] == "resale-listing-and-price-research-pack" }
+translation_localization_offer = OFFERS.find { |offer| offer[:slug] == "translation-and-localization-draft-pack" }
 
 tool_rows = [
   {
@@ -668,6 +671,15 @@ tool_rows = [
     path: "proposal-profile-builder.html",
     paid_path: prefilled_issue_url(sales_enablement_offer),
     proof_rule: "Counts $0 until a buyer requests the Sales Enablement Kit or a $100 customized proposal/profile setup and external payment proof exists."
+  },
+  {
+    slug: "localization-qa-brief-builder",
+    title: "Localization QA Brief Builder",
+    service: translation_localization_offer[:title],
+    price: translation_localization_offer[:price],
+    path: "localization-qa-brief-builder.html",
+    paid_path: prefilled_issue_url(translation_localization_offer),
+    proof_rule: "Counts $0 until a buyer requests the Translation and Localization Draft Pack and external payment proof exists."
   }
 ]
 
@@ -1242,6 +1254,121 @@ before/after demo file</textarea>
       URL.revokeObjectURL(url);
     });
     buildProposalProfile();
+  </script>
+HTML
+
+localization_tool_row = tool_rows.find { |row| row[:slug] == "localization-qa-brief-builder" }
+File.write(File.join(DOCS, "localization-qa-brief-builder.html"), page_shell("Localization QA Brief Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(localization_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(translation_localization_offer))}">Start $100 localization pack</a></p><h1>Localization QA Brief Builder</h1><p class="muted">Create a review-ready localization intake, glossary starter, risk notes, and QA checklist from buyer-approved source facts. Everything runs in the browser; nothing is uploaded.</p></header>
+  <section class="notice"><h2>Language and regulated-content boundary</h2><p>Use only languages the seller can truthfully review or where a qualified reviewer is involved. Do not use this for certified, legal, medical, immigration, safety-critical, or high-stakes content without appropriate professional review. Do not paste private customer data, unreleased product claims, secrets, or content you are not authorized to process.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Localization facts</h2>
+      <label for="sourceLanguage">Source language</label><input id="sourceLanguage" value="English">
+      <label for="targetLocale">Target language/locale</label><input id="targetLocale" value="Spanish (Mexico)">
+      <label for="contentType">Content type</label><input id="contentType" value="landing page copy">
+      <label for="wordCount">Approximate source word count</label><input id="wordCount" type="number" min="1" step="1" value="850">
+      <label for="audience">Audience and tone</label><textarea id="audience">small-business owners; clear, friendly, direct</textarea>
+      <label for="terms">Terms to preserve or review</label><textarea id="terms">brand name
+checkout
+pickup
+money-back guarantee</textarea>
+      <label for="localeChoices">Locale choices</label><textarea id="localeChoices">dates: local numeric format
+currency: MXN with USD fallback if needed
+measurements: metric
+formality: usted unless buyer requests informal tone</textarea>
+      <label for="riskItems">Risk items</label><textarea id="riskItems">marketing claims need owner approval
+support-policy wording must match actual policy
+slogans may need transcreation instead of literal translation</textarea>
+      <p class="buttons"><a href="#" id="localizationBuildBtn">Build localization brief</a><a href="#" id="localizationDownloadBtn">Download brief</a><a href="#{h(prefilled_issue_url(translation_localization_offer))}" id="localizationOrderBtn">Start paid localization pack</a></p>
+      <div class="copybox" id="localizationOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid service</span><strong>Translation and Localization Draft Pack - $100</strong></div>
+      <div class="fact"><span>First $100</span><strong>One paid pack reaches $100.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function localizationLines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function buildLocalizationBrief(){
+      const sourceLanguage = document.getElementById('sourceLanguage').value.trim();
+      const targetLocale = document.getElementById('targetLocale').value.trim();
+      const contentType = document.getElementById('contentType').value.trim();
+      const wordCount = document.getElementById('wordCount').value.trim();
+      const audience = document.getElementById('audience').value.trim();
+      const terms = localizationLines('terms');
+      const localeChoices = localizationLines('localeChoices');
+      const riskItems = localizationLines('riskItems');
+      const brief = [
+        'Localization QA Brief',
+        '',
+        'Source language: ' + sourceLanguage,
+        'Target locale: ' + targetLocale,
+        'Content type: ' + contentType,
+        'Approximate source word count: ' + wordCount,
+        'Audience and tone: ' + (audience || '[buyer to provide]'),
+        '',
+        'Glossary starter:',
+        ...(terms.length ? terms.map((term, i) => (i + 1) + '. ' + term + ' - translate/review with buyer-approved terminology') : ['1. [add terms to preserve or review]']),
+        '',
+        'Locale choices to confirm:',
+        ...(localeChoices.length ? localeChoices.map((item, i) => (i + 1) + '. ' + item) : ['1. dates', '2. currency', '3. measurements', '4. formality']),
+        '',
+        'Risk items:',
+        ...(riskItems.length ? riskItems.map((item, i) => (i + 1) + '. ' + item) : ['1. product claims must be owner-approved', '2. policy wording must match real policy']),
+        '',
+        'QA checklist:',
+        '1. Names and brands preserved or intentionally localized.',
+        '2. Numbers, prices, dates, measurements, and units checked.',
+        '3. Tone matches the target audience and buyer-approved formality.',
+        '4. Unsupported claims were not added.',
+        '5. Formatting, links, CTAs, and placeholders preserved.',
+        '6. Qualified reviewer or language owner signs off before publication.',
+        '',
+        'Suggested paid next step:',
+        'Translation and Localization Draft Pack ($100) for up to 1,000 source words, glossary notes, localization notes, draft structure, and QA checklist.',
+        '',
+        'Proof rule: count $0 until buyer accepts scope and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('localizationOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Translation and Localization Draft Pack',
+        'Listed price: $100',
+        'Tool source: #{SITE_URL}localization-qa-brief-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Localization draft pack for buyer-approved source content, glossary, locale choices, and reviewer workflow.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Localization draft, glossary notes, and QA checklist accepted by buyer or reviewer.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Translation and Localization Draft Pack', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('localizationOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return brief;
+    }
+    ['sourceLanguage','targetLocale','contentType','wordCount','audience','terms','localeChoices','riskItems'].forEach(id => document.getElementById(id).addEventListener('input', buildLocalizationBrief));
+    document.getElementById('localizationBuildBtn').addEventListener('click', event => { event.preventDefault(); buildLocalizationBrief(); });
+    document.getElementById('localizationDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const brief = buildLocalizationBrief();
+      const blob = new Blob([brief], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'localization-qa-brief.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildLocalizationBrief();
   </script>
 HTML
 
@@ -2012,7 +2139,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|

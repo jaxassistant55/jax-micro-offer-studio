@@ -16,6 +16,7 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 - Prompt Workflow Brief Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/prompt-workflow-brief-builder.html -> Prompt Workflow Pack $19
 - Resale Listing Draft Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-draft-builder.html -> Resale Listing and Price Research Pack $100
 - Proposal/Profile Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/proposal-profile-builder.html -> Sales Enablement Kit $29
+- Localization QA Brief Builder: https://jaxassistant55.github.io/jax-micro-offer-studio/localization-qa-brief-builder.html -> Translation and Localization Draft Pack $100
 
 ## Machine-readable files
 - Search index: https://jaxassistant55.github.io/jax-micro-offer-studio/search-index.json
