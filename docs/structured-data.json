@@ -1727,6 +1727,12 @@
     },
     {
       "@type": "WebPage",
+      "name": "Career Packet Starter",
+      "url": "https://github.com/jaxassistant55/career-packet-starter",
+      "description": "Standalone GitHub lead repository for One paid Resume / LinkedIn / Interview Pack order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
       "name": "Client Intake SOP Starter",
       "url": "https://github.com/jaxassistant55/client-intake-sop-starter",
       "description": "Standalone GitHub lead repository for One paid Client Intake and SOP Package order clears $100 before fees/refunds."
@@ -1751,9 +1757,21 @@
     },
     {
       "@type": "WebPage",
+      "name": "Niche Quote Estimator Starter",
+      "url": "https://github.com/jaxassistant55/niche-quote-estimator-starter",
+      "description": "Standalone GitHub lead repository for One paid Niche Quote Estimator order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
       "name": "PDF Table Extraction Starter",
       "url": "https://github.com/jaxassistant55/pdf-table-extraction-starter",
       "description": "Standalone GitHub lead repository for One paid PDF/Table Extraction order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Resale Listing Research Starter",
+      "url": "https://github.com/jaxassistant55/resale-listing-research-starter",
+      "description": "Standalone GitHub lead repository for One paid Resale Listing and Price Research Pack order clears $100 before fees/refunds."
     },
     {
       "@type": "WebPage",
@@ -1763,9 +1781,21 @@
     },
     {
       "@type": "WebPage",
+      "name": "Subscription Audit Savings Starter",
+      "url": "https://github.com/jaxassistant55/subscription-audit-savings-starter",
+      "description": "Standalone GitHub lead repository for One paid Subscription Audit and Savings Prep Pack order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
       "name": "Technical Docs Cleanup Starter",
       "url": "https://github.com/jaxassistant55/technical-docs-cleanup-starter",
       "description": "Standalone GitHub lead repository for One paid Technical Docs Cleanup order clears $100 before fees/refunds."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Translation Localization Draft Starter",
+      "url": "https://github.com/jaxassistant55/translation-localization-draft-starter",
+      "description": "Standalone GitHub lead repository for One paid Translation and Localization Draft Pack order clears $100 before fees/refunds."
     },
     {
       "@type": "WebPage",
