@@ -604,6 +604,7 @@ HTML
 data_cleanup_offer = OFFERS.find { |offer| offer[:slug] == "data-cleanup-sprint" }
 website_audit_offer = OFFERS.find { |offer| offer[:slug] == "website-audit-microservice" }
 automation_offer = OFFERS.find { |offer| offer[:slug] == "automation-blueprint" }
+content_repurposing_offer = OFFERS.find { |offer| offer[:slug] == "content-repurposing-sprint" }
 invoice_tracker_offer = OFFERS.find { |offer| offer[:slug] == "invoice-and-expense-tracker-template" }
 prompt_workflow_offer = OFFERS.find { |offer| offer[:slug] == "prompt-workflow-pack" }
 sales_enablement_offer = OFFERS.find { |offer| offer[:slug] == "sales-enablement-kit" }
@@ -692,6 +693,15 @@ tool_rows = [
     path: "subscription-savings-calculator.html",
     paid_path: prefilled_issue_url(subscription_audit_offer),
     proof_rule: "Counts $0 until a buyer requests the Subscription Audit and Savings Prep Pack or account-owner savings are externally verified."
+  },
+  {
+    slug: "content-repurposing-brief-builder",
+    title: "Content Repurposing Brief Builder",
+    service: content_repurposing_offer[:title],
+    price: content_repurposing_offer[:price],
+    path: "content-repurposing-brief-builder.html",
+    paid_path: prefilled_issue_url(content_repurposing_offer),
+    proof_rule: "Counts $0 until a buyer requests the Content Repurposing Sprint and external payment proof exists."
   }
 ]
 
@@ -1499,6 +1509,127 @@ Example storage plan,cloud,12,active,negotiate,5,confirm backup coverage</textar
   </script>
 HTML
 
+content_tool_row = tool_rows.find { |row| row[:slug] == "content-repurposing-brief-builder" }
+File.write(File.join(DOCS, "content-repurposing-brief-builder.html"), page_shell("Content Repurposing Brief Builder - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(content_tool_row))))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(content_repurposing_offer))}">Start $100 repurposing sprint</a></p><h1>Content Repurposing Brief Builder</h1><p class="muted">Turn buyer-approved source facts into a newsletter/post/caption brief for a fixed-scope repurposing sprint. Everything runs in the browser; nothing is uploaded or posted.</p></header>
+  <section class="notice"><h2>Publishing and claims boundary</h2><p>Use only source material the buyer owns or is authorized to reuse. Do not invent personal stories, case studies, endorsements, results, statistics, regulated advice, or platform performance claims. This tool does not post to social accounts, send newsletters, use private accounts, or guarantee reach, followers, sales, or engagement.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Source asset facts</h2>
+      <label for="sourceAsset">Source asset</label><input id="sourceAsset" value="buyer-approved webinar transcript">
+      <label for="audience">Audience</label><input id="audience" value="small business owners">
+      <label for="coreIdea">Core idea</label><textarea id="coreIdea">Turn one existing source asset into a week of useful content instead of starting from a blank calendar.</textarea>
+      <label for="proofPoints">Approved proof points or examples</label><textarea id="proofPoints">one newsletter issue
+five LinkedIn-style posts
+ten captions or hooks
+publishing checklist</textarea>
+      <label for="avoidClaims">Claims to avoid</label><textarea id="avoidClaims">guaranteed reach
+guaranteed sales
+unapproved customer stories
+regulated advice</textarea>
+      <label for="cta">Buyer-approved CTA</label><input id="cta" value="Reply if you want this turned into a simple checklist.">
+      <label for="channels">Target channels</label><input id="channels" value="newsletter, LinkedIn, short captions">
+      <p class="buttons"><a href="#" id="contentBuildBtn">Build repurposing brief</a><a href="#" id="contentDownloadBtn">Download brief</a><a href="#{h(prefilled_issue_url(content_repurposing_offer))}" id="contentOrderBtn">Start paid sprint</a></p>
+      <div class="copybox" id="contentOutput"></div>
+    </div>
+    <aside>
+      <div class="fact"><span>Paid service</span><strong>Content Repurposing Sprint - $100</strong></div>
+      <div class="fact"><span>First $100</span><strong>One paid sprint reaches $100.</strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+    </aside>
+  </section>
+  <script>
+    function contentLines(id){
+      return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+    }
+    function buildContentBrief(){
+      const sourceAsset = document.getElementById('sourceAsset').value.trim();
+      const audience = document.getElementById('audience').value.trim();
+      const coreIdea = document.getElementById('coreIdea').value.trim();
+      const proofPoints = contentLines('proofPoints');
+      const avoidClaims = contentLines('avoidClaims');
+      const cta = document.getElementById('cta').value.trim();
+      const channels = document.getElementById('channels').value.trim();
+      const brief = [
+        'Content Repurposing Brief',
+        '',
+        'Source asset: ' + sourceAsset,
+        'Audience: ' + audience,
+        'Target channels: ' + channels,
+        '',
+        'Core idea:',
+        coreIdea || '[buyer-approved source idea]',
+        '',
+        'Newsletter angle:',
+        'Explain the core idea for ' + (audience || '[audience]') + ' using only buyer-approved source material. Keep claims modest and true.',
+        '',
+        'Five post angles:',
+        '1. Pain point: why starting from a blank content calendar is expensive.',
+        '2. How-to: split one source asset into problem, process, example, CTA, and FAQ.',
+        '3. Objection: repurposing is not repeating yourself; it is making the idea easier to understand.',
+        '4. Offer: turn one approved source asset into newsletter, posts, captions, and review checklist.',
+        '5. Checklist: source approved, claims true, CTA current, each post stands alone, context owner reviewed.',
+        '',
+        'Approved proof points or deliverables:',
+        ...(proofPoints.length ? proofPoints.map((item, i) => (i + 1) + '. ' + item) : ['1. [add buyer-approved proof points]']),
+        '',
+        'Claims to avoid:',
+        ...(avoidClaims.length ? avoidClaims.map((item, i) => (i + 1) + '. ' + item) : ['1. [add forbidden claims]']),
+        '',
+        'Buyer-approved CTA:',
+        cta || '[buyer-approved CTA]',
+        '',
+        'Review checklist:',
+        '1. Buyer owns or is authorized to reuse the source asset.',
+        '2. No invented personal story, statistic, endorsement, or result.',
+        '3. CTA is current and approved.',
+        '4. Regulated advice is excluded or professionally reviewed.',
+        '5. Account owner reviews before publishing.',
+        '',
+        'Suggested paid next step:',
+        'Content Repurposing Sprint ($100) for one newsletter issue, five post drafts, ten captions/hooks, repurposing map, and publishing checklist.',
+        '',
+        'Proof rule: count $0 until buyer accepts scope and external payment proof exists.'
+      ].join('\\n');
+      document.getElementById('contentOutput').textContent = brief;
+      const issueBody = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: Content Repurposing Sprint',
+        'Listed price: $100',
+        'Tool source: #{SITE_URL}content-repurposing-brief-builder.html',
+        '',
+        'Requested quantity or scope:',
+        'Repurposing sprint from buyer-approved source asset into newsletter, posts, captions, map, and checklist.',
+        '',
+        'Payment/proof route:',
+        '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        'Newsletter draft, post set, captions/hooks, map, and checklist accepted by buyer.',
+        '',
+        'Brief:',
+        brief
+      ].join('\\n');
+      const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: Content Repurposing Sprint', labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+      document.getElementById('contentOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+      return brief;
+    }
+    ['sourceAsset','audience','coreIdea','proofPoints','avoidClaims','cta','channels'].forEach(id => document.getElementById(id).addEventListener('input', buildContentBrief));
+    document.getElementById('contentBuildBtn').addEventListener('click', event => { event.preventDefault(); buildContentBrief(); });
+    document.getElementById('contentDownloadBtn').addEventListener('click', event => {
+      event.preventDefault();
+      const brief = buildContentBrief();
+      const blob = new Blob([brief], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'content-repurposing-brief.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+    buildContentBrief();
+  </script>
+HTML
+
 audit_tool_row = tool_rows.find { |row| row[:slug] == "website-audit-lite" }
 File.write(File.join(DOCS, "website-audit-lite.html"), page_shell("Website Audit Lite - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(audit_tool_row))))
   <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h(prefilled_issue_url(website_audit_offer))}">Start $150 audit</a></p><h1>Website Audit Lite</h1><p class="muted">Create a quick buyer-facing audit brief from public page observations. This tool does not fetch the site; enter only public observations you are allowed to share.</p></header>
@@ -2266,7 +2397,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
