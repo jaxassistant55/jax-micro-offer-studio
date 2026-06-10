@@ -461,5 +461,11 @@
   <guid>https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html</guid>
   <description>Close-ready buyer reply scripts, invoice lines, proof gates, and stop conditions for $100+ service orders.</description>
 </item>
+<item>
+  <title>Delivery Acceptance</title>
+  <link>https://jaxassistant55.github.io/jax-micro-offer-studio/delivery-acceptance.html</link>
+  <guid>https://jaxassistant55.github.io/jax-micro-offer-studio/delivery-acceptance.html</guid>
+  <description>Delivery, acceptance, revision, and proof gates for $100+ service orders.</description>
+</item>
 </channel>
 </rss>
