@@ -2,13 +2,17 @@
 
 Public launch package generated during the autonomous earning run.
 
-- Generated: 2026-06-11 01:25:02 JST
+- Generated: 2026-06-11 01:30:53 JST
 - Live site: https://jaxassistant55.github.io/jax-micro-offer-studio/
 - Public site root: `docs/index.html`
 - Manifest: `public_launch_manifest.csv`
 - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
 - Inquiry path: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml
 - First paid request board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/1
+- Pricing page: https://jaxassistant55.github.io/jax-micro-offer-studio/pricing.html
+- Case studies: https://jaxassistant55.github.io/jax-micro-offer-studio/case-studies.html
+- Buyer FAQ: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-faq.html
+- Share kit: https://jaxassistant55.github.io/jax-micro-offer-studio/share-kit.html
 - Offers: 12 digital products and 12 productized services
 
 Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.

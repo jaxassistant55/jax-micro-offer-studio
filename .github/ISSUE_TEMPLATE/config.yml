@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Live Micro Offer Studio site
+    url: https://jaxassistant55.github.io/jax-micro-offer-studio/
+    about: Browse public offers and previews.
+  - name: Fulfillment ledger
+    url: https://jaxassistant55.github.io/jax-micro-offer-studio/fulfillment.html
+    about: Check ready artifacts and local bundle checksums.
+  - name: First paid request board
+    url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/1
+    about: Comment on the current first $100+ request board.

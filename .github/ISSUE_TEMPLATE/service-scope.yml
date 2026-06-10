@@ -1,0 +1,49 @@
+name: Service scope request
+description: Request a fixed-scope productized service.
+title: "Service scope: "
+labels: ["paid-inquiry", "needs-scope"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for one of the fixed-scope services. Do not paste secrets, payment details, tax identifiers, or files you are not authorized to share.
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service
+      options:
+        - Website Audit Microservice ($150)
+        - Data Cleanup Sprint ($125)
+        - AI Workflow Tracker Sprint ($150)
+        - Static Demo Site Customization ($200)
+        - Niche Quote Estimator ($150)
+        - Automation Blueprint ($100)
+        - Local SEO / GBP Audit ($175)
+        - Technical Docs Cleanup ($150)
+        - Client Intake and SOP Package ($125)
+        - PDF/Table Extraction ($125)
+        - Content Repurposing Sprint ($100)
+        - Resume / LinkedIn / Interview Pack ($125)
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Exact scope
+      description: What public URL, authorized file, workflow, or output should be handled?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance proof
+      description: What will show the work is accepted and payable?
+    validations:
+      required: true
+  - type: input
+    id: payment
+    attributes:
+      label: Payment route
+      placeholder: "invoice, funded milestone, platform order, or other external proof route"
+    validations:
+      required: true

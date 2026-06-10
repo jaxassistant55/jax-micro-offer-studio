@@ -217,6 +217,48 @@ def fulfillment_rows(offers)
   end.join
 end
 
+def pricing_rows(offers)
+  offers.map do |offer|
+    <<~HTML
+      <tr>
+        <td data-label="Offer"><a href="#{h(offer[:slug])}.html">#{h(offer[:title])}</a></td>
+        <td data-label="Type">#{h(offer[:type])}</td>
+        <td data-label="Price">#{h(offer[:price])}</td>
+        <td data-label="Path to $100">#{h(offer[:first_100])}</td>
+        <td data-label="Ready state">#{h(offer[:zip_name] ? "Bundle checksum listed" : "Source folder listed")}</td>
+        <td data-label="Inquiry"><a href="#{h(ISSUE_URL)}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}">Open inquiry</a></td>
+      </tr>
+    HTML
+  end.join
+end
+
+def case_study_cards(offers)
+  offers.select { |offer| offer[:preview_public] }.first(12).map do |offer|
+    <<~HTML
+      <article class="panel">
+        <h2>#{h(offer[:title])}</h2>
+        <p>#{h(offer[:description])}</p>
+        <p><strong>Commercial path:</strong> #{h(offer[:first_100])}</p>
+        <p><strong>Fulfillment:</strong> #{h(offer[:zip_name] ? "Local paid bundle ready; checksum on fulfillment page." : "Source folder ready.")}</p>
+        <p class="buttons"><a href="#{h(offer[:slug])}.html">Offer page</a><a href="#{h(offer[:preview_public])}">Open preview</a><a href="#{h(ISSUE_URL)}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}">Request this</a></p>
+      </article>
+    HTML
+  end.join
+end
+
+def share_rows(offers)
+  offers.first(16).map do |offer|
+    text = "Ready-to-scope #{offer[:type]}: #{offer[:title]} (#{offer[:price]}). #{offer[:description]} Details: #{SITE_URL}#{offer[:slug]}.html"
+    <<~HTML
+      <tr>
+        <td data-label="Offer">#{h(offer[:title])}</td>
+        <td data-label="Price">#{h(offer[:price])}</td>
+        <td data-label="Snippet"><div class="copybox">#{h(text)}</div></td>
+      </tr>
+    HTML
+  end.join
+end
+
 def page_shell(title, body)
   description = "Public previews and paid-inquiry pages for generated digital products and productized micro-services."
   <<~HTML
@@ -259,7 +301,7 @@ end
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="case-studies.html">Case studies</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -289,6 +331,16 @@ HTML
 File.write(File.join(DOCS, "services.html"), page_shell("Services - Micro Offer Studio", <<~HTML))
   <header><p class="buttons"><a href="index.html">Home</a><a href="products.html">Products</a><a href="fulfillment.html">Fulfillment</a><a href="source-notes.html">Source notes</a></p><h1>Productized Services</h1><p class="muted">Fixed-scope offers that can clear $100 with one accepted order. Buyer authorization and payment proof are still required.</p></header>
   <section class="grid">#{SERVICES.map { |offer| card_html(offer) }.join}</section>
+HTML
+
+File.write(File.join(DOCS, "pricing.html"), page_shell("Pricing - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="fulfillment.html">Fulfillment</a></p><h1>Pricing</h1><p class="muted">Every row includes a concrete path to $100 and an inquiry link. These are suggested fixed prices; final work still requires accepted scope and external payment proof.</p></header>
+  <section><table><thead><tr><th>Offer</th><th>Type</th><th>Price</th><th>Path to $100</th><th>Ready state</th><th>Inquiry</th></tr></thead><tbody>#{pricing_rows(OFFERS)}</tbody></table></section>
+HTML
+
+File.write(File.join(DOCS, "case-studies.html"), page_shell("Case Studies - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a></p><h1>Case Studies And Previews</h1><p class="muted">Selected public previews and sample outputs from the prepared work. These demonstrate scope and quality without exposing private buyer files or full paid ZIP bundles.</p></header>
+  <section class="grid">#{case_study_cards(OFFERS)}</section>
 HTML
 
 File.write(File.join(DOCS, "fulfillment.html"), page_shell("Fulfillment - Micro Offer Studio", <<~HTML))
@@ -322,6 +374,25 @@ end.join
 File.write(File.join(DOCS, "proposals.html"), page_shell("Proposal Copy - Micro Offer Studio", <<~HTML))
   <header><p class="buttons"><a href="index.html">Home</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a></p><h1>Proposal Copy</h1><p class="muted">Copy-ready, truthful snippets for channels the account owner controls. Do not spam; use only in relevant conversations or profiles where posting is allowed.</p></header>
   <section class="grid">#{proposal_cards}</section>
+HTML
+
+faq_body = <<~HTML
+  <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a></p><h1>Buyer FAQ</h1><p class="muted">Practical details for legitimate paid requests.</p></header>
+  <section class="grid">
+    <article class="panel"><h2>How do I buy?</h2><p>Open the first $100 request board or a paid inquiry issue with the offer name, exact scope, budget/payment route, deadline, and acceptance proof. The public site does not process payment.</p></article>
+    <article class="panel"><h2>What can be delivered immediately?</h2><p>Digital product bundles and prepared service kits are listed on the fulfillment ledger. Full paid bundles are local and transferred only after accepted scope and external payment/proof.</p></article>
+    <article class="panel"><h2>What should I not share?</h2><p>Do not post passwords, payment cards, tax IDs, private financial/medical/legal facts, or files you are not authorized to share. Services can be scoped from public data or buyer-provided safe files.</p></article>
+    <article class="panel"><h2>When does money count?</h2><p>Money counts only after an external paid order, cleared invoice, funded milestone, payable balance, posted refund/credit, or equivalent proof exists. Public pages and issues are not earnings.</p></article>
+    <article class="panel"><h2>What is the fastest $100 service?</h2><p>The $100 Automation Blueprint reaches $100 with one accepted scope and payment. The $125 Data Cleanup Sprint and $150 Website Audit also clear $100 with one order.</p></article>
+    <article class="panel"><h2>What is the fastest product path?</h2><p>The $29 Browser Extension Template or Mini Course Workbook reaches $100 gross after four paid transfers. Product transfer still requires a payment route and delivery proof.</p></article>
+  </section>
+HTML
+File.write(File.join(DOCS, "buyer-faq.html"), page_shell("Buyer FAQ - Micro Offer Studio", faq_body))
+
+File.write(File.join(DOCS, "share-kit.html"), page_shell("Share Kit - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="case-studies.html">Case studies</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a></p><h1>Share Kit</h1><p class="muted">Owned-channel snippets for profiles, relevant conversations, or buyer follow-up. Do not spam unrelated threads or communities.</p></header>
+  <section class="notice"><h2>Safe-use rule</h2><p>Use these only where posting is allowed and relevant. Do not imply payment has already happened. Do not claim credentials, endorsements, results, or guarantees that are not true.</p></section>
+  <section><h2>Offer snippets</h2><table><thead><tr><th>Offer</th><th>Price</th><th>Snippet</th></tr></thead><tbody>#{share_rows(OFFERS)}</tbody></table></section>
 HTML
 
 OFFERS.each do |offer|
@@ -423,6 +494,10 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
   - Inquiry path: #{ISSUE_URL}
   - First paid request board: #{ISSUE_BOARD_URL}
+  - Pricing page: #{SITE_URL}pricing.html
+  - Case studies: #{SITE_URL}case-studies.html
+  - Buyer FAQ: #{SITE_URL}buyer-faq.html
+  - Share kit: #{SITE_URL}share-kit.html
   - Offers: #{PRODUCTS.length} digital products and #{SERVICES.length} productized services
 
   Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
@@ -484,6 +559,95 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "paid-inquiry.yml
         required: true
 YAML
 
+File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "service-scope.yml"), <<~YAML)
+  name: Service scope request
+  description: Request a fixed-scope productized service.
+  title: "Service scope: "
+  labels: ["paid-inquiry", "needs-scope"]
+  body:
+    - type: markdown
+      attributes:
+        value: |
+          Use this for one of the fixed-scope services. Do not paste secrets, payment details, tax identifiers, or files you are not authorized to share.
+    - type: dropdown
+      id: service
+      attributes:
+        label: Service
+        options:
+  #{SERVICES.map { |offer| "        - #{offer[:title]} (#{offer[:price]})" }.join("\n")}
+      validations:
+        required: true
+    - type: textarea
+      id: scope
+      attributes:
+        label: Exact scope
+        description: What public URL, authorized file, workflow, or output should be handled?
+      validations:
+        required: true
+    - type: textarea
+      id: acceptance
+      attributes:
+        label: Acceptance proof
+        description: What will show the work is accepted and payable?
+      validations:
+        required: true
+    - type: input
+      id: payment
+      attributes:
+        label: Payment route
+        placeholder: "invoice, funded milestone, platform order, or other external proof route"
+      validations:
+        required: true
+YAML
+
+File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "product-transfer.yml"), <<~YAML)
+  name: Product transfer request
+  description: Request a digital product bundle transfer after payment/proof route is agreed.
+  title: "Product transfer: "
+  labels: ["paid-inquiry", "needs-scope"]
+  body:
+    - type: markdown
+      attributes:
+        value: |
+          Use this to request a product bundle listed in the fulfillment ledger. Full ZIP bundles are not public; transfer happens only after accepted payment/proof route.
+    - type: dropdown
+      id: product
+      attributes:
+        label: Product
+        options:
+  #{PRODUCTS.map { |offer| "        - #{offer[:title]} (#{offer[:price]})" }.join("\n")}
+      validations:
+        required: true
+    - type: input
+      id: proof_route
+      attributes:
+        label: Payment or proof route
+        placeholder: "paid order, invoice, escrow, transfer receipt, or other approved external proof"
+      validations:
+        required: true
+    - type: textarea
+      id: delivery
+      attributes:
+        label: Delivery preference
+        description: How should the bundle be transferred after payment/proof?
+      validations:
+        required: true
+YAML
+
+File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<~YAML)
+  blank_issues_enabled: false
+  contact_links:
+    - name: Live Micro Offer Studio site
+      url: #{SITE_URL}
+      about: Browse public offers and previews.
+    - name: Fulfillment ledger
+      url: #{SITE_URL}fulfillment.html
+      about: Check ready artifacts and local bundle checksums.
+    - name: First paid request board
+      url: #{ISSUE_BOARD_URL}
+      about: Comment on the current first $100+ request board.
+YAML
+
 File.write(File.join(LAUNCH_ROOT, ".gitignore"), <<~TXT)
   .DS_Store
 TXT
@@ -492,7 +656,7 @@ File.write(File.join(DOCS, "offers.json"), JSON.pretty_generate(OFFERS.map do |o
   offer.slice(:type, :title, :slug, :source_dir, :price, :description, :first_100, :preview_public, :zip_name, :zip_bytes, :zip_sha256)
 end))
 
-urls = ["", "products.html", "services.html", "fulfillment.html", "proof.html", "proposals.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "case-studies.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

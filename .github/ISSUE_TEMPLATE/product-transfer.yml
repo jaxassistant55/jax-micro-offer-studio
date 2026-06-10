@@ -1,0 +1,42 @@
+name: Product transfer request
+description: Request a digital product bundle transfer after payment/proof route is agreed.
+title: "Product transfer: "
+labels: ["paid-inquiry", "needs-scope"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this to request a product bundle listed in the fulfillment ledger. Full ZIP bundles are not public; transfer happens only after accepted payment/proof route.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - HTML5 Micro Game Kit ($19)
+        - Procedural SFX Pack ($12)
+        - SVG Icon Pack ($15)
+        - Printable Puzzle and Planner Pack ($14)
+        - Synthetic Mock Dataset Pack ($19)
+        - Browser Extension Template ($29)
+        - CSV CLI Toolkit ($19)
+        - CSS Component Pack ($19)
+        - SVG Wallpaper Pattern Pack ($9)
+        - Anki-Ready Flashcard Deck ($12)
+        - Mini Course Workbook ($29)
+        - JSON Schema Fixture Pack ($15)
+    validations:
+      required: true
+  - type: input
+    id: proof_route
+    attributes:
+      label: Payment or proof route
+      placeholder: "paid order, invoice, escrow, transfer receipt, or other approved external proof"
+    validations:
+      required: true
+  - type: textarea
+    id: delivery
+    attributes:
+      label: Delivery preference
+      description: How should the bundle be transferred after payment/proof?
+    validations:
+      required: true
