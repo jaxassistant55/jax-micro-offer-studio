@@ -179,6 +179,19 @@
     "zip_sha256": "59ca9ef2a449c8726fbde504de95f67765c613b25e209844739090f30662ceeb"
   },
   {
+    "type": "product",
+    "title": "Sales Enablement Kit",
+    "slug": "sales-enablement-kit",
+    "source_dir": "non_bounty/sales_enablement",
+    "price": "$29",
+    "description": "Proposal library, compliant outreach sequence, prospect tracker, profile checklist, case study template, and simple portfolio page for fixed-scope service sellers.",
+    "first_100": "4 sales at $29 clears $100 gross, or one $100 customized proposal/profile setup reaches $100.",
+    "preview_public": "previews/sales-enablement-kit.html",
+    "zip_name": "sales-enablement-kit.zip",
+    "zip_bytes": 3639,
+    "zip_sha256": "9541482cb0263e5409363fd32532ae413011fd1dc6383ef81e7c61432ef50042"
+  },
+  {
     "type": "service",
     "title": "Website Audit Microservice",
     "slug": "website-audit-microservice",
