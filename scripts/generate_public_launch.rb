@@ -19,6 +19,7 @@ REPO_URL = ENV.fetch("PUBLIC_LAUNCH_REPO_URL", "https://github.com/jaxassistant5
 SITE_URL = ENV.fetch("PUBLIC_LAUNCH_SITE_URL", "https://jaxassistant55.github.io/jax-micro-offer-studio/")
 ISSUE_URL = "#{REPO_URL}/issues/new?template=paid-inquiry.yml"
 ISSUE_BOARD_URL = "#{REPO_URL}/issues/1"
+NEW_ISSUE_URL = "#{REPO_URL}/issues/new"
 
 def h(value)
   CGI.escapeHTML(value.to_s)
@@ -68,6 +69,45 @@ def copy_preview_dependencies(src, dest_dir)
 
     copy_if_exists(File.join(File.dirname(src), clean_ref), File.join(dest_dir, clean_ref))
   end
+end
+
+def price_amount(offer)
+  offer[:price].to_s.gsub(/[^\d.]/, "").to_f
+end
+
+def prefilled_issue_url(offer, title_prefix: "Ready to pay")
+  body = <<~BODY
+    ## Ready-to-pay intake
+
+    Offer: #{offer[:title]}
+    Listed price: #{offer[:price]}
+    Offer page: #{SITE_URL}#{offer[:slug]}.html
+    Offer type: #{offer[:type]}
+
+    Requested quantity or scope:
+    Payment/proof route:
+    Deadline:
+    Acceptance proof:
+    Delivery preference:
+
+    Safety confirmation:
+    - I will not post passwords, payment cards, tax identifiers, medical/legal/financial private details, or files I am not authorized to share.
+    - I understand this issue is not payment by itself; money counts only after external payment or payout proof exists.
+  BODY
+
+  query = URI.encode_www_form(
+    template: "ready-to-pay.md",
+    title: "#{title_prefix}: #{offer[:title]}",
+    labels: "paid-inquiry,ready-to-pay",
+    body: body
+  )
+  "#{NEW_ISSUE_URL}?#{query}"
+end
+
+def template_issue_url(offer)
+  template = offer[:type] == "product" ? "product-transfer.yml" : "service-scope.yml"
+  title = offer[:type] == "product" ? "Product transfer: #{offer[:title]}" : "Service scope: #{offer[:title]}"
+  "#{NEW_ISSUE_URL}?#{URI.encode_www_form(template: template, title: title)}"
 end
 
 PRODUCTS = [
@@ -184,7 +224,7 @@ FileUtils.mkdir_p(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE"))
 def card_html(offer)
   cover = "assets/covers/#{offer[:slug]}.svg"
   detail = "#{offer[:slug]}.html"
-  issue = "#{ISSUE_URL}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}"
+  issue = prefilled_issue_url(offer)
   <<~HTML
     <article class="card #{h(offer[:type])}">
       #{File.exist?(File.join(DOCS, cover)) ? %(<img src="#{h(cover)}" alt="#{h(offer[:title])} cover">) : %(<div class="placeholder">#{h(offer[:type])}</div>)}
@@ -193,7 +233,7 @@ def card_html(offer)
         <h3>#{h(offer[:title])}</h3>
         <p>#{h(offer[:description])}</p>
         <p><strong>First $100 path:</strong> #{h(offer[:first_100])}</p>
-        <p class="buttons"><a href="#{h(detail)}">Details</a><a href="#{h(issue)}">Request this</a></p>
+        <p class="buttons"><a href="#{h(detail)}">Details</a><a href="#{h(issue)}">Start order</a></p>
       </div>
     </article>
   HTML
@@ -225,6 +265,7 @@ end
 
 def pricing_rows(offers)
   offers.map do |offer|
+    issue = prefilled_issue_url(offer)
     <<~HTML
       <tr>
         <td data-label="Offer"><a href="#{h(offer[:slug])}.html">#{h(offer[:title])}</a></td>
@@ -232,7 +273,7 @@ def pricing_rows(offers)
         <td data-label="Price">#{h(offer[:price])}</td>
         <td data-label="Path to $100">#{h(offer[:first_100])}</td>
         <td data-label="Ready state">#{h(offer[:zip_name] ? "Bundle checksum listed" : "Source folder listed")}</td>
-        <td data-label="Inquiry"><a href="#{h(ISSUE_URL)}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}">Open inquiry</a></td>
+        <td data-label="Inquiry"><a href="#{h(issue)}">Start order</a></td>
       </tr>
     HTML
   end.join
@@ -240,13 +281,14 @@ end
 
 def case_study_cards(offers)
   offers.select { |offer| offer[:preview_public] }.first(12).map do |offer|
+    issue = prefilled_issue_url(offer)
     <<~HTML
       <article class="panel">
         <h2>#{h(offer[:title])}</h2>
         <p>#{h(offer[:description])}</p>
         <p><strong>Commercial path:</strong> #{h(offer[:first_100])}</p>
         <p><strong>Fulfillment:</strong> #{h(offer[:zip_name] ? "Local paid bundle ready; checksum on fulfillment page." : "Source folder ready.")}</p>
-        <p class="buttons"><a href="#{h(offer[:slug])}.html">Offer page</a><a href="#{h(offer[:preview_public])}">Open preview</a><a href="#{h(ISSUE_URL)}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}">Request this</a></p>
+        <p class="buttons"><a href="#{h(offer[:slug])}.html">Offer page</a><a href="#{h(offer[:preview_public])}">Open preview</a><a href="#{h(issue)}">Start order</a></p>
       </article>
     HTML
   end.join
@@ -384,7 +426,7 @@ def page_shell(title, body)
       <style>
         :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00}
         *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;background:#fff}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:0}h2{margin:24px 0 10px;font-size:1.25rem;letter-spacing:0}h3{margin:0 0 6px;font-size:1.05rem;letter-spacing:0}p{margin:0 0 10px}a{color:var(--accent)}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card,.notice,.panel{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;min-width:0;overflow-wrap:anywhere}.card{display:grid;grid-template-columns:180px 1fr;gap:14px}.card.product{border-left:6px solid var(--green)}.card.service{border-left:6px solid var(--accent)}img,.placeholder{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);border-radius:6px;background:var(--panel)}.placeholder{display:grid;place-items:center;color:var(--muted);font-weight:700;text-transform:uppercase}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;gap:8px;flex-wrap:wrap}.buttons a{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}.notice{border-left:6px solid var(--gold);background:#fffaf0}.split{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px}.fact{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:0 0 10px}.fact span{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.preview-frame{width:100%;min-height:520px;border:1px solid var(--line);border-radius:8px;background:#fff}ul{padding-left:20px}li{margin:6px 0}code{white-space:normal;overflow-wrap:anywhere}
-        table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}
+        table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}label{display:block;font-weight:700;margin:10px 0 4px}input,select,textarea{width:100%;min-height:40px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;background:#fff}textarea{min-height:100px}.total{font-size:1.4rem;font-weight:800}
         @media(max-width:900px){.grid,.card,.split{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase}}
       </style>
     </head>
@@ -412,7 +454,7 @@ sample_pack = write_sample_pack(OFFERS)
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -429,7 +471,7 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="start-order.html">Build ready-to-pay issue</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 File.write(File.join(DOCS, "index.html"), page_shell("Micro Offer Studio", index_body))
@@ -462,6 +504,128 @@ File.write(File.join(DOCS, "samples.html"), page_shell("Samples - Micro Offer St
     <article class="panel"><h2>What it proves</h2><p>The sample shows offer table format, buyer brief fields, and proof rules. It helps a buyer decide whether to open a paid inquiry.</p></article>
     <article class="panel"><h2>What it does not include</h2><p>No full paid product ZIP, no private buyer data, no credentials, no payment setup, and no claim that money has been earned.</p></article>
   </section>
+HTML
+
+order_intake_rows = OFFERS.map do |offer|
+  {
+    type: offer[:type],
+    title: offer[:title],
+    slug: offer[:slug],
+    price: offer[:price],
+    amount: price_amount(offer),
+    first_100: offer[:first_100],
+    detail_url: "#{SITE_URL}#{offer[:slug]}.html",
+    ready_to_pay_url: prefilled_issue_url(offer),
+    template_url: template_issue_url(offer)
+  }
+end
+
+CSV.open(File.join(DOCS, "order_intake.csv"), "w", write_headers: true, headers: %w[type title slug price amount first_100 detail_url ready_to_pay_url template_url]) do |csv|
+  order_intake_rows.each do |row|
+    csv << row.values_at(:type, :title, :slug, :price, :amount, :first_100, :detail_url, :ready_to_pay_url, :template_url)
+  end
+end
+
+start_order_options = order_intake_rows.map do |row|
+  %(<option value="#{h(row[:slug])}">#{h(row[:title])} - #{h(row[:price])} - #{h(row[:type])}</option>)
+end.join
+
+start_order_data = JSON.generate(order_intake_rows)
+File.write(File.join(DOCS, "start-order.html"), page_shell("Start Order - Micro Offer Studio", <<~HTML))
+  <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="order_intake.csv">Order CSV</a><a href="proof.html">Proof rules</a><a href="fulfillment.html">Fulfillment</a></p><h1>Start Order</h1><p class="muted">A structured intake builder that turns a visitor into a specific paid inquiry. This page still does not process payment; it creates a ready-to-pay issue draft with the exact offer, price, scope, and proof fields.</p></header>
+  <section class="notice"><h2>Payment boundary</h2><p>Opening an issue is not payment. Count $0 until an external paid order, cleared invoice, funded milestone, payable balance, posted refund/credit, or equivalent proof exists.</p></section>
+  <section class="split">
+    <div class="panel">
+      <h2>Build a paid inquiry</h2>
+      <label for="offer">Offer</label>
+      <select id="offer">#{start_order_options}</select>
+      <label for="quantity">Quantity or units</label>
+      <input id="quantity" type="number" min="1" step="1" value="1">
+      <label for="scope">Requested scope</label>
+      <textarea id="scope" placeholder="Public URL, authorized file type, workflow, bundle transfer, or exact output. Do not include secrets."></textarea>
+      <label for="payment">Payment/proof route</label>
+      <input id="payment" placeholder="invoice, funded milestone, marketplace order, checkout receipt, or other external proof">
+      <label for="deadline">Deadline</label>
+      <input id="deadline" placeholder="date or timing">
+      <label for="acceptance">Acceptance proof</label>
+      <textarea id="acceptance" placeholder="What will show the work is accepted and payable?"></textarea>
+      <p class="buttons"><a id="readyLink" href="#">Open ready-to-pay issue</a><a id="templateLink" href="#">Open form template</a><a id="detailLink" href="#">Offer page</a></p>
+    </div>
+    <aside>
+      <div class="fact"><span>Selected price</span><strong id="price"></strong></div>
+      <div class="fact"><span>Estimated gross</span><strong class="total" id="gross"></strong></div>
+      <div class="fact"><span>Path to $100</span><strong id="first100"></strong></div>
+      <div class="fact"><span>Money status</span><strong>$0 until external payment proof exists</strong></div>
+      <div class="copybox" id="bodyPreview"></div>
+    </aside>
+  </section>
+  <script>
+    const offers = #{start_order_data};
+    const bySlug = Object.fromEntries(offers.map(o => [o.slug, o]));
+    const offerEl = document.getElementById('offer');
+    const quantityEl = document.getElementById('quantity');
+    const scopeEl = document.getElementById('scope');
+    const paymentEl = document.getElementById('payment');
+    const deadlineEl = document.getElementById('deadline');
+    const acceptanceEl = document.getElementById('acceptance');
+    const readyLink = document.getElementById('readyLink');
+    const templateLink = document.getElementById('templateLink');
+    const detailLink = document.getElementById('detailLink');
+    const priceEl = document.getElementById('price');
+    const grossEl = document.getElementById('gross');
+    const firstEl = document.getElementById('first100');
+    const bodyPreview = document.getElementById('bodyPreview');
+    function money(n){ return '$' + Number(n || 0).toFixed(2).replace(/\\.00$/, ''); }
+    function issueUrl(offer, body){
+      const params = new URLSearchParams({
+        template: 'ready-to-pay.md',
+        title: 'Ready to pay: ' + offer.title,
+        labels: 'paid-inquiry,ready-to-pay',
+        body
+      });
+      return '#{h(NEW_ISSUE_URL)}?' + params.toString();
+    }
+    function update(){
+      const offer = bySlug[offerEl.value];
+      const quantity = Math.max(1, parseInt(quantityEl.value || '1', 10));
+      const gross = offer.amount * quantity;
+      const body = [
+        '## Ready-to-pay intake',
+        '',
+        'Offer: ' + offer.title,
+        'Listed price: ' + offer.price,
+        'Quantity or units: ' + quantity,
+        'Estimated gross: ' + money(gross),
+        'Offer page: ' + offer.detail_url,
+        '',
+        'Requested quantity or scope:',
+        scopeEl.value || '[buyer to fill]',
+        '',
+        'Payment/proof route:',
+        paymentEl.value || '[buyer to fill]',
+        '',
+        'Deadline:',
+        deadlineEl.value || '[buyer to fill]',
+        '',
+        'Acceptance proof:',
+        acceptanceEl.value || '[buyer to fill]',
+        '',
+        'Safety confirmation:',
+        '- I will not post passwords, payment cards, tax identifiers, medical/legal/financial private details, or files I am not authorized to share.',
+        '- I understand this issue is not payment by itself; money counts only after external payment or payout proof exists.'
+      ].join('\\n');
+      priceEl.textContent = offer.price;
+      grossEl.textContent = money(gross);
+      firstEl.textContent = offer.first_100;
+      bodyPreview.textContent = body;
+      readyLink.href = issueUrl(offer, body);
+      templateLink.href = offer.template_url;
+      detailLink.href = offer.detail_url;
+    }
+    [offerEl, quantityEl, scopeEl, paymentEl, deadlineEl, acceptanceEl].forEach(el => el.addEventListener('input', update));
+    offerEl.addEventListener('change', update);
+    update();
+  </script>
 HTML
 
 if ORDER_BOARDS.any?
@@ -509,12 +673,13 @@ HTML
 File.write(File.join(DOCS, "proof.html"), page_shell("Proof Rules - Micro Offer Studio", proof_body))
 
 proposal_cards = (SERVICES.first(8) + PRODUCTS.values_at(5, 10, 4, 6)).compact.map do |offer|
+  issue = prefilled_issue_url(offer)
   <<~HTML
     <article class="panel">
       <h2>#{h(offer[:title])}</h2>
       <p><strong>Price:</strong> #{h(offer[:price])} · <strong>First $100:</strong> #{h(offer[:first_100])}</p>
-      <div class="copybox">Hi - I have a ready-to-scope #{offer[:type]} called "#{offer[:title]}". It is designed for #{offer[:description].sub(/\.$/, "")}. The fixed price is #{offer[:price]}. If this is useful, open a paid inquiry with the exact scope, deadline, acceptance proof, and payment route here: #{ISSUE_URL}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}</div>
-      <p class="buttons"><a href="#{h(offer[:slug])}.html">Offer page</a><a href="#{h(ISSUE_URL)}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}">Open inquiry</a></p>
+      <div class="copybox">Hi - I have a ready-to-scope #{offer[:type]} called "#{offer[:title]}". It is designed for #{offer[:description].sub(/\.$/, "")}. The fixed price is #{offer[:price]}. If this is useful, open a ready-to-pay inquiry with the exact scope, deadline, acceptance proof, and payment route here: #{issue}</div>
+      <p class="buttons"><a href="#{h(offer[:slug])}.html">Offer page</a><a href="#{h(issue)}">Start order</a></p>
     </article>
   HTML
 end.join
@@ -543,10 +708,11 @@ File.write(File.join(DOCS, "share-kit.html"), page_shell("Share Kit - Micro Offe
 HTML
 
 OFFERS.each do |offer|
-  issue = "#{ISSUE_URL}&title=#{CGI.escape("Inquiry: #{offer[:title]}")}"
+  issue = prefilled_issue_url(offer)
+  form_issue = template_issue_url(offer)
   body = <<~HTML
     <header>
-      <p class="buttons"><a href="index.html">Home</a><a href="#{offer[:type] == "product" ? "products.html" : "services.html"}">Back to #{h(offer[:type])}s</a><a href="#{h(issue)}">Request this</a></p>
+      <p class="buttons"><a href="index.html">Home</a><a href="#{offer[:type] == "product" ? "products.html" : "services.html"}">Back to #{h(offer[:type])}s</a><a href="start-order.html">Quote builder</a><a href="#{h(issue)}">Start order</a></p>
       <h1>#{h(offer[:title])}</h1>
       <p class="muted">#{h(offer[:description])}</p>
     </header>
@@ -579,7 +745,8 @@ OFFERS.each do |offer|
         <div class="fact"><span>Type</span><strong>#{h(offer[:type])}</strong></div>
         <div class="fact"><span>Price</span><strong>#{h(offer[:price])}</strong></div>
         <div class="fact"><span>Source asset folder</span><code>#{h(offer[:source_dir])}</code></div>
-        <div class="fact"><span>Inquiry</span><a href="#{h(issue)}">Open issue template</a></div>
+        <div class="fact"><span>Ready-to-pay issue</span><a href="#{h(issue)}">Open prefilled issue</a></div>
+        <div class="fact"><span>Form template</span><a href="#{h(form_issue)}">Open #{h(offer[:type])} form</a></div>
       </aside>
     </section>
   HTML
@@ -640,6 +807,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Manifest: `public_launch_manifest.csv`
   - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
   - Inquiry path: #{ISSUE_URL}
+  - Ready-to-pay builder: #{SITE_URL}start-order.html
   - First paid request board: #{ISSUE_BOARD_URL}
   - Pricing page: #{SITE_URL}pricing.html
   - Case studies: #{SITE_URL}case-studies.html
@@ -648,6 +816,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Proof monitor: #{SITE_URL}proof-monitor.html
   - Buyer FAQ: #{SITE_URL}buyer-faq.html
   - Share kit: #{SITE_URL}share-kit.html
+  - Order intake CSV: #{SITE_URL}order_intake.csv
   - Offers: #{PRODUCTS.length} digital products and #{SERVICES.length} productized services
 
   Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
@@ -784,12 +953,44 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "product-transfer
         required: true
 YAML
 
+File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "ready-to-pay.md"), <<~MD)
+  ---
+  name: Ready-to-pay issue
+  about: Prefilled buyer intake generated from the Start Order page.
+  title: "Ready to pay: "
+  labels: paid-inquiry, ready-to-pay
+  ---
+
+  ## Ready-to-pay intake
+
+  Offer:
+  Listed price:
+  Quantity or units:
+  Estimated gross:
+  Offer page:
+
+  Requested quantity or scope:
+
+  Payment/proof route:
+
+  Deadline:
+
+  Acceptance proof:
+
+  Safety confirmation:
+  - I will not post passwords, payment cards, tax identifiers, medical/legal/financial private details, or files I am not authorized to share.
+  - I understand this issue is not payment by itself; money counts only after external payment or payout proof exists.
+MD
+
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<~YAML)
   blank_issues_enabled: false
   contact_links:
     - name: Live Micro Offer Studio site
       url: #{SITE_URL}
       about: Browse public offers and previews.
+    - name: Start order builder
+      url: #{SITE_URL}start-order.html
+      about: Build a structured ready-to-pay issue.
     - name: Fulfillment ledger
       url: #{SITE_URL}fulfillment.html
       about: Check ready artifacts and local bundle checksums.
@@ -815,7 +1016,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 File.write(File.join(DOCS, "sitemap.xml"), <<~XML)
   <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
