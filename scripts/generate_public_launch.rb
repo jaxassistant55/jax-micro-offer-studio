@@ -785,6 +785,25 @@ tool_rows = [
   }
 ]
 
+existing_product_tool_services = [
+  invoice_tracker_offer[:title],
+  prompt_workflow_offer[:title],
+  sales_enablement_offer[:title]
+]
+product_preview_tool_offers = PRODUCTS.reject { |offer| existing_product_tool_services.include?(offer[:title]) }
+product_preview_tool_rows = product_preview_tool_offers.map do |offer|
+  {
+    slug: "#{offer[:slug]}-preview-builder",
+    title: "#{offer[:title]} Preview Builder",
+    service: offer[:title],
+    price: offer[:price],
+    path: "#{offer[:slug]}-preview-builder.html",
+    paid_path: prefilled_issue_url(offer),
+    proof_rule: "Counts $0 until a buyer requests the #{offer[:title]} transfer and external payment proof exists."
+  }
+end
+tool_rows.concat(product_preview_tool_rows)
+
 CSV.open(File.join(DOCS, "tool_manifest.csv"), "w", write_headers: true, headers: %w[slug title service price path paid_path proof_rule]) do |csv|
   tool_rows.each do |row|
     csv << row.values_at(:slug, :title, :service, :price, :path, :paid_path, :proof_rule)
@@ -983,6 +1002,139 @@ def write_scope_brief_tool(spec, tool_rows)
 end
 
 scope_tool_specs.each { |spec| write_scope_brief_tool(spec, tool_rows) }
+
+def write_product_preview_tool(offer, tool_rows)
+  tool_row = tool_rows.find { |row| row[:service] == offer[:title] && row[:slug].end_with?("-preview-builder") }
+  config = {
+    title: tool_row[:title],
+    product: offer[:title],
+    price: offer[:price],
+    first100: offer[:first_100],
+    productUrl: absolute_url("#{offer[:slug]}.html"),
+    toolUrl: absolute_url(tool_row[:path]),
+    paidPath: prefilled_issue_url(offer),
+    proofRule: tool_row[:proof_rule],
+    artifact: offer[:zip_name] || offer[:source_dir],
+    sha256: offer[:zip_sha256].to_s
+  }
+  File.write(File.join(DOCS, tool_row[:path]), page_shell("#{tool_row[:title]} - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(tool_row))))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="tools.html">Free tools</a><a href="#{h("#{offer[:slug]}.html")}">Product page</a><a href="#{h(prefilled_issue_url(offer))}">Start #{h(offer[:price])} transfer</a></p><h1>#{h(tool_row[:title])}</h1><p class="muted">Create a buyer-ready transfer brief for #{h(offer[:title])}. This free page does not include the paid ZIP, process payment, grant a license, or prove revenue.</p></header>
+    <section class="notice"><h2>Product transfer boundary</h2><p>The paid product bundle stays private until accepted scope and external payment proof exist. Do not post secrets, buyer private files, payment details, tax identifiers, or support promises you cannot honor. Page views, generated briefs, and unpaid issues count as $0.</p></section>
+    <section class="split">
+      <div class="panel">
+        <h2>Buyer transfer inputs</h2>
+        <label for="buyerUseCase">Buyer use case</label><textarea id="buyerUseCase">I want to evaluate whether this bundle fits my project before requesting the paid transfer.</textarea>
+        <label for="wantedAssets">Assets or files the buyer cares about</label><textarea id="wantedAssets">README and setup notes
+example files
+license/support notes
+full paid ZIP after payment proof</textarea>
+        <label for="deliveryNeeds">Delivery route and deadline</label><textarea id="deliveryNeeds">private download link or attachment after payment
+delivery within 24 hours after confirmed payment
+buyer confirms preferred transfer channel</textarea>
+        <label for="licenseNotes">License and support expectations</label><textarea id="licenseNotes">single-buyer project use
+no resale of the bundle as-is
+basic setup clarification only
+refund/support terms confirmed before payment</textarea>
+        <label for="proofRoute">Payment/proof route</label><textarea id="proofRoute">checkout receipt, invoice paid status, funded milestone, payable balance, or other external payment proof</textarea>
+        <p class="buttons"><a href="#" id="buildProductBriefBtn">Build transfer brief</a><a href="#" id="downloadProductBriefBtn">Download brief</a><a href="#{h(prefilled_issue_url(offer))}" id="productOrderBtn">Start paid transfer</a></p>
+        <div class="copybox" id="productBriefOutput"></div>
+      </div>
+      <aside>
+        <div class="fact"><span>Paid product</span><strong>#{h(offer[:title])} - #{h(offer[:price])}</strong></div>
+        <div class="fact"><span>First $100</span><strong>#{h(offer[:first_100])}</strong></div>
+        <div class="fact"><span>Private artifact</span><code>#{h(offer[:zip_name] || offer[:source_dir])}</code></div>
+        <div class="fact"><span>SHA-256</span><code>#{h(offer[:zip_sha256] || "N/A")}</code></div>
+      </aside>
+    </section>
+    <script>
+      const productConfig = #{JSON.generate(config)};
+      function productLines(id){
+        return document.getElementById(id).value.split(/\\n|,/).map(s => s.trim()).filter(Boolean);
+      }
+      function numbered(lines){
+        return lines.length ? lines.map((line, idx) => (idx + 1) + '. ' + line) : ['1. [buyer to provide]'];
+      }
+      function buildProductBrief(){
+        const useCase = productLines('buyerUseCase');
+        const assets = productLines('wantedAssets');
+        const delivery = productLines('deliveryNeeds');
+        const license = productLines('licenseNotes');
+        const proof = productLines('proofRoute');
+        const brief = [
+          'Product Transfer Brief',
+          '',
+          'Product: ' + productConfig.product,
+          'Price: ' + productConfig.price,
+          'Product page: ' + productConfig.productUrl,
+          'Tool source: ' + productConfig.toolUrl,
+          'Private artifact: ' + productConfig.artifact,
+          'Artifact SHA-256: ' + (productConfig.sha256 || 'N/A'),
+          '',
+          'Buyer use case:',
+          ...numbered(useCase),
+          '',
+          'Requested/expected assets:',
+          ...numbered(assets),
+          '',
+          'Delivery checklist:',
+          ...numbered(delivery),
+          '',
+          'License and support notes:',
+          ...numbered(license),
+          '',
+          'Payment/proof route:',
+          ...numbered(proof),
+          '',
+          'Acceptance checklist:',
+          '1. Buyer confirms the product and price.',
+          '2. Seller confirms payment route and support/refund terms.',
+          '3. Full paid bundle transfers only after external payment proof exists.',
+          '4. Buyer confirms receipt and the delivered artifact hash/version if needed.',
+          '',
+          'First $100 path: ' + productConfig.first100,
+          'Proof rule: ' + productConfig.proofRule
+        ].join('\\n');
+        document.getElementById('productBriefOutput').textContent = brief;
+        const issueBody = [
+          '## Ready-to-pay intake',
+          '',
+          'Offer: ' + productConfig.product,
+          'Listed price: ' + productConfig.price,
+          'Tool source: ' + productConfig.toolUrl,
+          '',
+          'Requested quantity or scope:',
+          brief,
+          '',
+          'Payment/proof route:',
+          '[buyer to fill]',
+          '',
+          'Acceptance proof:',
+          '[buyer to fill]',
+          '',
+          'Safety confirmation:',
+          'Buyer understands the full paid bundle is transferred privately only after external payment proof exists. No secrets, payment data, tax identifiers, or unauthorized private files are posted here.'
+        ].join('\\n');
+        const params = new URLSearchParams({ template: 'ready-to-pay.md', title: 'Ready to pay: ' + productConfig.product, labels: 'paid-inquiry,ready-to-pay', body: issueBody });
+        document.getElementById('productOrderBtn').href = '#{h(NEW_ISSUE_URL)}?' + params.toString();
+        return brief;
+      }
+      ['buyerUseCase','wantedAssets','deliveryNeeds','licenseNotes','proofRoute'].forEach(id => document.getElementById(id).addEventListener('input', buildProductBrief));
+      document.getElementById('buildProductBriefBtn').addEventListener('click', event => { event.preventDefault(); buildProductBrief(); });
+      document.getElementById('downloadProductBriefBtn').addEventListener('click', event => {
+        event.preventDefault();
+        const brief = buildProductBrief();
+        const blob = new Blob([brief], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = productConfig.product.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-transfer-brief.txt'; a.click();
+        URL.revokeObjectURL(url);
+      });
+      buildProductBrief();
+    </script>
+  HTML
+end
+
+product_preview_tool_offers.each { |offer| write_product_preview_tool(offer, tool_rows) }
 
 csv_tool_row = tool_rows.find { |row| row[:slug] == "csv-cleaner-lite" }
 File.write(File.join(DOCS, "csv-cleaner-lite.html"), page_shell("CSV Cleaner Lite - Micro Offer Studio", <<~HTML, jsonld_script(tool_schema(csv_tool_row))))
@@ -3313,6 +3465,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
 }))
 
 urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = (urls + product_preview_tool_rows.map { |row| row[:path] }).uniq
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
 CSV.open(File.join(DOCS, "indexnow_urls.csv"), "w", write_headers: true, headers: %w[url]) do |csv|
