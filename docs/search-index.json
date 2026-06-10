@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 08:15:07 JST",
+  "generated_at_jst": "2026-06-11 08:25:23 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -1282,6 +1282,22 @@
       "summary": "Machine-readable delivery messages, artifact manifests, acceptance criteria, revision boundaries, and proof folders.",
       "price": "$100+",
       "money_status": "0 until payment and delivery proof exist"
+    },
+    {
+      "type": "download_followup",
+      "title": "Download Follow-Up",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html",
+      "summary": "Release-preview download follow-up routes to paid inquiries and order boards.",
+      "price": "$100+ service routes and one $29 product route",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "download_followup_csv",
+      "title": "Download Follow-Up CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download_followup.csv",
+      "summary": "Machine-readable release download counts and fastest paid next steps.",
+      "price": "$100+ service routes and one $29 product route",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
     }
   ]
 }

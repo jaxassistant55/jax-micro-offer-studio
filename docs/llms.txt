@@ -85,3 +85,4 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 Do not treat public pages, issue drafts, estimates, samples, traffic, or tool usage as earned money. Count only external payment, payout, refund, credit, funded order, or payable-balance proof.
 - Close A Service Order: https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html - close-ready scripts, invoice lines, proof gates, and stop conditions for $100+ service orders.
 - Delivery Acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/delivery-acceptance.html - delivery, acceptance, revision, and proof gates for $100+ service orders.
+- Download Follow-Up: https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html - preview-release download follow-up routes to paid inquiries and order boards.
