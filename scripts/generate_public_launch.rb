@@ -427,6 +427,20 @@ def github_lead_rows(rows)
   end.join
 end
 
+def direct_order_rows(rows)
+  rows.select { |row| !row["repo_order_issue_url"].to_s.empty? }.sort_by { |row| -row["price"].to_s.gsub(/[^\d.]/, "").to_f }.map do |row|
+    <<~HTML
+      <tr>
+        <td data-label="Offer"><a href="#{h(row["repo_order_issue_url"])}">#{h(row["title"])}</a><br><span class="muted">#{h(row["type"])}</span></td>
+        <td data-label="Price">#{h(row["price"])}</td>
+        <td data-label="Buyer action">Comment on repo order board ##{h(row["repo_order_issue_number"])} with scope, deadline, and safe non-sensitive inputs.</td>
+        <td data-label="Preview"><a href="#{h(row["pages_url"])}">Preview</a><br><a href="#{h(row["repo_url"])}">Repo</a></td>
+        <td data-label="Proof">#{h(row["proof_rule"])}</td>
+      </tr>
+    HTML
+  end.join
+end
+
 def write_sample_pack(offers)
   samples_dir = File.join(DOCS, "samples")
   FileUtils.mkdir_p(samples_dir)
@@ -545,7 +559,7 @@ sample_pack = write_sample_pack(OFFERS)
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="github-leads.html">GitHub leads</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -562,7 +576,7 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="start-order.html">Build ready-to-pay issue</a><a href="github-leads.html">Open GitHub lead repos</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="order-now.html">Open direct order boards</a><a href="start-order.html">Build ready-to-pay issue</a><a href="github-leads.html">Open GitHub lead repos</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 site_schema = {
@@ -649,9 +663,17 @@ if GITHUB_LEADS.any?
       <article class="panel"><h2>Fastest product lead</h2><p>The $29 Browser Extension Template Preview needs four paid transfers to gross at least $100 before fees or refunds.</p></article>
     </section>
   HTML
+  File.write(File.join(DOCS, "order-now.html"), page_shell("Order Now - Micro Offer Studio", <<~HTML))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="github-leads.html">All GitHub leads</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a><a href="github_lead_repos.csv">CSV</a></p><h1>Order Now</h1><p class="muted">Direct repo-level order boards for the closest one-sale paths to $100+. These public issue threads are intake only; they do not process payment.</p></header>
+    <section class="notice"><h2>Payment boundary</h2><p>Commenting on an order board is not payment. Paid work or paid bundle transfer starts only after scope is accepted and payment is made through a seller-controlled external route. Confirmed money remains $0 until payment is posted, released, payable, or cleared.</p></section>
+    <section><h2>Direct Order Boards</h2><table><thead><tr><th>Offer</th><th>Price</th><th>Buyer action</th><th>Preview</th><th>Proof</th></tr></thead><tbody>#{direct_order_rows(GITHUB_LEADS)}</tbody></table></section>
+  HTML
 else
   File.write(File.join(DOCS, "github-leads.html"), page_shell("GitHub Leads - Micro Offer Studio", <<~HTML))
     <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a></p><h1>GitHub Lead Repositories</h1><p class="muted">No standalone GitHub lead repositories have been published yet.</p></header>
+  HTML
+  File.write(File.join(DOCS, "order-now.html"), page_shell("Order Now - Micro Offer Studio", <<~HTML))
+    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a></p><h1>Order Now</h1><p class="muted">No direct repo order boards have been published yet.</p></header>
   HTML
 end
 
@@ -3560,7 +3582,7 @@ File.write(File.join(DOCS, "sample-pack.json"), JSON.pretty_generate({
   boundary: "Free sample only. Full paid bundles are not public and money remains unconfirmed until external proof exists."
 }))
 
-urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "github-leads.html", "github_lead_repos.csv", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
+urls = ["", "products.html", "services.html", "pricing.html", "tools.html", "order-now.html", "github-leads.html", "github_lead_repos.csv", "csv-cleaner-lite.html", "invoice-expense-snapshot.html", "prompt-workflow-brief-builder.html", "resale-listing-draft-builder.html", "proposal-profile-builder.html", "localization-qa-brief-builder.html", "subscription-savings-calculator.html", "content-repurposing-brief-builder.html", "technical-docs-audit-brief-builder.html", "pdf-table-intake-builder.html", "local-seo-gbp-brief-builder.html", "client-intake-sop-builder.html", "career-packet-brief-builder.html", "ai-workflow-tracker-brief-builder.html", "static-demo-site-brief-builder.html", "quote-estimator-scope-builder.html", "website-audit-lite.html", "workflow-blueprint-lite.html", "start-order.html", "case-studies.html", "samples.html", "order-boards.html", "proof-monitor.html", "fulfillment.html", "proof.html", "proposals.html", "buyer-faq.html", "share-kit.html", "indexnow.html", "llms.txt", "feed.xml", "search-index.json", "structured-data.json", "source-notes.html"] + OFFERS.map { |offer| "#{offer[:slug]}.html" }
 urls = (urls + product_preview_tool_rows.map { |row| row[:path] }).uniq
 indexnow_urls = urls.map { |path| URI.join(SITE_URL, path).to_s }
 File.write(File.join(DOCS, INDEXNOW_KEY_FILE), INDEXNOW_KEY)
