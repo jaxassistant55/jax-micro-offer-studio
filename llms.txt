@@ -89,6 +89,12 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 - Hot download close rooms: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html | https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html | https://jaxassistant55.github.io/jax-micro-offer-studio/hot_download_close_rooms.csv
 
+## Payment Activation
+- Payment activation page: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+- Payment link template CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/payment_links_template.csv
+- Service invoice drafts CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/service_invoice_drafts.csv
+- Boundary: this page generates payment messages only; count money only after external payment proof exists.
+
 ## Observed Download Hot Close Routes
 - Local SEO GBP Audit Starter $175: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
 - PDF Table Extraction Starter $125: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
@@ -102,12 +108,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 - https://jaxassistant55.github.io/jax-micro-offer-studio/services.html#hot-close-observed
 - Local SEO GBP Audit Starter $175: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
 - PDF Table Extraction Starter $125: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
-
-## Payment Activation
-- Payment activation page: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
-- Payment link template CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/payment_links_template.csv
-- Service invoice drafts CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/service_invoice_drafts.csv
-- Boundary: this page generates payment messages only; count money only after external payment proof exists.
 
 ## First $100 Fast Start
 - Exact $100 starter route: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
