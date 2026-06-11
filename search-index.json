@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 12:39:17 JST",
+  "generated_at_jst": "2026-06-11 12:49:33 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -36,39 +36,6 @@
       "first_100": "One paid fixed-scope starter reaches $100 before fees/refunds.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24",
       "proof_rule": "Counts $0 until external buyer/payment proof exists."
-    },
-    {
-      "type": "sample-pack",
-      "title": "First $100 Fast Start Sample Pack",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip",
-      "description": "Synthetic example deliverables for all four $100 starter scopes.",
-      "tags": [
-        "first-100",
-        "sample-pack",
-        "proof-boundary"
-      ]
-    },
-    {
-      "type": "sample-pack",
-      "title": "First $100 Fast Start Sample Pack",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip",
-      "description": "Synthetic example deliverables for all four $100 starter scopes.",
-      "tags": [
-        "first-100",
-        "sample-pack",
-        "proof-boundary"
-      ]
-    },
-    {
-      "type": "sample-pack",
-      "title": "First $100 Fast Start Sample Pack",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip",
-      "description": "Synthetic example deliverables for all four $100 starter scopes.",
-      "tags": [
-        "first-100",
-        "sample-pack",
-        "proof-boundary"
-      ]
     },
     {
       "type": "product",
