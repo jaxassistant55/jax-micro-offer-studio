@@ -1442,6 +1442,184 @@
         "paid service",
         "jaxassistant55/pdf-table-extraction-starter"
       ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Payment Activation",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html",
+      "description": "Browser-only payment-message generator for seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URLs.",
+      "tags": [
+        "payment activation",
+        "invoice",
+        "checkout",
+        "funded milestone",
+        "service close"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Static Demo Site Customization",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/static-demo-site-customization.html",
+      "description": "$200 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "static-demo-site-customization"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Local SEO / GBP Audit",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/local-seo-gbp-audit.html",
+      "description": "$175 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "local-seo-gbp-audit"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: AI Workflow Tracker Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/ai-workflow-tracker-sprint.html",
+      "description": "$150 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "ai-workflow-tracker-sprint"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Niche Quote Estimator",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/niche-quote-estimator.html",
+      "description": "$150 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "niche-quote-estimator"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Technical Docs Cleanup",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/technical-docs-cleanup.html",
+      "description": "$150 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "technical-docs-cleanup"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Website Audit Microservice",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/website-audit-microservice.html",
+      "description": "$150 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "website-audit-microservice"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Client Intake and SOP Package",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/client-intake-and-sop-package.html",
+      "description": "$125 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "client-intake-and-sop-package"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Data Cleanup Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/data-cleanup-sprint.html",
+      "description": "$125 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "data-cleanup-sprint"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: PDF/Table Extraction",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/pdf-table-extraction.html",
+      "description": "$125 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "pdf-table-extraction"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Resume / LinkedIn / Interview Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/resume-linkedin-interview-pack.html",
+      "description": "$125 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "resume-linkedin-interview-pack"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Automation Blueprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/automation-blueprint.html",
+      "description": "$100 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "automation-blueprint"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Content Repurposing Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/content-repurposing-sprint.html",
+      "description": "$100 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "content-repurposing-sprint"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Resale Listing and Price Research Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/resale-listing-and-price-research-pack.html",
+      "description": "$100 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "resale-listing-and-price-research-pack"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Subscription Audit and Savings Prep Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/subscription-audit-and-savings-prep-pack.html",
+      "description": "$100 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "subscription-audit-and-savings-prep-pack"
+      ]
+    },
+    {
+      "type": "payment_activation_route",
+      "title": "Invoice draft: Translation and Localization Draft Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/translation-and-localization-draft-pack.html",
+      "description": "$100 service invoice draft. Not payment proof until sent through a seller-owned external route and posted/released/payable.",
+      "tags": [
+        "invoice draft",
+        "payment activation",
+        "translation-and-localization-draft-pack"
+      ]
     }
   ]
 }
