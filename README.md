@@ -15,6 +15,8 @@ Public launch package generated during the autonomous earning run.
 - Payment activation: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
 - Free tools: https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html
 - GitHub lead repos: https://jaxassistant55.github.io/jax-micro-offer-studio/github-leads.html
+- Structured ready-to-pay forms: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-ready-forms.html
+- Structured ready-to-pay CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/structured_ready_forms.csv
 - Tool manifest: https://jaxassistant55.github.io/jax-micro-offer-studio/tool_manifest.csv
 - IndexNow status: https://jaxassistant55.github.io/jax-micro-offer-studio/indexnow.html
 - LLM summary: https://jaxassistant55.github.io/jax-micro-offer-studio/llms.txt
@@ -46,6 +48,14 @@ Each hot close room now includes a ready-to-pay issue link, sample proof, buyer 
 - First $100 sample proof: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack/README.md
 - Payment activation: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
 - Download follow-up: https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html
+
+## Structured ready-to-pay forms
+
+All 16 standalone lead repos now have repo-specific structured GitHub issue forms for legitimate paid inquiries. Use the directory when a buyer knows which offer they want but needs a public-safe scope/intake path before external payment.
+
+- Forms directory: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-ready-forms.html
+- Machine-readable forms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/structured_ready_forms.csv
+- All forms still require accepted scope or transfer terms, a seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money before any amount is counted.
 
 ## Fastest $100 paths
 
