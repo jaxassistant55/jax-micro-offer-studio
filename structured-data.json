@@ -2719,6 +2719,25 @@
       "name": "Invoice draft: Translation and Localization Draft Pack",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/translation-and-localization-draft-pack.html",
       "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "First $100 Fast Start",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html",
+      "description": "Fixed-scope $100 starter offers for buyers who want a clear paid path without negotiation.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "First $100 Fast Start CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first_100_fast_start.csv",
+      "description": "Machine-readable $100 starter scopes, intake links, payment gates, and proof rules."
     }
   ]
 }
