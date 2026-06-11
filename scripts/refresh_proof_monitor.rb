@@ -56,17 +56,24 @@ end
 
 def issue_comment_summary(repo, issue_number, fallback_count)
   comments = gh_json("repos/#{repo}/issues/#{issue_number}/comments")
-  return { "buyer" => fallback_count.to_i, "self" => 0, "total" => fallback_count.to_i, "error" => comments["__error"] } if comments.is_a?(Hash) && comments["__error"]
+  return { "buyer" => fallback_count.to_i, "self" => 0, "non_buyer_claim" => 0, "total" => fallback_count.to_i, "error" => comments["__error"] } if comments.is_a?(Hash) && comments["__error"]
 
   total = comments.length
   self_count = comments.count { |comment| ASSISTANT_AUTHORS.include?(comment.dig("user", "login").to_s) }
-  { "buyer" => total - self_count, "self" => self_count, "total" => total, "error" => nil }
+  non_buyer_claim_count = comments.count do |comment|
+    next false if ASSISTANT_AUTHORS.include?(comment.dig("user", "login").to_s)
+
+    body = comment["body"].to_s.downcase
+    body.include?("[claim]") && (body.include?("bounty") || body.include?("wallet"))
+  end
+  { "buyer" => total - self_count - non_buyer_claim_count, "self" => self_count, "non_buyer_claim" => non_buyer_claim_count, "total" => total, "error" => nil }
 end
 
 def proof_status_for_issue(issue, comment_summary)
   return "issue_check_failed_manual_review_required" if issue["__error"]
   return "issue_closed_review_required" if issue["state"] != "open"
   return "buyer_comments_present_manual_payment_review_required" if comment_summary["buyer"].to_i.positive?
+  return "non_buyer_bounty_claim_comment_no_payment_proof" if comment_summary["non_buyer_claim"].to_i.positive?
   return "assistant_update_comments_only_no_payment_proof" if comment_summary["self"].to_i.positive?
 
   "no_buyer_comments_no_payment_proof"
@@ -77,7 +84,7 @@ def issue_row(source, repo, issue_number, next_paid_step)
   comment_summary = issue_comment_summary(repo, issue_number, issue.fetch("comments", source["comments"]).to_i)
   buyer_comments = comment_summary["buyer"].to_i
   labels = issue.fetch("labels", []).map { |label| label["name"] }.join("|")
-  labels = [labels, "assistant_updates:#{comment_summary["self"]}", "total_comments:#{comment_summary["total"]}"].reject(&:empty?).join("|")
+  labels = [labels, "assistant_updates:#{comment_summary["self"]}", "non_buyer_claims:#{comment_summary["non_buyer_claim"]}", "total_comments:#{comment_summary["total"]}"].reject(&:empty?).join("|")
 
   {
     "checked_at_jst" => GENERATED_AT,
