@@ -1,71 +1,59 @@
-name: First $100 Fast Start
-description: Ready-to-pay intake for one exact $100 fixed-scope starter.
-title: "Ready to pay: First $100 Fast Start - "
-labels: ["paid-inquiry", "ready-to-pay", "first-100"]
+name: First $100 Product Bundle Order
+description: Public intake board for the $100 product bundle transfer.
+title: "[Order] $100 Bundle Transfer - [Your Name/Context]"
+labels: ["order", "bundle-100", "public-intake"]
 body:
   - type: markdown
     attributes:
       value: |
-        Start here for one exact $100 fixed-scope starter:
-        https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
+        ## First $100 Product Bundle Order Board
+        
+        This is the public intake board for the **$100 transfer** of the prepared product ZIP bundle.
+        
+        > **⚠️ Important**: The paid files are **not** attached here. This issue is strictly for public-safe scope and delivery preference.
+        
+        **Bundle Scope:**
+        - One $100 transfer of the prepared product ZIP bundle.
+        - Includes the local paid product ZIP inventory listed on the public bundle page and delivery manifest.
 
-        Order board:
-        https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
-
-        Payment activation after scope acceptance:
-        https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
-
-        This GitHub issue is intake only. Paid work starts only after scope is accepted and external payment proof exists through a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request.
-  - type: dropdown
-    id: starter_scope
-    attributes:
-      label: Starter scope
-      description: Pick one exact $100 starter.
-      options:
-        - Automation Blueprint Mini ($100)
-        - PDF/Table Extraction Mini ($100)
-        - Local SEO Snapshot Mini ($100)
-        - Website Quick-Win Audit Mini ($100)
-    validations:
-      required: true
-  - type: textarea
-    id: authorized_input
-    attributes:
-      label: Public or buyer-authorized input
-      description: Provide a public URL or describe the buyer-authorized input. Do not paste secrets or confidential files into this public issue.
-      placeholder: "Public URL, public business/profile, workflow summary, or buyer-authorized non-sensitive input summary."
-    validations:
-      required: true
-  - type: input
-    id: deadline
-    attributes:
-      label: Deadline
-      description: When do you need the starter delivered?
-      placeholder: "YYYY-MM-DD or relative deadline"
-    validations:
-      required: true
-  - type: textarea
-    id: acceptance
-    attributes:
-      label: Acceptance criterion
-      description: What will show that the fixed-scope starter is accepted?
-      placeholder: "Example: delivered CSV opens cleanly; audit covers the listed URL; blueprint includes current flow, risks, and next actions."
-    validations:
-      required: true
-  - type: input
-    id: payment_route
-    attributes:
-      label: External payment or proof route
-      description: Use a seller-owned checkout, invoice, marketplace order, funded milestone, payment request, or equivalent external proof route.
-      placeholder: "invoice, checkout, funded milestone, marketplace order, or payment request"
-    validations:
-      required: true
   - type: checkboxes
-    id: safety
+    id: scope-confirmation
     attributes:
-      label: Safety confirmation
+      label: Scope Confirmation
+      description: Please confirm you understand the scope of this order.
       options:
-        - label: I will not post passwords, payment cards, tax identifiers, credentials, private client files, or confidential documents in this public issue.
+        - label: I understand this order is for the public-safe scope and delivery preference only.
           required: true
-        - label: I understand this issue is not payment proof and money counts only after external payment is posted, released, payable, or cleared.
+        - label: I understand the paid files are not attached to this issue and will be delivered via the agreed method.
           required: true
+
+  - type: textarea
+    id: license-context
+    attributes:
+      label: Requested License/Usage Context
+      description: Please describe how you intend to use the product bundle (e.g., personal use, commercial project, internal tool, etc.).
+      placeholder: "e.g., I plan to use the assets for a commercial SaaS dashboard..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: delivery-preference
+    attributes:
+      label: Delivery Preference
+      description: How would you like to receive the bundle after external verification?
+      options:
+        - GitHub Release (Public/Private)
+        - Secure Cloud Link (Google Drive/Dropbox)
+        - Email Attachment (if file size permits)
+        - Other (Specify in comments)
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any specific requirements or questions regarding the delivery?
+      placeholder: "Optional details..."
+    validations:
+      required: false
