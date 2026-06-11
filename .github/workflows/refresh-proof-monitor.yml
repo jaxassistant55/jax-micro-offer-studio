@@ -1,0 +1,76 @@
+name: Refresh proof monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17,47 * * * *"
+  issues:
+    types: [opened, edited, reopened, closed, labeled, unlabeled]
+  pull_request_target:
+    types: [opened, reopened, closed, edited, synchronize]
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: proof-monitor-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Capture previous proof state
+        run: |
+          cp docs/proof_monitor.csv /tmp/proof_monitor_before.csv
+
+      - name: Refresh proof monitor
+        run: ruby scripts/refresh_proof_monitor.rb
+
+      - name: Decide whether proof changed materially
+        id: material
+        run: |
+          if ruby -rcsv -e 'def norm(path); CSV.read(path, headers: true).map { |r| r.to_h.reject { |k, _| k == "checked_at_jst" } }; end; exit(norm("/tmp/proof_monitor_before.csv") == norm("docs/proof_monitor.csv") ? 0 : 1)'
+          then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            git checkout -- proof_monitor.csv docs/proof_monitor.csv docs/proof-monitor.html
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Submit changed proof URLs to IndexNow
+        if: steps.material.outputs.changed == 'true'
+        run: ruby scripts/submit_indexnow.rb
+
+      - name: Commit source proof files
+        if: steps.material.outputs.changed == 'true'
+        run: |
+          git add proof_monitor.csv docs/proof_monitor.csv docs/proof-monitor.html indexnow_submission_log.csv
+          git commit -m "Refresh proof monitor [skip ci]"
+          git push origin HEAD:main
+
+      - name: Publish proof monitor to gh-pages
+        if: steps.material.outputs.changed == 'true'
+        run: |
+          git fetch origin gh-pages:gh-pages
+          git worktree add ../gh-pages gh-pages
+          cp docs/proof-monitor.html ../gh-pages/proof-monitor.html
+          cp docs/proof_monitor.csv ../gh-pages/proof_monitor.csv
+          cd ../gh-pages
+          git add proof-monitor.html proof_monitor.csv
+          git commit -m "Refresh proof monitor [skip ci]"
+          git push origin HEAD:gh-pages
