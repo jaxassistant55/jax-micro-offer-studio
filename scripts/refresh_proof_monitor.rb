@@ -115,6 +115,23 @@ def download_count_for(row)
   (matching_asset || release.fetch("assets", []).first || {})["download_count"].to_i
 end
 
+def release_asset_download_count(repo, tag, asset_match = nil)
+  release = gh_json("repos/#{repo}/releases/tags/#{tag}")
+  return { "count" => 0, "url" => "https://github.com/#{repo}/releases/tag/#{tag}", "error" => release["__error"] } if release["__error"]
+
+  assets = release.fetch("assets", [])
+  matching_asset = assets.find do |asset|
+    asset_match.to_s.empty? || [asset["browser_download_url"], asset["url"], asset["name"]].compact.any? { |value| value.to_s.include?(asset_match.to_s) }
+  end
+  asset = matching_asset || assets.first || {}
+  {
+    "count" => asset["download_count"].to_i,
+    "url" => release["html_url"].to_s.empty? ? "https://github.com/#{repo}/releases/tag/#{tag}" : release["html_url"],
+    "asset_url" => asset["browser_download_url"].to_s,
+    "error" => nil
+  }
+end
+
 def hot_close_room_url(row)
   repo_name = row["repo"].to_s.split("/").last
   "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-#{repo_name}.html"
@@ -184,6 +201,26 @@ download_followup_rows.each do |row|
     "next_paid_step" => hot_close_room_url(row)
   }
 end
+
+first_100_release = release_asset_download_count(REPO, "first-100-fast-start-v1", "first_100_fast_start.csv")
+rows << {
+  "checked_at_jst" => GENERATED_AT,
+  "kind" => "first_100_release_asset",
+  "repo" => REPO,
+  "signal_id" => "first-100-fast-start-v1",
+  "title" => "First $100 Fast Start release asset",
+  "price" => "$100",
+  "first_100_path" => "One paid fixed-scope starter reaches $100 before fees/refunds.",
+  "url" => first_100_release["url"],
+  "state" => first_100_release["count"].positive? ? "download_count_present" : "release_live_no_downloads",
+  "issue_comments" => 0,
+  "release_downloads" => first_100_release["count"],
+  "labels" => ["release-asset", "interest-only", first_100_release["asset_url"].to_s].reject(&:empty?).join("|"),
+  "proof_status" => first_100_release["count"].positive? ? "release_download_interest_no_buyer_or_payment_proof" : "release_live_no_buyer_or_payment_proof",
+  "money_confirmed_usd" => "0",
+  "money_count_rule" => "Release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
+  "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html"
+}
 
 CSV.open(File.join(LAUNCH_ROOT, "proof_monitor.csv"), "w", write_headers: true, headers: HEADERS) do |csv|
   rows.each { |row| csv << HEADERS.map { |header| row[header] } }
