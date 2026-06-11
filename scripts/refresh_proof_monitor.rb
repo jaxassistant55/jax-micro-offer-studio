@@ -139,6 +139,34 @@ def release_asset_download_count(repo, tag, asset_match = nil)
   }
 end
 
+def issue_number_from_url(url)
+  match = url.to_s.match(%r{/issues/(\d+)})
+  match && match[1].to_i
+end
+
+def non_buyer_claim_text?(text)
+  normalized = text.to_s.downcase
+  return true if normalized.include?("/bounty")
+  return true if normalized.include?("[claim]") && (normalized.include?("bounty") || normalized.include?("wallet"))
+  return true if normalized.include?("wallet") && normalized.include?("base usdc")
+
+  false
+end
+
+def structured_ready_issue?(issue)
+  labels = issue.fetch("labels", []).map { |label| label["name"].to_s.downcase }
+  title = issue["title"].to_s.downcase
+  return false if labels.include?("order-board")
+
+  labels.any? { |label| %w[ready-to-pay ready-to-buy].include?(label) } ||
+    title.start_with?("ready to pay:") ||
+    title.start_with?("ready to buy:")
+end
+
+def catalog_repo_name(row)
+  row["repo_url"].to_s.sub(%r{\Ahttps://github\.com/}, "").sub(%r{/\z}, "")
+end
+
 def hot_close_room_url(row)
   repo_name = row["repo"].to_s.split("/").last
   "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-#{repo_name}.html"
@@ -290,6 +318,108 @@ end
   }
 end
 
+paid_catalog_path = File.join(DOCS, "paid-offer-action-catalog.json")
+paid_catalog = File.exist?(paid_catalog_path) ? JSON.parse(File.read(paid_catalog_path)) : { "rows" => [] }
+catalog_rows = paid_catalog.fetch("rows", [])
+catalog_rows_by_repo = catalog_rows.group_by { |row| catalog_repo_name(row) }.reject { |repo, _| repo.empty? }
+tracked_issue_numbers_by_repo = Hash.new { |hash, key| hash[key] = [] }
+rows.each do |row|
+  number = row["signal_id"].to_s[/\A#(\d+)\z/, 1]
+  tracked_issue_numbers_by_repo[row["repo"]] << number.to_i if number
+end
+
+catalog_rows_by_repo.each do |repo, repo_catalog_rows|
+  issues = gh_json("repos/#{repo}/issues?state=all&per_page=100")
+  next if issues.is_a?(Hash) && issues["__error"]
+
+  issues.each do |issue|
+    issue_number = issue["number"].to_i
+    labels = issue.fetch("labels", []).map { |label| label["name"].to_s }.reject(&:empty?)
+    label_text = labels.join("|")
+    title = issue["title"].to_s
+    body = issue["body"].to_s
+    author = issue.dig("user", "login").to_s
+    is_pull_request = issue["pull_request"].is_a?(Hash)
+
+    if is_pull_request && non_buyer_claim_text?([title, body, label_text].join("\n"))
+      rows << {
+        "checked_at_jst" => GENERATED_AT,
+        "kind" => "non_buyer_pull_request_claim",
+        "repo" => repo,
+        "signal_id" => "PR##{issue_number}",
+        "title" => title.empty? ? "Non-buyer pull request claim" : title,
+        "price" => "$0",
+        "first_100_path" => "Not a buyer path; this is a bounty/wallet-style claim and does not count toward $100.",
+        "url" => issue["html_url"],
+        "state" => issue["state"],
+        "issue_comments" => 0,
+        "release_downloads" => 0,
+        "labels" => ["pull-request", "non-buyer-claim", "author:#{author}", label_text].reject(&:empty?).join("|"),
+        "proof_status" => "non_buyer_bounty_pull_request_no_payment_proof",
+        "money_confirmed_usd" => "0",
+        "money_count_rule" => "Bounty, wallet, and pull-request claims count $0. Count only a real buyer order with seller-owned external payment proof after accepted scope and delivery.",
+        "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html"
+      }
+      next
+    end
+
+    next if is_pull_request
+    next if tracked_issue_numbers_by_repo[repo].include?(issue_number)
+    next unless structured_ready_issue?(issue)
+
+    matched_catalog_row = repo_catalog_rows.find do |row|
+      row_title = row["title"].to_s.downcase
+      !row_title.empty? && title.downcase.include?(row_title)
+    end || repo_catalog_rows.first || {}
+    comment_summary = issue_comment_summary(repo, issue_number, issue["comments"].to_i)
+    author_is_assistant = ASSISTANT_AUTHORS.include?(author)
+    buyer_issue_signal = author_is_assistant ? 0 : 1
+    buyer_comment_signals = comment_summary["buyer"].to_i
+    non_buyer_claim_signals = comment_summary["non_buyer_claim"].to_i
+    buyer_signal_total = buyer_issue_signal + buyer_comment_signals
+    proof_status = if non_buyer_claim_text?([title, body, label_text].join("\n")) || non_buyer_claim_signals.positive?
+      "non_buyer_claim_on_structured_issue_no_payment_proof"
+    elsif issue["state"] != "open"
+      "structured_issue_closed_manual_review_required"
+    elsif buyer_signal_total.positive?
+      "structured_ready_issue_manual_payment_review_required"
+    elsif comment_summary["self"].to_i.positive? || author_is_assistant
+      "assistant_created_structured_issue_no_payment_proof"
+    else
+      "structured_ready_issue_no_buyer_or_payment_proof"
+    end
+
+    labels_for_row = [
+      label_text,
+      "author:#{author}",
+      "assistant_comments:#{comment_summary["self"]}",
+      "buyer_issue_signal:#{buyer_issue_signal}",
+      "buyer_comments:#{buyer_comment_signals}",
+      "non_buyer_claims:#{non_buyer_claim_signals}",
+      "catalog_row:#{matched_catalog_row["catalog_row_id"]}"
+    ].reject(&:empty?).join("|")
+
+    rows << {
+      "checked_at_jst" => GENERATED_AT,
+      "kind" => "structured_ready_issue",
+      "repo" => repo,
+      "signal_id" => "##{issue_number}",
+      "title" => title,
+      "price" => matched_catalog_row["price"].to_s.empty? ? "various" : matched_catalog_row["price"],
+      "first_100_path" => matched_catalog_row["one_sale_to_100"].to_s == "yes" ? "One verified paid order for this row can reach $100 before fees/refunds." : "Stack only verified paid net amounts until the total reaches $100.",
+      "url" => issue["html_url"],
+      "state" => issue["state"],
+      "issue_comments" => buyer_signal_total,
+      "release_downloads" => 0,
+      "labels" => labels_for_row,
+      "proof_status" => proof_status,
+      "money_confirmed_usd" => "0",
+      "money_count_rule" => "Structured ready-to-pay issues count $0 until a real buyer accepts terms, pays through a seller-owned external route, receives delivery, and funds are posted/released/payable/cleared.",
+      "next_paid_step" => matched_catalog_row["payment_activation_url"].to_s.empty? ? "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation" : matched_catalog_row["payment_activation_url"]
+    }
+  end
+end
+
 CSV.open(File.join(LAUNCH_ROOT, "proof_monitor.csv"), "w", write_headers: true, headers: HEADERS) do |csv|
   rows.each { |row| csv << HEADERS.map { |header| row[header] } }
 end
@@ -302,9 +432,16 @@ end
 main_issue_count = rows.count { |row| %w[main_board focused_order_board].include?(row["kind"]) }
 standalone_count = rows.count { |row| row["kind"] == "standalone_order_board" }
 download_signal_count = rows.count { |row| row["kind"] == "release_download_signal" }
+structured_ready_issue_count = rows.count { |row| row["kind"] == "structured_ready_issue" }
+non_buyer_claim_count = rows.count { |row| row["proof_status"].to_s.include?("non_buyer") }
 issue_comment_count = rows.sum { |row| row["issue_comments"].to_i }
 download_total = rows.sum { |row| row["release_downloads"].to_i }
-hot_rows = rows.select { |row| row["issue_comments"].to_i.positive? || row["release_downloads"].to_i.positive? }
+hot_rows = rows.select do |row|
+  row["issue_comments"].to_i.positive? ||
+    row["release_downloads"].to_i.positive? ||
+    row["proof_status"].to_s.include?("manual") ||
+    row["proof_status"].to_s.include?("non_buyer")
+end
 
 metric = lambda do |label, value|
   %(<article class="metric"><span>#{h(label)}</span><strong>#{h(value)}</strong></article>)
@@ -373,6 +510,9 @@ html = <<~HTML
         #{metric.call("Main issue-board rows", main_issue_count)}
         #{metric.call("Standalone order boards", standalone_count)}
         #{metric.call("Rows with download signals", download_signal_count)}
+        #{metric.call("Structured ready issues", structured_ready_issue_count)}
+        #{metric.call("Non-buyer claims", non_buyer_claim_count)}
+        #{metric.call("Total monitored rows", rows.length)}
         #{metric.call("Issue comments", issue_comment_count)}
         #{metric.call("Release downloads observed", download_total)}
         #{metric.call("Money confirmed", "$0")}
