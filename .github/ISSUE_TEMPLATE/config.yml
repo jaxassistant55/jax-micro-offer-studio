@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: First $100 Fast Start
+    url: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
+    about: Pick one exact $100 fixed-scope starter and open the ready-to-pay intake.
   - name: Payment activation after scope acceptance
     url: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
     about: Generate a buyer payment message from a seller-owned payment route after scope is accepted.
@@ -27,6 +30,6 @@ contact_links:
   - name: Fulfillment ledger
     url: https://jaxassistant55.github.io/jax-micro-offer-studio/fulfillment.html
     about: Check ready artifacts and local bundle checksums.
-  - name: First paid request board
-    url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/1
-    about: Comment on the current first $100+ request board.
+  - name: First $100 order board
+    url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+    about: Comment on the current exact $100 order board.

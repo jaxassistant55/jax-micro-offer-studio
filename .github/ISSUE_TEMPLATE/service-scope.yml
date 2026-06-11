@@ -7,6 +7,7 @@ body:
     attributes:
       value: |
         Payment activation after scope acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+        Exact $100 fast-start route: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
         Use this for one of the fixed-scope services. Do not paste secrets, payment details, tax identifiers, or files you are not authorized to share.
         Observed preview-download close rooms:
         - Local SEO GBP Audit Starter ($175): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
@@ -16,6 +17,7 @@ body:
     attributes:
       label: Service
       options:
+        - First $100 Fast Start - choose one mini scope ($100)
         - Website Audit Microservice ($150)
         - Data Cleanup Sprint ($125)
         - AI Workflow Tracker Sprint ($150)

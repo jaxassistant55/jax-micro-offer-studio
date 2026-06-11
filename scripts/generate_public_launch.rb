@@ -3539,6 +3539,80 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   Use the paid inquiry issue template for legitimate paid requests only. Do not post passwords, payment cards, tax identifiers, medical/legal/financial private details, or files you are not authorized to share.
 MD
 
+File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "first-100-fast-start.yml"), <<~YAML)
+  name: First $100 Fast Start
+  description: Ready-to-pay intake for one exact $100 fixed-scope starter.
+  title: "Ready to pay: First $100 Fast Start - "
+  labels: ["paid-inquiry", "ready-to-pay", "first-100"]
+  body:
+    - type: markdown
+      attributes:
+        value: |
+          Start here for one exact $100 fixed-scope starter:
+          #{SITE_URL}first-100-fast-start.html
+
+          Order board:
+          https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+
+          Payment activation after scope acceptance:
+          #{SITE_URL}payment-activation
+
+          This GitHub issue is intake only. Paid work starts only after scope is accepted and external payment proof exists through a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request.
+    - type: dropdown
+      id: starter_scope
+      attributes:
+        label: Starter scope
+        description: Pick one exact $100 starter.
+        options:
+          - Automation Blueprint Mini ($100)
+          - PDF/Table Extraction Mini ($100)
+          - Local SEO Snapshot Mini ($100)
+          - Website Quick-Win Audit Mini ($100)
+      validations:
+        required: true
+    - type: textarea
+      id: authorized_input
+      attributes:
+        label: Public or buyer-authorized input
+        description: Provide a public URL or describe the buyer-authorized input. Do not paste secrets or confidential files into this public issue.
+        placeholder: "Public URL, public business/profile, workflow summary, or buyer-authorized non-sensitive input summary."
+      validations:
+        required: true
+    - type: input
+      id: deadline
+      attributes:
+        label: Deadline
+        description: When do you need the starter delivered?
+        placeholder: "YYYY-MM-DD or relative deadline"
+      validations:
+        required: true
+    - type: textarea
+      id: acceptance
+      attributes:
+        label: Acceptance criterion
+        description: What will show that the fixed-scope starter is accepted?
+        placeholder: "Example: delivered CSV opens cleanly; audit covers the listed URL; blueprint includes current flow, risks, and next actions."
+      validations:
+        required: true
+    - type: input
+      id: payment_route
+      attributes:
+        label: External payment or proof route
+        description: Use a seller-owned checkout, invoice, marketplace order, funded milestone, payment request, or equivalent external proof route.
+        placeholder: "invoice, checkout, funded milestone, marketplace order, or payment request"
+      validations:
+        required: true
+    - type: checkboxes
+      id: safety
+      attributes:
+        label: Safety confirmation
+        options:
+          - label: I will not post passwords, payment cards, tax identifiers, credentials, private client files, or confidential documents in this public issue.
+            required: true
+          - label: I understand this issue is not payment proof and money counts only after external payment is posted, released, payable, or cleared.
+            required: true
+YAML
+
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "paid-inquiry.yml"), <<~YAML)
   name: Paid inquiry
   description: Request a product bundle, custom service, or scoped paid handoff.
@@ -3548,6 +3622,8 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "paid-inquiry.yml
     - type: markdown
       attributes:
         value: |
+          Payment activation after scope acceptance: #{SITE_URL}payment-activation
+          Exact $100 fast-start route: #{SITE_URL}first-100-fast-start.html
           Use this for legitimate paid inquiries only. Do not paste passwords, payment cards, tax identifiers, medical/legal/financial private details, or files you are not authorized to share.
     - type: input
       id: offer
@@ -3596,12 +3672,15 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "service-scope.ym
     - type: markdown
       attributes:
         value: |
+          Payment activation after scope acceptance: #{SITE_URL}payment-activation
+          Exact $100 fast-start route: #{SITE_URL}first-100-fast-start.html
           Use this for one of the fixed-scope services. Do not paste secrets, payment details, tax identifiers, or files you are not authorized to share.
     - type: dropdown
       id: service
       attributes:
         label: Service
         options:
+          - First $100 Fast Start - choose one mini scope ($100)
   #{SERVICES.map { |offer| "        - #{offer[:title]} (#{offer[:price]})" }.join("\n")}
       validations:
         required: true
@@ -3672,6 +3751,11 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "ready-to-pay.md"
 
   ## Ready-to-pay intake
 
+  First $100 Fast Start:
+  - Page: #{SITE_URL}first-100-fast-start.html
+  - Order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+  - Release CSV: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/download/first-100-fast-start-v1/first_100_fast_start.csv
+
   Offer:
   Listed price:
   Quantity or units:
@@ -3694,6 +3778,12 @@ MD
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<~YAML)
   blank_issues_enabled: false
   contact_links:
+    - name: First $100 Fast Start
+      url: #{SITE_URL}first-100-fast-start.html
+      about: Pick one exact $100 fixed-scope starter and open the ready-to-pay intake.
+    - name: Payment activation after scope acceptance
+      url: #{SITE_URL}payment-activation
+      about: Generate a buyer payment message from a seller-owned payment route after scope is accepted.
     - name: Live Micro Offer Studio site
       url: #{SITE_URL}
       about: Browse public offers and previews.
@@ -3709,9 +3799,9 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<
     - name: Fulfillment ledger
       url: #{SITE_URL}fulfillment.html
       about: Check ready artifacts and local bundle checksums.
-    - name: First paid request board
-      url: #{ISSUE_BOARD_URL}
-      about: Comment on the current first $100+ request board.
+    - name: First $100 order board
+      url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+      about: Comment on the current exact $100 order board.
 YAML
 
 File.write(File.join(LAUNCH_ROOT, ".gitignore"), <<~TXT)

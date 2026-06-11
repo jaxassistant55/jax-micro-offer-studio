@@ -7,6 +7,11 @@ labels: paid-inquiry, ready-to-pay
 
 ## Ready-to-pay intake
 
+First $100 Fast Start:
+- Page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
+- Order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+- Release CSV: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/download/first-100-fast-start-v1/first_100_fast_start.csv
+
 Observed preview-download close rooms, if they match your request:
 - Local SEO GBP Audit Starter ($175): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
 - PDF Table Extraction Starter ($125): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
