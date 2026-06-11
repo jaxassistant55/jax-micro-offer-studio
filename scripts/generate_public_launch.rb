@@ -21,7 +21,7 @@ INDEXNOW_KEY = ENV.fetch("PUBLIC_LAUNCH_INDEXNOW_KEY", "32ac58c2-053a-4ba2-ba9a-
 INDEXNOW_KEY_FILE = "#{INDEXNOW_KEY}.txt"
 INDEXNOW_KEY_LOCATION = URI.join(SITE_URL, INDEXNOW_KEY_FILE).to_s
 ISSUE_URL = "#{REPO_URL}/issues/new?template=paid-inquiry.yml"
-ISSUE_BOARD_URL = "#{REPO_URL}/issues/1"
+ISSUE_BOARD_URL = "#{REPO_URL}/issues/24"
 NEW_ISSUE_URL = "#{REPO_URL}/issues/new"
 
 def h(value)
@@ -465,7 +465,7 @@ def write_sample_pack(offers)
     This free sample pack demonstrates the type of public, low-risk material available from Micro Offer Studio. It is not the full paid product bundle and is not proof of earnings.
 
     Full fulfillment ledger: #{SITE_URL}fulfillment.html
-    First paid request board: #{ISSUE_BOARD_URL}
+    First $100 Fast Start board: #{ISSUE_BOARD_URL}
   MD
 
   sample_files << ["pricing_sample.csv", CSV.generate do |csv|
@@ -845,13 +845,18 @@ end
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="buyer-intent-router.html">Buyer intent router</a><a href="ready-to-buy.html">Ready to buy</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="first-100-fast-start.html">First $100 Fast Start</a><a href="buyer-intent-router.html">Buyer intent router</a><a href="ready-to-buy.html">Ready to buy</a><a href="close-service-order.html">Close order</a><a href="delivery-acceptance.html">Delivery acceptance</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-now.html">Order now</a><a href="payment-activation">Payment activation</a><a href="github-leads.html">GitHub leads</a><a href="download-followup.html">Download follow-up</a><a href="hot-download-close-local-seo-gbp-audit-starter.html">Hot Local SEO close</a><a href="hot-download-close-pdf-table-extraction-starter.html">Hot PDF close</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
   <section class="notice">
     <h2>Money Status</h2>
     <p>Confirmed earned money from this public launch package is $0 until an external buyer, payment, refund, credit, or payout proof exists. The autonomous work completed here is public packaging, discoverability, and inquiry infrastructure.</p>
+  </section>
+  <section class="notice">
+    <h2>Observed Hot Routes</h2>
+    <p>Two preview ZIPs have download interest. Downloads still count as $0, but these are the shortest current paths from observed interest to a fixed-scope paid inquiry.</p>
+    <p class="buttons"><a href="hot-download-close-local-seo-gbp-audit-starter.html">Local SEO / GBP Audit close room - $175</a><a href="hot-download-close-pdf-table-extraction-starter.html">PDF/Table Extraction close room - $125</a><a href="download-followup.html">Download follow-up evidence</a><a href="proof-monitor.html">Proof monitor</a></p>
   </section>
   <section>
     <h2>Fastest $100 Paths</h2>
@@ -3508,7 +3513,9 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Inquiry path: #{ISSUE_URL}
   - Buyer intent router: #{SITE_URL}buyer-intent-router.html
   - Ready-to-buy routes: #{SITE_URL}ready-to-buy.html
+  - Close a service order: #{SITE_URL}close-service-order.html
   - Ready-to-pay builder: #{SITE_URL}start-order.html
+  - Payment activation: #{SITE_URL}payment-activation
   - Free tools: #{SITE_URL}tools.html
   - GitHub lead repos: #{SITE_URL}github-leads.html
   - Tool manifest: #{SITE_URL}tool_manifest.csv
@@ -3517,7 +3524,7 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - RSS feed: #{SITE_URL}feed.xml
   - Search index: #{SITE_URL}search-index.json
   - Structured data graph: #{SITE_URL}structured-data.json
-  - First paid request board: #{ISSUE_BOARD_URL}
+  - First $100 Fast Start board: #{ISSUE_BOARD_URL}
   - Pricing page: #{SITE_URL}pricing.html
   - Case studies: #{SITE_URL}case-studies.html
   - Sample pack: #{SITE_URL}micro-offer-studio-sample-pack.zip
@@ -3529,6 +3536,13 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - Offers: #{PRODUCTS.length} digital products and #{SERVICES.length} productized services
 
   Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
+
+  ## Observed preview-download close rooms
+
+  These are the closest current public paths because their preview ZIPs have download signals. Downloads are interest only; paid work still requires accepted scope, a seller-controlled payment route, delivery, and external payment/payout proof.
+
+  - Local SEO GBP Audit Starter ($175): #{SITE_URL}hot-download-close-local-seo-gbp-audit-starter.html
+  - PDF Table Extraction Starter ($125): #{SITE_URL}hot-download-close-pdf-table-extraction-starter.html
 
   ## Fastest $100 paths
 
@@ -3625,6 +3639,9 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "paid-inquiry.yml
           Payment activation after scope acceptance: #{SITE_URL}payment-activation
           Exact $100 fast-start route: #{SITE_URL}first-100-fast-start.html
           Use this for legitimate paid inquiries only. Do not paste passwords, payment cards, tax identifiers, medical/legal/financial private details, or files you are not authorized to share.
+          If you arrived from a preview download, use the matching fixed-scope close room first:
+          - Local SEO GBP Audit Starter ($175): #{SITE_URL}hot-download-close-local-seo-gbp-audit-starter.html
+          - PDF Table Extraction Starter ($125): #{SITE_URL}hot-download-close-pdf-table-extraction-starter.html
     - type: input
       id: offer
       attributes:
@@ -3675,6 +3692,9 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "service-scope.ym
           Payment activation after scope acceptance: #{SITE_URL}payment-activation
           Exact $100 fast-start route: #{SITE_URL}first-100-fast-start.html
           Use this for one of the fixed-scope services. Do not paste secrets, payment details, tax identifiers, or files you are not authorized to share.
+          Observed preview-download close rooms:
+          - Local SEO GBP Audit Starter ($175): #{SITE_URL}hot-download-close-local-seo-gbp-audit-starter.html
+          - PDF Table Extraction Starter ($125): #{SITE_URL}hot-download-close-pdf-table-extraction-starter.html
     - type: dropdown
       id: service
       attributes:
@@ -3716,6 +3736,7 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "product-transfer
     - type: markdown
       attributes:
         value: |
+          Payment activation after scope acceptance: #{SITE_URL}payment-activation
           Use this to request a product bundle listed in the fulfillment ledger. Full ZIP bundles are not public; transfer happens only after accepted payment/proof route.
     - type: dropdown
       id: product
@@ -3756,6 +3777,10 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "ready-to-pay.md"
   - Order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
   - Release CSV: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/download/first-100-fast-start-v1/first_100_fast_start.csv
 
+  Observed preview-download close rooms, if they match your request:
+  - Local SEO GBP Audit Starter ($175): #{SITE_URL}hot-download-close-local-seo-gbp-audit-starter.html
+  - PDF Table Extraction Starter ($125): #{SITE_URL}hot-download-close-pdf-table-extraction-starter.html
+
   Offer:
   Listed price:
   Quantity or units:
@@ -3765,6 +3790,7 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "ready-to-pay.md"
   Requested quantity or scope:
 
   Payment/proof route:
+  Payment activation page after scope acceptance: #{SITE_URL}payment-activation
 
   Deadline:
 
@@ -3784,6 +3810,12 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<
     - name: Payment activation after scope acceptance
       url: #{SITE_URL}payment-activation
       about: Generate a buyer payment message from a seller-owned payment route after scope is accepted.
+    - name: Hot close - Local SEO GBP Audit Starter
+      url: #{SITE_URL}hot-download-close-local-seo-gbp-audit-starter.html
+      about: Fixed-scope $175 close room for the observed Local SEO preview-download route.
+    - name: Hot close - PDF Table Extraction Starter
+      url: #{SITE_URL}hot-download-close-pdf-table-extraction-starter.html
+      about: Fixed-scope $125 close room for the observed PDF/table preview-download route.
     - name: Live Micro Offer Studio site
       url: #{SITE_URL}
       about: Browse public offers and previews.
@@ -3796,6 +3828,9 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<
     - name: Buyer intent router
       url: #{SITE_URL}buyer-intent-router.html
       about: Match a buyer problem to the closest ready-to-buy route.
+    - name: Close a service order
+      url: #{SITE_URL}close-service-order.html
+      about: Use close-ready scripts, invoice lines, and proof gates for $100+ services.
     - name: Fulfillment ledger
       url: #{SITE_URL}fulfillment.html
       about: Check ready artifacts and local bundle checksums.

@@ -2518,96 +2518,6 @@
       ]
     },
     {
-      "@type": "Service",
-      "additionalType": "hot_close_high_intent_route",
-      "name": "Observed download hot close: Local SEO GBP Audit Starter",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
-      "description": "$175 fixed-scope service close room for an observed preview-download route.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "175"
-      }
-    },
-    {
-      "@type": "Service",
-      "additionalType": "hot_close_high_intent_route",
-      "name": "Observed download hot close: PDF Table Extraction Starter",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
-      "description": "$125 fixed-scope service close room for an observed preview-download route.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "125"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download close links on share-kit.html",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/share-kit.html#hot-close-observed",
-      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
-    },
-    {
-      "@type": "WebPage",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download close links on buyer-faq.html",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-faq.html#hot-close-observed",
-      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
-    },
-    {
-      "@type": "WebPage",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download close links on case-studies.html",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/case-studies.html#hot-close-observed",
-      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
-    },
-    {
-      "@type": "WebPage",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download close links on samples.html",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/samples.html#hot-close-observed",
-      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
-    },
-    {
-      "@type": "WebPage",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download close links on products.html",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/products.html#hot-close-observed",
-      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
-    },
-    {
-      "@type": "WebPage",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download close links on services.html",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/services.html#hot-close-observed",
-      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
-    },
-    {
-      "@type": "Service",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download secondary close: Local SEO GBP Audit Starter",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
-      "description": "$175 fixed-scope service close room linked from secondary buyer pages.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "175"
-      }
-    },
-    {
-      "@type": "Service",
-      "additionalType": "hot_close_secondary_route",
-      "name": "Observed download secondary close: PDF Table Extraction Starter",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
-      "description": "$125 fixed-scope service close room linked from secondary buyer pages.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "125"
-      }
-    },
-    {
       "@type": "WebApplication",
       "additionalType": "payment_activation_route",
       "name": "Payment Activation",
@@ -2719,6 +2629,96 @@
       "name": "Invoice draft: Translation and Localization Draft Pack",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/translation-and-localization-draft-pack.html",
       "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "Service",
+      "additionalType": "hot_close_high_intent_route",
+      "name": "Observed download hot close: Local SEO GBP Audit Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+      "description": "$175 fixed-scope service close room for an observed preview-download route.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "175"
+      }
+    },
+    {
+      "@type": "Service",
+      "additionalType": "hot_close_high_intent_route",
+      "name": "Observed download hot close: PDF Table Extraction Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+      "description": "$125 fixed-scope service close room for an observed preview-download route.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "125"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download close links on share-kit.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/share-kit.html#hot-close-observed",
+      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
+    },
+    {
+      "@type": "WebPage",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download close links on buyer-faq.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-faq.html#hot-close-observed",
+      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
+    },
+    {
+      "@type": "WebPage",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download close links on case-studies.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/case-studies.html#hot-close-observed",
+      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
+    },
+    {
+      "@type": "WebPage",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download close links on samples.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/samples.html#hot-close-observed",
+      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
+    },
+    {
+      "@type": "WebPage",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download close links on products.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/products.html#hot-close-observed",
+      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
+    },
+    {
+      "@type": "WebPage",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download close links on services.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/services.html#hot-close-observed",
+      "description": "Secondary buyer-facing page with direct links to fixed-scope observed-download close rooms."
+    },
+    {
+      "@type": "Service",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download secondary close: Local SEO GBP Audit Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+      "description": "$175 fixed-scope service close room linked from secondary buyer pages.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "175"
+      }
+    },
+    {
+      "@type": "Service",
+      "additionalType": "hot_close_secondary_route",
+      "name": "Observed download secondary close: PDF Table Extraction Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+      "description": "$125 fixed-scope service close room linked from secondary buyer pages.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "125"
+      }
     },
     {
       "@context": "https://schema.org",

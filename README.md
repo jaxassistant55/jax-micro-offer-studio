@@ -2,7 +2,7 @@
 
 Public launch package generated during the autonomous earning run.
 
-- Generated: 2026-06-11 07:32:47 JST
+- Generated: 2026-06-11 12:18:06 JST
 - Live site: https://jaxassistant55.github.io/jax-micro-offer-studio/
 - Public site root: `docs/index.html`
 - Manifest: `public_launch_manifest.csv`
@@ -12,6 +12,7 @@ Public launch package generated during the autonomous earning run.
 - Ready-to-buy routes: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
 - Close a service order: https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html
 - Ready-to-pay builder: https://jaxassistant55.github.io/jax-micro-offer-studio/start-order.html
+- Payment activation: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
 - Free tools: https://jaxassistant55.github.io/jax-micro-offer-studio/tools.html
 - GitHub lead repos: https://jaxassistant55.github.io/jax-micro-offer-studio/github-leads.html
 - Tool manifest: https://jaxassistant55.github.io/jax-micro-offer-studio/tool_manifest.csv
@@ -20,7 +21,7 @@ Public launch package generated during the autonomous earning run.
 - RSS feed: https://jaxassistant55.github.io/jax-micro-offer-studio/feed.xml
 - Search index: https://jaxassistant55.github.io/jax-micro-offer-studio/search-index.json
 - Structured data graph: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-data.json
-- First paid request board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/1
+- First $100 Fast Start board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
 - Pricing page: https://jaxassistant55.github.io/jax-micro-offer-studio/pricing.html
 - Case studies: https://jaxassistant55.github.io/jax-micro-offer-studio/case-studies.html
 - Sample pack: https://jaxassistant55.github.io/jax-micro-offer-studio/micro-offer-studio-sample-pack.zip
