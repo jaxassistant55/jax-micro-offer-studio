@@ -15,6 +15,7 @@ RUN_ROOT = File.expand_path("..", LAUNCH_ROOT)
 DOCS = File.join(LAUNCH_ROOT, "docs")
 GENERATED_AT = Time.now.strftime("%Y-%m-%d %H:%M:%S JST")
 MONEY_COUNT_RULE = "Count $0 unless external paid order, cleared invoice, funded milestone, payable balance, posted refund/credit, or equivalent proof exists."
+ASSISTANT_AUTHORS = %w[jaxassistant55].freeze
 HEADERS = %w[
   checked_at_jst
   kind
@@ -53,18 +54,30 @@ rescue JSON::ParserError => e
   { "__error" => e.message }
 end
 
-def proof_status_for_issue(issue)
+def issue_comment_summary(repo, issue_number, fallback_count)
+  comments = gh_json("repos/#{repo}/issues/#{issue_number}/comments")
+  return { "buyer" => fallback_count.to_i, "self" => 0, "total" => fallback_count.to_i, "error" => comments["__error"] } if comments.is_a?(Hash) && comments["__error"]
+
+  total = comments.length
+  self_count = comments.count { |comment| ASSISTANT_AUTHORS.include?(comment.dig("user", "login").to_s) }
+  { "buyer" => total - self_count, "self" => self_count, "total" => total, "error" => nil }
+end
+
+def proof_status_for_issue(issue, comment_summary)
   return "issue_check_failed_manual_review_required" if issue["__error"]
   return "issue_closed_review_required" if issue["state"] != "open"
-  return "buyer_comments_present_manual_payment_review_required" if issue["comments"].to_i.positive?
+  return "buyer_comments_present_manual_payment_review_required" if comment_summary["buyer"].to_i.positive?
+  return "assistant_update_comments_only_no_payment_proof" if comment_summary["self"].to_i.positive?
 
   "no_buyer_comments_no_payment_proof"
 end
 
 def issue_row(source, repo, issue_number, next_paid_step)
   issue = gh_json("repos/#{repo}/issues/#{issue_number}")
-  comments = issue.fetch("comments", source["comments"]).to_i
+  comment_summary = issue_comment_summary(repo, issue_number, issue.fetch("comments", source["comments"]).to_i)
+  buyer_comments = comment_summary["buyer"].to_i
   labels = issue.fetch("labels", []).map { |label| label["name"] }.join("|")
+  labels = [labels, "assistant_updates:#{comment_summary["self"]}", "total_comments:#{comment_summary["total"]}"].reject(&:empty?).join("|")
 
   {
     "checked_at_jst" => GENERATED_AT,
@@ -76,10 +89,10 @@ def issue_row(source, repo, issue_number, next_paid_step)
     "first_100_path" => source["first_100_path"],
     "url" => issue["html_url"] || source["issue_url"],
     "state" => issue["state"] || source["state"] || "unknown",
-    "issue_comments" => comments,
+    "issue_comments" => buyer_comments,
     "release_downloads" => 0,
     "labels" => labels,
-    "proof_status" => proof_status_for_issue(issue),
+    "proof_status" => proof_status_for_issue(issue, comment_summary),
     "money_confirmed_usd" => "0",
     "money_count_rule" => MONEY_COUNT_RULE,
     "next_paid_step" => next_paid_step
