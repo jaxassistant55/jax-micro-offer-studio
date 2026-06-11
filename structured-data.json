@@ -2516,6 +2516,30 @@
           }
         }
       ]
+    },
+    {
+      "@type": "Service",
+      "additionalType": "hot_close_high_intent_route",
+      "name": "Observed download hot close: Local SEO GBP Audit Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+      "description": "$175 fixed-scope service close room for an observed preview-download route.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "175"
+      }
+    },
+    {
+      "@type": "Service",
+      "additionalType": "hot_close_high_intent_route",
+      "name": "Observed download hot close: PDF Table Extraction Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+      "description": "$125 fixed-scope service close room for an observed preview-download route.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "125"
+      }
     }
   ]
 }

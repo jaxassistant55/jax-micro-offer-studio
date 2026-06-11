@@ -1322,6 +1322,30 @@
       "summary": "Machine-readable close-room routes for observed preview-download interest.",
       "price": "$125-$175",
       "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "hot_close_high_intent_route",
+      "title": "Observed download hot close: Local SEO GBP Audit Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+      "description": "$175 fixed-scope close room for an observed preview-download route. Payment and payout proof are external.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "paid service",
+        "jaxassistant55/local-seo-gbp-audit-starter"
+      ]
+    },
+    {
+      "type": "hot_close_high_intent_route",
+      "title": "Observed download hot close: PDF Table Extraction Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+      "description": "$125 fixed-scope close room for an observed preview-download route. Payment and payout proof are external.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "paid service",
+        "jaxassistant55/pdf-table-extraction-starter"
+      ]
     }
   ]
 }
