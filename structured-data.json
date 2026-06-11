@@ -2611,7 +2611,7 @@
       "@type": "WebApplication",
       "additionalType": "payment_activation_route",
       "name": "Payment Activation",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "description": "Browser-only payment-message generator for seller-owned payment routes. It does not process payments.",
       "applicationCategory": "BusinessApplication"
     },

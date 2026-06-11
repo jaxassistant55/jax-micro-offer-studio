@@ -1446,7 +1446,7 @@
     {
       "type": "payment_activation_route",
       "title": "Payment Activation",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "description": "Browser-only payment-message generator for seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URLs.",
       "tags": [
         "payment activation",
