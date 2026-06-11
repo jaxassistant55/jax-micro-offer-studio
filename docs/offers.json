@@ -1,6 +1,19 @@
 [
   {
     "type": "product",
+    "title": "First $100 Product Bundle",
+    "slug": "first-100-product-bundle",
+    "source_dir": "non_bounty/first-100-product-bundle",
+    "price": "$100",
+    "description": "One $100 transfer bundle containing 15 ready local paid product ZIPs with manifest, hashes, delivery checklist, and buyer transfer message.",
+    "first_100": "One paid transfer reaches $100 gross.",
+    "preview_public": "first-100-product-bundle.html",
+    "zip_name": "first-100-product-bundle.zip",
+    "zip_bytes": 202554,
+    "zip_sha256": "4153cd5e7a39775172250056255a3431101beaff3e0bae59bd36651b77e280c4"
+  },
+  {
+    "type": "product",
     "title": "HTML5 Micro Game Kit",
     "slug": "html5-micro-game-kit",
     "source_dir": "non_bounty/autonomous_products/html5_micro_game",
