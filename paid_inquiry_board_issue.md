@@ -1,5 +1,12 @@
 This repo is open for one legitimate paid request or product transfer that can produce externally verifiable payment proof.
 
+Observed preview-download close rooms:
+
+- Local SEO GBP Audit Starter - $175 fixed-scope close room: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
+- PDF Table Extraction Starter - $125 fixed-scope close room: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
+
+Downloads, page views, stars, and opened issue forms are interest only. Paid work still requires accepted scope, a seller-controlled payment route, delivery, and external payment/payout proof.
+
 Current fastest $100+ paths:
 
 - Website Audit Microservice - $150 fixed-scope public-site audit.

@@ -33,6 +33,13 @@ Public launch package generated during the autonomous earning run.
 
 Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
 
+## Observed preview-download close rooms
+
+These are the closest current public paths because their preview ZIPs have download signals. Downloads are interest only; paid work still requires accepted scope, a seller-controlled payment route, delivery, and external payment/payout proof.
+
+- Local SEO GBP Audit Starter ($175): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
+- PDF Table Extraction Starter ($125): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
+
 ## Fastest $100 paths
 
 - Website Audit Microservice ($150): One accepted audit clears $100.

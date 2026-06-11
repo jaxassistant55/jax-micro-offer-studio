@@ -7,6 +7,10 @@ labels: paid-inquiry, ready-to-pay
 
 ## Ready-to-pay intake
 
+Observed preview-download close rooms, if they match your request:
+- Local SEO GBP Audit Starter ($175): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
+- PDF Table Extraction Starter ($125): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
+
 Offer:
 Listed price:
 Quantity or units:

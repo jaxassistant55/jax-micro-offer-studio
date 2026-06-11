@@ -7,6 +7,9 @@ body:
     attributes:
       value: |
         Use this for one of the fixed-scope services. Do not paste secrets, payment details, tax identifiers, or files you are not authorized to share.
+        Observed preview-download close rooms:
+        - Local SEO GBP Audit Starter ($175): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
+        - PDF Table Extraction Starter ($125): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
   - type: dropdown
     id: service
     attributes:
