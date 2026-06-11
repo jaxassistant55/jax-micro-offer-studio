@@ -2854,7 +2854,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 100.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-fast-start.yml",
               "availability": "https://schema.org/InStock"
             }
           }
@@ -3398,7 +3398,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 29.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/9",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-mini-course-workbook.yml",
               "availability": "https://schema.org/InStock"
             }
           }
@@ -3414,7 +3414,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 29.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/15",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-sales-enablement-kit.yml",
               "availability": "https://schema.org/InStock"
             }
           }
@@ -3430,7 +3430,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 19.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/11",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-csv-cli-toolkit.yml",
               "availability": "https://schema.org/InStock"
             }
           }
@@ -3446,7 +3446,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 19.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/12",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-invoice-expense-tracker-template.yml",
               "availability": "https://schema.org/InStock"
             }
           }
@@ -3462,7 +3462,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 19.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/13",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-prompt-workflow-pack.yml",
               "availability": "https://schema.org/InStock"
             }
           }
@@ -3478,7 +3478,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 19.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/10",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-synthetic-mock-dataset-pack.yml",
               "availability": "https://schema.org/InStock"
             }
           }
