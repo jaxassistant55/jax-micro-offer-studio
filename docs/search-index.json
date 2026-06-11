@@ -1,8 +1,31 @@
 {
-  "generated_at_jst": "2026-06-11 08:51:20 JST",
+  "generated_at_jst": "2026-06-11 11:29:22 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "csv",
+      "title": "First $100 Fast Start CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first_100_fast_start.csv",
+      "description": "Machine-readable $100 starter scopes, intake links, payment gates, and proof rules.",
+      "tags": [
+        "first-100",
+        "fast-start",
+        "payment-activation"
+      ]
+    },
+    {
+      "type": "service",
+      "title": "First $100 Fast Start",
+      "slug": "first-100-fast-start",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html",
+      "price": "$100",
+      "amount_usd": 100.0,
+      "description": "Four fixed-scope $100 starter offers with intake, payment boundary, delivery gate, and proof rule.",
+      "first_100": "One paid fixed-scope starter reaches $100 before fees/refunds.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24",
+      "proof_rule": "Counts $0 until external buyer/payment proof exists."
+    },
     {
       "type": "product",
       "title": "HTML5 Micro Game Kit",
