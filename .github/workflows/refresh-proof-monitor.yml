@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -44,7 +45,7 @@ jobs:
       - name: Decide whether proof changed materially
         id: material
         run: |
-          if ruby -rcsv -e 'def norm(path); CSV.read(path, headers: true).map { |r| r.to_h.reject { |k, _| k == "checked_at_jst" } }; end; exit(norm("/tmp/proof_monitor_before.csv") == norm("docs/proof_monitor.csv") ? 0 : 1)'
+          if ruby -rcsv -e 'def norm(path); CSV.read(path, headers: true).map { |r| r.to_h.reject { |k, _| k == "checked_at_jst" } }.sort_by { |h| [h["repo"], h["kind"], h["signal_id"], h["title"]] }; end; exit(norm("/tmp/proof_monitor_before.csv") == norm("docs/proof_monitor.csv") ? 0 : 1)'
           then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             git checkout -- proof_monitor.csv docs/proof_monitor.csv docs/proof-monitor.html

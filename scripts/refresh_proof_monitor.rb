@@ -193,7 +193,9 @@ rows = sources.map do |source|
   issue_row(source, REPO, source["issue_number"], source["next_paid_step"])
 end
 
-github_lead_rows = read_csv(File.join(RUN_ROOT, "github_lead_repos", "github_lead_repos.csv"))
+github_lead_repo_source = File.join(RUN_ROOT, "github_lead_repos", "github_lead_repos.csv")
+github_lead_repo_source = File.join(DOCS, "github_lead_repos.csv") unless File.exist?(github_lead_repo_source)
+github_lead_rows = read_csv(github_lead_repo_source)
 github_lead_rows.each do |repo_row|
   issue_url = repo_row["repo_order_issue_url"].to_s
   issue_number = repo_row["repo_order_issue_number"].to_s
@@ -212,7 +214,9 @@ github_lead_rows.each do |repo_row|
   }, repo, issue_number, inquiry_url)
 end
 
-download_followup_rows = read_csv(File.join(RUN_ROOT, "github_lead_repos", "download_followup.csv"))
+download_followup_source = File.join(RUN_ROOT, "github_lead_repos", "download_followup.csv")
+download_followup_source = File.join(DOCS, "download_followup.csv") unless File.exist?(download_followup_source)
+download_followup_rows = read_csv(download_followup_source)
 download_followup_rows.each do |row|
   downloads = download_count_for(row)
   next unless downloads.positive?
