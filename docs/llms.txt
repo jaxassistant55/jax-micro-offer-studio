@@ -112,5 +112,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 ## First $100 Fast Start
 - Exact $100 starter route: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
 - CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/first_100_fast_start.csv
+- Sample pack: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip
 - Order board #24: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
 - Boundary: intake only; count money only after external payment is posted, released, payable, or cleared.

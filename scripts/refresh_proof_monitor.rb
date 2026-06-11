@@ -202,25 +202,30 @@ download_followup_rows.each do |row|
   }
 end
 
-first_100_release = release_asset_download_count(REPO, "first-100-fast-start-v1", "first_100_fast_start.csv")
-rows << {
-  "checked_at_jst" => GENERATED_AT,
-  "kind" => "first_100_release_asset",
-  "repo" => REPO,
-  "signal_id" => "first-100-fast-start-v1",
-  "title" => "First $100 Fast Start release asset",
-  "price" => "$100",
-  "first_100_path" => "One paid fixed-scope starter reaches $100 before fees/refunds.",
-  "url" => first_100_release["url"],
-  "state" => first_100_release["count"].positive? ? "download_count_present" : "release_live_no_downloads",
-  "issue_comments" => 0,
-  "release_downloads" => first_100_release["count"],
-  "labels" => ["release-asset", "interest-only", first_100_release["asset_url"].to_s].reject(&:empty?).join("|"),
-  "proof_status" => first_100_release["count"].positive? ? "release_download_interest_no_buyer_or_payment_proof" : "release_live_no_buyer_or_payment_proof",
-  "money_confirmed_usd" => "0",
-  "money_count_rule" => "Release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
-  "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html"
-}
+[
+  ["first_100_fast_start.csv", "First $100 Fast Start CSV release asset"],
+  ["first-100-sample-pack.zip", "First $100 Fast Start sample-pack release asset"]
+].each do |asset_name, title|
+  first_100_release = release_asset_download_count(REPO, "first-100-fast-start-v1", asset_name)
+  rows << {
+    "checked_at_jst" => GENERATED_AT,
+    "kind" => "first_100_release_asset",
+    "repo" => REPO,
+    "signal_id" => "first-100-fast-start-v1:#{asset_name}",
+    "title" => title,
+    "price" => "$100",
+    "first_100_path" => "One paid fixed-scope starter reaches $100 before fees/refunds.",
+    "url" => first_100_release["url"],
+    "state" => first_100_release["count"].positive? ? "download_count_present" : "release_live_no_downloads",
+    "issue_comments" => 0,
+    "release_downloads" => first_100_release["count"],
+    "labels" => ["release-asset", "interest-only", first_100_release["asset_url"].to_s].reject(&:empty?).join("|"),
+    "proof_status" => first_100_release["count"].positive? ? "release_download_interest_no_buyer_or_payment_proof" : "release_live_no_buyer_or_payment_proof",
+    "money_confirmed_usd" => "0",
+    "money_count_rule" => "Release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html"
+  }
+end
 
 CSV.open(File.join(LAUNCH_ROOT, "proof_monitor.csv"), "w", write_headers: true, headers: HEADERS) do |csv|
   rows.each { |row| csv << HEADERS.map { |header| row[header] } }
