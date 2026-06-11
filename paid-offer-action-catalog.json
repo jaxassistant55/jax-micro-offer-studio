@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 14:41:53 JST",
+  "generated_at_jst": "2026-06-11 14:56:05 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external buyer/payment proof exists.",
   "row_count": 41,
@@ -9,9 +9,10 @@
   "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
   "csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv",
   "html_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
+  "release_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1",
   "rows": [
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "hot-download-local-seo-gbp-audit-starter",
       "source": "observed_download_close",
       "title": "Local SEO GBP Audit Starter",
@@ -35,7 +36,7 @@
       "source_evidence": "hot_download_close_rooms.csv observed download_count=1"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "hot-download-pdf-table-extraction-starter",
       "source": "observed_download_close",
       "title": "PDF Table Extraction Starter",
@@ -59,7 +60,7 @@
       "source_evidence": "hot_download_close_rooms.csv observed download_count=1"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-first-100-fast-start",
       "source": "central_order_board",
       "title": "First $100 Fast Start",
@@ -83,7 +84,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-static-demo-site-customization",
       "source": "central_order_board",
       "title": "Static Demo Site Customization",
@@ -107,7 +108,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-static-service-site-starter",
       "source": "standalone_repo_ready_form",
       "title": "Static Service Site Starter",
@@ -131,7 +132,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-local-seo-gbp-audit",
       "source": "central_order_board",
       "title": "Local SEO / GBP Audit",
@@ -155,7 +156,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-local-seo-gbp-audit-starter",
       "source": "standalone_repo_ready_form",
       "title": "Local SEO GBP Audit Starter",
@@ -179,7 +180,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-ai-workflow-tracker-sprint",
       "source": "central_order_board",
       "title": "AI Workflow Tracker Sprint",
@@ -203,7 +204,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-niche-quote-estimator",
       "source": "central_order_board",
       "title": "Niche Quote Estimator",
@@ -227,7 +228,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-niche-quote-estimator-starter",
       "source": "standalone_repo_ready_form",
       "title": "Niche Quote Estimator Starter",
@@ -251,7 +252,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-technical-docs-cleanup",
       "source": "central_order_board",
       "title": "Technical Docs Cleanup",
@@ -275,7 +276,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-technical-docs-cleanup-starter",
       "source": "standalone_repo_ready_form",
       "title": "Technical Docs Cleanup Starter",
@@ -299,7 +300,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-website-audit-microservice",
       "source": "central_order_board",
       "title": "Website Audit Microservice",
@@ -323,7 +324,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-website-audit-microservice-starter",
       "source": "standalone_repo_ready_form",
       "title": "Website Audit Microservice Starter",
@@ -347,7 +348,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-workflow-tracker-dashboard-starter",
       "source": "standalone_repo_ready_form",
       "title": "Workflow Tracker Dashboard Starter",
@@ -371,7 +372,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-career-packet-starter",
       "source": "standalone_repo_ready_form",
       "title": "Career Packet Starter",
@@ -395,7 +396,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-client-intake-sop-starter",
       "source": "standalone_repo_ready_form",
       "title": "Client Intake SOP Starter",
@@ -419,7 +420,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-client-intake-and-sop-package",
       "source": "central_order_board",
       "title": "Client Intake and SOP Package",
@@ -443,7 +444,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-data-cleanup-sprint",
       "source": "central_order_board",
       "title": "Data Cleanup Sprint",
@@ -467,7 +468,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-data-cleanup-sprint-starter",
       "source": "standalone_repo_ready_form",
       "title": "Data Cleanup Sprint Starter",
@@ -491,7 +492,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-pdf-table-extraction-starter",
       "source": "standalone_repo_ready_form",
       "title": "PDF Table Extraction Starter",
@@ -515,7 +516,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-pdf-table-extraction",
       "source": "central_order_board",
       "title": "PDF/Table Extraction",
@@ -539,7 +540,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-resume-linkedin-interview-pack",
       "source": "central_order_board",
       "title": "Resume / LinkedIn / Interview Pack",
@@ -563,7 +564,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-automation-blueprint",
       "source": "central_order_board",
       "title": "Automation Blueprint",
@@ -587,7 +588,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-automation-blueprint-starter",
       "source": "standalone_repo_ready_form",
       "title": "Automation Blueprint Starter",
@@ -611,7 +612,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-content-repurposing-sprint",
       "source": "central_order_board",
       "title": "Content Repurposing Sprint",
@@ -635,7 +636,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-content-repurposing-sprint-starter",
       "source": "standalone_repo_ready_form",
       "title": "Content Repurposing Sprint Starter",
@@ -659,7 +660,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-resale-listing-research-starter",
       "source": "standalone_repo_ready_form",
       "title": "Resale Listing Research Starter",
@@ -683,7 +684,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-resale-listing-and-price-research-pack",
       "source": "central_order_board",
       "title": "Resale Listing and Price Research Pack",
@@ -707,7 +708,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-subscription-audit-savings-starter",
       "source": "standalone_repo_ready_form",
       "title": "Subscription Audit Savings Starter",
@@ -731,7 +732,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-subscription-audit-and-savings-prep-pack",
       "source": "central_order_board",
       "title": "Subscription Audit and Savings Prep Pack",
@@ -755,7 +756,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-translation-localization-draft-starter",
       "source": "standalone_repo_ready_form",
       "title": "Translation Localization Draft Starter",
@@ -779,7 +780,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-translation-and-localization-draft-pack",
       "source": "central_order_board",
       "title": "Translation and Localization Draft Pack",
@@ -803,7 +804,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-browser-extension-template",
       "source": "central_order_board",
       "title": "Browser Extension Template",
@@ -827,7 +828,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "standalone-browser-extension-template-preview",
       "source": "standalone_repo_ready_form",
       "title": "Browser Extension Template Preview",
@@ -851,7 +852,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-mini-course-workbook",
       "source": "central_order_board",
       "title": "Mini Course Workbook",
@@ -875,7 +876,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-sales-enablement-kit",
       "source": "central_order_board",
       "title": "Sales Enablement Kit",
@@ -899,7 +900,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-csv-cli-toolkit",
       "source": "central_order_board",
       "title": "CSV CLI Toolkit",
@@ -923,7 +924,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-invoice-and-expense-tracker-template",
       "source": "central_order_board",
       "title": "Invoice and Expense Tracker Template",
@@ -947,7 +948,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-prompt-workflow-pack",
       "source": "central_order_board",
       "title": "Prompt Workflow Pack",
@@ -971,7 +972,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 14:41:53 JST",
+      "generated_at_jst": "2026-06-11 14:56:05 JST",
       "catalog_row_id": "central-synthetic-mock-dataset-pack",
       "source": "central_order_board",
       "title": "Synthetic Mock Dataset Pack",
