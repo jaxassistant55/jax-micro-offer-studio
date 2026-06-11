@@ -1,0 +1,16 @@
+slug,title,price,invoice_path,invoice_id_suggestion
+static-demo-site-customization,Static Demo Site Customization,$200,service-invoice-drafts/static-demo-site-customization.html,MOS-20260611-STATIC-DEMO-SITE-CUSTOMIZATION
+local-seo-gbp-audit,Local SEO / GBP Audit,$175,service-invoice-drafts/local-seo-gbp-audit.html,MOS-20260611-LOCAL-SEO-GBP-AUDIT
+ai-workflow-tracker-sprint,AI Workflow Tracker Sprint,$150,service-invoice-drafts/ai-workflow-tracker-sprint.html,MOS-20260611-AI-WORKFLOW-TRACKER-SPRINT
+niche-quote-estimator,Niche Quote Estimator,$150,service-invoice-drafts/niche-quote-estimator.html,MOS-20260611-NICHE-QUOTE-ESTIMATOR
+technical-docs-cleanup,Technical Docs Cleanup,$150,service-invoice-drafts/technical-docs-cleanup.html,MOS-20260611-TECHNICAL-DOCS-CLEANUP
+website-audit-microservice,Website Audit Microservice,$150,service-invoice-drafts/website-audit-microservice.html,MOS-20260611-WEBSITE-AUDIT-MICROSERVICE
+client-intake-and-sop-package,Client Intake and SOP Package,$125,service-invoice-drafts/client-intake-and-sop-package.html,MOS-20260611-CLIENT-INTAKE-AND-SOP-PACKAGE
+data-cleanup-sprint,Data Cleanup Sprint,$125,service-invoice-drafts/data-cleanup-sprint.html,MOS-20260611-DATA-CLEANUP-SPRINT
+pdf-table-extraction,PDF/Table Extraction,$125,service-invoice-drafts/pdf-table-extraction.html,MOS-20260611-PDF-TABLE-EXTRACTION
+resume-linkedin-interview-pack,Resume / LinkedIn / Interview Pack,$125,service-invoice-drafts/resume-linkedin-interview-pack.html,MOS-20260611-RESUME-LINKEDIN-INTERVIEW-PACK
+automation-blueprint,Automation Blueprint,$100,service-invoice-drafts/automation-blueprint.html,MOS-20260611-AUTOMATION-BLUEPRINT
+content-repurposing-sprint,Content Repurposing Sprint,$100,service-invoice-drafts/content-repurposing-sprint.html,MOS-20260611-CONTENT-REPURPOSING-SPRINT
+resale-listing-and-price-research-pack,Resale Listing and Price Research Pack,$100,service-invoice-drafts/resale-listing-and-price-research-pack.html,MOS-20260611-RESALE-LISTING-AND-PRICE-RESEARCH-PACK
+subscription-audit-and-savings-prep-pack,Subscription Audit and Savings Prep Pack,$100,service-invoice-drafts/subscription-audit-and-savings-prep-pack.html,MOS-20260611-SUBSCRIPTION-AUDIT-AND-SAVINGS-PREP-PACK
+translation-and-localization-draft-pack,Translation and Localization Draft Pack,$100,service-invoice-drafts/translation-and-localization-draft-pack.html,MOS-20260611-TRANSLATION-AND-LOCALIZATION-DRAFT-PACK
