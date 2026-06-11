@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 16:31:29 JST",
+  "generated_at_jst": "2026-06-11 16:56:49 JST",
   "title": "First $100 Product Bundle Marketplace Listing Packet",
   "product_title": "First $100 Product Bundle",
   "price_usd": 100,
@@ -21,115 +21,121 @@
   },
   "fields": [
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "product_title",
       "value": "First $100 Product Bundle",
       "copy_where": "listing title"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "short_title",
       "value": "$100 Digital Operations Bundle",
       "copy_where": "listing title"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "price_usd",
       "value": "100",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "subtitle",
       "value": "Fifteen ready-to-transfer business-template and digital-product ZIPs in one private delivery bundle.",
       "copy_where": "listing summary"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "short_description",
       "value": "A one-sale $100 product transfer bundle with 15 ready local paid ZIPs, public manifest, private delivery checklist, and clear proof boundary.",
       "copy_where": "listing summary"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "primary_buyer",
       "value": "Solo operators, indie makers, consultants, and small teams that want reusable templates, digital assets, and lightweight operations tools without commissioning a custom build.",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "included_files_summary",
       "value": "HTML5 micro game kit, procedural SFX pack, SVG icon pack, printable planner pack, synthetic mock dataset pack, browser extension template, CSV CLI toolkit, CSS component pack, SVG wallpaper pattern pack, Anki flashcard deck, mini course workbook, JSON schema fixture pack, invoice/expense tracker, prompt workflow pack, and sales enablement kit.",
       "copy_where": "listing body"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "delivery_note",
       "value": "Deliver first-100-product-bundle.zip privately only after external payment proof exists. Do not publish the paid ZIP on public pages.",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "license_note",
       "value": "Single buyer transfer for internal/business use. Buyer may adapt outputs for their own projects. No resale, redistribution, sublicensing, credential handling, regulated advice, or unsupported income/outcome guarantees.",
       "copy_where": "listing body"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "refund_boundary",
       "value": "Because this is a digital transfer, use the seller platform's refund policy and do not promise refunds beyond what the seller can honor. Count money only after payment is posted, released, payable, or cleared.",
       "copy_where": "listing body"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "fulfillment_time",
       "value": "Deliver after payment proof exists; target same-day private transfer when seller account, buyer email, and delivery channel are ready.",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "support_boundary",
       "value": "Includes transfer of the prepared ZIP and manifest. Does not include custom implementation, ongoing support, extra revisions, private-account login work, paid ads, scraping behind logins, or handling secrets/payment data.",
       "copy_where": "listing body"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "tags",
       "value": "digital bundle, business templates, CSV tools, operations templates, micro assets, small business, solo operator, productized service, first 100",
       "copy_where": "tags/keywords"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "cover_image",
       "value": "https://jaxassistant55.github.io/jax-micro-offer-studio/assets/first-100-product-bundle-cover.png",
       "copy_where": "listing image"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "public_manifest",
       "value": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
+      "field": "github_release",
+      "value": "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/first-100-product-bundle-marketplace-v1",
+      "copy_where": "seller reference"
+    },
+    {
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "order_board",
       "value": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "payment_activation",
       "value": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "proof_monitor",
       "value": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
       "copy_where": "seller reference"
     },
     {
-      "generated_at_jst": "2026-06-11 16:31:29 JST",
+      "generated_at_jst": "2026-06-11 16:56:49 JST",
       "field": "money_rule",
       "value": "Listing packet, cover image, public manifest, issue activity, page views, and downloads count $0. Count only a real buyer payment after accepted terms, private delivery, and posted/released/payable/cleared funds.",
       "copy_where": "seller reference"

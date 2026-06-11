@@ -261,6 +261,35 @@ end
   }
 end
 
+[
+  ["first-100-product-bundle-marketplace-listing-packet.zip", "First $100 Product Bundle marketplace listing packet ZIP"],
+  ["marketplace_listing_fields.csv", "First $100 Product Bundle marketplace listing fields CSV"],
+  ["marketplace_listing_packet.json", "First $100 Product Bundle marketplace listing packet JSON"],
+  ["seller_publish_checklist.md", "First $100 Product Bundle seller publish checklist"],
+  ["buyer_reply_template.md", "First $100 Product Bundle buyer reply template"],
+  ["first-100-product-bundle-cover.png", "First $100 Product Bundle cover image asset"]
+].each do |asset_name, title|
+  bundle_marketplace_release = release_asset_download_count(REPO, "first-100-product-bundle-marketplace-v1", asset_name)
+  rows << {
+    "checked_at_jst" => GENERATED_AT,
+    "kind" => "bundle_marketplace_release_asset",
+    "repo" => REPO,
+    "signal_id" => "first-100-product-bundle-marketplace-v1:#{asset_name}",
+    "title" => title,
+    "price" => "$100",
+    "first_100_path" => "One verified paid $100 product-bundle transfer reaches the first $100 target before fees/refunds.",
+    "url" => bundle_marketplace_release["url"],
+    "state" => bundle_marketplace_release["count"].positive? ? "download_count_present" : "release_live_no_downloads",
+    "issue_comments" => 0,
+    "release_downloads" => bundle_marketplace_release["count"],
+    "labels" => ["release-asset", "first-100-product-bundle", "marketplace-listing-packet", "interest-only", bundle_marketplace_release["asset_url"].to_s].reject(&:empty?).join("|"),
+    "proof_status" => bundle_marketplace_release["count"].positive? ? "bundle_marketplace_download_interest_no_buyer_or_payment_proof" : "bundle_marketplace_release_live_no_buyer_or_payment_proof",
+    "money_confirmed_usd" => "0",
+    "money_count_rule" => "Marketplace packet release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and private bundle delivery.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html"
+  }
+end
+
 CSV.open(File.join(LAUNCH_ROOT, "proof_monitor.csv"), "w", write_headers: true, headers: HEADERS) do |csv|
   rows.each { |row| csv << HEADERS.map { |header| row[header] } }
 end

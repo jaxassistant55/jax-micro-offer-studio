@@ -3359,14 +3359,6 @@
       "additionalType": "paid_offer_action_catalog"
     },
     {
-      "@type": "CreativeWork",
-      "name": "First $100 Product Bundle Marketplace Listing Packet",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html",
-      "image": "https://jaxassistant55.github.io/jax-micro-offer-studio/assets/first-100-product-bundle-cover.png",
-      "description": "Marketplace listing packet and seller handoff materials for the First $100 Product Bundle.",
-      "isRelatedTo": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
-    },
-    {
       "@type": "WebApplication",
       "additionalType": "payment_activation_route",
       "name": "Payment Activation",
@@ -3485,6 +3477,14 @@
       "name": "Invoice draft: First $100 Product Bundle",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/first-100-product-bundle.html",
       "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "First $100 Product Bundle Marketplace Listing Packet",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html",
+      "image": "https://jaxassistant55.github.io/jax-micro-offer-studio/assets/first-100-product-bundle-cover.png",
+      "description": "Marketplace listing packet and seller handoff materials for the First $100 Product Bundle.",
+      "isRelatedTo": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
     }
   ]
 }
