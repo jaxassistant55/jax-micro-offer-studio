@@ -1,8 +1,43 @@
 {
-  "generated_at_jst": "2026-06-11 13:41:06 JST",
+  "generated_at_jst": "2026-06-11 14:40:27 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "catalog",
+      "title": "Paid Offer Action Catalog",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
+      "description": "Best buyer-action routes for paid offers, structured forms, order boards, payment activation, and proof rules.",
+      "tags": [
+        "paid-offer",
+        "action-catalog",
+        "structured-forms",
+        "first-100",
+        "proof-boundary"
+      ]
+    },
+    {
+      "type": "json",
+      "title": "Paid Offer Action Catalog JSON",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.json",
+      "description": "Machine-readable paid-offer action routes with prices and structured form links.",
+      "tags": [
+        "paid-offer",
+        "json",
+        "structured-forms"
+      ]
+    },
+    {
+      "type": "csv",
+      "title": "Paid Offer Action Catalog CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv",
+      "description": "CSV paid-offer action routes with prices, order boards, payment activation, and proof rules.",
+      "tags": [
+        "paid-offer",
+        "csv",
+        "structured-forms"
+      ]
+    },
     {
       "type": "sample-pack",
       "title": "First $100 Fast Start Sample Pack",

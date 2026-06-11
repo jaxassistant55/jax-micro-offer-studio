@@ -2745,6 +2745,701 @@
       "name": "First $100 Fast Start Sample Pack",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip",
       "description": "Synthetic example deliverables for all four $100 starter scopes."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "additionalType": "paid_offer_action_catalog",
+      "name": "Paid Offer Action Catalog",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
+      "description": "Direct paid-offer action catalog with structured forms, order boards, payment activation, and proof rules."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "additionalType": "paid_offer_action_catalog",
+      "name": "Paid Offer Action Catalog JSON and CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.json",
+      "description": "Machine-readable paid-offer action routes, prices, structured forms, payment activation links, and proof rules.",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/csv",
+          "contentUrl": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Paid Offer Action Catalog",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
+      "description": "Buyer-action catalog tying paid offers to structured forms, order boards, payment activation, and proof rules.",
+      "numberOfItems": 41,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Local SEO GBP Audit Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 175.0,
+              "url": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "PDF Table Extraction Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "First $100 Fast Start",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Static Demo Site Customization",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-customization.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 200.0,
+              "url": "https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "Static Service Site Starter",
+            "url": "https://jaxassistant55.github.io/static-service-site-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 200.0,
+              "url": "https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "name": "Local SEO / GBP Audit",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 175.0,
+              "url": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "name": "Local SEO GBP Audit Starter",
+            "url": "https://jaxassistant55.github.io/local-seo-gbp-audit-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 175.0,
+              "url": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "AI Workflow Tracker Sprint",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-sprint.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Service",
+            "name": "Niche Quote Estimator",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/niche-quote-estimator.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Service",
+            "name": "Niche Quote Estimator Starter",
+            "url": "https://jaxassistant55.github.io/niche-quote-estimator-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Service",
+            "name": "Technical Docs Cleanup",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-cleanup.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Service",
+            "name": "Technical Docs Cleanup Starter",
+            "url": "https://jaxassistant55.github.io/technical-docs-cleanup-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Service",
+            "name": "Website Audit Microservice",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Service",
+            "name": "Website Audit Microservice Starter",
+            "url": "https://jaxassistant55.github.io/website-audit-microservice-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Service",
+            "name": "Workflow Tracker Dashboard Starter",
+            "url": "https://jaxassistant55.github.io/workflow-tracker-dashboard-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0,
+              "url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Service",
+            "name": "Career Packet Starter",
+            "url": "https://jaxassistant55.github.io/career-packet-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Service",
+            "name": "Client Intake SOP Starter",
+            "url": "https://jaxassistant55.github.io/client-intake-sop-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Service",
+            "name": "Client Intake and SOP Package",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/client-intake-and-sop-package.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@type": "Service",
+            "name": "Data Cleanup Sprint",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/data-cleanup-sprint.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@type": "Service",
+            "name": "Data Cleanup Sprint Starter",
+            "url": "https://jaxassistant55.github.io/data-cleanup-sprint-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@type": "Service",
+            "name": "PDF Table Extraction Starter",
+            "url": "https://jaxassistant55.github.io/pdf-table-extraction-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@type": "Service",
+            "name": "PDF/Table Extraction",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@type": "Service",
+            "name": "Resume / LinkedIn / Interview Pack",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resume-linkedin-interview-pack.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0,
+              "url": "https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@type": "Service",
+            "name": "Automation Blueprint",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/automation-blueprint.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@type": "Service",
+            "name": "Automation Blueprint Starter",
+            "url": "https://jaxassistant55.github.io/automation-blueprint-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "item": {
+            "@type": "Service",
+            "name": "Content Repurposing Sprint",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-sprint.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "item": {
+            "@type": "Service",
+            "name": "Content Repurposing Sprint Starter",
+            "url": "https://jaxassistant55.github.io/content-repurposing-sprint-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "item": {
+            "@type": "Service",
+            "name": "Resale Listing Research Starter",
+            "url": "https://jaxassistant55.github.io/resale-listing-research-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "item": {
+            "@type": "Service",
+            "name": "Resale Listing and Price Research Pack",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-and-price-research-pack.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "item": {
+            "@type": "Service",
+            "name": "Subscription Audit Savings Starter",
+            "url": "https://jaxassistant55.github.io/subscription-audit-savings-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "item": {
+            "@type": "Service",
+            "name": "Subscription Audit and Savings Prep Pack",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-audit-and-savings-prep-pack.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "item": {
+            "@type": "Service",
+            "name": "Translation Localization Draft Starter",
+            "url": "https://jaxassistant55.github.io/translation-localization-draft-starter/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "item": {
+            "@type": "Service",
+            "name": "Translation and Localization Draft Pack",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/translation-and-localization-draft-pack.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "url": "https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "item": {
+            "@type": "Product",
+            "name": "Browser Extension Template",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 29.0,
+              "url": "https://github.com/jaxassistant55/browser-extension-template-preview/issues/new?template=ready-to-pay-browser-extension-template-preview.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "item": {
+            "@type": "Product",
+            "name": "Browser Extension Template Preview",
+            "url": "https://jaxassistant55.github.io/browser-extension-template-preview/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 29.0,
+              "url": "https://github.com/jaxassistant55/browser-extension-template-preview/issues/new?template=ready-to-pay-browser-extension-template-preview.yml",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "item": {
+            "@type": "Product",
+            "name": "Mini Course Workbook",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 29.0,
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/9",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "item": {
+            "@type": "Product",
+            "name": "Sales Enablement Kit",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/sales-enablement-kit.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 29.0,
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/15",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "item": {
+            "@type": "Product",
+            "name": "CSV CLI Toolkit",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 19.0,
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/11",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "item": {
+            "@type": "Product",
+            "name": "Invoice and Expense Tracker Template",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/invoice-and-expense-tracker-template.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 19.0,
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/12",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "item": {
+            "@type": "Product",
+            "name": "Prompt Workflow Pack",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/prompt-workflow-pack.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 19.0,
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/13",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 41,
+          "item": {
+            "@type": "Product",
+            "name": "Synthetic Mock Dataset Pack",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack.html",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 19.0,
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/10",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        }
+      ],
+      "additionalType": "paid_offer_action_catalog"
     }
   ]
 }
