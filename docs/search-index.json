@@ -1346,6 +1346,102 @@
         "paid service",
         "jaxassistant55/pdf-table-extraction-starter"
       ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download hot close on share-kit.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/share-kit.html#hot-close-observed",
+      "description": "Secondary buyer-facing page that routes preview-download interest to the two fixed-scope hot close rooms.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "secondary conversion",
+        "share-kit.html"
+      ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download hot close on buyer-faq.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-faq.html#hot-close-observed",
+      "description": "Secondary buyer-facing page that routes preview-download interest to the two fixed-scope hot close rooms.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "secondary conversion",
+        "buyer-faq.html"
+      ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download hot close on case-studies.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/case-studies.html#hot-close-observed",
+      "description": "Secondary buyer-facing page that routes preview-download interest to the two fixed-scope hot close rooms.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "secondary conversion",
+        "case-studies.html"
+      ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download hot close on samples.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/samples.html#hot-close-observed",
+      "description": "Secondary buyer-facing page that routes preview-download interest to the two fixed-scope hot close rooms.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "secondary conversion",
+        "samples.html"
+      ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download hot close on products.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/products.html#hot-close-observed",
+      "description": "Secondary buyer-facing page that routes preview-download interest to the two fixed-scope hot close rooms.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "secondary conversion",
+        "products.html"
+      ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download hot close on services.html",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/services.html#hot-close-observed",
+      "description": "Secondary buyer-facing page that routes preview-download interest to the two fixed-scope hot close rooms.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "secondary conversion",
+        "services.html"
+      ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download secondary route: Local SEO GBP Audit Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+      "description": "$175 fixed-scope close room linked from secondary buyer pages.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "paid service",
+        "jaxassistant55/local-seo-gbp-audit-starter"
+      ]
+    },
+    {
+      "type": "hot_close_secondary_route",
+      "title": "Observed download secondary route: PDF Table Extraction Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+      "description": "$125 fixed-scope close room linked from secondary buyer pages.",
+      "tags": [
+        "hot close",
+        "observed download",
+        "paid service",
+        "jaxassistant55/pdf-table-extraction-starter"
+      ]
     }
   ]
 }
