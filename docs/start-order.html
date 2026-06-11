@@ -19,7 +19,12 @@
   
 </head>
 <body>
-  <main><header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="order_intake.csv">Order CSV</a><a href="proof.html">Proof rules</a><a href="fulfillment.html">Fulfillment</a></p><h1>Start Order</h1><p class="muted">A structured intake builder that turns a visitor into a specific paid inquiry. This page still does not process payment; it creates a ready-to-pay issue draft with the exact offer, price, scope, and proof fields.</p></header>
+  <main><header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="order_intake.csv">Order CSV</a><a href="proof.html">Proof rules</a><a href="fulfillment.html">Fulfillment</a><a href="payment-activation">Payment activation</a></p><h1>Start Order</h1><p class="muted">A structured intake builder that turns a visitor into a specific paid inquiry. This page still does not process payment; it creates a ready-to-pay issue draft with the exact offer, price, scope, and proof fields.</p></header>
+<section id="payment-activation-cta" class="notice">
+  <h2>Payment Activation After Scope Acceptance</h2>
+  <p>After a real buyer accepts the fixed scope, open <a href="payment-activation">Payment activation</a>, paste a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URL, and send the generated buyer message. This page does not process payment; count money only after external payment proof exists.</p>
+</section>
+
 <section class="notice"><h2>Payment boundary</h2><p>Opening an issue is not payment. Count $0 until an external paid order, cleared invoice, funded milestone, payable balance, posted refund/credit, or equivalent proof exists.</p></section>
 <section class="split">
   <div class="panel">
@@ -90,6 +95,9 @@
       '',
       'Payment/proof route:',
       paymentEl.value || '[buyer to fill]',
+      '',
+      'Payment activation page after scope acceptance:',
+      'https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation',
       '',
       'Deadline:',
       deadlineEl.value || '[buyer to fill]',
