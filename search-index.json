@@ -1493,19 +1493,6 @@
       "money_status": "0 until buyer acceptance and external payment proof exist"
     },
     {
-      "type": "marketplace-listing-packet",
-      "title": "First $100 Product Bundle Marketplace Listing Packet",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html",
-      "description": "Cover image, listing copy, seller checklist, buyer reply, CSV, and JSON for publishing the $100 product bundle from an authorized seller account.",
-      "tags": [
-        "first-100",
-        "product-bundle",
-        "marketplace-listing",
-        "seller-handoff",
-        "proof-boundary"
-      ]
-    },
-    {
       "type": "payment_activation_route",
       "title": "Payment Activation",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
@@ -1692,6 +1679,20 @@
         "invoice draft",
         "payment activation",
         "first-100-product-bundle"
+      ]
+    },
+    {
+      "type": "marketplace-listing-packet",
+      "title": "First $100 Product Bundle Marketplace Listing Packet",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html",
+      "description": "Cover image, listing copy, seller checklist, buyer reply, CSV, and JSON for publishing the $100 product bundle from an authorized seller account.",
+      "tags": [
+        "first-100",
+        "product-bundle",
+        "marketplace-listing",
+        "seller-handoff",
+        "proof-boundary",
+        "github-release"
       ]
     }
   ]
