@@ -1,0 +1,4 @@
+source_page,row_label,item,quantity,unit_price_usd,total_usd,notes
+sample-01.pdf#page=1,1,Workshop setup,1,75,75,Synthetic demo row
+sample-01.pdf#page=1,2,Template customization,2,25,50,Synthetic demo row
+sample-01.pdf#page=2,3,QA pass,1,40,40,Ambiguous tax field omitted

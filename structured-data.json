@@ -2722,6 +2722,20 @@
     },
     {
       "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "First $100 Fast Start Sample Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip",
+      "description": "Synthetic example deliverables for all four $100 starter scopes."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "First $100 Fast Start Sample Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip",
+      "description": "Synthetic example deliverables for all four $100 starter scopes."
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "Service",
       "name": "First $100 Fast Start",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html",
@@ -2738,6 +2752,13 @@
       "name": "First $100 Fast Start CSV",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first_100_fast_start.csv",
       "description": "Machine-readable $100 starter scopes, intake links, payment gates, and proof rules."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "First $100 Fast Start Sample Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack.zip",
+      "description": "Synthetic example deliverables for all four $100 starter scopes."
     }
   ]
 }
