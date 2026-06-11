@@ -9,6 +9,7 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 - Website Audit Microservice: $150 service, one accepted paid order clears $100. https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html
 
 ## Ready-to-buy routes
+- Buyer response autopilot: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html
 - Ready-to-buy index: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
 - Buyer intent router: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html
 - Static Demo Site Customization: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-static-demo-site-customization.html -> https://jaxassistant55.github.io/static-service-site-starter/inquiry.html
