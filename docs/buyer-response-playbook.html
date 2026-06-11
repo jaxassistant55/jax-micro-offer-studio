@@ -1,0 +1,397 @@
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Buyer response autopilot for Micro Offer Studio ready-to-pay and ready-to-buy issues.">
+    <title>Buyer Response Autopilot - Micro Offer Studio</title>
+    <style>
+      :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00}
+      *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;background:#fff}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:0}h2{margin:24px 0 10px;font-size:1.2rem;letter-spacing:0}p{margin:0 0 10px}a{color:var(--accent)}.muted{color:var(--muted)}.buttons{display:flex;gap:8px;flex-wrap:wrap}.buttons a{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}.summary,.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric,.notice,.card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;min-width:0;overflow-wrap:anywhere}.metric{background:var(--panel)}.metric span,.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.notice{border-left:6px solid var(--gold);background:#fffaf0}.card{border-left:6px solid var(--green)}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.88rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+      @media(max-width:900px){.summary,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase}}
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="buttons"><a href="index.html">Home</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="payment-activation">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="buyer-response-playbook.csv">CSV</a></p>
+        <h1>Buyer Response Autopilot</h1>
+        <p class="muted">Generated 2026-06-11 18:26:17 JST. This is the safe owned-repo response path for legitimate ready-to-pay or ready-to-buy GitHub issues. It does not invoice, collect payment, impersonate a seller, or count money.</p>
+      </header>
+
+      <section class="summary">
+        <article class="metric"><span>Catalog routes covered</span><strong>42</strong></article>
+        <article class="metric"><span>Workflow trigger</span><strong>Ready issue</strong></article>
+        <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+      </section>
+
+      <section class="notice">
+        <h2>What the workflow does</h2>
+        <p>When a non-assistant buyer opens or reopens a ready-to-pay or ready-to-buy issue, the workflow checks the title and labels, rejects pull requests and bounty/wallet-style claims, posts one marked checklist comment, and adds labels for seller review and payment-proof gating.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card"><span class="eyebrow">Autonomous</span><h2>Safe response</h2><p>Posts exact next steps, payment activation link, proof monitor link, and privacy boundaries inside the buyer issue.</p></article>
+        <article class="card"><span class="eyebrow">Autonomous</span><h2>Noise filter</h2><p>Skips assistant-authored issues, pull requests, already-responded issues, and bounty/wallet claim text.</p></article>
+        <article class="card"><span class="eyebrow">External gate</span><h2>Money proof</h2><p>Money remains $0 until a real seller-owned external payment or payout is posted, released, payable, or cleared after accepted scope and delivery.</p></article>
+      </section>
+
+      <section>
+        <h2>Comment Template</h2>
+        <div class="copybox">&lt;!-- micro-offer-studio:buyer-response:v1 --&gt;
+Thanks for opening a ready-to-pay or ready-to-buy request.
+
+Exact next steps:
+1. Keep the scope public-safe in this issue. Do not post passwords, payment cards, tax identifiers, private regulated details, confidential files, or screenshots of payment accounts.
+2. Confirm the exact deliverable, deadline, acceptance proof, and any buyer-owned inputs that can safely be shared.
+3. Use the payment activation page only after scope or transfer terms are accepted.
+4. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone.
+5. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof.</div>
+      </section>
+
+      <section>
+        <h2>Covered Paid Routes</h2>
+        <table>
+          <thead><tr><th>Route</th><th>Price</th><th>Repo</th><th>Buyer form</th><th>Autonomous response</th><th>User-only gate</th></tr></thead>
+          <tbody><tr>
+  <td data-label="Route">Local SEO GBP Audit Starter<br><span class="muted">hot-download-local-seo-gbp-audit-starter</span></td>
+  <td data-label="Price">$175</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">PDF Table Extraction Starter<br><span class="muted">hot-download-pdf-table-extraction-starter</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">First $100 Fast Start<br><span class="muted">central-first-100-fast-start</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-fast-start.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Static Demo Site Customization<br><span class="muted">central-static-demo-site-customization</span></td>
+  <td data-label="Price">$200</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/static-service-site-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Static Service Site Starter<br><span class="muted">standalone-static-service-site-starter</span></td>
+  <td data-label="Price">$200</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/static-service-site-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Local SEO / GBP Audit<br><span class="muted">central-local-seo-gbp-audit</span></td>
+  <td data-label="Price">$175</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Local SEO GBP Audit Starter<br><span class="muted">standalone-local-seo-gbp-audit-starter</span></td>
+  <td data-label="Price">$175</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">AI Workflow Tracker Sprint<br><span class="muted">central-ai-workflow-tracker-sprint</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Niche Quote Estimator<br><span class="muted">central-niche-quote-estimator</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Niche Quote Estimator Starter<br><span class="muted">standalone-niche-quote-estimator-starter</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Technical Docs Cleanup<br><span class="muted">central-technical-docs-cleanup</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Technical Docs Cleanup Starter<br><span class="muted">standalone-technical-docs-cleanup-starter</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Website Audit Microservice<br><span class="muted">central-website-audit-microservice</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/website-audit-microservice-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Website Audit Microservice Starter<br><span class="muted">standalone-website-audit-microservice-starter</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/website-audit-microservice-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Workflow Tracker Dashboard Starter<br><span class="muted">standalone-workflow-tracker-dashboard-starter</span></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Career Packet Starter<br><span class="muted">standalone-career-packet-starter</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/career-packet-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Client Intake SOP Starter<br><span class="muted">standalone-client-intake-sop-starter</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/client-intake-sop-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Client Intake and SOP Package<br><span class="muted">central-client-intake-and-sop-package</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/client-intake-sop-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Data Cleanup Sprint<br><span class="muted">central-data-cleanup-sprint</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Data Cleanup Sprint Starter<br><span class="muted">standalone-data-cleanup-sprint-starter</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">PDF Table Extraction Starter<br><span class="muted">standalone-pdf-table-extraction-starter</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">PDF/Table Extraction<br><span class="muted">central-pdf-table-extraction</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Resume / LinkedIn / Interview Pack<br><span class="muted">central-resume-linkedin-interview-pack</span></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/career-packet-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Automation Blueprint<br><span class="muted">central-automation-blueprint</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/automation-blueprint-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Automation Blueprint Starter<br><span class="muted">standalone-automation-blueprint-starter</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/automation-blueprint-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Content Repurposing Sprint<br><span class="muted">central-content-repurposing-sprint</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Content Repurposing Sprint Starter<br><span class="muted">standalone-content-repurposing-sprint-starter</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">First $100 Product Bundle<br><span class="muted">central-first-100-product-bundle</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Resale Listing Research Starter<br><span class="muted">standalone-resale-listing-research-starter</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/resale-listing-research-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Resale Listing and Price Research Pack<br><span class="muted">central-resale-listing-and-price-research-pack</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/resale-listing-research-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Subscription Audit Savings Starter<br><span class="muted">standalone-subscription-audit-savings-starter</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Subscription Audit and Savings Prep Pack<br><span class="muted">central-subscription-audit-and-savings-prep-pack</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Translation Localization Draft Starter<br><span class="muted">standalone-translation-localization-draft-starter</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/translation-localization-draft-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Translation and Localization Draft Pack<br><span class="muted">central-translation-and-localization-draft-pack</span></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/translation-localization-draft-starter">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Browser Extension Template<br><span class="muted">central-browser-extension-template</span></td>
+  <td data-label="Price">$29</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/browser-extension-template-preview">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/browser-extension-template-preview/issues/new?template=ready-to-pay-browser-extension-template-preview.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Browser Extension Template Preview<br><span class="muted">standalone-browser-extension-template-preview</span></td>
+  <td data-label="Price">$29</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/browser-extension-template-preview">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/browser-extension-template-preview/issues/new?template=ready-to-pay-browser-extension-template-preview.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Mini Course Workbook<br><span class="muted">central-mini-course-workbook</span></td>
+  <td data-label="Price">$29</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-mini-course-workbook.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Sales Enablement Kit<br><span class="muted">central-sales-enablement-kit</span></td>
+  <td data-label="Price">$29 product / $100 setup</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-sales-enablement-kit.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">CSV CLI Toolkit<br><span class="muted">central-csv-cli-toolkit</span></td>
+  <td data-label="Price">$19</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-csv-cli-toolkit.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Invoice and Expense Tracker Template<br><span class="muted">central-invoice-and-expense-tracker-template</span></td>
+  <td data-label="Price">$19</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-invoice-expense-tracker-template.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Prompt Workflow Pack<br><span class="muted">central-prompt-workflow-pack</span></td>
+  <td data-label="Price">$19 product / $100 setup</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-prompt-workflow-pack.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+<tr>
+  <td data-label="Route">Synthetic Mock Dataset Pack<br><span class="muted">central-synthetic-mock-dataset-pack</span></td>
+  <td data-label="Price">$19</td>
+  <td data-label="Repo"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio">Open repo</a></td>
+  <td data-label="Buyer form"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-synthetic-mock-dataset-pack.yml">Open form</a></td>
+  <td data-label="Autonomous response">If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.</td>
+  <td data-label="User-only gate">Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.</td>
+</tr>
+</tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+  </html>

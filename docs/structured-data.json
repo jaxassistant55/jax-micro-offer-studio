@@ -3485,6 +3485,13 @@
         }
       ],
       "additionalType": "paid_offer_action_catalog"
+    },
+    {
+      "@type": "WebPage",
+      "additionalType": "buyer_response_autopilot",
+      "name": "Buyer Response Autopilot",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html",
+      "description": "Safe workflow and playbook for responding to legitimate paid buyer issues."
     }
   ]
 }
