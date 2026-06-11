@@ -7,6 +7,8 @@ Public launch package generated during the autonomous earning run.
 - Public site root: `docs/index.html`
 - Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
 - Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
+- First $100 Product Bundle: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
+- Product bundle order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25
 - Manifest: `public_launch_manifest.csv`
 - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
 - Inquiry path: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml
@@ -51,6 +53,17 @@ Use the catalog when a buyer is choosing among services, product transfers, stan
 
 The catalog is a route chooser, not payment proof. Count $0 until a real buyer accepts scope, pays through a seller-controlled external route, receives delivery or transfer, and payment is posted, released, payable, or cleared.
 
+## First $100 Product Bundle
+
+Use this when a buyer wants one $100 product transfer instead of several smaller product purchases.
+
+- Bundle page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
+- Public manifest CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.csv
+- Public manifest JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.json
+- Order board #25: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25
+
+The private `first-100-product-bundle.zip` is not uploaded publicly. Transfer it only after accepted product-transfer terms, seller-controlled external payment proof, private delivery, and posted/released/payable/cleared funds.
+
 ## Observed preview-download close rooms
 
 These are the closest current public paths because their preview ZIPs have download signals. Downloads are interest only; paid work still requires accepted scope, a seller-controlled payment route, delivery, and external payment/payout proof.
@@ -74,6 +87,7 @@ All 16 standalone lead repos now have repo-specific structured GitHub issue form
 
 ## Fastest $100 paths
 
+- First $100 Product Bundle ($100): One paid private product-bundle transfer reaches $100.
 - Website Audit Microservice ($150): One accepted audit clears $100.
 - Data Cleanup Sprint ($125): One completed sprint clears $100.
 - AI Workflow Tracker Sprint ($150): One fixed-price order clears $100.
