@@ -8,6 +8,7 @@ Public launch package generated during the autonomous earning run.
 - Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
 - Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
 - First $100 Product Bundle: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
+- Bundle marketplace release packet: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/first-100-product-bundle-marketplace-v1
 - Product bundle order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25
 - Manifest: `public_launch_manifest.csv`
 - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
@@ -58,6 +59,8 @@ The catalog is a route chooser, not payment proof. Count $0 until a real buyer a
 Use this when a buyer wants one $100 product transfer instead of several smaller product purchases.
 
 - Bundle page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
+- Marketplace listing packet: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html
+- GitHub release packet: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/first-100-product-bundle-marketplace-v1
 - Public manifest CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.csv
 - Public manifest JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.json
 - Order board #25: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25
