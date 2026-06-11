@@ -1,44 +1,72 @@
 blank_issues_enabled: false
 contact_links:
-  - name: First $100 Product Bundle ready-to-buy form
-    url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml
-    about: Use the structured $100 product-bundle transfer intake before external payment and private delivery.
-  - name: First $100 Product Bundle marketplace packet
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html
-    about: Review listing copy, public release packet, seller checklist, and proof boundary for the $100 bundle.
-  - name: Paid offer action catalog
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
-    about: Choose the best paid action, structured form, payment handoff, and proof rule.
-  - name: First $100 Fast Start
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
-    about: Pick one exact $100 fixed-scope starter and open the ready-to-pay intake.
-  - name: Payment activation after scope acceptance
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
-    about: Generate a buyer payment message from a seller-owned payment route after scope is accepted.
-  - name: Hot close - Local SEO GBP Audit Starter
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
-    about: Fixed-scope $175 close room for the observed Local SEO preview-download route.
-  - name: Hot close - PDF Table Extraction Starter
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
-    about: Fixed-scope $125 close room for the observed PDF/table preview-download route.
-  - name: Live Micro Offer Studio site
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/
-    about: Browse public offers and previews.
-  - name: Start order builder
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/start-order.html
-    about: Build a structured ready-to-pay issue.
-  - name: Ready-to-buy routes
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
-    about: Open the highest-intent one-sale service routes.
-  - name: Buyer intent router
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html
-    about: Match a buyer problem to the closest ready-to-buy route.
-  - name: Close a service order
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html
-    about: Use close-ready scripts, invoice lines, and proof gates for $100+ services.
-  - name: Fulfillment ledger
-    url: https://jaxassistant55.github.io/jax-micro-offer-studio/fulfillment.html
-    about: Check ready artifacts and local bundle checksums.
-  - name: First $100 order board
-    url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
-    about: Comment on the current exact $100 order board.
+- name: First $100 Product Bundle ready-to-buy form
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml
+  about: Use the structured $100 product-bundle transfer intake before external payment
+    and private delivery.
+- name: First $100 Product Bundle marketplace packet
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html
+  about: Review listing copy, public release packet, seller checklist, and proof boundary
+    for the $100 bundle.
+- name: Paid offer action catalog
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+  about: Choose the best paid action, structured form, payment handoff, and proof
+    rule.
+- name: First $100 Fast Start
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
+  about: Pick one exact $100 fixed-scope starter and open the ready-to-pay intake.
+- name: Payment activation after scope acceptance
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+  about: Generate a buyer payment message from a seller-owned payment route after
+    scope is accepted.
+- name: Hot close - Local SEO GBP Audit Starter
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
+  about: Fixed-scope $175 close room for the observed Local SEO preview-download route.
+- name: Hot close - PDF Table Extraction Starter
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
+  about: Fixed-scope $125 close room for the observed PDF/table preview-download route.
+- name: Live Micro Offer Studio site
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/
+  about: Browse public offers and previews.
+- name: Start order builder
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/start-order.html
+  about: Build a structured ready-to-pay issue.
+- name: Ready-to-buy routes
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy.html
+  about: Open the highest-intent one-sale service routes.
+- name: Buyer intent router
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-intent-router.html
+  about: Match a buyer problem to the closest ready-to-buy route.
+- name: Close a service order
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/close-service-order.html
+  about: Use close-ready scripts, invoice lines, and proof gates for $100+ services.
+- name: Fulfillment ledger
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/fulfillment.html
+  about: Check ready artifacts and local bundle checksums.
+- name: First $100 order board
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+  about: Comment on the current exact $100 order board.
+- name: Mini Course Workbook ready-to-buy
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-mini-course-workbook.yml
+  about: Use the structured $29 product transfer intake before external payment and
+    private delivery.
+- name: Synthetic Mock Dataset Pack ready-to-buy
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-synthetic-mock-dataset-pack.yml
+  about: Use the structured $19 product transfer intake before external payment and
+    private delivery.
+- name: CSV CLI Toolkit ready-to-buy
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-csv-cli-toolkit.yml
+  about: Use the structured $19 product transfer intake before external payment and
+    private delivery.
+- name: Invoice and Expense Tracker Template ready-to-buy
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-invoice-expense-tracker-template.yml
+  about: Use the structured $19 product transfer intake before external payment and
+    private delivery.
+- name: Prompt Workflow Pack ready-to-buy
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-prompt-workflow-pack.yml
+  about: Use the structured $19 product transfer or $100 setup intake before external
+    payment and private delivery.
+- name: Sales Enablement Kit ready-to-buy
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-sales-enablement-kit.yml
+  about: Use the structured $29 product transfer or $100 setup intake before external
+    payment and private delivery.

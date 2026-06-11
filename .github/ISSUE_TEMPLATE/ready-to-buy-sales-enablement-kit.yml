@@ -1,0 +1,88 @@
+name: Sales Enablement Kit ready-to-buy
+description: Public-safe intake for $29 product transfer or $100 setup.
+title: 'Ready to buy: Sales Enablement Kit - '
+labels:
+- paid-inquiry
+- ready-to-pay
+- product-transfer
+body:
+- type: markdown
+  attributes:
+    value: |
+      Use this form only for a legitimate paid Sales Enablement Kit inquiry.
+
+      Offer page:
+      https://jaxassistant55.github.io/jax-micro-offer-studio/sales-enablement-kit.html
+
+      Order board:
+      https://github.com/jaxassistant55/jax-micro-offer-studio/issues/15
+
+      Payment activation after terms are accepted:
+      https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+
+      This GitHub issue is intake only. The paid file, setup, or private delivery happens only after accepted terms and external payment proof through a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request.
+- type: dropdown
+  id: purchase_path
+  attributes:
+    label: Purchase path
+    description: Confirm the paid route being requested.
+    options:
+    - Sales Enablement Kit ($29 product transfer)
+    - Sales Enablement Kit plus setup ($100)
+  validations:
+    required: true
+- type: textarea
+  id: usage_context
+  attributes:
+    label: Usage context
+    description: Describe the intended internal/business use. Do not include private
+      credentials or confidential files.
+    placeholder: Internal use, demo use, team template, buyer-owned project, or setup
+      context.
+  validations:
+    required: true
+- type: textarea
+  id: delivery_preference
+  attributes:
+    label: Delivery preference
+    description: Describe the private delivery or setup channel to use after external
+      payment proof exists.
+    placeholder: Private delivery channel after payment proof exists.
+  validations:
+    required: true
+- type: input
+  id: payment_route
+  attributes:
+    label: External payment or proof route
+    description: Use a seller-owned checkout, invoice, marketplace order, funded milestone,
+      payment request, or equivalent external proof route.
+    placeholder: invoice, checkout, funded milestone, marketplace order, or payment
+      request
+  validations:
+    required: true
+- type: checkboxes
+  id: terms
+  attributes:
+    label: Terms
+    options:
+    - label: I understand this is a fixed digital product transfer or listed setup
+        route, not open-ended custom implementation work.
+      required: true
+    - label: I understand paid files or setup delivery happen only after external
+        payment proof exists.
+      required: true
+    - label: I will not request resale, redistribution, sublicensing, credential handling,
+        regulated advice, or unsupported income/outcome guarantees.
+      required: true
+- type: checkboxes
+  id: safety
+  attributes:
+    label: Safety confirmation
+    options:
+    - label: I will not post passwords, payment cards, tax identifiers, credentials,
+        private regulated information, confidential files, payment screenshots, or
+        private delivery links in this public issue.
+      required: true
+    - label: I understand this issue is not payment proof and money counts only after
+        external payment is posted, released, payable, or cleared.
+      required: true
