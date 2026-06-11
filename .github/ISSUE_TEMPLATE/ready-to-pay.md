@@ -7,6 +7,11 @@ labels: paid-inquiry, ready-to-pay
 
 ## Ready-to-pay intake
 
+Paid offer action catalog:
+- Catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+- Release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv
+
 First $100 Fast Start:
 - Page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
 - Order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24

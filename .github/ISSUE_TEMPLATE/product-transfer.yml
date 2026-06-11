@@ -6,6 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+        Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
         Payment activation after scope acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
         Use this to request a product bundle listed in the fulfillment ledger. Full ZIP bundles are not public; transfer happens only after accepted payment/proof route.
   - type: dropdown

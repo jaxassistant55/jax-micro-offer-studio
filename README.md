@@ -5,6 +5,8 @@ Public launch package generated during the autonomous earning run.
 - Generated: 2026-06-11 12:48:36 JST
 - Live site: https://jaxassistant55.github.io/jax-micro-offer-studio/
 - Public site root: `docs/index.html`
+- Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+- Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
 - Manifest: `public_launch_manifest.csv`
 - Public fulfillment manifest: `docs/fulfillment_manifest.csv`
 - Inquiry path: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=paid-inquiry.yml
@@ -35,6 +37,19 @@ Public launch package generated during the autonomous earning run.
 - Offers: 15 digital products and 15 productized services
 
 Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
+
+## Paid Offer Action Catalog
+
+Use the catalog when a buyer is choosing among services, product transfers, standalone repos, hot preview-download close rooms, or the exact $100 starter.
+
+- Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+- Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
+- Catalog CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv
+- Catalog JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.json
+- Payment activation after accepted scope: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+- Proof monitor: https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html
+
+The catalog is a route chooser, not payment proof. Count $0 until a real buyer accepts scope, pays through a seller-controlled external route, receives delivery or transfer, and payment is posted, released, payable, or cleared.
 
 ## Observed preview-download close rooms
 

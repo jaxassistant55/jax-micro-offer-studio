@@ -6,6 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+        Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
         Payment activation after scope acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
         Exact $100 fast-start route: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
         Use this for one of the fixed-scope services. Do not paste secrets, payment details, tax identifiers, or files you are not authorized to share.
