@@ -6,6 +6,7 @@ Public launch package generated during the autonomous earning run.
 - Live site: https://jaxassistant55.github.io/jax-micro-offer-studio/
 - Public site root: `docs/index.html`
 - Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+- All 42 paid catalog rows now have structured ready-to-pay intake forms through the catalog.
 - Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
 - First $100 Product Bundle: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
 - Bundle ready-to-buy form: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml
@@ -55,6 +56,8 @@ Use the catalog when a buyer is choosing among services, product transfers, stan
 
 The catalog is a route chooser, not payment proof. Count $0 until a real buyer accepts scope, pays through a seller-controlled external route, receives delivery or transfer, and payment is posted, released, payable, or cleared.
 
+Current intake coverage: 42 paid catalog rows, 42 structured ready-to-pay forms, 34 routes where one sale can reach $100 before fees/refunds.
+
 ## First $100 Product Bundle
 
 Use this when a buyer wants one $100 product transfer instead of several smaller product purchases.
@@ -85,6 +88,8 @@ Each hot close room now includes a ready-to-pay issue link, sample proof, buyer 
 ## Structured ready-to-pay forms
 
 All 16 standalone lead repos now have repo-specific structured GitHub issue forms for legitimate paid inquiries. Use the directory when a buyer knows which offer they want but needs a public-safe scope/intake path before external payment.
+
+The paid offer action catalog now also maps the remaining central product/setup rows to product-specific ready-to-buy forms, so every paid catalog row has a structured intake route.
 
 - Forms directory: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-ready-forms.html
 - Machine-readable forms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/structured_ready_forms.csv
