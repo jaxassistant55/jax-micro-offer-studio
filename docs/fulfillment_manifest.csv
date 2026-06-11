@@ -1,5 +1,5 @@
 type,title,slug,price,fulfillment_status,artifact,zip_bytes,zip_sha256,source_dir
-product,First $100 Product Bundle,first-100-product-bundle,$100,local_paid_bundle_ready,first-100-product-bundle.zip,202554,4153cd5e7a39775172250056255a3431101beaff3e0bae59bd36651b77e280c4,non_bounty/first-100-product-bundle
+product,First $100 Product Bundle,first-100-product-bundle,$100,local_paid_bundle_ready,first-100-product-bundle.zip,202556,018467b9e151893257669b807b00982ae28bb19e6bfe7075ed10d43df6833f6f,non_bounty/first-100-product-bundle
 product,HTML5 Micro Game Kit,html5-micro-game-kit,$19,local_paid_bundle_ready,html5-micro-game-kit.zip,4219,1e083fe8edec9c322e59c6e923e3c707ee644271dec9da68b24876e2d2c188d0,non_bounty/autonomous_products/html5_micro_game
 product,Procedural SFX Pack,procedural-sfx-pack,$12,local_paid_bundle_ready,procedural-sfx-pack.zip,118779,25cd20aa0e91bda22428ff5b228ea092822c95dbb3ad763cbe9fa2b10b6ec721,non_bounty/autonomous_products/procedural_sfx_pack
 product,SVG Icon Pack,svg-icon-pack,$15,local_paid_bundle_ready,svg-icon-pack.zip,16586,71f39ee997257d2ac1457ede2154ed01dc8426079d5220b727ebf0c8256bf8da,non_bounty/autonomous_products/svg_icon_pack

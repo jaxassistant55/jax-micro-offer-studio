@@ -1,8 +1,14 @@
 blank_issues_enabled: false
 contact_links:
-- name: Paid offer action catalog
-  url: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
-  about: Choose the best paid action, structured form, payment handoff, and proof rule.
+  - name: First $100 Product Bundle ready-to-buy form
+    url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml
+    about: Use the structured $100 product-bundle transfer intake before external payment and private delivery.
+  - name: First $100 Product Bundle marketplace packet
+    url: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html
+    about: Review listing copy, public release packet, seller checklist, and proof boundary for the $100 bundle.
+  - name: Paid offer action catalog
+    url: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
+    about: Choose the best paid action, structured form, payment handoff, and proof rule.
   - name: First $100 Fast Start
     url: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
     about: Pick one exact $100 fixed-scope starter and open the ready-to-pay intake.
