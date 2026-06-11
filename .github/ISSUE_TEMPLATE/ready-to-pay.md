@@ -20,6 +20,7 @@ Offer page:
 Requested quantity or scope:
 
 Payment/proof route:
+Payment activation page after scope acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
 
 Deadline:
 

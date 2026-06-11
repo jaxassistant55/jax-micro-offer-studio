@@ -6,6 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
+        Payment activation after scope acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
         Use this to request a product bundle listed in the fulfillment ledger. Full ZIP bundles are not public; transfer happens only after accepted payment/proof route.
   - type: dropdown
     id: product
