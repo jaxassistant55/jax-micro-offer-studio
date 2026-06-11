@@ -2634,6 +2634,126 @@
       "description": "Synthetic example deliverables for all four $100 starter scopes."
     },
     {
+      "@type": "WebApplication",
+      "additionalType": "payment_activation_route",
+      "name": "Payment Activation",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
+      "description": "Browser-only payment-message generator for seller-owned payment routes. It does not process payments.",
+      "applicationCategory": "BusinessApplication"
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Static Demo Site Customization",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/static-demo-site-customization.html",
+      "description": "$200 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Local SEO / GBP Audit",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/local-seo-gbp-audit.html",
+      "description": "$175 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: AI Workflow Tracker Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/ai-workflow-tracker-sprint.html",
+      "description": "$150 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Niche Quote Estimator",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/niche-quote-estimator.html",
+      "description": "$150 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Technical Docs Cleanup",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/technical-docs-cleanup.html",
+      "description": "$150 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Website Audit Microservice",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/website-audit-microservice.html",
+      "description": "$150 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Client Intake and SOP Package",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/client-intake-and-sop-package.html",
+      "description": "$125 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Data Cleanup Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/data-cleanup-sprint.html",
+      "description": "$125 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: PDF/Table Extraction",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/pdf-table-extraction.html",
+      "description": "$125 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Resume / LinkedIn / Interview Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/resume-linkedin-interview-pack.html",
+      "description": "$125 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Automation Blueprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/automation-blueprint.html",
+      "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Content Repurposing Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/content-repurposing-sprint.html",
+      "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Resale Listing and Price Research Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/resale-listing-and-price-research-pack.html",
+      "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Subscription Audit and Savings Prep Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/subscription-audit-and-savings-prep-pack.html",
+      "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: Translation and Localization Draft Pack",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/translation-and-localization-draft-pack.html",
+      "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
+      "@type": "CreativeWork",
+      "additionalType": "payment_activation_route",
+      "name": "Invoice draft: First $100 Product Bundle",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/first-100-product-bundle.html",
+      "description": "$100 service invoice draft for an external seller-owned payment route."
+    },
+    {
       "@context": "https://schema.org",
       "@type": "Product",
       "additionalType": "first_100_product_bundle",
@@ -2646,6 +2766,14 @@
         "priceCurrency": "USD",
         "availability": "https://schema.org/PreOrder"
       }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "First $100 Product Bundle Marketplace Listing Packet",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html",
+      "image": "https://jaxassistant55.github.io/jax-micro-offer-studio/assets/first-100-product-bundle-cover.png",
+      "description": "Marketplace listing packet and seller handoff materials for the First $100 Product Bundle.",
+      "isRelatedTo": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
     },
     {
       "@context": "https://schema.org",
@@ -3126,7 +3254,7 @@
               "@type": "Offer",
               "priceCurrency": "USD",
               "price": 100.0,
-              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25",
+              "url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml",
               "availability": "https://schema.org/InStock"
             }
           }
@@ -3357,134 +3485,6 @@
         }
       ],
       "additionalType": "paid_offer_action_catalog"
-    },
-    {
-      "@type": "WebApplication",
-      "additionalType": "payment_activation_route",
-      "name": "Payment Activation",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
-      "description": "Browser-only payment-message generator for seller-owned payment routes. It does not process payments.",
-      "applicationCategory": "BusinessApplication"
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Static Demo Site Customization",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/static-demo-site-customization.html",
-      "description": "$200 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Local SEO / GBP Audit",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/local-seo-gbp-audit.html",
-      "description": "$175 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: AI Workflow Tracker Sprint",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/ai-workflow-tracker-sprint.html",
-      "description": "$150 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Niche Quote Estimator",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/niche-quote-estimator.html",
-      "description": "$150 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Technical Docs Cleanup",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/technical-docs-cleanup.html",
-      "description": "$150 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Website Audit Microservice",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/website-audit-microservice.html",
-      "description": "$150 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Client Intake and SOP Package",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/client-intake-and-sop-package.html",
-      "description": "$125 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Data Cleanup Sprint",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/data-cleanup-sprint.html",
-      "description": "$125 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: PDF/Table Extraction",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/pdf-table-extraction.html",
-      "description": "$125 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Resume / LinkedIn / Interview Pack",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/resume-linkedin-interview-pack.html",
-      "description": "$125 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Automation Blueprint",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/automation-blueprint.html",
-      "description": "$100 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Content Repurposing Sprint",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/content-repurposing-sprint.html",
-      "description": "$100 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Resale Listing and Price Research Pack",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/resale-listing-and-price-research-pack.html",
-      "description": "$100 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Subscription Audit and Savings Prep Pack",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/subscription-audit-and-savings-prep-pack.html",
-      "description": "$100 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: Translation and Localization Draft Pack",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/translation-and-localization-draft-pack.html",
-      "description": "$100 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "additionalType": "payment_activation_route",
-      "name": "Invoice draft: First $100 Product Bundle",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/service-invoice-drafts/first-100-product-bundle.html",
-      "description": "$100 service invoice draft for an external seller-owned payment route."
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "First $100 Product Bundle Marketplace Listing Packet",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html",
-      "image": "https://jaxassistant55.github.io/jax-micro-offer-studio/assets/first-100-product-bundle-cover.png",
-      "description": "Marketplace listing packet and seller handoff materials for the First $100 Product Bundle.",
-      "isRelatedTo": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
     }
   ]
 }
