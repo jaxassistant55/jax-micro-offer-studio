@@ -1,0 +1,183 @@
+{
+  "generated_at_jst": "2026-06-11 15:52:56 JST",
+  "title": "First $100 Product Bundle",
+  "price": "$100",
+  "amount_usd": 100,
+  "component_count": 15,
+  "component_list_value_usd": 278.0,
+  "artifact": "first-100-product-bundle.zip",
+  "zip_bytes": 202554,
+  "zip_sha256": "4153cd5e7a39775172250056255a3431101beaff3e0bae59bd36651b77e280c4",
+  "public_file_policy": "Paid ZIP is local only and is not uploaded publicly.",
+  "issue_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25",
+  "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
+  "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+  "money_confirmed_usd": 0,
+  "components": [
+    {
+      "title": "HTML5 Micro Game Kit",
+      "slug": "html5-micro-game-kit",
+      "list_price": "$19",
+      "list_amount_usd": "19.0",
+      "artifact": "html5-micro-game-kit.zip",
+      "bytes": "4219",
+      "sha256": "1e083fe8edec9c322e59c6e923e3c707ee644271dec9da68b24876e2d2c188d0",
+      "source_dir": "non_bounty/autonomous_products/html5_micro_game",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/html5-micro-game-kit.html"
+    },
+    {
+      "title": "Procedural SFX Pack",
+      "slug": "procedural-sfx-pack",
+      "list_price": "$12",
+      "list_amount_usd": "12.0",
+      "artifact": "procedural-sfx-pack.zip",
+      "bytes": "118779",
+      "sha256": "25cd20aa0e91bda22428ff5b228ea092822c95dbb3ad763cbe9fa2b10b6ec721",
+      "source_dir": "non_bounty/autonomous_products/procedural_sfx_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/procedural-sfx-pack.html"
+    },
+    {
+      "title": "SVG Icon Pack",
+      "slug": "svg-icon-pack",
+      "list_price": "$15",
+      "list_amount_usd": "15.0",
+      "artifact": "svg-icon-pack.zip",
+      "bytes": "16586",
+      "sha256": "71f39ee997257d2ac1457ede2154ed01dc8426079d5220b727ebf0c8256bf8da",
+      "source_dir": "non_bounty/autonomous_products/svg_icon_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-icon-pack.html"
+    },
+    {
+      "title": "Printable Puzzle and Planner Pack",
+      "slug": "printable-puzzle-and-planner-pack",
+      "list_price": "$14",
+      "list_amount_usd": "14.0",
+      "artifact": "printable-puzzle-planner-pack.zip",
+      "bytes": "4130",
+      "sha256": "b3efda9f239e8a9a54a19f7106fd102a12a760a062ca795120674822214c6100",
+      "source_dir": "non_bounty/autonomous_products/printable_puzzle_planner_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/printable-puzzle-and-planner-pack.html"
+    },
+    {
+      "title": "Synthetic Mock Dataset Pack",
+      "slug": "synthetic-mock-dataset-pack",
+      "list_price": "$19",
+      "list_amount_usd": "19.0",
+      "artifact": "synthetic-mock-dataset-pack.zip",
+      "bytes": "5971",
+      "sha256": "a978013901209e08a87bfce4f10e7bf1a928b7f14e0c26f141ef71bf9e35db1a",
+      "source_dir": "non_bounty/autonomous_products/synthetic_mock_dataset_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/synthetic-mock-dataset-pack.html"
+    },
+    {
+      "title": "Browser Extension Template",
+      "slug": "browser-extension-template",
+      "list_price": "$29",
+      "list_amount_usd": "29.0",
+      "artifact": "browser-extension-template.zip",
+      "bytes": "3932",
+      "sha256": "a566c5b796a89291aadb0f10207c40b812305224d37f50d240a147ffc93a391e",
+      "source_dir": "non_bounty/autonomous_products/browser_extension_template",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/browser-extension-template.html"
+    },
+    {
+      "title": "CSV CLI Toolkit",
+      "slug": "csv-cli-toolkit",
+      "list_price": "$19",
+      "list_amount_usd": "19.0",
+      "artifact": "csv-cli-toolkit.zip",
+      "bytes": "2835",
+      "sha256": "27af54e036dc6db90cef4a19fb0b8cc982200f9d28c6c59474540a01bfe408d7",
+      "source_dir": "non_bounty/autonomous_products/csv_cli_toolkit",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/csv-cli-toolkit.html"
+    },
+    {
+      "title": "CSS Component Pack",
+      "slug": "css-component-pack",
+      "list_price": "$19",
+      "list_amount_usd": "19.0",
+      "artifact": "css-component-pack.zip",
+      "bytes": "3228",
+      "sha256": "d6e57d2470a3bc64a4e9a9206daad0fb0a2ec99d8d0b8db424fd90a4f19f579d",
+      "source_dir": "non_bounty/autonomous_products/css_component_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/css-component-pack.html"
+    },
+    {
+      "title": "SVG Wallpaper Pattern Pack",
+      "slug": "svg-wallpaper-pattern-pack",
+      "list_price": "$9",
+      "list_amount_usd": "9.0",
+      "artifact": "svg-wallpaper-pattern-pack.zip",
+      "bytes": "15622",
+      "sha256": "c664c678fb0f10fb76a0bde61b4fb8219793eac1f83fc08cfd7581da66019886",
+      "source_dir": "non_bounty/autonomous_products/svg_wallpaper_pattern_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/svg-wallpaper-pattern-pack.html"
+    },
+    {
+      "title": "Anki-Ready Flashcard Deck",
+      "slug": "anki-ready-flashcard-deck",
+      "list_price": "$12",
+      "list_amount_usd": "12.0",
+      "artifact": "anki-flashcard-deck.zip",
+      "bytes": "2709",
+      "sha256": "09af3f5def1838349266e00e9fde1357f9b6669f78e4eef007f6554327baff53",
+      "source_dir": "non_bounty/autonomous_products/anki_flashcard_deck",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/anki-ready-flashcard-deck.html"
+    },
+    {
+      "title": "Mini Course Workbook",
+      "slug": "mini-course-workbook",
+      "list_price": "$29",
+      "list_amount_usd": "29.0",
+      "artifact": "mini-course-workbook.zip",
+      "bytes": "3662",
+      "sha256": "0d3404f904c58dd237732f440073be326afb3779482f3b5ae2cc017bec4fda1a",
+      "source_dir": "non_bounty/autonomous_products/mini_course_workbook",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/mini-course-workbook.html"
+    },
+    {
+      "title": "JSON Schema Fixture Pack",
+      "slug": "json-schema-fixture-pack",
+      "list_price": "$15",
+      "list_amount_usd": "15.0",
+      "artifact": "json-schema-fixture-pack.zip",
+      "bytes": "3482",
+      "sha256": "27323022e4f99f611ccdffc350830450a578cdca1c9b2c84b8fa2db698b506d8",
+      "source_dir": "non_bounty/autonomous_products/json_schema_fixture_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/json-schema-fixture-pack.html"
+    },
+    {
+      "title": "Invoice and Expense Tracker Template",
+      "slug": "invoice-and-expense-tracker-template",
+      "list_price": "$19",
+      "list_amount_usd": "19.0",
+      "artifact": "invoice-expense-tracker-kit.zip",
+      "bytes": "4084",
+      "sha256": "49e4bbdb0e4ce190e81e9db5ff75a9223b1376dd2707db6568418de4587aa087",
+      "source_dir": "non_bounty/invoice_expense_tracker",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/invoice-and-expense-tracker-template.html"
+    },
+    {
+      "title": "Prompt Workflow Pack",
+      "slug": "prompt-workflow-pack",
+      "list_price": "$19",
+      "list_amount_usd": "19.0",
+      "artifact": "prompt-workflow-pack-kit.zip",
+      "bytes": "3612",
+      "sha256": "59ca9ef2a449c8726fbde504de95f67765c613b25e209844739090f30662ceeb",
+      "source_dir": "non_bounty/prompt_workflow_pack",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/prompt-workflow-pack.html"
+    },
+    {
+      "title": "Sales Enablement Kit",
+      "slug": "sales-enablement-kit",
+      "list_price": "$29",
+      "list_amount_usd": "29.0",
+      "artifact": "sales-enablement-kit.zip",
+      "bytes": "3639",
+      "sha256": "9541482cb0263e5409363fd32532ae413011fd1dc6383ef81e7c61432ef50042",
+      "source_dir": "non_bounty/sales_enablement",
+      "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/sales-enablement-kit.html"
+    }
+  ]
+}
