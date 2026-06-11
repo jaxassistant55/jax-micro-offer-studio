@@ -227,6 +227,33 @@ end
   }
 end
 
+[
+  ["paid-offer-action-catalog-v1.zip", "Paid Offer Action Catalog v1 bundle release asset"],
+  ["paid-offer-action-catalog.json", "Paid Offer Action Catalog JSON release asset"],
+  ["paid-offer-action-catalog.csv", "Paid Offer Action Catalog CSV release asset"],
+  ["paid-offer-action-catalog-release-manifest.csv", "Paid Offer Action Catalog manifest release asset"]
+].each do |asset_name, title|
+  catalog_release = release_asset_download_count(REPO, "paid-offer-action-catalog-v1", asset_name)
+  rows << {
+    "checked_at_jst" => GENERATED_AT,
+    "kind" => "paid_catalog_release_asset",
+    "repo" => REPO,
+    "signal_id" => "paid-offer-action-catalog-v1:#{asset_name}",
+    "title" => title,
+    "price" => "various",
+    "first_100_path" => "Any one verified $100+ paid order routed through the catalog reaches the first $100 target before fees/refunds.",
+    "url" => catalog_release["url"],
+    "state" => catalog_release["count"].positive? ? "download_count_present" : "release_live_no_downloads",
+    "issue_comments" => 0,
+    "release_downloads" => catalog_release["count"],
+    "labels" => ["release-asset", "paid-action-catalog", "interest-only", catalog_release["asset_url"].to_s].reject(&:empty?).join("|"),
+    "proof_status" => catalog_release["count"].positive? ? "catalog_release_download_interest_no_buyer_or_payment_proof" : "catalog_release_live_no_buyer_or_payment_proof",
+    "money_confirmed_usd" => "0",
+    "money_count_rule" => "Catalog release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html"
+  }
+end
+
 CSV.open(File.join(LAUNCH_ROOT, "proof_monitor.csv"), "w", write_headers: true, headers: HEADERS) do |csv|
   rows.each { |row| csv << HEADERS.map { |header| row[header] } }
 end
