@@ -12,6 +12,14 @@ Paid offer action catalog:
 - Release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
 - CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv
 
+First $100 Product Bundle:
+- Bundle page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
+- Public order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25
+- Structured ready-to-buy form: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml
+- Marketplace listing packet: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html
+- Public manifest: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.json
+- Money rule: count $0 from issues, comments, page views, stars, downloads, or release assets until accepted product-transfer terms, seller-controlled external payment proof, private delivery proof, and posted/released/payable/cleared payout status exist.
+
 First $100 Fast Start:
 - Page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html
 - Order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24

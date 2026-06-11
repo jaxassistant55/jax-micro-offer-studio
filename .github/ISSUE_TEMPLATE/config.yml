@@ -43,9 +43,9 @@ contact_links:
 - name: Fulfillment ledger
   url: https://jaxassistant55.github.io/jax-micro-offer-studio/fulfillment.html
   about: Check ready artifacts and local bundle checksums.
-- name: First $100 order board
-  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
-  about: Comment on the current exact $100 order board.
+- name: First $100 Product Bundle order board
+  url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25
+  about: Use the public-safe $100 product-bundle transfer board; payment and private delivery stay external.
 - name: Mini Course Workbook ready-to-buy
   url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-buy-mini-course-workbook.yml
   about: Use the structured $29 product transfer intake before external payment and

@@ -21,7 +21,8 @@ INDEXNOW_KEY = ENV.fetch("PUBLIC_LAUNCH_INDEXNOW_KEY", "32ac58c2-053a-4ba2-ba9a-
 INDEXNOW_KEY_FILE = "#{INDEXNOW_KEY}.txt"
 INDEXNOW_KEY_LOCATION = URI.join(SITE_URL, INDEXNOW_KEY_FILE).to_s
 ISSUE_URL = "#{REPO_URL}/issues/new?template=paid-inquiry.yml"
-ISSUE_BOARD_URL = "#{REPO_URL}/issues/24"
+ISSUE_BOARD_URL = "#{REPO_URL}/issues/25"
+FAST_START_ISSUE_BOARD_URL = "#{REPO_URL}/issues/24"
 NEW_ISSUE_URL = "#{REPO_URL}/issues/new"
 
 def h(value)
@@ -465,7 +466,7 @@ def write_sample_pack(offers)
     This free sample pack demonstrates the type of public, low-risk material available from Micro Offer Studio. It is not the full paid product bundle and is not proof of earnings.
 
     Full fulfillment ledger: #{SITE_URL}fulfillment.html
-    First $100 Fast Start board: #{ISSUE_BOARD_URL}
+    First $100 Fast Start board: #{FAST_START_ISSUE_BOARD_URL}
   MD
 
   sample_files << ["pricing_sample.csv", CSV.generate do |csv|
@@ -828,10 +829,15 @@ ready_to_buy_index_title = "Ready To Buy Routes - Micro Offer Studio"
 ready_to_buy_index_description = "High-intent buyer routes for one-sale service offers that can reach at least $100 before fees and refunds."
 File.write(File.join(DOCS, "ready-to-buy.html"), page_shell(ready_to_buy_index_title, <<~HTML, share_meta(title: ready_to_buy_index_title, description: ready_to_buy_index_description, url: absolute_url("ready-to-buy.html")) + jsonld_script(ready_to_buy_schema)))
   <header>
-    <p class="buttons"><a href="index.html">Home</a><a href="buyer-intent-router.html">Buyer intent router</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a></p>
+    <p class="buttons"><a href="paid-offer-action-catalog.html">Paid offer action catalog</a><a href="first-100-product-bundle.html">First $100 Product Bundle</a><a href="first-100-fast-start.html">First $100 Fast Start</a><a href="index.html">Home</a><a href="buyer-intent-router.html">Buyer intent router</a><a href="order-now.html">Order now</a><a href="payment-activation">Payment activation</a><a href="github-leads.html">GitHub leads</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a></p>
     <h1>Ready To Buy Routes</h1>
     <p class="muted">High-intent pages for the closest one-sale paths to $100+. Each route sends a buyer to a prefilled inquiry, preview, order board, and proof rule. These pages still do not process payment.</p>
   </header>
+  <section id="first-100-product-bundle" class="notice">
+    <h2>First $100 Product Bundle</h2>
+    <p>Use this route for one $100 private product-bundle transfer. The paid ZIP is not attached publicly; intake stays public-safe and payment, delivery, and proof happen only through seller-controlled external routes.</p>
+    <p class="buttons"><a href="first-100-product-bundle.html">Open bundle page</a><a href="#{h(ISSUE_BOARD_URL)}">Order board #25</a><a href="#{h(NEW_ISSUE_URL)}?template=first-100-product-bundle.yml">Structured ready-to-buy form</a><a href="first-100-product-bundle-marketplace.html">Marketplace packet</a><a href="payment-activation">Payment activation</a><a href="proof-monitor.html">Proof monitor</a></p>
+  </section>
   <section class="notice">
     <h2>Payment Boundary</h2>
     <p>Start here only when a real buyer is ready to scope a paid request. GitHub issues, page views, previews, stars, and downloads count as $0. Count money only after external payment is posted, released, payable, or cleared.</p>
@@ -3524,7 +3530,8 @@ File.write(File.join(LAUNCH_ROOT, "README.md"), <<~MD)
   - RSS feed: #{SITE_URL}feed.xml
   - Search index: #{SITE_URL}search-index.json
   - Structured data graph: #{SITE_URL}structured-data.json
-  - First $100 Fast Start board: #{ISSUE_BOARD_URL}
+  - First $100 Product Bundle board: #{ISSUE_BOARD_URL}
+  - First $100 Fast Start board: #{FAST_START_ISSUE_BOARD_URL}
   - Pricing page: #{SITE_URL}pricing.html
   - Case studies: #{SITE_URL}case-studies.html
   - Sample pack: #{SITE_URL}micro-offer-studio-sample-pack.zip
@@ -3566,7 +3573,7 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "first-100-fast-s
           #{SITE_URL}first-100-fast-start.html
 
           Order board:
-          https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+          #{FAST_START_ISSUE_BOARD_URL}
 
           Payment activation after scope acceptance:
           #{SITE_URL}payment-activation
@@ -3772,9 +3779,22 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "ready-to-pay.md"
 
   ## Ready-to-pay intake
 
+  Paid offer action catalog:
+  - Catalog: #{SITE_URL}paid-offer-action-catalog.html
+  - Release/assets: #{REPO_URL}/releases/tag/paid-offer-action-catalog-v1
+  - CSV: #{SITE_URL}paid-offer-action-catalog.csv
+
+  First $100 Product Bundle:
+  - Bundle page: #{SITE_URL}first-100-product-bundle.html
+  - Public order board: #{ISSUE_BOARD_URL}
+  - Structured ready-to-buy form: #{NEW_ISSUE_URL}?template=first-100-product-bundle.yml
+  - Marketplace listing packet: #{SITE_URL}first-100-product-bundle-marketplace.html
+  - Public manifest: #{SITE_URL}first-100-product-bundle.json
+  - Money rule: count $0 from issues, comments, page views, stars, downloads, or release assets until accepted product-transfer terms, seller-controlled external payment proof, private delivery proof, and posted/released/payable/cleared payout status exist.
+
   First $100 Fast Start:
   - Page: #{SITE_URL}first-100-fast-start.html
-  - Order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+  - Order board: #{FAST_START_ISSUE_BOARD_URL}
   - Release CSV: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/download/first-100-fast-start-v1/first_100_fast_start.csv
 
   Observed preview-download close rooms, if they match your request:
@@ -3834,9 +3854,9 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<
     - name: Fulfillment ledger
       url: #{SITE_URL}fulfillment.html
       about: Check ready artifacts and local bundle checksums.
-    - name: First $100 order board
-      url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
-      about: Comment on the current exact $100 order board.
+    - name: First $100 Product Bundle order board
+      url: #{ISSUE_BOARD_URL}
+      about: Use the public-safe $100 product-bundle transfer board; payment and private delivery stay external.
 YAML
 
 File.write(File.join(LAUNCH_ROOT, ".gitignore"), <<~TXT)
