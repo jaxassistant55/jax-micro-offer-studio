@@ -294,6 +294,12 @@ html = <<~HTML
         <p class="muted">Generated #{h(GENERATED_AT)}. This monitor checks public issue boards, standalone repo order boards, and observed release download interest. It does not infer income from pages, downloads, stars, forks, or comments.</p>
       </header>
 
+      <section id="first-100-fast-start" class="notice">
+        <h2>First $100 Fast Start</h2>
+        <p>A fixed-scope $100 route is available for buyers who want one clear starter order without negotiating a larger package. It offers four mini scopes, sample deliverables, and routes payment through the existing payment-activation boundary.</p>
+        <p class="buttons"><a href="first-100-fast-start.html">Open First $100 Fast Start</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24">Order board #24</a><a href="payment-activation/">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="first-100-sample-pack.zip">Sample pack</a></p>
+      </section>
+
       <section class="notice">
         <h2>Confirmed Money: $0</h2>
         <p>Every row stays at $0 until external paid order, cleared invoice, funded milestone, payable balance, posted refund/credit, or equivalent proof exists.</p>
