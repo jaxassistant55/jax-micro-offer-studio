@@ -41,6 +41,12 @@ These are the closest current public paths because their preview ZIPs have downl
 - Local SEO GBP Audit Starter ($175): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html
 - PDF Table Extraction Starter ($125): https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html
 
+Each hot close room now includes a ready-to-pay issue link, sample proof, buyer acceptance checklist, payment activation route, proof-folder guidance, and the exact money-counting boundary.
+
+- First $100 sample proof: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-sample-pack/README.md
+- Payment activation: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+- Download follow-up: https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html
+
 ## Fastest $100 paths
 
 - Website Audit Microservice ($150): One accepted audit clears $100.
