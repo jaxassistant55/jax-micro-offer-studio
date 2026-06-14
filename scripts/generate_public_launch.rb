@@ -21,7 +21,9 @@ INDEXNOW_KEY = ENV.fetch("PUBLIC_LAUNCH_INDEXNOW_KEY", "32ac58c2-053a-4ba2-ba9a-
 INDEXNOW_KEY_FILE = "#{INDEXNOW_KEY}.txt"
 INDEXNOW_KEY_LOCATION = URI.join(SITE_URL, INDEXNOW_KEY_FILE).to_s
 ISSUE_URL = "#{REPO_URL}/issues/new?template=paid-inquiry.yml"
-ISSUE_BOARD_URL = "#{REPO_URL}/issues/24"
+PRODUCT_BUNDLE_BOARD_URL = "#{REPO_URL}/issues/25"
+FAST_START_BOARD_URL = "#{REPO_URL}/issues/24"
+ISSUE_BOARD_URL = PRODUCT_BUNDLE_BOARD_URL
 NEW_ISSUE_URL = "#{REPO_URL}/issues/new"
 
 def h(value)
@@ -845,7 +847,7 @@ end
 
 index_body = <<~HTML
   <header>
-    <p class="buttons"><a href="first-100-fast-start.html">First $100 Fast Start</a><a href="buyer-intent-router.html">Buyer intent router</a><a href="ready-to-buy.html">Ready to buy</a><a href="close-service-order.html">Close order</a><a href="delivery-acceptance.html">Delivery acceptance</a><a href="buyer-response-playbook.html">Buyer response autopilot</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-now.html">Order now</a><a href="payment-activation">Payment activation</a><a href="github-leads.html">GitHub leads</a><a href="download-followup.html">Download follow-up</a><a href="hot-download-close-local-seo-gbp-audit-starter.html">Hot Local SEO close</a><a href="hot-download-close-pdf-table-extraction-starter.html">Hot PDF close</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
+    <p class="buttons"><a href="first-100-product-bundle.html">First $100 Product Bundle</a><a href="first-100-fast-start.html">First $100 Fast Start</a><a href="buyer-intent-router.html">Buyer intent router</a><a href="ready-to-buy.html">Ready to buy</a><a href="close-service-order.html">Close order</a><a href="delivery-acceptance.html">Delivery acceptance</a><a href="buyer-response-playbook.html">Buyer response autopilot</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-now.html">Order now</a><a href="payment-activation">Payment activation</a><a href="github-leads.html">GitHub leads</a><a href="download-followup.html">Download follow-up</a><a href="hot-download-close-local-seo-gbp-audit-starter.html">Hot Local SEO close</a><a href="hot-download-close-pdf-table-extraction-starter.html">Hot PDF close</a><a href="start-order.html">Start order</a><a href="case-studies.html">Case studies</a><a href="samples.html">Samples</a><a href="order-boards.html">Order boards</a><a href="proof-monitor.html">Proof monitor</a><a href="fulfillment.html">Fulfillment</a><a href="proof.html">Proof rules</a><a href="proposals.html">Proposal copy</a><a href="buyer-faq.html">Buyer FAQ</a><a href="share-kit.html">Share kit</a><a href="#request">Request work</a><a href="#{h(ISSUE_BOARD_URL)}">First $100 board</a><a href="source-notes.html">Source notes</a></p>
     <h1>Micro Offer Studio</h1>
     <p class="muted">A public launch page for generated digital products and productized micro-services prepared during the autonomous earning run. Checkout is not connected here; use the inquiry link for a paid request, custom scope, or storefront transfer.</p>
   </header>
@@ -867,7 +869,7 @@ index_body = <<~HTML
   <section id="request" class="panel">
     <h2>Request Work Or A Product Bundle</h2>
     <p>Open a GitHub issue with the offer name, desired scope, deadline, and proof/payment preference. Do not include private credentials, financial details, medical/legal information, or files you are not authorized to share.</p>
-    <p class="buttons"><a href="buyer-intent-router.html">Choose by buyer problem</a><a href="ready-to-buy.html">Open ready-to-buy routes</a><a href="buyer-response-playbook.html">Buyer response autopilot</a><a href="order-now.html">Open direct order boards</a><a href="start-order.html">Build ready-to-pay issue</a><a href="github-leads.html">Open GitHub lead repos</a><a href="#{h(ISSUE_BOARD_URL)}">Open first $100 request board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
+    <p class="buttons"><a href="first-100-product-bundle.html">Open product bundle</a><a href="#{h(PRODUCT_BUNDLE_BOARD_URL)}">Open bundle board</a><a href="buyer-intent-router.html">Choose by buyer problem</a><a href="ready-to-buy.html">Open ready-to-buy routes</a><a href="buyer-response-playbook.html">Buyer response autopilot</a><a href="order-now.html">Open direct order boards</a><a href="start-order.html">Build ready-to-pay issue</a><a href="github-leads.html">Open GitHub lead repos</a><a href="#{h(FAST_START_BOARD_URL)}">Open service fast-start board</a><a href="order-boards.html">Open focused order boards</a><a href="#{h(ISSUE_URL)}">Open paid inquiry issue</a><a href="samples.html">Download samples</a><a href="fulfillment.html">See fulfillment ledger</a><a href="#{h(REPO_URL)}">View GitHub repo</a></p>
   </section>
 HTML
 site_schema = {
@@ -3333,7 +3335,8 @@ HTML
 if ORDER_BOARDS.any?
   FileUtils.cp(ORDER_BOARDS_PATH, File.join(DOCS, "order_boards.csv"))
   File.write(File.join(DOCS, "order-boards.html"), page_shell("Order Boards - Micro Offer Studio", <<~HTML))
-    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a><a href="order_boards.csv">CSV</a></p><h1>Focused Order Boards</h1><p class="muted">Specific public issue threads for the fastest $100 routes. These are owned-repo order boards, not third-party outreach. Money still requires external buyer/payment proof.</p></header>
+    <header><p class="buttons"><a href="index.html">Home</a><a href="first-100-product-bundle.html">First $100 Product Bundle</a><a href="first-100-fast-start.html">First $100 Fast Start</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a><a href="order_boards.csv">CSV</a></p><h1>Focused Order Boards</h1><p class="muted">Specific public issue threads for the fastest $100 routes. These are owned-repo order boards, not third-party outreach. Money still requires external buyer/payment proof.</p></header>
+    <section class="notice"><h2>Start With The Product Bundle Board</h2><p>The First $100 Product Bundle is the shortest one-sale product path: one verified $100 private bundle transfer reaches the target before fees/refunds. The paid ZIP is not public; transfer only after accepted terms, seller-owned external payment proof, and private delivery proof.</p><p class="buttons"><a href="first-100-product-bundle.html">Open bundle page</a><a href="#{h(PRODUCT_BUNDLE_BOARD_URL)}">Open issue #25</a><a href="#{h(NEW_ISSUE_URL)}?template=first-100-product-bundle.yml">Structured ready-to-buy form</a><a href="first-100-fast-start.html">Service fast-start alternative</a></p></section>
     <section class="notice"><h2>Current money status</h2><p>All listed boards are public inquiry surfaces. They count as $0 until a buyer comments, scope is accepted, and payment/payout proof exists.</p></section>
     <section><table><thead><tr><th>Issue</th><th>Offer</th><th>Type</th><th>Price</th><th>Path to $100</th><th>State</th><th>Comments</th></tr></thead><tbody>#{order_board_rows(ORDER_BOARDS)}</tbody></table></section>
   HTML
@@ -3566,7 +3569,7 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "first-100-fast-s
           #{SITE_URL}first-100-fast-start.html
 
           Order board:
-          https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+          #{FAST_START_BOARD_URL}
 
           Payment activation after scope acceptance:
           #{SITE_URL}payment-activation
@@ -3772,9 +3775,17 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "ready-to-pay.md"
 
   ## Ready-to-pay intake
 
+  First $100 Product Bundle:
+  - Bundle page: #{SITE_URL}first-100-product-bundle.html
+  - Public order board: #{PRODUCT_BUNDLE_BOARD_URL}
+  - Structured ready-to-buy form: #{NEW_ISSUE_URL}?template=first-100-product-bundle.yml
+  - Marketplace listing packet: #{SITE_URL}first-100-product-bundle-marketplace.html
+  - Public manifest: #{SITE_URL}first-100-product-bundle.json
+  - Money rule: count $0 from issues, comments, page views, stars, downloads, or release assets until accepted product-transfer terms, seller-controlled external payment proof, private delivery proof, and posted/released/payable/cleared payout status exist.
+
   First $100 Fast Start:
   - Page: #{SITE_URL}first-100-fast-start.html
-  - Order board: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
+  - Order board: #{FAST_START_BOARD_URL}
   - Release CSV: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/download/first-100-fast-start-v1/first_100_fast_start.csv
 
   Observed preview-download close rooms, if they match your request:
@@ -3834,9 +3845,12 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<
     - name: Fulfillment ledger
       url: #{SITE_URL}fulfillment.html
       about: Check ready artifacts and local bundle checksums.
-    - name: First $100 order board
-      url: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24
-      about: Comment on the current exact $100 order board.
+    - name: First $100 Product Bundle order board
+      url: #{PRODUCT_BUNDLE_BOARD_URL}
+      about: Use the public-safe $100 product-bundle transfer board; payment and private delivery stay external.
+    - name: First $100 Fast Start order board
+      url: #{FAST_START_BOARD_URL}
+      about: Use the $100 fixed-scope service starter board.
 YAML
 
 File.write(File.join(LAUNCH_ROOT, ".gitignore"), <<~TXT)
