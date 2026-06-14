@@ -77,6 +77,8 @@ end
 def non_buyer_claim_text?(text)
   normalized = text.to_s.downcase
   return true if normalized.include?("/bounty")
+  return true if normalized.include?("bounty:") && (normalized.include?("automated") || normalized.include?("ai agent") || normalized.include?("ai fix"))
+  return true if normalized.include?("[ai fix]") && normalized.include?("order board:")
   return true if normalized.include?("[claim]") && (normalized.include?("bounty") || normalized.include?("wallet"))
   return true if normalized.include?("wallet") && normalized.include?("base usdc")
 
