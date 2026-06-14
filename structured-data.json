@@ -112,6 +112,11 @@
             "priceCurrency": "USD",
             "price": 19.0
           }
+        },
+        {
+          "@type": "WebPage",
+          "name": "First $100 Product Bundle Terms and Acceptance",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html"
         }
       ]
     },
@@ -3492,6 +3497,22 @@
       "name": "Buyer Response Autopilot",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html",
       "description": "Safe workflow and playbook for responding to legitimate paid buyer issues."
+    },
+    {
+      "@type": "WebPage",
+      "name": "First $100 Product Bundle Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html",
+      "description": "Exact buyer acceptance statement, seller-owned payment gate, private delivery checklist, and proof requirements for the $100 product bundle.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "about": {
+        "@type": "Product",
+        "name": "First $100 Product Bundle",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
+      }
     }
   ]
 }

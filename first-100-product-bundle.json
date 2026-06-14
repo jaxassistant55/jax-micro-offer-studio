@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 17:23:48 JST",
+  "generated_at_jst": "2026-06-14 10:04:03 JST",
   "title": "First $100 Product Bundle",
   "price": "$100",
   "amount_usd": 100,
@@ -179,5 +179,9 @@
       "source_dir": "non_bounty/sales_enablement",
       "offer_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/sales-enablement-kit.html"
     }
-  ]
+  ],
+  "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html",
+  "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.csv",
+  "acceptance_statement_template": "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment.",
+  "money_count_rule": "Count $0 unless a real buyer accepts terms, pays through a seller-owned external route, receives private delivery, and funds are posted, released, payable, or cleared."
 }

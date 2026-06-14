@@ -1,8 +1,35 @@
 {
-  "generated_at_jst": "2026-06-11 17:32:15 JST",
+  "generated_at_jst": "2026-06-14 10:04:03 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "product-transfer-terms",
+      "title": "First $100 Product Bundle Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html",
+      "description": "Exact buyer acceptance statement, seller-owned payment gate, private delivery checklist, and proof requirements for the $100 product bundle.",
+      "tags": [
+        "first-100",
+        "product-bundle",
+        "terms",
+        "acceptance",
+        "payment-proof",
+        "private-delivery"
+      ]
+    },
+    {
+      "type": "csv",
+      "title": "First $100 Product Bundle Terms CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.csv",
+      "description": "Step-by-step CSV for bundle acceptance, payment proof, private delivery, and money-counting gates.",
+      "tags": [
+        "first-100",
+        "product-bundle",
+        "csv",
+        "terms",
+        "proof"
+      ]
+    },
     {
       "type": "catalog",
       "title": "Paid Offer Action Catalog",

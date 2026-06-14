@@ -116,3 +116,8 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 - Payment link template CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/payment_links_template.csv
 - Service invoice drafts CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/service_invoice_drafts.csv
 - Boundary: this page generates payment messages only; count money only after external payment proof exists.
+## First $100 Product Bundle Terms
+- Terms and acceptance close page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html
+- Terms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.csv
+- Exact buyer acceptance: I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment.
+- Boundary: count $0 unless a real buyer accepts terms, pays through a seller-owned external route, receives private delivery, and funds are posted, released, payable, or cleared.
