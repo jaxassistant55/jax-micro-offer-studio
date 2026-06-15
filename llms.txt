@@ -121,3 +121,9 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 - Terms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.csv
 - Exact buyer acceptance: I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment.
 - Boundary: count $0 unless a real buyer accepts terms, pays through a seller-owned external route, receives private delivery, and funds are posted, released, payable, or cleared.
+
+## First $100 Fast Start Terms
+- Terms and acceptance close page: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.html
+- Terms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.csv
+- Exact buyer acceptance: I accept the First $100 Fast Start fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive inputs; the selected starter scope is limited to the deliverable described on the First $100 Fast Start page; and custom implementation, account login work, credential handling, regulated advice, paid ads, purchasing, ongoing support, or extra revisions are not included unless separately agreed before payment.
+- Boundary: count $0 unless a real buyer accepts scope, pays through a seller-owned external route, receives delivery, and funds are posted, released, payable, or cleared.

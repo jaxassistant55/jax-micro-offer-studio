@@ -1,8 +1,35 @@
 {
-  "generated_at_jst": "2026-06-14 10:04:03 JST",
+  "generated_at_jst": "2026-06-15 23:28:43 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "service-terms",
+      "title": "First $100 Fast Start Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.html",
+      "description": "Exact buyer acceptance statement, seller-owned payment gate, fixed-scope delivery checklist, and proof requirements for the $100 Fast Start.",
+      "tags": [
+        "first-100",
+        "fast-start",
+        "terms",
+        "acceptance",
+        "payment-proof",
+        "service"
+      ]
+    },
+    {
+      "type": "csv",
+      "title": "First $100 Fast Start Terms CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.csv",
+      "description": "Step-by-step CSV for fixed-scope acceptance, payment proof, delivery, and money-counting gates.",
+      "tags": [
+        "first-100",
+        "fast-start",
+        "csv",
+        "terms",
+        "proof"
+      ]
+    },
     {
       "type": "product-transfer-terms",
       "title": "First $100 Product Bundle Terms and Acceptance",
