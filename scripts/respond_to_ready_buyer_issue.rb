@@ -10,6 +10,8 @@ CATALOG_PATH = File.join(DOCS, "paid-offer-action-catalog.json")
 SITE = "https://jaxassistant55.github.io/jax-micro-offer-studio/"
 PAYMENT_ACTIVATION = "#{SITE}payment-activation"
 PROOF_MONITOR = "#{SITE}proof-monitor.html"
+PRODUCT_BUNDLE_TERMS = "#{SITE}first-100-product-bundle-terms.html"
+PRODUCT_BUNDLE_ACCEPTANCE = "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment."
 MARKER = "<!-- micro-offer-studio:buyer-response:v1 -->"
 ASSISTANT_AUTHORS = %w[jaxassistant55 github-actions[bot]].freeze
 RESPONSE_LABELS = {
@@ -116,6 +118,21 @@ def catalog_match(issue, repo)
   end || candidates.first || {}
 end
 
+def first_100_product_bundle?(issue, matched_row)
+  text = [
+    issue["title"],
+    issue["body"],
+    matched_row["catalog_row_id"],
+    matched_row["title"],
+    matched_row["primary_url"],
+    matched_row["structured_form_url"]
+  ].join("\n").downcase
+
+  text.include?("first $100 product bundle") ||
+    text.include?("first-100-product-bundle") ||
+    text.include?("central-first-100-product-bundle")
+end
+
 def existing_response?(repo, number)
   return false if dry_run?
 
@@ -165,6 +182,18 @@ def response_body(issue, matched_row)
   detail_url = matched_row["primary_url"].to_s.empty? ? "#{SITE}paid-offer-action-catalog.html" : matched_row["primary_url"]
   payment_url = matched_row["payment_activation_url"].to_s.empty? ? PAYMENT_ACTIVATION : matched_row["payment_activation_url"]
   proof_rule = matched_row["proof_rule"].to_s.empty? ? "Count $0 until a real buyer accepts scope, pays through a seller-owned external route, receives delivery, and payment is posted, released, payable, or cleared." : matched_row["proof_rule"]
+  bundle_terms = if first_100_product_bundle?(issue, matched_row)
+                   <<~MD
+
+                     First $100 Product Bundle terms:
+                     - Terms and acceptance page: #{PRODUCT_BUNDLE_TERMS}
+                     - Exact acceptance statement to provide before payment:
+                       "#{PRODUCT_BUNDLE_ACCEPTANCE}"
+                     - Private bundle transfer happens only after that acceptance plus seller-owned external payment proof.
+                   MD
+                 else
+                   ""
+                 end
 
   <<~MD
     #{MARKER}
@@ -180,6 +209,7 @@ def response_body(issue, matched_row)
     3. Use the payment activation page only after scope or transfer terms are accepted: #{payment_url}
     4. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone. This GitHub issue is not a checkout and is not payment proof.
     5. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof in the monitor.
+    #{bundle_terms}
 
     Proof monitor: #{PROOF_MONITOR}
 
@@ -246,6 +276,8 @@ emit(
   author: author,
   matched_catalog_row: matched_row["catalog_row_id"],
   matched_title: matched_row["title"],
+  response_includes_product_bundle_terms: body.include?(PRODUCT_BUNDLE_TERMS),
+  response_includes_product_bundle_acceptance: body.include?(PRODUCT_BUNDLE_ACCEPTANCE),
   labels_added: RESPONSE_LABELS.keys,
   comment_marker: MARKER
 )
