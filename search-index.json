@@ -1,8 +1,43 @@
 {
-  "generated_at_jst": "2026-06-15 23:28:43 JST",
+  "generated_at_jst": "2026-06-16 00:08:52 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "catalog",
+      "title": "Paid Offer Action Catalog",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
+      "description": "Best buyer-action routes for paid offers, structured forms, order boards, payment activation, and proof rules.",
+      "tags": [
+        "paid-offer",
+        "action-catalog",
+        "structured-forms",
+        "first-100",
+        "proof-boundary"
+      ]
+    },
+    {
+      "type": "json",
+      "title": "Paid Offer Action Catalog JSON",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.json",
+      "description": "Machine-readable paid-offer action routes with prices and structured form links.",
+      "tags": [
+        "paid-offer",
+        "json",
+        "structured-forms"
+      ]
+    },
+    {
+      "type": "csv",
+      "title": "Paid Offer Action Catalog CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv",
+      "description": "CSV paid-offer action routes with prices, order boards, payment activation, and proof rules.",
+      "tags": [
+        "paid-offer",
+        "csv",
+        "structured-forms"
+      ]
+    },
     {
       "type": "service-terms",
       "title": "First $100 Fast Start Terms and Acceptance",
@@ -55,41 +90,6 @@
         "csv",
         "terms",
         "proof"
-      ]
-    },
-    {
-      "type": "catalog",
-      "title": "Paid Offer Action Catalog",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
-      "description": "Best buyer-action routes for paid offers, structured forms, order boards, payment activation, and proof rules.",
-      "tags": [
-        "paid-offer",
-        "action-catalog",
-        "structured-forms",
-        "first-100",
-        "proof-boundary"
-      ]
-    },
-    {
-      "type": "json",
-      "title": "Paid Offer Action Catalog JSON",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.json",
-      "description": "Machine-readable paid-offer action routes with prices and structured form links.",
-      "tags": [
-        "paid-offer",
-        "json",
-        "structured-forms"
-      ]
-    },
-    {
-      "type": "csv",
-      "title": "Paid Offer Action Catalog CSV",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv",
-      "description": "CSV paid-offer action routes with prices, order boards, payment activation, and proof rules.",
-      "tags": [
-        "paid-offer",
-        "csv",
-        "structured-forms"
       ]
     },
     {
@@ -1507,30 +1507,6 @@
       ]
     },
     {
-      "type": "hot_download_close_room",
-      "title": "Local SEO GBP Audit Starter Close Room",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
-      "summary": "Fixed-scope close room for observed preview-download interest.",
-      "price": "$175",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
-      "type": "hot_download_close_room",
-      "title": "PDF Table Extraction Starter Close Room",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
-      "summary": "Fixed-scope close room for observed preview-download interest.",
-      "price": "$125",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
-      "type": "hot_download_close_room_csv",
-      "title": "Hot Download Close Rooms CSV",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot_download_close_rooms.csv",
-      "summary": "Machine-readable close-room routes for observed preview-download interest.",
-      "price": "$125-$175",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
       "type": "structured_ready_forms",
       "title": "Structured Ready-To-Pay Forms",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/structured-ready-forms.html",
@@ -1748,6 +1724,30 @@
         "proof-boundary",
         "github-release"
       ]
+    },
+    {
+      "type": "hot_download_close_room",
+      "title": "Local SEO GBP Audit Starter Close Room",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+      "summary": "Fixed-scope close room for observed preview-download interest.",
+      "price": "$175",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "hot_download_close_room",
+      "title": "PDF Table Extraction Starter Close Room",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+      "summary": "Fixed-scope close room for observed preview-download interest.",
+      "price": "$125",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "hot_download_close_room_csv",
+      "title": "Hot Download Close Rooms CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot_download_close_rooms.csv",
+      "summary": "Machine-readable close-room routes for observed preview-download interest.",
+      "price": "$125-$175",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
     },
     {
       "type": "buyer_response_autopilot",

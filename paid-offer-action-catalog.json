@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-11 17:32:15 JST",
+  "generated_at_jst": "2026-06-16 00:08:52 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external buyer/payment proof exists.",
   "row_count": 42,
@@ -12,7 +12,7 @@
   "release_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1",
   "rows": [
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "hot-download-local-seo-gbp-audit-starter",
       "source": "observed_download_close",
       "title": "Local SEO GBP Audit Starter",
@@ -29,6 +29,9 @@
       "repo_url": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.csv",
+      "exact_acceptance_statement": "I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Buyer confirms the business URL/profile, target market, fixed scope, delivery format, and a $175 payment route before custom analysis starts.",
@@ -36,7 +39,7 @@
       "source_evidence": "hot_download_close_rooms.csv observed download_count=1"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "hot-download-pdf-table-extraction-starter",
       "source": "observed_download_close",
       "title": "PDF Table Extraction Starter",
@@ -53,6 +56,9 @@
       "repo_url": "https://github.com/jaxassistant55/pdf-table-extraction-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.csv",
+      "exact_acceptance_statement": "I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Buyer confirms file rights, table scope, output columns, deadline, and a $125 payment route before extraction starts.",
@@ -60,7 +66,7 @@
       "source_evidence": "hot_download_close_rooms.csv observed download_count=1"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-first-100-fast-start",
       "source": "central_order_board",
       "title": "First $100 Fast Start",
@@ -77,6 +83,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.csv",
+      "exact_acceptance_statement": "I accept the First $100 Fast Start fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive inputs; the selected starter scope is limited to the deliverable described on the First $100 Fast Start page; and custom implementation, account login work, credential handling, regulated advice, paid ads, purchasing, ongoing support, or extra revisions are not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -84,7 +93,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-static-demo-site-customization",
       "source": "central_order_board",
       "title": "Static Demo Site Customization",
@@ -101,6 +110,9 @@
       "repo_url": "https://github.com/jaxassistant55/static-service-site-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -108,7 +120,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-static-service-site-starter",
       "source": "standalone_repo_ready_form",
       "title": "Static Service Site Starter",
@@ -125,6 +137,9 @@
       "repo_url": "https://github.com/jaxassistant55/static-service-site-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -132,7 +147,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-local-seo-gbp-audit",
       "source": "central_order_board",
       "title": "Local SEO / GBP Audit",
@@ -149,6 +164,9 @@
       "repo_url": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.csv",
+      "exact_acceptance_statement": "I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -156,7 +174,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-local-seo-gbp-audit-starter",
       "source": "standalone_repo_ready_form",
       "title": "Local SEO GBP Audit Starter",
@@ -173,6 +191,9 @@
       "repo_url": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.csv",
+      "exact_acceptance_statement": "I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -180,7 +201,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-ai-workflow-tracker-sprint",
       "source": "central_order_board",
       "title": "AI Workflow Tracker Sprint",
@@ -197,6 +218,9 @@
       "repo_url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -204,7 +228,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-niche-quote-estimator",
       "source": "central_order_board",
       "title": "Niche Quote Estimator",
@@ -221,6 +245,9 @@
       "repo_url": "https://github.com/jaxassistant55/niche-quote-estimator-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -228,7 +255,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-niche-quote-estimator-starter",
       "source": "standalone_repo_ready_form",
       "title": "Niche Quote Estimator Starter",
@@ -245,6 +272,9 @@
       "repo_url": "https://github.com/jaxassistant55/niche-quote-estimator-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -252,7 +282,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-technical-docs-cleanup",
       "source": "central_order_board",
       "title": "Technical Docs Cleanup",
@@ -269,6 +299,9 @@
       "repo_url": "https://github.com/jaxassistant55/technical-docs-cleanup-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -276,7 +309,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-technical-docs-cleanup-starter",
       "source": "standalone_repo_ready_form",
       "title": "Technical Docs Cleanup Starter",
@@ -293,6 +326,9 @@
       "repo_url": "https://github.com/jaxassistant55/technical-docs-cleanup-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -300,7 +336,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-website-audit-microservice",
       "source": "central_order_board",
       "title": "Website Audit Microservice",
@@ -317,6 +353,9 @@
       "repo_url": "https://github.com/jaxassistant55/website-audit-microservice-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -324,7 +363,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-website-audit-microservice-starter",
       "source": "standalone_repo_ready_form",
       "title": "Website Audit Microservice Starter",
@@ -341,6 +380,9 @@
       "repo_url": "https://github.com/jaxassistant55/website-audit-microservice-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -348,7 +390,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-workflow-tracker-dashboard-starter",
       "source": "standalone_repo_ready_form",
       "title": "Workflow Tracker Dashboard Starter",
@@ -365,6 +407,9 @@
       "repo_url": "https://github.com/jaxassistant55/workflow-tracker-dashboard-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -372,7 +417,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-career-packet-starter",
       "source": "standalone_repo_ready_form",
       "title": "Career Packet Starter",
@@ -389,6 +434,9 @@
       "repo_url": "https://github.com/jaxassistant55/career-packet-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -396,7 +444,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-client-intake-sop-starter",
       "source": "standalone_repo_ready_form",
       "title": "Client Intake SOP Starter",
@@ -413,6 +461,9 @@
       "repo_url": "https://github.com/jaxassistant55/client-intake-sop-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -420,7 +471,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-client-intake-and-sop-package",
       "source": "central_order_board",
       "title": "Client Intake and SOP Package",
@@ -437,6 +488,9 @@
       "repo_url": "https://github.com/jaxassistant55/client-intake-sop-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -444,7 +498,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-data-cleanup-sprint",
       "source": "central_order_board",
       "title": "Data Cleanup Sprint",
@@ -461,6 +515,9 @@
       "repo_url": "https://github.com/jaxassistant55/data-cleanup-sprint-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -468,7 +525,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-data-cleanup-sprint-starter",
       "source": "standalone_repo_ready_form",
       "title": "Data Cleanup Sprint Starter",
@@ -485,6 +542,9 @@
       "repo_url": "https://github.com/jaxassistant55/data-cleanup-sprint-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -492,7 +552,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-pdf-table-extraction-starter",
       "source": "standalone_repo_ready_form",
       "title": "PDF Table Extraction Starter",
@@ -509,6 +569,9 @@
       "repo_url": "https://github.com/jaxassistant55/pdf-table-extraction-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.csv",
+      "exact_acceptance_statement": "I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -516,7 +579,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-pdf-table-extraction",
       "source": "central_order_board",
       "title": "PDF/Table Extraction",
@@ -533,6 +596,9 @@
       "repo_url": "https://github.com/jaxassistant55/pdf-table-extraction-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.csv",
+      "exact_acceptance_statement": "I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -540,7 +606,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-resume-linkedin-interview-pack",
       "source": "central_order_board",
       "title": "Resume / LinkedIn / Interview Pack",
@@ -557,6 +623,9 @@
       "repo_url": "https://github.com/jaxassistant55/career-packet-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -564,7 +633,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-automation-blueprint",
       "source": "central_order_board",
       "title": "Automation Blueprint",
@@ -581,6 +650,9 @@
       "repo_url": "https://github.com/jaxassistant55/automation-blueprint-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -588,7 +660,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-automation-blueprint-starter",
       "source": "standalone_repo_ready_form",
       "title": "Automation Blueprint Starter",
@@ -605,6 +677,9 @@
       "repo_url": "https://github.com/jaxassistant55/automation-blueprint-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -612,7 +687,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-content-repurposing-sprint",
       "source": "central_order_board",
       "title": "Content Repurposing Sprint",
@@ -629,6 +704,9 @@
       "repo_url": "https://github.com/jaxassistant55/content-repurposing-sprint-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -636,7 +714,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-content-repurposing-sprint-starter",
       "source": "standalone_repo_ready_form",
       "title": "Content Repurposing Sprint Starter",
@@ -653,6 +731,9 @@
       "repo_url": "https://github.com/jaxassistant55/content-repurposing-sprint-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -660,7 +741,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-first-100-product-bundle",
       "source": "central_order_board",
       "title": "First $100 Product Bundle",
@@ -677,6 +758,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html",
+      "terms_csv_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.csv",
+      "exact_acceptance_statement": "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment.",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -684,7 +768,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-resale-listing-research-starter",
       "source": "standalone_repo_ready_form",
       "title": "Resale Listing Research Starter",
@@ -701,6 +785,9 @@
       "repo_url": "https://github.com/jaxassistant55/resale-listing-research-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -708,7 +795,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-resale-listing-and-price-research-pack",
       "source": "central_order_board",
       "title": "Resale Listing and Price Research Pack",
@@ -725,6 +812,9 @@
       "repo_url": "https://github.com/jaxassistant55/resale-listing-research-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -732,7 +822,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-subscription-audit-savings-starter",
       "source": "standalone_repo_ready_form",
       "title": "Subscription Audit Savings Starter",
@@ -749,6 +839,9 @@
       "repo_url": "https://github.com/jaxassistant55/subscription-audit-savings-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -756,7 +849,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-subscription-audit-and-savings-prep-pack",
       "source": "central_order_board",
       "title": "Subscription Audit and Savings Prep Pack",
@@ -773,6 +866,9 @@
       "repo_url": "https://github.com/jaxassistant55/subscription-audit-savings-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -780,7 +876,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-translation-localization-draft-starter",
       "source": "standalone_repo_ready_form",
       "title": "Translation Localization Draft Starter",
@@ -797,6 +893,9 @@
       "repo_url": "https://github.com/jaxassistant55/translation-localization-draft-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -804,7 +903,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-translation-and-localization-draft-pack",
       "source": "central_order_board",
       "title": "Translation and Localization Draft Pack",
@@ -821,6 +920,9 @@
       "repo_url": "https://github.com/jaxassistant55/translation-localization-draft-starter",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -828,7 +930,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-browser-extension-template",
       "source": "central_order_board",
       "title": "Browser Extension Template",
@@ -845,6 +947,9 @@
       "repo_url": "https://github.com/jaxassistant55/browser-extension-template-preview",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -852,7 +957,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "standalone-browser-extension-template-preview",
       "source": "standalone_repo_ready_form",
       "title": "Browser Extension Template Preview",
@@ -869,6 +974,9 @@
       "repo_url": "https://github.com/jaxassistant55/browser-extension-template-preview",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, safe public inputs, accepted fixed scope, seller-controlled payment route, and proof before delivery.",
@@ -876,7 +984,7 @@
       "source_evidence": "structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-mini-course-workbook",
       "source": "central_order_board",
       "title": "Mini Course Workbook",
@@ -893,6 +1001,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -900,7 +1011,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-sales-enablement-kit",
       "source": "central_order_board",
       "title": "Sales Enablement Kit",
@@ -917,6 +1028,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -924,7 +1038,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-csv-cli-toolkit",
       "source": "central_order_board",
       "title": "CSV CLI Toolkit",
@@ -941,6 +1055,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -948,7 +1065,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-invoice-and-expense-tracker-template",
       "source": "central_order_board",
       "title": "Invoice and Expense Tracker Template",
@@ -965,6 +1082,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -972,7 +1092,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-prompt-workflow-pack",
       "source": "central_order_board",
       "title": "Prompt Workflow Pack",
@@ -989,6 +1109,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",
@@ -996,7 +1119,7 @@
       "source_evidence": "order_boards.csv plus structured_ready_forms.csv"
     },
     {
-      "generated_at_jst": "2026-06-11 17:32:15 JST",
+      "generated_at_jst": "2026-06-16 00:08:52 JST",
       "catalog_row_id": "central-synthetic-mock-dataset-pack",
       "source": "central_order_board",
       "title": "Synthetic Mock Dataset Pack",
@@ -1013,6 +1136,9 @@
       "repo_url": "https://github.com/jaxassistant55/jax-micro-offer-studio",
       "payment_activation_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation",
       "proof_monitor_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+      "terms_url": "",
+      "terms_csv_url": "",
+      "exact_acceptance_statement": "",
       "proof_rule": "Count $0 unless a real buyer accepts scope, pays through a user-controlled route, receives delivery, and payment is posted/released/payable/cleared.",
       "money_confirmed_usd": "0",
       "buyer_gate": "Real buyer, accepted scope, seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money.",

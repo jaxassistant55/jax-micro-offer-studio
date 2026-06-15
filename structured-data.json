@@ -2786,6 +2786,82 @@
       "isRelatedTo": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
     },
     {
+      "@type": "WebPage",
+      "name": "First $100 Product Bundle Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html",
+      "description": "Exact buyer acceptance statement, seller-owned payment gate, private delivery checklist, and proof requirements for the $100 product bundle.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "about": {
+        "@type": "Product",
+        "name": "First $100 Product Bundle",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "name": "First $100 Fast Start Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.html",
+      "description": "Exact buyer acceptance statement, seller-owned payment gate, fixed-scope delivery checklist, and proof requirements for the $100 Fast Start.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "about": {
+        "@type": "Service",
+        "name": "First $100 Fast Start",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "additionalType": "service_terms",
+      "name": "Local SEO / GBP Audit Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.html",
+      "description": "Fixed-scope terms and exact acceptance statement for Local SEO / GBP Audit."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "additionalType": "service_terms",
+      "name": "Local SEO / GBP Audit Terms and Acceptance CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.csv",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/csv",
+          "contentUrl": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.csv"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "additionalType": "service_terms",
+      "name": "PDF/Table Extraction Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.html",
+      "description": "Fixed-scope terms and exact acceptance statement for PDF/Table Extraction."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "additionalType": "service_terms",
+      "name": "PDF/Table Extraction Terms and Acceptance CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.csv",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/csv",
+          "contentUrl": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.csv"
+        }
+      ]
+    },
+    {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "additionalType": "paid_offer_action_catalog",
@@ -3495,38 +3571,6 @@
         }
       ],
       "additionalType": "paid_offer_action_catalog"
-    },
-    {
-      "@type": "WebPage",
-      "name": "First $100 Product Bundle Terms and Acceptance",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html",
-      "description": "Exact buyer acceptance statement, seller-owned payment gate, private delivery checklist, and proof requirements for the $100 product bundle.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Micro Offer Studio",
-        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
-      },
-      "about": {
-        "@type": "Product",
-        "name": "First $100 Product Bundle",
-        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "name": "First $100 Fast Start Terms and Acceptance",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.html",
-      "description": "Exact buyer acceptance statement, seller-owned payment gate, fixed-scope delivery checklist, and proof requirements for the $100 Fast Start.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Micro Offer Studio",
-        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
-      },
-      "about": {
-        "@type": "Service",
-        "name": "First $100 Fast Start",
-        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html"
-      }
     },
     {
       "@type": "WebPage",
