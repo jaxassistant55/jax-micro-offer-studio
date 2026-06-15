@@ -11,6 +11,9 @@ body:
         Bundle page:
         https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
 
+        Terms and acceptance:
+        https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html
+
         Marketplace listing packet:
         https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-marketplace.html
 
@@ -18,7 +21,7 @@ body:
         https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/first-100-product-bundle-marketplace-v1
 
         Payment activation after terms are accepted:
-        https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+        https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html
 
         This GitHub issue is intake only. The private paid ZIP is delivered only after accepted product-transfer terms and external payment proof through a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request.
   - type: dropdown
@@ -40,6 +43,14 @@ body:
         - Personal project use
         - Client project use with no resale or redistribution
         - Need to clarify usage before payment
+    validations:
+      required: true
+  - type: textarea
+    id: exact_acceptance_statement
+    attributes:
+      label: Exact acceptance statement
+      description: Paste this exact sentence without edits. If you need different terms, say so before payment instead of changing this text.
+      placeholder: "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment."
     validations:
       required: true
   - type: textarea
@@ -72,6 +83,8 @@ body:
       label: Product-transfer terms
       options:
         - label: I understand this is a $100 private product-bundle transfer, not custom implementation work.
+          required: true
+        - label: I have reviewed the First $100 Product Bundle Terms and pasted the exact acceptance statement above before requesting a payment route.
           required: true
         - label: I understand the private paid ZIP is not attached publicly and is delivered only after external payment proof exists.
           required: true

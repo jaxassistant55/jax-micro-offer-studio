@@ -3815,11 +3815,23 @@ MD
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<~YAML)
   blank_issues_enabled: false
   contact_links:
+    - name: First $100 Product Bundle ready-to-buy form
+      url: #{NEW_ISSUE_URL}?template=first-100-product-bundle.yml
+      about: Use the structured $100 product-bundle transfer intake before external payment and private delivery.
+    - name: First $100 Product Bundle terms and acceptance
+      url: #{SITE_URL}first-100-product-bundle-terms.html
+      about: Review the exact $100 acceptance statement, proof gate, and private-delivery checklist before opening a payment route.
+    - name: First $100 Product Bundle marketplace packet
+      url: #{SITE_URL}first-100-product-bundle-marketplace.html
+      about: Review listing copy, public release packet, seller checklist, and proof boundary for the $100 bundle.
+    - name: Paid offer action catalog
+      url: #{SITE_URL}paid-offer-action-catalog.html
+      about: Choose the best paid action, structured form, payment handoff, and proof rule.
     - name: First $100 Fast Start
       url: #{SITE_URL}first-100-fast-start.html
       about: Pick one exact $100 fixed-scope starter and open the ready-to-pay intake.
     - name: Payment activation after scope acceptance
-      url: #{SITE_URL}payment-activation
+      url: #{SITE_URL}payment-activation.html
       about: Generate a buyer payment message from a seller-owned payment route after scope is accepted.
     - name: Hot close - Local SEO GBP Audit Starter
       url: #{SITE_URL}hot-download-close-local-seo-gbp-audit-starter.html
