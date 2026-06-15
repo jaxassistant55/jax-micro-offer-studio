@@ -3568,11 +3568,14 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "first-100-fast-s
           Start here for one exact $100 fixed-scope starter:
           #{SITE_URL}first-100-fast-start.html
 
+          Terms and acceptance:
+          #{SITE_URL}first-100-fast-start-terms.html
+
           Order board:
           #{FAST_START_BOARD_URL}
 
           Payment activation after scope acceptance:
-          #{SITE_URL}payment-activation
+          #{SITE_URL}payment-activation.html
 
           This GitHub issue is intake only. Paid work starts only after scope is accepted and external payment proof exists through a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request.
     - type: dropdown
@@ -3585,6 +3588,14 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "first-100-fast-s
           - PDF/Table Extraction Mini ($100)
           - Local SEO Snapshot Mini ($100)
           - Website Quick-Win Audit Mini ($100)
+      validations:
+        required: true
+    - type: textarea
+      id: exact_acceptance_statement
+      attributes:
+        label: Exact acceptance statement
+        description: Paste this exact sentence without edits. If you need different terms, say so before payment instead of changing this text.
+        placeholder: "I accept the First $100 Fast Start fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive inputs; the selected starter scope is limited to the deliverable described on the First $100 Fast Start page; and custom implementation, account login work, credential handling, regulated advice, paid ads, purchasing, ongoing support, or extra revisions are not included unless separately agreed before payment."
       validations:
         required: true
     - type: textarea
@@ -3625,6 +3636,8 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "first-100-fast-s
         label: Safety confirmation
         options:
           - label: I will not post passwords, payment cards, tax identifiers, credentials, private client files, or confidential documents in this public issue.
+            required: true
+          - label: I have reviewed the First $100 Fast Start Terms and pasted the exact acceptance statement above before requesting a payment route.
             required: true
           - label: I understand this issue is not payment proof and money counts only after external payment is posted, released, payable, or cleared.
             required: true
@@ -3830,6 +3843,9 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "config.yml"), <<
     - name: First $100 Fast Start
       url: #{SITE_URL}first-100-fast-start.html
       about: Pick one exact $100 fixed-scope starter and open the ready-to-pay intake.
+    - name: First $100 Fast Start terms and acceptance
+      url: #{SITE_URL}first-100-fast-start-terms.html
+      about: Review the exact $100 fixed-scope acceptance statement, input-safety rule, payment gate, and delivery checklist.
     - name: Payment activation after scope acceptance
       url: #{SITE_URL}payment-activation.html
       about: Generate a buyer payment message from a seller-owned payment route after scope is accepted.

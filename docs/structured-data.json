@@ -117,6 +117,11 @@
           "@type": "WebPage",
           "name": "First $100 Product Bundle Terms and Acceptance",
           "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "First $100 Fast Start Terms and Acceptance",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.html"
         }
       ]
     },
@@ -3512,6 +3517,22 @@
         "@type": "Product",
         "name": "First $100 Product Bundle",
         "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "name": "First $100 Fast Start Terms and Acceptance",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start-terms.html",
+      "description": "Exact buyer acceptance statement, seller-owned payment gate, fixed-scope delivery checklist, and proof requirements for the $100 Fast Start.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Micro Offer Studio",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/"
+      },
+      "about": {
+        "@type": "Service",
+        "name": "First $100 Fast Start",
+        "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html"
       }
     }
   ]
