@@ -15,6 +15,10 @@ SITE = "https://jaxassistant55.github.io/jax-micro-offer-studio/"
 PAGE = "#{SITE}buyer-response-playbook.html"
 CSV_URL = "#{SITE}buyer-response-playbook.csv"
 GENERATED_AT = Time.now.strftime("%Y-%m-%d %H:%M:%S JST")
+FAST_START_TERMS = "#{SITE}first-100-fast-start-terms.html"
+FAST_START_ACCEPTANCE = "I accept the First $100 Fast Start fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive inputs; the selected starter scope is limited to the deliverable described on the First $100 Fast Start page; and custom implementation, account login work, credential handling, regulated advice, paid ads, purchasing, ongoing support, or extra revisions are not included unless separately agreed before payment."
+PRODUCT_BUNDLE_TERMS = "#{SITE}first-100-product-bundle-terms.html"
+PRODUCT_BUNDLE_ACCEPTANCE = "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment."
 
 def h(value)
   CGI.escapeHTML(value.to_s)
@@ -104,8 +108,45 @@ def upsert_llms(path)
   File.write(path, body)
 end
 
+def fast_start_route?(row)
+  text = [row["catalog_row_id"], row["title"], row["primary_url"], row["structured_form_url"]].join("\n").downcase
+  text.include?("first-100-fast-start") || text.include?("first $100 fast start")
+end
+
+def product_bundle_route?(row)
+  text = [row["catalog_row_id"], row["title"], row["primary_url"], row["structured_form_url"]].join("\n").downcase
+  text.include?("first-100-product-bundle") || text.include?("first $100 product bundle")
+end
+
+def route_terms_url(row)
+  return FAST_START_TERMS if fast_start_route?(row)
+  return PRODUCT_BUNDLE_TERMS if product_bundle_route?(row)
+
+  ""
+end
+
+def route_acceptance_statement(row)
+  return FAST_START_ACCEPTANCE if fast_start_route?(row)
+  return PRODUCT_BUNDLE_ACCEPTANCE if product_bundle_route?(row)
+
+  ""
+end
+
+def route_acceptance_gate(row)
+  if fast_start_route?(row)
+    "Buyer must choose exactly one $100 starter scope, paste the exact Fast Start acceptance statement, provide only public or buyer-authorized non-sensitive inputs, and wait for seller-owned external payment proof before work starts."
+  elsif product_bundle_route?(row)
+    "Buyer must paste the exact Product Bundle acceptance statement, accept the $100 private ZIP transfer terms, and wait for seller-owned external payment proof before private delivery."
+  else
+    "Buyer must accept the listed fixed scope or product-transfer terms before any seller-owned external payment route is sent."
+  end
+end
+
 catalog_rows = read_csv(File.join(DOCS, "paid-offer-action-catalog.csv"))
 playbook_rows = catalog_rows.map do |row|
+  terms_url = route_terms_url(row)
+  exact_acceptance = route_acceptance_statement(row)
+  acceptance_gate = route_acceptance_gate(row)
   {
     "generated_at_jst" => GENERATED_AT,
     "catalog_row_id" => row["catalog_row_id"],
@@ -114,7 +155,10 @@ playbook_rows = catalog_rows.map do |row|
     "repo_url" => row["repo_url"],
     "structured_form_url" => row["structured_form_url"],
     "payment_activation_url" => row["payment_activation_url"],
-    "autonomous_response" => "If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation after scope acceptance.",
+    "terms_url" => terms_url,
+    "exact_acceptance_statement" => exact_acceptance,
+    "autonomous_response" => "If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation only after accepted scope or transfer terms.",
+    "route_specific_acceptance_gate" => acceptance_gate,
     "user_only_gate" => "Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.",
     "money_rule" => row["proof_rule"]
   }
@@ -128,7 +172,10 @@ headers = %w[
   repo_url
   structured_form_url
   payment_activation_url
+  terms_url
+  exact_acceptance_statement
   autonomous_response
+  route_specific_acceptance_gate
   user_only_gate
   money_rule
 ]
@@ -141,7 +188,9 @@ table_rows = playbook_rows.map do |row|
       <td data-label="Price">#{h(row["price"])}</td>
       <td data-label="Repo"><a href="#{h(row["repo_url"])}">Open repo</a></td>
       <td data-label="Buyer form"><a href="#{h(row["structured_form_url"])}">Open form</a></td>
+      <td data-label="Terms">#{row["terms_url"].to_s.empty? ? '<span class="muted">Use route scope terms</span>' : %(<a href="#{h(row["terms_url"])}">Open terms</a>)}</td>
       <td data-label="Autonomous response">#{h(row["autonomous_response"])}</td>
+      <td data-label="Acceptance gate">#{h(row["route_specific_acceptance_gate"])}</td>
       <td data-label="User-only gate">#{h(row["user_only_gate"])}</td>
     </tr>
   HTML
@@ -164,7 +213,7 @@ html = <<~HTML
   <body>
     <main>
       <header>
-        <p class="buttons"><a href="index.html">Home</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="payment-activation">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="buyer-response-playbook.csv">CSV</a></p>
+        <p class="buttons"><a href="index.html">Home</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="first-100-fast-start-terms.html">Fast Start terms</a><a href="first-100-product-bundle-terms.html">Bundle terms</a><a href="payment-activation.html">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="buyer-response-playbook.csv">CSV</a></p>
         <h1>Buyer Response Autopilot</h1>
         <p class="muted">Generated #{h(GENERATED_AT)}. This is the safe owned-repo response path for legitimate ready-to-pay or ready-to-buy GitHub issues. It does not invoice, collect payment, impersonate a seller, or count money.</p>
       </header>
@@ -177,11 +226,11 @@ html = <<~HTML
 
       <section class="notice">
         <h2>What the workflow does</h2>
-        <p>When a non-assistant buyer opens or reopens a ready-to-pay or ready-to-buy issue, the workflow checks the title and labels, rejects pull requests and bounty/wallet-style claims, posts one marked checklist comment, and adds labels for seller review and payment-proof gating.</p>
+        <p>When a non-assistant buyer opens or reopens a ready-to-pay or ready-to-buy issue, the workflow checks the title and labels, rejects pull requests and bounty/wallet-style claims, posts one marked checklist comment, adds route-specific terms for Fast Start and Product Bundle issues, and labels the issue for seller review and payment-proof gating.</p>
       </section>
 
       <section class="grid">
-        <article class="card"><span class="eyebrow">Autonomous</span><h2>Safe response</h2><p>Posts exact next steps, payment activation link, proof monitor link, and privacy boundaries inside the buyer issue.</p></article>
+        <article class="card"><span class="eyebrow">Autonomous</span><h2>Safe response</h2><p>Posts exact next steps, route-specific terms where available, payment activation link, proof monitor link, and privacy boundaries inside the buyer issue.</p></article>
         <article class="card"><span class="eyebrow">Autonomous</span><h2>Noise filter</h2><p>Skips assistant-authored issues, pull requests, already-responded issues, and bounty/wallet claim text.</p></article>
         <article class="card"><span class="eyebrow">External gate</span><h2>Money proof</h2><p>Money remains $0 until a real seller-owned external payment or payout is posted, released, payable, or cleared after accepted scope and delivery.</p></article>
       </section>
@@ -196,13 +245,22 @@ Exact next steps:
 2. Confirm the exact deliverable, deadline, acceptance proof, and any buyer-owned inputs that can safely be shared.
 3. Use the payment activation page only after scope or transfer terms are accepted.
 4. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone.
-5. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof.</div>
+5. For Fast Start or Product Bundle routes, include the matching terms page and exact acceptance statement before payment.
+6. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof.</div>
+      </section>
+
+      <section>
+        <h2>Exact Acceptance Gates</h2>
+        <div class="grid">
+          <article class="card"><span class="eyebrow">Fast Start service</span><h2>First $100 Fast Start</h2><p><a href="first-100-fast-start-terms.html">Terms page</a></p><div class="copybox">#{h(FAST_START_ACCEPTANCE)}</div></article>
+          <article class="card"><span class="eyebrow">Product transfer</span><h2>First $100 Product Bundle</h2><p><a href="first-100-product-bundle-terms.html">Terms page</a></p><div class="copybox">#{h(PRODUCT_BUNDLE_ACCEPTANCE)}</div></article>
+        </div>
       </section>
 
       <section>
         <h2>Covered Paid Routes</h2>
         <table>
-          <thead><tr><th>Route</th><th>Price</th><th>Repo</th><th>Buyer form</th><th>Autonomous response</th><th>User-only gate</th></tr></thead>
+          <thead><tr><th>Route</th><th>Price</th><th>Repo</th><th>Buyer form</th><th>Terms</th><th>Autonomous response</th><th>Acceptance gate</th><th>User-only gate</th></tr></thead>
           <tbody>#{table_rows}</tbody>
         </table>
       </section>
