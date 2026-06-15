@@ -12,6 +12,8 @@ PAYMENT_ACTIVATION = "#{SITE}payment-activation"
 PROOF_MONITOR = "#{SITE}proof-monitor.html"
 PRODUCT_BUNDLE_TERMS = "#{SITE}first-100-product-bundle-terms.html"
 PRODUCT_BUNDLE_ACCEPTANCE = "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment."
+FAST_START_TERMS = "#{SITE}first-100-fast-start-terms.html"
+FAST_START_ACCEPTANCE = "I accept the First $100 Fast Start fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive inputs; the selected starter scope is limited to the deliverable described on the First $100 Fast Start page; and custom implementation, account login work, credential handling, regulated advice, paid ads, purchasing, ongoing support, or extra revisions are not included unless separately agreed before payment."
 MARKER = "<!-- micro-offer-studio:buyer-response:v1 -->"
 ASSISTANT_AUTHORS = %w[jaxassistant55 github-actions[bot]].freeze
 RESPONSE_LABELS = {
@@ -133,6 +135,22 @@ def first_100_product_bundle?(issue, matched_row)
     text.include?("central-first-100-product-bundle")
 end
 
+def first_100_fast_start?(issue, matched_row)
+  text = [
+    issue["title"],
+    issue["body"],
+    matched_row["catalog_row_id"],
+    matched_row["title"],
+    matched_row["primary_url"],
+    matched_row["structured_form_url"],
+    matched_row["best_buyer_action_url"]
+  ].join("\n").downcase
+
+  text.include?("first $100 fast start") ||
+    text.include?("first-100-fast-start") ||
+    text.include?("central-first-100-fast-start")
+end
+
 def existing_response?(repo, number)
   return false if dry_run?
 
@@ -194,6 +212,18 @@ def response_body(issue, matched_row)
                  else
                    ""
                  end
+  fast_start_terms = if first_100_fast_start?(issue, matched_row)
+                       <<~MD
+
+                         First $100 Fast Start terms:
+                         - Terms and acceptance page: #{FAST_START_TERMS}
+                         - Exact acceptance statement to provide before payment:
+                           "#{FAST_START_ACCEPTANCE}"
+                         - Paid work starts only after one exact $100 starter scope is selected, that acceptance is saved, and seller-owned external payment proof exists.
+                       MD
+                     else
+                       ""
+                     end
 
   <<~MD
     #{MARKER}
@@ -210,6 +240,7 @@ def response_body(issue, matched_row)
     4. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone. This GitHub issue is not a checkout and is not payment proof.
     5. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof in the monitor.
     #{bundle_terms}
+    #{fast_start_terms}
 
     Proof monitor: #{PROOF_MONITOR}
 
@@ -278,6 +309,8 @@ emit(
   matched_title: matched_row["title"],
   response_includes_product_bundle_terms: body.include?(PRODUCT_BUNDLE_TERMS),
   response_includes_product_bundle_acceptance: body.include?(PRODUCT_BUNDLE_ACCEPTANCE),
+  response_includes_fast_start_terms: body.include?(FAST_START_TERMS),
+  response_includes_fast_start_acceptance: body.include?(FAST_START_ACCEPTANCE),
   labels_added: RESPONSE_LABELS.keys,
   comment_marker: MARKER
 )
