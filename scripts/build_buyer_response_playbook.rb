@@ -19,6 +19,10 @@ FAST_START_TERMS = "#{SITE}first-100-fast-start-terms.html"
 FAST_START_ACCEPTANCE = "I accept the First $100 Fast Start fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive inputs; the selected starter scope is limited to the deliverable described on the First $100 Fast Start page; and custom implementation, account login work, credential handling, regulated advice, paid ads, purchasing, ongoing support, or extra revisions are not included unless separately agreed before payment."
 PRODUCT_BUNDLE_TERMS = "#{SITE}first-100-product-bundle-terms.html"
 PRODUCT_BUNDLE_ACCEPTANCE = "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment."
+LOCAL_SEO_TERMS = "#{SITE}local-seo-gbp-audit-terms.html"
+LOCAL_SEO_ACCEPTANCE = "I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment."
+PDF_TERMS = "#{SITE}pdf-table-extraction-terms.html"
+PDF_ACCEPTANCE = "I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment."
 
 def h(value)
   CGI.escapeHTML(value.to_s)
@@ -118,9 +122,21 @@ def product_bundle_route?(row)
   text.include?("first-100-product-bundle") || text.include?("first $100 product bundle")
 end
 
+def local_seo_route?(row)
+  text = [row["catalog_row_id"], row["title"], row["primary_url"], row["structured_form_url"]].join("\n").downcase
+  text.include?("local-seo") || text.include?("local seo") || text.include?("gbp audit")
+end
+
+def pdf_route?(row)
+  text = [row["catalog_row_id"], row["title"], row["primary_url"], row["structured_form_url"]].join("\n").downcase
+  text.include?("pdf-table") || text.include?("pdf/table") || text.include?("pdf table")
+end
+
 def route_terms_url(row)
   return FAST_START_TERMS if fast_start_route?(row)
   return PRODUCT_BUNDLE_TERMS if product_bundle_route?(row)
+  return LOCAL_SEO_TERMS if local_seo_route?(row)
+  return PDF_TERMS if pdf_route?(row)
 
   ""
 end
@@ -128,6 +144,8 @@ end
 def route_acceptance_statement(row)
   return FAST_START_ACCEPTANCE if fast_start_route?(row)
   return PRODUCT_BUNDLE_ACCEPTANCE if product_bundle_route?(row)
+  return LOCAL_SEO_ACCEPTANCE if local_seo_route?(row)
+  return PDF_ACCEPTANCE if pdf_route?(row)
 
   ""
 end
@@ -137,6 +155,10 @@ def route_acceptance_gate(row)
     "Buyer must choose exactly one $100 starter scope, paste the exact Fast Start acceptance statement, provide only public or buyer-authorized non-sensitive inputs, and wait for seller-owned external payment proof before work starts."
   elsif product_bundle_route?(row)
     "Buyer must paste the exact Product Bundle acceptance statement, accept the $100 private ZIP transfer terms, and wait for seller-owned external payment proof before private delivery."
+  elsif local_seo_route?(row)
+    "Buyer must paste the exact Local SEO / GBP Audit acceptance statement, provide only public or buyer-authorized non-sensitive business details, and wait for seller-owned external payment proof before audit work starts."
+  elsif pdf_route?(row)
+    "Buyer must paste the exact PDF/Table Extraction acceptance statement, provide only public or buyer-owned/buyer-authorized non-sensitive document details through the accepted channel, and wait for seller-owned external payment proof before extraction work starts."
   else
     "Buyer must accept the listed fixed scope or product-transfer terms before any seller-owned external payment route is sent."
   end
@@ -189,6 +211,7 @@ table_rows = playbook_rows.map do |row|
       <td data-label="Repo"><a href="#{h(row["repo_url"])}">Open repo</a></td>
       <td data-label="Buyer form"><a href="#{h(row["structured_form_url"])}">Open form</a></td>
       <td data-label="Terms">#{row["terms_url"].to_s.empty? ? '<span class="muted">Use route scope terms</span>' : %(<a href="#{h(row["terms_url"])}">Open terms</a>)}</td>
+      <td data-label="Exact acceptance">#{row["exact_acceptance_statement"].to_s.empty? ? '<span class="muted">Use buyer form acceptance</span>' : h(row["exact_acceptance_statement"])}</td>
       <td data-label="Autonomous response">#{h(row["autonomous_response"])}</td>
       <td data-label="Acceptance gate">#{h(row["route_specific_acceptance_gate"])}</td>
       <td data-label="User-only gate">#{h(row["user_only_gate"])}</td>
@@ -213,7 +236,7 @@ html = <<~HTML
   <body>
     <main>
       <header>
-        <p class="buttons"><a href="index.html">Home</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="first-100-fast-start-terms.html">Fast Start terms</a><a href="first-100-product-bundle-terms.html">Bundle terms</a><a href="payment-activation.html">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="buyer-response-playbook.csv">CSV</a></p>
+        <p class="buttons"><a href="index.html">Home</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="first-100-fast-start-terms.html">Fast Start terms</a><a href="first-100-product-bundle-terms.html">Bundle terms</a><a href="local-seo-gbp-audit-terms.html">Local SEO terms</a><a href="pdf-table-extraction-terms.html">PDF terms</a><a href="payment-activation.html">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="buyer-response-playbook.csv">CSV</a></p>
         <h1>Buyer Response Autopilot</h1>
         <p class="muted">Generated #{h(GENERATED_AT)}. This is the safe owned-repo response path for legitimate ready-to-pay or ready-to-buy GitHub issues. It does not invoice, collect payment, impersonate a seller, or count money.</p>
       </header>
@@ -254,13 +277,15 @@ Exact next steps:
         <div class="grid">
           <article class="card"><span class="eyebrow">Fast Start service</span><h2>First $100 Fast Start</h2><p><a href="first-100-fast-start-terms.html">Terms page</a></p><div class="copybox">#{h(FAST_START_ACCEPTANCE)}</div></article>
           <article class="card"><span class="eyebrow">Product transfer</span><h2>First $100 Product Bundle</h2><p><a href="first-100-product-bundle-terms.html">Terms page</a></p><div class="copybox">#{h(PRODUCT_BUNDLE_ACCEPTANCE)}</div></article>
+          <article class="card"><span class="eyebrow">Hot service</span><h2>Local SEO / GBP Audit</h2><p><a href="local-seo-gbp-audit-terms.html">Terms page</a></p><div class="copybox">#{h(LOCAL_SEO_ACCEPTANCE)}</div></article>
+          <article class="card"><span class="eyebrow">Hot service</span><h2>PDF/Table Extraction</h2><p><a href="pdf-table-extraction-terms.html">Terms page</a></p><div class="copybox">#{h(PDF_ACCEPTANCE)}</div></article>
         </div>
       </section>
 
       <section>
         <h2>Covered Paid Routes</h2>
         <table>
-          <thead><tr><th>Route</th><th>Price</th><th>Repo</th><th>Buyer form</th><th>Terms</th><th>Autonomous response</th><th>Acceptance gate</th><th>User-only gate</th></tr></thead>
+          <thead><tr><th>Route</th><th>Price</th><th>Repo</th><th>Buyer form</th><th>Terms</th><th>Exact acceptance</th><th>Autonomous response</th><th>Acceptance gate</th><th>User-only gate</th></tr></thead>
           <tbody>#{table_rows}</tbody>
         </table>
       </section>
