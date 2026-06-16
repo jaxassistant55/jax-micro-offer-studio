@@ -62,6 +62,14 @@ Confirmed earned money is still `$0` until external buyer/payment/payout proof e
 - Scope: 34 seller-side invoice/payment-request packets for one-sale-to-$100 routes.
 - Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
 <!-- one-sale-payment-packets:end -->
+<!-- marketplace-listing-packets:start -->
+## Marketplace Listing Packets
+- Page: https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.csv
+- JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.json
+- Scope: 34 platform-neutral listing packets for seller-owned marketplaces, freelance project pages, invoices, service catalogs, and GitHub order boards.
+- Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+<!-- marketplace-listing-packets:end -->
 
 ## Paid Offer Action Catalog
 

@@ -1,8 +1,48 @@
 {
-  "generated_at_jst": "2026-06-16 12:58:43 JST",
+  "generated_at_jst": "2026-06-16 14:34:47 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "marketplace_packets",
+      "title": "Marketplace Listing Packets",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html",
+      "description": "Platform-neutral listing copy, tags, scope, buyer requirements, posting checklists, and proof gates for one-sale-to-$100 routes.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "marketplace",
+        "listing-copy",
+        "fixed-scope",
+        "payment-proof"
+      ]
+    },
+    {
+      "type": "csv",
+      "title": "Marketplace Listing Packets CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.csv",
+      "description": "Machine-readable marketplace listing packet rows for one-sale-to-$100 routes.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "csv",
+        "marketplace",
+        "listing-copy"
+      ]
+    },
+    {
+      "type": "json",
+      "title": "Marketplace Listing Packets JSON",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.json",
+      "description": "JSON version of marketplace listing packets.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "json",
+        "marketplace",
+        "listing-copy"
+      ]
+    },
     {
       "type": "payment_packets",
       "title": "One Sale Payment Packets",
