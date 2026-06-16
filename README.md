@@ -54,6 +54,14 @@ Confirmed earned money is still `$0` until external buyer/payment/payout proof e
 - Routes: 34 fixed-price offers where one accepted paid order can reach $100 before fees/refunds.
 - Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
 <!-- one-sale-to-100:end -->
+<!-- one-sale-payment-packets:start -->
+## One Sale Payment Packets
+- Payment packet page: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.csv
+- JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.json
+- Scope: 34 seller-side invoice/payment-request packets for one-sale-to-$100 routes.
+- Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+<!-- one-sale-payment-packets:end -->
 
 ## Paid Offer Action Catalog
 
