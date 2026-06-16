@@ -23,6 +23,11 @@ body:
         Payment activation after terms are accepted:
         https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html
 
+        Matching one-sale payment packet after exact acceptance:
+        https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html#central-first-100-product-bundle
+
+        Use the packet only after product-transfer terms are accepted. Paste only a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URL.
+
         This GitHub issue is intake only. The private paid ZIP is delivered only after accepted product-transfer terms and external payment proof through a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request.
   - type: dropdown
     id: product

@@ -18,6 +18,11 @@ body:
         Payment activation after scope acceptance:
         https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html
 
+        Matching one-sale payment packet after exact acceptance:
+        https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html#central-first-100-fast-start
+
+        Use the packet only after the $100 starter scope is selected and accepted. Paste only a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URL.
+
         This GitHub issue is intake only. Paid work starts only after scope is accepted and external payment proof exists through a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request.
   - type: dropdown
     id: starter_scope

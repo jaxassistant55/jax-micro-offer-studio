@@ -39,6 +39,8 @@ Requested quantity or scope:
 
 Payment/proof route:
 Payment activation page after scope acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+One-sale payment packets after accepted scope: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html
+Use a packet only after a real buyer selects a route and scope/transfer terms are accepted; paste only a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URL.
 
 Deadline:
 
