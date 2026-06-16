@@ -70,6 +70,12 @@ Confirmed earned money is still `$0` until external buyer/payment/payout proof e
 - Scope: 34 platform-neutral listing packets for seller-owned marketplaces, freelance project pages, invoices, service catalogs, and GitHub order boards.
 - Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
 <!-- marketplace-listing-packets:end -->
+<!-- marketplace-listing-packets-release:start -->
+## Marketplace Listing Packets Release
+- Release: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/marketplace-listing-packets-v1
+- Assets: ZIP, CSV, JSON, and release manifest.
+- Boundary: release downloads count `$0`; count only real buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds.
+<!-- marketplace-listing-packets-release:end -->
 
 ## Paid Offer Action Catalog
 

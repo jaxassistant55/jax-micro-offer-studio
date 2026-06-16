@@ -400,6 +400,33 @@ end
   }
 end
 
+[
+  ["marketplace-listing-packets-v1.zip", "Marketplace Listing Packets v1 release bundle"],
+  ["marketplace-listing-packets.csv", "Marketplace Listing Packets CSV release asset"],
+  ["marketplace-listing-packets.json", "Marketplace Listing Packets JSON release asset"],
+  ["marketplace-listing-packets-release-manifest.csv", "Marketplace Listing Packets manifest release asset"]
+].each do |asset_name, title|
+  marketplace_listing_release = release_asset_download_count(REPO, "marketplace-listing-packets-v1", asset_name)
+  rows << {
+    "checked_at_jst" => GENERATED_AT,
+    "kind" => "marketplace_listing_packets_release_asset",
+    "repo" => REPO,
+    "signal_id" => "marketplace-listing-packets-v1:#{asset_name}",
+    "title" => title,
+    "price" => "various",
+    "first_100_path" => "Any one verified paid $100+ order routed from the marketplace packets reaches the first $100 target before fees/refunds.",
+    "url" => marketplace_listing_release["url"],
+    "state" => marketplace_listing_release["count"].positive? ? "download_count_present" : "release_live_no_downloads",
+    "issue_comments" => 0,
+    "release_downloads" => marketplace_listing_release["count"],
+    "labels" => ["release-asset", "marketplace-listing-packets", "one-sale-to-100", "interest-only", marketplace_listing_release["asset_url"].to_s].reject(&:empty?).join("|"),
+    "proof_status" => marketplace_listing_release["count"].positive? ? "marketplace_listing_packets_download_interest_no_buyer_or_payment_proof" : "marketplace_listing_packets_release_live_no_buyer_or_payment_proof",
+    "money_confirmed_usd" => "0",
+    "money_count_rule" => "Marketplace listing packet release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html"
+  }
+end
+
 paid_catalog_path = File.join(DOCS, "paid-offer-action-catalog.json")
 paid_catalog = File.exist?(paid_catalog_path) ? JSON.parse(File.read(paid_catalog_path)) : { "rows" => [] }
 catalog_rows = paid_catalog.fetch("rows", [])
