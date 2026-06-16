@@ -1760,6 +1760,18 @@
       "first_100": "Moves buyer issues closer to payment proof but counts $0 until external posted/released/payable money exists.",
       "start_order_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
       "proof_rule": "Counts $0 until external buyer/payment proof exists."
+    },
+    {
+      "type": "terms",
+      "title": "Standalone Offer Terms",
+      "slug": "standalone-offer-terms",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html",
+      "price": "$0",
+      "amount_usd": 0,
+      "description": "Exact acceptance statements for 16 standalone paid-offer routes.",
+      "first_100": "Reduces buyer/payment friction but counts $0 until external payment proof exists.",
+      "start_order_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/structured-ready-forms.html",
+      "proof_rule": "Terms acceptance alone is $0; count only posted/released/payable money after delivery."
     }
   ]
 }
