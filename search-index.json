@@ -1,8 +1,43 @@
 {
-  "generated_at_jst": "2026-06-16 14:34:47 JST",
+  "generated_at_jst": "2026-06-16 15:23:03 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "ready_to_buy_signal_room",
+      "title": "Ready-To-Buy Signal Room",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.html",
+      "description": "One-click buyer actions, payment packets, order boards, and proof gates for 34 one-sale-to-$100 routes.",
+      "tags": [
+        "first-100",
+        "ready-to-buy",
+        "one-sale",
+        "payment-proof",
+        "buyer-action"
+      ]
+    },
+    {
+      "type": "ready_to_buy_signal_room_csv",
+      "title": "Ready-To-Buy Signal Room CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.csv",
+      "description": "Machine-readable signal-room rows for the one-sale-to-$100 route set.",
+      "tags": [
+        "first-100",
+        "csv",
+        "ready-to-buy"
+      ]
+    },
+    {
+      "type": "ready_to_buy_signal_room_json",
+      "title": "Ready-To-Buy Signal Room JSON",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.json",
+      "description": "JSON signal-room rows for buyer action routing and proof gates.",
+      "tags": [
+        "first-100",
+        "json",
+        "ready-to-buy"
+      ]
+    },
     {
       "type": "marketplace_packets",
       "title": "Marketplace Listing Packets",
