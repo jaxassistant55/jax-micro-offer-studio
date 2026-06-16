@@ -139,3 +139,10 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 ## Standalone payment handoff
 - Standalone payment handoff: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html
 - Standalone payment handoff CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone_payment_handoff.csv
+
+## One Sale To $100 Close Now
+- Close page: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.html
+- JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.json
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.csv
+- Rows: 34 fixed-price routes where one accepted paid order can reach $100 before fees/refunds.
+- Boundary: count $0 until external buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable/cleared funds exist.

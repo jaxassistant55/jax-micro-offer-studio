@@ -45,6 +45,16 @@ Public launch package generated during the autonomous earning run.
 
 Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
 
+<!-- one-sale-to-100:start -->
+## One Sale To $100 Close Now
+
+- Focused page: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.csv
+- JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.json
+- Routes: 34 fixed-price offers where one accepted paid order can reach $100 before fees/refunds.
+- Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+<!-- one-sale-to-100:end -->
+
 ## Paid Offer Action Catalog
 
 Use the catalog when a buyer is choosing among services, product transfers, standalone repos, hot preview-download close rooms, or the exact $100 starter.
