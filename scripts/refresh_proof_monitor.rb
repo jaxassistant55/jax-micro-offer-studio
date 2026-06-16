@@ -90,6 +90,8 @@ rescue JSON::ParserError => e
 end
 
 def issue_comment_summary(repo, issue_number, fallback_count)
+  return { "buyer" => 0, "self" => 0, "non_buyer_claim" => 0, "total" => 0, "error" => nil } if fallback_count.to_i.zero?
+
   comments = gh_json("repos/#{repo}/issues/#{issue_number}/comments")
   return { "buyer" => fallback_count.to_i, "self" => 0, "non_buyer_claim" => 0, "total" => fallback_count.to_i, "error" => comments["__error"] } if comments.is_a?(Hash) && comments["__error"]
 
@@ -275,6 +277,45 @@ download_followup_rows.each do |row|
     "money_confirmed_usd" => "0",
     "money_count_rule" => "Release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
     "next_paid_step" => hot_close_room_url(row)
+  }
+end
+
+[
+  {
+    "repo" => "jaxassistant55/local-seo-gbp-audit-starter",
+    "asset_name" => "local-seo-gbp-audit-starter-close-ready-v2.zip",
+    "title" => "Local SEO GBP Audit Starter close-ready buyer packet",
+    "price" => "$175",
+    "first_100_path" => "One verified paid Local SEO / GBP Audit order reaches $100 before fees/refunds.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html"
+  },
+  {
+    "repo" => "jaxassistant55/pdf-table-extraction-starter",
+    "asset_name" => "pdf-table-extraction-starter-close-ready-v2.zip",
+    "title" => "PDF Table Extraction Starter close-ready buyer packet",
+    "price" => "$125",
+    "first_100_path" => "One verified paid PDF/Table Extraction order reaches $100 before fees/refunds.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html"
+  }
+].each do |asset_row|
+  close_ready_release = release_asset_download_count(asset_row["repo"], "preview-v1", asset_row["asset_name"])
+  rows << {
+    "checked_at_jst" => GENERATED_AT,
+    "kind" => "hot_close_ready_release_asset",
+    "repo" => asset_row["repo"],
+    "signal_id" => "preview-v1:#{asset_row["asset_name"]}",
+    "title" => asset_row["title"],
+    "price" => asset_row["price"],
+    "first_100_path" => asset_row["first_100_path"],
+    "url" => close_ready_release["url"],
+    "state" => close_ready_release["count"].positive? ? "download_count_present" : "release_live_no_downloads",
+    "issue_comments" => 0,
+    "release_downloads" => close_ready_release["count"],
+    "labels" => ["release-asset", "hot-close-ready", "exact-acceptance", "payment-handoff", "interest-only", close_ready_release["asset_url"].to_s].reject(&:empty?).join("|"),
+    "proof_status" => close_ready_release["count"].positive? ? "hot_close_ready_download_interest_no_buyer_or_payment_proof" : "hot_close_ready_release_live_no_buyer_or_payment_proof",
+    "money_confirmed_usd" => "0",
+    "money_count_rule" => "Close-ready release downloads count $0. Count only externally posted, released, payable, or cleared payment after buyer acceptance and delivery.",
+    "next_paid_step" => asset_row["next_paid_step"]
   }
 end
 
