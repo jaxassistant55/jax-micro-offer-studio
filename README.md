@@ -4,6 +4,8 @@ Public launch package generated during the autonomous earning run.
 
 - Generated: 2026-06-11 12:48:36 JST
 - Live site: https://jaxassistant55.github.io/jax-micro-offer-studio/
+- Ready-to-buy signal room: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.html
+- Ready-to-buy signal issue #29: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/29
 - Public site root: `docs/index.html`
 - Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
 - All 42 paid catalog rows now have structured ready-to-pay intake forms through the catalog.
@@ -62,6 +64,17 @@ Confirmed earned money is still `$0` until external buyer/payment/payout proof e
 - Scope: 34 seller-side invoice/payment-request packets for one-sale-to-$100 routes.
 - Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
 <!-- one-sale-payment-packets:end -->
+<!-- ready-to-buy-signal-room:start -->
+## Ready-To-Buy Signal Room
+
+- Signal room: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.csv
+- JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.json
+- Central signal issue: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/29
+- Scope: 34 one-sale-to-$100 routes with buyer action links, payment packet links, order-board routing, and proof gates.
+- Responder behavior: vague real-buyer comments on issue #29 get route-selection guidance; comments that name a route get the matching one-sale payment packet.
+- Boundary: signal-room views, issue comments, workflow runs, and payment packets count `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+<!-- ready-to-buy-signal-room:end -->
 <!-- marketplace-listing-packets:start -->
 ## Marketplace Listing Packets
 - Page: https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html
