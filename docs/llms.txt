@@ -131,3 +131,7 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 - Local SEO / GBP Audit terms and acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.html | CSV https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.csv
 
 - PDF/Table Extraction terms and acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.html | CSV https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.csv
+
+## Standalone offer terms
+- Standalone offer terms: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html
+- Standalone offer terms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone_offer_terms.csv

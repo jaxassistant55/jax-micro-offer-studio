@@ -3578,6 +3578,240 @@
       "name": "Buyer Response Autopilot",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html",
       "description": "Safe workflow and playbook for responding to legitimate paid buyer issues."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Standalone Offer Terms and Acceptance Gates",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html",
+      "numberOfItems": 16,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Automation Blueprint Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#automation-blueprint-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Browser Extension Template Preview",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#browser-extension-template-preview",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 29.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Career Packet Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#career-packet-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Client Intake SOP Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#client-intake-sop-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "Content Repurposing Sprint Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#content-repurposing-sprint-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "name": "Data Cleanup Sprint Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#data-cleanup-sprint-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "name": "Local SEO GBP Audit Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#local-seo-gbp-audit-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 175.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "Niche Quote Estimator Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#niche-quote-estimator-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Service",
+            "name": "PDF Table Extraction Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#pdf-table-extraction-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 125.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Service",
+            "name": "Resale Listing Research Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#resale-listing-research-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Service",
+            "name": "Static Service Site Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#static-service-site-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 200.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Service",
+            "name": "Subscription Audit Savings Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#subscription-audit-savings-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Service",
+            "name": "Technical Docs Cleanup Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#technical-docs-cleanup-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Service",
+            "name": "Translation Localization Draft Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#translation-localization-draft-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 100.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Service",
+            "name": "Website Audit Microservice Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#website-audit-microservice-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Service",
+            "name": "Workflow Tracker Dashboard Starter",
+            "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#workflow-tracker-dashboard-starter",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": 150.0
+            }
+          }
+        }
+      ],
+      "description": "Exact terms and acceptance statements for standalone Micro Offer Studio buyer routes."
     }
   ]
 }
