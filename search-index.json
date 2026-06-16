@@ -1,8 +1,46 @@
 {
-  "generated_at_jst": "2026-06-16 12:36:20 JST",
+  "generated_at_jst": "2026-06-16 12:58:43 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "payment_packets",
+      "title": "One Sale Payment Packets",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html",
+      "description": "Seller-side invoice, acceptance, payment-request, and proof packets for one-sale-to-$100 routes.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "payment-packets",
+        "invoice",
+        "acceptance",
+        "proof"
+      ]
+    },
+    {
+      "type": "csv",
+      "title": "One Sale Payment Packets CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.csv",
+      "description": "Machine-readable seller-side payment-request packets for one-sale-to-$100 routes.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "csv",
+        "payment-packets"
+      ]
+    },
+    {
+      "type": "json",
+      "title": "One Sale Payment Packets JSON",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.json",
+      "description": "JSON version of one-sale payment packets.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "json",
+        "payment-packets"
+      ]
+    },
     {
       "type": "close_catalog",
       "title": "One Sale To $100 Close Now",
