@@ -8,6 +8,8 @@ Public launch package generated during the autonomous earning run.
 - Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
 - All 42 paid catalog rows now have structured ready-to-pay intake forms through the catalog.
 - Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
+- Standalone payment handoff after exact acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html
+- Standalone payment handoff CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone_payment_handoff.csv
 - First $100 Product Bundle: https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html
 - Bundle ready-to-buy form: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml
 - Bundle marketplace release packet: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/first-100-product-bundle-marketplace-v1
@@ -51,6 +53,8 @@ Use the catalog when a buyer is choosing among services, product transfers, stan
 - Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
 - Catalog CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.csv
 - Catalog JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.json
+- Standalone payment handoff after exact acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html
+- Standalone payment handoff CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone_payment_handoff.csv
 - Payment activation after accepted scope: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
 - Proof monitor: https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html
 
@@ -93,6 +97,8 @@ The paid offer action catalog now also maps the remaining central product/setup 
 
 - Forms directory: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-ready-forms.html
 - Machine-readable forms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/structured_ready_forms.csv
+- Route-specific payment handoff after exact acceptance: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html
+- Payment handoff CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone_payment_handoff.csv
 - All forms still require accepted scope or transfer terms, a seller-controlled external payment route, delivery proof, and posted/released/payable/cleared money before any amount is counted.
 
 ## Fastest $100 paths
