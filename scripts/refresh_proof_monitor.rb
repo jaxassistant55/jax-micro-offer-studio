@@ -5,6 +5,7 @@ require "csv"
 require "cgi"
 require "json"
 require "open3"
+require "timeout"
 require "time"
 
 ENV["TZ"] = "Asia/Tokyo"
@@ -46,7 +47,41 @@ def read_csv(path)
 end
 
 def gh_json(path)
-  stdout, stderr, status = Open3.capture3("gh", "api", path)
+  stdout = +""
+  stderr = +""
+  status = nil
+  timed_out = false
+
+  Open3.popen3("gh", "api", path) do |stdin, out, err, wait_thr|
+    stdin.close
+    out_thread = Thread.new { out.read }
+    err_thread = Thread.new { err.read }
+    deadline = Time.now + 25
+
+    until wait_thr.join(0.2)
+      next unless Time.now > deadline
+
+      timed_out = true
+      begin
+        Process.kill("TERM", wait_thr.pid)
+      rescue StandardError
+        nil
+      end
+      sleep 0.5
+      begin
+        Process.kill("KILL", wait_thr.pid)
+      rescue StandardError
+        nil
+      end
+      break
+    end
+
+    status = wait_thr.value unless timed_out
+    stdout = out_thread.value.to_s
+    stderr = err_thread.value.to_s
+  end
+
+  return { "__error" => "gh api timeout for #{path}" } if timed_out
   return { "__error" => stderr.to_s.strip.empty? ? "gh api failed for #{path}" : stderr.to_s.strip } unless status.success?
 
   JSON.parse(stdout)
