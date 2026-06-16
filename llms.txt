@@ -75,6 +75,15 @@ Confirmed earned money remains $0 until external buyer/payment/payout proof exis
 - Website Audit Microservice Starter: https://github.com/jaxassistant55/website-audit-microservice-starter with preview https://jaxassistant55.github.io/website-audit-microservice-starter/demo/ and inquiry template https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=paid-inquiry.md
 - Workflow Tracker Dashboard Starter: https://github.com/jaxassistant55/workflow-tracker-dashboard-starter with preview https://jaxassistant55.github.io/workflow-tracker-dashboard-starter/demo/ and inquiry template https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=paid-inquiry.md
 
+## Ready-To-Buy Signal Room
+- Signal room: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.csv
+- JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.json
+- Central signal issue: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/29
+- Rows: 34 one-sale-to-$100 routes with buyer actions, payment packets, order boards, and proof gates.
+- Structured data: 34 Offer entries in JSON-LD on the signal-room page.
+- Boundary: signal-room pages, CSV/JSON rows, structured data, issue comments, and IndexNow submissions count $0 until external buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+
 ## Machine-readable files
 - Search index: https://jaxassistant55.github.io/jax-micro-offer-studio/search-index.json
 - Structured data graph: https://jaxassistant55.github.io/jax-micro-offer-studio/structured-data.json
