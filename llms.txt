@@ -135,3 +135,7 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 ## Standalone offer terms
 - Standalone offer terms: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html
 - Standalone offer terms CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone_offer_terms.csv
+
+## Standalone payment handoff
+- Standalone payment handoff: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html
+- Standalone payment handoff CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/standalone_payment_handoff.csv
