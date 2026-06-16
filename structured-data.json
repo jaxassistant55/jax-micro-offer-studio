@@ -2359,175 +2359,6 @@
       ]
     },
     {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Download Follow-Up",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html",
-      "description": "Release-preview download follow-up routes to paid inquiries and order boards.",
-      "hasPart": [
-        {
-          "@type": "Service",
-          "name": "Local SEO GBP Audit Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#local-seo-gbp-audit-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 175.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "PDF Table Extraction Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#pdf-table-extraction-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 125.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Static Service Site Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#static-service-site-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 200.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Niche Quote Estimator Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#niche-quote-estimator-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 150.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Technical Docs Cleanup Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#technical-docs-cleanup-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 150.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Website Audit Microservice Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#website-audit-microservice-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 150.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Workflow Tracker Dashboard Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#workflow-tracker-dashboard-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 150.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Career Packet Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#career-packet-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 125.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Client Intake SOP Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#client-intake-sop-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 125.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Data Cleanup Sprint Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#data-cleanup-sprint-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 125.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Automation Blueprint Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#automation-blueprint-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 100.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Content Repurposing Sprint Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#content-repurposing-sprint-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 100.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Resale Listing Research Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#resale-listing-research-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 100.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Subscription Audit Savings Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#subscription-audit-savings-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 100.0
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Translation Localization Draft Starter",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#translation-localization-draft-starter",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 100.0
-          }
-        },
-        {
-          "@type": "Product",
-          "name": "Browser Extension Template Preview",
-          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#browser-extension-template-preview",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": 29.0
-          }
-        }
-      ]
-    },
-    {
       "@type": "Service",
       "additionalType": "hot_close_high_intent_route",
       "name": "Observed download hot close: Local SEO GBP Audit Starter",
@@ -3812,6 +3643,175 @@
         }
       ],
       "description": "Exact terms and acceptance statements for standalone Micro Offer Studio buyer routes."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Download Follow-Up",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html",
+      "description": "Release-preview download follow-up routes to paid inquiries and order boards.",
+      "hasPart": [
+        {
+          "@type": "Service",
+          "name": "Local SEO GBP Audit Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#local-seo-gbp-audit-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 175.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "PDF Table Extraction Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#pdf-table-extraction-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Static Service Site Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#static-service-site-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 200.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Niche Quote Estimator Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#niche-quote-estimator-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Technical Docs Cleanup Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#technical-docs-cleanup-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Website Audit Microservice Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#website-audit-microservice-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Workflow Tracker Dashboard Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#workflow-tracker-dashboard-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 150.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Career Packet Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#career-packet-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Client Intake SOP Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#client-intake-sop-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Data Cleanup Sprint Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#data-cleanup-sprint-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 125.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Automation Blueprint Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#automation-blueprint-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Content Repurposing Sprint Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#content-repurposing-sprint-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Resale Listing Research Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#resale-listing-research-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Subscription Audit Savings Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#subscription-audit-savings-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100.0
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Translation Localization Draft Starter",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#translation-localization-draft-starter",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 100.0
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Browser Extension Template Preview",
+          "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html#browser-extension-template-preview",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": 29.0
+          }
+        }
+      ]
     }
   ]
 }

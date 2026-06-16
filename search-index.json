@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-16 00:08:52 JST",
+  "generated_at_jst": "2026-06-16 11:49:31 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -1419,22 +1419,6 @@
       "money_status": "0 until payment and delivery proof exist"
     },
     {
-      "type": "download_followup",
-      "title": "Download Follow-Up",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html",
-      "summary": "Release-preview download follow-up routes to paid inquiries and order boards.",
-      "price": "$100+ service routes and one $29 product route",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
-      "type": "download_followup_csv",
-      "title": "Download Follow-Up CSV",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download_followup.csv",
-      "summary": "Machine-readable release download counts and fastest paid next steps.",
-      "price": "$100+ service routes and one $29 product route",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
       "type": "hot_close_secondary_route",
       "title": "Observed download hot close on share-kit.html",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/share-kit.html#hot-close-observed",
@@ -1726,30 +1710,6 @@
       ]
     },
     {
-      "type": "hot_download_close_room",
-      "title": "Local SEO GBP Audit Starter Close Room",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
-      "summary": "Fixed-scope close room for observed preview-download interest.",
-      "price": "$175",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
-      "type": "hot_download_close_room",
-      "title": "PDF Table Extraction Starter Close Room",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
-      "summary": "Fixed-scope close room for observed preview-download interest.",
-      "price": "$125",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
-      "type": "hot_download_close_room_csv",
-      "title": "Hot Download Close Rooms CSV",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot_download_close_rooms.csv",
-      "summary": "Machine-readable close-room routes for observed preview-download interest.",
-      "price": "$125-$175",
-      "money_status": "0 until buyer acceptance and external payment proof exist"
-    },
-    {
       "type": "buyer_response_autopilot",
       "title": "Buyer Response Autopilot",
       "slug": "buyer-response-playbook",
@@ -1784,6 +1744,46 @@
       "first_100": "Moves accepted buyer routes closer to payment proof but counts $0 until external posted/released/payable money exists.",
       "start_order_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html",
       "proof_rule": "Payment handoff scripts count $0 until external payment and delivery proof exist."
+    },
+    {
+      "type": "download_followup",
+      "title": "Download Follow-Up",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download-followup.html",
+      "summary": "Release-preview download follow-up routes to paid inquiries and order boards.",
+      "price": "$100+ service routes and one $29 product route",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "download_followup_csv",
+      "title": "Download Follow-Up CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/download_followup.csv",
+      "summary": "Machine-readable release download counts and fastest paid next steps.",
+      "price": "$100+ service routes and one $29 product route",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "hot_download_close_room",
+      "title": "Local SEO GBP Audit Starter Close Room",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+      "summary": "Fixed-scope close room for observed preview-download interest.",
+      "price": "$175",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "hot_download_close_room",
+      "title": "PDF Table Extraction Starter Close Room",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+      "summary": "Fixed-scope close room for observed preview-download interest.",
+      "price": "$125",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
+    },
+    {
+      "type": "hot_download_close_room_csv",
+      "title": "Hot Download Close Rooms CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot_download_close_rooms.csv",
+      "summary": "Machine-readable close-room routes for observed preview-download interest.",
+      "price": "$125-$175",
+      "money_status": "0 until buyer acceptance and external payment proof exist"
     }
   ]
 }
