@@ -6,6 +6,8 @@ on:
     - cron: "17,47 * * * *"
   issues:
     types: [opened, edited, reopened, closed, labeled, unlabeled]
+  issue_comment:
+    types: [created, edited, deleted]
   pull_request_target:
     types: [opened, reopened, closed, edited, synchronize]
 
