@@ -153,3 +153,9 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 - JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.json
 - Rows: 34 seller-side invoice/payment-request packets for one-sale-to-$100 routes.
 - Boundary: generated packets are not payment proof; count money only after accepted scope, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+## Marketplace Listing Packets
+- Page: https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.csv
+- JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.json
+- Rows: 34 platform-neutral listing packets for one-sale-to-$100 routes.
+- Boundary: generated listing packets are not posted listings and not payment proof; count money only after real buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.

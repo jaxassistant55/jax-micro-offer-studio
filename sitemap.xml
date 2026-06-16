@@ -484,4 +484,13 @@
   <url>
     <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/sitemap.xml</loc>
   </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html</loc>
+  </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.csv</loc>
+  </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.json</loc>
+  </url>
 </urlset>

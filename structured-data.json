@@ -4402,6 +4402,15 @@
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html",
       "description": "Payment-request and proof packets for one-sale-to-$100 Micro Offer Studio routes.",
       "numberOfItems": 34
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html#structured-data",
+      "name": "Marketplace Listing Packets",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html",
+      "description": "Platform-neutral marketplace listing copy for one-sale-to-$100 Micro Offer Studio routes.",
+      "numberOfItems": 34
     }
   ]
 }
