@@ -2,13 +2,16 @@
 # frozen_string_literal: true
 
 require "json"
+require "csv"
 require "open3"
 
 REPO = ENV.fetch("GITHUB_REPOSITORY", "jaxassistant55/jax-micro-offer-studio")
 DOCS = File.expand_path("../docs", __dir__)
 CATALOG_PATH = File.join(DOCS, "paid-offer-action-catalog.json")
+PAYMENT_PACKETS_PATH = File.join(DOCS, "one-sale-payment-packets.csv")
 SITE = "https://jaxassistant55.github.io/jax-micro-offer-studio/"
 PAYMENT_ACTIVATION = "#{SITE}payment-activation"
+ONE_SALE_PAYMENT_PACKETS = "#{SITE}one-sale-payment-packets.html"
 PROOF_MONITOR = "#{SITE}proof-monitor.html"
 PRODUCT_BUNDLE_TERMS = "#{SITE}first-100-product-bundle-terms.html"
 PRODUCT_BUNDLE_ACCEPTANCE = "I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment."
@@ -138,6 +141,14 @@ rescue JSON::ParserError
   []
 end
 
+def payment_packet_rows
+  return [] unless File.exist?(PAYMENT_PACKETS_PATH)
+
+  CSV.read(PAYMENT_PACKETS_PATH, headers: true).map(&:to_h)
+rescue CSV::MalformedCSVError
+  []
+end
+
 def repo_from_url(url)
   url.to_s.sub(%r{\Ahttps://github\.com/}, "").sub(%r{/(issues|pull)/.*\z}, "").sub(%r{/\z}, "")
 end
@@ -146,6 +157,14 @@ def catalog_match(issue, repo)
   title = issue["title"].to_s.downcase
   body = issue["body"].to_s.downcase
   candidates = catalog_rows
+  title_match = candidates.find do |row|
+    row_title = row["title"].to_s.downcase
+    row_id = row["catalog_row_id"].to_s.tr("-", " ").downcase
+    (!row_title.empty? && (title.include?(row_title) || body.include?(row_title))) ||
+      (!row_id.empty? && (title.include?(row_id) || body.include?(row_id)))
+  end
+  return title_match if title_match
+
   repo_candidates = candidates.select do |row|
     [row["repo_url"], row["structured_form_url"], row["order_board_url"], row["best_buyer_action_url"]].any? do |value|
       repo_from_url(value).casecmp?(repo)
@@ -190,6 +209,30 @@ def first_100_fast_start?(issue, matched_row)
   text.include?("first $100 fast start") ||
     text.include?("first-100-fast-start") ||
     text.include?("central-first-100-fast-start")
+end
+
+def payment_packet_match(matched_row)
+  rows = payment_packet_rows
+  return nil if rows.empty?
+
+  catalog_row_id = matched_row["catalog_row_id"].to_s
+  title = matched_row["title"].to_s.downcase
+  primary_url = matched_row["primary_url"].to_s
+  structured_url = matched_row["structured_form_url"].to_s
+  order_board = matched_row["order_board_url"].to_s
+
+  rows.find { |row| row["catalog_row_id"].to_s == catalog_row_id } ||
+    rows.find { |row| !title.empty? && row["title"].to_s.downcase == title } ||
+    rows.find do |row|
+      [primary_url, structured_url, order_board].any? do |url|
+        !url.empty? && [
+          row["primary_url"],
+          row["structured_form_url"],
+          row["best_buyer_action_url"],
+          row["order_board_url"]
+        ].include?(url)
+      end
+    end
 end
 
 def existing_response?(repo, number)
@@ -241,6 +284,24 @@ def response_body(issue, matched_row)
   detail_url = matched_row["primary_url"].to_s.empty? ? "#{SITE}paid-offer-action-catalog.html" : matched_row["primary_url"]
   payment_url = matched_row["payment_activation_url"].to_s.empty? ? PAYMENT_ACTIVATION : matched_row["payment_activation_url"]
   proof_rule = matched_row["proof_rule"].to_s.empty? ? "Count $0 until a real buyer accepts scope, pays through a seller-owned external route, receives delivery, and payment is posted, released, payable, or cleared." : matched_row["proof_rule"]
+  payment_packet = payment_packet_match(matched_row)
+  payment_packet_block = if payment_packet
+                           <<~MD
+
+                             Matching one-sale payment packet:
+                             - Packet: #{payment_packet["packet_url"]}
+                             - Packet ID: #{payment_packet["packet_id"]}
+                             - Invoice line: #{payment_packet["invoice_line"]}
+                             - Use this packet after acceptance to paste a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URL into the buyer message.
+                           MD
+                         else
+                           <<~MD
+
+                             One-sale payment packets:
+                             - Packet index: #{ONE_SALE_PAYMENT_PACKETS}
+                             - Use a packet only after a real buyer selects the route and scope or transfer terms are accepted.
+                           MD
+                         end
   bundle_terms = if first_100_product_bundle?(issue, matched_row)
                    <<~MD
 
@@ -278,8 +339,10 @@ def response_body(issue, matched_row)
     1. Keep the scope public-safe in this issue. Do not post passwords, payment cards, tax identifiers, private regulated details, confidential files, or screenshots of payment accounts.
     2. Confirm the exact deliverable, deadline, acceptance proof, and any buyer-owned inputs that can safely be shared.
     3. Use the payment activation page only after scope or transfer terms are accepted: #{payment_url}
-    4. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone. This GitHub issue is not a checkout and is not payment proof.
-    5. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof in the monitor.
+    4. Use the matching one-sale payment packet below to prepare the seller-side invoice line and payment-request copy.
+    5. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone. This GitHub issue is not a checkout and is not payment proof.
+    6. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof in the monitor.
+    #{payment_packet_block}
     #{bundle_terms}
     #{fast_start_terms}
 
@@ -345,6 +408,7 @@ if labels.map(&:downcase).include?("buyer-response-sent") || existing_response?(
 end
 
 matched_row = catalog_match(issue, REPO)
+matched_packet = payment_packet_match(matched_row)
 body = response_body(issue, matched_row)
 post_comment(REPO, number, body)
 add_labels(REPO, number)
@@ -358,6 +422,9 @@ emit(
   ready_from_comment: ready_from_comment,
   matched_catalog_row: matched_row["catalog_row_id"],
   matched_title: matched_row["title"],
+  matched_payment_packet: matched_packet && matched_packet["packet_url"],
+  response_includes_payment_packet: !matched_packet.nil? && body.include?(matched_packet["packet_url"].to_s),
+  response_includes_payment_packet_index: body.include?(ONE_SALE_PAYMENT_PACKETS),
   response_includes_product_bundle_terms: body.include?(PRODUCT_BUNDLE_TERMS),
   response_includes_product_bundle_acceptance: body.include?(PRODUCT_BUNDLE_ACCEPTANCE),
   response_includes_fast_start_terms: body.include?(FAST_START_TERMS),
