@@ -1,0 +1,470 @@
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Standalone route payment handoff messages with exact acceptance gates, seller-owned payment proof, and money-counting boundaries.">
+    <title>Standalone Payment Handoff - Micro Offer Studio</title>
+    <style>
+      :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00;--red:#9b1c1c}
+      *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;background:#fff}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:0}h2{margin:6px 0 8px;font-size:1.18rem}p{margin:0 0 10px}a{color:var(--accent);overflow-wrap:anywhere}.muted{color:var(--muted)}.buttons{display:flex;gap:8px;flex-wrap:wrap}.buttons a{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}.summary,.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}.metric,.control,.notice,.card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;min-width:0;overflow-wrap:anywhere}.metric,.control{background:var(--panel)}.notice{border-left:6px solid var(--gold);background:#fffaf0}.danger{border-left:6px solid var(--red);background:#fff7f5}.metric span,.eyebrow,label{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;font-size:1.25rem;margin-top:6px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{border-left:6px solid var(--green)}input,textarea{width:100%;min-height:40px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;background:#fff}textarea{min-height:72px}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:8px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88rem}details{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}@media(max-width:900px){.summary,.controls,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}}
+    </style>
+    <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Standalone Payment Handoff",
+  "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html",
+  "description": "Route-specific payment handoff messages for standalone Micro Offer Studio lead repos.",
+  "hasPart": [
+    {
+      "@type": "Service",
+      "name": "Automation Blueprint Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#automation-blueprint-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Browser Extension Template Preview",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#browser-extension-template-preview",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 29.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Career Packet Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#career-packet-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Client Intake SOP Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#client-intake-sop-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Content Repurposing Sprint Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#content-repurposing-sprint-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Data Cleanup Sprint Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#data-cleanup-sprint-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Local SEO GBP Audit Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#local-seo-gbp-audit-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 175.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Niche Quote Estimator Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#niche-quote-estimator-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "PDF Table Extraction Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#pdf-table-extraction-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 125.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Resale Listing Research Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#resale-listing-research-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Static Service Site Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#static-service-site-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 200.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Subscription Audit Savings Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#subscription-audit-savings-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Technical Docs Cleanup Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#technical-docs-cleanup-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Translation Localization Draft Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#translation-localization-draft-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Website Audit Microservice Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#website-audit-microservice-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Workflow Tracker Dashboard Starter",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html#workflow-tracker-dashboard-starter",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 150.0
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="buttons"><a href="index.html">Home</a><a href="standalone-offer-terms.html">Standalone terms</a><a href="github-leads.html">GitHub leads</a><a href="payment-activation.html">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="standalone_payment_handoff.csv">CSV</a></p>
+        <h1>Standalone Payment Handoff</h1>
+        <p class="muted">Generated 2026-06-16 10:33:20 JST. Browser-only payment handoff messages for 16 standalone lead routes. This page does not process payment and counts $0 until external proof exists.</p>
+        <section class="summary">
+          <div class="metric"><span>Routes</span><strong>16</strong></div>
+          <div class="metric"><span>One sale to $100+</span><strong>15</strong></div>
+          <div class="metric"><span>Includes products</span><strong>1</strong></div>
+          <div class="metric"><span>Money counted</span><strong>$0</strong></div>
+        </section>
+      </header>
+      <section class="notice">
+        <strong>Use only after a real buyer accepts terms.</strong>
+        <p>Paste a seller-owned payment URL below. The generated message is a handoff script only; it is not payment proof.</p>
+      </section>
+      <section class="controls">
+        <div class="control"><label for="paymentUrl">Seller-owned payment URL</label><input id="paymentUrl" placeholder="https://checkout, invoice, marketplace order, funded milestone, or payment request"></div>
+        <div class="control"><label for="sellerContact">Seller contact</label><input id="sellerContact" placeholder="seller email or marketplace profile"></div>
+        <div class="control"><label for="buyerName">Buyer name</label><input id="buyerName" placeholder="buyer or company name"></div>
+        <div class="control"><label for="validUntil">Valid until</label><input id="validUntil" placeholder="YYYY-MM-DD or agreed window"></div>
+      </section>
+      <section class="danger notice">
+        <strong>Stop conditions:</strong>
+        <p>Stop if the payment URL is not yours, exact acceptance is missing, the buyer wants credentials or unauthorized private files, or external payment proof cannot be saved.</p>
+      </section>
+      <section class="grid">
+        <article class="card" id="automation-blueprint-starter" data-card data-title="Automation Blueprint Starter" data-price="$100" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#automation-blueprint-starter" data-acceptance="I accept the Automation Blueprint Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Automation Blueprint Starter fixed-scope paid work - $100" data-sales="1">
+  <span class="eyebrow">service / $100</span>
+  <h2>Automation Blueprint Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#automation-blueprint-starter">Terms</a><a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/automation-blueprint-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Automation Blueprint Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="automation-blueprint-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="browser-extension-template-preview" data-card data-title="Browser Extension Template Preview" data-price="$29" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#browser-extension-template-preview" data-acceptance="I accept the Browser Extension Template Preview transfer terms at $29. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Browser Extension Template Preview paid transfer - $29" data-sales="4">
+  <span class="eyebrow">product / $29</span>
+  <h2>Browser Extension Template Preview</h2>
+  <p><strong>Gross sales to $100:</strong> 4</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#browser-extension-template-preview">Terms</a><a href="https://github.com/jaxassistant55/browser-extension-template-preview/issues/new?template=ready-to-pay-browser-extension-template-preview.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/browser-extension-template-preview">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Browser Extension Template Preview transfer terms at $29. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="browser-extension-template-preview">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="career-packet-starter" data-card data-title="Career Packet Starter" data-price="$125" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#career-packet-starter" data-acceptance="I accept the Career Packet Starter fixed-scope work terms at $125. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Career Packet Starter fixed-scope paid work - $125" data-sales="1">
+  <span class="eyebrow">service / $125</span>
+  <h2>Career Packet Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#career-packet-starter">Terms</a><a href="https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/career-packet-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Career Packet Starter fixed-scope work terms at $125. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="career-packet-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="client-intake-sop-starter" data-card data-title="Client Intake SOP Starter" data-price="$125" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#client-intake-sop-starter" data-acceptance="I accept the Client Intake SOP Starter fixed-scope work terms at $125. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Client Intake SOP Starter fixed-scope paid work - $125" data-sales="1">
+  <span class="eyebrow">service / $125</span>
+  <h2>Client Intake SOP Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#client-intake-sop-starter">Terms</a><a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/client-intake-sop-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Client Intake SOP Starter fixed-scope work terms at $125. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="client-intake-sop-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="content-repurposing-sprint-starter" data-card data-title="Content Repurposing Sprint Starter" data-price="$100" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#content-repurposing-sprint-starter" data-acceptance="I accept the Content Repurposing Sprint Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Content Repurposing Sprint Starter fixed-scope paid work - $100" data-sales="1">
+  <span class="eyebrow">service / $100</span>
+  <h2>Content Repurposing Sprint Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#content-repurposing-sprint-starter">Terms</a><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Content Repurposing Sprint Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="content-repurposing-sprint-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="data-cleanup-sprint-starter" data-card data-title="Data Cleanup Sprint Starter" data-price="$125" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#data-cleanup-sprint-starter" data-acceptance="I accept the Data Cleanup Sprint Starter fixed-scope work terms at $125. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Data Cleanup Sprint Starter fixed-scope paid work - $125" data-sales="1">
+  <span class="eyebrow">service / $125</span>
+  <h2>Data Cleanup Sprint Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#data-cleanup-sprint-starter">Terms</a><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Data Cleanup Sprint Starter fixed-scope work terms at $125. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="data-cleanup-sprint-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="local-seo-gbp-audit-starter" data-card data-title="Local SEO GBP Audit Starter" data-price="$175" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#local-seo-gbp-audit-starter" data-acceptance="I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment." data-line="Local SEO GBP Audit Starter fixed-scope paid work - $175" data-sales="1">
+  <span class="eyebrow">service / $175</span>
+  <h2>Local SEO GBP Audit Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#local-seo-gbp-audit-starter">Terms</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="local-seo-gbp-audit-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="niche-quote-estimator-starter" data-card data-title="Niche Quote Estimator Starter" data-price="$150" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#niche-quote-estimator-starter" data-acceptance="I accept the Niche Quote Estimator Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Niche Quote Estimator Starter fixed-scope paid work - $150" data-sales="1">
+  <span class="eyebrow">service / $150</span>
+  <h2>Niche Quote Estimator Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#niche-quote-estimator-starter">Terms</a><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Niche Quote Estimator Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="niche-quote-estimator-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="pdf-table-extraction-starter" data-card data-title="PDF Table Extraction Starter" data-price="$125" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#pdf-table-extraction-starter" data-acceptance="I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment." data-line="PDF Table Extraction Starter fixed-scope paid work - $125" data-sales="1">
+  <span class="eyebrow">service / $125</span>
+  <h2>PDF Table Extraction Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#pdf-table-extraction-starter">Terms</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="pdf-table-extraction-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="resale-listing-research-starter" data-card data-title="Resale Listing Research Starter" data-price="$100" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#resale-listing-research-starter" data-acceptance="I accept the Resale Listing Research Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Resale Listing Research Starter fixed-scope paid work - $100" data-sales="1">
+  <span class="eyebrow">service / $100</span>
+  <h2>Resale Listing Research Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#resale-listing-research-starter">Terms</a><a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/resale-listing-research-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Resale Listing Research Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="resale-listing-research-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="static-service-site-starter" data-card data-title="Static Service Site Starter" data-price="$200" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#static-service-site-starter" data-acceptance="I accept the Static Service Site Starter fixed-scope work terms at $200. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Static Service Site Starter fixed-scope paid work - $200" data-sales="1">
+  <span class="eyebrow">service / $200</span>
+  <h2>Static Service Site Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#static-service-site-starter">Terms</a><a href="https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/static-service-site-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Static Service Site Starter fixed-scope work terms at $200. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="static-service-site-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="subscription-audit-savings-starter" data-card data-title="Subscription Audit Savings Starter" data-price="$100" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#subscription-audit-savings-starter" data-acceptance="I accept the Subscription Audit Savings Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Subscription Audit Savings Starter fixed-scope paid work - $100" data-sales="1">
+  <span class="eyebrow">service / $100</span>
+  <h2>Subscription Audit Savings Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#subscription-audit-savings-starter">Terms</a><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Subscription Audit Savings Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="subscription-audit-savings-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="technical-docs-cleanup-starter" data-card data-title="Technical Docs Cleanup Starter" data-price="$150" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#technical-docs-cleanup-starter" data-acceptance="I accept the Technical Docs Cleanup Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Technical Docs Cleanup Starter fixed-scope paid work - $150" data-sales="1">
+  <span class="eyebrow">service / $150</span>
+  <h2>Technical Docs Cleanup Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#technical-docs-cleanup-starter">Terms</a><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Technical Docs Cleanup Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="technical-docs-cleanup-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="translation-localization-draft-starter" data-card data-title="Translation Localization Draft Starter" data-price="$100" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#translation-localization-draft-starter" data-acceptance="I accept the Translation Localization Draft Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Translation Localization Draft Starter fixed-scope paid work - $100" data-sales="1">
+  <span class="eyebrow">service / $100</span>
+  <h2>Translation Localization Draft Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#translation-localization-draft-starter">Terms</a><a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/translation-localization-draft-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Translation Localization Draft Starter fixed-scope work terms at $100. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="translation-localization-draft-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="website-audit-microservice-starter" data-card data-title="Website Audit Microservice Starter" data-price="$150" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#website-audit-microservice-starter" data-acceptance="I accept the Website Audit Microservice Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Website Audit Microservice Starter fixed-scope paid work - $150" data-sales="1">
+  <span class="eyebrow">service / $150</span>
+  <h2>Website Audit Microservice Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#website-audit-microservice-starter">Terms</a><a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/website-audit-microservice-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Website Audit Microservice Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="website-audit-microservice-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+<article class="card" id="workflow-tracker-dashboard-starter" data-card data-title="Workflow Tracker Dashboard Starter" data-price="$150" data-terms="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#workflow-tracker-dashboard-starter" data-acceptance="I accept the Workflow Tracker Dashboard Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment." data-line="Workflow Tracker Dashboard Starter fixed-scope paid work - $150" data-sales="1">
+  <span class="eyebrow">service / $150</span>
+  <h2>Workflow Tracker Dashboard Starter</h2>
+  <p><strong>Gross sales to $100:</strong> 1</p>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html#workflow-tracker-dashboard-starter">Terms</a><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml">Ready-to-pay form</a><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter">Repo</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html">Proof monitor</a></p>
+  <p><strong>Exact acceptance:</strong></p>
+  <div class="copybox">I accept the Workflow Tracker Dashboard Starter fixed-scope work terms at $150. I understand work or transfer starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; the deliverable is limited to the public preview, README/ORDER scope, and accepted ready-to-pay form details; and credentials, account login work, unauthorized private files, confidential regulated data handling, purchasing, publishing changes, ongoing support, custom implementation beyond the accepted scope, or extra revisions are not included unless separately agreed before payment.</div>
+  <details open>
+    <summary>Generated payment handoff</summary>
+    <div class="copybox" data-output-for="workflow-tracker-dashboard-starter">Enter a payment URL above to generate this message.</div>
+  </details>
+</article>
+
+      </section>
+    </main>
+    <script>
+      function val(id, fallback){ const el = document.getElementById(id); return el && el.value.trim() ? el.value.trim() : fallback; }
+      function render(){
+        const paymentUrl = val('paymentUrl', '[paste seller-owned payment URL]');
+        const sellerContact = val('sellerContact', '[seller contact]');
+        const buyerName = val('buyerName', '[buyer name]');
+        const validUntil = val('validUntil', '[valid until]');
+        document.querySelectorAll('[data-card]').forEach(card => {
+          const title = card.dataset.title;
+          const price = card.dataset.price;
+          const terms = card.dataset.terms;
+          const acceptance = card.dataset.acceptance;
+          const line = card.dataset.line;
+          const sales = card.dataset.sales;
+          const output = card.querySelector('[data-output-for]');
+          output.textContent = `Hi ${buyerName},
+
+Scope and terms are ready for ${title} at ${price}.
+
+Terms page:
+${terms}
+
+Exact acceptance required before payment:
+${acceptance}
+
+Seller-owned payment route:
+${paymentUrl}
+
+Seller contact:
+${sellerContact}
+
+Valid until:
+${validUntil}
+
+Invoice line:
+${line}
+
+Gross sales needed to reach $100 for this route: ${sales}
+
+Payment boundary: work or transfer starts only after exact acceptance and external payment proof exist. Please do not post credentials, payment screenshots, tax identifiers, private regulated data, or unauthorized files in public GitHub issues.
+
+Money rule: count $0 until delivery/transfer proof and posted, released, payable, or cleared funds exist.`;
+        });
+      }
+      ['paymentUrl','sellerContact','buyerName','validUntil'].forEach(id => document.getElementById(id).addEventListener('input', render));
+      render();
+    </script>
+  </body>
+  </html>

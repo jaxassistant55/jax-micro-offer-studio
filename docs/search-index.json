@@ -1772,6 +1772,18 @@
       "first_100": "Reduces buyer/payment friction but counts $0 until external payment proof exists.",
       "start_order_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/structured-ready-forms.html",
       "proof_rule": "Terms acceptance alone is $0; count only posted/released/payable money after delivery."
+    },
+    {
+      "type": "payment_handoff",
+      "title": "Standalone Payment Handoff",
+      "slug": "standalone-payment-handoff",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-payment-handoff.html",
+      "price": "$0",
+      "amount_usd": 0,
+      "description": "Route-specific payment handoff scripts with exact acceptance statements for 16 standalone lead repos.",
+      "first_100": "Moves accepted buyer routes closer to payment proof but counts $0 until external posted/released/payable money exists.",
+      "start_order_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/standalone-offer-terms.html",
+      "proof_rule": "Payment handoff scripts count $0 until external payment and delivery proof exist."
     }
   ]
 }
