@@ -48,14 +48,21 @@ def gh_json(*args)
   JSON.parse(stdout)
 end
 
-def issue_from_event
+def event_payload
   event_path = ENV["GITHUB_EVENT_PATH"].to_s
   return nil if event_path.empty? || !File.exist?(event_path)
 
-  event = JSON.parse(File.read(event_path))
-  event["issue"]
+  JSON.parse(File.read(event_path))
 rescue JSON::ParserError
   nil
+end
+
+def issue_from_event
+  event_payload && event_payload["issue"]
+end
+
+def comment_from_event
+  event_payload && event_payload["comment"]
 end
 
 def issue_number
@@ -76,6 +83,40 @@ def ready_issue?(issue)
   labels.any? { |label| %w[ready-to-pay ready-to-buy].include?(label) } ||
     title.start_with?("ready to pay:") ||
     title.start_with?("ready to buy:")
+end
+
+def paid_order_board_issue?(issue)
+  labels = label_names(issue).map(&:downcase)
+  title = issue["title"].to_s.downcase
+  labels.any? { |label| %w[paid-inquiry order-board product-transfer service-order needs-scope].include?(label) } ||
+    title.include?("order board") ||
+    title.include?("first $100") ||
+    title.include?("available now")
+end
+
+def ready_buyer_comment?(comment)
+  text = comment.to_s.downcase
+  return false if text.empty?
+
+  [
+    "ready to pay",
+    "ready-to-pay",
+    "ready to buy",
+    "ready-to-buy",
+    "i accept",
+    "please invoice",
+    "send invoice",
+    "payment link",
+    "checkout link",
+    "funded milestone",
+    "i want to buy",
+    "i want this",
+    "buy this",
+    "purchase this",
+    "place an order",
+    "start order",
+    "hire you"
+  ].any? { |phrase| text.include?(phrase) }
 end
 
 def non_buyer_claim_text?(text)
@@ -253,6 +294,7 @@ def emit(result)
 end
 
 issue = issue_from_event
+comment = comment_from_event
 number = issue_number
 issue = fetch_issue(REPO, number) if number && (issue.nil? || issue["number"].to_s != number)
 
@@ -263,8 +305,11 @@ end
 
 number = issue["number"].to_s
 labels = label_names(issue)
-author = issue.dig("user", "login").to_s
-combined_text = [issue["title"], issue["body"], labels.join(" ")].join("\n")
+issue_author = issue.dig("user", "login").to_s
+comment_author = comment.is_a?(Hash) ? comment.dig("user", "login").to_s : ""
+comment_body = comment.is_a?(Hash) ? comment["body"].to_s : ""
+trigger_author = comment_body.empty? ? issue_author : comment_author
+combined_text = [issue["title"], issue["body"], labels.join(" "), comment_body].join("\n")
 
 if issue["pull_request"].is_a?(Hash)
   emit(status: "skipped", reason: "pull_request_not_buyer_issue", issue: number)
@@ -276,18 +321,21 @@ unless issue["state"].to_s == "open"
   exit 0
 end
 
-unless ready_issue?(issue)
-  emit(status: "skipped", reason: "not_ready_to_pay_or_buy", issue: number, labels: labels)
+ready_from_issue = ready_issue?(issue)
+ready_from_comment = !comment_body.empty? && paid_order_board_issue?(issue) && ready_buyer_comment?(comment_body)
+
+unless ready_from_issue || ready_from_comment
+  emit(status: "skipped", reason: "not_ready_to_pay_or_buy", issue: number, labels: labels, comment_checked: !comment_body.empty?)
   exit 0
 end
 
-if ASSISTANT_AUTHORS.include?(author)
-  emit(status: "skipped", reason: "assistant_authored_issue", issue: number, author: author)
+if ASSISTANT_AUTHORS.include?(trigger_author)
+  emit(status: "skipped", reason: "assistant_authored_trigger", issue: number, author: trigger_author)
   exit 0
 end
 
 if non_buyer_claim_text?(combined_text)
-  emit(status: "skipped", reason: "non_buyer_bounty_or_wallet_text", issue: number, author: author)
+  emit(status: "skipped", reason: "non_buyer_bounty_or_wallet_text", issue: number, author: trigger_author)
   exit 0
 end
 
@@ -304,7 +352,10 @@ add_labels(REPO, number)
 emit(
   status: dry_run? ? "dry_run_ready_to_respond" : "responded",
   issue: number,
-  author: author,
+  author: trigger_author,
+  trigger: comment_body.empty? ? "issue" : "issue_comment",
+  ready_from_issue: ready_from_issue,
+  ready_from_comment: ready_from_comment,
   matched_catalog_row: matched_row["catalog_row_id"],
   matched_title: matched_row["title"],
   response_includes_product_bundle_terms: body.include?(PRODUCT_BUNDLE_TERMS),

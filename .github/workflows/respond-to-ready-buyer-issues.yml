@@ -9,6 +9,8 @@ on:
         type: string
   issues:
     types: [opened, reopened, edited, labeled]
+  issue_comment:
+    types: [created, edited]
 
 permissions:
   contents: read
