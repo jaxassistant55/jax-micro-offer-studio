@@ -1,8 +1,43 @@
 {
-  "generated_at_jst": "2026-06-16 11:49:31 JST",
+  "generated_at_jst": "2026-06-16 12:36:20 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
+    {
+      "type": "close_catalog",
+      "title": "One Sale To $100 Close Now",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.html",
+      "description": "Focused direct buyer routes for paid offers where one accepted order can reach the first $100 target before fees/refunds.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "close-now",
+        "ready-to-pay",
+        "payment-proof"
+      ]
+    },
+    {
+      "type": "json",
+      "title": "One Sale To $100 JSON",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.json",
+      "description": "Machine-readable one-sale-to-$100 paid-offer routes.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "json"
+      ]
+    },
+    {
+      "type": "csv",
+      "title": "One Sale To $100 CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-to-100.csv",
+      "description": "CSV of one-sale-to-$100 paid-offer routes, ready forms, payment activation links, and proof rules.",
+      "tags": [
+        "first-100",
+        "one-sale",
+        "csv"
+      ]
+    },
     {
       "type": "catalog",
       "title": "Paid Offer Action Catalog",
