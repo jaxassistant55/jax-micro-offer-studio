@@ -9,23 +9,32 @@
 *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;background:#fff}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:0}h2{margin:24px 0 10px;font-size:1.25rem;letter-spacing:0}h3{margin:0 0 6px;font-size:1.05rem;letter-spacing:0}p{margin:0 0 10px;overflow-wrap:anywhere}a{color:var(--accent);overflow-wrap:anywhere}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card,.notice,.metric{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;min-width:0;overflow-wrap:anywhere}.card{border-left:6px solid var(--accent)}.notice{border-left:6px solid var(--gold);background:#fffaf0}.metric{background:var(--panel)}.metric span,.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.buttons{display:flex;gap:8px;flex-wrap:wrap}.buttons a{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}ul,ol{padding-left:20px}li{margin:6px 0;overflow-wrap:anywhere}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}
 @media(max-width:900px){.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase}}
 </style>
-  <link rel="alternate" type="application/json" title="Paid offer action catalog" href="paid-offer-action-catalog.json">
+  <link rel="alternate" type="text/csv" title="Order boards CSV" href="order_boards.csv">
 </head>
 <body>
   <main>
     <header>
-      <p class="buttons"><a href="paid-offer-action-catalog.html">Paid offer catalog</a><a href="index.html">Home</a><a href="first-100-product-bundle.html">First $100 Product Bundle</a><a href="first-100-fast-start.html">First $100 Fast Start</a><a href="first-100-fast-start-terms.html">Fast Start terms</a><a href="order-now.html">Order now</a><a href="ready-to-buy.html">Ready to buy</a><a href="payment-activation">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="order_boards.csv">CSV</a></p>
+      <p class="buttons"><a href="index.html">Home</a><a href="marketplace-listing-packets.html">Marketplace packets</a><a href="first-100-product-bundle.html">First $100 Product Bundle</a><a href="first-100-fast-start.html">First $100 Fast Start</a><a href="paid-offer-action-catalog.html">Paid offer catalog</a><a href="payment-activation">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="order_boards.csv">CSV</a></p>
       <h1>Focused Order Boards</h1>
       <p class="muted">Specific public issue threads for the fastest $100 routes. These are owned-repo order boards, not payment processors.</p>
     </header>
     <section class="notice">
-      <h2>Start With The Product Bundle Board</h2>
-      <p>The First $100 Product Bundle is the shortest one-sale product path: one verified $100 private bundle transfer reaches the target before fees/refunds. The paid ZIP is not public; transfer only after accepted terms, seller-owned external payment proof, and private delivery proof.</p>
-      <p class="buttons"><a href="first-100-product-bundle.html">Open bundle page</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25">Open issue #25</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml">Structured ready-to-buy form</a><a href="first-100-fast-start.html">Service fast-start alternative</a></p>
+      <h2>Start With Marketplace Listing Packets</h2>
+      <p>The marketplace packet board routes a buyer to one of 34 one-sale paths. A board comment, release download, page view, or listing packet still counts as $0 until real buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.</p>
+      <p class="buttons"><a href="marketplace-listing-packets.html">Open marketplace packets</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/28">Open marketplace board</a><a href="one-sale-payment-packets.html">Payment packets</a><a href="payment-activation">Payment activation</a></p>
     </section>
     <section><table><thead><tr><th>Issue</th><th>Offer</th><th>Type</th><th>Price</th><th>Path to $100</th><th>State</th><th>Comments</th></tr></thead><tbody><tr>
+  <td data-label="Issue"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/28">#28</a></td>
+  <td data-label="Offer"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/marketplace-listing-packets.html">Marketplace Listing Packets</a></td>
+  <td data-label="Type">route-board</td>
+  <td data-label="Price">$100-$200 one-sale routes</td>
+  <td data-label="Path to $100">Any verified paid $100+ route selected from the 34 marketplace packets can reach the first $100 before fees/refunds.</td>
+  <td data-label="State">open</td>
+  <td data-label="Comments">0</td>
+</tr>
+<tr>
   <td data-label="Issue"><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25">#25</a></td>
-  <td data-label="Offer"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html">First $100 Product Bundle</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle-terms.html">Terms and acceptance</a></td>
+  <td data-label="Offer"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html">First $100 Product Bundle</a></td>
   <td data-label="Type">product</td>
   <td data-label="Price">$100</td>
   <td data-label="Path to $100">One paid product bundle transfer reaches $100 before fees/refunds.</td>
