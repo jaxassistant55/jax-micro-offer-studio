@@ -153,10 +153,13 @@ def download_count_for(row)
   return row["download_count"].to_i if release["__error"]
 
   asset_url = row["asset_url"].to_s
-  matching_asset = release.fetch("assets", []).find do |asset|
+  repo_slug = repo.split("/").last
+  assets = release.fetch("assets", [])
+  matching_asset = assets.find { |asset| asset["name"].to_s == "#{repo_slug}-preview.zip" }
+  matching_asset ||= assets.find do |asset|
     [asset["browser_download_url"], asset["url"], asset["name"]].compact.any? { |value| asset_url.include?(value.to_s) }
   end
-  (matching_asset || release.fetch("assets", []).first || {})["download_count"].to_i
+  (matching_asset || assets.first || {})["download_count"].to_i
 end
 
 def release_asset_download_count(repo, tag, asset_match = nil)
@@ -296,6 +299,14 @@ end
     "price" => "$125",
     "first_100_path" => "One verified paid PDF/Table Extraction order reaches $100 before fees/refunds.",
     "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html"
+  },
+  {
+    "repo" => "jaxassistant55/pdf-table-extraction-starter",
+    "asset_name" => "pdf-table-extraction-download-intent-close-v1.zip",
+    "title" => "PDF Table Extraction after-download close packet",
+    "price" => "$125",
+    "first_100_path" => "One verified paid PDF/Table Extraction order reaches $100 before fees/refunds.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-download-intent-close.html"
   }
 ].each do |asset_row|
   close_ready_release = release_asset_download_count(asset_row["repo"], "preview-v1", asset_row["asset_name"])

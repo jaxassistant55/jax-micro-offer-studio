@@ -173,3 +173,4 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 - Release: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/marketplace-listing-packets-v1
 - Assets: ZIP, CSV, JSON, and release manifest.
 - Boundary: release downloads are interest-only and count $0 until real buyer/payment/delivery/payout proof exists.
+- PDF Table Download Intent Close: https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-download-intent-close.html - observed PDF/Table preview downloads=2, close-ready packet downloads=1; routes buyers to exact terms, ready-to-pay intake, payment activation, and proof monitor; money remains $0 until external payment proof exists.

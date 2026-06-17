@@ -1,0 +1,22 @@
+{
+  "generated_at_jst": "2026-06-18 07:52:03 JST",
+  "route": "pdf_table_download_intent_close",
+  "title": "PDF Table Extraction after-download close",
+  "price": "$125",
+  "preview_downloads_observed": "2",
+  "close_ready_downloads_observed": "1",
+  "after_download_zip": "https://github.com/jaxassistant55/pdf-table-extraction-starter/releases/download/preview-v1/pdf-table-extraction-download-intent-close-v1.zip",
+  "after_download_zip_sha256": "f2c8ca187cff0406c35bf65491e0d26311225e49f594902d8bb6d4099e4cc176",
+  "after_download_zip_bytes": "2562",
+  "public_page": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-download-intent-close.html",
+  "public_csv": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf_table_download_intent_close.csv",
+  "hot_close": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html",
+  "ready_form": "https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml",
+  "terms": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction-terms.html",
+  "payment_activation": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html",
+  "proof_monitor": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+  "central_issue": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/20",
+  "standalone_issue": "https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/1",
+  "money_confirmed_usd": "0",
+  "money_rule": "Downloads and close packets count $0. Count only externally posted, released, payable, or cleared payment after accepted scope and delivery proof."
+}
