@@ -4446,6 +4446,41 @@
           "value": "0"
         }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Local SEO Download Intent Close",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-download-intent-close.html",
+      "description": "Fixed-scope Local SEO / GBP audit follow-up for observed preview-download interest.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "175",
+        "availability": "https://schema.org/InStock"
+      },
+      "potentialAction": {
+        "@type": "OrderAction",
+        "target": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml",
+        "result": "Paid work starts only after accepted scope and external seller-owned payment proof."
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "previewDownloadsObserved",
+          "value": "2"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "closeReadyDownloadsObserved",
+          "value": "0"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "moneyConfirmedUsd",
+          "value": "0"
+        }
+      ]
     }
   ]
 }

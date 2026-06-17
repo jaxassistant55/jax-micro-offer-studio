@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-18 07:52:03 JST",
+  "generated_at_jst": "2026-06-18 08:52:03 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -1954,6 +1954,30 @@
       "tags": [
         "csv",
         "pdf-table-extraction",
+        "proof"
+      ]
+    },
+    {
+      "type": "local_seo_download_intent_close",
+      "title": "Local SEO Download Intent Close",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-download-intent-close.html",
+      "description": "Observed Local SEO preview-download interest routed to fixed $175 terms, ready-to-pay intake, payment activation, and proof gates.",
+      "tags": [
+        "local-seo",
+        "download-interest",
+        "ready-to-pay",
+        "payment-proof",
+        "first-100"
+      ]
+    },
+    {
+      "type": "local_seo_download_intent_close_csv",
+      "title": "Local SEO Download Intent Close CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local_seo_download_intent_close.csv",
+      "description": "Machine-readable Local SEO after-download close path and proof rules.",
+      "tags": [
+        "csv",
+        "local-seo",
         "proof"
       ]
     }
