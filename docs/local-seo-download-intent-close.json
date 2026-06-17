@@ -1,0 +1,22 @@
+{
+  "generated_at_jst": "2026-06-18 08:52:03 JST",
+  "route": "local_seo_download_intent_close",
+  "title": "Local SEO / GBP Audit after-download close",
+  "price": "$175",
+  "preview_downloads_observed": "2",
+  "close_ready_downloads_observed": "0",
+  "after_download_zip": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter/releases/download/preview-v1/local-seo-gbp-audit-download-intent-close-v1.zip",
+  "after_download_zip_sha256": "9de90c8ce93161677cac564d65c1f681769865a5ca4e906c2c5c380057c6c0fa",
+  "after_download_zip_bytes": "2528",
+  "public_page": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-download-intent-close.html",
+  "public_csv": "https://jaxassistant55.github.io/jax-micro-offer-studio/local_seo_download_intent_close.csv",
+  "hot_close": "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html",
+  "ready_form": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml",
+  "terms": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit-terms.html",
+  "payment_activation": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation.html",
+  "proof_monitor": "https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html",
+  "central_issue": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/21",
+  "standalone_issue": "https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/1",
+  "money_confirmed_usd": "0",
+  "money_rule": "Downloads and close packets count $0. Count only externally posted, released, payable, or cleared payment after accepted scope and delivery proof."
+}
