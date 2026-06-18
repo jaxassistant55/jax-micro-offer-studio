@@ -4587,6 +4587,26 @@
       "name": "WeaponMechanics Item Model Compatibility Sprint",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-item-model-compatibility-sprint.html",
       "description": "A buyer-facing fixed-scope $100 WeaponMechanics Item_Model compatibility page with exact acceptance text, draft response, prepared wiki patch, payment activation, and proof boundary."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Voxy VR Backport Feasibility Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/voxy-vr-backport-feasibility-sprint.html",
+      "description": "Fixed-scope public-safe Voxy 1.20.1 Vivecraft/shader backport feasibility diagnostic with version matrix, risk map, and test checklist.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Voxy VR Backport Feasibility Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/voxy-vr-backport-feasibility-sprint.html",
+      "description": "A buyer-facing fixed-scope $100 Voxy VR backport feasibility page with exact acceptance text, draft response, prepared notes, payment activation, and proof boundary."
     }
   ]
 }
