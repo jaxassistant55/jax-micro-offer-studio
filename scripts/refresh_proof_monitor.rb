@@ -301,7 +301,7 @@ end
     "title" => "Local SEO GBP Audit Starter close-ready buyer packet",
     "price" => "$175",
     "first_100_path" => "One verified paid Local SEO / GBP Audit order reaches $100 before fees/refunds.",
-    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html"
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-download-intent-close.html"
   },
   {
     "repo" => "jaxassistant55/local-seo-gbp-audit-starter",
@@ -325,7 +325,7 @@ end
     "title" => "PDF Table Extraction Starter close-ready buyer packet",
     "price" => "$125",
     "first_100_path" => "One verified paid PDF/Table Extraction order reaches $100 before fees/refunds.",
-    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html"
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-download-intent-close.html"
   },
   {
     "repo" => "jaxassistant55/pdf-table-extraction-starter",
