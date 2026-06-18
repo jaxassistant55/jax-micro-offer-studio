@@ -2,6 +2,12 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "name": "Fastest $100 Start",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html",
+      "description": "Focused buyer route for the closest current non-bounty paths to one verified $100+ paid order."
+    },
+    {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Micro Offer Studio",

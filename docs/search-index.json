@@ -4,6 +4,18 @@
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
     {
+      "type": "fastest_100_buyer_start",
+      "title": "Fastest $100 Start",
+      "slug": "fastest-100-start",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html",
+      "price": "$100+",
+      "amount_usd": 100,
+      "description": "Focused buyer route for the closest current non-bounty paths to one verified $100+ paid order.",
+      "first_100": "Use the ranked route list; count $0 until external payment proof exists.",
+      "start_order_url": "https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml",
+      "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
+    },
+    {
       "type": "ready_to_buy_signal_room",
       "title": "Ready-To-Buy Signal Room",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.html",
