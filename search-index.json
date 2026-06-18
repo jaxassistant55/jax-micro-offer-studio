@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-18 10:17:40 JST",
+  "generated_at_jst": "2026-06-18 10:42:34 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -2005,6 +2005,40 @@
         "payment-proof",
         "warm-path",
         "local-seo-gbp-audit"
+      ]
+    },
+    {
+      "type": "one_sale_sample_output_gallery",
+      "title": "One Sale Sample Output Gallery",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-sample-output-gallery.html",
+      "description": "Synthetic sample-output previews for 34 one-sale-to-$100 buyer routes.",
+      "tags": [
+        "first-100",
+        "sample-output",
+        "ready-to-pay",
+        "buyer-action"
+      ]
+    },
+    {
+      "type": "one_sale_sample_output_gallery_csv",
+      "title": "One Sale Sample Output Gallery CSV",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one_sale_sample_output_gallery.csv",
+      "description": "Machine-readable sample-output previews and ready-to-pay links for the one-sale route set.",
+      "tags": [
+        "first-100",
+        "csv",
+        "sample-output"
+      ]
+    },
+    {
+      "type": "one_sale_sample_output_gallery_json",
+      "title": "One Sale Sample Output Gallery JSON",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/one_sale_sample_output_gallery.json",
+      "description": "JSON sample-output previews and ready-to-pay links for the one-sale route set.",
+      "tags": [
+        "first-100",
+        "json",
+        "sample-output"
       ]
     }
   ]
