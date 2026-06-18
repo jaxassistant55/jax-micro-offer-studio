@@ -7,6 +7,11 @@ labels: paid-inquiry, ready-to-pay
 
 ## Ready-to-pay intake
 
+Fastest $100 Start:
+- Page: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest_100_start.csv
+- Money rule: count $0 from issues, comments, page views, stars, downloads, or public routing until accepted scope, seller-controlled external payment proof, delivery proof, and posted/released/payable/cleared payout status exist.
+
 Paid offer action catalog:
 - Catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
 - Release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1

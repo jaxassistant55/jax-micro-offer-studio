@@ -7,6 +7,8 @@ Public launch package generated during the autonomous earning run.
 - Ready-to-buy signal room: https://jaxassistant55.github.io/jax-micro-offer-studio/ready-to-buy-signal-room.html
 - Ready-to-buy signal issue #29: https://github.com/jaxassistant55/jax-micro-offer-studio/issues/29
 - Public site root: `docs/index.html`
+- Fastest $100 Start: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html
+- Fastest $100 CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest_100_start.csv
 - Paid offer action catalog: https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html
 - All 42 paid catalog rows now have structured ready-to-pay intake forms through the catalog.
 - Catalog release/assets: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/paid-offer-action-catalog-v1
@@ -46,6 +48,19 @@ Public launch package generated during the autonomous earning run.
 - Offers: 15 digital products and 15 productized services
 
 Confirmed earned money is still `$0` until external buyer/payment/payout proof exists. This repo publishes generated preview and inquiry material only; it does not include private credentials, KYC/tax/payment data, or private buyer files.
+
+<!-- fastest-100-start-readme:start -->
+## Fastest $100 Start
+
+Use this route chooser first when a buyer wants the shortest current path to one verified $100+ order.
+
+- Focused page: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html
+- CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest_100_start.csv
+- Proof monitor: https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html
+- Payment activation after accepted scope: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+- Routes: 6 closest non-bounty paid paths, led by observed PDF/Table and Local SEO download-interest closes.
+- Boundary: confirmed earned money remains `$0` until buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+<!-- fastest-100-start-readme:end -->
 
 <!-- one-sale-to-100:start -->
 ## One Sale To $100 Close Now
