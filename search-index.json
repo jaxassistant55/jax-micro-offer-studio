@@ -2091,6 +2091,19 @@
       "first_100": "One accepted paid diagnostic order reaches $100 before fees/refunds.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Azure+SWA+Custom+Domain+Validation+Diagnostic&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Azure+SWA+Custom+Domain+Validation+Diagnostic%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fazure-swa-domain-validation-diagnostic.html%0AOffer+type%3A+fixed-scope+diagnostic+brief%0A%0AStatic+Web+App+region+and+SKU%3A%0ACustom+hostname+pattern%2C+redacted+if+needed%3A%0AValidation+method+used%3A%0APublic+DNS+evidence%3A%0ARedacted+CLI%2FBicep+command+output%3A%0ARedacted+ARM%2Fcorrelation+IDs%2C+if+you+choose%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+Azure+credentials%2C+tokens%2C+subscription+IDs%2C+tenant+IDs%2C+private+hostnames%2C+private+logs%2C+payment+data%2C+or+secrets.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
+    },
+    {
+      "type": "service",
+      "title": "Payment Integration Blueprint Sprint",
+      "slug": "payment-integration-blueprint-sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-integration-blueprint-sprint.html",
+      "price": "$100 per lead",
+      "amount_usd": 100,
+      "description": "Fixed-scope public-safe Stripe, PayPal, webhook, checkout, and payment-performance implementation blueprint sprint.",
+      "lead_source_url": "https://github.com/dyngnosis/invoicejet/issues/11 | https://github.com/Company-C-MSD-Project/backend/issues/7 | https://github.com/henrylin03/aspire-academy-landing/issues/25 | https://github.com/proteauj/nova-athletique/issues/1 | https://github.com/letsrevel/revel-backend/issues/530",
+      "first_100": "One accepted paid payment-integration blueprint order reaches $100 before fees/refunds.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Payment+Integration+Blueprint+Sprint&labels=paid-inquiry%2Cready-to-pay%2Cpayment-integration&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Payment+Integration+Blueprint+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fpayment-integration-blueprint-sprint.html%0ALead%2Frequest%3A+Payment+Integration+Blueprint+Sprint%0AOffer+type%3A+fixed-scope+public-safe+payment+integration+blueprint%0A%0AProvider%3A+Stripe+%2F+PayPal+%2F+other%3A%0ACurrent+stack%3A%0APublic+repo+or+buyer-authorized+repo+summary%3A%0APayment+flow+needed%3A%0AWebhook%2Fstatus+update+requirement%3A%0ASandbox-only+examples+you+can+safely+share%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+processor+secrets%2C+cards%2C+bank+data%2C+customer+PII%2C+production+logs%2C+tax+identifiers%2C+passwords%2C+API+keys%2C+private+repo+contents%2C+or+credentials.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
     }
   ]
 }
