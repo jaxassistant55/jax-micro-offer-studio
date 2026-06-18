@@ -100,8 +100,7 @@ def issue_comment_summary(repo, issue_number, fallback_count)
   non_buyer_claim_count = comments.count do |comment|
     next false if ASSISTANT_AUTHORS.include?(comment.dig("user", "login").to_s)
 
-    body = comment["body"].to_s.downcase
-    body.include?("[claim]") && (body.include?("bounty") || body.include?("wallet"))
+    non_buyer_claim_text?(comment["body"])
   end
   { "buyer" => total - self_count - non_buyer_claim_count, "self" => self_count, "non_buyer_claim" => non_buyer_claim_count, "total" => total, "error" => nil }
 end
@@ -110,7 +109,7 @@ def proof_status_for_issue(issue, comment_summary)
   return "issue_check_failed_manual_review_required" if issue["__error"]
   return "issue_closed_review_required" if issue["state"] != "open"
   return "buyer_comments_present_manual_payment_review_required" if comment_summary["buyer"].to_i.positive?
-  return "non_buyer_bounty_claim_comment_no_payment_proof" if comment_summary["non_buyer_claim"].to_i.positive?
+  return "non_buyer_claim_or_task_offer_no_payment_proof" if comment_summary["non_buyer_claim"].to_i.positive?
   return "assistant_update_comments_only_no_payment_proof" if comment_summary["self"].to_i.positive?
 
   "no_buyer_comments_no_payment_proof"
@@ -191,6 +190,10 @@ def non_buyer_claim_text?(text)
   return true if normalized.include?("[ai fix]") && normalized.include?("order board:")
   return true if normalized.include?("[claim]") && (normalized.include?("bounty") || normalized.include?("wallet"))
   return true if normalized.include?("wallet") && normalized.include?("base usdc")
+  return true if normalized.include?("happy to claim") && (normalized.include?("pr") || normalized.include?("eta") || normalized.include?("diff"))
+  return true if normalized.include?("first reviewable pr")
+  return true if normalized.include?("i keep frontend diffs")
+  return true if normalized.include?("reproducing the ui/layout issue")
 
   false
 end

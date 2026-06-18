@@ -137,6 +137,10 @@ def non_buyer_claim_text?(text)
   return true if normalized.include?("[ai fix]") && normalized.include?("order board:")
   return true if normalized.include?("[claim]") && (normalized.include?("bounty") || normalized.include?("wallet"))
   return true if normalized.include?("wallet") && normalized.include?("base usdc")
+  return true if normalized.include?("happy to claim") && (normalized.include?("pr") || normalized.include?("eta") || normalized.include?("diff"))
+  return true if normalized.include?("first reviewable pr")
+  return true if normalized.include?("i keep frontend diffs")
+  return true if normalized.include?("reproducing the ui/layout issue")
 
   false
 end
@@ -421,7 +425,7 @@ if ASSISTANT_AUTHORS.include?(trigger_author)
 end
 
 if non_buyer_claim_text?(combined_text)
-  emit(status: "skipped", reason: "non_buyer_bounty_or_wallet_text", issue: number, author: trigger_author)
+  emit(status: "skipped", reason: "non_buyer_claim_or_task_offer", issue: number, author: trigger_author)
   exit 0
 end
 
