@@ -4,6 +4,7 @@ Public offer catalog for generated digital products, productized micro-services,
 Confirmed earned money remains $0 until external buyer/payment/payout proof exists.
 
 ## Fastest paid paths
+- Fastest $100 Start: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html
 - Automation Blueprint: $100 service, one accepted paid order reaches $100. https://jaxassistant55.github.io/jax-micro-offer-studio/automation-blueprint.html
 - Data Cleanup Sprint: $125 service, one accepted paid order clears $100. https://jaxassistant55.github.io/jax-micro-offer-studio/data-cleanup-sprint.html
 - Website Audit Microservice: $150 service, one accepted paid order clears $100. https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html
