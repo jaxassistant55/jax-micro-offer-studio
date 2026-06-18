@@ -1,7 +1,7 @@
-name: Paid inquiry
+name: Ready-to-pay intake
 description: Request a product bundle, custom service, or scoped paid handoff.
-title: "Inquiry: "
-labels: ["paid-inquiry"]
+title: "Ready to pay: "
+labels: ["paid-inquiry", "ready-to-pay", "needs-scope"]
 body:
   - type: markdown
     attributes:

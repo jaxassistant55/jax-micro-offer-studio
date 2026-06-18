@@ -1,7 +1,7 @@
 name: Product transfer request
 description: Request a digital product bundle transfer after payment/proof route is agreed.
-title: "Product transfer: "
-labels: ["paid-inquiry", "needs-scope"]
+title: "Ready to pay: Product transfer - "
+labels: ["paid-inquiry", "ready-to-pay", "product-transfer", "needs-scope"]
 body:
   - type: markdown
     attributes:

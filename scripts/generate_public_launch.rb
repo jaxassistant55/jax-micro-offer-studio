@@ -3652,10 +3652,10 @@ File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "first-100-fast-s
 YAML
 
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "paid-inquiry.yml"), <<~YAML)
-  name: Paid inquiry
+  name: Ready-to-pay intake
   description: Request a product bundle, custom service, or scoped paid handoff.
-  title: "Inquiry: "
-  labels: ["paid-inquiry"]
+  title: "Ready to pay: "
+  labels: ["paid-inquiry", "ready-to-pay", "needs-scope"]
   body:
     - type: markdown
       attributes:
@@ -3707,8 +3707,8 @@ YAML
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "service-scope.yml"), <<~YAML)
   name: Service scope request
   description: Request a fixed-scope productized service.
-  title: "Service scope: "
-  labels: ["paid-inquiry", "needs-scope"]
+  title: "Ready to pay: Service scope - "
+  labels: ["paid-inquiry", "ready-to-pay", "service-order", "needs-scope"]
   body:
     - type: markdown
       attributes:
@@ -3754,8 +3754,8 @@ YAML
 File.write(File.join(LAUNCH_ROOT, ".github", "ISSUE_TEMPLATE", "product-transfer.yml"), <<~YAML)
   name: Product transfer request
   description: Request a digital product bundle transfer after payment/proof route is agreed.
-  title: "Product transfer: "
-  labels: ["paid-inquiry", "needs-scope"]
+  title: "Ready to pay: Product transfer - "
+  labels: ["paid-inquiry", "ready-to-pay", "product-transfer", "needs-scope"]
   body:
     - type: markdown
       attributes:

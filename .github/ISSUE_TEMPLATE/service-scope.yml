@@ -1,7 +1,7 @@
 name: Service scope request
 description: Request a fixed-scope productized service.
-title: "Service scope: "
-labels: ["paid-inquiry", "needs-scope"]
+title: "Ready to pay: Service scope - "
+labels: ["paid-inquiry", "ready-to-pay", "service-order", "needs-scope"]
 body:
   - type: markdown
     attributes:
