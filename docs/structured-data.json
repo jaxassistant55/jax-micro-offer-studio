@@ -4406,6 +4406,13 @@
       "numberOfItems": 34
     },
     {
+      "@type": "WebPage",
+      "additionalType": "buyer_response_autopilot",
+      "name": "Buyer Response Autopilot",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html",
+      "description": "Safe workflow and playbook for responding to legitimate paid buyer issues."
+    },
+    {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "PDF Table Download Intent Close",
@@ -4474,13 +4481,6 @@
           "value": "0"
         }
       ]
-    },
-    {
-      "@type": "WebPage",
-      "additionalType": "buyer_response_autopilot",
-      "name": "Buyer Response Autopilot",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html",
-      "description": "Safe workflow and playbook for responding to legitimate paid buyer issues."
     }
   ]
 }
