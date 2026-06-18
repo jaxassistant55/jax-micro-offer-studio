@@ -23,6 +23,10 @@ LOCAL_SEO_TERMS = "#{SITE}local-seo-gbp-audit-terms.html"
 LOCAL_SEO_ACCEPTANCE = "I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment."
 PDF_TERMS = "#{SITE}pdf-table-extraction-terms.html"
 PDF_ACCEPTANCE = "I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment."
+SAMPLE_GALLERY = "#{SITE}one-sale-sample-output-gallery.html"
+SAMPLE_GALLERY_RELEASE = "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/one-sale-sample-output-gallery-v1"
+SAMPLE_GALLERY_CSV = "#{SITE}one_sale_sample_output_gallery.csv"
+SAMPLE_GALLERY_JSON = "#{SITE}one_sale_sample_output_gallery.json"
 
 def h(value)
   CGI.escapeHTML(value.to_s)
@@ -177,9 +181,11 @@ playbook_rows = catalog_rows.map do |row|
     "repo_url" => row["repo_url"],
     "structured_form_url" => row["structured_form_url"],
     "payment_activation_url" => row["payment_activation_url"],
+    "sample_gallery_url" => SAMPLE_GALLERY,
+    "sample_gallery_release_url" => SAMPLE_GALLERY_RELEASE,
     "terms_url" => terms_url,
     "exact_acceptance_statement" => exact_acceptance,
-    "autonomous_response" => "If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, label the issue, and route to payment activation only after accepted scope or transfer terms.",
+    "autonomous_response" => "If a non-assistant buyer opens a ready-to-pay or ready-to-buy issue, post the safe next-step checklist, sample-output gallery, release packet, payment packet, labels, and payment activation only after accepted scope or transfer terms.",
     "route_specific_acceptance_gate" => acceptance_gate,
     "user_only_gate" => "Seller-owned external checkout, invoice, marketplace order, funded milestone, payout/tax setup, private delivery, and verified posted/released/payable/cleared money.",
     "money_rule" => row["proof_rule"]
@@ -194,6 +200,8 @@ headers = %w[
   repo_url
   structured_form_url
   payment_activation_url
+  sample_gallery_url
+  sample_gallery_release_url
   terms_url
   exact_acceptance_statement
   autonomous_response
@@ -210,6 +218,7 @@ table_rows = playbook_rows.map do |row|
       <td data-label="Price">#{h(row["price"])}</td>
       <td data-label="Repo"><a href="#{h(row["repo_url"])}">Open repo</a></td>
       <td data-label="Buyer form"><a href="#{h(row["structured_form_url"])}">Open form</a></td>
+      <td data-label="Sample"><a href="#{h(row["sample_gallery_url"])}">Gallery</a><br><a href="#{h(row["sample_gallery_release_url"])}">Release packet</a></td>
       <td data-label="Terms">#{row["terms_url"].to_s.empty? ? '<span class="muted">Use route scope terms</span>' : %(<a href="#{h(row["terms_url"])}">Open terms</a>)}</td>
       <td data-label="Exact acceptance">#{row["exact_acceptance_statement"].to_s.empty? ? '<span class="muted">Use buyer form acceptance</span>' : h(row["exact_acceptance_statement"])}</td>
       <td data-label="Autonomous response">#{h(row["autonomous_response"])}</td>
@@ -236,7 +245,7 @@ html = <<~HTML
   <body>
     <main>
       <header>
-        <p class="buttons"><a href="index.html">Home</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="first-100-fast-start-terms.html">Fast Start terms</a><a href="first-100-product-bundle-terms.html">Bundle terms</a><a href="local-seo-gbp-audit-terms.html">Local SEO terms</a><a href="pdf-table-extraction-terms.html">PDF terms</a><a href="payment-activation.html">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="buyer-response-playbook.csv">CSV</a></p>
+        <p class="buttons"><a href="index.html">Home</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="one-sale-sample-output-gallery.html">Sample gallery</a><a href="#{SAMPLE_GALLERY_RELEASE}">Release packet</a><a href="first-100-fast-start-terms.html">Fast Start terms</a><a href="first-100-product-bundle-terms.html">Bundle terms</a><a href="local-seo-gbp-audit-terms.html">Local SEO terms</a><a href="pdf-table-extraction-terms.html">PDF terms</a><a href="payment-activation.html">Payment activation</a><a href="proof-monitor.html">Proof monitor</a><a href="buyer-response-playbook.csv">CSV</a></p>
         <h1>Buyer Response Autopilot</h1>
         <p class="muted">Generated #{h(GENERATED_AT)}. This is the safe owned-repo response path for legitimate ready-to-pay or ready-to-buy GitHub issues. It does not invoice, collect payment, impersonate a seller, or count money.</p>
       </header>
@@ -249,11 +258,11 @@ html = <<~HTML
 
       <section class="notice">
         <h2>What the workflow does</h2>
-        <p>When a non-assistant buyer opens or reopens a ready-to-pay or ready-to-buy issue, the workflow checks the title and labels, rejects pull requests and bounty/wallet-style claims, posts one marked checklist comment, adds route-specific terms for Fast Start and Product Bundle issues, and labels the issue for seller review and payment-proof gating.</p>
+        <p>When a non-assistant buyer opens or reopens a ready-to-pay or ready-to-buy issue, the workflow checks the title and labels, rejects pull requests and bounty/wallet-style claims, posts one marked checklist comment, includes the sample-output gallery and release packet, adds route-specific terms for Fast Start and Product Bundle issues, and labels the issue for seller review and payment-proof gating.</p>
       </section>
 
       <section class="grid">
-        <article class="card"><span class="eyebrow">Autonomous</span><h2>Safe response</h2><p>Posts exact next steps, route-specific terms where available, payment activation link, proof monitor link, and privacy boundaries inside the buyer issue.</p></article>
+        <article class="card"><span class="eyebrow">Autonomous</span><h2>Safe response</h2><p>Posts exact next steps, sample-output gallery, release packet, route-specific terms where available, payment activation link, proof monitor link, and privacy boundaries inside the buyer issue.</p></article>
         <article class="card"><span class="eyebrow">Autonomous</span><h2>Noise filter</h2><p>Skips assistant-authored issues, pull requests, already-responded issues, and bounty/wallet claim text.</p></article>
         <article class="card"><span class="eyebrow">External gate</span><h2>Money proof</h2><p>Money remains $0 until a real seller-owned external payment or payout is posted, released, payable, or cleared after accepted scope and delivery.</p></article>
       </section>
@@ -267,9 +276,17 @@ Exact next steps:
 1. Keep the scope public-safe in this issue. Do not post passwords, payment cards, tax identifiers, private regulated details, confidential files, or screenshots of payment accounts.
 2. Confirm the exact deliverable, deadline, acceptance proof, and any buyer-owned inputs that can safely be shared.
 3. Use the payment activation page only after scope or transfer terms are accepted.
-4. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone.
-5. For Fast Start or Product Bundle routes, include the matching terms page and exact acceptance statement before payment.
-6. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof.</div>
+4. Use the sample-output gallery and release packet to confirm the expected deliverable shape before payment.
+5. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone.
+6. For Fast Start or Product Bundle routes, include the matching terms page and exact acceptance statement before payment.
+7. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof.
+
+Sample-output proof before payment:
+- Gallery: #{SAMPLE_GALLERY}
+- Release packet: #{SAMPLE_GALLERY_RELEASE}
+- CSV: #{SAMPLE_GALLERY_CSV}
+- JSON: #{SAMPLE_GALLERY_JSON}
+- These samples and release downloads count $0 until accepted scope, external payment proof, delivery proof, and posted/released/payable/cleared funds exist.</div>
       </section>
 
       <section>
@@ -285,7 +302,7 @@ Exact next steps:
       <section>
         <h2>Covered Paid Routes</h2>
         <table>
-          <thead><tr><th>Route</th><th>Price</th><th>Repo</th><th>Buyer form</th><th>Terms</th><th>Exact acceptance</th><th>Autonomous response</th><th>Acceptance gate</th><th>User-only gate</th></tr></thead>
+          <thead><tr><th>Route</th><th>Price</th><th>Repo</th><th>Buyer form</th><th>Sample proof</th><th>Terms</th><th>Exact acceptance</th><th>Autonomous response</th><th>Acceptance gate</th><th>User-only gate</th></tr></thead>
           <tbody>#{table_rows}</tbody>
         </table>
       </section>
