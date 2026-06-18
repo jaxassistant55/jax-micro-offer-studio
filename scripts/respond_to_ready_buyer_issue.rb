@@ -12,6 +12,10 @@ PAYMENT_PACKETS_PATH = File.join(DOCS, "one-sale-payment-packets.csv")
 SITE = "https://jaxassistant55.github.io/jax-micro-offer-studio/"
 PAYMENT_ACTIVATION = "#{SITE}payment-activation"
 ONE_SALE_PAYMENT_PACKETS = "#{SITE}one-sale-payment-packets.html"
+SAMPLE_GALLERY = "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-sample-output-gallery.html"
+SAMPLE_GALLERY_RELEASE = "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/one-sale-sample-output-gallery-v1"
+SAMPLE_GALLERY_CSV = "https://jaxassistant55.github.io/jax-micro-offer-studio/one_sale_sample_output_gallery.csv"
+SAMPLE_GALLERY_JSON = "https://jaxassistant55.github.io/jax-micro-offer-studio/one_sale_sample_output_gallery.json"
 READY_SIGNAL_ROOM = "#{SITE}ready-to-buy-signal-room.html"
 READY_SIGNAL_ISSUE_NUMBER = "29"
 PROOF_MONITOR = "#{SITE}proof-monitor.html"
@@ -371,9 +375,16 @@ def response_body(issue, matched_row)
     1. Keep the scope public-safe in this issue. Do not post passwords, payment cards, tax identifiers, private regulated details, confidential files, or screenshots of payment accounts.
     2. Confirm the exact route, deliverable, deadline, acceptance proof, and any buyer-owned inputs that can safely be shared.
     3. Use the payment activation page only after scope or transfer terms are accepted: #{payment_url}
-    4. Use the matching one-sale payment packet below to prepare the seller-side invoice line and payment-request copy.
-    5. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone. This GitHub issue is not a checkout and is not payment proof.
-    6. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof in the monitor.
+    4. Use the sample-output gallery to confirm the expected deliverable shape before payment: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-sample-output-gallery.html
+    5. Use the matching one-sale payment packet below to prepare the seller-side invoice line and payment-request copy.
+    6. Payment must happen through a seller-owned external checkout, invoice, marketplace order, payment request, or funded milestone. This GitHub issue is not a checkout and is not payment proof.
+    7. After external payment is posted, released, payable, or cleared, the seller can deliver the private bundle or service output and record the proof in the monitor.
+    Sample-output proof before payment:
+    - Gallery: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-sample-output-gallery.html
+    - Release packet: https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/one-sale-sample-output-gallery-v1
+    - CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/one_sale_sample_output_gallery.csv
+    - JSON: https://jaxassistant55.github.io/jax-micro-offer-studio/one_sale_sample_output_gallery.json
+    - These samples and release downloads count $0 until accepted scope, external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
     #{payment_packet_block}
     #{bundle_terms}
     #{fast_start_terms}
@@ -459,6 +470,8 @@ emit(
   response_includes_signal_room: body.include?(READY_SIGNAL_ROOM),
   response_includes_payment_packet: !matched_packet.nil? && body.include?(matched_packet["packet_url"].to_s),
   response_includes_payment_packet_index: body.include?(ONE_SALE_PAYMENT_PACKETS),
+  response_includes_sample_gallery: body.include?(SAMPLE_GALLERY),
+  response_includes_sample_gallery_release: body.include?(SAMPLE_GALLERY_RELEASE),
   response_includes_product_bundle_terms: body.include?(PRODUCT_BUNDLE_TERMS),
   response_includes_product_bundle_acceptance: body.include?(PRODUCT_BUNDLE_ACCEPTANCE),
   response_includes_fast_start_terms: body.include?(FAST_START_TERMS),
