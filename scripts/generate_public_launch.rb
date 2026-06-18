@@ -424,14 +424,14 @@ def github_lead_rows(rows)
     repo_order_link = repo_order.empty? ? "" : %(<br><a href="#{h(repo_order)}">Repo order board ##{h(row["repo_order_issue_number"])}</a>)
     landing = row["standalone_index_url"].to_s
     landing_link = landing.empty? ? "" : %(<a href="#{h(landing)}">Landing page</a><br>)
-    inquiry_link = landing.empty? ? "" : %(<a href="#{h(landing)}inquiry.html">Prefilled inquiry</a><br>)
+    inquiry_link = landing.empty? ? "" : %(<a href="#{h(landing)}inquiry.html">Inquiry details</a><br>)
     <<~HTML
       <tr>
         <td data-label="Lead repo"><a href="#{h(row["repo_url"])}">#{h(row["title"])}</a><br><span class="muted">#{h(row["type"])}</span></td>
         <td data-label="Price">#{h(row["price"])}</td>
         <td data-label="Path to $100">#{h(row["first_100_path"])}</td>
         <td data-label="Preview">#{landing_link}<a href="#{h(row["pages_url"])}">Pages preview</a><br><span class="muted">#{h(row["pages_status"])}</span></td>
-        <td data-label="Conversion">#{inquiry_link}<a href="#{h(row["issue_template_url"])}">Paid inquiry template</a>#{repo_order_link}<br><a href="#{h(row["order_issue_url"])}">Main order board</a></td>
+        <td data-label="Conversion"><a href="#{h(row["issue_template_url"])}">Structured ready-to-pay form</a><br>#{inquiry_link}#{repo_order_link}<br><a href="#{h(row["order_issue_url"])}">Main order board</a></td>
         <td data-label="Release"><a href="#{h(row["release_url"])}">preview-v1</a><br><a href="#{h(row["asset_url"])}">ZIP asset</a></td>
         <td data-label="Proof rule">#{h(row["proof_rule"])}</td>
       </tr>
@@ -443,12 +443,12 @@ def direct_order_rows(rows)
   rows.select { |row| !row["repo_order_issue_url"].to_s.empty? }.sort_by { |row| -row["price"].to_s.gsub(/[^\d.]/, "").to_f }.map do |row|
     landing = row["standalone_index_url"].to_s
     landing_link = landing.empty? ? "" : %(<a href="#{h(landing)}">Landing</a><br>)
-    inquiry_link = landing.empty? ? "" : %(<br><a href="#{h(landing)}inquiry.html">Prefilled inquiry</a>)
+    inquiry_link = landing.empty? ? "" : %(<br><a href="#{h(landing)}inquiry.html">Inquiry details</a>)
     <<~HTML
       <tr>
         <td data-label="Offer"><a href="#{h(row["repo_order_issue_url"])}">#{h(row["title"])}</a><br><span class="muted">#{h(row["type"])}</span></td>
         <td data-label="Price">#{h(row["price"])}</td>
-        <td data-label="Buyer action">Open the prefilled inquiry or comment on repo order board ##{h(row["repo_order_issue_number"])} with scope, deadline, and safe non-sensitive inputs.#{inquiry_link}</td>
+        <td data-label="Buyer action">Open the structured ready-to-pay form or comment on repo order board ##{h(row["repo_order_issue_number"])} with scope, deadline, and safe non-sensitive inputs.#{inquiry_link}</td>
         <td data-label="Preview">#{landing_link}<a href="#{h(row["pages_url"])}">Preview</a><br><a href="#{h(row["repo_url"])}">Repo</a></td>
         <td data-label="Proof">#{h(row["proof_rule"])}</td>
       </tr>
@@ -617,11 +617,19 @@ def ready_to_buy_inquiry_url(offer, lead)
   prefilled_issue_url(offer, title_prefix: "Ready to buy")
 end
 
+def ready_to_buy_form_url(offer, lead)
+  form = lead["issue_template_url"].to_s
+  return form unless form.empty?
+
+  ready_to_buy_inquiry_url(offer, lead)
+end
+
 def ready_to_buy_links(offer)
   lead = github_lead_for_offer(offer)
   landing = lead["standalone_index_url"].to_s
   links = [
-    ["Start prefilled inquiry", ready_to_buy_inquiry_url(offer, lead)],
+    ["Open structured ready-to-pay form", ready_to_buy_form_url(offer, lead)],
+    ["Inquiry details", ready_to_buy_inquiry_url(offer, lead)],
     ["Offer page", "#{offer[:slug]}.html"],
     ["Standalone landing", landing],
     ["Live preview", lead["pages_url"].to_s.empty? ? offer[:preview_public] : lead["pages_url"]],
@@ -690,7 +698,7 @@ def buyer_intent_rows(offers)
       price: offer[:price],
       safe_inputs: safe_inputs,
       ready_url: absolute_url(ready_to_buy_path(offer)),
-      inquiry_url: ready_to_buy_inquiry_url(offer, lead),
+      inquiry_url: ready_to_buy_form_url(offer, lead),
       proof_rule: lead["proof_rule"].to_s.empty? ? "External payment and delivery proof required." : lead["proof_rule"]
     }
   end.compact
@@ -703,7 +711,7 @@ def buyer_intent_table(rows)
         <td data-label="Buyer problem">#{h(row[:intent])}</td>
         <td data-label="Best route"><a href="#{h(row[:ready_url])}">#{h(row[:offer])}</a><br><span class="muted">#{h(row[:price])}</span></td>
         <td data-label="Safe inputs">#{h(row[:safe_inputs])}</td>
-        <td data-label="Start"><a href="#{h(row[:inquiry_url])}">Prefilled inquiry</a></td>
+        <td data-label="Start"><a href="#{h(row[:inquiry_url])}">Structured ready-to-pay form</a></td>
         <td data-label="Proof">#{h(row[:proof_rule])}</td>
       </tr>
     HTML
@@ -729,7 +737,7 @@ def ready_to_buy_detail(offer)
         <section class="panel">
           <h2>Buyer Steps</h2>
           <ol>
-            <li>Open the prefilled inquiry and confirm the requested scope, deadline, delivery preference, and acceptance proof.</li>
+            <li>Open the structured ready-to-pay form and confirm the requested scope, deadline, delivery preference, and acceptance proof.</li>
             <li>Use only public, synthetic, or authorized input. Do not post credentials, private payment data, tax identifiers, customer files, or regulated private details.</li>
             <li>Wait for seller acceptance of the fixed scope and payment/proof route before expecting paid delivery.</li>
             <li>Pay only through an external seller-controlled checkout, invoice, marketplace order, funded milestone, or payment account.</li>
@@ -759,12 +767,12 @@ def ready_to_buy_detail(offer)
     "about" => offer_schema(offer),
     "potentialAction" => {
       "@type" => "AskAction",
-      "target" => ready_to_buy_inquiry_url(offer, lead),
-      "name" => "Start prefilled paid inquiry"
+      "target" => ready_to_buy_form_url(offer, lead),
+      "name" => "Open structured ready-to-pay form"
     }
   }
   title = "Ready To Buy #{offer[:title]} - Micro Offer Studio"
-  description = "#{offer[:price]} buyer route for #{offer[:title]} with prefilled inquiry, preview, proof rule, and payment boundary."
+  description = "#{offer[:price]} buyer route for #{offer[:title]} with structured ready-to-pay form, preview, proof rule, and payment boundary."
   head = share_meta(title: title, description: description, url: absolute_url(ready_to_buy_path(offer))) + jsonld_script(schema)
   page_shell(title, body, head)
 end
@@ -801,7 +809,7 @@ CSV.open(File.join(DOCS, "buyer-intent-router.csv"), "w", write_headers: true, h
 end
 
 buyer_router_title = "Buyer Intent Router - Micro Offer Studio"
-buyer_router_description = "Map a buyer problem to the closest ready-to-buy service route, safe inputs, prefilled inquiry, and proof rule."
+buyer_router_description = "Map a buyer problem to the closest ready-to-buy service route, safe inputs, structured ready-to-pay form, and proof rule."
 buyer_router_schema = {
   "@context" => "https://schema.org",
   "@type" => "ItemList",
@@ -832,7 +840,7 @@ File.write(File.join(DOCS, "ready-to-buy.html"), page_shell(ready_to_buy_index_t
   <header>
     <p class="buttons"><a href="index.html">Home</a><a href="buyer-intent-router.html">Buyer intent router</a><a href="order-now.html">Order now</a><a href="github-leads.html">GitHub leads</a><a href="pricing.html">Pricing</a><a href="proof.html">Proof rules</a></p>
     <h1>Ready To Buy Routes</h1>
-    <p class="muted">High-intent pages for the closest one-sale paths to $100+. Each route sends a buyer to a prefilled inquiry, preview, order board, and proof rule. These pages still do not process payment.</p>
+    <p class="muted">High-intent pages for the closest one-sale paths to $100+. Each route sends a buyer to a structured ready-to-pay form, preview, order board, and proof rule. These pages still do not process payment.</p>
   </header>
   <section class="notice">
     <h2>Payment Boundary</h2>
@@ -948,7 +956,7 @@ if GITHUB_LEADS.any?
     end
   }
   File.write(File.join(DOCS, "github-leads.html"), page_shell("GitHub Leads - Micro Offer Studio", <<~HTML, jsonld_script(leads_schema)))
-    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-boards.html">Order boards</a><a href="proof.html">Proof rules</a><a href="github_lead_repos.csv">CSV</a></p><h1>GitHub Lead Repositories</h1><p class="muted">Standalone public repositories, Pages previews, release ZIPs, and paid-inquiry issue templates for the strongest current paths to $100. These are discovery and conversion surfaces, not payment proof.</p></header>
+    <header><p class="buttons"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="tools.html">Free tools</a><a href="order-boards.html">Order boards</a><a href="proof.html">Proof rules</a><a href="github_lead_repos.csv">CSV</a></p><h1>GitHub Lead Repositories</h1><p class="muted">Standalone public repositories, Pages previews, release ZIPs, and structured ready-to-pay issue forms for the strongest current paths to $100. These are discovery and conversion surfaces, not payment proof.</p></header>
     <section class="notice"><h2>Money boundary</h2><p>GitHub stars, forks, release downloads, Pages views, and issue drafts count as $0. Count money only after a real buyer accepts scope or transfer terms and external payment is posted, released, payable, or cleared.</p></section>
     <section><h2>Lead repo table</h2><table><thead><tr><th>Lead repo</th><th>Price</th><th>Path to $100</th><th>Preview</th><th>Conversion</th><th>Release</th><th>Proof rule</th></tr></thead><tbody>#{github_lead_rows(GITHUB_LEADS)}</tbody></table></section>
     <section class="grid">
@@ -3918,7 +3926,7 @@ ready_to_buy_documents = ready_to_buy_offers.map do |offer|
     amount_usd: price_amount(offer),
     description: "High-intent buyer route for #{offer[:description]}",
     first_100: offer[:first_100],
-    start_order_url: ready_to_buy_inquiry_url(offer, lead),
+    start_order_url: ready_to_buy_form_url(offer, lead),
     proof_rule: lead["proof_rule"].to_s.empty? ? "Counts $0 until external buyer/payment proof exists." : lead["proof_rule"]
   }
 end
@@ -3931,7 +3939,7 @@ buyer_intent_documents = buyer_intents.map do |row|
     url: absolute_url("buyer-intent-router.html"),
     price: row[:price],
     amount_usd: row[:price].to_s.gsub(/[^\d.]/, "").to_f,
-    description: "Routes buyer problem to #{row[:offer]} with safe inputs and a prefilled inquiry.",
+    description: "Routes buyer problem to #{row[:offer]} with safe inputs and a structured ready-to-pay form.",
     first_100: "Use #{row[:offer]} route; count $0 until external payment proof exists.",
     start_order_url: row[:inquiry_url],
     proof_rule: row[:proof_rule]
@@ -4037,7 +4045,7 @@ llms_lines = [
   "- Buyer response autopilot: #{absolute_url("buyer-response-playbook.html")}",
   "- Ready-to-buy index: #{absolute_url("ready-to-buy.html")}",
   "- Buyer intent router: #{absolute_url("buyer-intent-router.html")}",
-  *ready_to_buy_offers.map { |offer| "- #{offer[:title]}: #{absolute_url(ready_to_buy_path(offer))} -> #{ready_to_buy_inquiry_url(offer, github_lead_for_offer(offer))}" },
+  *ready_to_buy_offers.map { |offer| "- #{offer[:title]}: #{absolute_url(ready_to_buy_path(offer))} -> #{ready_to_buy_form_url(offer, github_lead_for_offer(offer))}" },
   "",
   "## Free tools that route to paid services",
   *tool_rows.map { |row| "- #{row[:title]}: #{absolute_url(row[:path])} -> #{row[:service]} #{row[:price]}" },
