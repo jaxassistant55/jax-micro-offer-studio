@@ -4507,6 +4507,26 @@
       "name": "Three.js WebGL Renderer Lite",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/threejs-webgl-renderer-lite.html",
       "description": "A buyer-facing fixed-scope $100 Three.js/WebGL renderer-lite offer with live sample, exact acceptance text, ready-to-pay intake, and proof checklist."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "GitHub Markdown Publish Bridge Blueprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/github-markdown-publish-bridge.html",
+      "description": "Fixed-scope implementation blueprint for adding GitHub Markdown publishing to an editor or documentation workflow.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "GitHub Markdown Publish Bridge Blueprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/github-markdown-publish-bridge.html",
+      "description": "A buyer-facing fixed-scope $100 GitHub Markdown publish bridge blueprint with exact acceptance text, ready-to-pay intake, and proof checklist."
     }
   ]
 }
