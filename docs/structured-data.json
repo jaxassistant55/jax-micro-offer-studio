@@ -4547,6 +4547,26 @@
       "name": "Azure SWA Custom Domain Validation Diagnostic",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/azure-swa-domain-validation-diagnostic.html",
       "description": "A buyer-facing fixed-scope $100 Azure Static Web Apps custom-domain validation diagnostic page with exact acceptance text, ready-to-pay intake, and proof checklist."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Payment Integration Blueprint Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-integration-blueprint-sprint.html",
+      "description": "Fixed-scope public-safe payment integration blueprint for Stripe, PayPal, webhooks, checkout, and payment-performance routes.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Payment Integration Blueprint Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-integration-blueprint-sprint.html",
+      "description": "A buyer-facing fixed-scope $100 payment integration blueprint page with exact acceptance text, lead-specific response drafts, payment activation, and proof boundary."
     }
   ]
 }

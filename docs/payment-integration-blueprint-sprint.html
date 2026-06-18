@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope payment integration blueprint sprint for Stripe, PayPal, webhook, checkout, and payment-performance requests using public-safe inputs only.">
+  <title>Payment Integration Blueprint Sprint</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--paper:#fff;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#a12a2a}
+    *{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.15rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.24rem;margin:24px 0 10px;letter-spacing:0}h3{font-size:1rem;margin:0 0 6px;letter-spacing:0;overflow-wrap:anywhere}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere;word-break:break-word}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700;max-width:100%;white-space:normal}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:16px;align-items:stretch}.flow,.notice,.metric,.lead-card{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:12px;overflow-wrap:anywhere}.flow{background:#f7faf9}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.flow-step{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;margin:8px 0}.lead-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.lead-card{border-left:6px solid var(--blue)}.lead-card:nth-child(2n){border-left-color:var(--green)}details{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid,.lead-grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope payment blueprint</p>
+      <section class="hero">
+        <div>
+          <h1>Payment Integration Blueprint Sprint</h1>
+          <p class="muted">A $100 public-safe blueprint sprint for Stripe Checkout, PayPal Orders, webhooks, env-var setup, and payment-flow test planning. Each lead below is a separate possible $100 order; no external comments were posted.</p>
+          <div class="buttons">
+            <a href="#leads">Open lead cards</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="payment-activation.html">Payment activation</a>
+            <a href="proof-monitor.html">Proof monitor</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/payment_integration_blueprint_sprint.csv">CSV</a>
+          </div>
+        </div>
+        <div class="flow" aria-label="Payment integration blueprint flow">
+          <span class="eyebrow">Blueprint flow</span>
+          <div class="flow-step"><strong>1. Map payment path</strong><br>Entry point, provider, session/order creation, webhook/capture, domain status update.</div>
+          <div class="flow-step"><strong>2. Split secret from design</strong><br>Use placeholder env names and sandbox-safe examples; the project owner controls credentials.</div>
+          <div class="flow-step"><strong>3. Define proof</strong><br>Provider event, local record mutation, idempotency, status transition, and failure rollback checks.</div>
+          <div class="flow-step"><strong>4. Handoff</strong><br>Implementation task breakdown, test plan, risk list, and exact acceptance boundary.</div>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Lead cards</span><strong>5</strong></article>
+      <article class="metric"><span>Listed price per lead</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice">
+      <h2>Deliverable</h2>
+      <ol>
+        <li>Provider flow map for Stripe Checkout, PayPal Orders, webhook capture, invoice status, wallet update, or checkout performance path.</li>
+        <li>Endpoint and webhook checklist with idempotency, status transition, rollback, retry, and observability notes.</li>
+        <li>Environment-variable checklist using placeholder names only, with no processor secrets or payment data handled by me.</li>
+        <li>Test plan covering sandbox success, cancel/failure, duplicate webhook, missing record, and proof capture.</li>
+        <li>Implementation task breakdown a project owner can apply in their own repo/account.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <p>The buyer must paste this before any paid work starts:</p>
+      <pre>I accept the Payment Integration Blueprint Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive product requirements, framework context, and sandbox-safe examples; the deliverable is limited to a public-safe implementation blueprint, payment-provider flow map, endpoint/webhook checklist, environment-variable checklist, test plan, risk list, and implementation task breakdown; and production credentials, payment processor account setup, PCI handling, private repo access, live payment processing, deployment, regulated financial advice, guaranteed approval, ongoing support, or extra revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section id="leads">
+      <h2>Lead-Specific Drafts Not Posted</h2>
+      <div class="lead-grid"><article class="lead-card">
+  <span class="eyebrow">candidate_payment_integration_request</span>
+  <h3><a href="https://github.com/dyngnosis/invoicejet/issues/11">Stripe payment integration</a></h3>
+  <p><strong>Repo:</strong> dyngnosis/invoicejet. <strong>Provider:</strong> Stripe Checkout + payment_intent.succeeded webhook. <strong>Fixed scope:</strong> $100.</p>
+  <p>Invoice payment blueprint with checkout session, webhook event map, invoice status transition table, idempotency notes, and env-var checklist.</p>
+  <details>
+    <summary>Draft response not posted</summary>
+    <p>I saw this payment-integration request and can offer a narrow fixed-scope Payment Integration Blueprint Sprint for $100. I would work only from public or buyer-authorized non-sensitive requirements and sandbox-safe examples, without processor secrets, payment data, or private repo access. The deliverable would be a provider flow map, endpoint/webhook checklist, environment-variable checklist, test plan, risk list, and implementation task breakdown; production credential setup and live payment processing stay with the project owner. For dyngnosis/invoicejet, I would focus on: Invoice payment blueprint with checkout session, webhook event map, invoice status transition table, idempotency notes, and env-var checklist.</p>
+    <p class="muted">Draft response prepared only. External public comments, direct messages, or form submissions require explicit send approval.</p>
+  </details>
+  <details>
+    <summary>Safety boundary</summary>
+    <p>No Stripe secret keys, webhook secrets, card data, private customer invoices, or production payment actions.</p>
+  </details>
+</article>
+<article class="lead-card">
+  <span class="eyebrow">candidate_payment_gateway_request</span>
+  <h3><a href="https://github.com/Company-C-MSD-Project/backend/issues/7">Integrate PayPal payment gateway</a></h3>
+  <p><strong>Repo:</strong> Company-C-MSD-Project/backend. <strong>Provider:</strong> PayPal Orders API + Smart Buttons. <strong>Fixed scope:</strong> $100.</p>
+  <p>PayPal Orders API blueprint with backend endpoint map, sandbox capture sequence, wallet update checklist, notification triggers, and test matrix.</p>
+  <details>
+    <summary>Draft response not posted</summary>
+    <p>I saw this payment-integration request and can offer a narrow fixed-scope Payment Integration Blueprint Sprint for $100. I would work only from public or buyer-authorized non-sensitive requirements and sandbox-safe examples, without processor secrets, payment data, or private repo access. The deliverable would be a provider flow map, endpoint/webhook checklist, environment-variable checklist, test plan, risk list, and implementation task breakdown; production credential setup and live payment processing stay with the project owner. For Company-C-MSD-Project/backend, I would focus on: PayPal Orders API blueprint with backend endpoint map, sandbox capture sequence, wallet update checklist, notification triggers, and test matrix.</p>
+    <p class="muted">Draft response prepared only. External public comments, direct messages, or form submissions require explicit send approval.</p>
+  </details>
+  <details>
+    <summary>Safety boundary</summary>
+    <p>No PayPal client secret, seller account setup, live capture, wallet mutation, or production deployment.</p>
+  </details>
+</article>
+<article class="lead-card">
+  <span class="eyebrow">crowded_candidate_payment_integration_request</span>
+  <h3><a href="https://github.com/henrylin03/aspire-academy-landing/issues/25">feat: integrate stripe payments</a></h3>
+  <p><strong>Repo:</strong> henrylin03/aspire-academy-landing. <strong>Provider:</strong> Stripe Checkout for trial-class payment. <strong>Fixed scope:</strong> $100.</p>
+  <p>Trial-class checkout blueprint with minimal enrolment data model, success/cancel pages, webhook proof boundary, and no-secret implementation checklist.</p>
+  <details>
+    <summary>Draft response not posted</summary>
+    <p>I saw this payment-integration request and can offer a narrow fixed-scope Payment Integration Blueprint Sprint for $100. I would work only from public or buyer-authorized non-sensitive requirements and sandbox-safe examples, without processor secrets, payment data, or private repo access. The deliverable would be a provider flow map, endpoint/webhook checklist, environment-variable checklist, test plan, risk list, and implementation task breakdown; production credential setup and live payment processing stay with the project owner. For henrylin03/aspire-academy-landing, I would focus on: Trial-class checkout blueprint with minimal enrolment data model, success/cancel pages, webhook proof boundary, and no-secret implementation checklist.</p>
+    <p class="muted">Draft response prepared only. External public comments, direct messages, or form submissions require explicit send approval.</p>
+  </details>
+  <details>
+    <summary>Safety boundary</summary>
+    <p>Do not post another public paid offer without explicit approval; no Stripe secrets or student/parent private data.</p>
+  </details>
+</article>
+<article class="lead-card">
+  <span class="eyebrow">crowded_candidate_payment_repair_request</span>
+  <h3><a href="https://github.com/proteauj/nova-athletique/issues/1">Make payment and stripe configuration works</a></h3>
+  <p><strong>Repo:</strong> proteauj/nova-athletique. <strong>Provider:</strong> Stripe configuration and webhook hardening. <strong>Fixed scope:</strong> $100.</p>
+  <p>Payment-path audit blueprint with entry-point inventory, webhook receiver trust boundary, idempotency checklist, and env-var verification matrix.</p>
+  <details>
+    <summary>Draft response not posted</summary>
+    <p>I saw this payment-integration request and can offer a narrow fixed-scope Payment Integration Blueprint Sprint for $100. I would work only from public or buyer-authorized non-sensitive requirements and sandbox-safe examples, without processor secrets, payment data, or private repo access. The deliverable would be a provider flow map, endpoint/webhook checklist, environment-variable checklist, test plan, risk list, and implementation task breakdown; production credential setup and live payment processing stay with the project owner. For proteauj/nova-athletique, I would focus on: Payment-path audit blueprint with entry-point inventory, webhook receiver trust boundary, idempotency checklist, and env-var verification matrix.</p>
+    <p class="muted">Draft response prepared only. External public comments, direct messages, or form submissions require explicit send approval.</p>
+  </details>
+  <details>
+    <summary>Safety boundary</summary>
+    <p>No Stripe secrets, private logs, client emails, production subscriptions, or external comments without approval.</p>
+  </details>
+</article>
+<article class="lead-card">
+  <span class="eyebrow">design-heavy_payment_performance_diagnostic</span>
+  <h3><a href="https://github.com/letsrevel/revel-backend/issues/530">perf: release tier lock before Stripe call in online checkout</a></h3>
+  <p><strong>Repo:</strong> letsrevel/revel-backend. <strong>Provider:</strong> Stripe checkout performance diagnostic. <strong>Fixed scope:</strong> $100.</p>
+  <p>Lock-contention diagnostic blueprint with transaction boundary map, failure-window checklist, Stripe idempotency notes, and measurement plan.</p>
+  <details>
+    <summary>Draft response not posted</summary>
+    <p>I saw this payment-integration request and can offer a narrow fixed-scope Payment Integration Blueprint Sprint for $100. I would work only from public or buyer-authorized non-sensitive requirements and sandbox-safe examples, without processor secrets, payment data, or private repo access. The deliverable would be a provider flow map, endpoint/webhook checklist, environment-variable checklist, test plan, risk list, and implementation task breakdown; production credential setup and live payment processing stay with the project owner. For letsrevel/revel-backend, I would focus on: Lock-contention diagnostic blueprint with transaction boundary map, failure-window checklist, Stripe idempotency notes, and measurement plan.</p>
+    <p class="muted">Draft response prepared only. External public comments, direct messages, or form submissions require explicit send approval.</p>
+  </details>
+  <details>
+    <summary>Safety boundary</summary>
+    <p>Do not disrupt active maintainers; no code claim, no private Tempo/Grafana data, no production payment changes.</p>
+  </details>
+</article>
+</div>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">This page, CSV, GitHub issue lead, response draft, search metadata, IndexNow, or ready-to-pay issue body</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">A buyer says they are interested or asks a question</td><td data-label="Counted as money?">No. Requires exact accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof and any platform acceptance</td><td data-label="Counted as money?">Yes, count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">No public GitHub comments or direct messages were posted by this script. External sending requires explicit approval.</p>
+    </section>
+  </main>
+</body>
+</html>
