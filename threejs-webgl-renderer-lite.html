@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope Three.js/WebGL renderer lite sample with buyer acceptance, ready-to-pay intake, payment boundary, and proof checklist.">
+  <title>Three.js WebGL Renderer Lite</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5e6978;--line:#d9dfeb;--paper:#fff;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00}
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:0}h2{font-size:1.25rem;margin:24px 0 10px;letter-spacing:0}h3{font-size:1rem;margin:0 0 6px;letter-spacing:0}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue)}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px;align-items:center}.stage{border:1px solid var(--line);border-radius:8px;min-height:420px;background:#0f1720;position:relative;overflow:hidden}.stage canvas{display:block;width:100%;height:420px}.stage .fallback{position:absolute;left:12px;right:12px;bottom:12px;color:#dbe7f6;font-size:.88rem}.notice,.card,.metric{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:12px;overflow-wrap:anywhere}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span,.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}ol{padding-left:22px}li{margin:7px 0}pre{white-space:pre-wrap;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.stage,.stage canvas{min-height:320px;height:320px}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope technical sample</p>
+      <section class="hero">
+        <div>
+          <h1>Three.js WebGL Renderer Lite</h1>
+          <p class="muted">A simple browser-renderable renderer starter for buyers who need a compact Three.js/WebGL scene instead of a full graphics engine. Listed fixed scope: $100.</p>
+          <div class="buttons">
+            <a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&amp;title=Ready+to+pay%3A+Three.js+WebGL+Renderer+Lite&amp;labels=paid-inquiry%2Cready-to-pay&amp;body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Three.js+WebGL+Renderer+Lite%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fthreejs-webgl-renderer-lite.html%0AOffer+type%3A+fixed-scope+technical+sample%2Fcustomization%0A%0ARequested+scene+or+renderer+goal%3A%0AExisting+repo+or+public+demo+URL%3A%0ABrowser%2Fdevice+target%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0ADelivery+preference%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+passwords%2C+payment+cards%2C+tax+identifiers%2C+private+customer+data%2C+credentials%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A">Open ready-to-pay intake</a>
+            <a href="payment-activation.html">Payment activation</a>
+            <a href="proof-monitor.html">Proof monitor</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/threejs_webgl_renderer_lite.csv">CSV</a>
+          </div>
+        </div>
+        <div class="stage" aria-label="Three.js rotating cube sample">
+          <canvas id="demo"></canvas>
+          <p class="fallback" id="fallback">If the live module CDN is unavailable, this still documents the deliverable shape, acceptance gate, and proof boundary.</p>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Fixed scope</span><strong>$100</strong></article>
+      <article class="metric"><span>First $100 path</span><strong>1 paid order</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice">
+      <h2>What The Buyer Gets</h2>
+      <ol>
+        <li>One browser-renderable Three.js/WebGL sample scene with renderer setup, camera, lighting, animation loop, resize handling, and fallback notes.</li>
+        <li>Integration checklist for dropping the sample into a public static site, documentation page, prototype, or product demo.</li>
+        <li>One short customization pass for public-safe requirements agreed before payment.</li>
+        <li>Delivery proof checklist and acceptance handoff so the $100 order can be counted only after external proof exists.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <p>The buyer must paste this before any paid work starts:</p>
+      <pre>I accept the Three.js WebGL Renderer Lite fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive rendering requirements; the deliverable is limited to a simple browser-renderable Three.js/WebGL scene, renderer setup notes, and integration checklist; and custom engine work, asset licensing, private repo access, credentials, performance guarantees, ongoing support, or extra revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section>
+      <h2>Proof Boundary</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Rule</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Item">This page, demo canvas, CSV, issue form, search indexing, or draft response</td><td data-label="Rule">Counts $0.</td></tr>
+          <tr><td data-label="Item">Accepted scope plus seller-owned payment URL</td><td data-label="Rule">Still counts $0 until the external provider confirms payment.</td></tr>
+          <tr><td data-label="Item">External payment proof, delivery proof, and buyer/platform acceptance</td><td data-label="Rule">Count only posted, released, payable, or cleared net money after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Seller Checklist</h2>
+      <ol>
+        <li>Confirm the buyer wants this exact simple renderer scope, not a custom graphics engine.</li>
+        <li>Get the exact acceptance text above.</li>
+        <li>Send only a seller-owned checkout, invoice, marketplace order, funded milestone, or payment request URL.</li>
+        <li>Start work only after external payment proof exists.</li>
+        <li>Deliver through a controlled channel and save delivery proof plus buyer acceptance.</li>
+      </ol>
+    </section>
+  </main>
+  <script type="module">
+    const fallback = document.getElementById('fallback');
+    try {
+      const THREE = await import('https://unpkg.com/three@0.165.0/build/three.module.js');
+      const canvas = document.getElementById('demo');
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x0f1720);
+      const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+      camera.position.set(2.6, 2.0, 3.2);
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+      const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
+      const material = new THREE.MeshStandardMaterial({ color: 0x4db6ac, metalness: 0.18, roughness: 0.36 });
+      const cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+      const light = new THREE.DirectionalLight(0xffffff, 1.15);
+      light.position.set(4, 5, 3);
+      scene.add(light);
+      function resize(){
+        const rect = canvas.parentElement.getBoundingClientRect();
+        renderer.setSize(rect.width, rect.height, false);
+        camera.aspect = rect.width / rect.height;
+        camera.updateProjectionMatrix();
+      }
+      function tick(){
+        resize();
+        cube.rotation.x += 0.008;
+        cube.rotation.y += 0.012;
+        renderer.render(scene, camera);
+        requestAnimationFrame(tick);
+      }
+      fallback.textContent = 'Live sample: rotating Three.js scene with resize-safe renderer setup.';
+      tick();
+    } catch (error) {
+      fallback.textContent = 'Three.js CDN did not load in this browser. The fixed-scope deliverable remains documented on this page.';
+    }
+  </script>
+</body>
+</html>
