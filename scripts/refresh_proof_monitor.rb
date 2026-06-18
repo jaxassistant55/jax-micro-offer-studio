@@ -212,7 +212,15 @@ def catalog_repo_name(row)
   row["repo_url"].to_s.sub(%r{\Ahttps://github\.com/}, "").sub(%r{/\z}, "")
 end
 
+AFTER_DOWNLOAD_CLOSE_PATHS = {
+  "jaxassistant55/local-seo-gbp-audit-starter" => "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-download-intent-close.html",
+  "jaxassistant55/pdf-table-extraction-starter" => "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-download-intent-close.html"
+}.freeze
+
 def hot_close_room_url(row)
+  mapped = AFTER_DOWNLOAD_CLOSE_PATHS[row["repo"].to_s]
+  return mapped if mapped
+
   repo_name = row["repo"].to_s.split("/").last
   "https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-#{repo_name}.html"
 end
