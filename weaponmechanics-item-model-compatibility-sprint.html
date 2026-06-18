@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope WeaponMechanics Item_Model compatibility sprint for Third_Person_Pose Override_Visual_Item configuration, wiki patching, validation checks, and test planning.">
+  <title>WeaponMechanics Item Model Compatibility Sprint</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--paper:#fff;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#a12a2a}
+    *{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.15rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.24rem;margin:24px 0 10px;letter-spacing:0}h3{font-size:1rem;margin:0 0 6px;letter-spacing:0;overflow-wrap:anywhere}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere;word-break:break-word}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700;max-width:100%;white-space:normal}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:16px;align-items:stretch}.flow,.notice,.metric,.lead-card{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:12px;overflow-wrap:anywhere}.flow{background:#f7faf9}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.flow-step{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;margin:8px 0}.lead-card{border-left:6px solid var(--blue)}details{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope Minecraft config sprint</p>
+      <section class="hero">
+        <div>
+          <h1>WeaponMechanics Item Model Compatibility Sprint</h1>
+          <p class="muted">A $100 public-safe sprint for the open WeaponMechanicsCosmetics request to support <code>Item_Model: "namespace:item"</code> inside <code>Third_Person_Pose.Override_Visual_Item</code>. No third-party comment or PR was posted.</p>
+          <div class="buttons">
+            <a href="#scope">Scope</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="#draft">Draft response</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_item_model_wiki_patch.md">Prepared wiki patch</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_item_model_compatibility_sprint.csv">CSV</a>
+            <a href="payment-activation.html">Payment activation</a>
+            <a href="proof-monitor.html">Proof monitor</a>
+          </div>
+        </div>
+        <div class="flow" aria-label="Item model sprint flow">
+          <span class="eyebrow">Sprint flow</span>
+          <div class="flow-step"><strong>1. Confirm target</strong><br>Version target, existing API support, and whether this is docs-only, implementation, or both.</div>
+          <div class="flow-step"><strong>2. Define config shape</strong><br>Modern <code>Item_Model</code> YAML, legacy fallback, and clear precedence when both are present.</div>
+          <div class="flow-step"><strong>3. Validate safely</strong><br>Namespaced-key checks, invalid-key behavior, observer-only third-person testing, and no private server files.</div>
+          <div class="flow-step"><strong>4. Handoff</strong><br>Wiki patch draft, compatibility matrix, test checklist, and response copy ready for owner approval.</div>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Open paid lead</span><strong>1</strong></article>
+      <article class="metric"><span>Listed sprint price</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice" id="scope">
+      <h2>Concrete Deliverable</h2>
+      <ol>
+        <li>YAML compatibility blueprint for <code>Third_Person_Pose.Scope.Override_Visual_Item.Item_Model</code>.</li>
+        <li>Recommended precedence rule for <code>Item_Model</code> versus legacy <code>Type</code> and <code>Custom_Model_Data</code>.</li>
+        <li>Validation checklist for namespaced keys, empty values, unsupported versions, and safe fallback behavior.</li>
+        <li>Third-person observer test matrix for scope, reload, firearm action, legacy fallback, invalid key, and missing resource-pack model.</li>
+        <li>Prepared wiki patch draft that can be converted into an upstream PR only after explicit approval.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <p>The buyer must paste this before any paid work starts:</p>
+      <pre>I accept the WeaponMechanics Item Model Compatibility Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive configuration requirements, version targets, and reproduction details; the deliverable is limited to a public-safe Item_Model compatibility blueprint, YAML examples, precedence rules, validation checklist, wiki patch draft, and test matrix; and private plugin jars, production server access, license keys, player data, payment account setup, live server deployment, guaranteed upstream merge, ongoing support, or extra revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section class="lead-card" id="draft">
+      <span class="eyebrow">Draft response not posted</span>
+      <h2><a href="https://github.com/WeaponMechanics/WeaponMechanicsCosmeticsWiki/issues/48">Override_Visual_Item: Item Model Compatibility</a></h2>
+      <p><strong>Repo:</strong> WeaponMechanics/WeaponMechanicsCosmeticsWiki. <strong>Issue state:</strong> Open. <strong>Comments observed:</strong> 0. <strong>Payment signal:</strong> requester checked willingness to pay.</p>
+      <p>I saw this Item_Model compatibility request and can offer a narrow fixed-scope WeaponMechanics Item Model Compatibility Sprint for $100. I would work only from public or buyer-authorized non-sensitive config/version details. The deliverable would be an Item_Model YAML compatibility blueprint, precedence rule recommendation, validation checklist, wiki patch draft, and third-person pose test matrix. I would not need private plugin jars, production server access, player data, credentials, or payment data; upstream PR/comment posting would require explicit approval.</p>
+      <details>
+        <summary>Public-safe source snippet</summary>
+        <p>Requester asks for Override_Visual_Item to support Item_Model values like namespace:item, similar to WeaponMechanics skin format. Payment checkbox says they are willing to pay for the feature.</p>
+      </details>
+      <details>
+        <summary>Prepared patch excerpt</summary>
+        <pre>## Proposed wiki patch draft: Override_Visual_Item Item_Model
+
+This is a public-safe patch draft for `cosmetics.md` under `Third_Person_Pose`.
+It is not posted upstream automatically.
+
+### Modern item model example
+
+```yaml
+    Third_Person_Pose:
+      Default: NONE
+      Scope:
+        Pose: BOW
+        Override_Visual_Item:
+          Item_Model: &quot;namespace:item&quot;
+      Reload: BLOCK
+      Firearm_Action: CROSSBOW
+```
+
+### Compatibility notes
+
+- `Item_Model` should be treated as a namespaced item model key such as `namespace:item`.
+- `Item_Model` is the preferred modern override when the target server/client version supports item model keys.
+- `Type` plus `Custom_Model_Data` remains the legacy fallback for older resource-pack workflows.
+- If both `Item_Model` and legacy fields are present, the plugin owner should choose and document one precedence rule before release.
+- A safe default is: prefer `Item_Model`, ignore legacy visual fields for that same override, and warn in validation output.
+
+### Validation checklist
+
+- Accept only non-empty namespaced keys in the form `namespace:path`.
+- Reject keys with spaces, uppercase-only placeholders, or missing namespace.
+- Confirm `Scope`, `Reload`, and `Firearm_Action` can each use an override independently.
+- Confirm third-person observer behavior, because the existing wiki states the pose effect is visible to other players, not the shooter.
+- Confirm invalid keys fail safely without replacing the item with an unintended default.
+
+### Test matrix
+
+| Case | Expected result |
+| --- | --- |
+</pre>
+      </details>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">This page, CSV, prepared patch, issue lead, draft response, search metadata, or IndexNow result</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">The requester says they may pay or asks a question</td><td data-label="Counted as money?">No. Requires exact accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof and any platform acceptance</td><td data-label="Counted as money?">Yes, count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">No public GitHub comments, pull requests, direct messages, payment requests, or production server changes were made by this script. External sending requires explicit approval.</p>
+    </section>
+  </main>
+</body>
+</html>

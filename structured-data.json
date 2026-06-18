@@ -4567,6 +4567,26 @@
       "name": "Payment Integration Blueprint Sprint",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/payment-integration-blueprint-sprint.html",
       "description": "A buyer-facing fixed-scope $100 payment integration blueprint page with exact acceptance text, lead-specific response drafts, payment activation, and proof boundary."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "WeaponMechanics Item Model Compatibility Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-item-model-compatibility-sprint.html",
+      "description": "Fixed-scope public-safe Item_Model compatibility sprint for WeaponMechanicsCosmetics configuration, wiki patching, validation checks, and test planning.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "WeaponMechanics Item Model Compatibility Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-item-model-compatibility-sprint.html",
+      "description": "A buyer-facing fixed-scope $100 WeaponMechanics Item_Model compatibility page with exact acceptance text, draft response, prepared wiki patch, payment activation, and proof boundary."
     }
   ]
 }

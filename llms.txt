@@ -188,3 +188,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Non-Bounty Paid Payment Integration Offer
 - Payment Integration Blueprint Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-integration-blueprint-sprint.html -> $100 fixed-scope public-safe Stripe/PayPal/webhook/payment-flow blueprint, ready-to-pay intake, payment activation, and proof boundary.
+
+## Non-Bounty Paid Minecraft Config Offer
+- WeaponMechanics Item Model Compatibility Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-item-model-compatibility-sprint.html -> $100 fixed-scope public-safe Item_Model compatibility blueprint, wiki patch draft, ready-to-pay intake, payment activation, and proof boundary.
