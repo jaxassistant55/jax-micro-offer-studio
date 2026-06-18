@@ -3460,7 +3460,7 @@ OFFERS.each do |offer|
         <div class="fact"><span>Type</span><strong>#{h(offer[:type])}</strong></div>
         <div class="fact"><span>Price</span><strong>#{h(offer[:price])}</strong></div>
         <div class="fact"><span>Source asset folder</span><code>#{h(offer[:source_dir])}</code></div>
-        <div class="fact"><span>Ready-to-pay issue</span><a href="#{h(issue)}">Open prefilled issue</a></div>
+        <div class="fact"><span>Ready-to-pay issue</span><a href="#{h(issue)}">Open ready-to-pay issue</a></div>
         <div class="fact"><span>Form template</span><a href="#{h(form_issue)}">Open #{h(offer[:type])} form</a></div>
       </aside>
     </section>
