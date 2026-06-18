@@ -9,6 +9,17 @@ body:
 - type: markdown
   attributes:
     value: |
+      Fastest $100 Start:
+      - Page: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html
+      - Route CSV: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest_100_start.csv
+      - Payment packets after accepted scope: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html
+      - Payment activation after accepted scope: https://jaxassistant55.github.io/jax-micro-offer-studio/payment-activation
+      - Proof monitor: https://jaxassistant55.github.io/jax-micro-offer-studio/proof-monitor.html
+
+      Use this path when the buyer wants the shortest fixed-scope route to a $100 paid order. This issue is intake only; money counts only after accepted scope, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.
+- type: markdown
+  attributes:
+    value: |
       Use this form only for a legitimate paid Sales Enablement Kit inquiry.
 
       Offer page:
