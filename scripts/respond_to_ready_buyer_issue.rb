@@ -11,6 +11,8 @@ CATALOG_PATH = File.join(DOCS, "paid-offer-action-catalog.json")
 PAYMENT_PACKETS_PATH = File.join(DOCS, "one-sale-payment-packets.csv")
 SITE = "https://jaxassistant55.github.io/jax-micro-offer-studio/"
 PAYMENT_ACTIVATION = "#{SITE}payment-activation"
+FASTEST_100_START = "#{SITE}fastest-100-start.html"
+FASTEST_100_START_CSV = "#{SITE}fastest_100_start.csv"
 ONE_SALE_PAYMENT_PACKETS = "#{SITE}one-sale-payment-packets.html"
 SAMPLE_GALLERY = "https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-sample-output-gallery.html"
 SAMPLE_GALLERY_RELEASE = "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/one-sale-sample-output-gallery-v1"
@@ -369,6 +371,10 @@ def response_body(issue, matched_row)
     Matched route: #{offer}
     Listed price: #{price}
     Offer page: #{detail_url}
+    Fastest $100 route:
+    - Start here if the buyer has not picked an exact paid route yet: #{FASTEST_100_START}
+    - Route CSV: #{FASTEST_100_START_CSV}
+    - Pick one route, confirm the fixed scope, then use the matching payment packet before sending any seller-owned payment URL.
     #{signal_room_block}
 
     Exact next steps:
@@ -470,6 +476,8 @@ emit(
   response_includes_signal_room: body.include?(READY_SIGNAL_ROOM),
   response_includes_payment_packet: !matched_packet.nil? && body.include?(matched_packet["packet_url"].to_s),
   response_includes_payment_packet_index: body.include?(ONE_SALE_PAYMENT_PACKETS),
+  response_includes_fastest_100_start: body.include?(FASTEST_100_START),
+  response_includes_fastest_100_start_csv: body.include?(FASTEST_100_START_CSV),
   response_includes_sample_gallery: body.include?(SAMPLE_GALLERY),
   response_includes_sample_gallery_release: body.include?(SAMPLE_GALLERY_RELEASE),
   response_includes_product_bundle_terms: body.include?(PRODUCT_BUNDLE_TERMS),
