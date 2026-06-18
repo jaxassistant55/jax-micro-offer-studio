@@ -2117,6 +2117,19 @@
       "first_100": "One accepted paid Item_Model compatibility sprint reaches $100 before fees/refunds.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+WeaponMechanics+Item+Model+Compatibility+Sprint&labels=paid-inquiry%2Cready-to-pay%2Cminecraft-config&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+WeaponMechanics+Item+Model+Compatibility+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fweaponmechanics-item-model-compatibility-sprint.html%0ALead%2Frequest%3A+Override_Visual_Item%3A+Item+Model+Compatibility%0ASource+issue%3A+https%3A%2F%2Fgithub.com%2FWeaponMechanics%2FWeaponMechanicsCosmeticsWiki%2Fissues%2F48%0A%0ATarget+Minecraft+version%3A%0ATarget+WeaponMechanicsCosmetics+version%3A%0AIs+Item_Model+already+supported+by+the+runtime+API+you+want+to+target%3F%3A%0APreferred+behavior+when+Item_Model+and+legacy+Type%2FCustom_Model_Data+both+exist%3A%0ATest+server+or+public+reproduction+details+you+can+safely+share%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+private+server+files%2C+paid+plugin+jars%2C+secrets%2C+license+keys%2C+player+data%2C+payment+data%2C+or+credentials.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
+    },
+    {
+      "type": "service",
+      "title": "Voxy VR Backport Feasibility Sprint",
+      "slug": "voxy-vr-backport-feasibility-sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/voxy-vr-backport-feasibility-sprint.html",
+      "price": "$100",
+      "amount_usd": 100,
+      "description": "Fixed-scope public-safe feasibility sprint for a Voxy 1.20.1 Vivecraft/shader backport request.",
+      "lead_source_url": "https://github.com/MCRcortex/voxy/issues/519",
+      "first_100": "One accepted paid Voxy feasibility diagnostic reaches $100 before fees/refunds.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Voxy+VR+Backport+Feasibility+Sprint&labels=paid-inquiry%2Cready-to-pay%2Cminecraft-mod&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Voxy+VR+Backport+Feasibility+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fvoxy-vr-backport-feasibility-sprint.html%0ALead%2Frequest%3A+https%3A%2F%2Fgithub.com%2FMCRcortex%2Fvoxy%2Fissues%2F519%0ARelated+duplicate%2Fhistory%3A+https%3A%2F%2Fgithub.com%2FMCRcortex%2Fvoxy%2Fissues%2F375%0A%0ATarget+Minecraft+version%3A%0AFabric+or+Forge+requirement%3A%0AVivecraft+version%3A%0AIris%2Fshader+pack+target%3A%0ASodium+target%3A%0AExisting+modpack%2Freproduction+details+you+can+safely+share%3A%0AWhat+counts+as+a+useful+first+diagnostic%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+private+modpack+files%2C+paid+mod+jars%2C+server+credentials%2C+account+credentials%2C+player+data%2C+payment+data%2C+or+private+recordings.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
     }
   ]
 }

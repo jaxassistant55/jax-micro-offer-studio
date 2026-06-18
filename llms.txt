@@ -191,3 +191,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Non-Bounty Paid Minecraft Config Offer
 - WeaponMechanics Item Model Compatibility Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-item-model-compatibility-sprint.html -> $100 fixed-scope public-safe Item_Model compatibility blueprint, wiki patch draft, ready-to-pay intake, payment activation, and proof boundary.
+
+## Non-Bounty Paid Minecraft Mod Diagnostic
+- Voxy VR Backport Feasibility Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/voxy-vr-backport-feasibility-sprint.html -> $100 fixed-scope public-safe Voxy 1.20.1 Vivecraft/shader feasibility diagnostic, prepared notes, ready-to-pay intake, payment activation, and proof boundary.
