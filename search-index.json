@@ -1858,18 +1858,6 @@
       ]
     },
     {
-      "type": "buyer_response_autopilot",
-      "title": "Buyer Response Autopilot",
-      "slug": "buyer-response-playbook",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html",
-      "price": "$0",
-      "amount_usd": 0,
-      "description": "Owned-repo workflow and playbook that posts safe next steps on legitimate ready-to-pay or ready-to-buy issues.",
-      "first_100": "Moves buyer issues closer to payment proof but counts $0 until external posted/released/payable money exists.",
-      "start_order_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
-      "proof_rule": "Counts $0 until external buyer/payment proof exists."
-    },
-    {
       "type": "terms",
       "title": "Standalone Offer Terms",
       "slug": "standalone-offer-terms",
@@ -2040,6 +2028,18 @@
         "json",
         "sample-output"
       ]
+    },
+    {
+      "type": "buyer_response_autopilot",
+      "title": "Buyer Response Autopilot",
+      "slug": "buyer-response-playbook",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/buyer-response-playbook.html",
+      "price": "$0",
+      "amount_usd": 0,
+      "description": "Owned-repo workflow and playbook that posts safe next steps on legitimate ready-to-pay or ready-to-buy issues.",
+      "first_100": "Moves buyer issues closer to payment proof but counts $0 until external posted/released/payable money exists.",
+      "start_order_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/paid-offer-action-catalog.html",
+      "proof_rule": "Counts $0 until external buyer/payment proof exists."
     }
   ]
 }
