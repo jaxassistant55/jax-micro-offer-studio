@@ -182,3 +182,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Non-Bounty Paid Help Blueprint
 - GitHub Markdown Publish Bridge Blueprint: https://jaxassistant55.github.io/jax-micro-offer-studio/github-markdown-publish-bridge.html -> $100 fixed-scope GitHub API/OAuth publishing blueprint, ready-to-pay intake, payment activation, and proof boundary.
+
+## Non-Bounty Paid Diagnostic
+- Azure SWA Custom Domain Validation Diagnostic: https://jaxassistant55.github.io/jax-micro-offer-studio/azure-swa-domain-validation-diagnostic.html -> $100 fixed-scope public-safe DNS/Azure/IaC diagnostic brief, ready-to-pay intake, payment activation, and proof boundary.

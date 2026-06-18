@@ -4527,6 +4527,26 @@
       "name": "GitHub Markdown Publish Bridge Blueprint",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/github-markdown-publish-bridge.html",
       "description": "A buyer-facing fixed-scope $100 GitHub Markdown publish bridge blueprint with exact acceptance text, ready-to-pay intake, and proof checklist."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Azure SWA Custom Domain Validation Diagnostic",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/azure-swa-domain-validation-diagnostic.html",
+      "description": "Fixed-scope diagnostic brief for Azure Static Web Apps custom-domain validation failures using public-safe evidence only.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Azure SWA Custom Domain Validation Diagnostic",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/azure-swa-domain-validation-diagnostic.html",
+      "description": "A buyer-facing fixed-scope $100 Azure Static Web Apps custom-domain validation diagnostic page with exact acceptance text, ready-to-pay intake, and proof checklist."
     }
   ]
 }
