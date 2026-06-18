@@ -1,10 +1,10 @@
 {
-  "generated_at_jst": "2026-06-18 10:42:34 JST",
+  "generated_at_jst": "2026-06-18 10:48:47 JST",
   "money_confirmed_usd": 0,
   "proof_rule": "Synthetic sample-output gallery only; page views, downloads, issues, and samples count $0.",
   "routes": [
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "1",
       "catalog_row_id": "central-static-demo-site-customization",
       "title": "Static Demo Site Customization",
@@ -22,7 +22,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "2",
       "catalog_row_id": "standalone-static-service-site-starter",
       "title": "Static Service Site Starter",
@@ -40,7 +40,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "3",
       "catalog_row_id": "central-local-seo-gbp-audit",
       "title": "Local SEO / GBP Audit",
@@ -58,7 +58,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "4",
       "catalog_row_id": "central-ai-workflow-tracker-sprint",
       "title": "AI Workflow Tracker Sprint",
@@ -76,7 +76,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "5",
       "catalog_row_id": "central-niche-quote-estimator",
       "title": "Niche Quote Estimator",
@@ -94,7 +94,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "6",
       "catalog_row_id": "standalone-niche-quote-estimator-starter",
       "title": "Niche Quote Estimator Starter",
@@ -112,7 +112,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "7",
       "catalog_row_id": "central-technical-docs-cleanup",
       "title": "Technical Docs Cleanup",
@@ -130,7 +130,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "8",
       "catalog_row_id": "standalone-technical-docs-cleanup-starter",
       "title": "Technical Docs Cleanup Starter",
@@ -148,7 +148,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "9",
       "catalog_row_id": "central-website-audit-microservice",
       "title": "Website Audit Microservice",
@@ -166,7 +166,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "10",
       "catalog_row_id": "standalone-website-audit-microservice-starter",
       "title": "Website Audit Microservice Starter",
@@ -184,7 +184,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "11",
       "catalog_row_id": "standalone-workflow-tracker-dashboard-starter",
       "title": "Workflow Tracker Dashboard Starter",
@@ -202,7 +202,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "12",
       "catalog_row_id": "standalone-career-packet-starter",
       "title": "Career Packet Starter",
@@ -220,7 +220,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "13",
       "catalog_row_id": "standalone-client-intake-sop-starter",
       "title": "Client Intake SOP Starter",
@@ -238,7 +238,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "14",
       "catalog_row_id": "central-client-intake-and-sop-package",
       "title": "Client Intake and SOP Package",
@@ -256,7 +256,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "15",
       "catalog_row_id": "central-data-cleanup-sprint",
       "title": "Data Cleanup Sprint",
@@ -274,7 +274,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "16",
       "catalog_row_id": "standalone-data-cleanup-sprint-starter",
       "title": "Data Cleanup Sprint Starter",
@@ -292,7 +292,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "17",
       "catalog_row_id": "central-pdf-table-extraction",
       "title": "PDF/Table Extraction",
@@ -310,7 +310,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "18",
       "catalog_row_id": "central-resume-linkedin-interview-pack",
       "title": "Resume / LinkedIn / Interview Pack",
@@ -328,7 +328,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "19",
       "catalog_row_id": "central-automation-blueprint",
       "title": "Automation Blueprint",
@@ -346,7 +346,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "20",
       "catalog_row_id": "standalone-automation-blueprint-starter",
       "title": "Automation Blueprint Starter",
@@ -364,7 +364,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "21",
       "catalog_row_id": "central-content-repurposing-sprint",
       "title": "Content Repurposing Sprint",
@@ -382,7 +382,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "22",
       "catalog_row_id": "standalone-content-repurposing-sprint-starter",
       "title": "Content Repurposing Sprint Starter",
@@ -400,7 +400,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "23",
       "catalog_row_id": "standalone-resale-listing-research-starter",
       "title": "Resale Listing Research Starter",
@@ -418,7 +418,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "24",
       "catalog_row_id": "central-resale-listing-and-price-research-pack",
       "title": "Resale Listing and Price Research Pack",
@@ -436,7 +436,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "25",
       "catalog_row_id": "standalone-subscription-audit-savings-starter",
       "title": "Subscription Audit Savings Starter",
@@ -454,7 +454,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "26",
       "catalog_row_id": "central-subscription-audit-and-savings-prep-pack",
       "title": "Subscription Audit and Savings Prep Pack",
@@ -472,7 +472,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "27",
       "catalog_row_id": "standalone-translation-localization-draft-starter",
       "title": "Translation Localization Draft Starter",
@@ -490,7 +490,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "28",
       "catalog_row_id": "central-translation-and-localization-draft-pack",
       "title": "Translation and Localization Draft Pack",
@@ -508,7 +508,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "29",
       "catalog_row_id": "standalone-local-seo-gbp-audit-starter",
       "title": "Local SEO GBP Audit Starter",
@@ -526,7 +526,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "30",
       "catalog_row_id": "hot-download-local-seo-gbp-audit-starter",
       "title": "Local SEO GBP Audit Starter",
@@ -544,7 +544,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "31",
       "catalog_row_id": "standalone-pdf-table-extraction-starter",
       "title": "PDF Table Extraction Starter",
@@ -562,7 +562,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "32",
       "catalog_row_id": "hot-download-pdf-table-extraction-starter",
       "title": "PDF Table Extraction Starter",
@@ -580,7 +580,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "33",
       "catalog_row_id": "central-first-100-fast-start",
       "title": "First $100 Fast Start",
@@ -598,7 +598,7 @@
       "money_confirmed_usd": "0"
     },
     {
-      "generated_at_jst": "2026-06-18 10:42:34 JST",
+      "generated_at_jst": "2026-06-18 10:48:47 JST",
       "rank": "34",
       "catalog_row_id": "central-first-100-product-bundle",
       "title": "First $100 Product Bundle",

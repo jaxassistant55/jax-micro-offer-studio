@@ -16,6 +16,8 @@ STAMP = Time.now.strftime("%Y-%m-%d %H:%M:%S JST")
 GALLERY_PATH = "one-sale-sample-output-gallery.html"
 CSV_PATH = "one_sale_sample_output_gallery.csv"
 JSON_PATH = "one_sale_sample_output_gallery.json"
+RELEASE_TAG = "one-sale-sample-output-gallery-v1"
+RELEASE_URL = "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/#{RELEASE_TAG}"
 
 def h(value)
   CGI.escapeHTML(value.to_s)
@@ -235,7 +237,7 @@ html = <<~HTML
   <body>
     <main>
       <header>
-        <p class="buttons"><a href="one-sale-to-100.html">One sale to $100</a><a href="ready-to-buy-signal-room.html">Signal room</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="marketplace-listing-packets.html">Marketplace packets</a><a href="payment-activation">Payment activation</a><a href="proof-monitor.html">Proof monitor</a></p>
+        <p class="buttons"><a href="one-sale-to-100.html">One sale to $100</a><a href="ready-to-buy-signal-room.html">Signal room</a><a href="paid-offer-action-catalog.html">Paid catalog</a><a href="marketplace-listing-packets.html">Marketplace packets</a><a href="#{RELEASE_URL}">Release packet</a><a href="payment-activation">Payment activation</a><a href="proof-monitor.html">Proof monitor</a></p>
         <h1>One Sale Sample Output Gallery</h1>
         <p class="muted">Generated #{h(STAMP)}. These are synthetic sample-output previews for #{sample_rows.length} one-sale-to-$100 routes. They make the buyer decision more concrete, but they are not paid work, not private delivery, and not payment proof.</p>
         <section class="summary">
@@ -250,6 +252,11 @@ html = <<~HTML
         <p>A real buyer can inspect the sample deliverable shape, pick the closest route, then open the ready-to-pay form. Paid work starts only after accepted scope and seller-owned external payment proof. Page views, samples, downloads, GitHub issues, and IndexNow submissions still count $0.</p>
         <p>Routes covered: #{sample_rows.length}. Confirmed money remains $0 until external buyer/payment/delivery proof exists.</p>
         <p class="buttons"><a href="#{CSV_PATH}">Download CSV</a><a href="#{JSON_PATH}">Download JSON</a><a href="proof-monitor.html">Check proof monitor</a></p>
+      </section>
+      <section class="panel violet" id="release-packet">
+        <h2>Downloadable Release Packet</h2>
+        <p>The same gallery is packaged as a GitHub release with ZIP, CSV, JSON, and manifest assets. Release downloads are interest-only and count $0 until real buyer acceptance, seller-owned external payment proof, delivery proof, and posted/released/payable/cleared funds exist.</p>
+        <p class="buttons"><a href="#{RELEASE_URL}">Open release</a><a href="#{RELEASE_URL}/download/#{RELEASE_TAG}/one-sale-sample-output-gallery-v1.zip">Download ZIP</a><a href="#{RELEASE_URL}/download/#{RELEASE_TAG}/one_sale_sample_output_gallery.csv">Download CSV</a><a href="#{RELEASE_URL}/download/#{RELEASE_TAG}/one_sale_sample_output_gallery.json">Download JSON</a></p>
       </section>
       <section class="panel">
         <h2>Fastest High-Value Samples</h2>
@@ -275,7 +282,7 @@ block = <<~HTML
   <section class="notice" id="one-sale-sample-gallery">
     <h2>One-sale sample-output gallery</h2>
     <p>#{sample_rows.length} one-sale-to-$100 routes now have synthetic sample deliverable previews before the ready-to-pay step. These previews reduce scope uncertainty while preserving the $0 proof boundary.</p>
-    <p class="buttons"><a href="#{GALLERY_PATH}">Open sample gallery</a><a href="#{CSV_PATH}">CSV</a><a href="#{JSON_PATH}">JSON</a><a href="proof-monitor.html">Proof monitor</a></p>
+    <p class="buttons"><a href="#{GALLERY_PATH}">Open sample gallery</a><a href="#{CSV_PATH}">CSV</a><a href="#{JSON_PATH}">JSON</a><a href="#{RELEASE_URL}">Release packet</a><a href="proof-monitor.html">Proof monitor</a></p>
   </section>
 HTML
 
