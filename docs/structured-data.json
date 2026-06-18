@@ -4487,6 +4487,26 @@
           "value": "0"
         }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Three.js WebGL Renderer Lite",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/threejs-webgl-renderer-lite.html",
+      "description": "Fixed-scope simple Three.js/WebGL renderer sample with setup notes, integration checklist, buyer acceptance text, and payment-proof boundary.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Three.js WebGL Renderer Lite",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/threejs-webgl-renderer-lite.html",
+      "description": "A buyer-facing fixed-scope $100 Three.js/WebGL renderer-lite offer with live sample, exact acceptance text, ready-to-pay intake, and proof checklist."
     }
   ]
 }
