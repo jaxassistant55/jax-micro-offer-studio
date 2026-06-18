@@ -301,6 +301,14 @@ end
     "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-download-intent-close.html"
   },
   {
+    "repo" => "jaxassistant55/local-seo-gbp-audit-starter",
+    "asset_name" => "local-seo-gbp-audit-payment-proof-ready-v1.zip",
+    "title" => "Local SEO GBP Audit payment-proof-ready packet",
+    "price" => "$175",
+    "first_100_path" => "One verified paid Local SEO / GBP Audit order reaches $100 before fees/refunds.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-download-intent-close.html"
+  },
+  {
     "repo" => "jaxassistant55/pdf-table-extraction-starter",
     "asset_name" => "pdf-table-extraction-starter-close-ready-v2.zip",
     "title" => "PDF Table Extraction Starter close-ready buyer packet",
@@ -312,6 +320,14 @@ end
     "repo" => "jaxassistant55/pdf-table-extraction-starter",
     "asset_name" => "pdf-table-extraction-download-intent-close-v1.zip",
     "title" => "PDF Table Extraction after-download close packet",
+    "price" => "$125",
+    "first_100_path" => "One verified paid PDF/Table Extraction order reaches $100 before fees/refunds.",
+    "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-download-intent-close.html"
+  },
+  {
+    "repo" => "jaxassistant55/pdf-table-extraction-starter",
+    "asset_name" => "pdf-table-extraction-payment-proof-ready-v1.zip",
+    "title" => "PDF Table Extraction payment-proof-ready packet",
     "price" => "$125",
     "first_100_path" => "One verified paid PDF/Table Extraction order reaches $100 before fees/refunds.",
     "next_paid_step" => "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-download-intent-close.html"
