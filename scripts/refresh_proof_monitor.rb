@@ -52,33 +52,53 @@ def gh_json(path)
   status = nil
   timed_out = false
 
-  Open3.popen3("gh", "api", path) do |stdin, out, err, wait_thr|
+  Open3.popen3({ "GH_PROMPT_DISABLED" => "1" }, "gh", "api", path, pgroup: true) do |stdin, out, err, wait_thr|
     stdin.close
-    out_thread = Thread.new { out.read }
-    err_thread = Thread.new { err.read }
     deadline = Time.now + 25
+    readers = { out => stdout, err => stderr }
 
-    until wait_thr.join(0.2)
+    until readers.empty?
+      ready = IO.select(readers.keys, nil, nil, 0.2)
+      if ready
+        ready[0].each do |io|
+          begin
+            readers[io] << io.read_nonblock(4096)
+          rescue IO::WaitReadable
+            next
+          rescue EOFError
+            readers.delete(io)
+          end
+        end
+      end
+
       next unless Time.now > deadline
 
       timed_out = true
       begin
-        Process.kill("TERM", wait_thr.pid)
+        Process.kill("TERM", -wait_thr.pid)
       rescue StandardError
-        nil
+        begin
+          Process.kill("TERM", wait_thr.pid)
+        rescue StandardError
+          nil
+        end
       end
       sleep 0.5
       begin
-        Process.kill("KILL", wait_thr.pid)
+        Process.kill("KILL", -wait_thr.pid)
       rescue StandardError
-        nil
+        begin
+          Process.kill("KILL", wait_thr.pid)
+        rescue StandardError
+          nil
+        end
       end
+      [out, err].each { |io| io.close unless io.closed? }
       break
     end
 
+    wait_thr.join(1)
     status = wait_thr.value unless timed_out
-    stdout = out_thread.value.to_s
-    stderr = err_thread.value.to_s
   end
 
   return { "__error" => "gh api timeout for #{path}" } if timed_out
