@@ -2078,6 +2078,19 @@
       "first_100": "One accepted paid blueprint order reaches $100 before fees/refunds.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+GitHub+Markdown+Publish+Bridge+Blueprint&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+GitHub+Markdown+Publish+Bridge+Blueprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fgithub-markdown-publish-bridge.html%0AOffer+type%3A+fixed-scope+technical+blueprint+and+implementation+plan%0A%0AEditor+or+app+context%3A%0ADesired+GitHub+target+flow%3A%0APublic+repo+or+sample+repo+URL%3A%0APreferred+auth+model%2C+if+known%3A%0AExisting+constraints%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+tokens%2C+passwords%2C+OAuth+secrets%2C+private+repo+contents%2C+payment+data%2C+or+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
+    },
+    {
+      "type": "service",
+      "title": "Azure SWA Custom Domain Validation Diagnostic",
+      "slug": "azure-swa-domain-validation-diagnostic",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/azure-swa-domain-validation-diagnostic.html",
+      "price": "$100",
+      "amount_usd": 100,
+      "description": "Fixed-scope diagnostic brief for Azure Static Web Apps custom-domain validation failures, with DNS/Azure/IaC evidence matrix, safe next commands, escalation packet, and proof boundary.",
+      "lead_source_url": "https://github.com/Azure/static-web-apps/issues/1745",
+      "first_100": "One accepted paid diagnostic order reaches $100 before fees/refunds.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Azure+SWA+Custom+Domain+Validation+Diagnostic&labels=paid-inquiry%2Cready-to-pay&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Azure+SWA+Custom+Domain+Validation+Diagnostic%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fazure-swa-domain-validation-diagnostic.html%0AOffer+type%3A+fixed-scope+diagnostic+brief%0A%0AStatic+Web+App+region+and+SKU%3A%0ACustom+hostname+pattern%2C+redacted+if+needed%3A%0AValidation+method+used%3A%0APublic+DNS+evidence%3A%0ARedacted+CLI%2FBicep+command+output%3A%0ARedacted+ARM%2Fcorrelation+IDs%2C+if+you+choose%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+Azure+credentials%2C+tokens%2C+subscription+IDs%2C+tenant+IDs%2C+private+hostnames%2C+private+logs%2C+payment+data%2C+or+secrets.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
     }
   ]
 }
