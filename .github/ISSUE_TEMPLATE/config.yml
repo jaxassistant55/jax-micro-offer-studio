@@ -1,5 +1,14 @@
 blank_issues_enabled: false
 contact_links:
+- name: "Fastest $100 Start"
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html
+  about: "Shortest fixed-scope path to a $100 paid order; use before payment activation and proof capture."
+- name: "Fastest $100 route CSV"
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest_100_start.csv
+  about: "Ranked route table for picking the closest $100 fixed-scope paid order."
+- name: "One-sale payment packets"
+  url: https://jaxassistant55.github.io/jax-micro-offer-studio/one-sale-payment-packets.html
+  about: "Use only after exact buyer acceptance and a seller-owned payment URL exist."
 - name: Fastest $100 buyer start
   url: https://jaxassistant55.github.io/jax-micro-offer-studio/fastest-100-start.html
   about: Start with the ranked shortest paths to one verified $100+ paid order before choosing a specific form.
