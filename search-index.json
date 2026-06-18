@@ -1,5 +1,5 @@
 {
-  "generated_at_jst": "2026-06-18 08:52:03 JST",
+  "generated_at_jst": "2026-06-18 10:17:40 JST",
   "site": "https://jaxassistant55.github.io/jax-micro-offer-studio/",
   "money_status": "Confirmed earned money remains $0 until external proof exists.",
   "documents": [
@@ -1979,6 +1979,32 @@
         "csv",
         "local-seo",
         "proof"
+      ]
+    },
+    {
+      "type": "warm_buyer_sample_output",
+      "title": "PDF/Table Sample Output",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-sample-output.html",
+      "description": "Synthetic sample output for PDF/Table Extraction buyers before ready-to-pay intake. Money remains $0 until external payment proof exists.",
+      "tags": [
+        "sample-output",
+        "ready-to-pay",
+        "payment-proof",
+        "warm-path",
+        "pdf-table-extraction"
+      ]
+    },
+    {
+      "type": "warm_buyer_sample_output",
+      "title": "Local SEO Sample Output",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-sample-output.html",
+      "description": "Synthetic sample output for Local SEO / GBP Audit buyers before ready-to-pay intake. Money remains $0 until external payment proof exists.",
+      "tags": [
+        "sample-output",
+        "ready-to-pay",
+        "payment-proof",
+        "warm-path",
+        "local-seo-gbp-audit"
       ]
     }
   ]
