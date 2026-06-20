@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope prepared Templater patch sprint for stdout maxBuffer failures in system command functions.">
+  <title>Templater stdout maxBuffer Sprint</title>
+  <style>
+    :root{--ink:#18212c;--muted:#5f6875;--line:#d9dfeb;--paper:#fff;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#a12a2a}
+    *{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.22rem;margin:24px 0 10px;letter-spacing:0}h3{font-size:1rem;margin:0 0 6px;letter-spacing:0;overflow-wrap:anywhere}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere;word-break:break-word}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700;max-width:100%;white-space:normal}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.75fr);gap:16px;align-items:stretch}.notice,.metric,.lead-card{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:12px;overflow-wrap:anywhere}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.lead-card{border-left:6px solid var(--blue);margin:10px 0}details{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}code{white-space:normal;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope TypeScript patch sprint</p>
+      <section class="hero">
+        <div>
+          <h1>Templater stdout maxBuffer Sprint</h1>
+          <p class="muted">A $100 prepared implementation package for the open Templater issue reporting <code>stdout maxBuffer length exceeded</code> in user-defined system commands. The patch is local; no upstream comment, email, PR, or patch delivery has been sent.</p>
+          <div class="buttons">
+            <a href="#scope">Scope</a>
+            <a href="#evidence">Evidence</a>
+            <a href="#claim">Claim steps</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="#draft">Draft response</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/templater_stdout_maxbuffer_notes.md">Prepared notes</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/templater_stdout_maxbuffer_repo_grounded_packet.md">Repo packet</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/templater_stdout_maxbuffer_sprint.csv">CSV</a>
+            <a href="payment-activation.html">Payment activation</a>
+          </div>
+        </div>
+        <div class="notice">
+          <span class="eyebrow">Prepared patch</span>
+          <p><strong>Setting:</strong> <code>Output buffer limit</code></p>
+          <p><strong>Stored key:</strong> <code>command_max_buffer</code></p>
+          <p><strong>Default:</strong> 10 MB</p>
+          <p><strong>Exec option:</strong> <code>maxBuffer</code></p>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Prepared files</span><strong>6</strong></article>
+      <article class="metric"><span>Primary sprint price</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice" id="scope">
+      <h2>Concrete Deliverable</h2>
+      <ol>
+        <li>Add a configurable output buffer setting for system command user functions.</li>
+        <li>Pass the setting to Node <code>child_process.exec</code> as <code>maxBuffer</code>.</li>
+        <li>Preserve existing timeout, cwd, env, and shell behavior.</li>
+        <li>Document the setting and the maxBuffer error path.</li>
+        <li>Provide settings coverage plus apply instructions and verification notes.</li>
+      </ol>
+    </section>
+
+    <section class="notice" id="evidence">
+      <h2>Implementation Evidence</h2>
+      <table>
+        <thead><tr><th>File</th><th>Prepared change</th></tr></thead>
+        <tbody>
+          <tr><td data-label="File">src/core/functions/user_functions/UserSystemFunctions.ts</td><td data-label="Prepared change">Passes <code>maxBuffer</code> into <code>exec</code> and converts MB to bytes.</td></tr>
+          <tr><td data-label="File">src/settings/Settings.ts</td><td data-label="Prepared change">Adds default/schema/UI validator for <code>command_max_buffer</code>.</td></tr>
+          <tr><td data-label="File">src/settings/SettingsV1.ts</td><td data-label="Prepared change">Allows older settings data to carry the optional field.</td></tr>
+          <tr><td data-label="File">docs/src/settings.md</td><td data-label="Prepared change">Documents the new settings control.</td></tr>
+          <tr><td data-label="File">docs/src/user-functions/system-user-functions.md</td><td data-label="Prepared change">Explains the stdout/stderr maxBuffer error and fix setting.</td></tr>
+          <tr><td data-label="File">test/specs/settings.e2e.ts</td><td data-label="Prepared change">Adds settings UI coverage for changing the value.</td></tr>
+        </tbody>
+      </table>
+      <details><summary>Verification note</summary><pre>Templater stdout maxBuffer patch verification
+Generated: 2026-06-20 17:07 JST
+
+Source issue:
+https://github.com/SilentVoid13/Templater/issues/1749
+
+Local repo:
+/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/Templater
+
+Patch artifact:
+/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/templater_stdout_maxbuffer.patch
+
+Changed files:
+- src/core/functions/user_functions/UserSystemFunctions.ts
+- src/settings/Settings.ts
+- src/settings/SettingsV1.ts
+- docs/src/settings.md
+- docs/src/user-functions/system-user-functions.md
+- test/specs/settings.e2e.ts
+
+Local checks:
+1. git diff --check
+   Result: passed with no whitespace errors.
+
+2. Node child_process default-buffer reproduction:
+   Command behavior: execute a child Node process that writes 1,100,000 bytes to stdout with default exec options.
+   Result: default_exec_error=stdout maxBuffer length exceeded
+
+3. Node child_process custom-buffer proof:
+   Command behavior: execute the same child process with { maxBuffer: 2 * 1024 * 1024 }.
+   Result: large_stdout_with_custom_maxBuffer=1100000
+
+4. pnpm install --frozen-lockfile
+   Result: not completed. npm registry metadata and attestation requests repeatedly timed out for packages including 7z-wasm, @codemirror/state, @codemirror/view, @electron/get, and @esbuild/aix-ppc64. The install was interrupted after repeated retries to avoid leaving a stalled session.
+
+Full typecheck/build status:
+Not run because dependencies were unavailable after the registry timeouts above.
+
+Money boundary:
+This is a prepared non-bounty patch and offer asset only. It is not payment proof. Confirmed money remains $0 until a real buyer accepts scope and an external payment or funded milestone is verified.
+</pre></details>
+    </section>
+
+    <section class="notice" id="claim">
+      <h2>Exact Claim Steps</h2>
+      <ol>
+        <li>Open the source issue and confirm it is still open.</li>
+        <li>Review the local patch and verification output on the shared machine.</li>
+        <li>Add only your seller-owned checkout, invoice, marketplace order, funded milestone, or payment-request URL.</li>
+        <li>Use the draft response only after you approve it.</li>
+        <li>Require the exact acceptance sentence before payment.</li>
+        <li>Deliver the patch only after external payment proof or after you explicitly decide to publish it unpaid.</li>
+        <li>Record buyer scope, payment reference, amount, fees, refund/hold state, delivery URL or PR URL, acceptance, payout/payable/cleared status, and date.</li>
+        <li>Count $0 until the external proof shows posted, released, payable, cleared, credited, or verified net money.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <pre>I accept the Templater stdout maxBuffer Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized code and non-sensitive requirements; the deliverable is limited to the prepared configurable output-buffer patch, settings UI/default/schema update, docs note, e2e settings coverage, apply instructions, and verification notes; and private vault data, credentials, payment data, secret logs, public posting, pull requests, or ongoing revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section class="lead-card" id="draft">
+      <span class="eyebrow">open_help_request_prepared_patch_weak_payment_signal</span>
+      <h2><a href="https://github.com/SilentVoid13/Templater/issues/1749">Hitting stdout maxBuffer length exceeded on system commands</a></h2>
+      <p>Open issue reports large system-command stdout failing under Node's default <code>exec</code> buffer.</p>
+      <details><summary>Draft response not posted</summary><p>I prepared a small patch for the system command stdout maxBuffer issue. It adds a configurable Output buffer limit setting, stores it as command_max_buffer in MB with a 10 MB default, passes maxBuffer into child_process.exec, documents the new setting, and adds settings coverage. A local Node smoke test reproduces the default stdout maxBuffer failure at 1.1 MB and confirms the same command succeeds with a larger maxBuffer. I can hand over the patch or adapt it to your branch after fixed-scope acceptance and external payment proof.</p><p class="muted">Draft response prepared only. External comments, emails, direct messages, pull requests, or patch delivery require explicit send approval.</p></details>
+    </section>
+
+    <section class="notice">
+      <h2>Prepared Notes And Packet</h2>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/templater_stdout_maxbuffer_notes.md">https://jaxassistant55.github.io/jax-micro-offer-studio/templater_stdout_maxbuffer_notes.md</a></p>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/templater_stdout_maxbuffer_repo_grounded_packet.md">https://jaxassistant55.github.io/jax-micro-offer-studio/templater_stdout_maxbuffer_repo_grounded_packet.md</a></p>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">Prepared patch, smoke test, notes, page, CSV, draft response, or IndexNow result</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">Issue author was trying to implement the fix</td><td data-label="Counted as money?">No. Requires accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof</td><td data-label="Counted as money?">Yes. Count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

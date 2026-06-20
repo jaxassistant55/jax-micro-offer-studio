@@ -4673,6 +4673,19 @@
         "price": 100.0,
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Templater stdout maxBuffer Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/templater-stdout-maxbuffer-sprint.html",
+      "description": "Fixed-scope prepared TypeScript patch for stdout maxBuffer failures in Templater system command functions.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
     }
   ]
 }
