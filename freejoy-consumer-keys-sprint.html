@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope prepared firmware patch sprint for FreeJoy STM32 USB consumer keys.">
+  <title>FreeJoy Consumer Keys Firmware Sprint</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5d6874;--line:#d8dee8;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#9c2f21}
+    *{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;color:var(--ink);background:#fff;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.2rem;margin:24px 0 10px;letter-spacing:0}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.72fr);gap:16px;align-items:stretch}.notice,.metric,.card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;overflow-wrap:anywhere}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.22rem}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700;max-width:100%;white-space:normal}details{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}code{white-space:normal;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope STM32 firmware patch sprint</p>
+      <section class="hero">
+        <div>
+          <h1>FreeJoy Consumer Keys Firmware Sprint</h1>
+          <p class="muted">A $100 prepared firmware patch offer for the open paid-help request asking for STM32 USB keyboard consumer keys. The patch is local and proof-gated; no upstream comment, email, PR, or patch delivery has been sent.</p>
+          <div class="buttons">
+            <a href="#scope">Scope</a>
+            <a href="#evidence">Evidence</a>
+            <a href="#claim">Claim steps</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="#draft">Draft response</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/freejoy_consumer_keys_notes.md">Prepared notes</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/freejoy_consumer_keys_repo_grounded_packet.md">Repo packet</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/freejoy_consumer_keys_sprint.csv">CSV</a>
+            <a href="payment-activation.html">Payment activation</a>
+          </div>
+        </div>
+        <div class="notice">
+          <span class="eyebrow">Prepared patch</span>
+          <p><strong>Report ID:</strong> <code>REPORT_ID_CONSUMER_KEYS</code></p>
+          <p><strong>Usages:</strong> mute, volume up/down, play/pause, next, previous, stop</p>
+          <p><strong>Prototype mapping:</strong> logical buttons 120-126</p>
+          <p><strong>Build:</strong> toolchain unavailable locally, not hardware-flashed.</p>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Prepared firmware files</span><strong>7</strong></article>
+      <article class="metric"><span>Primary sprint price</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice" id="scope">
+      <h2>Concrete Deliverable</h2>
+      <ol>
+        <li>Add a Consumer Control HID report collection to the FreeJoy joystick HID descriptor.</li>
+        <li>Add a compact report helper for mute, volume up, volume down, play/pause, next track, previous track, and stop.</li>
+        <li>Wire consumer key changes into the endpoint-1 send path without posting or delivering upstream.</li>
+        <li>Document the prototype logical-button mapping and remaining configurator/hardware gates.</li>
+      </ol>
+    </section>
+
+    <section class="notice" id="evidence">
+      <h2>Implementation Evidence</h2>
+      <table>
+        <thead><tr><th>File</th><th>Prepared change</th></tr></thead>
+        <tbody>
+          <tr><td data-label="File">application/Inc/common_defines.h</td><td data-label="Prepared change">Adds <code>REPORT_ID_CONSUMER_KEYS</code>.</td></tr>
+          <tr><td data-label="File">application/Src/usb_hw.c</td><td data-label="Prepared change">Adds dynamic Consumer Control descriptor bytes and updates the HID report length.</td></tr>
+          <tr><td data-label="File">application/Src/consumer_keys.c</td><td data-label="Prepared change">Builds the 2-byte consumer key report from logical buttons 120-126.</td></tr>
+          <tr><td data-label="File">application/Src/stm32f10x_it.c</td><td data-label="Prepared change">Sends the consumer key report on state change, otherwise sends normal joystick data.</td></tr>
+        </tbody>
+      </table>
+      <details><summary>Verification log</summary><pre>FreeJoy consumer-control HID patch verification
+Generated: 2026-06-20 JST
+
+Source issue:
+  URL: https://github.com/FreeJoy-Team/FreeJoy/issues/249
+  Title: Adding support for full keyboard $
+  State: OPEN
+  Comments: 0
+  Updated: 2025-03-24T11:47:44Z
+
+Local checks:
+  git diff --check: passed
+  static_descriptor_tokens: 132
+  declared JoystickHID_SIZ_REPORT_DESC: 132
+  patch file includes new consumer_keys.h: true
+  patch file includes new consumer_keys.c: true
+  patch file includes armgcc/makefile.app entry: true
+  patch file includes REPORT_ID_CONSUMER_KEYS: true
+  patch file includes Volume Increment usage: true
+
+Build attempt:
+  Command: make -C armgcc app
+  Result: failed before compiling project source because arm-none-eabi-gcc is not installed.
+  Key output:
+    make -f makefile.app
+    mkdir -p build/app
+    arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb ... ../application/Src/analog.c -o build/app/analog.o
+    /bin/sh: arm-none-eabi-gcc: command not found
+    make[1]: *** [build/app/analog.o] Error 127
+    make: *** [app] Error 2
+
+Money boundary:
+  Confirmed money: $0
+  This patch is prepared work only. Count money only after real scope acceptance, seller-owned payment proof, delivery proof, and posted/released/payable/cleared funds.
+</pre></details>
+    </section>
+
+    <section class="notice" id="claim">
+      <h2>Exact Claim Steps</h2>
+      <ol>
+        <li>Open the source issue and confirm it is still open.</li>
+        <li>Review the local patch and verification log on the shared machine.</li>
+        <li>Add only your seller-owned checkout, invoice, marketplace order, funded milestone, or payment-request URL.</li>
+        <li>Use the draft response only after you approve posting or sending it.</li>
+        <li>Require the exact acceptance sentence before payment.</li>
+        <li>Deliver the patch only after external payment proof or after you explicitly decide to publish it unpaid.</li>
+        <li>Count $0 until payment is posted, released, payable, cleared, credited, or otherwise externally verifiable.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <pre>I accept the FreeJoy Consumer Keys Firmware Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized firmware requirements; the deliverable is limited to the prepared consumer-control HID report descriptor, report helper, endpoint send wiring, apply notes, and verification notes; and STM32 hardware flashing, host OS certification, configurator UI/protocol integration, full keyboard matrix support, private device data, public posting, pull requests, or ongoing revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section class="card" id="draft">
+      <span class="eyebrow">open_paid_help_request_prepared_firmware_patch</span>
+      <h2><a href="https://github.com/FreeJoy-Team/FreeJoy/issues/249">Adding support for full keyboard $</a></h2>
+      <p>Requester says they would be happy to pay for STM32 USB keyboard support with consumer keys.</p>
+      <details><summary>Draft response not posted</summary><p>I prepared a firmware-side FreeJoy consumer-control HID patch for media keys. It adds a new consumer-keys report ID, expands the joystick HID descriptor to include a Consumer Control collection for mute, volume up/down, play/pause, next, previous, and stop, adds a compact report helper, wires it into the TIM2 endpoint-1 send path on state changes, and includes makefile wiring. I can hand over the patch or adapt it to a branch after fixed-scope acceptance and external payment proof; hardware flashing/configurator integration would need separate scope.</p><p class="muted">Draft response prepared only. External comments, emails, direct messages, pull requests, or patch delivery require explicit send approval.</p></details>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">Prepared patch, notes, page, CSV, draft response, or IndexNow result</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">Issue says requester would be happy to pay</td><td data-label="Counted as money?">No. Requires accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof</td><td data-label="Counted as money?">Yes. Count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
