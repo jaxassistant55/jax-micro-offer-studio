@@ -1,6 +1,6 @@
 # EAX Haunted Cavern Repo-Grounded Handoff Packet
 
-Generated: 2026-06-20 15:12:08 JST
+Generated: 2026-06-20 16:07:20 JST
 Offer page: https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html
 Public repo: https://github.com/datajake1999/EAXReverb_VST
 Local public clone: `/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/EAXReverb_VST`
@@ -45,7 +45,7 @@ The primary issue asks for a Haunted Cavern reverb and says the requester is wil
    - A credible matching sprint should tune property values and validate behavior, not modify the core engine first.
 
 7. `scripts/build_mingw.bat`
-   - The build command expects `..\VST2_SDK`.
+   - The build command expects a sibling VST2 SDK directory at `..\VST2_SDK`.
    - First-sprint delivery should not promise a DLL unless the buyer separately provides a lawful build setup.
 
 8. `readme.md` and `LICENSE.TXT`
