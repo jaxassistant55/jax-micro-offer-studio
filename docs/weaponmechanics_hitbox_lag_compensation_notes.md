@@ -17,6 +17,7 @@ The primary request asks for custom entity hitboxes and projectile hit checks wi
 5. Validation checklist: config parsing, enabled/disabled behavior, unsupported entity type, max history depth, and safe defaults.
 6. Test matrix: stationary entity, moving entity, sprinting player, high ping simulation, low TPS simulation, block obstruction, and projectile speed scaling.
 7. Implementation plan that can be converted to a PR only after explicit approval.
+8. Repo-grounded handoff packet with inspected source files, MechanicsCore boundary, implementation milestones, user claim steps, and draft response.
 
 ## Suggested config shape
 
@@ -47,3 +48,9 @@ Custom_Hitboxes:
 - No player data or private logs.
 - No promise that upstream will merge a future PR.
 - No full production deployment or performance guarantee inside the $100 first sprint.
+
+## Repo-grounded packet
+
+Full packet: https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_repo_grounded_packet.md
+
+The public clone was inspected at commit `f9d2c42`. The relevant local files are `WeaponProjectile.java`, `ProjectileSettings.java`, `HitHandler.java`, `HitBoxValidator.java`, `MoveTask.java`, `PlayerWrapper.java`, `config.yml`, `Default_Projectiles.yml`, and the Gradle dependency files. The main finding is that WeaponMechanics has the projectile flow, but `RayTrace`, `EntityTraceResult`, and `HitBox` are supplied by `com.cjcrafter:mechanicscore:4.3.0`, so the first $100 sprint should stay as an implementation packet unless the buyer separately approves a MechanicsCore-aware implementation phase.

@@ -24,6 +24,7 @@
             <a href="#acceptance">Acceptance text</a>
             <a href="#drafts">Draft responses</a>
             <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_lag_compensation_notes.md">Prepared notes</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_repo_grounded_packet.md">Repo packet</a>
             <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_lag_compensation_sprint.csv">CSV</a>
             <a href="payment-activation.html">Payment activation</a>
             <a href="proof-monitor.html">Proof monitor</a>
@@ -52,6 +53,7 @@
         <li>Lag-compensation risk map covering high-ping abuse, TPS drops, teleport/chunk transitions, and anti-cheat interaction.</li>
         <li>Projectile hit-check test matrix for stationary targets, moving targets, sprinting players, simulated latency, low TPS, block obstruction, and speed-based damage follow-up.</li>
         <li>Validation checklist for safe defaults, unsupported entities, malformed dimensions, disabled behavior, and history depth limits.</li>
+        <li>Repo-grounded implementation packet covering inspected files, MechanicsCore boundary, config contract, exact user claim steps, and a draft response still not posted.</li>
         <li>Implementation milestone plan that can become a PR only after explicit approval and payment proof.</li>
       </ol>
     </section>
@@ -122,6 +124,7 @@ The primary request asks for custom entity hitboxes and projectile hit checks wi
 5. Validation checklist: config parsing, enabled/disabled behavior, unsupported entity type, max history depth, and safe defaults.
 6. Test matrix: stationary entity, moving entity, sprinting player, high ping simulation, low TPS simulation, block obstruction, and projectile speed scaling.
 7. Implementation plan that can be converted to a PR only after explicit approval.
+8. Repo-grounded handoff packet with inspected source files, MechanicsCore boundary, implementation milestones, user claim steps, and draft response.
 
 ## Suggested config shape
 
@@ -152,6 +155,88 @@ Custom_Hitboxes:
 - No player data or private logs.
 - No promise that upstream will merge a future PR.
 - No full production deployment or performance guarantee inside the $100 first sprint.
+
+## Repo-grounded packet
+</pre>
+      </details>
+    </section>
+
+    <section class="notice" id="repo-packet">
+      <h2>Repo-Grounded Handoff Packet</h2>
+      <p>This packet ties the offer to the public WeaponMechanics source inspected at commit <code>f9d2c42</code>. It lists the exact files checked, the MechanicsCore dependency boundary, the config contract, the implementation milestones, and the steps you need to take to claim or convert the work.</p>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_repo_grounded_packet.md">https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_repo_grounded_packet.md</a></p>
+      <details>
+        <summary>Packet excerpt</summary>
+        <pre># WeaponMechanics Hitbox Repo-Grounded Handoff Packet
+
+Generated: 2026-06-20 13:47:30 JST
+Public repository: https://github.com/WeaponMechanics/WeaponMechanics
+Local public clone: `/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/WeaponMechanics`
+Inspected commit: `f9d2c42`
+Primary paid-feature lead: https://github.com/WeaponMechanics/WeaponMechanics/issues/363
+Secondary physics lead: https://github.com/WeaponMechanics/WeaponMechanics/issues/246
+Offer page: https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-hitbox-lag-compensation-sprint.html
+Fixed first sprint: $100
+Confirmed money: $0
+
+## What this packet is
+
+This is the repo-grounded handoff for the $100 WeaponMechanics Hitbox Lag Compensation Sprint. It identifies the current collision path, the config shape already present, the missing lag-compensation integration point, the files to mention, and the exact proof and payment gates before any custom implementation.
+
+This is not a public upstream comment, not a pull request, not payment proof, and not a promise that upstream will merge anything. Counts $0 until an external buyer accepts exact scope, pays through a seller-owned route, receives the agreed deliverable, and funds are posted, released, payable, or cleared.
+
+## Files inspected
+
+1. `weaponmechanics-core/src/main/java/me/deecaad/weaponmechanics/weapon/projectile/weaponprojectile/WeaponProjectile.java`
+   - Constructs `RayTrace` with `withRaySize(projectileSettings.getSize())`.
+   - Runs `rayTrace.cast(getWorld(), getLocation(), possibleNextLocation, getNormalizedMotion(), ...)` in `updatePosition`.
+   - Iterates sorted `RayTraceResult` hits and delegates real block/entity hit handling to `WeaponMechanics.getInstance().getWeaponHandler().getHitHandler().handleHit(hit, this)`.
+   - Has through, sticky, bouncy, rolling, and last-hit suppression logic that any custom hitbox work must preserve.
+
+2. `weaponmechanics-core/src/main/java/me/deecaad/weaponmechanics/weapon/projectile/weaponprojectile/ProjectileSettings.java`
+   - Existing config already includes `Disable_Entity_Collisions`, `Maximum_Alive_Ticks`, `Maximum_Travel_Distance`, `Size`, `Incendiary_Projectile`, and `Extinguish_In_Water`.
+   - `Size` controls projectile ray size, but it does not define per-entity custom hitboxes or historical lag-compensation windows.
+
+3. `weaponmechanics-core/src/main/java/me/deecaad/weaponmechanics/weapon/HitHandler.java`
+   - `getDamagePoint(EntityTraceResult result, Vector normalizedMotion)` maps hit location to `HEAD`, `BODY`, `ARMS`, `LEGS`, or `FEET`.
+   - It uses `result.getHitBox()`, entity height, entity direction, and `Entity_Hitboxes.&lt;TYPE&gt;` config percentages.
+   - A future custom hitbox implementation must keep this result contract coherent, or damage-point classification will drift.
+
+4. `weaponmechanics-core/src/main/java/me/deecaad/weaponmechanics/weapon/projectile/HitBoxValidator.java`
+   - Validates current `Entity_Hitboxes` config by entity type.
+   - Existing validator only checks vertical damage-point ratios and horizontal/arms flags. It does not validate width, height, offset, historical samples, or compensation windows.
+
+5. `weaponmechanics-core/src/main/java/me/deecaad/weaponmechanics/wrappers/MoveTask.java`
+   - Already runs per-entity movement checks and imports `me.deecaad.core.compatibility.HitBox`.
+   - This is the strongest local candidate for maintaining a small pose/history ring buffer if lag compensation stays inside WeaponMechanics rather than MechanicsCore.
+
+6. `weaponmechanics-core/src/main/java/me/deecaad/weaponmechanics/wrappers/PlayerWrapper.java`
+   - Uses `player.getBoundingBox().getHeight()` for crawling detection.
+   - Confirms Paper/Bukkit bounding boxes are available in this codebase, while projectile hit tracing is abstracted through MechanicsCore `RayTrace`/`HitBox`.
+
+7. `weaponmechanics-core/src/main/resources/WeaponMechanics/config.yml`
+   - Contains existing `Entity_Hitboxes:` defaults for damage-point classification.
+
+8. `weaponmechanics-core/src/main/resources/WeaponMechanics/projectiles/Default_Projectiles.yml`
+   - Shows `Projectile_Settings` examples, including existing `Size` values.
+
+9. `weaponmechanics-core/build.gradle.kts` and `gradle/libs.versions.toml`
+   - `RayTrace`, `EntityTraceResult`, and `HitBox` are from `com.cjcrafter:mechanicscore:4.3.0`, not local WeaponMechanics source.
+
+## Main technical finding
+
+The visible WeaponMechanics repository already has a clean projectile-collision flow, but the core ray-trace and hitbox primitives are in external MechanicsCore. A compile-safe full patch needs either a MechanicsCore-supported way to override entity hitboxes/history during `RayTrace.cast`, or a WeaponMechanics-side adapter that preselects candidate historical entity boxes before calling or replacing the current entity collision step.
+
+Without MechanicsCore source/API confirmation, a one-shot patch directly inside `WeaponProjectile.java` would be speculative. The right paid first sprint is a repo-grounded implementation plan plus tests and config contract, then a buyer-approved implementation phase.
+
+## Suggested buyer-facing scope
+
+Deliver in the first $100 sprint:
+
+1. Final config contract for `Custom_Hitboxes` and projectile lag compensation.
+2. File-level implementation map with the exact integration points above.
+3. Safety defaults: disabled by default, strict max history window, low-TPS fallback, no compensation across teleport/world/chunk unload, and no private server data.
+4. Acceptance test matrix for stationary entities, moving entities, sprinting players, high-ping simulation, low-TPS simulation, block obstruction, through/sticky/bouncy behavior, and projectile speed scaling follow-up.
 </pre>
       </details>
     </section>
