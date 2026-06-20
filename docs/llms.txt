@@ -194,3 +194,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Non-Bounty Paid Minecraft Mod Diagnostic
 - Voxy VR Backport Feasibility Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/voxy-vr-backport-feasibility-sprint.html -> $100 fixed-scope public-safe Voxy 1.20.1 Vivecraft/shader feasibility diagnostic, prepared notes, ready-to-pay intake, payment activation, and proof boundary.
+
+## Non-Bounty Paid Minecraft Plugin Offer
+- WeaponMechanics Hitbox Lag Compensation Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-hitbox-lag-compensation-sprint.html -> $100 fixed-scope public-safe custom-hitbox, projectile lag-compensation, config, validation, and test-matrix design packet.

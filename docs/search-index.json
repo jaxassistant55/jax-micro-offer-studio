@@ -2130,6 +2130,19 @@
       "first_100": "One accepted paid Voxy feasibility diagnostic reaches $100 before fees/refunds.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Voxy+VR+Backport+Feasibility+Sprint&labels=paid-inquiry%2Cready-to-pay%2Cminecraft-mod&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Voxy+VR+Backport+Feasibility+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fvoxy-vr-backport-feasibility-sprint.html%0ALead%2Frequest%3A+https%3A%2F%2Fgithub.com%2FMCRcortex%2Fvoxy%2Fissues%2F519%0ARelated+duplicate%2Fhistory%3A+https%3A%2F%2Fgithub.com%2FMCRcortex%2Fvoxy%2Fissues%2F375%0A%0ATarget+Minecraft+version%3A%0AFabric+or+Forge+requirement%3A%0AVivecraft+version%3A%0AIris%2Fshader+pack+target%3A%0ASodium+target%3A%0AExisting+modpack%2Freproduction+details+you+can+safely+share%3A%0AWhat+counts+as+a+useful+first+diagnostic%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+private+modpack+files%2C+paid+mod+jars%2C+server+credentials%2C+account+credentials%2C+player+data%2C+payment+data%2C+or+private+recordings.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
+    },
+    {
+      "type": "service",
+      "title": "WeaponMechanics Hitbox Lag Compensation Sprint",
+      "slug": "weaponmechanics-hitbox-lag-compensation-sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-hitbox-lag-compensation-sprint.html",
+      "price": "$100",
+      "amount_usd": 100,
+      "description": "Fixed-scope public-safe custom-hitbox and projectile lag-compensation sprint for open WeaponMechanics paid feature requests.",
+      "lead_source_url": "https://github.com/WeaponMechanics/WeaponMechanics/issues/363",
+      "first_100": "One accepted paid hitbox lag-compensation sprint reaches $100 before fees/refunds.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+WeaponMechanics+Hitbox+Lag+Compensation+Sprint&labels=paid-inquiry%2Cready-to-pay%2Cminecraft-plugin&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+WeaponMechanics+Hitbox+Lag+Compensation+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fweaponmechanics-hitbox-lag-compensation-sprint.html%0ALead%2Frequest%3A+Custom+hitboxes+%28PAY+FEATURE%29%0APrimary+source+issue%3A+https%3A%2F%2Fgithub.com%2FWeaponMechanics%2FWeaponMechanics%2Fissues%2F363%0ASecondary+context+issue%3A+https%3A%2F%2Fgithub.com%2FWeaponMechanics%2FWeaponMechanics%2Fissues%2F246%0A%0ATarget+Minecraft+version%3A%0ATarget+WeaponMechanics+version%3A%0AServer+type+and+tick+rate%3A%0AProjectile+types+that+must+be+covered%3A%0AEntity+types+that+must+be+covered%3A%0ACurrent+lag+or+hit-registration+symptom%3A%0APublic-safe+reproduction+details%3A%0AWhat+counts+as+a+useful+first+diagnostic%3A%0APayment%2Fproof+route%3A%0ADeadline%3A%0AAcceptance+proof%3A%0A%0ASafety+confirmation%3A%0A-+I+will+not+post+private+plugin+jars%2C+paid+resource+files%2C+server+credentials%2C+player+data%2C+license+keys%2C+payment+data%2C+or+private+logs.%0A-+I+understand+this+issue+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
     }
   ]
 }
