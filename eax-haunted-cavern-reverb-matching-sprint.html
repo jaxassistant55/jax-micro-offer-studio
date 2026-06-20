@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope audio/DSP sprint for matching a Haunted Cavern-style EAX reverb preset without claiming an existing open PR or handling private audio.">
+  <title>EAX Haunted Cavern Reverb Matching Sprint</title>
+  <style>
+    :root{--ink:#18212a;--muted:#5f6a76;--line:#d9dfeb;--paper:#fff;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#a12a2a}
+    *{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.05rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.22rem;margin:24px 0 10px;letter-spacing:0}h3{font-size:1rem;margin:0 0 6px;letter-spacing:0;overflow-wrap:anywhere}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere;word-break:break-word}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700;max-width:100%;white-space:normal}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:16px;align-items:stretch}.flow,.notice,.metric,.lead-card{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:12px;overflow-wrap:anywhere}.flow{background:#f7faf9}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.flow-step{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;margin:8px 0}.lead-card{border-left:6px solid var(--blue);margin:10px 0}details{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}code{white-space:normal;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope audio/DSP matching sprint</p>
+      <section class="hero">
+        <div>
+          <h1>EAX Haunted Cavern Reverb Matching Sprint</h1>
+          <p class="muted">A $100 public-safe sprint for a Haunted Cavern-style EAX preset request. It treats the existing open PR as prior context, avoids duplicate claims, and focuses on target matching, parameter planning, and validation.</p>
+          <div class="buttons">
+            <a href="#scope">Scope</a>
+            <a href="#claim">Claim steps</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="#drafts">Draft response</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_reverb_matching_notes.md">Prepared notes</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_repo_grounded_packet.md">Repo packet</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_reverb_matching_sprint.csv">CSV</a>
+            <a href="payment-activation.html">Payment activation</a>
+            <a href="proof-monitor.html">Proof monitor</a>
+          </div>
+        </div>
+        <div class="flow" aria-label="Reverb matching sprint flow">
+          <span class="eyebrow">Sprint flow</span>
+          <div class="flow-step"><strong>1. Bound the prior work</strong><br>Existing PR #4 is open and disputed; do not claim or duplicate it.</div>
+          <div class="flow-step"><strong>2. Define the target</strong><br>Tail length, darkness, early reflections, echo, modulation, sample rate, and public-safe reference.</div>
+          <div class="flow-step"><strong>3. Map to EAX</strong><br>Translate the target into `EFXEAXREVERBPROPERTIES` values and preset-table changes.</div>
+          <div class="flow-step"><strong>4. Validate</strong><br>Use A/B listening checks against built-in presets and the existing first pass if the buyer authorizes that comparison.</div>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Open paid lead rows</span><strong>2</strong></article>
+      <article class="metric"><span>Primary sprint price</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice warning">
+      <h2>Why This Is Not A Direct PR Chase</h2>
+      <p>The public request includes a willingness-to-pay signal, but PR #4 already attempted a `HAUNTED_CAVERN` preset and a later issue comment says it was not close enough. The ethical route is to offer a matching and validation sprint that starts only after exact acceptance and external payment proof.</p>
+    </section>
+
+    <section class="notice" id="scope">
+      <h2>Concrete Deliverable</h2>
+      <ol>
+        <li>Target-sound checklist for tail length, darkness, early reflections, late-reverb density, echo timing/depth, and modulation.</li>
+        <li>Parameter target table for a `HAUNTED_CAVERN` EAX preset that fits this repo's property surface.</li>
+        <li>Patch-ready map for `kNumPrograms`, `efx-presets.h`, `SetReverbPreset`, and `GetPresetName`.</li>
+        <li>A/B listening-test matrix against `CAVE`, `HANGAR`, `SEWERPIPE`, `DIZZY`, `PSYCHOTIC`, the prior PR attempt if authorized, and the buyer's public-safe target.</li>
+        <li>Risk list covering VST2 SDK availability, host differences, sample-rate differences, ambiguous reference material, and exact-clone expectations.</li>
+        <li>Repo-grounded handoff packet with inspected file facts and exact claim steps.</li>
+      </ol>
+    </section>
+
+    <section class="notice" id="claim">
+      <h2>Exact Claim Steps</h2>
+      <ol>
+        <li>Open the live offer, CSV, notes, and repo-grounded packet.</li>
+<li>Add only your seller-owned payment URL before contacting anyone.</li>
+<li>Review the primary issue and the existing open PR so you do not claim prior work.</li>
+<li>If you decide to contact the requester, use the draft only after you approve it.</li>
+<li>Require the exact acceptance sentence before payment.</li>
+<li>Accept only public or buyer-authorized reference audio and non-sensitive notes.</li>
+<li>Wait for external payment proof before delivering the matching packet.</li>
+<li>Record buyer scope, payment reference, delivery URL, acceptance, payout/payable/cleared status, fees, and date.</li>
+<li>Count $0 until the external proof shows posted, released, payable, cleared, credited, or verified net money.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <p>The buyer must paste this before any paid work starts:</p>
+      <pre>I accept the EAX Haunted Cavern Reverb Matching Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized target audio references and non-sensitive notes; the deliverable is limited to a repo-grounded parameter target plan, comparison checklist, tuning and listening-test matrix, and patch-ready preset specification; and private audio extraction, copyrighted or private sample redistribution, VST SDK redistribution, compiled DLL delivery, public comment posting, pull request posting, exact clone guarantee, plugin-host support, or ongoing revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section id="drafts">
+      <h2>Paid Lead Drafts</h2>
+      <article class="lead-card">
+  <span class="eyebrow">direct_paid_audio_request_existing_pr_disputed</span>
+  <h3><a href="https://github.com/datajake1999/EAXReverb_VST/issues/3">Haunted Carven Reverb</a></h3>
+  <p><strong>Repo:</strong> datajake1999/EAXReverb_VST. <strong>Fixed scope:</strong> $100.</p>
+  <p>Requester asked for a Haunted Cavern-style reverb and said they would pay; later comments say the existing first-pass PR did not match the target sound.</p>
+  <details><summary>Draft response not posted</summary><p>I saw the Haunted Cavern request and the existing open PR. Because there is already a disputed first-pass preset, I would not claim that work or promise a full merged implementation up front. I can offer a narrow $100 matching sprint: inspect the current EAXReverb preset/property path, define the exact Haunted Cavern target attributes, map them to EAX parameters, create an A/B listening-test matrix against the existing presets and prior PR attempt, and hand off a patch-ready preset specification. I would not need private samples, paid plugins, license keys, credentials, payment data, or private binaries, and I would only post a public follow-up or PR after explicit approval.</p><p class="muted">Draft response prepared only. External public comments, direct messages, pull requests, or form submissions require explicit send approval.</p></details>
+  <details><summary>Safety boundary</summary><p>No private samples, copyrighted/private audio redistribution, paid plugin binaries, VST SDK redistribution, license keys, credentials, payment data, exact-clone guarantee, compiled DLL promise, public posting, or PR without explicit approval.</p></details>
+</article>
+<article class="lead-card">
+  <span class="eyebrow">duplicate_paid_audio_request_context_only</span>
+  <h3><a href="https://github.com/datajake1999/EAXReverb_VST/issues/2">Haunted Carven Reverb duplicate thread</a></h3>
+  <p><strong>Repo:</strong> datajake1999/EAXReverb_VST. <strong>Fixed scope:</strong> $100.</p>
+  <p>Duplicate Haunted Cavern request thread, already pointed at the same PR and primary issue.</p>
+  <details><summary>Draft response not posted</summary><p>I would keep any response in the primary issue to avoid splitting the duplicate thread, and only after explicit approval.</p><p class="muted">Draft response prepared only. External public comments, direct messages, pull requests, or form submissions require explicit send approval.</p></details>
+  <details><summary>Safety boundary</summary><p>No private samples, copyrighted/private audio redistribution, paid plugin binaries, VST SDK redistribution, license keys, credentials, payment data, exact-clone guarantee, compiled DLL promise, public posting, or PR without explicit approval.</p></details>
+</article>
+
+    </section>
+
+    <section class="notice">
+      <h2>Repo-Grounded Facts</h2>
+      <table>
+        <thead><tr><th>File</th><th>Finding</th></tr></thead>
+        <tbody>
+          <tr><td data-label="File">src/EAXReverb.h</td><td data-label="Finding">Main has <code>kNumPrograms = 113</code>; a new preset must update the count and keep <code>programs[kNumPrograms]</code> in bounds.</td></tr>
+          <tr><td data-label="File">src/presets.cpp</td><td data-label="Finding">Both preset properties and display names are switch-table driven; a new preset needs both entries.</td></tr>
+          <tr><td data-label="File">src/efx-presets.h</td><td data-label="Finding">Preset behavior is controlled by EFX/EAX property macros, so the first paid value is a target parameter spec plus validation plan.</td></tr>
+          <tr><td data-label="File">scripts/build_mingw.bat</td><td data-label="Finding">DLL build needs a sibling VST2 SDK; this sprint does not promise SDK redistribution or compiled binaries.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="notice">
+      <h2>Prepared Technical Notes</h2>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_reverb_matching_notes.md">https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_reverb_matching_notes.md</a></p>
+      <details><summary>Notes excerpt</summary><pre># EAX Haunted Cavern Reverb Matching Sprint Notes
+
+Generated: 2026-06-20 15:12:08 JST
+Public repo: https://github.com/datajake1999/EAXReverb_VST
+Primary paid request: https://github.com/datajake1999/EAXReverb_VST/issues/3
+Duplicate request: https://github.com/datajake1999/EAXReverb_VST/issues/2
+Existing open PR to treat as prior context only: https://github.com/datajake1999/EAXReverb_VST/pull/4
+Inspected main commit: `8aaaa4f`
+Fixed first sprint: $100
+Confirmed money: $0
+
+## Why this is a feasibility and matching sprint
+
+The public issue contains a direct willingness-to-pay signal, but an existing open PR already attempted a `HAUNTED_CAVERN` preset and a later issue comment says that attempt did not match the requested sound. Duplicating that PR or claiming implementation credit would be unsafe. The viable paid lane is a bounded matching sprint: identify the target sonic attributes, map them to the EAX property surface in this repo, define a test matrix, and hand off a patch-ready preset specification only after exact acceptance and external payment proof.
+
+## Repo facts
+
+- `src/EAXReverb.h` currently declares `kNumPrograms = 113` and stores `programs[kNumPrograms]`.
+- `src/presets.cpp` wires preset indexes through both `SetReverbPreset` and `GetPresetName`; main currently covers cases `0..112`.
+- `src/efx-presets.h` defines the EFX/EAX property macros. The built-in `CAVE`, `HANGAR`, `SEWERPIPE`, `DIZZY`, `PSYCHOTIC`, `CHAPEL`, and `SMALLWATERROOM` presets are useful comparison anchors, not final answers.
+- `src/EAXReverb.cpp` maps plugin parameters to `EFXEAXREVERBPROPERTIES` and calls `UpdateEffect` after parameter edits.
+- `src/EAXReverb_proc.cpp` loads `programs[curProgram].properties` into `ReverbEffect` before processing.
+- `src/ReverbEffect.cpp` computes early reflection, late reverb, echo, and modulation behavior from the EAX properties.
+- `scripts/build_mingw.bat` expects a sibling `..\VST2_SDK` directory, so a compiled DLL is outside this autonomous public-safe sprint.
+
+## Deliverable
+
+1. Target-sound checklist: tail length, darkness/HF damping, early reflection level, late-reverb density, echo timing/depth, and modulation depth.
+2. Parameter target table for a `HAUNTED_CAVERN` preset, expressed as EAX/EFX properties that fit the current repo.
+3. A/B comparison protocol against `CAVE`, `HANGAR`, `SEWERPIPE`, `DIZZY`, `PSYCHOTIC`, and the existing PR attempt if the buyer chooses to evaluate it.
+4. Patch-ready specification showing exactly which tables need a new preset macro, switch case, display name, and `kNumPrograms` update.
+5. Listening-test matrix that can be run with public or buyer-authorized references only.
+6. Risk list for VST2 SDK availability, host differences, sample-rate differences, target-reference ambiguity, and exact-clone expectations.
+
+## Non-goals
+
+- No copied private or copyrighted audio.
+- No private binary, paid plugin, license key, or credential handling.
+- No VST2 SDK redistribution.
+- No compiled DLL promise in the first $100 sprint.
+- No public comment, PR, or direct buyer message without explicit send approval.
+- No guarantee that the result exactly clones a proprietary or ambiguous reference.
+
+## Suggested starting target bands
+
+These are starting bands for discussion, not a final preset:
+
+| Attribute | Starting target |
+| --- | --- |
+| Tail length | Longer than `CAVE`, shorter than extreme `DIZZY`; roughly 4.5s to 7.5s first-pass range |
+| Darkness | Lower HF presence than `CAVE`; avoid metallic ringing |
+| Reflections | Strong enough to feel cavernous, but not a slapback-only effect |
+| Late reverb | Dense and wide, with a slow decay that does not bury transients |
+| Echo | Subtle depth, used for spatial cue rather than obvious delay |
+| Modulation | Light movement only; enough to avoid static tail, not chorus-like |
+
+## Draft response, still not posted
+
+I saw the Haunted Cavern request and the existing open PR. Because there is already a disputed first-pass preset, I would not claim that work or promise a full merged implementation up front. I can offer a narrow $100 matching sprint: inspect the current EAXReverb preset/property path, define the exact Haunted Cavern target attributes, map them to EAX parameters, create an A/B listening-test matrix against the existing presets and prior PR attempt, and hand off a patch-ready preset specification. I would not need private samples, paid plugins, license keys, credentials, payment data, or private binaries, and I would only post a public follow-up or PR after explicit approval.
+</pre></details>
+    </section>
+
+    <section class="notice">
+      <h2>Repo-Grounded Handoff Packet</h2>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_repo_grounded_packet.md">https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_repo_grounded_packet.md</a></p>
+      <details><summary>Packet excerpt</summary><pre># EAX Haunted Cavern Repo-Grounded Handoff Packet
+
+Generated: 2026-06-20 15:12:08 JST
+Offer page: https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html
+Public repo: https://github.com/datajake1999/EAXReverb_VST
+Local public clone: `/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/EAXReverb_VST`
+Inspected main commit: `8aaaa4f`
+Primary paid request: https://github.com/datajake1999/EAXReverb_VST/issues/3
+Duplicate request: https://github.com/datajake1999/EAXReverb_VST/issues/2
+Prior open PR context: https://github.com/datajake1999/EAXReverb_VST/pull/4
+Fixed first sprint: $100
+Confirmed money: $0
+
+## Current issue state
+
+The primary issue asks for a Haunted Cavern reverb and says the requester is willing to pay. A prior contributor opened PR #4 to add a `HAUNTED_CAVERN` preset, but a later comment says the attempted preset was not close to the requested effect. That makes direct implementation or duplicate PR work a poor autonomous target. The safe offer is a matching and validation sprint that can be claimed only after exact buyer acceptance and payment proof.
+
+## Files inspected
+
+1. `src/EAXReverb.h`
+   - `kNumPrograms = 113` on main.
+   - The plugin stores `EAXReverbProgram programs[kNumPrograms]`.
+   - A new preset requires increasing the program count and preserving array bounds.
+
+2. `src/presets.cpp`
+   - `SetReverbPreset` maps preset indexes to EFX preset macros.
+   - `GetPresetName` maps the same indexes to display names.
+   - Main currently ends at index 112 with `SMALLWATERROOM`; a new preset must update both switch tables.
+
+3. `src/efx-presets.h`
+   - Contains `EFXEAXREVERBPROPERTIES` fields: density, diffusion, gain, HF/LF gain, decay time, decay ratios, reflections, late reverb, echo, modulation, air absorption, references, room rolloff, and decay-HF limit.
+   - The built-in `CAVE` preset is the closest obvious baseline, while `HANGAR`, `SEWERPIPE`, `DIZZY`, `PSYCHOTIC`, `CHAPEL`, and `SMALLWATERROOM` provide contrast points for tail length, darkness, echo, and modulation.
+
+4. `src/EAXReverb.cpp`
+   - Plugin parameters write into `programs[curProgram].properties`.
+   - `UpdateEffect` is called after parameter changes in the property range.
+   - The UI/display layer already exposes the relevant EAX properties.
+
+5. `src/EAXReverb_proc.cpp`
+   - `UpdateEffect` loads the current program properties into `ReverbEffect`.
+   - Audio is processed block-by-block through `ReverbEffectProcess`.
+
+6. `src/ReverbEffect.cpp` and `src/ReverbEffect.h`
+   - The reverb engine computes early reflections, late reverb, echo, modulation, delay lines, and damping from the EAX properties.
+   - A credible matching sprint should tune property values and validate behavior, not modify the core engine first.
+
+7. `scripts/build_mingw.bat`
+   - The build command expects `..\VST2_SDK`.
+   - First-sprint delivery should not promise a DLL unless the buyer separately provides a lawful build setup.
+
+8. `readme.md` and `LICENSE.TXT`
+   - The project is LGPL-oriented and based on the OpenAL Soft EAX reverb implementation lineage.
+   - Any future patch should preserve license notices and avoid importing proprietary audio or SDK material.
+
+## Exact user steps to claim this lane
+
+1. Open the live offer page: https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html
+2. Open this packet: https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_repo_grounded_packet.md
+3. Open the prepared notes: https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_reverb_matching_notes.md
+4. Add only a seller-owned checkout, invoice, marketplace order, or payment-request URL. Do not ask Codex to create a payment processor account, KYC, tax, payout, or refund setup.
+5. Open the primary public lead: https://github.com/datajake1999/EAXReverb_VST/issues/3
+6. Review the existing open PR before contacting anyone: https://github.com/datajake1999/EAXReverb_VST/pull/4
+7. Do not claim the prior PR or imply the first-pass preset is yours.
+8. If you decide to contact the requester, use the draft response only after you approve it.
+9. Require this exact acceptance before payment:
+
+   I accept the EAX Haunted Cavern Reverb Matching Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized target audio references and non-sensitive notes; the deliverable is limited to a repo-grounded parameter target plan, comparison checklist, tuning and listening-test matrix, and patch-ready preset specification; and private audio extraction, copyrighted or private sample redistribution, VST SDK redistribution, compiled DLL delivery, public comment posting, pull request posting, exact clone guarantee, plugin-host support, or ongoing revisions are not included unless separately agreed before payment.
+
+</pre></details>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">This page, CSV, prepared notes, lead search, draft response, metadata, or IndexNow result</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">The requester said they may pay or asks a follow-up question</td><td data-label="Counted as money?">No. Requires exact accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof and any platform acceptance</td><td data-label="Counted as money?">Yes. Count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">No public GitHub comments, pull requests, direct messages, payment requests, private audio handling, or DLL builds were made by this script. External sending requires explicit approval.</p>
+    </section>
+  </main>
+</body>
+</html>
