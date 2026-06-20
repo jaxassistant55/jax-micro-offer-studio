@@ -4686,6 +4686,19 @@
         "price": 100.0,
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "FreeJoy Consumer Keys Firmware Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/freejoy-consumer-keys-sprint.html",
+      "description": "Fixed-scope prepared STM32 firmware patch for FreeJoy Consumer Control media keys.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
     }
   ]
 }
