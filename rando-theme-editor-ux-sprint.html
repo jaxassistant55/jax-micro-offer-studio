@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope product/UX sprint for the rando.id paid custom theme editor issue, grounded in the repo theme schema and Tamagui constraints.">
+  <title>rando.id Theme Editor UX Sprint</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5e6976;--line:#d9dfeb;--paper:#fff;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#a12a2a}
+    *{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.05rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.22rem;margin:24px 0 10px;letter-spacing:0}h3{font-size:1rem;margin:0 0 6px;letter-spacing:0;overflow-wrap:anywhere}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere;word-break:break-word}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700;max-width:100%;white-space:normal}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:16px;align-items:stretch}.flow,.notice,.metric,.lead-card{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:12px;overflow-wrap:anywhere}.flow{background:#f7faf9}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.flow-step{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;margin:8px 0}.lead-card{border-left:6px solid var(--blue);margin:10px 0}details{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}code{white-space:normal;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope product/UX sprint</p>
+      <section class="hero">
+        <div>
+          <h1>rando.id Theme Editor UX Sprint</h1>
+          <p class="muted">A $100 public-safe design packet for the open paid custom-theme-editor issue. It resolves editor surface, palette validation, paid gating, storage, and implementation slices without touching production data or posting externally.</p>
+          <div class="buttons">
+            <a href="#scope">Scope</a>
+            <a href="#flow">Flow</a>
+            <a href="#claim">Claim steps</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="#draft">Draft response</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_design_notes.md">Prepared notes</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_repo_grounded_packet.md">Repo packet</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_ux_sprint.csv">CSV</a>
+            <a href="payment-activation.html">Payment activation</a>
+          </div>
+        </div>
+        <div class="flow" aria-label="Theme editor design sprint flow">
+          <span class="eyebrow">Sprint flow</span>
+          <div class="flow-step"><strong>1. Decide surface</strong><br>In-app editor first, JSON import later unless the buyer accepts a different path.</div>
+          <div class="flow-step"><strong>2. Validate palette</strong><br>Require light and dark slots, hex values, contrast checks, and stable theme IDs.</div>
+          <div class="flow-step"><strong>3. Gate paid value</strong><br>Pro users save custom packs; free users can preview without saving.</div>
+          <div class="flow-step"><strong>4. Split implementation</strong><br>Config validation, storage, web UI, native preview, paid gate, and tests as separate issues.</div>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Open paid lead rows</span><strong>1</strong></article>
+      <article class="metric"><span>Primary sprint price</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice" id="scope">
+      <h2>Concrete Deliverable</h2>
+      <ol>
+        <li>UX decision record for in-app editor, JSON import, and future Figma/import paths.</li>
+        <li>User flow and information architecture from theme gallery through preview, save, apply, and export/share later.</li>
+        <li>Palette validation matrix for required slots, hex format, light/dark parity, contrast, stable IDs, and paid/free behavior.</li>
+        <li>Storage recommendation for user-owned custom packs and why Vercel Blob should wait for exported/marketplace assets.</li>
+        <li>Paid-gate recommendation using a new pro feature flag such as <code>custom-theme-editor</code>.</li>
+        <li>Implementation-ready issue split with acceptance criteria and test coverage locations.</li>
+      </ol>
+    </section>
+
+    <section class="notice" id="flow">
+      <h2>Recommended User Flow</h2>
+      <pre>Settings -> Themes -> Create custom theme
+-> Pick starting pack
+-> Edit light palette
+-> Edit dark palette
+-> Validate contrast and required slots
+-> Preview on contact/list/detail/settings samples
+-> Save as private custom theme
+-> Apply now</pre>
+    </section>
+
+    <section class="notice" id="claim">
+      <h2>Exact Claim Steps</h2>
+      <ol>
+        <li>Open the live offer page, notes, and repo-grounded packet.</li>
+        <li>Add only your seller-owned payment URL before contacting anyone.</li>
+        <li>Open the source issue and review the labels and current body.</li>
+        <li>Use the draft response only after you approve it.</li>
+        <li>Require the exact acceptance sentence before payment.</li>
+        <li>Accept only public or buyer-authorized product constraints.</li>
+        <li>Deliver the design packet only after external payment proof.</li>
+        <li>Record buyer scope, payment reference, delivery URL, acceptance, payout/payable/cleared status, fees, and date.</li>
+        <li>Count $0 until the external proof shows posted, released, payable, cleared, credited, or verified net money.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <p>The buyer must paste this before any paid work starts:</p>
+      <pre>I accept the rando.id Theme Editor UX Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized product requirements and non-sensitive design constraints; the deliverable is limited to a repo-grounded UX decision packet, IA/user-flow map, palette validation rules, storage and paid-gate recommendation, acceptance criteria, and implementation-ready issue breakdown; and private user data, credentials, payment data, production database access, private analytics, proprietary design files, code implementation, public posting, pull requests, or ongoing revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section class="notice">
+      <h2>Repo-Grounded Facts</h2>
+      <table>
+        <thead><tr><th>File</th><th>Finding</th></tr></thead>
+        <tbody>
+          <tr><td data-label="File">specs/apps.md</td><td data-label="Finding">The spec already names themes, user theme prefs, paid auto-seasonal behavior, and the deferred custom-theme editor decision.</td></tr>
+          <tr><td data-label="File">packages/config/src/themes/index.ts</td><td data-label="Finding">ThemePack has light and dark ThemePalette objects, paid flags, free/pro limits, and seasonal helpers.</td></tr>
+          <tr><td data-label="File">packages/config/src/themes/example.theme.ts</td><td data-label="Finding">The theme-authoring contract requires stable IDs and every palette slot in both light and dark mode.</td></tr>
+          <tr><td data-label="File">packages/config/src/feature-flags.ts</td><td data-label="Finding">The current free/pro flag model can host a new pro-only custom-theme-editor flag.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="lead-card" id="draft">
+      <span class="eyebrow">recent_open_paid_product_design_issue</span>
+      <h2><a href="https://github.com/rando-id/rando.id/issues/53">Decision: theme editor for custom themes</a></h2>
+      <p>Paid feature issue asks for a real UX design across editor surface, palette constraints, sharing, storage, and runtime theme plumbing.</p>
+      <details><summary>Draft response not posted</summary><p>I can turn this into a repo-grounded UX decision packet rather than jumping straight to implementation. I inspected the current theme spec and config: ThemePack already has light/dark palettes, custom kind, paid flags, free/pro limits, and the product spec already names themes and user_theme_prefs. For $100, I can deliver a concrete design that decides the editor surface, validation rules, storage model, paid gate, user flow, and implementation-ready issue split. I would not need private user data, production access, credentials, payment data, or proprietary design files, and I would only post a public follow-up or PR after explicit approval.</p><p class="muted">Draft response prepared only. External public comments, direct messages, pull requests, or form submissions require explicit send approval.</p></details>
+    </section>
+
+    <section class="notice">
+      <h2>Prepared Design Notes</h2>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_design_notes.md">https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_design_notes.md</a></p>
+      <details><summary>Notes excerpt</summary><pre># rando.id Theme Editor UX Sprint Notes
+
+Generated: 2026-06-20 16:17:20 JST
+Public repo: https://github.com/rando-id/rando.id
+Paid-feature issue: https://github.com/rando-id/rando.id/issues/53
+Related product spec: https://github.com/rando-id/rando.id/blob/main/specs/apps.md
+Inspected commit: `8a0ccca`
+Fixed first sprint: $100
+Confirmed money: $0
+
+## Why this is viable
+
+The issue is recent, open, labeled `paid`, and explicitly says the theme editor is a UX design exercise that should close when a real design exists. This is not a bounty and not a request for private data. The useful first paid deliverable is a repo-grounded product design packet that resolves the open surface decisions before implementation.
+
+## Repo facts
+
+- `specs/apps.md` already defines `themes` and `user_theme_prefs` tables with custom themes, light/dark palettes, paid flags, active theme, and paid auto-seasonal behavior.
+- `packages/config/src/themes/index.ts` defines `ThemeMode`, `ThemePalette`, `ThemePack`, `FREE_THEME_LIMIT = 2`, `PAID_THEME_LIMIT = 5`, `getThemePack`, and seasonal window helpers.
+- `packages/config/src/themes/example.theme.ts` documents the real theme-pack authoring contract and warns that theme IDs are stable storage keys.
+- `packages/config/src/feature-flags.ts` has a simple `free | pro` tier model, but no `custom-theme-editor` flag yet.
+- `packages/ui/src/tamagui.config.ts` creates Tamagui config from the default config; runtime custom themes need a design choice before code.
+- `apps/web` and `apps/native` both consume the shared UI/config layer, so the design should avoid a web-only surface unless explicitly chosen.
+
+## Decision packet deliverable
+
+1. Product choice: in-app editor first, with JSON import as an advanced option after validation.
+2. Editor IA: gallery, duplicate starting theme, edit light palette, edit dark palette, validate, preview, save, apply, share/export later.
+3. Palette validation: every `ThemePalette` slot required, hex format only in v1, contrast gate for background/foreground and primary/background, visible border/muted contrast checks.
+4. Paid gate: add `custom-theme-editor` as a pro feature while allowing free users to preview/import one sample without saving.
+5. Storage: DB JSON for user-owned packs first; Vercel Blob only for exported files or future marketplace assets.
+6. Tamagui constraint: generated user themes must be translated into the runtime theme shape without requiring a rebuild.
+7. Test plan: pure validation tests in `packages/config`, route/component tests for save/apply flows, and web/native preview smoke tests.
+
+## Suggested user flow
+
+```text
+Settings -&gt; Themes -&gt; Create custom theme
+  -&gt; Pick starting pack
+  -&gt; Edit light palette
+  -&gt; Edit dark palette
+  -&gt; Validate contrast and required slots
+  -&gt; Preview on contact/list/detail/settings samples
+  -&gt; Save as private custom theme
+  -&gt; Apply now
+```
+
+## Non-goals
+
+- No production database changes in this first sprint.
+- No private user data, credentials, payment data, or production analytics.
+- No public comment, issue close, or PR without explicit approval.
+- No full implementation promise inside the $100 design sprint.
+- No marketplace, revenue share, or paid creator program design unless separately accepted.
+
+## Draft response, still not posted
+
+I can turn this into a repo-grounded UX decision packet rather than jumping straight to implementation. I inspected the current theme spec and config: `ThemePack` already has light/dark palettes, `custom` kind, paid flags, free/pro limits, and the product spec already names `themes` and `user_theme_prefs`. For $100, I can deliver a concrete design that decides the editor surface, validation rules, storage model, paid gate, user flow, and implementation-ready issue split. I would not need private user data, production access, credentials, payment data, or proprietary design files, and I would only post a public follow-up or PR after explicit approval.
+</pre></details>
+    </section>
+
+    <section class="notice">
+      <h2>Repo-Grounded Handoff Packet</h2>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_repo_grounded_packet.md">https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_repo_grounded_packet.md</a></p>
+      <details><summary>Packet excerpt</summary><pre># rando.id Theme Editor Repo-Grounded Handoff Packet
+
+Generated: 2026-06-20 16:17:20 JST
+Offer page: https://jaxassistant55.github.io/jax-micro-offer-studio/rando-theme-editor-ux-sprint.html
+Public repo: https://github.com/rando-id/rando.id
+Local public clone: `/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/rando.id`
+Inspected commit: `8a0ccca`
+Paid-feature issue: https://github.com/rando-id/rando.id/issues/53
+Fixed first sprint: $100
+Confirmed money: $0
+
+## Current issue state
+
+The issue asks for a paid theme editor UX design. It is open, labeled `paid`, and explicitly says to close it when a real design exists. The first paid unit should be a design packet, not a public PR or implementation promise.
+
+## Files inspected
+
+1. `specs/apps.md`
+   - Defines `themes` with `id`, `name`, `kind`, `light_palette`, `dark_palette`, `active_from`, `active_to`, and `is_paid`.
+   - Defines `user_theme_prefs` with `mode`, `active_theme_id`, and paid `auto_seasonal`.
+   - Places multiple themes in v0.2 and paid auto-theme/random/avatar/list features in v0.3+.
+   - Lists custom theme editor as a deferred paid design question.
+
+2. `packages/config/src/themes/index.ts`
+   - Defines `ThemeMode = light | dark | system`.
+   - Defines `ThemePalette` slots: `background`, `foreground`, `primary`, `secondary`, `accent`, `muted`, and `border`.
+   - Defines `ThemePack` with `default | seasonal | custom`, light/dark palettes, optional seasonal windows, and `isPaid`.
+   - Exposes `FREE_THEME_LIMIT = 2` and `PAID_THEME_LIMIT = 5`.
+
+3. `packages/config/src/themes/example.theme.ts`
+   - Documents the pack-authoring contract.
+   - Warns that theme IDs are storage and URL keys, so rename/migration behavior must be designed.
+   - Keeps every palette slot required in both light and dark mode.
+
+4. `packages/config/src/__tests__/themes.test.ts`
+   - Current test coverage validates limit constants, default lookup, and seasonal windows.
+   - New custom-theme validation should live near this package before UI work.
+
+5. `packages/config/src/feature-flags.ts`
+   - Existing flags use `free | pro` tiers.
+   - Suggested new flag: `custom-theme-editor: pro`.
+
+6. `packages/ui/src/tamagui.config.ts`
+   - Tamagui config is created from the default config.
+   - Runtime custom themes require an implementation design before the UI is built.
+
+## Recommended scope
+
+Deliver in the first $100 sprint:
+
+1. UX decision record for in-app editor versus Figma/JSON import.
+2. End-to-end flow and information architecture.
+3. Palette validation rules and error copy.
+4. Preview-state checklist across contact list, contact detail, list detail, settings, and empty states.
+5. Storage recommendation for user-owned custom packs.
+6. Paid-gate and free-preview behavior.
+7. Implementation-ready issue split with acceptance criteria.
+
+Defer:
+
+1. Full implementation.
+2. Theme marketplace.
+3. Creator revenue share.
+4. Production database migration.
+5. Public PR or issue comment without explicit approval.
+
+## Exact user steps to claim this lane
+
+1. Open the live offer page: https://jaxassistant55.github.io/jax-micro-offer-studio/rando-theme-editor-ux-sprint.html
+2. Open this packet: https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_repo_grounded_packet.md
+</pre></details>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">This page, CSV, prepared notes, lead search, draft response, metadata, or IndexNow result</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">The issue is labeled paid or a maintainer likes the design idea</td><td data-label="Counted as money?">No. Requires exact accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof and any platform acceptance</td><td data-label="Counted as money?">Yes. Count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">No public GitHub comments, pull requests, direct messages, payment requests, production access, or private data handling were made by this script. External sending requires explicit approval.</p>
+    </section>
+  </main>
+</body>
+</html>

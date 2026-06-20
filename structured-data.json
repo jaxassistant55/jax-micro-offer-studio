@@ -4647,6 +4647,19 @@
       "name": "EAX Haunted Cavern Reverb Matching Sprint",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html",
       "description": "A buyer-facing fixed-scope $100 EAX reverb matching page with exact acceptance text, draft responses, prepared notes, payment activation, and proof boundary."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "rando.id Theme Editor UX Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/rando-theme-editor-ux-sprint.html",
+      "description": "Fixed-scope public-safe product and UX design sprint for a paid custom theme editor issue.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
     }
   ]
 }
