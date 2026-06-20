@@ -201,3 +201,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Non-Bounty Paid Audio/DSP Offer
 - EAX Haunted Cavern Reverb Matching Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html -> $100 fixed-scope public-safe target matching, EAX parameter plan, A/B listening matrix, and patch-ready preset specification. Repo packet: https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_repo_grounded_packet.md
+
+## Non-Bounty Paid Product Design Offer
+- rando.id Theme Editor UX Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/rando-theme-editor-ux-sprint.html -> $100 fixed-scope product/UX design packet for a paid custom theme editor issue, with repo-grounded flow, validation, storage, paid gate, and implementation split. Repo packet: https://jaxassistant55.github.io/jax-micro-offer-studio/rando_theme_editor_repo_grounded_packet.md
