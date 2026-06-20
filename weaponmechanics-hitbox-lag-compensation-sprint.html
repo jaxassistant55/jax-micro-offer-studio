@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope WeaponMechanics custom-hitbox and projectile lag-compensation sprint with design packet, validation checklist, and test matrix.">
+  <title>WeaponMechanics Hitbox Lag Compensation Sprint</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--paper:#fff;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#a12a2a}
+    *{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.15rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.24rem;margin:24px 0 10px;letter-spacing:0}h3{font-size:1rem;margin:0 0 6px;letter-spacing:0;overflow-wrap:anywhere}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere;word-break:break-word}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700;max-width:100%;white-space:normal}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:16px;align-items:stretch}.flow,.notice,.metric,.lead-card{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:12px;overflow-wrap:anywhere}.flow{background:#f7faf9}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.flow-step{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px;margin:8px 0}.lead-card{border-left:6px solid var(--blue)}details{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}code{white-space:normal;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope Minecraft plugin diagnostic</p>
+      <section class="hero">
+        <div>
+          <h1>WeaponMechanics Hitbox Lag Compensation Sprint</h1>
+          <p class="muted">A $100 public-safe sprint for open WeaponMechanics paid-feature requests around custom entity hitboxes, projectile hit checks, and lag-compensated projectile physics. No third-party comment or PR was posted.</p>
+          <div class="buttons">
+            <a href="#scope">Scope</a>
+            <a href="#acceptance">Acceptance text</a>
+            <a href="#drafts">Draft responses</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_lag_compensation_notes.md">Prepared notes</a>
+            <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_lag_compensation_sprint.csv">CSV</a>
+            <a href="payment-activation.html">Payment activation</a>
+            <a href="proof-monitor.html">Proof monitor</a>
+          </div>
+        </div>
+        <div class="flow" aria-label="Hitbox lag compensation sprint flow">
+          <span class="eyebrow">Sprint flow</span>
+          <div class="flow-step"><strong>1. Confirm target</strong><br>WeaponMechanics version, Minecraft/server target, projectile types, entity types, and observed lag symptom.</div>
+          <div class="flow-step"><strong>2. Define config shape</strong><br>Custom hitbox toggle, history depth, max compensation window, entity dimensions, projectile checks, and low-TPS fallback.</div>
+          <div class="flow-step"><strong>3. Map risk</strong><br>High-ping abuse, server TPS drops, teleport/chunk edge cases, anti-cheat interaction, and fairness limits.</div>
+          <div class="flow-step"><strong>4. Handoff</strong><br>Implementation plan, validation checklist, and test matrix ready for a buyer-approved next step.</div>
+        </div>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Open paid leads</span><strong>2</strong></article>
+      <article class="metric"><span>Primary sprint price</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice" id="scope">
+      <h2>Concrete Deliverable</h2>
+      <ol>
+        <li>Custom-hitbox configuration blueprint for enabled state, history window, max compensation, entity dimensions, and projectile checks.</li>
+        <li>Lag-compensation risk map covering high-ping abuse, TPS drops, teleport/chunk transitions, and anti-cheat interaction.</li>
+        <li>Projectile hit-check test matrix for stationary targets, moving targets, sprinting players, simulated latency, low TPS, block obstruction, and speed-based damage follow-up.</li>
+        <li>Validation checklist for safe defaults, unsupported entities, malformed dimensions, disabled behavior, and history depth limits.</li>
+        <li>Implementation milestone plan that can become a PR only after explicit approval and payment proof.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <p>The buyer must paste this before any paid work starts:</p>
+      <pre>I accept the WeaponMechanics Hitbox Lag Compensation Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive version targets, configuration requirements, and reproduction details; the deliverable is limited to a public-safe custom-hitbox and projectile lag-compensation design packet, YAML/config shape recommendation, validation checklist, risk list, and test matrix; and private plugin jars, production server access, player data, private logs, live server deployment, guaranteed upstream merge, performance guarantee, full implementation, ongoing support, or extra revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section id="drafts">
+      <h2>Paid Lead Drafts</h2>
+      <article class="lead-card">
+  <span class="eyebrow">direct_paid_feature_request_uncommented</span>
+  <h3><a href="https://github.com/WeaponMechanics/WeaponMechanics/issues/363">Custom hitboxes (PAY FEATURE)</a></h3>
+  <p><strong>Repo:</strong> WeaponMechanics/WeaponMechanics. <strong>Fixed scope:</strong> $100. <strong>Comments observed:</strong> 0.</p>
+  <p>Primary $100 design sprint for custom hitboxes, projectile history sampling, lag-compensation limits, validation checks, and test matrix.</p>
+  <details>
+    <summary>Draft response not posted</summary>
+    <p>I saw this custom-hitbox and lag-compensation paid feature request and can offer a narrow first-pass WeaponMechanics Hitbox Lag Compensation Sprint for $100. I would not promise a full merged implementation up front. The deliverable would be a public-safe config/design packet, lag-compensation risk map, validation checklist, projectile/entity test matrix, and implementation milestone plan based on public requirements. I would not need private plugin jars, production server access, player data, credentials, payment data, or private logs; any upstream comment or PR would require explicit approval.</p>
+    <p class="muted">Draft response prepared only. External public comments, direct messages, pull requests, or form submissions require explicit send approval.</p>
+  </details>
+  <details>
+    <summary>Safety boundary</summary>
+    <p>No private plugin jars, server credentials, player data, paid-license files, production server access, payment data, performance guarantee, full implementation guarantee, or upstream public posting without explicit approval.</p>
+  </details>
+</article>
+<article class="lead-card">
+  <span class="eyebrow">secondary_uncommented_paid_projectile_physics_request</span>
+  <h3><a href="https://github.com/WeaponMechanics/WeaponMechanics/issues/246">Damage connected to Projectile Speed</a></h3>
+  <p><strong>Repo:</strong> WeaponMechanics/WeaponMechanics. <strong>Fixed scope:</strong> $100. <strong>Comments observed:</strong> 0.</p>
+  <p>Secondary physics route that can share a projectile-state test matrix with the hitbox sprint, but should not be bundled into the first $100 unless explicitly accepted.</p>
+  <details>
+    <summary>Draft response not posted</summary>
+    <p>I also saw the projectile-speed damage paid feature request. If this is still active, I would scope it separately or as a later milestone after the hitbox diagnostic: a velocity-to-damage formula recommendation, block-penetration slowdown matrix, config shape, and tests for distance/dropoff interactions. I would keep the first $100 sprint limited unless the buyer explicitly accepts a combined scope and payment proof exists.</p>
+    <p class="muted">Draft response prepared only. External public comments, direct messages, pull requests, or form submissions require explicit send approval.</p>
+  </details>
+  <details>
+    <summary>Safety boundary</summary>
+    <p>No private plugin jars, server credentials, player data, paid-license files, production server access, payment data, performance guarantee, full implementation guarantee, or upstream public posting without explicit approval.</p>
+  </details>
+</article>
+
+    </section>
+
+    <section class="notice">
+      <h2>Prepared Technical Notes</h2>
+      <p>The prepared design notes are published as a public-safe markdown packet:</p>
+      <p><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_lag_compensation_notes.md">https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_lag_compensation_notes.md</a></p>
+      <details>
+        <summary>Notes excerpt</summary>
+        <pre># WeaponMechanics Hitbox Lag Compensation Sprint Notes
+
+Primary lead: https://github.com/WeaponMechanics/WeaponMechanics/issues/363
+Secondary physics lead: https://github.com/WeaponMechanics/WeaponMechanics/issues/246
+Repo: https://github.com/WeaponMechanics/WeaponMechanics
+
+## Why this should start as a $100 diagnostic/design sprint
+
+The primary request asks for custom entity hitboxes and projectile hit checks with lag compensation. That crosses projectile tracing, entity pose/history, server tick timing, configuration validation, and anti-cheat/fairness boundaries. A direct promise to ship a full merged implementation before scope/payment proof would be too broad. A fixed first sprint can still create buyer value by narrowing the design, risk, and exact implementation plan.
+
+## Public-safe deliverable
+
+1. Config surface recommendation for `custom_hitboxes`.
+2. Entity selection matrix: player, mob, armor stand, vehicle, and ignored entities.
+3. Projectile trace model: current tick, historical pose sample, interpolation window, and fallback behavior.
+4. Lag-compensation risk list: high ping abuse, server TPS drops, entity teleport, chunk unload, anti-cheat interaction, and replay-window limits.
+5. Validation checklist: config parsing, enabled/disabled behavior, unsupported entity type, max history depth, and safe defaults.
+6. Test matrix: stationary entity, moving entity, sprinting player, high ping simulation, low TPS simulation, block obstruction, and projectile speed scaling.
+7. Implementation plan that can be converted to a PR only after explicit approval.
+
+## Suggested config shape
+
+```yaml
+Custom_Hitboxes:
+  Enabled: true
+  History_Ticks: 6
+  Max_Compensation_Millis: 250
+  Entities:
+    PLAYER:
+      Width: 0.6
+      Height: 1.8
+      Lag_Compensation: true
+    ZOMBIE:
+      Width: 0.6
+      Height: 1.95
+      Lag_Compensation: true
+  Projectile_Checks:
+    Use_Historical_Position: true
+    Interpolate_Between_Ticks: true
+    Ignore_If_Tps_Below: 17.0
+```
+
+## Non-goals
+
+- No private server debugging.
+- No paid plugin jars or license keys.
+- No player data or private logs.
+- No promise that upstream will merge a future PR.
+- No full production deployment or performance guarantee inside the $100 first sprint.
+</pre>
+      </details>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">This page, CSV, prepared notes, lead search, draft response, metadata, or IndexNow result</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">The requester checked "willing to pay" or asks a follow-up question</td><td data-label="Counted as money?">No. Requires exact accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof and any platform acceptance</td><td data-label="Counted as money?">Yes. Count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">No public GitHub comments, pull requests, direct messages, payment requests, or production server changes were made by this script. External sending requires explicit approval.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -4607,6 +4607,26 @@
       "name": "Voxy VR Backport Feasibility Sprint",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/voxy-vr-backport-feasibility-sprint.html",
       "description": "A buyer-facing fixed-scope $100 Voxy VR backport feasibility page with exact acceptance text, draft response, prepared notes, payment activation, and proof boundary."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "WeaponMechanics Hitbox Lag Compensation Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-hitbox-lag-compensation-sprint.html",
+      "description": "Fixed-scope public-safe custom-hitbox and projectile lag-compensation sprint for WeaponMechanics paid feature requests.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "WeaponMechanics Hitbox Lag Compensation Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-hitbox-lag-compensation-sprint.html",
+      "description": "A buyer-facing fixed-scope $100 WeaponMechanics hitbox lag-compensation page with exact acceptance text, draft responses, prepared notes, payment activation, and proof boundary."
     }
   ]
 }
