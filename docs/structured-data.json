@@ -4627,6 +4627,26 @@
       "name": "WeaponMechanics Hitbox Lag Compensation Sprint",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-hitbox-lag-compensation-sprint.html",
       "description": "A buyer-facing fixed-scope $100 WeaponMechanics hitbox lag-compensation page with exact acceptance text, draft responses, prepared notes, payment activation, and proof boundary."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "EAX Haunted Cavern Reverb Matching Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html",
+      "description": "Fixed-scope public-safe audio/DSP matching sprint for a Haunted Cavern-style EAX reverb request.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "EAX Haunted Cavern Reverb Matching Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html",
+      "description": "A buyer-facing fixed-scope $100 EAX reverb matching page with exact acceptance text, draft responses, prepared notes, payment activation, and proof boundary."
     }
   ]
 }

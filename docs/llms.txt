@@ -198,3 +198,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 ## Non-Bounty Paid Minecraft Plugin Offer
 - WeaponMechanics Hitbox Lag Compensation Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics-hitbox-lag-compensation-sprint.html -> $100 fixed-scope public-safe custom-hitbox, projectile lag-compensation, config, validation, and test-matrix design packet.
 - WeaponMechanics repo-grounded hitbox handoff packet: https://jaxassistant55.github.io/jax-micro-offer-studio/weaponmechanics_hitbox_repo_grounded_packet.md
+
+## Non-Bounty Paid Audio/DSP Offer
+- EAX Haunted Cavern Reverb Matching Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/eax-haunted-cavern-reverb-matching-sprint.html -> $100 fixed-scope public-safe target matching, EAX parameter plan, A/B listening matrix, and patch-ready preset specification. Repo packet: https://jaxassistant55.github.io/jax-micro-offer-studio/eax_haunted_cavern_repo_grounded_packet.md
