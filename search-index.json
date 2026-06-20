@@ -2172,6 +2172,20 @@
       "first_100": "One accepted paid rando.id theme-editor UX sprint reaches $100 before fees/refunds.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+rando.id+Theme+Editor+UX+Sprint&labels=paid-inquiry%2Cready-to-pay%2Cproduct-design&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+rando.id+Theme+Editor+UX+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Frando-theme-editor-ux-sprint.html%0ASource+paid-feature+issue%3A+https%3A%2F%2Fgithub.com%2Frando-id%2Frando.id%2Fissues%2F53%0APublic+repo%3A+https%3A%2F%2Fgithub.com%2Frando-id%2Frando.id%0A%0ATarget+platform+priority%3A+web+%2F+native+%2F+both%3A%0ATheme+creation+surface+preference%3A+in-app+editor+%2F+Figma+import+%2F+JSON+import+%2F+mixed%3A%0AMust-have+palette+slots%3A%0AMinimum+contrast+rule%3A%0ASharing+model%3A+private+only+%2F+shareable+link+%2F+marketplace+later%3A%0AStorage+preference%3A+DB+JSON+%2F+Vercel+Blob+%2F+other%3A%0APaid+gate+preference%3A%0AAcceptance+proof%3A%0APayment%2Fproof+route%3A%0A%0ASafety+confirmation%3A%0A-+I+will+provide+only+public+or+buyer-authorized+product+requirements+and+non-sensitive+design+constraints.%0A-+I+will+not+provide+private+user+data%2C+credentials%2C+payment+data%2C+production+database+access%2C+private+analytics%2C+or+proprietary+design+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue%2Fform+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
+    },
+    {
+      "type": "service",
+      "title": "pydfs Normal Randomness Strategy Sprint",
+      "slug": "pydfs-normal-randomness-strategy-sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pydfs-normal-randomness-strategy-sprint.html",
+      "price": "$100",
+      "amount_usd": 100,
+      "description": "Fixed-scope prepared Python patch for normal-distribution randomness in pydfs-lineup-optimizer.",
+      "lead_source_url": "https://github.com/DimaKudosh/pydfs-lineup-optimizer/issues/367",
+      "repo_grounded_packet": "https://jaxassistant55.github.io/jax-micro-offer-studio/pydfs_normal_randomness_repo_grounded_packet.md",
+      "first_100": "One accepted paid pydfs normal-randomness patch sprint reaches $100 before fees/refunds.",
+      "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+pydfs+normal+randomness+strategy+sprint&labels=paid-inquiry%2Cready-to-pay%2Cpython&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+pydfs-lineup-optimizer+Normal+Randomness+Strategy+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Fpydfs-normal-randomness-strategy-sprint.html%0ASource+paid-help+issue%3A+https%3A%2F%2Fgithub.com%2FDimaKudosh%2Fpydfs-lineup-optimizer%2Fissues%2F367%0APublic+repo%3A+https%3A%2F%2Fgithub.com%2FDimaKudosh%2Fpydfs-lineup-optimizer%0A%0ATarget+codebase%3A+upstream+repo+%2F+my+fork+%2F+my+private+code%3A%0APython+version%3A%0AOptimizer+site+and+sport%3A%0APreferred+deviation+rule%3A%0AFloor%2Fceiling+behavior%3A%0APayment%2Fproof+route%3A%0A%0ASafety+confirmation%3A%0A-+I+will+provide+only+public+or+buyer-authorized+code+and+non-sensitive+requirements.%0A-+I+will+not+provide+private+user+data%2C+credentials%2C+payment+data%2C+sports+betting+account+data%2C+private+projections%2C+or+proprietary+contest+files+I+am+not+authorized+to+share.%0A-+I+understand+this+issue%2Fform+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
+      "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
     }
   ]
 }

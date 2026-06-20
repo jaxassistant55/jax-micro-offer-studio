@@ -4660,6 +4660,19 @@
         "price": 100.0,
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "pydfs Normal Randomness Strategy Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/pydfs-normal-randomness-strategy-sprint.html",
+      "description": "Fixed-scope prepared Python patch for normal-distribution randomness in pydfs-lineup-optimizer.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
     }
   ]
 }
