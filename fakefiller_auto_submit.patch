@@ -1,0 +1,149 @@
+diff --git a/public/_locales/en/messages.json b/public/_locales/en/messages.json
+index 3cee2ef..22b5da7 100644
+--- a/public/_locales/en/messages.json
++++ b/public/_locales/en/messages.json
+@@ -470,6 +470,12 @@
+   "generalSettings": {
+     "message": "General Settings"
+   },
++  "generalSettings_autoSubmitAfterFill": {
++    "message": "Auto Submit"
++  },
++  "generalSettings_autoSubmitAfterFillLabel": {
++    "message": "Automatically submit after filling a form"
++  },
+   "generalSettings_triggerEvents": {
+     "message": "Trigger Events"
+   },
+diff --git a/src/common/fake-filler.ts b/src/common/fake-filler.ts
+index e3472b0..bac573b 100644
+--- a/src/common/fake-filler.ts
++++ b/src/common/fake-filler.ts
+@@ -2,10 +2,12 @@ import ElementFiller from "src/common/element-filler";
+ import { IFakeFillerOptions } from "src/types";
+ 
+ class FakeFiller {
++  private options: IFakeFillerOptions;
+   private elementFiller: ElementFiller;
+   private clickedElement: HTMLElement | undefined;
+ 
+   constructor(options: IFakeFillerOptions, profileIndex = -1) {
++    this.options = options;
+     this.elementFiller = new ElementFiller(options, profileIndex);
+   }
+ 
+@@ -27,12 +29,38 @@ class FakeFiller {
+     });
+   }
+ 
++  private getOnlyForm(container: Document | HTMLElement): HTMLFormElement | undefined {
++    if (container instanceof HTMLFormElement) {
++      return container;
++    }
++
++    const forms = container.querySelectorAll("form");
++    return forms.length === 1 ? (forms[0] as HTMLFormElement) : undefined;
++  }
++
++  private submitForm(form: HTMLFormElement | undefined): void {
++    if (!form || !this.options.autoSubmitAfterFill) {
++      return;
++    }
++
++    if (form.requestSubmit) {
++      form.requestSubmit();
++      return;
++    }
++
++    const submitEvent = new Event("submit", { bubbles: true, cancelable: true });
++    if (form.dispatchEvent(submitEvent)) {
++      form.submit();
++    }
++  }
++
+   public setClickedElement(element: HTMLElement | undefined): void {
+     this.clickedElement = element;
+   }
+ 
+   public fillAllInputs(): void {
+     this.fillAllElements(document);
++    this.submitForm(this.getOnlyForm(document));
+   }
+ 
+   public fillThisInput(): void {
+@@ -63,6 +91,7 @@ class FakeFiller {
+ 
+       if (form) {
+         this.fillAllElements(form);
++        this.submitForm(form);
+       }
+     }
+ 
+diff --git a/src/common/helpers.ts b/src/common/helpers.ts
+index 2e8781c..026931f 100644
+--- a/src/common/helpers.ts
++++ b/src/common/helpers.ts
+@@ -23,6 +23,7 @@ const FakeFillerDefaultOptions = (): IFakeFillerOptions => {
+   const options: IFakeFillerOptions = {
+     version: CURRENT_SETTINGS_VERSION,
+     agreeTermsFields: ["agree", "terms", "conditions"],
++    autoSubmitAfterFill: false,
+     confirmFields: ["confirm", "reenter", "retype", "repeat", "secondary"],
+     defaultMaxLength: 20,
+     enableContextMenu: true,
+diff --git a/src/options/actions.ts b/src/options/actions.ts
+index b44936e..f7bdf7e 100644
+--- a/src/options/actions.ts
++++ b/src/options/actions.ts
+@@ -85,6 +85,7 @@ export function saveOptions(options: IFakeFillerOptions, formValues?: IFakeFille
+     const updatedOptions = produce(options, (draft) => {
+       if (formValues) {
+         draft.agreeTermsFields = CsvToArray(formValues.agreeTermsFields);
++        draft.autoSubmitAfterFill = formValues.autoSubmitAfterFill;
+         draft.confirmFields = CsvToArray(formValues.confirmFields);
+         draft.defaultMaxLength = parseInt(formValues.defaultMaxLength, 10);
+         draft.enableContextMenu = formValues.enableContextMenu;
+diff --git a/src/options/components/general-settings/GeneralSettingsForm.tsx b/src/options/components/general-settings/GeneralSettingsForm.tsx
+index 399d08e..d847e15 100644
+--- a/src/options/components/general-settings/GeneralSettingsForm.tsx
++++ b/src/options/components/general-settings/GeneralSettingsForm.tsx
+@@ -48,6 +48,7 @@ const GeneralSettingsForm = (props: Props) => {
+   const initialValues: Partial<IFakeFillerOptionsForm> = {};
+ 
+   initialValues.agreeTermsFields = props.options.agreeTermsFields.join(", ");
++  initialValues.autoSubmitAfterFill = props.options.autoSubmitAfterFill || false;
+   initialValues.confirmFields = props.options.confirmFields.join(", ");
+   initialValues.defaultMaxLength = String(props.options.defaultMaxLength);
+   initialValues.enableContextMenu = props.options.enableContextMenu;
+@@ -161,6 +162,11 @@ const GeneralSettingsForm = (props: Props) => {
+           />
+ 
+           <h2>{GetMessage("generalSettings")}</h2>
++          <CheckboxField
++            name="autoSubmitAfterFill"
++            label={GetMessage("generalSettings_autoSubmitAfterFillLabel")}
++            title={GetMessage("generalSettings_autoSubmitAfterFill")}
++          />
+           <CheckboxField
+             name="triggerClickEvents"
+             label={GetMessage("generalSettings_triggerEventsLabel")}
+diff --git a/src/types.ts b/src/types.ts
+index 3eba743..44d50dd 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -102,6 +102,7 @@ export interface IFakeFillerOptions {
+   agreeTermsFields: string[];
+   confirmFields: string[];
+   defaultMaxLength: number;
++  autoSubmitAfterFill: boolean;
+   enableContextMenu: boolean;
+   fieldMatchSettings: IFieldMatchSettings;
+   fields: ICustomField[];
+@@ -119,6 +120,7 @@ export interface IFakeFillerOptionsForm {
+   agreeTermsFields: string;
+   confirmFields: string;
+   defaultMaxLength: string;
++  autoSubmitAfterFill: boolean;
+   enableContextMenu: boolean;
+   fieldMatchId: boolean;
+   fieldMatchName: boolean;

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $100 fixed-scope prepared Fake Filler patch sprint for auto-submit after form filling.">
+  <title>Fake Filler Auto-Submit Sprint</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#a12a2a}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;background:#fff}main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:28px 0 56px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3rem);letter-spacing:0;overflow-wrap:anywhere}h2{font-size:1.22rem;margin:24px 0 10px;letter-spacing:0}p{margin:0 0 10px}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere}.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:700}.notice,.metric,.lead-card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;overflow-wrap:anywhere}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.proof{border-left-color:var(--red);background:#fff7f7}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.25rem}.lead-card{border-left:6px solid var(--blue);margin:10px 0}details{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;margin:10px 0}summary{font-weight:800;cursor:pointer}ol{padding-left:22px}li{margin:7px 0}code{white-space:normal;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-break:break-word;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Fixed-scope browser extension patch sprint</p>
+      <h1>Fake Filler Auto-Submit Sprint</h1>
+      <p class="muted">A $100 prepared implementation package for the open Fake Filler request asking for an auto-submit option after form filling. The patch is local; no upstream comment, email, PR, or patch delivery has been sent.</p>
+      <div class="buttons">
+        <a href="#scope">Scope</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#claim">Claim steps</a>
+        <a href="#acceptance">Acceptance text</a>
+        <a href="#draft">Draft response</a>
+        <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller_auto_submit_notes.md">Prepared notes</a>
+        <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller_auto_submit.patch">Patch</a>
+        <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller_auto_submit_sprint.csv">CSV</a>
+        <a href="payment-activation.html">Payment activation</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Patch size</span><strong>5568 bytes</strong></article>
+      <article class="metric"><span>Primary sprint price</span><strong>$100</strong></article>
+      <article class="metric"><span>Confirmed money</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice" id="scope">
+      <h2>Concrete Deliverable</h2>
+      <ol>
+        <li>Add a disabled-by-default <code>autoSubmitAfterFill</code> option.</li>
+        <li>Add a General Settings checkbox labelled "Automatically submit after filling a form".</li>
+        <li>Persist the setting through the existing Redux/settings flow.</li>
+        <li>Submit after <code>Fill this form</code> when enabled.</li>
+        <li>Submit after <code>Fill all inputs</code> only when the page has exactly one form.</li>
+        <li>Use <code>requestSubmit()</code> when available, with a cancelable submit-event fallback.</li>
+      </ol>
+    </section>
+
+    <section class="notice" id="evidence">
+      <h2>Implementation Evidence</h2>
+      <table>
+        <thead><tr><th>File</th><th>Prepared change</th></tr></thead>
+        <tbody>
+          <tr><td data-label="File">src/types.ts</td><td data-label="Prepared change">Adds <code>autoSubmitAfterFill</code> to option types.</td></tr>
+          <tr><td data-label="File">src/common/helpers.ts</td><td data-label="Prepared change">Defaults the setting to <code>false</code>.</td></tr>
+          <tr><td data-label="File">src/options/actions.ts</td><td data-label="Prepared change">Saves the setting from the options form.</td></tr>
+          <tr><td data-label="File">GeneralSettingsForm.tsx</td><td data-label="Prepared change">Adds the settings checkbox.</td></tr>
+          <tr><td data-label="File">src/common/fake-filler.ts</td><td data-label="Prepared change">Adds bounded submit behavior.</td></tr>
+          <tr><td data-label="File">messages.json</td><td data-label="Prepared change">Adds English locale strings.</td></tr>
+        </tbody>
+      </table>
+      <details><summary>Verification note</summary><pre># Fake Filler Auto-Submit Patch Notes
+
+Generated: 2026-06-27 22:33:45 JST
+
+## Lead
+
+- Source issue: https://github.com/FakeFiller/fake-filler-extension/issues/151
+- Source repo: https://github.com/FakeFiller/fake-filler-extension
+- Issue state checked: open, no comments
+- Buyer signal: issue author asked for an auto-submit option and wrote that they were happy to pay someone for the feature.
+- License checked via GitHub metadata and repository `LICENSE`: MIT.
+
+## Local Checkout
+
+- Checkout: `/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/fake-filler-extension`
+- Base commit: `36daf90 Update changelog and version`
+- Patch file: `/Users/jax/autonomous_earning_run_2026-06-09/non_bounty/fakefiller_auto_submit.patch`
+
+## Implementation
+
+- Added `autoSubmitAfterFill` to `IFakeFillerOptions` and `IFakeFillerOptionsForm`.
+- Defaulted the setting to `false`.
+- Added a General Settings checkbox: &quot;Automatically submit after filling a form&quot;.
+- Saved the option through the existing Redux/settings flow.
+- Implemented bounded submit behavior in `FakeFiller`:
+  - `Fill this form` submits the matched form after filling when enabled.
+  - `Fill all inputs` submits only when the page has exactly one form.
+  - `Fill this input` does not auto-submit.
+  - Uses `form.requestSubmit()` when available, falling back to a cancelable `submit` event and `form.submit()`.
+
+## Verification
+
+- `git diff --stat`: 45 inserted lines across 6 files.
+- `git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --check`: passed.
+- `public/_locales/en/messages.json` JSON parse: passed.
+- `npm ci`: blocked before install because the upstream `package-lock.json` is out of sync with `package.json`.
+- `npm install --package-lock=false --ignore-scripts --no-audit --no-fund`: interrupted after several minutes of no output; no `node_modules` directory was produced.
+- Direct `tsc` invocation: only reached dependency-resolution checks and reported missing project dependencies/globals because dependencies were not installed.
+
+## Money Boundary
+
+Confirmed money remains `$0`. This is a prepared MIT-licensed patch packet only. It should not be counted as earned unless the issue requester, maintainer, marketplace, or payment provider produces external acceptance/payment proof.
+
+## Next Action To Claim
+
+1. Review the patch file and the source issue.
+2. Decide whether to publish it upstream as a PR/comment or keep it as a paid handoff packet.
+3. If pursuing payment, use a seller-owned payment route and require explicit fixed-scope acceptance before delivery.
+4. If publishing unpaid, do not count money unless payment proof arrives later.
+</pre></details>
+    </section>
+
+    <section class="notice" id="claim">
+      <h2>Exact Claim Steps</h2>
+      <ol>
+        <li>Open the source issue and confirm it is still open.</li>
+        <li>Review the public patch and prepared notes.</li>
+        <li>Add only your seller-owned checkout, invoice, marketplace order, funded milestone, or payment-request URL.</li>
+        <li>Use the draft response only after you approve it.</li>
+        <li>Require the exact acceptance sentence before payment.</li>
+        <li>Deliver the patch only after external payment proof or after you explicitly decide to publish it unpaid.</li>
+        <li>Capture proof: accepted scope, payment reference, amount, fees, hold/refund state, delivery URL or PR URL, buyer/platform acceptance if required, payout/payable/cleared status, and date.</li>
+        <li>Count $0 until the external proof shows posted, released, payable, cleared, credited, or verified net money.</li>
+      </ol>
+    </section>
+
+    <section class="notice warning" id="acceptance">
+      <h2>Exact Acceptance Before Payment</h2>
+      <pre>I accept the Fake Filler Auto-Submit Sprint fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive requirements; the deliverable is limited to the prepared disabled-by-default auto-submit option, settings UI, saved option wiring, bounded submit behavior, apply notes, and verification notes; and production form testing, private browser/account data, store publication, public posting, pull requests, or ongoing revisions are not included unless separately agreed before payment.</pre>
+    </section>
+
+    <section class="lead-card" id="draft">
+      <span class="eyebrow">open_paid_feature_request_prepared_patch_packet</span>
+      <h2><a href="https://github.com/FakeFiller/fake-filler-extension/issues/151">Auto submit after filling a form</a></h2>
+      <p>The source issue says: "Is it possible to add a auto submit option as well where it submits the form after it fills it out? (Happy to pay someone for this feature)"</p>
+      <details><summary>Draft response not posted</summary><p>I prepared a small local patch for the auto-submit request. It adds a disabled-by-default General Settings checkbox, persists an `autoSubmitAfterFill` option, and submits after `Fill this form`. For `Fill all inputs`, it submits only when the page has exactly one form, so it avoids guessing on multi-form pages. It uses `requestSubmit()` when available and falls back to a cancelable submit event plus `form.submit()`. I can hand over the patch or adapt it to a branch after fixed-scope acceptance and external payment proof.</p><p class="muted">Draft response prepared only. External comments, emails, direct messages, pull requests, or patch delivery require explicit send approval.</p></details>
+    </section>
+
+    <section class="notice proof">
+      <h2>Money And Posting Boundary</h2>
+      <table>
+        <thead><tr><th>Signal</th><th>Counted as money?</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Signal">Prepared patch, notes, page, CSV, draft response, or IndexNow result</td><td data-label="Counted as money?">No. Counts $0.</td></tr>
+          <tr><td data-label="Signal">Issue text says happy to pay</td><td data-label="Counted as money?">No. Requires accepted scope and external payment proof.</td></tr>
+          <tr><td data-label="Signal">External payment posted, released, payable, or cleared after delivery proof</td><td data-label="Counted as money?">Yes. Count only verified net amount after fees/refunds.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
