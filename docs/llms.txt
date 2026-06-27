@@ -213,3 +213,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Non-Bounty Paid Firmware Patch Offer
 - FreeJoy Consumer Keys Firmware Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/freejoy-consumer-keys-sprint.html -> $100 fixed-scope prepared STM32 Consumer Control HID patch. Repo packet: https://jaxassistant55.github.io/jax-micro-offer-studio/freejoy_consumer_keys_repo_grounded_packet.md
+
+## Non-Bounty Paid Browser Extension Patch Offer
+- Fake Filler Auto-Submit Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller-auto-submit-sprint.html -> $100 fixed-scope prepared patch for auto-submit after form filling. Patch: https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller_auto_submit.patch

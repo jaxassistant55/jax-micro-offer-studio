@@ -4699,6 +4699,19 @@
         "price": 100.0,
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fake Filler Auto-Submit Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller-auto-submit-sprint.html",
+      "description": "Fixed-scope prepared browser-extension patch for auto-submit after Fake Filler fills a form.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": 100.0,
+        "availability": "https://schema.org/InStock"
+      }
     }
   ]
 }
