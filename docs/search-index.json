@@ -2250,6 +2250,7 @@
       "asset": "USDC",
       "address": "0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b",
       "checkout_rows": 34,
+      "release_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/base-usdc-direct-checkout-v1",
       "proof_rule": "Count only matched on-chain buyer/order payment with no refund or dispute."
     }
   ]
