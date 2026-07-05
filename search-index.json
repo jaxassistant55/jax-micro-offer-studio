@@ -2239,6 +2239,18 @@
       "asset": "USDC",
       "address": "0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b",
       "proof_rule": "Count only verified Base USDC received at this address after accepted scope, delivery proof, and no refund/dispute. Current route setup and zero-balance monitor count $0."
+    },
+    {
+      "type": "payment_checkout",
+      "title": "Direct Base USDC Checkout",
+      "slug": "base-usdc-direct-checkout",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-direct-checkout.html",
+      "description": "Exact native Base USDC checkout instructions for fixed-price $100+ Micro Offer Studio routes after written acceptance.",
+      "network": "Base mainnet",
+      "asset": "USDC",
+      "address": "0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b",
+      "checkout_rows": 34,
+      "proof_rule": "Count only matched on-chain buyer/order payment with no refund or dispute."
     }
   ]
 }

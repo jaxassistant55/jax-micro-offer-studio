@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Direct Base USDC checkout instructions for accepted fixed-scope Micro Offer Studio orders.">
+  <meta property="og:title" content="Direct Base USDC Checkout - Micro Offer Studio">
+  <meta property="og:description" content="Buyer-ready Base mainnet USDC instructions for $100+ fixed-scope offers.">
+  <meta property="og:type" content="website">
+  <link rel="alternate" type="text/csv" title="Base USDC checkout CSV" href="base_usdc_direct_checkout.csv">
+  <link rel="search" type="application/json" title="Micro Offer Studio search index" href="search-index.json">
+  <title>Direct Base USDC Checkout - Micro Offer Studio</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--accent:#075da8;--green:#17643a;--gold:#8a5a00;--red:#9b1c1c}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:#fff;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 52px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:0;overflow-wrap:anywhere}h2{margin:0 0 8px;font-size:1.2rem}.muted{color:var(--muted)}a{color:var(--accent);overflow-wrap:anywhere}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:800}.notice,.card,.metric{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;overflow-wrap:anywhere}.notice{border-left:6px solid var(--gold);background:#fffaf0}.danger{border-left-color:var(--red);background:#fff7f5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}.metric{background:var(--panel)}.metric span,.eyebrow{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.15rem}.card{border-left:6px solid var(--green)}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff;margin-top:12px}th,td{border-bottom:1px solid var(--line);padding:9px;text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}details{margin-top:8px}summary{font-weight:800;cursor:pointer}code{white-space:normal;overflow-wrap:anywhere}
+    @media(max-width:900px){.grid,.summary{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="buttons"><a href="index.html">Home</a><a href="order-now.html">Order now</a><a href="payment-activation.html">Payment activation</a><a href="base-usdc-payment-route.html">Payment route</a><a href="proof-monitor.html">Proof monitor</a><a href="base_usdc_direct_checkout.csv">Checkout CSV</a></p>
+      <p class="muted">Generated 2026-07-05 13:57:49 JST. This page is checkout instruction only, not proof that anyone paid.</p>
+      <h1>Direct Base USDC Checkout</h1>
+      <p class="muted">Buyer-ready instructions for 34 fixed-price $100+ offers. Each card gives the exact amount, Base mainnet USDC address, and order reference to use after written acceptance.</p>
+    </header>
+
+    <section class="summary">
+      <article class="metric"><span>Checkout rows</span><strong>34</strong></article>
+      <article class="metric"><span>Asset</span><strong>Base USDC</strong></article>
+      <article class="metric"><span>Current balance</span><strong>$0.00</strong></article>
+      <article class="metric"><span>Money counted</span><strong>$0</strong></article>
+    </section>
+
+    <section class="notice">
+      <h2>Shared Receive Address</h2>
+      <p>Use only native USDC on Base mainnet. The receive address is shared across these checkout instructions, so the buyer/order reference must be saved beside the transaction hash.</p>
+      <div class="copybox">0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+      <p class="buttons"><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a><a href="https://basescan.org/token/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913?a=0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">USDC token balance</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base_usdc_payment_monitor.csv">Monitor CSV</a></p>
+    </section>
+
+    <section class="notice danger">
+      <h2>Counting Rule</h2>
+      <p>Confirmed money remains $0 unless a real buyer accepts scope, sends the listed native Base USDC amount, the on-chain transfer is matched to the buyer/order, and there is no refund or dispute.</p>
+    </section>
+
+    <section>
+      <h2>Fast Lookup</h2>
+      <table>
+        <thead><tr><th>Offer</th><th>Price</th><th>Amount due</th><th>Reference</th><th>Links</th></tr></thead>
+        <tbody>
+          <tr>
+  <td data-label="Offer"><a href="#central-static-demo-site-customization">Static Demo Site Customization</a></td>
+  <td data-label="Price">$200</td>
+  <td data-label="Amount due">200.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-01-STATIC-DEMO-SITE-CUSTOMIZATION</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-customization.html">offer</a> | <a href="https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/static-service-site-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-static-service-site-starter">Static Service Site Starter</a></td>
+  <td data-label="Price">$200</td>
+  <td data-label="Amount due">200.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-02-STATIC-SERVICE-SITE-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/static-service-site-starter/">offer</a> | <a href="https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/static-service-site-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-local-seo-gbp-audit">Local SEO / GBP Audit</a></td>
+  <td data-label="Price">$175</td>
+  <td data-label="Amount due">175.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-03-LOCAL-SEO-GBP-AUDIT</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit.html">offer</a> | <a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">intake</a> | <a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-ai-workflow-tracker-sprint">AI Workflow Tracker Sprint</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-04-AI-WORKFLOW-TRACKER-SPRINT</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-sprint.html">offer</a> | <a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-niche-quote-estimator">Niche Quote Estimator</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-05-NICHE-QUOTE-ESTIMATOR</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/niche-quote-estimator.html">offer</a> | <a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-niche-quote-estimator-starter">Niche Quote Estimator Starter</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-06-NICHE-QUOTE-ESTIMATOR-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/niche-quote-estimator-starter/">offer</a> | <a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-technical-docs-cleanup">Technical Docs Cleanup</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-07-TECHNICAL-DOCS-CLEANUP</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-cleanup.html">offer</a> | <a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-technical-docs-cleanup-starter">Technical Docs Cleanup Starter</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-08-TECHNICAL-DOCS-CLEANUP-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/technical-docs-cleanup-starter/">offer</a> | <a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-website-audit-microservice">Website Audit Microservice</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-09-WEBSITE-AUDIT-MICROSERVICE</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html">offer</a> | <a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-website-audit-microservice-starter">Website Audit Microservice Starter</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-10-WEBSITE-AUDIT-MICROSERVICE-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/website-audit-microservice-starter/">offer</a> | <a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-workflow-tracker-dashboard-starter">Workflow Tracker Dashboard Starter</a></td>
+  <td data-label="Price">$150</td>
+  <td data-label="Amount due">150.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-11-WORKFLOW-TRACKER-DASHBOARD-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/workflow-tracker-dashboard-starter/">offer</a> | <a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-career-packet-starter">Career Packet Starter</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-12-CAREER-PACKET-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/career-packet-starter/">offer</a> | <a href="https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/career-packet-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-client-intake-sop-starter">Client Intake SOP Starter</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-13-CLIENT-INTAKE-SOP-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/client-intake-sop-starter/">offer</a> | <a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-client-intake-and-sop-package">Client Intake and SOP Package</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-14-CLIENT-INTAKE-AND-SOP-PACKAGE</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/client-intake-and-sop-package.html">offer</a> | <a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-data-cleanup-sprint">Data Cleanup Sprint</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-15-DATA-CLEANUP-SPRINT</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/data-cleanup-sprint.html">offer</a> | <a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-data-cleanup-sprint-starter">Data Cleanup Sprint Starter</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-16-DATA-CLEANUP-SPRINT-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/data-cleanup-sprint-starter/">offer</a> | <a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-pdf-table-extraction">PDF/Table Extraction</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-17-PDF-TABLE-EXTRACTION</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction.html">offer</a> | <a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">intake</a> | <a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-resume-linkedin-interview-pack">Resume / LinkedIn / Interview Pack</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-18-RESUME-LINKEDIN-INTERVIEW-PACK</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/resume-linkedin-interview-pack.html">offer</a> | <a href="https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/career-packet-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-automation-blueprint">Automation Blueprint</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-19-AUTOMATION-BLUEPRINT</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/automation-blueprint.html">offer</a> | <a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-automation-blueprint-starter">Automation Blueprint Starter</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-20-AUTOMATION-BLUEPRINT-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/automation-blueprint-starter/">offer</a> | <a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-content-repurposing-sprint">Content Repurposing Sprint</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-21-CONTENT-REPURPOSING-SPRINT</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-sprint.html">offer</a> | <a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-content-repurposing-sprint-starter">Content Repurposing Sprint Starter</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-22-CONTENT-REPURPOSING-SPRINT-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/content-repurposing-sprint-starter/">offer</a> | <a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-resale-listing-research-starter">Resale Listing Research Starter</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-23-RESALE-LISTING-RESEARCH-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/resale-listing-research-starter/">offer</a> | <a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-resale-listing-and-price-research-pack">Resale Listing and Price Research Pack</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-24-RESALE-LISTING-AND-PRICE-RESEARCH-PACK</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-and-price-research-pack.html">offer</a> | <a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-subscription-audit-savings-starter">Subscription Audit Savings Starter</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-25-SUBSCRIPTION-AUDIT-SAVINGS-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/subscription-audit-savings-starter/">offer</a> | <a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-subscription-audit-and-savings-prep-pack">Subscription Audit and Savings Prep Pack</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-26-SUBSCRIPTION-AUDIT-AND-SAVINGS-PREP-PACK</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-audit-and-savings-prep-pack.html">offer</a> | <a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-translation-localization-draft-starter">Translation Localization Draft Starter</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-27-TRANSLATION-LOCALIZATION-DRAFT-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/translation-localization-draft-starter/">offer</a> | <a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-translation-and-localization-draft-pack">Translation and Localization Draft Pack</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-28-TRANSLATION-AND-LOCALIZATION-DRAFT-PACK</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/translation-and-localization-draft-pack.html">offer</a> | <a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml">intake</a> | <a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-local-seo-gbp-audit-starter">Local SEO GBP Audit Starter</a></td>
+  <td data-label="Price">$175</td>
+  <td data-label="Amount due">175.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-29-LOCAL-SEO-GBP-AUDIT-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/local-seo-gbp-audit-starter/">offer</a> | <a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">intake</a> | <a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#hot-download-local-seo-gbp-audit-starter">Local SEO GBP Audit Starter</a></td>
+  <td data-label="Price">$175</td>
+  <td data-label="Amount due">175.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-30-LOCAL-SEO-GBP-AUDIT-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html">offer</a> | <a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">intake</a> | <a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#standalone-pdf-table-extraction-starter">PDF Table Extraction Starter</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-31-PDF-TABLE-EXTRACTION-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/pdf-table-extraction-starter/">offer</a> | <a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">intake</a> | <a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#hot-download-pdf-table-extraction-starter">PDF Table Extraction Starter</a></td>
+  <td data-label="Price">$125</td>
+  <td data-label="Amount due">125.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-32-PDF-TABLE-EXTRACTION-STARTER</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html">offer</a> | <a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">intake</a> | <a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/1">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-first-100-fast-start">First $100 Fast Start</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-33-FIRST-100-FAST-START</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html">offer</a> | <a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-fast-start.yml">intake</a> | <a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24">board</a></td>
+</tr>
+
+<tr>
+  <td data-label="Offer"><a href="#central-first-100-product-bundle">First $100 Product Bundle</a></td>
+  <td data-label="Price">$100</td>
+  <td data-label="Amount due">100.00 USDC</td>
+  <td data-label="Reference"><code>OSP-20260616-34-FIRST-100-PRODUCT-BUNDLE</code></td>
+  <td data-label="Links"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html">offer</a> | <a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml">intake</a> | <a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25">board</a></td>
+</tr>
+
+        </tbody>
+      </table>
+    </section>
+
+    <section class="grid">
+      <article class="card" id="central-static-demo-site-customization">
+  <span class="eyebrow">service - $200</span>
+  <h2>Static Demo Site Customization</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 200.00 USDC
+Reference: OSP-20260616-01-STATIC-DEMO-SITE-CUSTOMIZATION
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/static-demo-site-customization.html">Offer page</a><a href="https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/static-service-site-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Static Demo Site Customization at $200. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-static-service-site-starter">
+  <span class="eyebrow">service - $200</span>
+  <h2>Static Service Site Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 200.00 USDC
+Reference: OSP-20260616-02-STATIC-SERVICE-SITE-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/static-service-site-starter/">Offer page</a><a href="https://github.com/jaxassistant55/static-service-site-starter/issues/new?template=ready-to-pay-static-service-site-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/static-service-site-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Static Service Site Starter at $200. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-local-seo-gbp-audit">
+  <span class="eyebrow">service - $175</span>
+  <h2>Local SEO / GBP Audit</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 175.00 USDC
+Reference: OSP-20260616-03-LOCAL-SEO-GBP-AUDIT
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/local-seo-gbp-audit.html">Offer page</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-ai-workflow-tracker-sprint">
+  <span class="eyebrow">service - $150</span>
+  <h2>AI Workflow Tracker Sprint</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-04-AI-WORKFLOW-TRACKER-SPRINT
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/ai-workflow-tracker-sprint.html">Offer page</a><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for AI Workflow Tracker Sprint at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-niche-quote-estimator">
+  <span class="eyebrow">service - $150</span>
+  <h2>Niche Quote Estimator</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-05-NICHE-QUOTE-ESTIMATOR
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/niche-quote-estimator.html">Offer page</a><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Niche Quote Estimator at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-niche-quote-estimator-starter">
+  <span class="eyebrow">service - $150</span>
+  <h2>Niche Quote Estimator Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-06-NICHE-QUOTE-ESTIMATOR-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/niche-quote-estimator-starter/">Offer page</a><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/new?template=ready-to-pay-niche-quote-estimator-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/niche-quote-estimator-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Niche Quote Estimator Starter at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-technical-docs-cleanup">
+  <span class="eyebrow">service - $150</span>
+  <h2>Technical Docs Cleanup</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-07-TECHNICAL-DOCS-CLEANUP
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/technical-docs-cleanup.html">Offer page</a><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Technical Docs Cleanup at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-technical-docs-cleanup-starter">
+  <span class="eyebrow">service - $150</span>
+  <h2>Technical Docs Cleanup Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-08-TECHNICAL-DOCS-CLEANUP-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/technical-docs-cleanup-starter/">Offer page</a><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/new?template=ready-to-pay-technical-docs-cleanup-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/technical-docs-cleanup-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Technical Docs Cleanup Starter at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-website-audit-microservice">
+  <span class="eyebrow">service - $150</span>
+  <h2>Website Audit Microservice</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-09-WEBSITE-AUDIT-MICROSERVICE
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/website-audit-microservice.html">Offer page</a><a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Website Audit Microservice at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-website-audit-microservice-starter">
+  <span class="eyebrow">service - $150</span>
+  <h2>Website Audit Microservice Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-10-WEBSITE-AUDIT-MICROSERVICE-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/website-audit-microservice-starter/">Offer page</a><a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/new?template=ready-to-pay-website-audit-microservice-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/website-audit-microservice-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Website Audit Microservice Starter at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-workflow-tracker-dashboard-starter">
+  <span class="eyebrow">service - $150</span>
+  <h2>Workflow Tracker Dashboard Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 150.00 USDC
+Reference: OSP-20260616-11-WORKFLOW-TRACKER-DASHBOARD-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/workflow-tracker-dashboard-starter/">Offer page</a><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/new?template=ready-to-pay-workflow-tracker-dashboard-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/workflow-tracker-dashboard-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Workflow Tracker Dashboard Starter at $150. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-career-packet-starter">
+  <span class="eyebrow">service - $125</span>
+  <h2>Career Packet Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-12-CAREER-PACKET-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/career-packet-starter/">Offer page</a><a href="https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/career-packet-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Career Packet Starter at $125. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-client-intake-sop-starter">
+  <span class="eyebrow">service - $125</span>
+  <h2>Client Intake SOP Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-13-CLIENT-INTAKE-SOP-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/client-intake-sop-starter/">Offer page</a><a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Client Intake SOP Starter at $125. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-client-intake-and-sop-package">
+  <span class="eyebrow">service - $125</span>
+  <h2>Client Intake and SOP Package</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-14-CLIENT-INTAKE-AND-SOP-PACKAGE
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/client-intake-and-sop-package.html">Offer page</a><a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/new?template=ready-to-pay-client-intake-sop-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/client-intake-sop-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Client Intake and SOP Package at $125. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-data-cleanup-sprint">
+  <span class="eyebrow">service - $125</span>
+  <h2>Data Cleanup Sprint</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-15-DATA-CLEANUP-SPRINT
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/data-cleanup-sprint.html">Offer page</a><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Data Cleanup Sprint at $125. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-data-cleanup-sprint-starter">
+  <span class="eyebrow">service - $125</span>
+  <h2>Data Cleanup Sprint Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-16-DATA-CLEANUP-SPRINT-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/data-cleanup-sprint-starter/">Offer page</a><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/new?template=ready-to-pay-data-cleanup-sprint-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/data-cleanup-sprint-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Data Cleanup Sprint Starter at $125. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-pdf-table-extraction">
+  <span class="eyebrow">service - $125</span>
+  <h2>PDF/Table Extraction</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-17-PDF-TABLE-EXTRACTION
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/pdf-table-extraction.html">Offer page</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-resume-linkedin-interview-pack">
+  <span class="eyebrow">service - $125</span>
+  <h2>Resume / LinkedIn / Interview Pack</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-18-RESUME-LINKEDIN-INTERVIEW-PACK
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/resume-linkedin-interview-pack.html">Offer page</a><a href="https://github.com/jaxassistant55/career-packet-starter/issues/new?template=ready-to-pay-career-packet-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/career-packet-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Resume / LinkedIn / Interview Pack at $125. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-automation-blueprint">
+  <span class="eyebrow">service - $100</span>
+  <h2>Automation Blueprint</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-19-AUTOMATION-BLUEPRINT
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/automation-blueprint.html">Offer page</a><a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Automation Blueprint at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-automation-blueprint-starter">
+  <span class="eyebrow">service - $100</span>
+  <h2>Automation Blueprint Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-20-AUTOMATION-BLUEPRINT-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/automation-blueprint-starter/">Offer page</a><a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/new?template=ready-to-pay-automation-blueprint-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/automation-blueprint-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Automation Blueprint Starter at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-content-repurposing-sprint">
+  <span class="eyebrow">service - $100</span>
+  <h2>Content Repurposing Sprint</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-21-CONTENT-REPURPOSING-SPRINT
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/content-repurposing-sprint.html">Offer page</a><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Content Repurposing Sprint at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-content-repurposing-sprint-starter">
+  <span class="eyebrow">service - $100</span>
+  <h2>Content Repurposing Sprint Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-22-CONTENT-REPURPOSING-SPRINT-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/content-repurposing-sprint-starter/">Offer page</a><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/new?template=ready-to-pay-content-repurposing-sprint-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/content-repurposing-sprint-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Content Repurposing Sprint Starter at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-resale-listing-research-starter">
+  <span class="eyebrow">service - $100</span>
+  <h2>Resale Listing Research Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-23-RESALE-LISTING-RESEARCH-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/resale-listing-research-starter/">Offer page</a><a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Resale Listing Research Starter at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-resale-listing-and-price-research-pack">
+  <span class="eyebrow">service - $100</span>
+  <h2>Resale Listing and Price Research Pack</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-24-RESALE-LISTING-AND-PRICE-RESEARCH-PACK
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/resale-listing-and-price-research-pack.html">Offer page</a><a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/new?template=ready-to-pay-resale-listing-research-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/resale-listing-research-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Resale Listing and Price Research Pack at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-subscription-audit-savings-starter">
+  <span class="eyebrow">service - $100</span>
+  <h2>Subscription Audit Savings Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-25-SUBSCRIPTION-AUDIT-SAVINGS-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/subscription-audit-savings-starter/">Offer page</a><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Subscription Audit Savings Starter at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-subscription-audit-and-savings-prep-pack">
+  <span class="eyebrow">service - $100</span>
+  <h2>Subscription Audit and Savings Prep Pack</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-26-SUBSCRIPTION-AUDIT-AND-SAVINGS-PREP-PACK
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/subscription-audit-and-savings-prep-pack.html">Offer page</a><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/new?template=ready-to-pay-subscription-audit-savings-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/subscription-audit-savings-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Subscription Audit and Savings Prep Pack at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-translation-localization-draft-starter">
+  <span class="eyebrow">service - $100</span>
+  <h2>Translation Localization Draft Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-27-TRANSLATION-LOCALIZATION-DRAFT-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/translation-localization-draft-starter/">Offer page</a><a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Translation Localization Draft Starter at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-translation-and-localization-draft-pack">
+  <span class="eyebrow">service - $100</span>
+  <h2>Translation and Localization Draft Pack</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-28-TRANSLATION-AND-LOCALIZATION-DRAFT-PACK
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/translation-and-localization-draft-pack.html">Offer page</a><a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/new?template=ready-to-pay-translation-localization-draft-starter.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/translation-localization-draft-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the listed fixed scope and price for Translation and Localization Draft Pack at $100. I understand work or private delivery starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive inputs; and extra scope, credentials, account access, regulated advice, paid ads, publishing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-local-seo-gbp-audit-starter">
+  <span class="eyebrow">service - $175</span>
+  <h2>Local SEO GBP Audit Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 175.00 USDC
+Reference: OSP-20260616-29-LOCAL-SEO-GBP-AUDIT-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/local-seo-gbp-audit-starter/">Offer page</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="hot-download-local-seo-gbp-audit-starter">
+  <span class="eyebrow">service - $175</span>
+  <h2>Local SEO GBP Audit Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 175.00 USDC
+Reference: OSP-20260616-30-LOCAL-SEO-GBP-AUDIT-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-local-seo-gbp-audit-starter.html">Offer page</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/new?template=ready-to-pay-local-seo-gbp-audit.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/local-seo-gbp-audit-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the Local SEO / GBP Audit fixed-scope terms at $175. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive business details; the audit is limited to public website/profile review, category/citation/review/landing-page observations, and a prioritized action checklist; and Google account login work, profile claiming/verification, fake reviews, paid ads, legal advice, publishing edits, ongoing SEO, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="standalone-pdf-table-extraction-starter">
+  <span class="eyebrow">service - $125</span>
+  <h2>PDF Table Extraction Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-31-PDF-TABLE-EXTRACTION-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/pdf-table-extraction-starter/">Offer page</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="hot-download-pdf-table-extraction-starter">
+  <span class="eyebrow">service - $125</span>
+  <h2>PDF Table Extraction Starter</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 125.00 USDC
+Reference: OSP-20260616-32-PDF-TABLE-EXTRACTION-STARTER
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/hot-download-close-pdf-table-extraction-starter.html">Offer page</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/new?template=ready-to-pay-pdf-table-extraction.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/pdf-table-extraction-starter/issues/1">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the PDF/Table Extraction fixed-scope terms at $125. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-owned/buyer-authorized non-sensitive documents through an approved channel; the deliverable is limited to extracted CSV/XLSX output, ambiguity notes, and a repeatable extraction checklist for the accepted sample; and confidential regulated data handling, OCR of large batches, custom software implementation, credential/account access, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-first-100-fast-start">
+  <span class="eyebrow">service - $100</span>
+  <h2>First $100 Fast Start</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-33-FIRST-100-FAST-START
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-fast-start.html">Offer page</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-fast-start.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/24">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the First $100 Fast Start fixed-scope terms at $100. I understand work starts only after seller-owned external payment proof exists; I will provide only public or buyer-authorized non-sensitive inputs; the selected starter scope is limited to the deliverable described on the First $100 Fast Start page; and custom implementation, account login work, credential handling, regulated advice, paid ads, purchasing, ongoing support, or extra revisions are not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+<article class="card" id="central-first-100-product-bundle">
+  <span class="eyebrow">product - $100</span>
+  <h2>First $100 Product Bundle</h2>
+  <p>Use this only after the buyer accepts the listed fixed scope and price. Send native USDC on Base mainnet; other networks or assets are not accepted for this checkout instruction.</p>
+  <div class="copybox">Network: Base mainnet
+Asset: native USDC
+Amount due: 100.00 USDC
+Reference: OSP-20260616-34-FIRST-100-PRODUCT-BUNDLE
+Receive address: 0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+  <p class="buttons"><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/first-100-product-bundle.html">Offer page</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=first-100-product-bundle.yml">Ready-to-pay intake</a><a href="https://github.com/jaxassistant55/jax-micro-offer-studio/issues/25">Order board</a><a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html">Payment route details</a><a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a></p>
+  <details>
+    <summary>Buyer acceptance text</summary>
+    <div class="copybox">I accept the First $100 Product Bundle Terms at $100. I understand the private ZIP is delivered only after seller-owned external payment proof exists; the bundle is for my internal or client-project use only; I will not resell, redistribute, sublicense, or post the paid files publicly; and custom implementation or support is not included unless separately agreed before payment.</div>
+  </details>
+</article>
+
+    </section>
+  </main>
+</body>
+</html>

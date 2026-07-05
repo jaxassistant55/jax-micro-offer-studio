@@ -219,3 +219,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Payment Route
 - Base USDC Payment Route: https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html -> native Base mainnet USDC receive route for accepted fixed-scope orders. Current confirmed money remains $0.00 until on-chain payment proof matches an accepted order.
+
+## Direct Checkout
+- Direct Base USDC Checkout: https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-direct-checkout.html -> exact Base mainnet USDC amounts, address, and order references for accepted fixed-price routes. Current confirmed money remains $0.00 until on-chain payment proof matches an accepted order.

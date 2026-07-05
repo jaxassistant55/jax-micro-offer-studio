@@ -653,4 +653,10 @@
   <url>
     <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/base_usdc_payment_monitor.csv</loc>
   </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-direct-checkout.html</loc>
+  </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/base_usdc_direct_checkout.csv</loc>
+  </url>
 </urlset>
