@@ -2228,6 +2228,17 @@
       "first_100": "One accepted paid Fake Filler auto-submit patch sprint reaches $100 before fees/refunds.",
       "start_order_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/new?template=ready-to-pay.md&title=Ready+to+pay%3A+Fake+Filler+auto-submit+sprint&labels=paid-inquiry%2Cready-to-pay%2Cbrowser-extension&body=%23%23+Ready-to-pay+intake%0A%0AOffer%3A+Fake+Filler+Auto-Submit+Sprint%0AListed+price%3A+%24100%0AOffer+page%3A+https%3A%2F%2Fjaxassistant55.github.io%2Fjax-micro-offer-studio%2Ffakefiller-auto-submit-sprint.html%0ASource+issue%3A+https%3A%2F%2Fgithub.com%2FFakeFiller%2Ffake-filler-extension%2Fissues%2F151%0APublic+repo%3A+https%3A%2F%2Fgithub.com%2FFakeFiller%2Ffake-filler-extension%0A%0ATarget+branch+or+fork%3A%0ADesired+auto-submit+behavior%3A%0ABrowser+target%3A%0APayment%2Fproof+route%3A%0A%0ASafety+confirmation%3A%0A-+I+will+provide+only+public+or+buyer-authorized+code+and+non-sensitive+requirements.%0A-+I+will+not+provide+credentials%2C+payment+data%2C+private+browser+profiles%2C+account+data%2C+or+production+form+targets.%0A-+I+understand+this+issue%2Fform+is+not+payment+by+itself%3B+money+counts+only+after+external+payment+or+payout+proof+exists.%0A",
       "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
+    },
+    {
+      "type": "payment_route",
+      "title": "Base USDC Payment Route",
+      "slug": "base-usdc-payment-route",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html",
+      "description": "Native Base mainnet USDC receive route for accepted fixed-scope Micro Offer Studio orders.",
+      "network": "Base mainnet",
+      "asset": "USDC",
+      "address": "0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b",
+      "proof_rule": "Count only verified Base USDC received at this address after accepted scope, delivery proof, and no refund/dispute. Current route setup and zero-balance monitor count $0."
     }
   ]
 }

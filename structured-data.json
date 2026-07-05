@@ -4712,6 +4712,13 @@
         "price": 100.0,
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "PaymentService",
+      "name": "Base USDC Payment Route",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html",
+      "description": "Native Base mainnet USDC receive route for accepted fixed-scope Micro Offer Studio orders."
     }
   ]
 }

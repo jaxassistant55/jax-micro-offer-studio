@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Base USDC payment route for fixed-scope Micro Offer Studio orders.">
+  <title>Base USDC Payment Route</title>
+  <style>
+    :root{--ink:#17202a;--muted:#5d6875;--line:#d9dfeb;--panel:#f6f8fb;--blue:#075da8;--green:#17643a;--gold:#8a5a00;--red:#9b1c1c}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:#fff;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1040px,calc(100% - 32px));margin:0 auto;padding:28px 0 52px}header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(1.9rem,5vw,3rem);letter-spacing:0;overflow-wrap:anywhere}h2{margin:24px 0 10px;font-size:1.22rem}.muted{color:var(--muted)}a{color:var(--blue);overflow-wrap:anywhere}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.buttons a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;text-decoration:none;font-weight:800}.card,.notice,.metric{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;overflow-wrap:anywhere}.notice{border-left:6px solid var(--green);background:#f4fbf7}.warning{border-left-color:var(--gold);background:#fffaf0}.danger{border-left-color:var(--red);background:#fff7f5}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.metric{background:var(--panel)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.metric strong{display:block;margin-top:5px;font-size:1.2rem}.copybox{white-space:pre-wrap;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92rem}table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff}th,td{border-bottom:1px solid var(--line);padding:9px;text-align:left;vertical-align:top;font-size:.9rem;overflow-wrap:anywhere}th{background:var(--panel);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}code{white-space:normal;overflow-wrap:anywhere}ol{padding-left:22px}li{margin:7px 0}
+    @media(max-width:780px){.grid{grid-template-columns:1fr}.buttons{display:grid}.buttons a{width:100%}table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line);padding:8px 0}td{border-bottom:0;padding:6px 9px}td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="muted">Generated 2026-07-05 13:46:45 JST. This creates a public receive route only; it does not prove payment by itself.</p>
+      <h1>Base USDC Payment Route</h1>
+      <p class="muted">Use this route only after a real buyer accepts a fixed scope and price. The private key is stored locally outside the public site; the page exposes only the receive address.</p>
+      <div class="buttons">
+        <a href="payment-activation.html">Payment activation</a>
+        <a href="order-now.html">Order now</a>
+        <a href="proof-monitor.html">Proof monitor</a>
+        <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base_usdc_payment_route.csv">Route CSV</a>
+        <a href="https://jaxassistant55.github.io/jax-micro-offer-studio/base_usdc_payment_monitor.csv">Monitor CSV</a>
+        <a href="https://basescan.org/address/0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">BaseScan address</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="metric"><span>Network</span><strong>Base mainnet</strong></article>
+      <article class="metric"><span>Current USDC</span><strong>$0.00</strong></article>
+      <article class="metric"><span>Proof status</span><strong>zero_balance_no_payment_proof</strong></article>
+    </section>
+
+    <section class="notice">
+      <h2>Receive Address</h2>
+      <p>Accepted asset: native USDC on Base mainnet.</p>
+      <div class="copybox">0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b</div>
+      <p>USDC contract: <code>0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</code></p>
+      <p><a href="https://basescan.org/token/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913?a=0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b">Open token balance on BaseScan</a></p>
+    </section>
+
+    <section class="notice warning">
+      <h2>Buyer Instructions</h2>
+      <ol>
+        <li>Do not send funds until the fixed-scope order, price, deliverable, deadline, and refund/revision boundary are accepted in writing.</li>
+        <li>Send only native USDC on Base mainnet to the address above. Other assets or networks may be unrecoverable.</li>
+        <li>Include the order reference in the buyer thread, issue, invoice note, or marketplace message. Do not post private payment screenshots, tax data, keys, or customer data publicly.</li>
+        <li>Delivery starts only after the transaction is visible on-chain and matched to the accepted order.</li>
+      </ol>
+    </section>
+
+    <section class="notice danger">
+      <h2>Money Boundary</h2>
+      <p>Confirmed money is still $0.00. This route only removes the missing-payment-link blocker. Count money only after an on-chain transfer is verified, tied to a real accepted buyer/order, and not refunded or disputed.</p>
+    </section>
+
+    <section>
+      <h2>Current Monitor</h2>
+      <table>
+        <thead><tr><th>Field</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Field">ETH balance wei</td><td data-label="Value">0</td></tr>
+          <tr><td data-label="Field">USDC raw units</td><td data-label="Value">0</td></tr>
+          <tr><td data-label="Field">USDC amount</td><td data-label="Value">0.000000</td></tr>
+          <tr><td data-label="Field">Money confirmed</td><td data-label="Value">$0.00</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
