@@ -644,4 +644,13 @@
   <url>
     <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller_auto_submit.patch</loc>
   </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html</loc>
+  </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/base_usdc_payment_route.csv</loc>
+  </url>
+  <url>
+    <loc>https://jaxassistant55.github.io/jax-micro-offer-studio/base_usdc_payment_monitor.csv</loc>
+  </url>
 </urlset>

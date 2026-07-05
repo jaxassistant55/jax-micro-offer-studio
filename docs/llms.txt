@@ -216,3 +216,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Non-Bounty Paid Browser Extension Patch Offer
 - Fake Filler Auto-Submit Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller-auto-submit-sprint.html -> $100 fixed-scope prepared patch for auto-submit after form filling. Patch: https://jaxassistant55.github.io/jax-micro-offer-studio/fakefiller_auto_submit.patch
+
+## Payment Route
+- Base USDC Payment Route: https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html -> native Base mainnet USDC receive route for accepted fixed-scope orders. Current confirmed money remains $0.00 until on-chain payment proof matches an accepted order.
