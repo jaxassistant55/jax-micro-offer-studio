@@ -4719,6 +4719,13 @@
       "name": "Base USDC Payment Route",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html",
       "description": "Native Base mainnet USDC receive route for accepted fixed-scope Micro Offer Studio orders."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Direct Base USDC Checkout",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-direct-checkout.html",
+      "description": "Exact native Base USDC checkout instructions for fixed-price Micro Offer Studio routes."
     }
   ]
 }
