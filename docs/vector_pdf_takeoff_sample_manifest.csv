@@ -1,0 +1,12 @@
+generated_at_jst,relative_path,bytes,sha256,public_url
+2026-07-10 23:32:55 JST,README.md,907,346c2df422185d2210c253cfb7ba94155a431664faee60d89d5d8e48d68f05f2,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/README.md
+2026-07-10 23:32:55 JST,extract_vector_pdf.py,8374,844680d8dc816e11110127df7e946472365738c2bfbae6531b4bfda487f58cc2,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/extract_vector_pdf.py
+2026-07-10 23:32:55 JST,make_synthetic_plan.py,2292,135449915f75a7cb31cf1fdc0bbc91a6cd92bfca143eb002f1af28459fe7c81d,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/make_synthetic_plan.py
+2026-07-10 23:32:55 JST,output/geometry.geojson,9274,1d0e533b2cdcddc96b217d11111c85745b79faf8e3b1568dce1ded33d66ebac5,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/output/geometry.geojson
+2026-07-10 23:32:55 JST,output/overlay.svg,3609,97cff4baca2d1a4836faf5f2578557df49ddfe62cd059170d1c5aaefd3fc0850,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/output/overlay.svg
+2026-07-10 23:32:55 JST,output/primitives.csv,1083,cb975e0238feb9f139b8779e290aa79fa26dd383863c2a61e5f6b36241f9f547,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/output/primitives.csv
+2026-07-10 23:32:55 JST,output/report.json,329,7dc2d564ac72c2e8e6982d544f754741a5bb1c5014d68423d471fa42e06ccd17,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/output/report.json
+2026-07-10 23:32:55 JST,requirements.txt,33,b31a9e0731f6478efd5dc69307f2ee087fea9bff5798311d890c7503e177c478,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/requirements.txt
+2026-07-10 23:32:55 JST,synthetic_floor_plan.pdf,1911,cc8d6c2829e66430fbbf7eff30878620c57d543c6c20e4e86b32636e1d37d380,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/synthetic_floor_plan.pdf
+2026-07-10 23:32:55 JST,synthetic_floor_plan.png,9713,9859f14104d93e70f64556d246353e3906080b52dfba608c0860d3c337f540c7,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/synthetic_floor_plan.png
+2026-07-10 23:32:55 JST,verify_sample.py,1167,b867fc9d4014ceeb294597fa98321fd02ea1228ad79085e9f3d236f9fa75becc,https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample/verify_sample.py
