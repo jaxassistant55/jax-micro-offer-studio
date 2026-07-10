@@ -46,7 +46,7 @@ def read_csv(path)
   CSV.read(path, headers: true).map(&:to_h)
 end
 
-def gh_json(path)
+def gh_json_once(path)
   stdout = +""
   stderr = +""
   status = nil
@@ -107,6 +107,17 @@ def gh_json(path)
   JSON.parse(stdout)
 rescue JSON::ParserError => e
   { "__error" => e.message }
+end
+
+def gh_json(path)
+  first = gh_json_once(path)
+  return first unless first.is_a?(Hash) && first["__error"]
+
+  sleep 1
+  second = gh_json_once(path)
+  return second unless second.is_a?(Hash) && second["__error"]
+
+  { "__error" => "#{first["__error"]}; retry: #{second["__error"]}" }
 end
 
 def issue_comment_summary(repo, issue_number, fallback_count)
