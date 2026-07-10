@@ -4715,6 +4715,13 @@
     },
     {
       "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Direct Base USDC Checkout",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-direct-checkout.html",
+      "description": "Exact native Base USDC checkout instructions for fixed-price Micro Offer Studio routes."
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "PaymentService",
       "name": "Base USDC Payment Route",
       "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html",
@@ -4722,10 +4729,15 @@
     },
     {
       "@context": "https://schema.org",
-      "@type": "OfferCatalog",
-      "name": "Direct Base USDC Checkout",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-direct-checkout.html",
-      "description": "Exact native Base USDC checkout instructions for fixed-price Micro Offer Studio routes."
+      "@type": "Service",
+      "name": "Vector PDF Takeoff Feasibility Sprint",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility.html",
+      "description": "A bounded vector architectural PDF extraction, calibration, and audit-overlay feasibility sprint.",
+      "offers": {
+        "@type": "Offer",
+        "price": "100",
+        "priceCurrency": "USD"
+      }
     }
   ]
 }

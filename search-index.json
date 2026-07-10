@@ -2230,17 +2230,6 @@
       "proof_rule": "Counts $0 until real buyer acceptance, seller-owned payment proof, delivery proof, and posted/released/payable funds exist."
     },
     {
-      "type": "payment_route",
-      "title": "Base USDC Payment Route",
-      "slug": "base-usdc-payment-route",
-      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html",
-      "description": "Native Base mainnet USDC receive route for accepted fixed-scope Micro Offer Studio orders.",
-      "network": "Base mainnet",
-      "asset": "USDC",
-      "address": "0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b",
-      "proof_rule": "Count only verified Base USDC received at this address after accepted scope, delivery proof, and no refund/dispute. Current route setup and zero-balance monitor count $0."
-    },
-    {
       "type": "payment_checkout",
       "title": "Direct Base USDC Checkout",
       "slug": "base-usdc-direct-checkout",
@@ -2252,6 +2241,27 @@
       "checkout_rows": 34,
       "release_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/releases/tag/base-usdc-direct-checkout-v1",
       "proof_rule": "Count only matched on-chain buyer/order payment with no refund or dispute."
+    },
+    {
+      "type": "payment_route",
+      "title": "Base USDC Payment Route",
+      "slug": "base-usdc-payment-route",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-payment-route.html",
+      "description": "Native Base mainnet USDC receive route for accepted fixed-scope Micro Offer Studio orders.",
+      "network": "Base mainnet",
+      "asset": "USDC",
+      "address": "0x1D3A2aeFC9848847cA938e59A66b0218e0771C5b",
+      "proof_rule": "Count only verified Base USDC received at this address after accepted scope, delivery proof, and no refund/dispute. Current route setup and zero-balance monitor count $0."
+    },
+    {
+      "type": "paid_service",
+      "title": "Vector PDF Takeoff Feasibility Sprint",
+      "slug": "vector-pdf-takeoff-feasibility",
+      "url": "https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility.html",
+      "description": "A bounded vector architectural PDF extraction, calibration, and audit-overlay feasibility sprint with reproducible sample.",
+      "price_usd": 100,
+      "sample_zip_url": "https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility-sample.zip",
+      "order_board_url": "https://github.com/jaxassistant55/jax-micro-offer-studio/issues/30"
     }
   ]
 }

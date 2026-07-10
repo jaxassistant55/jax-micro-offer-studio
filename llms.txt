@@ -222,3 +222,6 @@ Do not treat public pages, issue drafts, estimates, samples, traffic, or tool us
 
 ## Direct Checkout
 - Direct Base USDC Checkout: https://jaxassistant55.github.io/jax-micro-offer-studio/base-usdc-direct-checkout.html -> exact Base mainnet USDC amounts, address, and order references for accepted fixed-price routes. Current confirmed money remains $0.00 until on-chain payment proof matches an accepted order.
+
+## Vector PDF Feasibility
+- Vector PDF Takeoff Feasibility Sprint: https://jaxassistant55.github.io/jax-micro-offer-studio/vector-pdf-takeoff-feasibility.html -> fixed $100 bounded primitive extraction, calibration, CSV/GeoJSON, SVG proof overlay, and feasibility report. Working synthetic sample does not prove a sale; confirmed money remains $0.
